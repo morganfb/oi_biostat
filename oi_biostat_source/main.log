@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.30)  6 JUL 2015 08:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.30)  6 JUL 2015 10:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -815,7 +815,20 @@ File: english.lbx 2014/06/25 v2.9a biblatex localization (PK/JW/AB)
 \@quotelevel=\count303
 \@quotereset=\count304
 
-No file main.aux.
+(./main.aux (./extraTeX/preamble/copyright.aux)
+(./extraTeX/preamble/preface_oi_biostat.aux)
+(./ch_intro_to_data_oi_biostat/TeX/ch_intro_to_data_oi_biostat.aux)
+(./ch_intro_to_data_oi_biostat/TeX/ch_intro_to_data_oi_biostat_ex.aux)
+(./ch_inference_foundations_oi_biostat/TeX/ch_inference_foundations_oi_biostat.
+aux
+
+LaTeX Warning: Label `2ndSchSleepHTExample' multiply defined.
+
+)
+(./ch_inference_foundations_oi_biostat/TeX/ch_inference_foundations_oi_biostat_
+ex.aux) (./extraTeX/eoceSolutions/eoceSolutions.aux)
+(./extraTeX/appendix/TeX/zTable.aux) (./extraTeX/appendix/TeX/tTable.aux)
+(./extraTeX/appendix/TeX/chiSquareTable.aux) (./extraTeX/index/index.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
@@ -832,6 +845,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
 LaTeX Font Info:    ... okay on input line 24.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 24.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 24.
+
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
@@ -906,6 +920,8 @@ LaTeX Info: Redefining \Ref on input line 513.
 LaTeX Info: Redefining \ref on input line 24.
 LaTeX Info: Redefining \pageref on input line 24.
 LaTeX Info: Redefining \nameref on input line 24.
+
+(./main.out) (./main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
@@ -956,18 +972,18 @@ l.27 \include{extraTeX/preamble/copyright}
                                           %_derivative} [2
 
 
-]
+] (./main.toc)
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
- [3
+
+[3
 
 
 ]
 \openout2 = `extraTeX/preamble/preface_oi_biostat.aux'.
 
-
-(./extraTeX/preamble/preface_oi_biostat.tex [4
+ (./extraTeX/preamble/preface_oi_biostat.tex [4
 
 
 ]
@@ -979,528 +995,317 @@ LaTeX Warning: Reference `multipleAndLogisticRegression' on page 5 undefined on
  input line 40.
 
 
-LaTeX Warning: Reference `introductionToData' on page 5 undefined on input line
- 47.
-
-
 Overfull \hbox (0.10315pt too wide) in paragraph at lines 47--48
 []\OT1/cmr/m/n/10 An in-tro-duc-tion to re-gres-sion with two vari-ables.
  []
-
-
-LaTeX Warning: Reference `eoceSolutions' on page 5 undefined on input line 73.
-
-
-LaTeX Warning: Reference `distributionTables' on page 5 undefined on input line
- 75.
 
 [5]) [6]
 \openout2 = `ch_intro_to_data_oi_biostat/TeX/ch_intro_to_data_oi_biostat.aux'.
 
  (./ch_intro_to_data_oi_biostat/TeX/ch_intro_to_data_oi_biostat.tex
 Chapter 1.
-
-LaTeX Warning: Reference `basicExampleOfStentsAndStrokes' on page 7 undefined o
-n input line 30.
-
 [7
 
 
 
-]
-
-LaTeX Warning: Reference `stentStudyResultsDF' on page 8 undefined on input lin
-e 44.
-
-
-LaTeX Warning: Reference `stentStudyResults' on page 8 undefined on input line 
-68.
-
-[8]
+] [8]
 Missing character: There is no â in font cmr8!
 Missing character: There is no € in font cmr8!
 Missing character: There is no “ in font cmr8!
- [9]
 
-LaTeX Warning: Reference `famussClarkson' on page 10 undefined on input line 12
-0.
 
+LaTeX Warning: Reference `famussClarkson' on page 9 undefined on input line 126
+.
+
+[9]
 
 LaTeX Warning: Reference `FAMuSS_subset_Variables' on page 10 undefined on inpu
-t line 125.
-
-
-LaTeX Warning: Reference `FAMuSS_subset_variables' on page 10 undefined on inpu
-t line 177.
-
-
-LaTeX Warning: Reference `basicExampleOfStentsAndStrokes' on page 10 undefined 
-on input line 177.
-
-
-LaTeX Warning: Hyper reference `stentStudyResultsDF' on page 10 undefined on in
-put line 177.
-
-
-LaTeX Warning: Reference `stentStudyResultsDF' on page 10 undefined on input li
-ne 177.
-
-
-LaTeX Warning: Reference `countyDF' on page 10 undefined on input line 189.
-
-
-LaTeX Warning: Reference `countyVariables' on page 10 undefined on input line 1
-89.
+t line 129.
 
 [10] [11] [12]
-<ch_intro_to_data/figures/variables/variables.pdf, id=124, 303.1325pt x 108.405
-pt>
-File: ch_intro_to_data/figures/variables/variables.pdf Graphic file (type pdf)
- <use ch_intro_to_data/figures/variables/variables.pdf>
-Package pdftex.def Info: ch_intro_to_data/figures/variables/variables.pdf used 
-on input line 256.
+<ch_intro_to_data_oi_biostat/figures/variables/variables.pdf, id=244, 303.1325p
+t x 108.405pt>
+File: ch_intro_to_data_oi_biostat/figures/variables/variables.pdf Graphic file 
+(type pdf)
+
+<use ch_intro_to_data_oi_biostat/figures/variables/variables.pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/variables/variable
+s.pdf used on input line 258.
 (pdftex.def)             Requested size: 224.5095pt x 80.28955pt.
+ [13
 
 
-LaTeX Warning: Reference `basicExampleOfStentsAndStrokes' on page 13 undefined 
-on input line 268.
+ <./ch_intro_to_data_oi_biostat/figures/variables/variables.pdf>]
+<ch_intro_to_data_oi_biostat/figures/county_fed_spendVsPoverty/county_fed_spend
+VsPoverty.pdf, id=264, 433.62pt x 252.945pt>
+File: ch_intro_to_data_oi_biostat/figures/county_fed_spendVsPoverty/county_fed_
+spendVsPoverty.pdf Graphic file (type pdf)
 
-[13
-
-
- <./ch_intro_to_data/figures/variables/variables.pdf>]
-
-LaTeX Warning: Reference `county_fed_spendVsPoverty' on page 14 undefined on in
-put line 285.
-
-
-<ch_intro_to_data/figures/county_fed_spendVsPoverty/county_fed_spendVsPoverty.p
-df, id=143, 433.62pt x 252.945pt>
-File: ch_intro_to_data/figures/county_fed_spendVsPoverty/county_fed_spendVsPove
-rty.pdf Graphic file (type pdf)
-
-<use ch_intro_to_data/figures/county_fed_spendVsPoverty/county_fed_spendVsPover
-ty.pdf>
-Package pdftex.def Info: ch_intro_to_data/figures/county_fed_spendVsPoverty/cou
-nty_fed_spendVsPoverty.pdf used on input line 289.
+<use ch_intro_to_data_oi_biostat/figures/county_fed_spendVsPoverty/county_fed_s
+pendVsPoverty.pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/county_fed_spendVs
+Poverty/county_fed_spendVsPoverty.pdf used on input line 291.
 (pdftex.def)             Requested size: 315.09822pt x 183.81464pt.
 
 
-LaTeX Warning: Hyper reference `{FAMuSS_subset_Variables}' on page 14 undefined
- on input line 295.
+LaTeX Warning: Reference `{FAMuSS_subset_variables}' on page 14 undefined on in
+put line 297.
 
+[14 <./ch_intro_to_data_oi_biostat/figures/county_fed_spendVsPoverty/county_fed
+_spendVsPoverty.pdf>]
+<ch_intro_to_data_oi_biostat/figures/multiunitsVsOwnership/multiunitsVsOwnershi
+p.pdf, id=284, 433.62pt x 252.945pt>
+File: ch_intro_to_data_oi_biostat/figures/multiunitsVsOwnership/multiunitsVsOwn
+ership.pdf Graphic file (type pdf)
 
-LaTeX Warning: Reference `{FAMuSS_subset_Variables}' on page 14 undefined on in
-put line 295.
-
-[14 <./ch_intro_to_data/figures/county_fed_spendVsPoverty/county_fed_spendVsPov
-erty.pdf>]
-
-LaTeX Warning: Reference `multiunitsVsOwnership' on page 15 undefined on input 
-line 301.
-
-
-<ch_intro_to_data/figures/multiunitsVsOwnership/multiunitsVsOwnership.pdf, id=1
-63, 433.62pt x 252.945pt>
-File: ch_intro_to_data/figures/multiunitsVsOwnership/multiunitsVsOwnership.pdf 
+<use ch_intro_to_data_oi_biostat/figures/multiunitsVsOwnership/multiunitsVsOwne
+rship.pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/multiunitsVsOwners
+hip/multiunitsVsOwnership.pdf used on input line 310.
+(pdftex.def)             Requested size: 315.09822pt x 183.81464pt.
+ [15 <./ch_intro_to_data_oi_biostat/figures/multiunitsVsOwnership/multiunitsVsO
+wnership.pdf>]
+<ch_intro_to_data_oi_biostat/figures/popToSample/popToSampleGraduates.pdf, id=3
+09, 289.08pt x 151.56625pt>
+File: ch_intro_to_data_oi_biostat/figures/popToSample/popToSampleGraduates.pdf 
 Graphic file (type pdf)
 
-<use ch_intro_to_data/figures/multiunitsVsOwnership/multiunitsVsOwnership.pdf>
-Package pdftex.def Info: ch_intro_to_data/figures/multiunitsVsOwnership/multiun
-itsVsOwnership.pdf used on input line 308.
-(pdftex.def)             Requested size: 315.09822pt x 183.81464pt.
+<use ch_intro_to_data_oi_biostat/figures/popToSample/popToSampleGraduates.pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/popToSample/popToS
+ampleGraduates.pdf used on input line 393.
+(pdftex.def)             Requested size: 185.11998pt x 97.05756pt.
 
+<ch_intro_to_data_oi_biostat/figures/popToSample/popToSubSampleGraduates.pdf, i
+d=310, 289.08pt x 151.56625pt>
+File: ch_intro_to_data_oi_biostat/figures/popToSample/popToSubSampleGraduates.p
+df Graphic file (type pdf)
 
-LaTeX Warning: Reference `multiunitsVsOwnership' on page 15 undefined on input 
-line 313.
+<use ch_intro_to_data_oi_biostat/figures/popToSample/popToSubSampleGraduates.pd
+f>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/popToSample/popToS
+ubSampleGraduates.pdf used on input line 406.
+(pdftex.def)             Requested size: 185.11998pt x 97.05756pt.
+ [16 <./ch_intro_to_data_oi_biostat/figures/popToSample/popToSampleGraduates.pd
+f>]
+<ch_intro_to_data_oi_biostat/figures/popToSample/surveySample.pdf, id=331, 289.
+08pt x 151.56625pt>
+File: ch_intro_to_data_oi_biostat/figures/popToSample/surveySample.pdf Graphic 
+file (type pdf)
 
+<use ch_intro_to_data_oi_biostat/figures/popToSample/surveySample.pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/popToSample/survey
+Sample.pdf used on input line 420.
+(pdftex.def)             Requested size: 196.93564pt x 103.25331pt.
+ [17 <./ch_intro_to_data_oi_biostat/figures/popToSample/popToSubSampleGraduates
+.pdf> <./ch_intro_to_data_oi_biostat/figures/popToSample/surveySample.pdf>]
+<ch_intro_to_data_oi_biostat/figures/expResp/expResp.pdf, id=367, 276.03125pt x
+ 31.11626pt>
+File: ch_intro_to_data_oi_biostat/figures/expResp/expResp.pdf Graphic file (typ
+e pdf)
+ <use ch_intro_to_data_oi_biostat/figures/expResp/expResp.pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/expResp/expResp.pd
+f used on input line 450.
+(pdftex.def)             Requested size: 217.97804pt x 24.57153pt.
 
-LaTeX Warning: Reference `county_fed_spendVsPoverty' on page 15 undefined on in
-put line 313.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 318--319
+Underfull \hbox (badness 10000) in paragraph at lines 450--451
 
  []
 
-[15 <./ch_intro_to_data/figures/multiunitsVsOwnership/multiunitsVsOwnership.pdf
->]
 
-LaTeX Warning: Reference `identifyPopulationOfStentStudy' on page 16 undefined 
-on input line 348.
+Underfull \hbox (badness 10000) in paragraph at lines 453--454
+
+ []
+
+[18 <./ch_intro_to_data_oi_biostat/figures/expResp/expResp.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 474--475
+
+ []
+
+<extraTeX/icons/video_camera.png, id=384, 156.1032pt x 150.5625pt>
+File: extraTeX/icons/video_camera.png Graphic file (type png)
+
+<use extraTeX/icons/video_camera.png>
+Package pdftex.def Info: extraTeX/icons/video_camera.png used on input line 479
+.
+(pdftex.def)             Requested size: 17.6978pt x 17.07164pt.
+
+<ch_intro_to_data_oi_biostat/figures/variables/sunCausesCancer.pdf, id=386, 339
+.2675pt x 86.3225pt>
+File: ch_intro_to_data_oi_biostat/figures/variables/sunCausesCancer.pdf Graphic
+ file (type pdf)
+
+<use ch_intro_to_data_oi_biostat/figures/variables/sunCausesCancer.pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/variables/sunCause
+sCancer.pdf used on input line 493.
+(pdftex.def)             Requested size: 284.04057pt x 72.26999pt.
+
+[19 <./extraTeX/icons/video_camera.png (PNG copy)> <./ch_intro_to_data_oi_biost
+at/figures/variables/sunCausesCancer.pdf>]
+<ch_intro_to_data_oi_biostat/figures/samplingMethodsFigure/simple_stratified.pd
+f, id=412, 533.995pt x 542.025pt>
+File: ch_intro_to_data_oi_biostat/figures/samplingMethodsFigure/simple_stratifi
+ed.pdf Graphic file (type pdf)
+
+<use ch_intro_to_data_oi_biostat/figures/samplingMethodsFigure/simple_stratifie
+d.pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/samplingMethodsFig
+ure/simple_stratified.pdf used on input line 519.
+(pdftex.def)             Requested size: 393.87128pt x 399.81027pt.
+ [20] [21 <./ch_intro_to_data_oi_biostat/figures/samplingMethodsFigure/simple_s
+tratified.pdf>]
+<ch_intro_to_data_oi_biostat/figures/samplingMethodsFigure/cluster_multistage.p
+df, id=437, 533.995pt x 542.025pt>
+File: ch_intro_to_data_oi_biostat/figures/samplingMethodsFigure/cluster_multist
+age.pdf Graphic file (type pdf)
+
+<use ch_intro_to_data_oi_biostat/figures/samplingMethodsFigure/cluster_multista
+ge.pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/samplingMethodsFig
+ure/cluster_multistage.pdf used on input line 538.
+(pdftex.def)             Requested size: 393.87128pt x 399.81027pt.
+File: extraTeX/icons/video_camera.png Graphic file (type png)
+ <use extraTeX/icons/video_camera.png>
+Package pdftex.def Info: extraTeX/icons/video_camera.png used on input line 552
+.
+(pdftex.def)             Requested size: 17.6978pt x 17.07164pt.
+ [22] [23 <./ch_intro_to_data_oi_biostat/figures/samplingMethodsFigure/cluster_
+multistage.pdf>]
+<ch_intro_to_data_oi_biostat/figures/figureShowingBlocking/figureShowingBlockin
+g.pdf, id=459, 289.08pt x 505.89pt>
+File: ch_intro_to_data_oi_biostat/figures/figureShowingBlocking/figureShowingBl
+ocking.pdf Graphic file (type pdf)
+
+<use ch_intro_to_data_oi_biostat/figures/figureShowingBlocking/figureShowingBlo
+cking.pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/figureShowingBlock
+ing/figureShowingBlocking.pdf used on input line 568.
+(pdftex.def)             Requested size: 307.2191pt x 537.66118pt.
 
 
-<ch_intro_to_data/figures/popToSample/popToSampleGraduates.pdf, id=182, 289.08p
-t x 151.56625pt>
-File: ch_intro_to_data/figures/popToSample/popToSampleGraduates.pdf Graphic fil
-e (type pdf)
+LaTeX Warning: Float too large for page by 11.43369pt on input line 571.
 
-<use ch_intro_to_data/figures/popToSample/popToSampleGraduates.pdf>
-Package pdftex.def Info: ch_intro_to_data/figures/popToSample/popToSampleGradua
-tes.pdf used on input line 402.
-(pdftex.def)             Requested size: 185.11998pt x 97.05756pt.
- [16 <./ch_intro_to_data/figures/popToSample/popToSampleGraduates.pdf>]
-<ch_intro_to_data/figures/popToSample/popToSubSampleGraduates.pdf, id=205, 289.
-08pt x 151.56625pt>
-File: ch_intro_to_data/figures/popToSample/popToSubSampleGraduates.pdf Graphic 
-file (type pdf)
+[24] [25 <./ch_intro_to_data_oi_biostat/figures/figureShowingBlocking/figureSho
+wingBlocking.pdf>]
+File: extraTeX/icons/video_camera.png Graphic file (type png)
+ <use extraTeX/icons/video_camera.png>
+Package pdftex.def Info: extraTeX/icons/video_camera.png used on input line 597
+.
+(pdftex.def)             Requested size: 17.6978pt x 17.07164pt.
 
-<use ch_intro_to_data/figures/popToSample/popToSubSampleGraduates.pdf>
-Package pdftex.def Info: ch_intro_to_data/figures/popToSample/popToSubSampleGra
-duates.pdf used on input line 415.
-(pdftex.def)             Requested size: 185.11998pt x 97.05756pt.
+<ch_intro_to_data_oi_biostat/figures/email50LinesCharacters/email50LinesCharact
+ers.pdf, id=493, 433.62pt x 237.88875pt>
+File: ch_intro_to_data_oi_biostat/figures/email50LinesCharacters/email50LinesCh
+aracters.pdf Graphic file (type pdf)
 
-<ch_intro_to_data/figures/popToSample/surveySample.pdf, id=206, 289.08pt x 151.
-56625pt>
-File: ch_intro_to_data/figures/popToSample/surveySample.pdf Graphic file (type 
-pdf)
- <use ch_intro_to_data/figures/popToSample/surveySample.pdf>
-Package pdftex.def Info: ch_intro_to_data/figures/popToSample/surveySample.pdf 
-used on input line 429.
-(pdftex.def)             Requested size: 196.93564pt x 103.25331pt.
+<use ch_intro_to_data_oi_biostat/figures/email50LinesCharacters/email50LinesCha
+racters.pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/email50LinesCharac
+ters/email50LinesCharacters.pdf used on input line 614.
+(pdftex.def)             Requested size: 315.09822pt x 172.87328pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[17 <./ch_intro_to_data/figures/popToSample/popToSubSampleGraduates.pdf>]
-
-LaTeX Warning: Reference `fedSpendingPovertyQuestion' on page 18 undefined on i
-nput line 449.
-
-
-<ch_intro_to_data/figures/expResp/expResp.pdf, id=229, 276.03125pt x 31.11626pt
->
-File: ch_intro_to_data/figures/expResp/expResp.pdf Graphic file (type pdf)
- <use ch_intro_to_data/figures/expResp/expResp.pdf>
-Package pdftex.def Info: ch_intro_to_data/figures/expResp/expResp.pdf used on i
-nput line 459.
-(pdftex.def)             Requested size: 217.97804pt x 24.57153pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 459--460
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 462--463
-
- []
-
-
-LaTeX Warning: Reference `ownershipMultiUnitQuestion' on page 18 undefined on i
-nput line 465.
-
-[18 <./ch_intro_to_data/figures/popToSample/surveySample.pdf> <./ch_intro_to_da
-ta/figures/expResp/expResp.pdf>]
-
-LaTeX Warning: Reference `basicExampleOfStentsAndStrokes' on page 19 undefined 
-on input line 480.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 483--484
-
- []
-
-<extraTeX/icons/video_camera.png, id=256, 156.1032pt x 150.5625pt>
-File: extraTeX/icons/video_camera.png Graphic file (type png)
-
-<use extraTeX/icons/video_camera.png>
-Package pdftex.def Info: extraTeX/icons/video_camera.png used on input line 488
-.
-(pdftex.def)             Requested size: 17.6978pt x 17.07164pt.
-
-<ch_intro_to_data/figures/variables/sunCausesCancer.pdf, id=258, 339.2675pt x 8
-6.3225pt>
-File: ch_intro_to_data/figures/variables/sunCausesCancer.pdf Graphic file (type
- pdf)
- <use ch_intro_to_data/figures/variables/sunCausesCancer.pdf>
-Package pdftex.def Info: ch_intro_to_data/figures/variables/sunCausesCancer.pdf
- used on input line 502.
-(pdftex.def)             Requested size: 284.04057pt x 72.26999pt.
- [19 <./extraTeX/icons/video_camera.png (PNG copy)>]
-
-LaTeX Warning: Reference `multiunitsVsOwnership' on page 20 undefined on input 
-line 515.
-
-
-LaTeX Warning: Reference `multiunitsVsOwnership' on page 20 undefined on input 
-line 515.
-
-
-LaTeX Warning: Reference `simple_stratified' on page 20 undefined on input line
- 524.
-
-
-LaTeX Warning: Reference `cluster_multistage' on page 20 undefined on input lin
-e 524.
-
-
-<ch_intro_to_data/figures/samplingMethodsFigure/simple_stratified.pdf, id=275, 
-533.995pt x 542.025pt>
-File: ch_intro_to_data/figures/samplingMethodsFigure/simple_stratified.pdf Grap
-hic file (type pdf)
-
-<use ch_intro_to_data/figures/samplingMethodsFigure/simple_stratified.pdf>
-Package pdftex.def Info: ch_intro_to_data/figures/samplingMethodsFigure/simple_
-stratified.pdf used on input line 528.
-(pdftex.def)             Requested size: 393.87128pt x 399.81027pt.
-
-[20 <./ch_intro_to_data/figures/variables/sunCausesCancer.pdf>] [21 <./ch_intro
-_to_data/figures/samplingMethodsFigure/simple_stratified.pdf>]
-<ch_intro_to_data/figures/samplingMethodsFigure/cluster_multistage.pdf, id=306,
- 533.995pt x 542.025pt>
-File: ch_intro_to_data/figures/samplingMethodsFigure/cluster_multistage.pdf Gra
-phic file (type pdf)
-
-<use ch_intro_to_data/figures/samplingMethodsFigure/cluster_multistage.pdf>
-Package pdftex.def Info: ch_intro_to_data/figures/samplingMethodsFigure/cluster
-_multistage.pdf used on input line 547.
-(pdftex.def)             Requested size: 393.87128pt x 399.81027pt.
-File: extraTeX/icons/video_camera.png Graphic file (type png)
-
-<use extraTeX/icons/video_camera.png>
-Package pdftex.def Info: extraTeX/icons/video_camera.png used on input line 561
-.
-(pdftex.def)             Requested size: 17.6978pt x 17.07164pt.
- [22] [23 <./ch_intro_to_data/figures/samplingMethodsFigure/cluster_multistage.
-pdf>]
-<ch_intro_to_data/figures/figureShowingBlocking/figureShowingBlocking.pdf, id=3
-28, 289.08pt x 505.89pt>
-File: ch_intro_to_data/figures/figureShowingBlocking/figureShowingBlocking.pdf 
-Graphic file (type pdf)
-
-<use ch_intro_to_data/figures/figureShowingBlocking/figureShowingBlocking.pdf>
-Package pdftex.def Info: ch_intro_to_data/figures/figureShowingBlocking/figureS
-howingBlocking.pdf used on input line 577.
-(pdftex.def)             Requested size: 307.2191pt x 537.66118pt.
-
-
-LaTeX Warning: Float too large for page by 11.43369pt on input line 580.
-
-
-LaTeX Warning: Reference `figureShowingBlocking' on page 24 undefined on input 
-line 582.
-
-[24] [25 <./ch_intro_to_data/figures/figureShowingBlocking/figureShowingBlockin
-g.pdf>]
-
-LaTeX Warning: Reference `basicExampleOfStentsAndStrokes' on page 26 undefined 
-on input line 601.
-
-File: extraTeX/icons/video_camera.png Graphic file (type png)
-<use extraTeX/icons/video_camera.png>
-Package pdftex.def Info: extraTeX/icons/video_camera.png used on input line 606
-.
-(pdftex.def)             Requested size: 17.6978pt x 17.07164pt.
-
-
-LaTeX Warning: Reference `dataBasics' on page 26 undefined on input line 609.
-
-
-LaTeX Warning: Hyper reference `county_fed_spendVsPoverty' on page 26 undefined
- on input line 617.
-
-
-LaTeX Warning: Reference `county_fed_spendVsPoverty' on page 26 undefined on in
-put line 617.
-
-
-LaTeX Warning: Reference `email50LinesCharacters' on page 26 undefined on input
- line 617.
-
-
-LaTeX Warning: Reference `email50LinesCharacters' on page 26 undefined on input
- line 617.
-
 [26]
-<ch_intro_to_data/figures/email50LinesCharacters/email50LinesCharacters.pdf, id
-=366, 433.62pt x 237.88875pt>
-File: ch_intro_to_data/figures/email50LinesCharacters/email50LinesCharacters.pd
-f Graphic file (type pdf)
+<ch_intro_to_data_oi_biostat/figures/carsPriceVsWeight/carsPriceVsWeight.pdf, i
+d=510, 433.62pt x 266.9975pt>
+File: ch_intro_to_data_oi_biostat/figures/carsPriceVsWeight/carsPriceVsWeight.p
+df Graphic file (type pdf)
 
-<use ch_intro_to_data/figures/email50LinesCharacters/email50LinesCharacters.pdf
->
-Package pdftex.def Info: ch_intro_to_data/figures/email50LinesCharacters/email5
-0LinesCharacters.pdf used on input line 623.
-(pdftex.def)             Requested size: 315.09822pt x 172.87328pt.
-
-
-LaTeX Warning: Reference `email50LinesCharacters' on page 27 undefined on input
- line 630.
-
-
-LaTeX Warning: Reference `carsPriceVsWeight' on page 27 undefined on input line
- 637.
-
-
-LaTeX Warning: Hyper reference `county_fed_spendVsPoverty' on page 27 undefined
- on input line 638.
-
-
-LaTeX Warning: Reference `county_fed_spendVsPoverty' on page 27 undefined on in
-put line 638.
-
-
-LaTeX Warning: Reference `email50LinesCharacters' on page 27 undefined on input
- line 638.
-
-
-<ch_intro_to_data/figures/carsPriceVsWeight/carsPriceVsWeight.pdf, id=370, 433.
-62pt x 266.9975pt>
-File: ch_intro_to_data/figures/carsPriceVsWeight/carsPriceVsWeight.pdf Graphic 
-file (type pdf)
-
-<use ch_intro_to_data/figures/carsPriceVsWeight/carsPriceVsWeight.pdf>
-Package pdftex.def Info: ch_intro_to_data/figures/carsPriceVsWeight/carsPriceVs
-Weight.pdf used on input line 642.
+<use ch_intro_to_data_oi_biostat/figures/carsPriceVsWeight/carsPriceVsWeight.pd
+f>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/carsPriceVsWeight/
+carsPriceVsWeight.pdf used on input line 633.
 (pdftex.def)             Requested size: 315.09822pt x 194.02654pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[27 <./ch_intro_to_data/figures/email50LinesCharacters/email50LinesCharacters.p
-df>]
 
-LaTeX Warning: Reference `emailCharactersDotPlot' on page 28 undefined on input
- line 656.
+<ch_intro_to_data_oi_biostat/figures/emailCharactersDotPlot/emailCharactersDotP
+lot.pdf, id=514, 542.025pt x 90.3375pt>
+File: ch_intro_to_data_oi_biostat/figures/emailCharactersDotPlot/emailCharacter
+sDotPlot.pdf Graphic file (type pdf)
 
-
-LaTeX Warning: Reference `emailCharactersDotPlotStacked' on page 28 undefined o
-n input line 656.
-
-
-<ch_intro_to_data/figures/emailCharactersDotPlot/emailCharactersDotPlot.pdf, id
-=395, 542.025pt x 90.3375pt>
-File: ch_intro_to_data/figures/emailCharactersDotPlot/emailCharactersDotPlot.pd
-f Graphic file (type pdf)
-
-<use ch_intro_to_data/figures/emailCharactersDotPlot/emailCharactersDotPlot.pdf
->
-Package pdftex.def Info: ch_intro_to_data/figures/emailCharactersDotPlot/emailC
-haractersDotPlot.pdf used on input line 660.
+<use ch_intro_to_data_oi_biostat/figures/emailCharactersDotPlot/emailCharacters
+DotPlot.pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/emailCharactersDot
+Plot/emailCharactersDotPlot.pdf used on input line 651.
 (pdftex.def)             Requested size: 393.87128pt x 65.64668pt.
-
-<ch_intro_to_data/figures/emailCharactersDotPlot/emailCharactersDotPlotStacked.
-pdf, id=396, 361.35pt x 144.54pt>
-File: ch_intro_to_data/figures/emailCharactersDotPlot/emailCharactersDotPlotSta
-cked.pdf Graphic file (type pdf)
-
-<use ch_intro_to_data/figures/emailCharactersDotPlot/emailCharactersDotPlotStac
-ked.pdf>
-Package pdftex.def Info: ch_intro_to_data/figures/emailCharactersDotPlot/emailC
-haractersDotPlotStacked.pdf used on input line 667.
-(pdftex.def)             Requested size: 283.5878pt x 113.43546pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Reference `emailCharactersDotPlot' on page 28 undefined on input
- line 677.
+<ch_intro_to_data_oi_biostat/figures/emailCharactersDotPlot/emailCharactersDotP
+lotStacked.pdf, id=515, 361.35pt x 144.54pt>
+File: ch_intro_to_data_oi_biostat/figures/emailCharactersDotPlot/emailCharacter
+sDotPlotStacked.pdf Graphic file (type pdf)
+
+<use ch_intro_to_data_oi_biostat/figures/emailCharactersDotPlot/emailCharacters
+DotPlotStacked.pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/emailCharactersDot
+Plot/emailCharactersDotPlotStacked.pdf used on input line 658.
+(pdftex.def)             Requested size: 283.5878pt x 113.43546pt.
 
 
-LaTeX Warning: Reference `emailCharactersDotPlotStacked' on page 28 undefined o
-n input line 677.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 685--686
+[27 <./ch_intro_to_data_oi_biostat/figures/email50LinesCharacters/email50LinesC
+haracters.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 676--677
 
  []
 
+[28 <./ch_intro_to_data_oi_biostat/figures/carsPriceVsWeight/carsPriceVsWeight.
+pdf> <./ch_intro_to_data_oi_biostat/figures/emailCharactersDotPlot/emailCharact
+ersDotPlot.pdf>] [29 <./ch_intro_to_data_oi_biostat/figures/emailCharactersDotP
+lot/emailCharactersDotPlotStacked.pdf>]
+<ch_intro_to_data_oi_biostat/figures/email50NumCharHist/email50NumCharHist.pdf,
+ id=597, 436.63126pt x 223.83624pt>
+File: ch_intro_to_data_oi_biostat/figures/email50NumCharHist/email50NumCharHist
+.pdf Graphic file (type pdf)
 
-Underfull \vbox (badness 3568) has occurred while \output is active []
-
- [28 <./ch_intro_to_data/figures/carsPriceVsWeight/carsPriceVsWeight.pdf> <./ch
-_intro_to_data/figures/emailCharactersDotPlot/emailCharactersDotPlot.pdf>]
-
-LaTeX Warning: Reference `sampleMeanEquation' on page 29 undefined on input lin
-e 693.
-
-
-LaTeX Warning: Reference `meanEquation' on page 29 undefined on input line 693.
-
-
-
-LaTeX Warning: Reference `foundationsForInference' on page 29 undefined on inpu
-t line 703.
-
-[29 <./ch_intro_to_data/figures/emailCharactersDotPlot/emailCharactersDotPlotSt
-acked.pdf>]
-
-LaTeX Warning: Reference `wtdMeanOfIncome' on page 30 undefined on input line 7
-10.
-
-
-LaTeX Warning: Reference `binnedNumCharTable' on page 30 undefined on input lin
-e 718.
-
-
-LaTeX Warning: Reference `email50NumCharHist' on page 30 undefined on input lin
-e 718.
-
-
-LaTeX Warning: Reference `emailCharactersDotPlotStacked' on page 30 undefined o
-n input line 718.
-
-
-<ch_intro_to_data/figures/email50NumCharHist/email50NumCharHist.pdf, id=447, 43
-6.63126pt x 223.83624pt>
-File: ch_intro_to_data/figures/email50NumCharHist/email50NumCharHist.pdf Graphi
-c file (type pdf)
-
-<use ch_intro_to_data/figures/email50NumCharHist/email50NumCharHist.pdf>
-Package pdftex.def Info: ch_intro_to_data/figures/email50NumCharHist/email50Num
-CharHist.pdf used on input line 736.
+<use ch_intro_to_data_oi_biostat/figures/email50NumCharHist/email50NumCharHist.
+pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/email50NumCharHist
+/email50NumCharHist.pdf used on input line 727.
 (pdftex.def)             Requested size: 322.97733pt x 165.57132pt.
-
-
-LaTeX Warning: Reference `email50NumCharHist' on page 30 undefined on input lin
-e 743.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 748--749
+ [30 <./ch_intro_to_data_oi_biostat/figures/email50NumCharHist/email50NumCharHi
+st.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 739--740
 
  []
 
-[30]
 
-LaTeX Warning: Reference `emailCharactersDotPlot' on page 31 undefined on input
- line 752.
+<ch_intro_to_data_oi_biostat/figures/singleBiMultiModalPlots/singleBiMultiModal
+Plots.pdf, id=619, 418.56375pt x 144.54pt>
+File: ch_intro_to_data_oi_biostat/figures/singleBiMultiModalPlots/singleBiMulti
+ModalPlots.pdf Graphic file (type pdf)
 
-
-LaTeX Warning: Reference `emailCharactersDotPlotStacked' on page 31 undefined o
-n input line 752.
-
-
-LaTeX Warning: Reference `singleBiMultiModalPlots' on page 31 undefined on inpu
-t line 761.
-
-
-<ch_intro_to_data/figures/singleBiMultiModalPlots/singleBiMultiModalPlots.pdf, 
-id=461, 418.56375pt x 144.54pt>
-File: ch_intro_to_data/figures/singleBiMultiModalPlots/singleBiMultiModalPlots.
-pdf Graphic file (type pdf)
-
-<use ch_intro_to_data/figures/singleBiMultiModalPlots/singleBiMultiModalPlots.p
-df>
-Package pdftex.def Info: ch_intro_to_data/figures/singleBiMultiModalPlots/singl
-eBiMultiModalPlots.pdf used on input line 765.
+<use ch_intro_to_data_oi_biostat/figures/singleBiMultiModalPlots/singleBiMultiM
+odalPlots.pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/singleBiMultiModal
+Plots/singleBiMultiModalPlots.pdf used on input line 756.
 (pdftex.def)             Requested size: 393.87128pt x 136.01096pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Reference `email50NumCharHist' on page 31 undefined on input lin
-e 771.
-
-[31 <./ch_intro_to_data/figures/email50NumCharHist/email50NumCharHist.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 779--780
+Underfull \hbox (badness 10000) in paragraph at lines 770--771
 
  []
 
-[32 <./ch_intro_to_data/figures/singleBiMultiModalPlots/singleBiMultiModalPlots
-.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 815--816
+
+Underfull \vbox (badness 2302) has occurred while \output is active []
+
+ [31]
+Underfull \vbox (badness 4144) has occurred while \output is active []
+
+ [32 <./ch_intro_to_data_oi_biostat/figures/singleBiMultiModalPlots/singleBiMul
+tiModalPlots.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 806--807
 
  []
 
@@ -1508,720 +1313,330 @@ Underfull \hbox (badness 10000) in paragraph at lines 815--816
 LaTeX Warning: Marginpar on page 33 moved.
 
 
-<ch_intro_to_data/figures/sdAsRuleForEmailNumChar/sdAsRuleForEmailNumChar.pdf, 
-id=496, 433.62pt x 108.405pt>
-File: ch_intro_to_data/figures/sdAsRuleForEmailNumChar/sdAsRuleForEmailNumChar.
-pdf Graphic file (type pdf)
+<ch_intro_to_data_oi_biostat/figures/sdAsRuleForEmailNumChar/sdAsRuleForEmailNu
+mChar.pdf, id=651, 433.62pt x 108.405pt>
+File: ch_intro_to_data_oi_biostat/figures/sdAsRuleForEmailNumChar/sdAsRuleForEm
+ailNumChar.pdf Graphic file (type pdf)
 
-<use ch_intro_to_data/figures/sdAsRuleForEmailNumChar/sdAsRuleForEmailNumChar.p
-df>
-Package pdftex.def Info: ch_intro_to_data/figures/sdAsRuleForEmailNumChar/sdAsR
-uleForEmailNumChar.pdf used on input line 823.
+<use ch_intro_to_data_oi_biostat/figures/sdAsRuleForEmailNumChar/sdAsRuleForEma
+ilNumChar.pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/sdAsRuleForEmailNu
+mChar/sdAsRuleForEmailNumChar.pdf used on input line 814.
 (pdftex.def)             Requested size: 324.9426pt x 81.23903pt.
 
-
-LaTeX Warning: Reference `sdAsRuleForEmailNumChar' on page 33 undefined on inpu
-t line 829.
-
-
-LaTeX Warning: Reference `severalDiffDistWithSdOf1' on page 33 undefined on inp
-ut line 829.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 829--830
+Underfull \hbox (badness 10000) in paragraph at lines 820--821
 
  []
 
-[33 <./ch_intro_to_data/figures/sdAsRuleForEmailNumChar/sdAsRuleForEmailNumChar
-.pdf>]
-<ch_intro_to_data/figures/severalDiffDistWithSdOf1/severalDiffDistWithSdOf1.pdf
-, id=515, 375.4025pt x 274.02374pt>
-File: ch_intro_to_data/figures/severalDiffDistWithSdOf1/severalDiffDistWithSdOf
-1.pdf Graphic file (type pdf)
 
-<use ch_intro_to_data/figures/severalDiffDistWithSdOf1/severalDiffDistWithSdOf1
-.pdf>
-Package pdftex.def Info: ch_intro_to_data/figures/severalDiffDistWithSdOf1/seve
-ralDiffDistWithSdOf1.pdf used on input line 834.
+Underfull \vbox (badness 3118) has occurred while \output is active []
+
+ [33 <./ch_intro_to_data_oi_biostat/figures/sdAsRuleForEmailNumChar/sdAsRuleFor
+EmailNumChar.pdf>]
+<ch_intro_to_data_oi_biostat/figures/severalDiffDistWithSdOf1/severalDiffDistWi
+thSdOf1.pdf, id=671, 375.4025pt x 274.02374pt>
+File: ch_intro_to_data_oi_biostat/figures/severalDiffDistWithSdOf1/severalDiffD
+istWithSdOf1.pdf Graphic file (type pdf)
+
+<use ch_intro_to_data_oi_biostat/figures/severalDiffDistWithSdOf1/severalDiffDi
+stWithSdOf1.pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/severalDiffDistWit
+hSdOf1/severalDiffDistWithSdOf1.pdf used on input line 825.
 (pdftex.def)             Requested size: 252.07736pt x 184.00471pt.
+ [34 <./ch_intro_to_data_oi_biostat/figures/severalDiffDistWithSdOf1/severalDif
+fDistWithSdOf1.pdf>]
+<ch_intro_to_data_oi_biostat/figures/boxPlotLayoutNumVar/boxPlotLayoutNumVar.pd
+f, id=700, 397.485pt x 274.02374pt>
+File: ch_intro_to_data_oi_biostat/figures/boxPlotLayoutNumVar/boxPlotLayoutNumV
+ar.pdf Graphic file (type pdf)
 
-
-LaTeX Warning: Reference `shapeFirstDiscussed' on page 34 undefined on input li
-ne 840.
-
-
-LaTeX Warning: Reference `severalDiffDistWithSdOf1' on page 34 undefined on inp
-ut line 840.
-
-
-LaTeX Warning: Reference `severalDiffDistWithSdOf1' on page 34 undefined on inp
-ut line 840.
-
-
-LaTeX Warning: Hyper reference `email50NumCharHist' on page 34 undefined on inp
-ut line 843.
-
-
-LaTeX Warning: Reference `email50NumCharHist' on page 34 undefined on input lin
-e 843.
-
-
-LaTeX Warning: Reference `foundationsForInference' on page 34 undefined on inpu
-t line 847.
-
-[34 <./ch_intro_to_data/figures/severalDiffDistWithSdOf1/severalDiffDistWithSdO
-f1.pdf>]
-
-LaTeX Warning: Reference `boxPlotLayoutNumVar' on page 35 undefined on input li
-ne 851.
-
-
-<ch_intro_to_data/figures/boxPlotLayoutNumVar/boxPlotLayoutNumVar.pdf, id=538, 
-397.485pt x 274.02374pt>
-File: ch_intro_to_data/figures/boxPlotLayoutNumVar/boxPlotLayoutNumVar.pdf Grap
-hic file (type pdf)
-
-<use ch_intro_to_data/figures/boxPlotLayoutNumVar/boxPlotLayoutNumVar.pdf>
-Package pdftex.def Info: ch_intro_to_data/figures/boxPlotLayoutNumVar/boxPlotLa
-youtNumVar.pdf used on input line 855.
+<use ch_intro_to_data_oi_biostat/figures/boxPlotLayoutNumVar/boxPlotLayoutNumVa
+r.pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/boxPlotLayoutNumVa
+r/boxPlotLayoutNumVar.pdf used on input line 846.
 (pdftex.def)             Requested size: 279.45082pt x 192.65575pt.
 
-
-LaTeX Warning: Reference `boxPlotLayoutNumVar' on page 35 undefined on input li
-ne 860.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 863--864
+Underfull \hbox (badness 10000) in paragraph at lines 854--855
 
  []
 
 
-LaTeX Warning: Reference `boxPlotLayoutNumVar' on page 35 undefined on input li
-ne 866.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 873--874
+Underfull \hbox (badness 10000) in paragraph at lines 864--865
 
  []
 
-[35 <./ch_intro_to_data/figures/boxPlotLayoutNumVar/boxPlotLayoutNumVar.pdf>]
-
-LaTeX Warning: Reference `boxPlotLayoutNumVar' on page 36 undefined on input li
-ne 880.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 885--886
+[35 <./ch_intro_to_data_oi_biostat/figures/boxPlotLayoutNumVar/boxPlotLayoutNum
+Var.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 876--877
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 896--897
+Underfull \hbox (badness 10000) in paragraph at lines 887--888
 
  []
-
-
-LaTeX Warning: Reference `boxPlotLayoutNumVar' on page 36 undefined on input li
-ne 903.
 
 [36]
 File: extraTeX/icons/video_camera.png Graphic file (type png)
  <use extraTeX/icons/video_camera.png>
-Package pdftex.def Info: extraTeX/icons/video_camera.png used on input line 906
+Package pdftex.def Info: extraTeX/icons/video_camera.png used on input line 897
 .
 (pdftex.def)             Requested size: 13.27454pt x 12.80373pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 906--906
+Underfull \hbox (badness 10000) in paragraph at lines 897--897
 
  []
 
 
-LaTeX Warning: Reference `email50NumCharDotPlotRobustEx' on page 37 undefined o
-n input line 911.
+<ch_intro_to_data_oi_biostat/figures/email50NumCharDotPlotRobustEx/email50NumCh
+arDotPlotRobustEx.pdf, id=743, 507.8975pt x 102.3825pt>
+File: ch_intro_to_data_oi_biostat/figures/email50NumCharDotPlotRobustEx/email50
+NumCharDotPlotRobustEx.pdf Graphic file (type pdf)
 
-
-LaTeX Warning: Reference `robustOrNotTable' on page 37 undefined on input line 
-911.
-
-
-<ch_intro_to_data/figures/email50NumCharDotPlotRobustEx/email50NumCharDotPlotRo
-bustEx.pdf, id=575, 507.8975pt x 102.3825pt>
-File: ch_intro_to_data/figures/email50NumCharDotPlotRobustEx/email50NumCharDotP
-lotRobustEx.pdf Graphic file (type pdf)
-
-<use ch_intro_to_data/figures/email50NumCharDotPlotRobustEx/email50NumCharDotPl
-otRobustEx.pdf>
-Package pdftex.def Info: ch_intro_to_data/figures/email50NumCharDotPlotRobustEx
-/email50NumCharDotPlotRobustEx.pdf used on input line 915.
+<use ch_intro_to_data_oi_biostat/figures/email50NumCharDotPlotRobustEx/email50N
+umCharDotPlotRobustEx.pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/email50NumCharDotP
+lotRobustEx/email50NumCharDotPlotRobustEx.pdf used on input line 906.
 (pdftex.def)             Requested size: 393.87128pt x 79.40028pt.
+ [37 <./ch_intro_to_data_oi_biostat/figures/email50NumCharDotPlotRobustEx/email
+50NumCharDotPlotRobustEx.pdf>]
+<ch_intro_to_data_oi_biostat/figures/histMLBSalaries/histMLBSalariesReg.pdf, id
+=772, 289.08pt x 216.81pt>
+File: ch_intro_to_data_oi_biostat/figures/histMLBSalaries/histMLBSalariesReg.pd
+f Graphic file (type pdf)
 
-
-LaTeX Warning: Reference `robustOrNotTable' on page 37 undefined on input line 
-940.
-
-
-LaTeX Warning: Reference `numCharWhichIsMoreRobust' on page 37 undefined on inp
-ut line 940.
-
-
-LaTeX Warning: Reference `robustOrNotTable' on page 37 undefined on input line 
-945.
-
-[37 <./ch_intro_to_data/figures/email50NumCharDotPlotRobustEx/email50NumCharDot
-PlotRobustEx.pdf>]
-
-LaTeX Warning: Reference `histMLBSalariesReg' on page 38 undefined on input lin
-e 956.
-
-
-<ch_intro_to_data/figures/histMLBSalaries/histMLBSalariesReg.pdf, id=599, 289.0
-8pt x 216.81pt>
-File: ch_intro_to_data/figures/histMLBSalaries/histMLBSalariesReg.pdf Graphic f
-ile (type pdf)
-
-<use ch_intro_to_data/figures/histMLBSalaries/histMLBSalariesReg.pdf>
-Package pdftex.def Info: ch_intro_to_data/figures/histMLBSalaries/histMLBSalari
-esReg.pdf used on input line 963.
+<use ch_intro_to_data_oi_biostat/figures/histMLBSalaries/histMLBSalariesReg.pdf
+>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/histMLBSalaries/hi
+stMLBSalariesReg.pdf used on input line 954.
 (pdftex.def)             Requested size: 181.18343pt x 135.88635pt.
 
-<ch_intro_to_data/figures/histMLBSalaries/histMLBSalariesLog.pdf, id=600, 289.0
-8pt x 216.81pt>
-File: ch_intro_to_data/figures/histMLBSalaries/histMLBSalariesLog.pdf Graphic f
-ile (type pdf)
+<ch_intro_to_data_oi_biostat/figures/histMLBSalaries/histMLBSalariesLog.pdf, id
+=773, 289.08pt x 216.81pt>
+File: ch_intro_to_data_oi_biostat/figures/histMLBSalaries/histMLBSalariesLog.pd
+f Graphic file (type pdf)
 
-<use ch_intro_to_data/figures/histMLBSalaries/histMLBSalariesLog.pdf>
-Package pdftex.def Info: ch_intro_to_data/figures/histMLBSalaries/histMLBSalari
-esLog.pdf used on input line 967.
+<use ch_intro_to_data_oi_biostat/figures/histMLBSalaries/histMLBSalariesLog.pdf
+>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/histMLBSalaries/hi
+stMLBSalariesLog.pdf used on input line 958.
 (pdftex.def)             Requested size: 181.18343pt x 135.88635pt.
-
-
-LaTeX Warning: Reference `sub@histMLBSalariesReg' on page 38 undefined on input
- line 968.
-
-
-LaTeX Warning: Reference `sub@histMLBSalariesLog' on page 38 undefined on input
- line 968.
-
-
-LaTeX Warning: Reference `sub@histMLBSalariesReg' on page 38 undefined on input
- line 968.
-
-
-LaTeX Warning: Reference `sub@histMLBSalariesLog' on page 38 undefined on input
- line 968.
-
-
-LaTeX Warning: Reference `histMLBSalariesLog' on page 38 undefined on input lin
-e 976.
-
-[38 <./ch_intro_to_data/figures/histMLBSalaries/histMLBSalariesReg.pdf> <./ch_i
-ntro_to_data/figures/histMLBSalaries/histMLBSalariesLog.pdf>]
-
-LaTeX Warning: Reference `email50LinesCharactersMod' on page 39 undefined on in
-put line 978.
-
-
-LaTeX Warning: Reference `email50LinesCharacters' on page 39 undefined on input
- line 978.
-
+ [38 <./ch_intro_to_data_oi_biostat/figures/histMLBSalaries/histMLBSalariesReg.
+pdf> <./ch_intro_to_data_oi_biostat/figures/histMLBSalaries/histMLBSalariesLog.
+pdf>]
 
 LaTeX Warning: Reference `linRegrForTwoVar' on page 39 undefined on input line 
-978.
+969.
 
 
-LaTeX Warning: Reference `email50LinesCharactersModLog' on page 39 undefined on
- input line 978.
+<ch_intro_to_data_oi_biostat/figures/email50LinesCharactersMod/email50LinesChar
+actersMod.pdf, id=806, 325.215pt x 237.88875pt>
+File: ch_intro_to_data_oi_biostat/figures/email50LinesCharactersMod/email50Line
+sCharactersMod.pdf Graphic file (type pdf)
 
-
-<ch_intro_to_data/figures/email50LinesCharactersMod/email50LinesCharactersMod.p
-df, id=625, 325.215pt x 237.88875pt>
-File: ch_intro_to_data/figures/email50LinesCharactersMod/email50LinesCharacters
-Mod.pdf Graphic file (type pdf)
-
-<use ch_intro_to_data/figures/email50LinesCharactersMod/email50LinesCharactersM
-od.pdf>
-Package pdftex.def Info: ch_intro_to_data/figures/email50LinesCharactersMod/ema
-il50LinesCharactersMod.pdf used on input line 985.
+<use ch_intro_to_data_oi_biostat/figures/email50LinesCharactersMod/email50Lines
+CharactersMod.pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/email50LinesCharac
+tersMod/email50LinesCharactersMod.pdf used on input line 976.
 (pdftex.def)             Requested size: 185.11998pt x 135.41286pt.
 
-<ch_intro_to_data/figures/email50LinesCharactersMod/email50LinesCharactersModLo
-g.pdf, id=626, 325.215pt x 237.88875pt>
-File: ch_intro_to_data/figures/email50LinesCharactersMod/email50LinesCharacters
-ModLog.pdf Graphic file (type pdf)
+<ch_intro_to_data_oi_biostat/figures/email50LinesCharactersMod/email50LinesChar
+actersModLog.pdf, id=807, 325.215pt x 237.88875pt>
+File: ch_intro_to_data_oi_biostat/figures/email50LinesCharactersMod/email50Line
+sCharactersModLog.pdf Graphic file (type pdf)
 
-<use ch_intro_to_data/figures/email50LinesCharactersMod/email50LinesCharactersM
-odLog.pdf>
-Package pdftex.def Info: ch_intro_to_data/figures/email50LinesCharactersMod/ema
-il50LinesCharactersModLog.pdf used on input line 989.
+<use ch_intro_to_data_oi_biostat/figures/email50LinesCharactersMod/email50Lines
+CharactersModLog.pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/email50LinesCharac
+tersMod/email50LinesCharactersModLog.pdf used on input line 980.
 (pdftex.def)             Requested size: 185.11998pt x 135.41286pt.
 
+<ch_intro_to_data_oi_biostat/figures/countyIntensityMaps/countyFedSpendMap.pdf,
+ id=814, 563.10374pt x 325.215pt>
+File: ch_intro_to_data_oi_biostat/figures/countyIntensityMaps/countyFedSpendMap
+.pdf Graphic file (type pdf)
 
-LaTeX Warning: Reference `sub@email50LinesCharactersMod' on page 39 undefined o
-n input line 990.
-
-
-LaTeX Warning: Reference `sub@email50LinesCharactersModLog' on page 39 undefine
-d on input line 990.
-
-
-LaTeX Warning: Reference `sub@email50LinesCharactersMod' on page 39 undefined o
-n input line 990.
-
-
-LaTeX Warning: Reference `sub@email50LinesCharactersModLog' on page 39 undefine
-d on input line 990.
-
-
-LaTeX Warning: Reference `countyIntensityMaps1' on page 39 undefined on input l
-ine 1003.
-
-
-LaTeX Warning: Reference `countyIntensityMaps2' on page 39 undefined on input l
-ine 1003.
-
-
-<ch_intro_to_data/figures/countyIntensityMaps/countyFedSpendMap.pdf, id=627, 56
-3.10374pt x 325.215pt>
-File: ch_intro_to_data/figures/countyIntensityMaps/countyFedSpendMap.pdf Graphi
-c file (type pdf)
-
-<use ch_intro_to_data/figures/countyIntensityMaps/countyFedSpendMap.pdf>
-Package pdftex.def Info: ch_intro_to_data/figures/countyIntensityMaps/countyFed
-SpendMap.pdf used on input line 1007.
+<use ch_intro_to_data_oi_biostat/figures/countyIntensityMaps/countyFedSpendMap.
+pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/countyIntensityMap
+s/countyFedSpendMap.pdf used on input line 998.
 (pdftex.def)             Requested size: 393.87128pt x 227.47527pt.
 
-<ch_intro_to_data/figures/countyIntensityMaps/countyPovertyMap.pdf, id=628, 563
-.10374pt x 325.215pt>
-File: ch_intro_to_data/figures/countyIntensityMaps/countyPovertyMap.pdf Graphic
- file (type pdf)
-
-<use ch_intro_to_data/figures/countyIntensityMaps/countyPovertyMap.pdf>
-Package pdftex.def Info: ch_intro_to_data/figures/countyIntensityMaps/countyPov
-ertyMap.pdf used on input line 1008.
-(pdftex.def)             Requested size: 393.87128pt x 227.47527pt.
-
-
-LaTeX Warning: Reference `sub@countyFedSpendMap' on page 39 undefined on input 
-line 1009.
-
-
-LaTeX Warning: Reference `sub@countyPovertyMap' on page 39 undefined on input l
-ine 1009.
-
-
-LaTeX Warning: Reference `sub@countyFedSpendMap' on page 39 undefined on input 
-line 1009.
-
-
-LaTeX Warning: Reference `sub@countyPovertyMap' on page 39 undefined on input l
-ine 1009.
-
-
-<ch_intro_to_data/figures/countyIntensityMaps/countyHomeownershipMap.pdf, id=62
-9, 563.10374pt x 325.215pt>
-File: ch_intro_to_data/figures/countyIntensityMaps/countyHomeownershipMap.pdf G
-raphic file (type pdf)
-
-<use ch_intro_to_data/figures/countyIntensityMaps/countyHomeownershipMap.pdf>
-Package pdftex.def Info: ch_intro_to_data/figures/countyIntensityMaps/countyHom
-eownershipMap.pdf used on input line 1015.
-(pdftex.def)             Requested size: 393.87128pt x 227.47527pt.
-
-<ch_intro_to_data/figures/countyIntensityMaps/countyMedIncomeMap.pdf, id=630, 5
-63.10374pt x 325.215pt>
-File: ch_intro_to_data/figures/countyIntensityMaps/countyMedIncomeMap.pdf Graph
-ic file (type pdf)
-
-<use ch_intro_to_data/figures/countyIntensityMaps/countyMedIncomeMap.pdf>
-Package pdftex.def Info: ch_intro_to_data/figures/countyIntensityMaps/countyMed
-IncomeMap.pdf used on input line 1016.
-(pdftex.def)             Requested size: 393.87128pt x 227.47527pt.
-
-
-LaTeX Warning: Reference `sub@countyHomeownershipMap' on page 39 undefined on i
-nput line 1017.
-
-
-LaTeX Warning: Reference `sub@countyMedIncomeMap' on page 39 undefined on input
- line 1017.
-
-
-LaTeX Warning: Reference `sub@countyHomeownershipMap' on page 39 undefined on i
-nput line 1017.
-
-
-LaTeX Warning: Reference `sub@countyMedIncomeMap' on page 39 undefined on input
- line 1017.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [39 <./ch_intro_to_data/figures/email50LinesCharactersMod/email50LinesCharacte
-rsMod.pdf> <./ch_intro_to_data/figures/email50LinesCharactersMod/email50LinesCh
-aractersModLog.pdf>] [40 <./ch_intro_to_data/figures/countyIntensityMaps/county
-FedSpendMap.pdf> <./ch_intro_to_data/figures/countyIntensityMaps/countyPovertyM
-ap.pdf>]
-[41 <./ch_intro_to_data/figures/countyIntensityMaps/countyHomeownershipMap.pdf>
- <./ch_intro_to_data/figures/countyIntensityMaps/countyMedIncomeMap.pdf>]
-
-LaTeX Warning: Reference `countyMedIncomeMap' on page 42 undefined on input lin
-e 1030.
-
-[42]
-File: extraTeX/icons/video_camera.png Graphic file (type png)
- <use extraTeX/icons/video_camera.png>
-Package pdftex.def Info: extraTeX/icons/video_camera.png used on input line 104
-0.
-(pdftex.def)             Requested size: 17.6978pt x 17.07164pt.
-
-
-LaTeX Warning: Reference `emailSpamNumberTableTotals' on page 43 undefined on i
-nput line 1050.
-
-
-LaTeX Warning: Reference `emailNumberTable' on page 43 undefined on input line 
-1052.
-
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 1057.
-
-
-LaTeX Warning: Reference `emailNumberBarPlot' on page 43 undefined on input lin
-e 1087.
-
-
-<ch_intro_to_data/figures/emailNumberBarPlot/emailNumberBarPlot.pdf, id=704, 50
-5.89pt x 216.81pt>
-File: ch_intro_to_data/figures/emailNumberBarPlot/emailNumberBarPlot.pdf Graphi
-c file (type pdf)
-
-<use ch_intro_to_data/figures/emailNumberBarPlot/emailNumberBarPlot.pdf>
-Package pdftex.def Info: ch_intro_to_data/figures/emailNumberBarPlot/emailNumbe
-rBarPlot.pdf used on input line 1091.
-(pdftex.def)             Requested size: 354.48174pt x 151.92474pt.
-
-
-LaTeX Warning: Reference `rowPropSpamNumber' on page 43 undefined on input line
- 1099.
-
-
-LaTeX Warning: Reference `emailSpamNumberTableTotals' on page 43 undefined on i
-nput line 1099.
-
-
-LaTeX Warning: Reference `colPropSpamNumber' on page 43 undefined on input line
- 1121.
-
-[43]
-
-LaTeX Warning: Reference `rowPropSpamNumber' on page 44 undefined on input line
- 1142.
-
-
-LaTeX Warning: Reference `rowPropSpamNumber' on page 44 undefined on input line
- 1145.
-
-
-LaTeX Warning: Reference `colPropSpamNumber' on page 44 undefined on input line
- 1145.
-
-
-LaTeX Warning: Reference `rowPropSpamNumber' on page 44 undefined on input line
- 1149.
-
-
-LaTeX Warning: Reference `colPropSpamNumber' on page 44 undefined on input line
- 1149.
-
-[44 <./ch_intro_to_data/figures/emailNumberBarPlot/emailNumberBarPlot.pdf>]
-
-LaTeX Warning: Reference `emailSpamHTMLTableTotals' on page 45 undefined on inp
-ut line 1152.
-
-
-LaTeX Warning: Reference `emailSpamHTMLTableTotals' on page 45 undefined on inp
-ut line 1152.
-
-
-LaTeX Warning: Reference `multipleRegressionAndANOVA' on page 45 undefined on i
-nput line 1155.
-
-
-LaTeX Warning: Reference `weighingRowColumnProportions' on page 45 undefined on
- input line 1175.
-
-
-LaTeX Warning: Reference `rowPropSpamNumber' on page 45 undefined on input line
- 1178.
-
-
-LaTeX Warning: Reference `colPropSpamNumber' on page 45 undefined on input line
- 1178.
-
-
-LaTeX Warning: Reference `colPropSpamNumber' on page 45 undefined on input line
- 1178.
-
-[45]
-
-LaTeX Warning: Reference `colPropSpamNumber' on page 46 undefined on input line
- 1189.
-
-
-LaTeX Warning: Reference `emailSpamNumberSegBar' on page 46 undefined on input 
-line 1189.
-
-
-LaTeX Warning: Reference `colPropSpamNumber' on page 46 undefined on input line
- 1189.
-
-
-LaTeX Warning: Reference `emailSpamNumberSegBarSta' on page 46 undefined on inp
-ut line 1189.
-
-
-<ch_intro_to_data/figures/emailSpamNumberSegBar/emailSpamNumberSegBar.pdf, id=7
-43, 325.215pt x 252.945pt>
-File: ch_intro_to_data/figures/emailSpamNumberSegBar/emailSpamNumberSegBar.pdf 
-Graphic file (type pdf)
-
-<use ch_intro_to_data/figures/emailSpamNumberSegBar/emailSpamNumberSegBar.pdf>
-Package pdftex.def Info: ch_intro_to_data/figures/emailSpamNumberSegBar/emailSp
-amNumberSegBar.pdf used on input line 1196.
-(pdftex.def)             Requested size: 181.18343pt x 140.92262pt.
-
-<ch_intro_to_data/figures/emailSpamNumberSegBar/emailSpamNumberSegBarSta.pdf, i
-d=744, 325.215pt x 252.945pt>
-File: ch_intro_to_data/figures/emailSpamNumberSegBar/emailSpamNumberSegBarSta.p
-df Graphic file (type pdf)
-
-<use ch_intro_to_data/figures/emailSpamNumberSegBar/emailSpamNumberSegBarSta.pd
-f>
-Package pdftex.def Info: ch_intro_to_data/figures/emailSpamNumberSegBar/emailSp
-amNumberSegBarSta.pdf used on input line 1200.
-(pdftex.def)             Requested size: 181.18343pt x 140.92262pt.
-
-
-LaTeX Warning: Reference `sub@emailSpamNumberSegBar' on page 46 undefined on in
-put line 1201.
-
-
-LaTeX Warning: Reference `sub@emailSpamNumberSegBarSta' on page 46 undefined on
- input line 1201.
-
-
-LaTeX Warning: Reference `sub@emailSpamNumberSegBar' on page 46 undefined on in
-put line 1201.
-
-
-LaTeX Warning: Reference `sub@emailSpamNumberSegBar' on page 46 undefined on in
-put line 1201.
-
-
-LaTeX Warning: Reference `sub@emailSpamNumberSegBarSta' on page 46 undefined on
- input line 1201.
-
-
-LaTeX Warning: Reference `sub@emailSpamNumberSegBar' on page 46 undefined on in
-put line 1201.
-
-
-LaTeX Warning: Reference `emailSpamNumberSegBar' on page 46 undefined on input 
-line 1206.
-
-
-LaTeX Warning: Reference `emailSpamNumberSegBarSta' on page 46 undefined on inp
-ut line 1206.
-
-
-LaTeX Warning: Reference `emailSpamNumberSegBarSta' on page 46 undefined on inp
-ut line 1209.
-
-
-LaTeX Warning: Reference `emailSpamNumberSegBar' on page 46 undefined on input 
-line 1209.
-
-
-<ch_intro_to_data/figures/emailSpamNumberMosaicPlot/emailNumberMosaic.pdf, id=7
-45, 189.70876pt x 162.6075pt>
-File: ch_intro_to_data/figures/emailSpamNumberMosaicPlot/emailNumberMosaic.pdf 
-Graphic file (type pdf)
-
-<use ch_intro_to_data/figures/emailSpamNumberMosaicPlot/emailNumberMosaic.pdf>
-Package pdftex.def Info: ch_intro_to_data/figures/emailSpamNumberMosaicPlot/ema
-ilNumberMosaic.pdf used on input line 1218.
-(pdftex.def)             Requested size: 154.94978pt x 132.81548pt.
-
-<ch_intro_to_data/figures/emailSpamNumberMosaicPlot/emailSpamNumberMosaic.pdf, 
-id=746, 216.81pt x 162.6075pt>
-File: ch_intro_to_data/figures/emailSpamNumberMosaicPlot/emailSpamNumberMosaic.
+<ch_intro_to_data_oi_biostat/figures/countyIntensityMaps/countyPovertyMap.pdf, 
+id=815, 563.10374pt x 325.215pt>
+File: ch_intro_to_data_oi_biostat/figures/countyIntensityMaps/countyPovertyMap.
 pdf Graphic file (type pdf)
 
-<use ch_intro_to_data/figures/emailSpamNumberMosaicPlot/emailSpamNumberMosaic.p
+<use ch_intro_to_data_oi_biostat/figures/countyIntensityMaps/countyPovertyMap.p
 df>
-Package pdftex.def Info: ch_intro_to_data/figures/emailSpamNumberMosaicPlot/ema
-ilSpamNumberMosaic.pdf used on input line 1222.
-(pdftex.def)             Requested size: 181.18343pt x 135.89462pt.
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/countyIntensityMap
+s/countyPovertyMap.pdf used on input line 999.
+(pdftex.def)             Requested size: 393.87128pt x 227.47527pt.
 
+<ch_intro_to_data_oi_biostat/figures/countyIntensityMaps/countyHomeownershipMap
+.pdf, id=820, 563.10374pt x 325.215pt>
+File: ch_intro_to_data_oi_biostat/figures/countyIntensityMaps/countyHomeownersh
+ipMap.pdf Graphic file (type pdf)
 
-LaTeX Warning: Reference `emailNumberMosaic' on page 46 undefined on input line
- 1227.
+<use ch_intro_to_data_oi_biostat/figures/countyIntensityMaps/countyHomeownershi
+pMap.pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/countyIntensityMap
+s/countyHomeownershipMap.pdf used on input line 1006.
+(pdftex.def)             Requested size: 393.87128pt x 227.47527pt.
 
-[46 <./ch_intro_to_data/figures/emailSpamNumberSegBar/emailSpamNumberSegBar.pdf
-> <./ch_intro_to_data/figures/emailSpamNumberSegBar/emailSpamNumberSegBarSta.pd
-f>]
-<ch_intro_to_data/figures/emailSpamNumberMosaicPlot/emailSpamNumberMosaicRev.pd
-f, id=767, 216.81pt x 162.6075pt>
-File: ch_intro_to_data/figures/emailSpamNumberMosaicPlot/emailSpamNumberMosaicR
-ev.pdf Graphic file (type pdf)
+<ch_intro_to_data_oi_biostat/figures/countyIntensityMaps/countyMedIncomeMap.pdf
+, id=821, 563.10374pt x 325.215pt>
+File: ch_intro_to_data_oi_biostat/figures/countyIntensityMaps/countyMedIncomeMa
+p.pdf Graphic file (type pdf)
 
-<use ch_intro_to_data/figures/emailSpamNumberMosaicPlot/emailSpamNumberMosaicRe
-v.pdf>
-Package pdftex.def Info: ch_intro_to_data/figures/emailSpamNumberMosaicPlot/ema
-ilSpamNumberMosaicRev.pdf used on input line 1231.
-(pdftex.def)             Requested size: 173.30432pt x 129.98444pt.
+<use ch_intro_to_data_oi_biostat/figures/countyIntensityMaps/countyMedIncomeMap
+.pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/countyIntensityMap
+s/countyMedIncomeMap.pdf used on input line 1007.
+(pdftex.def)             Requested size: 393.87128pt x 227.47527pt.
 
+Underfull \vbox (badness 4048) has occurred while \output is active []
 
-LaTeX Warning: Reference `emailSpamNumberMosaic' on page 47 undefined on input 
-line 1236.
-
-
-LaTeX Warning: Reference `emailSpamNumberTableTotals' on page 47 undefined on i
-nput line 1239.
-
-
-LaTeX Warning: Reference `emailSpamNumberMosaicRev' on page 47 undefined on inp
-ut line 1239.
-
-
-LaTeX Warning: Reference `emailSpamNumberMosaic' on page 47 undefined on input 
-line 1239.
-
-[47 <./ch_intro_to_data/figures/emailSpamNumberMosaicPlot/emailNumberMosaic.pdf
-> <./ch_intro_to_data/figures/emailSpamNumberMosaicPlot/emailSpamNumberMosaic.p
-df> <./ch_intro_to_data/figures/emailSpamNumberMosaicPlot/emailSpamNumberMosaic
-Rev.pdf>]
-
-LaTeX Warning: Hyper reference `emailNumberPieChart' on page 48 undefined on in
-put line 1243.
-
-
-LaTeX Warning: Reference `emailNumberPieChart' on page 48 undefined on input li
-ne 1243.
-
-
-<ch_intro_to_data/figures/emailNumberPieChart/emailNumberPieChart.pdf, id=791, 
-542.025pt x 289.08pt>
-File: ch_intro_to_data/figures/emailNumberPieChart/emailNumberPieChart.pdf Grap
-hic file (type pdf)
-
-<use ch_intro_to_data/figures/emailNumberPieChart/emailNumberPieChart.pdf>
-Package pdftex.def Info: ch_intro_to_data/figures/emailNumberPieChart/emailNumb
-erPieChart.pdf used on input line 1247.
-(pdftex.def)             Requested size: 393.87128pt x 210.06944pt.
-
-
-LaTeX Warning: Reference `countyIncomeSplitByPopGainTable' on page 48 undefined
- on input line 1263.
-
-
-LaTeX Warning: Reference `countyIncomeSplitByPopGain' on page 48 undefined on i
-nput line 1293.
-
-
-<ch_intro_to_data/figures/countyIncomeSplitByPopGain/countyIncomeSplitByPopGain
-.pdf, id=792, 542.025pt x 289.08pt>
-File: ch_intro_to_data/figures/countyIncomeSplitByPopGain/countyIncomeSplitByPo
-pGain.pdf Graphic file (type pdf)
-
-<use ch_intro_to_data/figures/countyIncomeSplitByPopGain/countyIncomeSplitByPop
-Gain.pdf>
-Package pdftex.def Info: ch_intro_to_data/figures/countyIncomeSplitByPopGain/co
-untyIncomeSplitByPopGain.pdf used on input line 1297.
-(pdftex.def)             Requested size: 393.87128pt x 210.06944pt.
-
-
-LaTeX Warning: Reference `countyIncomeSplitByPopGain' on page 48 undefined on i
-nput line 1302.
-
-
-LaTeX Warning: Reference `countyIncomeSplitByPopGain' on page 48 undefined on i
-nput line 1305.
-
-[48 <./ch_intro_to_data/figures/emailNumberPieChart/emailNumberPieChart.pdf>]
-[49 <./ch_intro_to_data/figures/countyIncomeSplitByPopGain/countyIncomeSplitByP
-opGain.pdf>]
-
-LaTeX Warning: Reference `countyIncomeSplitByPopGain' on page 50 undefined on i
-nput line 1309.
-
+ [39 <./ch_intro_to_data_oi_biostat/figures/email50LinesCharactersMod/email50Li
+nesCharactersMod.pdf> <./ch_intro_to_data_oi_biostat/figures/email50LinesCharac
+tersMod/email50LinesCharactersModLog.pdf>] [40 <./ch_intro_to_data_oi_biostat/f
+igures/countyIntensityMaps/countyFedSpendMap.pdf> <./ch_intro_to_data_oi_biosta
+t/figures/countyIntensityMaps/countyPovertyMap.pdf>] [41 <./ch_intro_to_data_oi
+_biostat/figures/countyIntensityMaps/countyHomeownershipMap.pdf> <./ch_intro_to
+_data_oi_biostat/figures/countyIntensityMaps/countyMedIncomeMap.pdf>] [42]
 File: extraTeX/icons/video_camera.png Graphic file (type png)
+
 <use extraTeX/icons/video_camera.png>
-Package pdftex.def Info: extraTeX/icons/video_camera.png used on input line 131
-6.
+Package pdftex.def Info: extraTeX/icons/video_camera.png used on input line 103
+1.
 (pdftex.def)             Requested size: 17.6978pt x 17.07164pt.
- [50]
-
-LaTeX Warning: Reference `discriminationResults' on page 51 undefined on input 
-line 1340.
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 1048.
 
 
-LaTeX Warning: Reference `discriminationResultsWhatIsConvincingEvidence' on pag
-e 51 undefined on input line 1363.
+<ch_intro_to_data_oi_biostat/figures/emailNumberBarPlot/emailNumberBarPlot.pdf,
+ id=903, 505.89pt x 216.81pt>
+File: ch_intro_to_data_oi_biostat/figures/emailNumberBarPlot/emailNumberBarPlot
+.pdf Graphic file (type pdf)
 
+<use ch_intro_to_data_oi_biostat/figures/emailNumberBarPlot/emailNumberBarPlot.
+pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/emailNumberBarPlot
+/emailNumberBarPlot.pdf used on input line 1082.
+(pdftex.def)             Requested size: 354.48174pt x 151.92474pt.
+ [43] [44 <./ch_intro_to_data_oi_biostat/figures/emailNumberBarPlot/emailNumber
+BarPlot.pdf>]
 
-LaTeX Warning: Reference `discriminationResults' on page 51 undefined on input 
-line 1363.
+LaTeX Warning: Reference `multipleRegressionAndANOVA' on page 45 undefined on i
+nput line 1146.
 
-[51]
+[45]
+<ch_intro_to_data_oi_biostat/figures/emailSpamNumberSegBar/emailSpamNumberSegBa
+r.pdf, id=959, 325.215pt x 252.945pt>
+File: ch_intro_to_data_oi_biostat/figures/emailSpamNumberSegBar/emailSpamNumber
+SegBar.pdf Graphic file (type pdf)
 
-LaTeX Warning: Reference `discriminationResults' on page 52 undefined on input 
-line 1379.
+<use ch_intro_to_data_oi_biostat/figures/emailSpamNumberSegBar/emailSpamNumberS
+egBar.pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/emailSpamNumberSeg
+Bar/emailSpamNumberSegBar.pdf used on input line 1187.
+(pdftex.def)             Requested size: 181.18343pt x 140.92262pt.
 
+<ch_intro_to_data_oi_biostat/figures/emailSpamNumberSegBar/emailSpamNumberSegBa
+rSta.pdf, id=960, 325.215pt x 252.945pt>
+File: ch_intro_to_data_oi_biostat/figures/emailSpamNumberSegBar/emailSpamNumber
+SegBarSta.pdf Graphic file (type pdf)
 
-LaTeX Warning: Reference `discriminationRand1' on page 52 undefined on input li
-ne 1381.
+<use ch_intro_to_data_oi_biostat/figures/emailSpamNumberSegBar/emailSpamNumberS
+egBarSta.pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/emailSpamNumberSeg
+Bar/emailSpamNumberSegBarSta.pdf used on input line 1191.
+(pdftex.def)             Requested size: 181.18343pt x 140.92262pt.
 
+<ch_intro_to_data_oi_biostat/figures/emailSpamNumberMosaicPlot/emailNumberMosai
+c.pdf, id=971, 189.70876pt x 162.6075pt>
+File: ch_intro_to_data_oi_biostat/figures/emailSpamNumberMosaicPlot/emailNumber
+Mosaic.pdf Graphic file (type pdf)
 
-LaTeX Warning: Reference `discriminationRand1' on page 52 undefined on input li
-ne 1400.
+<use ch_intro_to_data_oi_biostat/figures/emailSpamNumberMosaicPlot/emailNumberM
+osaic.pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/emailSpamNumberMos
+aicPlot/emailNumberMosaic.pdf used on input line 1209.
+(pdftex.def)             Requested size: 154.94978pt x 132.81548pt.
 
+<ch_intro_to_data_oi_biostat/figures/emailSpamNumberMosaicPlot/emailSpamNumberM
+osaic.pdf, id=972, 216.81pt x 162.6075pt>
+File: ch_intro_to_data_oi_biostat/figures/emailSpamNumberMosaicPlot/emailSpamNu
+mberMosaic.pdf Graphic file (type pdf)
 
+<use ch_intro_to_data_oi_biostat/figures/emailSpamNumberMosaicPlot/emailSpamNum
+berMosaic.pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/emailSpamNumberMos
+aicPlot/emailSpamNumberMosaic.pdf used on input line 1213.
+(pdftex.def)             Requested size: 181.18343pt x 135.89462pt.
+ [46 <./ch_intro_to_data_oi_biostat/figures/emailSpamNumberSegBar/emailSpamNumb
+erSegBar.pdf> <./ch_intro_to_data_oi_biostat/figures/emailSpamNumberSegBar/emai
+lSpamNumberSegBarSta.pdf>]
+<ch_intro_to_data_oi_biostat/figures/emailSpamNumberMosaicPlot/emailSpamNumberM
+osaicRev.pdf, id=994, 216.81pt x 162.6075pt>
+File: ch_intro_to_data_oi_biostat/figures/emailSpamNumberMosaicPlot/emailSpamNu
+mberMosaicRev.pdf Graphic file (type pdf)
+
+<use ch_intro_to_data_oi_biostat/figures/emailSpamNumberMosaicPlot/emailSpamNum
+berMosaicRev.pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/emailSpamNumberMos
+aicPlot/emailSpamNumberMosaicRev.pdf used on input line 1222.
+(pdftex.def)             Requested size: 173.30432pt x 129.98444pt.
+ [47 <./ch_intro_to_data_oi_biostat/figures/emailSpamNumberMosaicPlot/emailNumb
+erMosaic.pdf> <./ch_intro_to_data_oi_biostat/figures/emailSpamNumberMosaicPlot/
+emailSpamNumberMosaic.pdf> <./ch_intro_to_data_oi_biostat/figures/emailSpamNumb
+erMosaicPlot/emailSpamNumberMosaicRev.pdf>]
+<ch_intro_to_data_oi_biostat/figures/emailNumberPieChart/emailNumberPieChart.pd
+f, id=1023, 542.025pt x 289.08pt>
+File: ch_intro_to_data_oi_biostat/figures/emailNumberPieChart/emailNumberPieCha
+rt.pdf Graphic file (type pdf)
+
+<use ch_intro_to_data_oi_biostat/figures/emailNumberPieChart/emailNumberPieChar
+t.pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/emailNumberPieChar
+t/emailNumberPieChart.pdf used on input line 1238.
+(pdftex.def)             Requested size: 393.87128pt x 210.06944pt.
+
+<ch_intro_to_data_oi_biostat/figures/countyIncomeSplitByPopGain/countyIncomeSpl
+itByPopGain.pdf, id=1026, 542.025pt x 289.08pt>
+File: ch_intro_to_data_oi_biostat/figures/countyIncomeSplitByPopGain/countyInco
+meSplitByPopGain.pdf Graphic file (type pdf)
+
+<use ch_intro_to_data_oi_biostat/figures/countyIncomeSplitByPopGain/countyIncom
+eSplitByPopGain.pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/countyIncomeSplitB
+yPopGain/countyIncomeSplitByPopGain.pdf used on input line 1288.
+(pdftex.def)             Requested size: 393.87128pt x 210.06944pt.
+ [48 <./ch_intro_to_data_oi_biostat/figures/emailNumberPieChart/emailNumberPieC
+hart.pdf>] [49 <./ch_intro_to_data_oi_biostat/figures/countyIncomeSplitByPopGai
+n/countyIncomeSplitByPopGain.pdf>]
+File: extraTeX/icons/video_camera.png Graphic file (type png)
+
+<use extraTeX/icons/video_camera.png>
+Package pdftex.def Info: extraTeX/icons/video_camera.png used on input line 130
+7.
+(pdftex.def)             Requested size: 17.6978pt x 17.07164pt.
+ [50] [51]
 Underfull \vbox (badness 1019) has occurred while \output is active []
 
  [52]
+<ch_intro_to_data_oi_biostat/figures/discRandDotPlot/discRandDotPlot.pdf, id=11
+04, 433.62pt x 252.945pt>
+File: ch_intro_to_data_oi_biostat/figures/discRandDotPlot/discRandDotPlot.pdf G
+raphic file (type pdf)
 
-LaTeX Warning: Reference `sampleDifferenceInMaleAndFemaleDiscrimination' on pag
-e 53 undefined on input line 1408.
-
-
-LaTeX Warning: Reference `discRandDotPlot' on page 53 undefined on input line 1
-408.
-
-
-<ch_intro_to_data/figures/discRandDotPlot/discRandDotPlot.pdf, id=860, 433.62pt
- x 252.945pt>
-File: ch_intro_to_data/figures/discRandDotPlot/discRandDotPlot.pdf Graphic file
- (type pdf)
-
-<use ch_intro_to_data/figures/discRandDotPlot/discRandDotPlot.pdf>
-Package pdftex.def Info: ch_intro_to_data/figures/discRandDotPlot/discRandDotPl
-ot.pdf used on input line 1412.
+<use ch_intro_to_data_oi_biostat/figures/discRandDotPlot/discRandDotPlot.pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/discRandDotPlot/di
+scRandDotPlot.pdf used on input line 1403.
 (pdftex.def)             Requested size: 334.79298pt x 195.30473pt.
 
-
-LaTeX Warning: Reference `discRandDotPlot' on page 53 undefined on input line 1
-419.
-
-
-LaTeX Warning: Reference `discRandDotPlot' on page 53 undefined on input line 1
-420.
-
-[53 <./ch_intro_to_data/figures/discRandDotPlot/discRandDotPlot.pdf>]
-
-LaTeX Warning: Reference `foundationsForInference' on page 54 undefined on inpu
-t line 1435.
-
-) [54]
+[53 <./ch_intro_to_data_oi_biostat/figures/discRandDotPlot/discRandDotPlot.pdf>
+]) [54]
 \openout2 = `ch_intro_to_data_oi_biostat/TeX/ch_intro_to_data_oi_biostat_ex.aux
 '.
 
@@ -2235,25 +1650,17 @@ i_biostat.aux'.
 tex
 Chapter 4.
 
-LaTeX Warning: Reference `foundationsForInference' on page 55 undefined on inpu
-t line 6.
-
-
-LaTeX Warning: Reference `foundationsForInference' on page 55 undefined on inpu
-t line 6.
-
-
 LaTeX Warning: Reference `chapter 5' on page 55 undefined on input line 6.
 
 
 LaTeX Warning: Reference `chapter 6' on page 55 undefined on input line 6.
 
 
+Package caption Warning: \label without proper \caption on input line 42.
+See the caption package documentation for explanation.
+
+
 LaTeX Warning: Reference `brfssSet' on page 55 undefined on input line 8.
-
-
-LaTeX Warning: Reference `brfssVariables' on page 55 undefined on input line 8.
-
 
 [55
 
@@ -2263,18 +1670,11 @@ LaTeX Warning: Reference `brfssVariables' on page 55 undefined on input line 8.
 
 ]
 
-LaTeX Warning: Reference `exploreBMI' on page 56 undefined on input line 79.
-
-
-LaTeX Warning: Reference `brfss.sampleDF' on page 56 undefined on input line 79
-.
-
-
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 <ch_inference_foundations_oi_biostat/figures/run10SampHistograms/bmi_boxplot.pn
-g, id=890, 550.055pt x 699.61375pt>
+g, id=1143, 550.055pt x 699.61375pt>
 File: ch_inference_foundations_oi_biostat/figures/run10SampHistograms/bmi_boxpl
 ot.png Graphic file (type png)
 
@@ -2285,7 +1685,7 @@ istograms/bmi_boxplot.png used on input line 101.
 (pdftex.def)             Requested size: 177.24086pt x 225.42888pt.
 
 <ch_inference_foundations_oi_biostat/figures/run10SampHistograms/bmi_hist.png, 
-id=892, 550.055pt x 699.61375pt>
+id=1145, 550.055pt x 699.61375pt>
 File: ch_inference_foundations_oi_biostat/figures/run10SampHistograms/bmi_hist.
 png Graphic file (type png)
 
@@ -2299,22 +1699,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [57 <./ch_inference_foundations_oi_biostat/figures/run10SampHistograms/bmi_box
 plot.png> <./ch_inference_foundations_oi_biostat/figures/run10SampHistograms/bm
-i_hist.png>]
-
-LaTeX Warning: Reference `BMIEstimates' on page 58 undefined on input line 158.
-
-
-[58]
+i_hist.png>] [58]
 
 LaTeX Warning: Reference `CLT' on page 59 undefined on input line 192.
 
 
-LaTeX Warning: Reference `netBMIRunningMean' on page 59 undefined on input line
- 194.
-
-
 <ch_inference_foundations_oi_biostat/figures/netTimeRunningMean/netBMIRunningMe
-an.png, id=922, 789.95125pt x 699.61375pt>
+an.png, id=1175, 789.95125pt x 699.61375pt>
 File: ch_inference_foundations_oi_biostat/figures/netTimeRunningMean/netBMIRunn
 ingMean.png Graphic file (type png)
 
@@ -2325,12 +1716,16 @@ ningMean/netBMIRunningMean.png used on input line 198.
 (pdftex.def)             Requested size: 374.1765pt x 331.39124pt.
 
 
+Package caption Warning: \label without proper \caption on input line 215.
+See the caption package documentation for explanation.
+
+
 LaTeX Warning: Reference `netBMISamplingDistribution' on page 59 undefined on i
 nput line 210.
 
 
 <ch_inference_foundations_oi_biostat/figures/netTime1000SamplingDistribution/ne
-tBMISamplingDistribution.png, id=924, 789.95125pt x 699.61375pt>
+tBMISamplingDistribution.png, id=1178, 789.95125pt x 699.61375pt>
 File: ch_inference_foundations_oi_biostat/figures/netTime1000SamplingDistributi
 on/netBMISamplingDistribution.png Graphic file (type png)
 
@@ -2348,8 +1743,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 220--221
 MIRunningMean.png>] [61 <./ch_inference_foundations_oi_biostat/figures/netTime1
 000SamplingDistribution/netBMISamplingDistribution.png>]
 
+Package caption Warning: \label without proper \caption on input line 215.
+See the caption package documentation for explanation.
+
+
 LaTeX Warning: Reference `netBMISamplingDistribution' on page 62 undefined on i
 nput line 223.
+
+
+Package caption Warning: \label without proper \caption on input line 215.
+See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `netBMISamplingDistribution' on page 62 undefined on i
@@ -2374,57 +1777,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 266--267
 
  []
 
-
-LaTeX Warning: Reference `seOfXBar' on page 63 undefined on input line 269.
-
-
-LaTeX Warning: Reference `cltSection' on page 63 undefined on input line 269.
-
 [63]
 Overfull \hbox (5.12524pt too wide) in paragraph at lines 283--283
 []\OT1/cmtt/m/n/10 > sample.means<-matrix(data=NA,nrow=1000, ncol=1) #to store 
 the sample means[] 
  []
 
-
-LaTeX Warning: Reference `seOfXBar' on page 64 undefined on input line 295.
-
 [64]
-
-LaTeX Warning: Reference `seOfXBar' on page 65 undefined on input line 306.
-
-
-LaTeX Warning: Reference `pointEstimates' on page 65 undefined on input line 31
-6.
-
-
-LaTeX Warning: Reference `hypothesisTesting' on page 65 undefined on input line
- 318.
-
-
-LaTeX Warning: Reference `aFrameworkForInference' on page 65 undefined on input
- line 318.
-
 
 LaTeX Warning: Reference `inferenceForNumericalData' on page 65 undefined on in
 put line 318.
 
 [65]
-
-LaTeX Warning: Reference `DecisionErrors' on page 66 undefined on input line 33
-9.
-
-
-LaTeX Warning: Reference `significanceLevel' on page 66 undefined on input line
- 339.
-
-
-LaTeX Warning: Reference `95PercentConfidenceInterval' on page 66 undefined on 
-input line 343.
-
-
 <ch_inference_foundations_oi_biostat/figures/95PercentConfidenceInterval/95Perc
-entConfidenceIntervalbrfss.pdf, id=989, 433.62pt x 289.08pt>
+entConfidenceIntervalbrfss.pdf, id=1255, 433.62pt x 289.08pt>
 File: ch_inference_foundations_oi_biostat/figures/95PercentConfidenceInterval/9
 5PercentConfidenceIntervalbrfss.pdf Graphic file (type pdf)
 
@@ -2435,15 +1801,12 @@ onfidenceInterval/95PercentConfidenceIntervalbrfss.pdf used on input line 347.
 (pdftex.def)             Requested size: 295.40346pt x 196.94672pt.
 
 
-LaTeX Warning: Reference `95PercentConfidenceInterval' on page 66 undefined on 
-input line 354.
+Package caption Warning: \label without proper \caption on input line 215.
+See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `netBMISamplingDistribution' on page 66 undefined on i
 nput line 354.
-
-
-LaTeX Warning: Reference `seOfTheMean' on page 66 undefined on input line 354.
 
 [66]
 
@@ -2453,49 +1816,25 @@ LaTeX Warning: Reference `distributions' on page 67 undefined on input line 363
 [67 <./ch_inference_foundations_oi_biostat/figures/95PercentConfidenceInterval/
 95PercentConfidenceIntervalbrfss.pdf>]
 
-LaTeX Warning: Reference `seOfTheMean' on page 68 undefined on input line 380.
+Package caption Warning: \label without proper \caption on input line 215.
+See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `netBMISamplingDistribution' on page 68 undefined on i
 nput line 380.
 
-
-LaTeX Warning: Reference `sampdistmean' on page 68 undefined on input line 382.
-
-
-
-LaTeX Warning: Reference `95PercentConfidenceIntervalFormula' on page 68 undefi
-ned on input line 382.
-
-
-LaTeX Warning: Reference `seOfTheMean' on page 68 undefined on input line 387.
-
-
-LaTeX Warning: Reference `95PercentConfidenceInterval' on page 68 undefined on 
-input line 396.
-
-
-LaTeX Warning: Reference `cltSection' on page 68 undefined on input line 399.
-
 [68]
 
-LaTeX Warning: Reference `95PercentConfidenceIntervalFormula' on page 69 undefi
-ned on input line 404.
-
-
-LaTeX Warning: Reference `seOfTheMean' on page 69 undefined on input line 411.
+Package caption Warning: \label without proper \caption on input line 215.
+See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `netBMISamplingDistribution' on page 69 undefined on i
 nput line 411.
 
 
-LaTeX Warning: Reference `netTimeBigSamplingDistribution' on page 69 undefined 
-on input line 411.
-
-
 <ch_inference_foundations_oi_biostat/figures/netTimeBigSamplingDistribution/net
-TimeBigSamplingDistributionbrfss.pdf, id=1042, 578.16pt x 226.8475pt>
+TimeBigSamplingDistributionbrfss.pdf, id=1324, 578.16pt x 226.8475pt>
 File: ch_inference_foundations_oi_biostat/figures/netTimeBigSamplingDistributio
 n/netTimeBigSamplingDistributionbrfss.pdf Graphic file (type pdf)
 
@@ -2509,10 +1848,6 @@ SamplingDistribution/netTimeBigSamplingDistributionbrfss.pdf used on input line
 
 LaTeX Warning: Reference `normalDist' on page 69 undefined on input line 420.
 
-
-LaTeX Warning: Reference `netTimeBigSamplingDistribution' on page 69 undefined 
-on input line 420.
-
 [69 <./ch_inference_foundations_oi_biostat/figures/netTimeBigSamplingDistributi
 on/netTimeBigSamplingDistributionbrfss.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 423--424
@@ -2520,11 +1855,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 423--424
  []
 
 
+Package caption Warning: \label without proper \caption on input line 440.
+See the caption package documentation for explanation.
+
+
 LaTeX Warning: Reference `cltThirty' on page 70 undefined on input line 435.
 
 
 <ch_inference_foundations_oi_biostat/figures/netTimeBigSamplingDistribution/clt
-_30.png, id=1065, 1076.02pt x 768.8725pt>
+_30.png, id=1348, 1076.02pt x 768.8725pt>
 File: ch_inference_foundations_oi_biostat/figures/netTimeBigSamplingDistributio
 n/clt_30.png Graphic file (type png)
 
@@ -2533,18 +1872,18 @@ n/clt_30.png Graphic file (type png)
 Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/netTimeBig
 SamplingDistribution/clt_30.png used on input line 439.
 (pdftex.def)             Requested size: 393.87128pt x 281.43977pt.
+ [70]
 
+Package caption Warning: \label without proper \caption on input line 474.
+See the caption package documentation for explanation.
 
-LaTeX Warning: Reference `cltSection' on page 70 undefined on input line 444.
-
-
-LaTeX Warning: Reference `95PercentConfidenceIntervalFormula' on page 70 undefi
-ned on input line 446.
-
-[70]
 
 LaTeX Warning: Reference `choosingZForCI' on page 71 undefined on input line 46
 5.
+
+
+Package caption Warning: \label without proper \caption on input line 474.
+See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `choosingZForCI' on page 71 undefined on input line 46
@@ -2552,7 +1891,7 @@ LaTeX Warning: Reference `choosingZForCI' on page 71 undefined on input line 46
 
 
 <ch_inference_foundations_oi_biostat/figures/choosingZForCI/choosingZForCI.pdf,
- id=1076, 546.04pt x 277.035pt>
+ id=1364, 546.04pt x 277.035pt>
 File: ch_inference_foundations_oi_biostat/figures/choosingZForCI/choosingZForCI
 .pdf Graphic file (type pdf)
 
@@ -2561,17 +1900,8 @@ pdf>
 Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/choosingZF
 orCI/choosingZForCI.pdf used on input line 473.
 (pdftex.def)             Requested size: 393.87128pt x 199.83281pt.
-
-
-LaTeX Warning: Reference `leadInForMakingA99PercentCIExercise' on page 71 undef
-ined on input line 480.
-
-[71 <./ch_inference_foundations_oi_biostat/figures/netTimeBigSamplingDistributi
-on/clt_30.png>]
-
-LaTeX Warning: Reference `cltSection' on page 72 undefined on input line 486.
-
-
+ [71 <./ch_inference_foundations_oi_biostat/figures/netTimeBigSamplingDistribut
+ion/clt_30.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 496--497
 
  []
@@ -2591,12 +1921,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 509--510
  []
 
 
-LaTeX Warning: Reference `brfssSampHist' on page 73 undefined on input line 513
-.
-
-
 <ch_inference_foundations_oi_biostat/figures/choosingZForCI/brfssSampHist.png, 
-id=1101, 627.34375pt x 471.7625pt>
+id=1392, 627.34375pt x 471.7625pt>
 File: ch_inference_foundations_oi_biostat/figures/choosingZForCI/brfssSampHist.
 png Graphic file (type png)
 
@@ -2611,10 +1937,6 @@ Underfull \hbox (badness 1874) in paragraph at lines 517--517
 e
  []
 
-
-LaTeX Warning: Reference `brfssSampHist' on page 73 undefined on input line 521
-.
-
 [73]
 Underfull \hbox (badness 10000) in paragraph at lines 532--533
 
@@ -2626,24 +1948,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 535--536
  []
 
 
+Package caption Warning: \label without proper \caption on input line 474.
+See the caption package documentation for explanation.
+
+
 LaTeX Warning: Reference `choosingZForCI' on page 74 undefined on input line 53
 8.
+
+
+Package caption Warning: \label without proper \caption on input line 474.
+See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `choosingZForCI' on page 74 undefined on input line 53
 8.
 
 [74 <./ch_inference_foundations_oi_biostat/figures/choosingZForCI/brfssSampHist
-.png>]
-
-LaTeX Warning: Reference `find99CIForBRFSSWeightExercise' on page 75 undefined 
-on input line 548.
-
-
-LaTeX Warning: Reference `find99CIForBRFSSWeightExercise' on page 75 undefined 
-on input line 548.
-
-[75]
+.png>] [75]
 Underfull \hbox (badness 10000) in paragraph at lines 571--573
 
  []
@@ -2653,11 +1974,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 604--605
 
  []
 
-[76]
-
-LaTeX Warning: Reference `pValue' on page 77 undefined on input line 622.
-
-[77]
+[76] [77]
 Underfull \hbox (badness 10000) in paragraph at lines 655--656
 
  []
@@ -2673,9 +1990,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 673--674
  []
 
 
-LaTeX Warning: Reference `pValue' on page 79 undefined on input line 684.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 684--685
 
  []
@@ -2684,14 +1998,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 684--685
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [79]
-
-LaTeX Warning: Reference `DecisionErrors' on page 80 undefined on input line 69
-0.
-
-
-LaTeX Warning: Reference `utilizingOurCI' on page 80 undefined on input line 69
-2.
-
 
 LaTeX Warning: Reference `some section' on page 80 undefined on input line 695.
 
@@ -2704,21 +2010,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 708--709
 
  []
 
-
-LaTeX Warning: Reference `pValue' on page 81 undefined on input line 711.
-
-
-LaTeX Warning: Reference `hypTestStudyExample' on page 81 undefined on input li
-ne 718.
-
 [81]
-
-LaTeX Warning: Reference `pValueOneSidedSleepStudyExplained' on page 82 undefin
-ed on input line 726.
-
-
 <ch_inference_foundations_oi_biostat/figures/pValueOneSidedSleepStudyExplained/
-pValueOneSidedSleepStudyExplained.pdf, id=1182, 496.85625pt x 198.7425pt>
+pValueOneSidedSleepStudyExplained.pdf, id=1485, 496.85625pt x 198.7425pt>
 File: ch_inference_foundations_oi_biostat/figures/pValueOneSidedSleepStudyExpla
 ined/pValueOneSidedSleepStudyExplained.pdf Graphic file (type pdf)
 
@@ -2729,17 +2023,8 @@ idedSleepStudyExplained/pValueOneSidedSleepStudyExplained.pdf used on input lin
 e 730.
 (pdftex.def)             Requested size: 354.48174pt x 141.7935pt.
 
-
-LaTeX Warning: Reference `pValueOneSidedSleepStudyExplained' on page 82 undefin
-ed on input line 735.
-
-
-LaTeX Warning: Reference `2ndSchSleepHTExample' on page 82 undefined on input l
-ine 735.
-
-
 <ch_inference_foundations_oi_biostat/figures/2ndSchSleepHTExample/2ndSchSleepHT
-Example.pdf, id=1183, 433.62pt x 172.645pt>
+Example.pdf, id=1488, 433.62pt x 172.645pt>
 File: ch_inference_foundations_oi_biostat/figures/2ndSchSleepHTExample/2ndSchSl
 eepHTExample.pdf Graphic file (type pdf)
 
@@ -2772,13 +2057,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 809--810
  []
 
 
-LaTeX Warning: Reference `histOfSleepForCollegeThatWasCheckingForMoreThan7Hours
-' on page 85 undefined on input line 812.
-
-
 <ch_inference_foundations_oi_biostat/figures/histOfSleepForCollegeThatWasChecki
 ngForMoreThan7Hours/histOfSleepForCollegeThatWasCheckingForMoreThan7Hours.pdf, 
-id=1219, 361.35pt x 216.81pt>
+id=1526, 361.35pt x 216.81pt>
 File: ch_inference_foundations_oi_biostat/figures/histOfSleepForCollegeThatWasC
 heckingForMoreThan7Hours/histOfSleepForCollegeThatWasCheckingForMoreThan7Hours.
 pdf Graphic file (type pdf)
@@ -2790,21 +2071,11 @@ Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/histOfSlee
 pForCollegeThatWasCheckingForMoreThan7Hours/histOfSleepForCollegeThatWasCheckin
 gForMoreThan7Hours.pdf used on input line 816.
 (pdftex.def)             Requested size: 260.82794pt x 156.49014pt.
-
-
-LaTeX Warning: Reference `histOfSleepForCollegeThatWasCheckingForMoreThan7Hours
-' on page 85 undefined on input line 821.
-
-[85 <./ch_inference_foundations_oi_biostat/figures/histOfSleepForCollegeThatWas
-CheckingForMoreThan7Hours/histOfSleepForCollegeThatWasCheckingForMoreThan7Hours
-.pdf>]
-
-LaTeX Warning: Reference `pValueOneSidedSleepStudy' on page 86 undefined on inp
-ut line 827.
-
-
+ [85 <./ch_inference_foundations_oi_biostat/figures/histOfSleepForCollegeThatWa
+sCheckingForMoreThan7Hours/histOfSleepForCollegeThatWasCheckingForMoreThan7Hour
+s.pdf>]
 <ch_inference_foundations_oi_biostat/figures/pValueOneSidedSleepStudy/pValueOne
-SidedSleepStudybrfss.pdf, id=1240, 487.8225pt x 190.7125pt>
+SidedSleepStudybrfss.pdf, id=1549, 487.8225pt x 190.7125pt>
 File: ch_inference_foundations_oi_biostat/figures/pValueOneSidedSleepStudy/pVal
 ueOneSidedSleepStudybrfss.pdf Graphic file (type pdf)
 
@@ -2813,60 +2084,13 @@ eOneSidedSleepStudybrfss.pdf>
 Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/pValueOneS
 idedSleepStudy/pValueOneSidedSleepStudybrfss.pdf used on input line 831.
 (pdftex.def)             Requested size: 287.52434pt x 112.4059pt.
-
-
-LaTeX Warning: Reference `pValueOneSidedSleepStudy' on page 86 undefined on inp
-ut line 836.
-
-[86 <./ch_inference_foundations_oi_biostat/figures/pValueOneSidedSleepStudy/pVa
-lueOneSidedSleepStudybrfss.pdf>]
+ [86 <./ch_inference_foundations_oi_biostat/figures/pValueOneSidedSleepStudy/pV
+alueOneSidedSleepStudybrfss.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 854--855
 
  []
 
-
-LaTeX Warning: Reference `variabilityInEstimates' on page 87 undefined on input
- line 864.
-
-
-LaTeX Warning: Reference `confidenceIntervals' on page 87 undefined on input li
-ne 866.
-
-
-LaTeX Warning: Reference `htForHousingExpenseForCommunityCollege650' on page 87
- undefined on input line 872.
-
-[87]
-
-LaTeX Warning: Reference `fourHTScenarios' on page 88 undefined on input line 8
-85.
-
-
-LaTeX Warning: Reference `fourHTScenarios' on page 88 undefined on input line 9
-07.
-
-[88]
-
-LaTeX Warning: Reference `whatAreTheErrorTypesInUSCourts' on page 89 undefined 
-on input line 924.
-
-
-LaTeX Warning: Reference `howToReduceType2ErrorsInUSCourts' on page 89 undefine
-d on input line 924.
-
-
-LaTeX Warning: Reference `significanceLevel' on page 89 undefined on input line
- 930.
-
-
-LaTeX Warning: Reference `2ndSchSleepHypSetupExercise' on page 89 undefined on 
-input line 948.
-
-[89]
-
-LaTeX Warning: Reference `2ndSchSleepHTExample' on page 90 undefined on input l
-ine 951.
-
+[87] [88] [89]
 File: ch_inference_foundations_oi_biostat/figures/2ndSchSleepHTExample/2ndSchSl
 eepHTExample.pdf Graphic file (type pdf)
 
@@ -2875,14 +2099,9 @@ epHTExample.pdf>
 Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/2ndSchSlee
 pHTExample/2ndSchSleepHTExample.pdf used on input line 967.
 (pdftex.def)             Requested size: 354.48174pt x 141.14304pt.
-
-
-LaTeX Warning: Reference `type1ErrorDoublingExampleFigure' on page 90 undefined
- on input line 978.
-
-[90]
+ [90]
 <ch_inference_foundations_oi_biostat/figures/type1ErrorDoublingExampleFigure/ty
-pe1ErrorDoublingExampleFigure.pdf, id=1307, 397.485pt x 144.54pt>
+pe1ErrorDoublingExampleFigure.pdf, id=1625, 397.485pt x 144.54pt>
 File: ch_inference_foundations_oi_biostat/figures/type1ErrorDoublingExampleFigu
 re/type1ErrorDoublingExampleFigure.pdf Graphic file (type pdf)
 
@@ -2893,22 +2112,9 @@ DoublingExampleFigure/type1ErrorDoublingExampleFigure.pdf used on input line 98
 4.
 (pdftex.def)             Requested size: 275.70868pt x 100.2598pt.
 
-
-LaTeX Warning: Reference `swappingHypAfterDataDoublesType1ErrorRate' on page 91
- undefined on input line 985.
-
-
-LaTeX Warning: Reference `swappingHypAfterDataDoublesType1ErrorRate' on page 91
- undefined on input line 985.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 992--993
 
  []
-
-
-LaTeX Warning: Reference `sampleSizeAndPower' on page 91 undefined on input lin
-e 1005.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 1008--1009
@@ -2917,10 +2123,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 1008--1009
 
 [91 <./ch_inference_foundations_oi_biostat/figures/type1ErrorDoublingExampleFig
 ure/type1ErrorDoublingExampleFigure.pdf>]
-
-LaTeX Warning: Reference `why30' on page 92 undefined on input line 1033.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 1036--1037
 
  []
@@ -2930,12 +2132,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 1036--1037
 LaTeX Warning: Reference `modeling' on page 93 undefined on input line 1041.
 
 
-LaTeX Warning: Reference `cltSimulations' on page 93 undefined on input line 10
-41.
-
-
 <ch_inference_foundations_oi_biostat/figures/cltSimulations/cltSimulations.pdf,
- id=1332, 490.83376pt x 578.16pt>
+ id=1653, 490.83376pt x 578.16pt>
 File: ch_inference_foundations_oi_biostat/figures/cltSimulations/cltSimulations
 .pdf Graphic file (type pdf)
 
@@ -2945,18 +2143,9 @@ Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/cltSimulat
 ions/cltSimulations.pdf used on input line 1045.
 (pdftex.def)             Requested size: 393.87128pt x 463.9578pt.
 
-
-LaTeX Warning: Reference `cltSimulations' on page 93 undefined on input line 10
-53.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 1061--1062
 
  []
-
-
-LaTeX Warning: Reference `seOfTheMean' on page 93 undefined on input line 1064.
-
 
 
 LaTeX Warning: Reference `inferenceForNumericalData' on page 93 undefined on in
@@ -2966,14 +2155,10 @@ put line 1064.
 LaTeX Warning: Reference `inferenceForCategoricalData' on page 93 undefined on 
 input line 1064.
 
-
-LaTeX Warning: Reference `pokerProfitsCanApplyNormalToSampMean' on page 93 unde
-fined on input line 1069.
-
 [93] [94 <./ch_inference_foundations_oi_biostat/figures/cltSimulations/cltSimul
 ations.pdf>]
 <ch_inference_foundations_oi_biostat/figures/pokerProfitsCanApplyNormalToSampMe
-an/pokerProfitsCanApplyNormalToSampMean.pdf, id=1352, 361.35pt x 216.81pt>
+an/pokerProfitsCanApplyNormalToSampMean.pdf, id=1677, 361.35pt x 216.81pt>
 File: ch_inference_foundations_oi_biostat/figures/pokerProfitsCanApplyNormalToS
 ampMean/pokerProfitsCanApplyNormalToSampMean.pdf Graphic file (type pdf)
 
@@ -2999,10 +2184,6 @@ LaTeX Warning: Reference `inferenceForCategoricalData' on page 96 undefined on
 input line 1104.
 
 
-LaTeX Warning: Reference `confidenceIntervals' on page 96 undefined on input li
-ne 1114.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 1127--1128
 
  []
@@ -3011,44 +2192,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 1127--1128
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [96]
-
-LaTeX Warning: Reference `95PercGeneralCIInGeneralizingSection' on page 97 unde
-fined on input line 1138.
-
-
-LaTeX Warning: Reference `confIntervalForDifferenceOfRunTimeBetweenGenders' on 
-page 97 undefined on input line 1149.
-
-
-Overfull \hbox (1.48419pt too wide) in paragraph at lines 1149--1149
-[][]\OT1/cmr/bx/n/10 Example 4.44[] \OT1/cmr/m/n/10 Does Ex-am-ple [] guar-an-t
-ee that if a hus-band and wife both weighted
- []
-
-
-LaTeX Warning: Reference `pValue' on page 97 undefined on input line 1168.
-
-
-LaTeX Warning: Reference `hypothesisFramework' on page 97 undefined on input li
-ne 1168.
-
-[97]
-
-LaTeX Warning: Reference `fdaHypSetupForSulph' on page 98 undefined on input li
-ne 1186.
-
-[98]
-
-LaTeX Warning: Reference `fdaHypSetupForSulph' on page 99 undefined on input li
-ne 1206.
-
-
-LaTeX Warning: Reference `sulphStudyFindPValueUsingNormalApprox' on page 99 und
-efined on input line 1207.
-
-
+[97] [98]
 <ch_inference_foundations_oi_biostat/figures/sulphStudyFindPValueUsingNormalApp
-rox/sulphStudyFindPValueUsingNormalApprox.pdf, id=1396, 433.62pt x 158.5925pt>
+rox/sulphStudyFindPValueUsingNormalApprox.pdf, id=1726, 433.62pt x 158.5925pt>
 File: ch_inference_foundations_oi_biostat/figures/sulphStudyFindPValueUsingNorm
 alApprox/sulphStudyFindPValueUsingNormalApprox.pdf Graphic file (type pdf)
 
@@ -3059,37 +2205,14 @@ FindPValueUsingNormalApprox/sulphStudyFindPValueUsingNormalApprox.pdf used on i
 nput line 1211.
 (pdftex.def)             Requested size: 287.85083pt x 105.27519pt.
  [99 <./ch_inference_foundations_oi_biostat/figures/sulphStudyFindPValueUsingNo
-rmalApprox/sulphStudyFindPValueUsingNormalApprox.pdf>]
-
-LaTeX Warning: Reference `overviewOfDataCollectionPrinciples' on page 100 undef
-ined on input line 1252.
-
-
-LaTeX Warning: Reference `experimentsSection' on page 100 undefined on input li
-ne 1252.
-
-[100]
-
-LaTeX Warning: Reference `sampleSizeComputationForSystolicBloodPressure' on pag
-e 101 undefined on input line 1290.
-
-
+rmalApprox/sulphStudyFindPValueUsingNormalApprox.pdf>] [100]
 Underfull \hbox (badness 10000) in paragraph at lines 1298--1299
 
  []
 
 [101] [102]
-
-LaTeX Warning: Reference `power132And141' on page 103 undefined on input line 1
-327.
-
-
-LaTeX Warning: Reference `power132And141' on page 103 undefined on input line 1
-329.
-
-
 <ch_inference_foundations_oi_biostat/figures/power132And141/power132And141.pdf,
- id=1435, 515.9275pt x 237.88875pt>
+ id=1770, 515.9275pt x 237.88875pt>
 File: ch_inference_foundations_oi_biostat/figures/power132And141/power132And141
 .pdf Graphic file (type pdf)
 
@@ -3098,21 +2221,8 @@ pdf>
 Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/power132An
 d141/power132And141.pdf used on input line 1341.
 (pdftex.def)             Requested size: 393.87128pt x 181.61403pt.
-
-
-LaTeX Warning: Reference `computePowerIfMuIs132AndMu0Is130' on page 103 undefin
-ed on input line 1346.
-
-
-LaTeX Warning: Reference `power132And141' on page 103 undefined on input line 1
-349.
-
-
-LaTeX Warning: Reference `computePowerIfMuIs132AndMu0Is130' on page 103 undefin
-ed on input line 1349.
-
-[103 <./ch_inference_foundations_oi_biostat/figures/power132And141/power132And1
-41.pdf>]
+ [103 <./ch_inference_foundations_oi_biostat/figures/power132And141/power132And
+141.pdf>]
 
 LaTeX Warning: Characters dropped after `\end{comment}' on input line 1385.
 
@@ -3129,7 +2239,7 @@ i_biostat_ex.aux'.
 
 (./ch_inference_foundations_oi_biostat/TeX/ch_inference_foundations_oi_biostat_
 ex.tex
-<ch_inference_foundations_oi_biostat/figures/eoce/credits/credits.pdf, id=1464,
+<ch_inference_foundations_oi_biostat/figures/eoce/credits/credits.pdf, id=1802,
  433.62pt x 216.81pt>
 File: ch_inference_foundations_oi_biostat/figures/eoce/credits/credits.pdf Grap
 hic file (type pdf)
@@ -3152,7 +2262,7 @@ LaTeX Warning: Citation 'Heinz:2003' on page 106 undefined on input line 87.
 
 
 <ch_inference_foundations_oi_biostat/figures/eoce/bdims/bdims_heights.pdf, id=1
-492, 433.62pt x 216.81pt>
+829, 433.62pt x 216.81pt>
 File: ch_inference_foundations_oi_biostat/figures/eoce/bdims/bdims_heights.pdf 
 Graphic file (type pdf)
 
@@ -3171,16 +2281,9 @@ f>]
 LaTeX Warning: Citation 'data:gss:2010' on page 107 undefined on input line 122
 .
 
-
-LaTeX Warning: Reference `relax' on page 107 undefined on input line 133.
-
-
-LaTeX Warning: Reference `foundationsForInference' on page 107 undefined on inp
-ut line 138.
-
 [107]
 <ch_inference_foundations_oi_biostat/figures/eoce/tgSpending/tgSpending.pdf, id
-=1542, 433.62pt x 216.81pt>
+=1881, 433.62pt x 216.81pt>
 File: ch_inference_foundations_oi_biostat/figures/eoce/tgSpending/tgSpending.pd
 f Graphic file (type pdf)
 
@@ -3191,7 +2294,7 @@ nding/tgSpending.pdf used on input line 184.
 (pdftex.def)             Requested size: 275.70868pt x 137.86137pt.
 
 <ch_inference_foundations_oi_biostat/figures/eoce/relationship/rel_hist.pdf, id
-=1543, 361.35pt x 172.645pt>
+=1882, 361.35pt x 172.645pt>
 File: ch_inference_foundations_oi_biostat/figures/eoce/relationship/rel_hist.pd
 f Graphic file (type pdf)
 
@@ -3211,7 +2314,7 @@ LaTeX Warning: Citation 'data:nsfg:2010' on page 109 undefined on input line 20
 
 
 <ch_inference_foundations_oi_biostat/figures/eoce/ageAtMar/ageAtMar_hist.pdf, i
-d=1568, 433.62pt x 216.81pt>
+d=1907, 433.62pt x 216.81pt>
 File: ch_inference_foundations_oi_biostat/figures/eoce/ageAtMar/ageAtMar_hist.p
 df Graphic file (type pdf)
 
@@ -3227,18 +2330,8 @@ t.pdf>]
 LaTeX Warning: Citation 'webpage:GRE' on page 110 undefined on input line 227.
 
 
-LaTeX Warning: Reference `ageAtMar' on page 110 undefined on input line 245.
-
-
-LaTeX Warning: Reference `ERwait' on page 110 undefined on input line 255.
-
-
-LaTeX Warning: Reference `holidaySpending' on page 110 undefined on input line 
-264.
-
-
 <ch_inference_foundations_oi_biostat/figures/eoce/ballBearing/ballBearing.pdf, 
-id=1591, 433.62pt x 216.81pt>
+id=1933, 433.62pt x 216.81pt>
 File: ch_inference_foundations_oi_biostat/figures/eoce/ballBearing/ballBearing.
 pdf Graphic file (type pdf)
 
@@ -3254,7 +2347,7 @@ LaTeX Warning: Citation 'Graybill:1994' on page 111 undefined on input line 302
 
 
 <ch_inference_foundations_oi_biostat/figures/eoce/gifted/gifted_count_hist.pdf,
- id=1611, 433.62pt x 216.81pt>
+ id=1953, 433.62pt x 216.81pt>
 File: ch_inference_foundations_oi_biostat/figures/eoce/gifted/gifted_count_hist
 .pdf Graphic file (type pdf)
 
@@ -3269,14 +2362,8 @@ Overfull \hbox (27.26646pt too wide) in paragraph at lines 302--302
  []
 
 
-LaTeX Warning: Reference `ERwait' on page 111 undefined on input line 312.
-
-
-LaTeX Warning: Reference `gifted' on page 111 undefined on input line 336.
-
-
 <ch_inference_foundations_oi_biostat/figures/eoce/gifted/gifted_momIQ_hist.pdf,
- id=1612, 433.62pt x 216.81pt>
+ id=1956, 433.62pt x 216.81pt>
 File: ch_inference_foundations_oi_biostat/figures/eoce/gifted/gifted_momIQ_hist
 .pdf Graphic file (type pdf)
 
@@ -3295,7 +2382,7 @@ g.pdf> <./ch_inference_foundations_oi_biostat/figures/eoce/gifted/gifted_count_
 hist.pdf>] [112 <./ch_inference_foundations_oi_biostat/figures/eoce/gifted/gift
 ed_momIQ_hist.pdf>] [113]
 <ch_inference_foundations_oi_biostat/figures/eoce/penniesAges/penniesAges_pop.p
-df, id=1689, 418.56375pt x 216.81pt>
+df, id=2033, 418.56375pt x 216.81pt>
 File: ch_inference_foundations_oi_biostat/figures/eoce/penniesAges/penniesAges_
 pop.pdf Graphic file (type pdf)
 
@@ -3311,7 +2398,7 @@ $[]$ $[]$
 
 
 <ch_inference_foundations_oi_biostat/figures/eoce/penniesAges/penniesAges_n5.pd
-f, id=1690, 216.81pt x 172.645pt>
+f, id=2034, 216.81pt x 172.645pt>
 File: ch_inference_foundations_oi_biostat/figures/eoce/penniesAges/penniesAges_
 n5.pdf Graphic file (type pdf)
 
@@ -3322,7 +2409,7 @@ esAges/penniesAges_n5.pdf used on input line 445.
 (pdftex.def)             Requested size: 128.00696pt x 101.93605pt.
 
 <ch_inference_foundations_oi_biostat/figures/eoce/penniesAges/penniesAges_n30.p
-df, id=1691, 216.81pt x 172.645pt>
+df, id=2035, 216.81pt x 172.645pt>
 File: ch_inference_foundations_oi_biostat/figures/eoce/penniesAges/penniesAges_
 n30.pdf Graphic file (type pdf)
 
@@ -3333,7 +2420,7 @@ esAges/penniesAges_n30.pdf used on input line 445.
 (pdftex.def)             Requested size: 128.00696pt x 101.93605pt.
 
 <ch_inference_foundations_oi_biostat/figures/eoce/penniesAges/penniesAges_n100.
-pdf, id=1692, 216.81pt x 172.645pt>
+pdf, id=2036, 216.81pt x 172.645pt>
 File: ch_inference_foundations_oi_biostat/figures/eoce/penniesAges/penniesAges_
 n100.pdf Graphic file (type pdf)
 
@@ -3343,17 +2430,8 @@ Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/eoce/penni
 esAges/penniesAges_n100.pdf used on input line 445.
 (pdftex.def)             Requested size: 128.00696pt x 101.93605pt.
 
-
-LaTeX Warning: Reference `penniesAges' on page 114 undefined on input line 450.
-
-
-
-LaTeX Warning: Reference `penniesAges' on page 114 undefined on input line 450.
-
-
-
 <ch_inference_foundations_oi_biostat/figures/eoce/cltSimSYM/cltSimSYM_pop.pdf, 
-id=1693, 307.1475pt x 140.525pt>
+id=2039, 307.1475pt x 140.525pt>
 File: ch_inference_foundations_oi_biostat/figures/eoce/cltSimSYM/cltSimSYM_pop.
 pdf Graphic file (type pdf)
 
@@ -3364,7 +2442,7 @@ mSYM/cltSimSYM_pop.pdf used on input line 463.
 (pdftex.def)             Requested size: 196.93564pt x 90.10294pt.
 
 <ch_inference_foundations_oi_biostat/figures/eoce/cltSimSYM/cltSimSYM_n5.pdf, i
-d=1694, 230.8625pt x 144.54pt>
+d=2040, 230.8625pt x 144.54pt>
 File: ch_inference_foundations_oi_biostat/figures/eoce/cltSimSYM/cltSimSYM_n5.p
 df Graphic file (type pdf)
 
@@ -3375,7 +2453,7 @@ mSYM/cltSimSYM_n5.pdf used on input line 463.
 (pdftex.def)             Requested size: 126.04169pt x 78.91277pt.
 
 <ch_inference_foundations_oi_biostat/figures/eoce/cltSimSYM/cltSimSYM_samp.pdf,
- id=1695, 230.8625pt x 144.54pt>
+ id=2041, 230.8625pt x 144.54pt>
 File: ch_inference_foundations_oi_biostat/figures/eoce/cltSimSYM/cltSimSYM_samp
 .pdf Graphic file (type pdf)
 
@@ -3386,7 +2464,7 @@ mSYM/cltSimSYM_samp.pdf used on input line 463.
 (pdftex.def)             Requested size: 126.04169pt x 78.91277pt.
 
 <ch_inference_foundations_oi_biostat/figures/eoce/cltSimSYM/cltSimSYM_n25.pdf, 
-id=1696, 230.8625pt x 144.54pt>
+id=2042, 230.8625pt x 144.54pt>
 File: ch_inference_foundations_oi_biostat/figures/eoce/cltSimSYM/cltSimSYM_n25.
 pdf Graphic file (type pdf)
 
@@ -3402,7 +2480,7 @@ s/penniesAges_n30.pdf> <./ch_inference_foundations_oi_biostat/figures/eoce/penn
 iesAges/penniesAges_n100.pdf> <./ch_inference_foundations_oi_biostat/figures/eo
 ce/cltSimSYM/cltSimSYM_pop.pdf>]
 <ch_inference_foundations_oi_biostat/figures/eoce/cltSimLS/cltSimLS_pop.pdf, id
-=1741, 307.1475pt x 140.525pt>
+=2087, 307.1475pt x 140.525pt>
 File: ch_inference_foundations_oi_biostat/figures/eoce/cltSimLS/cltSimLS_pop.pd
 f Graphic file (type pdf)
 
@@ -3413,7 +2491,7 @@ mLS/cltSimLS_pop.pdf used on input line 476.
 (pdftex.def)             Requested size: 196.93564pt x 90.10294pt.
 
 <ch_inference_foundations_oi_biostat/figures/eoce/cltSimLS/cltSimLS_n81.pdf, id
-=1742, 230.8625pt x 144.54pt>
+=2088, 230.8625pt x 144.54pt>
 File: ch_inference_foundations_oi_biostat/figures/eoce/cltSimLS/cltSimLS_n81.pd
 f Graphic file (type pdf)
 
@@ -3424,7 +2502,7 @@ mLS/cltSimLS_n81.pdf used on input line 476.
 (pdftex.def)             Requested size: 126.04169pt x 78.91277pt.
 
 <ch_inference_foundations_oi_biostat/figures/eoce/cltSimLS/cltSimLS_samp.pdf, i
-d=1743, 230.8625pt x 144.54pt>
+d=2089, 230.8625pt x 144.54pt>
 File: ch_inference_foundations_oi_biostat/figures/eoce/cltSimLS/cltSimLS_samp.p
 df Graphic file (type pdf)
 
@@ -3435,7 +2513,7 @@ mLS/cltSimLS_samp.pdf used on input line 476.
 (pdftex.def)             Requested size: 126.04169pt x 78.91277pt.
 
 <ch_inference_foundations_oi_biostat/figures/eoce/cltSimLS/cltSimLS_n18.pdf, id
-=1744, 230.8625pt x 144.54pt>
+=2090, 230.8625pt x 144.54pt>
 File: ch_inference_foundations_oi_biostat/figures/eoce/cltSimLS/cltSimLS_n18.pd
 f Graphic file (type pdf)
 
@@ -3452,8 +2530,8 @@ LS_pop.pdf> <./ch_inference_foundations_oi_biostat/figures/eoce/cltSimLS/cltSim
 LS_n81.pdf> <./ch_inference_foundations_oi_biostat/figures/eoce/cltSimLS/cltSim
 LS_samp.pdf> <./ch_inference_foundations_oi_biostat/figures/eoce/cltSimLS/cltSi
 mLS_n18.pdf>]
-<ch_inference_foundations_oi_biostat/figures/eoce/ipod/ipod_popdist.pdf, id=180
-1, 433.62pt x 216.81pt>
+<ch_inference_foundations_oi_biostat/figures/eoce/ipod/ipod_popdist.pdf, id=214
+7, 433.62pt x 216.81pt>
 File: ch_inference_foundations_oi_biostat/figures/eoce/ipod/ipod_popdist.pdf Gr
 aphic file (type pdf)
 
@@ -3468,22 +2546,7 @@ ipod_popdist.pdf used on input line 539.
 LaTeX Warning: Citation 'webpage:spam' on page 117 undefined on input line 567.
 
 
-
-LaTeX Warning: Reference `spam' on page 117 undefined on input line 590.
-
-[117]
-
-LaTeX Warning: Reference `carInsurance' on page 118 undefined on input line 634
-.
-
-
-LaTeX Warning: Reference `speedReading' on page 118 undefined on input line 639
-.
-
-
-LaTeX Warning: Reference `ERWaitHT' on page 118 undefined on input line 649.
-
-) [118]
+[117]) [118]
 \openout2 = `extraTeX/eoceSolutions/eoceSolutions.aux'.
 
  (./extraTeX/eoceSolutions/eoceSolutions.tex
@@ -3494,7 +2557,7 @@ Appendix A.
 
 ] [120]
 <ch_intro_to_data/figures/eoce/reproducing_bacteria/reproducing_bacteria_sketch
-.pdf, id=1911, 289.08pt x 144.54pt>
+.pdf, id=2260, 289.08pt x 144.54pt>
 File: ch_intro_to_data/figures/eoce/reproducing_bacteria/reproducing_bacteria_s
 ketch.pdf Graphic file (type pdf)
 
@@ -3505,7 +2568,7 @@ roducing_bacteria_sketch.pdf used on input line 211.
 (pdftex.def)             Requested size: 113.81102pt x 56.90408pt.
  [121 <./ch_intro_to_data/figures/eoce/reproducing_bacteria/reproducing_bacteri
 a_sketch.pdf>] [122]
-<ch_probability/figures/eoce/swing_voters/swing_voters.pdf, id=1944, 456.98914p
+<ch_probability/figures/eoce/swing_voters/swing_voters.pdf, id=2293, 456.98914p
 t x 321.04095pt>
 File: ch_probability/figures/eoce/swing_voters/swing_voters.pdf Graphic file (t
 ype pdf)
@@ -3516,7 +2579,7 @@ pdf used on input line 384.
 (pdftex.def)             Requested size: 113.81102pt x 79.95142pt.
 
 <ch_probability/figures/eoce/tree_drawing_box_plots/tree_drawing_box_plots.pdf,
- id=1945, 433.62pt x 180.675pt>
+ id=2294, 433.62pt x 180.675pt>
 File: ch_probability/figures/eoce/tree_drawing_box_plots/tree_drawing_box_plots
 .pdf Graphic file (type pdf)
 
@@ -3527,7 +2590,7 @@ e_drawing_box_plots.pdf used on input line 452.
 (pdftex.def)             Requested size: 170.71652pt x 71.13287pt.
  [123 <./ch_probability/figures/eoce/swing_voters/swing_voters.pdf> <./ch_proba
 bility/figures/eoce/tree_drawing_box_plots/tree_drawing_box_plots.pdf>]
-<ch_probability/figures/eoce/tree_hiv_swaziland/tree_hiv_swaziland.pdf, id=1978
+<ch_probability/figures/eoce/tree_hiv_swaziland/tree_hiv_swaziland.pdf, id=2327
 , 433.62pt x 180.675pt>
 File: ch_probability/figures/eoce/tree_hiv_swaziland/tree_hiv_swaziland.pdf Gra
 phic file (type pdf)
@@ -3537,7 +2600,7 @@ Package pdftex.def Info: ch_probability/figures/eoce/tree_hiv_swaziland/tree_hi
 v_swaziland.pdf used on input line 463.
 (pdftex.def)             Requested size: 170.71652pt x 71.13287pt.
 
-<ch_probability/figures/eoce/tree_lupus/tree_lupus.pdf, id=1979, 433.62pt x 216
+<ch_probability/figures/eoce/tree_lupus/tree_lupus.pdf, id=2328, 433.62pt x 216
 .81pt>
 File: ch_probability/figures/eoce/tree_lupus/tree_lupus.pdf Graphic file (type 
 pdf)
@@ -3546,7 +2609,7 @@ Package pdftex.def Info: ch_probability/figures/eoce/tree_lupus/tree_lupus.pdf
 used on input line 469.
 (pdftex.def)             Requested size: 170.71652pt x 85.35945pt.
 
-<ch_distributions/figures/eoce/area_under_curve_1/zltNeg.pdf, id=1980, 361.35pt
+<ch_distributions/figures/eoce/area_under_curve_1/zltNeg.pdf, id=2329, 361.35pt
  x 216.81pt>
 File: ch_distributions/figures/eoce/area_under_curve_1/zltNeg.pdf Graphic file 
 (type pdf)
@@ -3555,7 +2618,7 @@ Package pdftex.def Info: ch_distributions/figures/eoce/area_under_curve_1/zltNe
 g.pdf used on input line 552.
 (pdftex.def)             Requested size: 90.5887pt x 54.35123pt.
 
-<ch_distributions/figures/eoce/area_under_curve_1/zgtPos.pdf, id=1981, 361.35pt
+<ch_distributions/figures/eoce/area_under_curve_1/zgtPos.pdf, id=2330, 361.35pt
  x 216.81pt>
 File: ch_distributions/figures/eoce/area_under_curve_1/zgtPos.pdf Graphic file 
 (type pdf)
@@ -3564,7 +2627,7 @@ Package pdftex.def Info: ch_distributions/figures/eoce/area_under_curve_1/zgtPo
 s.pdf used on input line 552.
 (pdftex.def)             Requested size: 90.5887pt x 54.35123pt.
 
-<ch_distributions/figures/eoce/area_under_curve_1/zBet.pdf, id=1982, 361.35pt x
+<ch_distributions/figures/eoce/area_under_curve_1/zBet.pdf, id=2331, 361.35pt x
  216.81pt>
 File: ch_distributions/figures/eoce/area_under_curve_1/zBet.pdf Graphic file (t
 ype pdf)
@@ -3573,7 +2636,7 @@ Package pdftex.def Info: ch_distributions/figures/eoce/area_under_curve_1/zBet.
 pdf used on input line 552.
 (pdftex.def)             Requested size: 90.5887pt x 54.35123pt.
 
-<ch_distributions/figures/eoce/area_under_curve_1/zgtAbs.pdf, id=1983, 361.35pt
+<ch_distributions/figures/eoce/area_under_curve_1/zgtAbs.pdf, id=2332, 361.35pt
  x 216.81pt>
 File: ch_distributions/figures/eoce/area_under_curve_1/zgtAbs.pdf Graphic file 
 (type pdf)
@@ -3587,7 +2650,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 552--552
  []
 
 
-<ch_distributions/figures/eoce/GRE_intro/GRE_intro.pdf, id=1984, 361.35pt x 216
+<ch_distributions/figures/eoce/GRE_intro/GRE_intro.pdf, id=2333, 361.35pt x 216
 .81pt>
 File: ch_distributions/figures/eoce/GRE_intro/GRE_intro.pdf Graphic file (type 
 pdf)
@@ -3612,7 +2675,7 @@ ne 829.
 
 [126] [127]
 <ch_inference_foundations/figures/eoce/penny_weights/penny_weights_sketch.pdf, 
-id=2087, 433.62pt x 129.48375pt>
+id=2437, 433.62pt x 129.48375pt>
 File: ch_inference_foundations/figures/eoce/penny_weights/penny_weights_sketch.
 pdf Graphic file (type pdf)
 
@@ -3634,7 +2697,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1252--1252
 (./extraTeX/appendix/TeX/zTable.tex
 Appendix B.
 
-<extraTeX/appendix/figures/normalTails/normalTails.pdf, id=2249, 325.215pt x 93
+<extraTeX/appendix/figures/normalTails/normalTails.pdf, id=2598, 325.215pt x 93
 .34875pt>
 File: extraTeX/appendix/figures/normalTails/normalTails.pdf Graphic file (type 
 pdf)
@@ -3644,7 +2707,7 @@ used on input line 9.
 (pdftex.def)             Requested size: 377.68634pt x 108.405pt.
 
 <extraTeX/appendix/figures/normalTails/subtractingArea/subtractingArea.pdf, id=
-2250, 578.16pt x 120.45pt>
+2599, 578.16pt x 120.45pt>
 File: extraTeX/appendix/figures/normalTails/subtractingArea/subtractingArea.pdf
  Graphic file (type pdf)
 
@@ -3659,7 +2722,7 @@ LaTeX Warning: Reference `normalDist' on page 141 undefined on input line 15.
 LaTeX Warning: Reference `normalDist' on page 141 undefined on input line 15.
 
 
-<extraTeX/appendix/figures/normalTails/normalTailLeft.pdf, id=2251, 198.7425pt 
+<extraTeX/appendix/figures/normalTails/normalTailLeft.pdf, id=2600, 198.7425pt 
 x 75.28125pt>
 File: extraTeX/appendix/figures/normalTails/normalTailLeft.pdf Graphic file (ty
 pe pdf)
@@ -3668,7 +2731,7 @@ Package pdftex.def Info: extraTeX/appendix/figures/normalTails/normalTailLeft.p
 df used on input line 19.
 (pdftex.def)             Requested size: 202.01456pt x 76.52278pt.
 
-<extraTeX/appendix/figures/normalTails/normalTailRight.pdf, id=2252, 198.7425pt
+<extraTeX/appendix/figures/normalTails/normalTailRight.pdf, id=2601, 198.7425pt
  x 75.28125pt>
 File: extraTeX/appendix/figures/normalTails/normalTailRight.pdf Graphic file (t
 ype pdf)
@@ -3696,7 +2759,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 1.
 
 
-<extraTeX/appendix/figures/tTails/tTails.pdf, id=2289, 433.62pt x 115.43124pt>
+<extraTeX/appendix/figures/tTails/tTails.pdf, id=2636, 433.62pt x 115.43124pt>
 File: extraTeX/appendix/figures/tTails/tTails.pdf Graphic file (type pdf)
 
 <use extraTeX/appendix/figures/tTails/tTails.pdf>
@@ -3714,7 +2777,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 (./extraTeX/appendix/TeX/chiSquareTable.tex
-<extraTeX/appendix/figures/chiSquareTail/chiSquareTail.pdf, id=2306, 252.945pt 
+<extraTeX/appendix/figures/chiSquareTail/chiSquareTail.pdf, id=2652, 252.945pt 
 x 151.56625pt>
 File: extraTeX/appendix/figures/chiSquareTail/chiSquareTail.pdf Graphic file (t
 ype pdf)
@@ -3745,20 +2808,14 @@ ex.aux) (./extraTeX/eoceSolutions/eoceSolutions.aux)
 (./extraTeX/appendix/TeX/chiSquareTable.aux) (./extraTeX/index/index.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 51.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 51.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 77A894558D28DB287054E6FC75606775;1652.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  77A894558D28DB287054E6FC75606775;1652.
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
@@ -3771,10 +2828,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 51.
  ) 
 Here is how much of TeX's memory you used:
- 16193 strings out of 493109
- 280751 string characters out of 6135003
- 472917 words of memory out of 5000000
- 18248 multiletter control sequences out of 15000+600000
+ 16255 strings out of 493109
+ 284637 string characters out of 6135003
+ 488017 words of memory out of 5000000
+ 18280 multiletter control sequences out of 15000+600000
  20430 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,18n,58p,1820b,895s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3824,10 +2881,10 @@ uper/sfrm0800.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/cm-sup
 er/sfrm0900.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/cm-super
 /sfrm1000.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/wasy/wasy1
 0.pfb>
-Output written on main.pdf (146 pages, 3778432 bytes).
+Output written on main.pdf (146 pages, 3790435 bytes).
 PDF statistics:
- 2642 PDF objects out of 2984 (max. 8388607)
- 2235 compressed objects within 23 object streams
+ 2988 PDF objects out of 3580 (max. 8388607)
+ 2566 compressed objects within 26 object streams
  956 named destinations out of 1000 (max. 500000)
- 476 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 652 words of extra memory for PDF output out of 10000 (max. 10000000)
 
