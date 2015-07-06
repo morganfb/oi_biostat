@@ -18,7 +18,7 @@ Scientists seek to answer questions using rigorous methods and careful observati
 \end{enumerate}
 Statistics as a subject focuses on making stages 2-4 objective, rigorous, and efficient. That~is, statistics has three primary components: How best can we collect data? How should it be analyzed? And what can we infer from the analysis?  Each of these questions must, of course, be intimately linked to the scientific question at hand.
 
-Many scientific investigations can be addressed with a small number of data collection techniques, analytic tools, and fundamental concepts in statistical inference. This chapter provides a brief introduction to the basic principles of these areas that will be encountered later in the book, and illustrates the important role statistics plays in medicine and biology.
+Many scientific investigations can be conducted with a small number of data collection techniques, analytic tools, and fundamental concepts in statistical inference. This chapter provides a brief introduction to the basic principles of these areas that will be encountered later in the book, and illustrates the important role statistics plays in medicine and biology.
 
 \textbf{leaves open the question of why we are using the Counties data} 
 
@@ -65,8 +65,9 @@ $\vdots$	&	$\vdots$	  &	$\vdots$ \\
 
 \textbf{where are the data for this?}
 
- Table~\ref{stentStudyResults} summarizes subject-level data in a helpful way, showing patterns in the data.  For instance, the left side of the table shows that 33 patients on the treatment group experienced a stroke within 30 days.
+Table~\ref{stentStudyResults} summarizes subject-level data in a helpful way, showing patterns in the data.  For instance, the first column on the left side of the table shows that a total of 46 patients experienced a stroke within 30 days: 33 were in the treatment group, while 13 were in the control group.
 
+ 
 \begin{table}[h]
 \centering
 \begin{tabular}{l cc c cc}
@@ -84,7 +85,6 @@ Total				& 46		& 405	&&	73	& 378 \\
 \label{stentStudyResults}
 \end{table}
 
-Of the 224 patients in the treatment group, 45 experienced a stroke by the end of the first year, or a proportion of  $45/224 = 0.20$.
 
 The table makes it possible to compute some simple summary statistics. A \term{summary statistic} is a single number summarizing a large amount of data.\footnote{Formally, a summary statistic is a value computed from the data. Some summary statistics are more useful than others.} For instance, the primary results of the study after 1~year could be described by two summary statistics: the proportion of people who had a stroke in the treatment and control groups.
 \begin{itemize}
@@ -92,12 +92,20 @@ The table makes it possible to compute some simple summary statistics. A \term{s
 \item[] Proportion who had a stroke in the treatment (stent) group: $45/224 = 0.20 = 20\%$.
 \item[] Proportion who had a stroke in the control group: $28/227 = 0.12 = 12\%$.
 \end{itemize}
-These two summary statistics are useful for examining possible differences between the groups, and they show something that surprised and disappointed the study team: an additional 8\% of patients in the treatment group experienced a stroke. This illustrates how important it is to verify scientific hypotheses experimentally whenever possible.  It also raises implicitly an important statistical issue.  Does the  study provide definitive evidence that stents are harmful? Phrased another way, is the 8\% difference between the two groups larger than one would expect by chance variation alone, leading to a rejection of the notion that it was due to chance? 
+These two summary statistics are useful for examining possible differences between the groups. They show something that surprised and disappointed the study team: an additional 8\% of patients in the treatment group experienced a stroke. This illustrates the importance of experimentally verifying scientific hypotheses. 
+
+
+The results also raise an important statistical issue: does the study provide definitive evidence that stents are harmful? In other words, is the 8\% difference between the two groups larger than one would expect by chance variation alone? 
+
 
 Suppose you flip a coin 100 times. While the chance a coin lands heads in any given coin flip is 50\%, we probably won't observe exactly 50 heads. This type of fluctuation is part of almost experiment or study. It may well be possible that the 8\% difference in the stent study is due to this natural variation. However, the larger the difference we observe (for a particular study size), the less credible it is that the difference is due to chance alone. 
-The material on hypothesis testing will provide the statistical tools to examine this issue. In the stent study those methods showed compelling evidence of harm by stents for the types of subjects participating in this clinical trial. 
+If out of 100 flips, a coin landed heads up only 5 times, it would be reasonable to doubt that the outcome was due to chance; perhaps the coin is weighted so that tails are more likely to occur. 
 
-\textbf{Be careful:} do not generalize the results of this study to all patients and all stents. This study looked at patients with very specific characteristics who volunteered to be a part of this study and who may not be representative of all stroke patients. In addition, there are many types of stents and this study only considered the self-expanding Wingspan stent (Boston Scientific). 
+The material on hypothesis testing will provide the statistical tools to examine this issue. In the stent study, such methods showed compelling evidence that the 8\% difference was indeed larger than expected by chance, and that for the types of subjects participating in this clinical trial, stents increased the risk of stroke.  
+
+\textbf{Be careful:} the results of this study should not be generalized to all patients and all stents. This study looked at patients with very specific characteristics who may not be representative of all stroke patients. Additionally, there are many types of stents, and this study only considered the self-expanding Wingspan stent (Boston Scientific). 
+
+ 
 
 \index{data!stroke|)}
 
@@ -106,23 +114,20 @@ The material on hypothesis testing will provide the statistical tools to examine
 
 Effective presentation and description of data is a first step in most analyses. This section introduces one structure for organizing data as well as some terminology that will be used throughout this book.
 
-%%%%%% revised to here 17 jun 2015.  Need a data set to replace email
 
 \subsection{Observations, variables, and data matrices}
 
 \index{data!FAMuSS|(}
 
-In xxxx (date, if we can find it) the National Institutes of Health provided funding for the
-The functional polymorphisms Associated with Human Muscle Size and Strength study (FAMuSS) \footnote{Thompson PD, Moyna M, Seip, R, et al., 2004.  Functional Polymorphisms Associated with Human Muscle Size and Strength.  Medicine and Science in Sports and Exercise 36:1132 - 1139}.  The study measured a variety of demographic, phenotypic and genetic characteristics of about 1300 participants and has been used in many publications \footnote{Pescatello L, et al. Highlights from the functional single nucleotide polymorphisms associated with human muscle size and strength or FAMuSS study, BioMed Research International 2013.}; this section describes data similar to that used in a study of the relationship between muscle strength and a location on the gene \textsl{actn3} \footnote{Clarkson P, et al., Journal of Applied Physiology 99: 154–163, 2005.}  The study also measured the response in strength of the non-dominant arm to 12 weeks of training.
+The Functional polymorphisms Associated with Muscle Size and Strength study (FAMuSS) \footnote{Thompson PD, Moyna M, Seip, R, et al., 2004.  Functional Polymorphisms Associated with Human Muscle Size and Strength.  Medicine and Science in Sports and Exercise 36:1132 - 1139}, funded by the National Institutes of Health (NIH), measured a variety of demographic, phenotypic, and genetic characteristics of about 1300 participants. Data from the study has been used in many publications \footnote{Pescatello L, et al. Highlights from the functional single nucleotide polymorphisms associated with human muscle size and strength or FAMuSS study, BioMed Research International 2013.}. This section describes data similar to that used in a study of the relationship between muscle strength and a location on the gene \textsl{actn3} \footnote{Clarkson P, et al., Journal of Applied Physiology 99: 154–163, 2005.}  The study also measured the response in strength of the non-dominant arm to 12 weeks of training.
 
 % add ref to Foulkes web site for the data
 
 Table~\ref{famussClarkson} displays rows 1, 2, 3, and 595 of some of the data from the 595 study participants.   The complete set of observations will be referred to as the \data{FAMuSS} data set.  Each row in the table shows the \var{sex}, \var{age}, \var{height}, \var{weight}, along with a genotype at a particular location (\var{actn3.r577x}), and response to training (\var{ndrm.ch}) from a single study participant, or each \term{case}. \footnote{A case is also sometimes called a \term{unit of observation} or an \term{observational unit}.} The columns represent characteristics, called \termsub{variables}{variable}, for each of the participants. 
 
 
+For example, the first row represents a Caucasian female, 27 years of age, 65 inches tall, weighing 199 pounds, of genotype CC, who increased strength in her nondominant arm by 40\% after training. It is important to understand the definitions of variables, even for items that seem obvious. For example, weight in this dataset has been recorded in pounds, rather than on the metric scale more commonly used outside the United States. Definitions of the variables are given in Table~\ref{FAMuSS_subset_Variables}
 
-
-It is important to understand the definitions of variables, even for items that seem obvious. Height and weight are measured in inches and pounds, respectively, not in the metric scale more commonly used outside the United States. The definitions of the variables \var{ndrm.ch} and \var{actn3.r577x} are more complicated and are given   in Table~\ref{FAMuSS_subset_Variables} with the other 5 variables.
 
 % latex table generated in R 3.1.2 by xtable 1.7-4 package
 % Tue Jun 30 14:27:16 2015
@@ -149,9 +154,6 @@ It is important to understand the definitions of variables, even for items that 
 %library(xtable);xtable(famuss.oi.biostat[c(1,2,3,595),c( "sex", "age", "race", "height", "weight", "actn3.r577x", "ndrm.ch")],digits = 1)
 
 
-
-
-
 \begin{table}[t]
 \centering\small
 \begin{tabular}{lp{10.5cm}}
@@ -162,31 +164,32 @@ It is important to understand the definitions of variables, even for items that 
 \var{age} & Age in years   \\
 \var{race} & Recorded as African AM (African American), Am Indian (American Indian), Caucasian, Hispanic and Other   \\
 \var{height} & Height in inches    \\
-\var{weight} & Weight in lbs  \\
-\var{actn3.r577x} & Genotype at the location r577x in the gene actn3. The four genotypes observed were CC, CT and TT \\
-\var{ndrm.ch} & Percent change in strength in the non-dominant arm, comparing strength after to before training \\
+\var{weight} & Weight in pounds  \\
+\var{actn3.r577x} & Genotype at the location r577x in the gene actn3. The three genotypes observed were CC, CT and TT \\
+\var{ndrm.ch} & Percent change in strength in the non-dominant arm, comparing strength after training to strength before training \\
 \hline
 \end{tabular}
-\caption{Variables and their descriptions for the \data{email50} data set.\vspaceB{-3.5mm}}
+\caption{Variables and their descriptions for the \data{FAMuSS} data set.\vspaceB{-3.5mm}}
 \label{FAMuSS_subset_variables}
 \end{table}
 
+
+
 \index{data!FAMuSS|)}
 
-For example, the first row represents a Caucasian female, age 27, 65 inches tall, who weighs 199 lbs, was genotype CC  and increased her strength in her nondominant arm by 40\% after training. 
-The data in Table~\ref{FAMuSS_subset_variables} represent a \term{data matrix}, which is a common way to organize data. Each row of a data matrix corresponds to a unique case, and each column corresponds to a variable. A data matrix for the stroke study introduced in Section~\ref{basicExampleOfStentsAndStrokes} is shown in Table~\vref{stentStudyResultsDF}, where the cases were patients and there were three variables recorded for each patient.
+The data in Table~\ref{FAMuSS_subset_variables} are organized as a \term{data matrix}. Each row of a data matrix corresponds to a unique case, and each column corresponds to a variable. A data matrix for the stroke study introduced in Section~\ref{basicExampleOfStentsAndStrokes} is shown in Table~\vref{stentStudyResultsDF}, in which the cases were patients and three variables were recorded for each patient.
 
-Data matrices are a convenient way to record and store data. If another individual or case is added to the data set, an additional row can be easily added. Similarly, another column can be added for a new variable.
+Data matrices are a convenient way to record and store data. If data is collected for another individual, another row can easily be added; similarly, another column can be added for a new variable.
+
+\subsection{Types of variables}
+\label{variableTypes}
 
 \index{data!county|(}
 
+The \data{county}\footnote{Data source: US Bureau of the Census. These data were collected from the US Census website. {\urlwofont{http://quickfacts.census.gov/qfd/index.html}}} dataset summarizes information about the 3,143 counties in the United States. This dataset includes information about each county: its name, the state where it is located, its population in 2000 and 2010, per capita federal spending, poverty rate, and five additional characteristics. Seven rows of the \data{county} data set are shown in Table~\ref{countyDF}, and the variables are summarized in Table~\ref{countyVariables}. 
 
 
-The dataset \data{county} summarizes 
- information about the 3,143 counties in the United States; the data source is the US Bureau of the Census. This data set includes information about each county: its name, the state where it resides, its population in 2000 and 2010, per capita federal spending, poverty rate, and five additional characteristics. Each county may be viewed as a case, and there are eleven pieces of information recorded for each case. A table with 3,143 rows and 11 columns could hold these data, where each row represents a county and each column represents a particular piece of information.
 
-
-\noindent Seven rows of the \data{county} data set are shown in Table~\ref{countyDF}, and the variables are summarized in Table~\ref{countyVariables}. These data were collected from the US Census website.\footnote{\urlwofont{http://quickfacts.census.gov/qfd/index.html}}
 
 \begin{landscape}
 \begin{table}
@@ -240,25 +243,24 @@ where a \resp{comprehensive} ban means smoking was not permitted in restaurants,
 \end{table}
 \end{landscape}
 
-\subsection{Types of variables}
-\label{variableTypes}
 
 Each of the  variables \var{fed\_\hspace{0.3mm}spend}, \var{pop2010}, \var{state}, and \var{smoking\_\hspace{0.3mm}ban} variables in the \data{county} data set is inherently different from the other three yet many of them share certain characteristics.
 
-The variable \var{fed\_\hspace{0.3mm}spend}  is  a \term{numerical} variable since it can take a wide range of numerical values, and it is possible to add, subtract, or take averages with those values. On the other hand, we would not classify a variable reporting telephone area codes as numerical since their average, sum, and difference have no clear meaning.
 
-The \var{pop2010} variable is also numerical, although it is a little different than \var{fed\_\hspace{0.3mm}spend}. Population count can only take whole non-negative numbers (\resp{0}, \resp{1}, \resp{2}, ...), so the population variable is said to be \term{discrete} since it can only take numerical values with jumps. On the other hand, the federal spending variable is said to be \term{continuous}.
+The variable \var{fed\_\hspace{0.3mm}spend}  is  a \term{numerical} variable since it can take on a wide range of numerical values, and it is possible to add, subtract, or take averages with those values. However, we would not classify a variable reporting telephone area codes as numerical; averages, sums, or differences done with area codes have no clear meaning.
+
+The \var{pop2010} variable is also numerical, although it is a little different than \var{fed\_\hspace{0.3mm}spend}. Population count can only be whole, non-negative numbers (\resp{0}, \resp{1}, \resp{2}, ...), so the population variable is said to be \term{discrete}. On the other hand, the federal spending variable is said to be \term{continuous}.
 
 The variable \var{state} can take up to 51 values after accounting for Washington, DC: \resp{AL}, ..., and \resp{WY}. Because the responses themselves are categories, \var{state} is called a \term{categorical} variable,\footnote{Sometimes also called a \term{nominal} variable.} and the possible values are called the variable's \term{levels}.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.57\textwidth]{ch_intro_to_data/figures/variables/variables}
+\includegraphics[width=0.57\textwidth]{ch_intro_to_data_oi_biostat/figures/variables/variables}
 \caption{Breakdown of variables into their respective types.}
 \label{variables}
 \end{figure}
 
-Finally, the \var{smoking\_\hspace{0.3mm}ban} variable describes the type of county-wide smoking ban and takes values \resp{none}, \resp{partial}, or \resp{comprehensive} in each county. This variable is  a hybrid: it is a categorical variable but the levels have a natural ordering. A variable with these properties is called an \term{ordinal categorical} variable. To simplify analyses, ordinal variables in this book will be treated as categorical variables.
+Finally, the \var{smoking\_\hspace{0.3mm}ban} variable describes the type of county-wide smoking ban and takes values \resp{none}, \resp{partial}, or \resp{comprehensive} in each county. This variable is  a hybrid: it is a categorical variable, but the levels have a natural ordering. A variable with these properties is called an \term{ordinal categorical} variable. To simplify analyses, ordinal variables in this book will be treated as categorical variables.
 
 \begin{example}{Suppose data were collected about students in a statistics course. Three variables were recorded for each student: number of siblings, student height, and whether the student had previously taken a statistics course. Classify each of the variables as continuous numerical, discrete numerical, or categorical.}
 The number of siblings and student height represent numerical variables. Because the number of siblings is a count, it is discrete. Height varies continuously, so it is a continuous numerical variable. The last variable classifies students into two categories -- those who have and those who have not taken a statistics course -- which makes this variable categorical.
@@ -276,50 +278,45 @@ In the \data{county} dataset,  a social or public health scientist might be inte
 \begin{enumerate}
 \setlength{\itemsep}{0mm}
 \item[(1)]\label{fedSpendingPovertyQuestion} Is federal spending, on average, higher or lower in counties with high rates of poverty?
-\item[(2)]\label{ownershipMultiUnitQuestion} If homeownership is lower than the national average in one county, will the percent of multi-unit structures in that county likely be above or below the national average?
+\item[(2)]\label{ownershipMultiUnitQuestion} If homeownership is lower than the national average in one county, will the percentage of multi-unit structures in that county likely be above or below the national average?
 \item[(3)]\label{isAverageIncomeAssociatedWithSmokingBans} Which counties have a higher average income: those that enact one or more smoking bans or those that do not?
 \end{enumerate}
 
-After data have been collected according to carefully specified criteria,  examining summary statistics \index{summary statistic}  may provide some initial insights to the answers to these three questions. Additionally, graphs can be used to visually summarize data and are useful for answering such questions as well.
+Examining summary statistics \index{summary statistic}  may provide some initial insights towards answering these three questions. Graphs are useful for answering such questions as well, as they can be used to visually summarize data.
 
 \indexthis{Scatterplots}{scatterplot} are one type of graph used to study the relationship between two numerical variables. Figure~\ref{county_fed_spendVsPoverty} compares the variables \var{fed\_\hspace{0.3mm}spend} and \var{poverty}. Each point on the plot represents a single county. For instance, the highlighted dot corresponds to County~1088 in the \data{county} data set: Owsley County, Kentucky, which had a poverty rate of 41.5\% and federal spending of \$21.50 per capita. The scatterplot suggests a relationship between the two variables: counties with a high poverty rate also tend to have slightly more federal spending. 
 
 \begin{figure}
 \centering
-\includegraphics[width=0.8\textwidth]{ch_intro_to_data/figures/county_fed_spendVsPoverty/county_fed_spendVsPoverty}
+\includegraphics[width=0.8\textwidth]{ch_intro_to_data_oi_biostat/figures/county_fed_spendVsPoverty/county_fed_spendVsPoverty}
 \caption{A scatterplot showing \var{fed\_\hspace{0.3mm}spend} against \var{poverty}. Owsley County of Kentucky, with a poverty rate of 41.5\% and federal spending of \$21.50 per capita, is highlighted.}
 \label{county_fed_spendVsPoverty}
 \end{figure}
 
 \begin{exercise}
-Examine the variables in the \data{FAMuSS} data set, which are described in Table~\vref{{FAMuSS_subset_Variables}}. Create two questions about the relationships between these variables that seem interesting to you.\footnote{Two sample questions: (1)  Do participants appear respond differently to training according to genotype?  (2)  Do male participants appear to respond differently to training than females.}
+Examine the variables in the \data{FAMuSS} dataset, which are described in Table~\ref{{FAMuSS_subset_variables}}. Create two questions about the relationships between these variables that could be feasibly addressed in a study.\footnote{Two sample questions: (1)  Do participants appear to respond differently to training according to genotype?  (2)  Do male participants appear to respond differently to training than females?}
 
 \end{exercise}
 
 The \var{fed\_\hspace{0.3mm}spend} and \var{poverty} variables are said to be associated because the plot shows a discernible pattern. When two variables show some connection with one another, they are called \term{associated} variables. 
 
-\begin{example}{This example examines the relationship between homeownership and the percent of units in multi-unit structures (e.g. apartments, condos), which is visualized using a scatterplot in Figure~\ref{multiunitsVsOwnership}. Are these variables associated?}
+\begin{example}{The relationship between homeownership and the percent of units in multi-unit structures (e.g. apartments, condos) is visualized using a scatterplot in Figure~\ref{multiunitsVsOwnership}. Are these variables associated?}
 It appears that the larger the fraction of units in multi-unit structures, the lower the homeownership rate. Since there is some relationship between the variables, they are associated.
 \end{example}
 
 
 \begin{figure}
    \centering
-   \includegraphics[width=0.8\textwidth]{ch_intro_to_data/figures/multiunitsVsOwnership/multiunitsVsOwnership}
+   \includegraphics[width=0.8\textwidth]{ch_intro_to_data_oi_biostat/figures/multiunitsVsOwnership/multiunitsVsOwnership}
    \caption{A scatterplot of homeownership versus the percent of units that are in multi-unit structures for all 3,143 counties. Interested readers may find an image of this plot with an additional third variable, county population, presented at \href{http://www.openintro.org/stat/down/MHP.png}{www.openintro.org/stat/down/MHP.png}.}
    \label{multiunitsVsOwnership}
 \end{figure}
 
-Because there is a downward trend in Figure~\ref{multiunitsVsOwnership} -- counties with more units in multi-unit structures are associated with lower homeownership -- these variables are said to be \termsub{negatively associated}{negative association}. A \term{positive association} is shown in the relationship between the \var{poverty} and \var{fed\_\hspace{0.3mm}spend} variables represented in Figure~\ref{county_fed_spendVsPoverty}, where counties with higher poverty rates tend to receive more federal spending per capita.
+Because there is a downward trend in Figure~\ref{multiunitsVsOwnership} -- counties with more units in multi-unit structures are associated with lower homeownership -- these variables are said to be \termsub{negatively associated}{negative association}. A \term{positive association} is shown in the relationship between the \var{poverty} and \var{fed\_\hspace{0.3mm}spend} variables represented in Figure~\ref{county_fed_spendVsPoverty}, in which counties with higher poverty rates tend to receive more federal spending per capita.
 
 If two variables are not associated, then they are said to be \term{independent}. That is, two variables are independent if there is no evident relationship between the two.
 
-\begin{termBox}{\tBoxTitle{Associated or independent, not both}
-A pair of variables are either related in some way (associated) or not (independent). No pair of variables is both associated and independent.}
-\end{termBox}
-
 \index{data!county|)}
-
 
 
 %%%%%
@@ -329,7 +326,7 @@ A pair of variables are either related in some way (associated) or not (independ
 \index{sample|(}
 \index{population|(}
 
-The first step in conducting research is to identify topics or questions that are to be investigated. A clearly articulated research question is essential in identifying what subjects or cases should be studied, what variables are important, and  how they should be measured. It is also important to consider \emph{how} data are collected so that they are reliable and help achieve the research goals.
+The first step in conducting research is to identify questions to investigate. A clearly articulated research question is essential in identifying which subjects should be studied, what variables are relevant, and how data should be measured. In order to obtain reliable data, it is also important to consider \emph{how} data are collected.
 
 %% revisions to here, 1 July 2015
 
@@ -339,16 +336,17 @@ The first step in conducting research is to identify topics or questions that ar
 
 \begin{enumerate}
 \setlength{\itemsep}{0mm}
-\item What is the average mercury content in swordfish in the Atlantic Ocean?
+\item What is the average mercury content of swordfish in the Atlantic Ocean?
 \item\label{identifyPopulationOfStentStudy} Does a new drug reduce the number of deaths in patients with severe heart disease?
 \end{enumerate}
-Each of these questions refers to a target \term{population}. In the first question, the target population is all swordfish in the Atlantic ocean, and each fish represents a case. Often times, it is too expensive to collect data for every case in a population. Instead, a sample is taken. A \term{sample} represents a subset of the cases and is often a small fraction of the population. For instance, 60 swordfish (or some other number) in the population might be selected, and this sample data may be used to provide an estimate of the population average and answer the research question.
+Each of these questions refers to a target \term{population}. In the first question, the target population is all swordfish in the Atlantic Ocean, and each fish represents a case. It is often too expensive to collect data for every case in a population. Instead, a sample is taken. A \term{sample} represents a subset of the cases and is often a small fraction of the population. For instance, 60 swordfish (or some other number) in the population might be selected; this sample data can be used to provide an estimate of the population average in order to answer the research question.
 
 \begin{exercise} \label{identifyingThePopulationForTwoQuestionsInPopAndSampSubsection}
-For the second  question above, identify the target population and what represents an individual case.\footnote{ (\ref{identifyPopulationOfStentStudy}) A person with severe heart disease represents a case. The population includes all people with severe heart disease.}
+For the second  question above, identify the target population and what represents an individual case.\footnote{ (\ref{identifyPopulationOfStentStudy}) A single person with severe heart disease represents a case. The population includes all people with severe heart disease.}
 \end{exercise}
 
 \begin{comment}
+
 \subsection{Anecdotal evidence}
 \label{anecdotalEvidenceSubsection}
 
@@ -363,7 +361,7 @@ Each of the conclusions are based on some data. However, there are two problems.
 \setlength{\captionwidth}{\textwidth-80mm}
 \begin{figure}
 \centering
-\hspace{8mm}\includegraphics[width=55mm]{ch_intro_to_data/figures/mnWinter/mnWinter}\hspace{4mm}
+\hspace{8mm}\includegraphics[width=55mm]{ch_intro_to_data_oi_biostat/figures/mnWinter/mnWinter}\hspace{4mm}
 \begin{minipage}[b]{\textwidth - 80mm}
    \caption[anecdotal evidence]{In February 2010, some media pundits cited one large snow storm as valid evidence against global warming. As comedian Jon Stewart pointed out, ``It's one storm, in one region, of one country.''\vspace{-4.5mm} \\
    
@@ -382,13 +380,6 @@ Anecdotal evidence typically is composed of unusual cases that we recall based o
 
 \end{comment}
 
-\textbf{revisions to here, 2 jul 2015, fix anecdotal data}
-
-
-
-
-
-
 
 
 \subsection{Sampling from a population}
@@ -399,7 +390,7 @@ We might try to estimate the time to graduation for Duke undergraduates in the l
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=0.47\textwidth]{ch_intro_to_data/figures/popToSample/popToSampleGraduates}
+\includegraphics[width=0.47\textwidth]{ch_intro_to_data_oi_biostat/figures/popToSample/popToSampleGraduates}
 \caption{In this graphic, five graduates are randomly selected from the population to be included in the sample.}
 \label{popToSampleGraduates}
 \end{figure}
@@ -412,7 +403,7 @@ Perhaps she would pick a disproportionate number of graduates from health-relate
 
 \begin{figure}
 \centering
-\includegraphics[width=0.47\textwidth]{ch_intro_to_data/figures/popToSample/popToSubSampleGraduates}
+\includegraphics[width=0.47\textwidth]{ch_intro_to_data_oi_biostat/figures/popToSample/popToSubSampleGraduates}
 \caption{Instead of sampling from all graduates equally, a nutrition major might inadvertently pick graduates with health-related majors disproportionately often.}
 \label{popToSubSampleGraduates}
 \end{figure}
@@ -426,7 +417,7 @@ Even when people are picked at random, e.g. for surveys, caution must be exercis
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.5\textwidth]{ch_intro_to_data/figures/popToSample/surveySample}
+\includegraphics[width=0.5\textwidth]{ch_intro_to_data_oi_biostat/figures/popToSample/surveySample}
 \caption{Due to the possibility of non-response, surveys studies may only reach a certain group within the population. It is difficult, and often times impossible, to completely fix this problem.}
 \label{surveySample}
 \end{figure}
@@ -456,7 +447,7 @@ If we suspect poverty might affect spending in a county, then poverty is the \te
 \begin{tipBox}{\tipBoxTitle{Explanatory and response variables}
 To identify the explanatory variable in a pair of variables, identify which of the two is suspected of affecting the other and plan an appropriate analysis.
 
-\hspace{10mm}\includegraphics[height=0.34in]{ch_intro_to_data/figures/expResp/expResp}}
+\hspace{10mm}\includegraphics[height=0.34in]{ch_intro_to_data_oi_biostat/figures/expResp/expResp}}
 \end{tipBox}
 
 \begin{caution}{association does not imply causation}{Labeling variables as \emph{explanatory} and \emph{response} does not guarantee the relationship between the two is actually causal, even if there is an association identified between the two variables. We use these labels only to keep track of which variable we suspect affects the other.}
@@ -499,7 +490,7 @@ Suppose an observational study tracked sunscreen use and skin cancer, and it was
 
 Some previous research tells us that using sunscreen actually reduces skin cancer risk, so maybe there is another variable that can explain this hypothetical association between sunscreen usage and skin cancer. One important piece of information that is absent is sun exposure. If someone is out in the sun all day, she is more likely to use sunscreen \emph{and} more likely to get skin cancer. Exposure to the sun is unaccounted for in the simple investigation.
 \begin{center}
-\includegraphics[height=1.0in]{ch_intro_to_data/figures/variables/sunCausesCancer}
+\includegraphics[height=1.0in]{ch_intro_to_data_oi_biostat/figures/variables/sunCausesCancer}
 \end{center}
 % Some studies:
 % http://www.sciencedirect.com/science/article/pii/S0140673698121682
@@ -525,7 +516,7 @@ Almost all statistical methods are based on the notion of implied randomness. If
 
 \begin{figure}
 \centering
-\includegraphics[width=\textwidth]{ch_intro_to_data/figures/samplingMethodsFigure/simple_stratified}
+\includegraphics[width=\textwidth]{ch_intro_to_data_oi_biostat/figures/samplingMethodsFigure/simple_stratified}
 \caption{Examples of simple random\index{sample!simple random sampling} and stratified sampling\index{sample!stratified sampling}. In the top panel, simple random sampling was used to randomly select the 18 cases. In the bottom panel, stratified sampling was used: cases were grouped into strata, then simple random sampling was employed within \mbox{each stratum}.}
 \label{simple_stratified}
 \end{figure}
@@ -544,7 +535,7 @@ In a \termsub{cluster sample}{sample!cluster sample}, we break up the population
 
 \begin{figure}
 \centering
-\includegraphics[width=\textwidth]{ch_intro_to_data/figures/samplingMethodsFigure/cluster_multistage}
+\includegraphics[width=\textwidth]{ch_intro_to_data_oi_biostat/figures/samplingMethodsFigure/cluster_multistage}
 \caption{Examples of cluster\index{sample!cluster sampling} and multistage sampling\index{sample!multistage sampling}. In the top panel, cluster sampling was used. Here, data were binned into nine clusters, three of these clusters were sampled, and all observations within these three cluster were included in the sample. In the bottom panel, multistage sampling was used.
 It differs from cluster sampling in that of the clusters selected, we randomly select a subset of each cluster to be included in the sample.}
 \label{cluster_multistage}
@@ -574,7 +565,7 @@ Randomized experiments are generally built on four principles.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.78\textwidth]{ch_intro_to_data/figures/figureShowingBlocking/figureShowingBlocking}
+\includegraphics[width=0.78\textwidth]{ch_intro_to_data_oi_biostat/figures/figureShowingBlocking/figureShowingBlocking}
 \caption{Blocking using a variable depicting patient risk. Patients are first divided into low-risk and high-risk blocks, then each block is evenly separated into the treatment groups using randomization. This strategy ensures an equal representation of patients in each treatment group from both the low-risk and high-risk categories.}
 \label{figureShowingBlocking}
 \end{figure}
@@ -620,7 +611,7 @@ A \term{scatterplot} provides a case-by-case view of data for two numerical vari
 
 \begin{figure}[h]
    \centering
-   \includegraphics[width=0.8\textwidth]{ch_intro_to_data/figures/email50LinesCharacters/email50LinesCharacters}
+   \includegraphics[width=0.8\textwidth]{ch_intro_to_data_oi_biostat/figures/email50LinesCharacters/email50LinesCharacters}
    \caption{A scatterplot of \var{line\_\hspace{0.3mm}breaks} versus \var{num\_\hspace{0.3mm}char} for the \data{email50} data.}
    \label{email50LinesCharacters}
 \end{figure}
@@ -639,7 +630,7 @@ The relationship is evidently nonlinear, as highlighted by the dashed line. This
 
 \begin{figure}[h]
    \centering
-   \includegraphics[width=0.8\textwidth]{ch_intro_to_data/figures/carsPriceVsWeight/carsPriceVsWeight}
+   \includegraphics[width=0.8\textwidth]{ch_intro_to_data_oi_biostat/figures/carsPriceVsWeight/carsPriceVsWeight}
    \caption{A scatterplot of \var{price} versus \var{weight} for 54 cars.}
    \label{carsPriceVsWeight}
 \end{figure}
@@ -657,14 +648,14 @@ Sometimes two variables are one too many: only one variable may be of interest. 
 
 \begin{figure}[h]
    \centering
-   \includegraphics[width=\textwidth]{ch_intro_to_data/figures/emailCharactersDotPlot/emailCharactersDotPlot}
+   \includegraphics[width=\textwidth]{ch_intro_to_data_oi_biostat/figures/emailCharactersDotPlot/emailCharactersDotPlot}
    \caption{A dot plot of \var{num\_\hspace{0.3mm}char} for the \data{email50} data set.}
    \label{emailCharactersDotPlot}
 \end{figure}
 
 \begin{figure}[h]
    \centering
-   \includegraphics[width=0.72\textwidth]{ch_intro_to_data/figures/emailCharactersDotPlot/emailCharactersDotPlotStacked}
+   \includegraphics[width=0.72\textwidth]{ch_intro_to_data_oi_biostat/figures/emailCharactersDotPlot/emailCharactersDotPlotStacked}
    \caption{A stacked dot plot of \var{num\_\hspace{0.3mm}char} for the \data{email50} data set. The~values have been rounded to the nearest 2,000 in this plot.}
    \label{emailCharactersDotPlotStacked}
 \end{figure}
@@ -733,7 +724,7 @@ Count & 19 & 12 & 6 & 2 & 3 & 5 & $\cdots$ & 0 & 1 \\
 
 \begin{figure}[bth]
    \centering
-   \includegraphics[width=0.82\textwidth]{ch_intro_to_data/figures/email50NumCharHist/email50NumCharHist}
+   \includegraphics[width=0.82\textwidth]{ch_intro_to_data_oi_biostat/figures/email50NumCharHist/email50NumCharHist}
    \caption{A histogram of \var{num\_\hspace{0.3mm}char}. This distribution is very strongly skewed to the right.\index{skew!example: very strong}}
    \label{email50NumCharHist}
 \end{figure}
@@ -762,7 +753,7 @@ Figure~\ref{singleBiMultiModalPlots} shows histograms that have one, two, or thr
 
 \begin{figure}[h]
    \centering
-   \includegraphics[width=\textwidth]{ch_intro_to_data/figures/singleBiMultiModalPlots/singleBiMultiModalPlots}
+   \includegraphics[width=\textwidth]{ch_intro_to_data_oi_biostat/figures/singleBiMultiModalPlots/singleBiMultiModalPlots}
    \caption{Counting only prominent peaks, the distributions are (left to right) unimodal, bimodal, and multimodal.}
    \label{singleBiMultiModalPlots}
 \end{figure}
@@ -820,7 +811,7 @@ Formulas and methods used to compute the variance and standard deviation for a p
 
 \begin{figure}
 \centering
-\includegraphics[width=\mycaptionwidth]{ch_intro_to_data/figures/sdAsRuleForEmailNumChar/sdAsRuleForEmailNumChar}
+\includegraphics[width=\mycaptionwidth]{ch_intro_to_data_oi_biostat/figures/sdAsRuleForEmailNumChar/sdAsRuleForEmailNumChar}
 \caption{In the \var{num\_\hspace{0.3mm}char} data, 41 of the 50 emails (82\%) are within 1~standard deviation of the mean, and 47 of the 50 emails (94\%) are within 2 standard deviations. Usually about 70\% of the data are within 1 standard deviation of the mean and 95\% are within 2 standard deviations, though this rule of thumb is less accurate for skewed data, as shown in this example.}
 \label{sdAsRuleForEmailNumChar}
 \end{figure}
@@ -831,7 +822,7 @@ Focus on the conceptual meaning of the standard deviation as a descriptor of var
 
 \begin{figure}
 \centering
-\includegraphics[width=0.64\textwidth]{ch_intro_to_data/figures/severalDiffDistWithSdOf1/severalDiffDistWithSdOf1}
+\includegraphics[width=0.64\textwidth]{ch_intro_to_data_oi_biostat/figures/severalDiffDistWithSdOf1/severalDiffDistWithSdOf1}
 \caption{Three very different population distributions with the same mean $\mu=0$ and standard deviation $\sigma=1$.}
 \label{severalDiffDistWithSdOf1}
 \end{figure}
@@ -852,7 +843,7 @@ A \term{box plot} summarizes a data set using five statistics while also plottin
 
 \begin{figure}[h]
    \centering
-   \includegraphics[width=0.86\mycaptionwidth]{ch_intro_to_data/figures/boxPlotLayoutNumVar/boxPlotLayoutNumVar}
+   \includegraphics[width=0.86\mycaptionwidth]{ch_intro_to_data_oi_biostat/figures/boxPlotLayoutNumVar/boxPlotLayoutNumVar}
    \caption{A vertical dot plot next to a labeled box plot for the number of characters in 50 emails. The median (6,890), splits the data into the bottom 50\% and the top 50\%, marked in the dot plot by horizontal dashes and open circles, respectively.}
    \label{boxPlotLayoutNumVar}
 \end{figure}
@@ -912,7 +903,7 @@ How are the \indexthis{sample statistics}{sample statistic} of the \data{num\_\h
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=\textwidth]{ch_intro_to_data/figures/email50NumCharDotPlotRobustEx/email50NumCharDotPlotRobustEx}
+\includegraphics[width=\textwidth]{ch_intro_to_data_oi_biostat/figures/email50NumCharDotPlotRobustEx/email50NumCharDotPlotRobustEx}
 \caption{Dot plots of the original character count data and two modified data sets.}
 \label{email50NumCharDotPlotRobustEx}
 \end{figure}
@@ -958,11 +949,11 @@ When data are very strongly skewed, we sometimes transform them so they are easi
 \begin{figure}[ht]
 \centering
 \subfigure[]{
-\includegraphics[width=0.46\textwidth]{ch_intro_to_data/figures/histMLBSalaries/histMLBSalariesReg}
+\includegraphics[width=0.46\textwidth]{ch_intro_to_data_oi_biostat/figures/histMLBSalaries/histMLBSalariesReg}
 \label{histMLBSalariesReg}
 }
 \subfigure[]{
-\includegraphics[width=0.46\textwidth]{ch_intro_to_data/figures/histMLBSalaries/histMLBSalariesLog}
+\includegraphics[width=0.46\textwidth]{ch_intro_to_data_oi_biostat/figures/histMLBSalaries/histMLBSalariesLog}
 \label{histMLBSalariesLog}
 }
 \caption{\subref{histMLBSalariesReg} Histogram of MLB player salaries for 2010, in millions of dollars. \subref{histMLBSalariesLog} Histogram of the log-transformed MLB player salaries for 2010.}
@@ -980,11 +971,11 @@ Transformations can also be applied to one or both variables in a scatterplot. A
 \begin{figure}
 \centering
 \subfigure[]{
-\includegraphics[width=0.47\textwidth]{ch_intro_to_data/figures/email50LinesCharactersMod/email50LinesCharactersMod}
+\includegraphics[width=0.47\textwidth]{ch_intro_to_data_oi_biostat/figures/email50LinesCharactersMod/email50LinesCharactersMod}
 \label{email50LinesCharactersMod}
 }
 \subfigure[]{
-\includegraphics[width=0.47\textwidth]{ch_intro_to_data/figures/email50LinesCharactersMod/email50LinesCharactersModLog}
+\includegraphics[width=0.47\textwidth]{ch_intro_to_data_oi_biostat/figures/email50LinesCharactersMod/email50LinesCharactersModLog}
 \label{email50LinesCharactersModLog}
 }
 \caption{\subref{email50LinesCharactersMod} Scatterplot of \var{line\_\hspace{0.3mm}breaks} against \var{num\_\hspace{0.3mm}char} for 50 emails. \subref{email50LinesCharactersModLog} A scatterplot of the same data but where each variable has been log-transformed.}
@@ -1004,16 +995,16 @@ The \data{county} data set offers many numerical variables that we could plot us
 
 \begin{figure}
 \centering
-\subfigure[]{\includegraphics[width=\textwidth]{ch_intro_to_data/figures/countyIntensityMaps/countyFedSpendMap}\label{countyFedSpendMap}}
-\subfigure[]{\includegraphics[width=\textwidth]{ch_intro_to_data/figures/countyIntensityMaps/countyPovertyMap}\label{countyPovertyMap}}
+\subfigure[]{\includegraphics[width=\textwidth]{ch_intro_to_data_oi_biostat/figures/countyIntensityMaps/countyFedSpendMap}\label{countyFedSpendMap}}
+\subfigure[]{\includegraphics[width=\textwidth]{ch_intro_to_data_oi_biostat/figures/countyIntensityMaps/countyPovertyMap}\label{countyPovertyMap}}
 \caption{\subref{countyFedSpendMap} Map of federal spending (dollars per capita). \subref{countyPovertyMap} Intensity map of poverty rate (percent).}
 \label{countyIntensityMaps1}
 \end{figure}
 
 \begin{figure}
 \centering
-\subfigure[]{\includegraphics[width=\textwidth]{ch_intro_to_data/figures/countyIntensityMaps/countyHomeownershipMap}\label{countyHomeownershipMap}}
-\subfigure[]{\includegraphics[width=\textwidth]{ch_intro_to_data/figures/countyIntensityMaps/countyMedIncomeMap}\label{countyMedIncomeMap}}
+\subfigure[]{\includegraphics[width=\textwidth]{ch_intro_to_data_oi_biostat/figures/countyIntensityMaps/countyHomeownershipMap}\label{countyHomeownershipMap}}
+\subfigure[]{\includegraphics[width=\textwidth]{ch_intro_to_data_oi_biostat/figures/countyIntensityMaps/countyMedIncomeMap}\label{countyMedIncomeMap}}
 \caption{\subref{countyHomeownershipMap} Intensity map of homeownership rate (percent). \subref{countyMedIncomeMap} Intensity map of median household income (\$1000s).}
 \label{countyIntensityMaps2}
 \end{figure}
@@ -1088,7 +1079,7 @@ A bar plot is a common way to display a single categorical variable. The left pa
 
 \begin{figure}[bht]
    \centering
-   \includegraphics[width=0.9\textwidth]{ch_intro_to_data/figures/emailNumberBarPlot/emailNumberBarPlot}
+   \includegraphics[width=0.9\textwidth]{ch_intro_to_data_oi_biostat/figures/emailNumberBarPlot/emailNumberBarPlot}
    \caption{Two bar plots of \var{number}. The left panel shows the counts, and the right panel shows the proportions in each group.}
    \label{emailNumberBarPlot}
 \end{figure}
@@ -1191,11 +1182,11 @@ A \termsub{segmented bar plot}{bar plot!segmented bar plot} is a graphical displ
 \begin{figure}[h]
 \centering
 \subfigure[]{
-\includegraphics[width=0.46\textwidth]{ch_intro_to_data/figures/emailSpamNumberSegBar/emailSpamNumberSegBar}
+\includegraphics[width=0.46\textwidth]{ch_intro_to_data_oi_biostat/figures/emailSpamNumberSegBar/emailSpamNumberSegBar}
 \label{emailSpamNumberSegBar}
 }
 \subfigure[]{
-\includegraphics[width=0.46\textwidth]{ch_intro_to_data/figures/emailSpamNumberSegBar/emailSpamNumberSegBarSta}
+\includegraphics[width=0.46\textwidth]{ch_intro_to_data_oi_biostat/figures/emailSpamNumberSegBar/emailSpamNumberSegBarSta}
 \label{emailSpamNumberSegBarSta}
 }
 \caption{\subref{emailSpamNumberSegBar} Segmented bar plot for numbers found in emails, where the counts have been further broken down by \var{spam}. \subref{emailSpamNumberSegBarSta} Standardized version of Figure~\subref{emailSpamNumberSegBar}.}
@@ -1213,11 +1204,11 @@ In some other cases, a segmented bar plot that is not standardized will be more 
 \begin{figure}
 \centering
 \subfigure[]{
-\includegraphics[width=0.3934\textwidth]{ch_intro_to_data/figures/emailSpamNumberMosaicPlot/emailNumberMosaic}
+\includegraphics[width=0.3934\textwidth]{ch_intro_to_data_oi_biostat/figures/emailSpamNumberMosaicPlot/emailNumberMosaic}
 \label{emailNumberMosaic}
 }
 \subfigure[]{
-\includegraphics[width=0.46\textwidth]{ch_intro_to_data/figures/emailSpamNumberMosaicPlot/emailSpamNumberMosaic}
+\includegraphics[width=0.46\textwidth]{ch_intro_to_data_oi_biostat/figures/emailSpamNumberMosaicPlot/emailSpamNumberMosaic}
 \label{emailSpamNumberMosaic}
 }
 \caption{The one-variable mosaic plot for \var{number} and the two-variable mosaic plot for both \var{number} and \var{spam}.}
@@ -1228,7 +1219,7 @@ A \term{mosaic plot} is a graphical display of contingency table information tha
 
 \begin{figure}
    \centering
-   \includegraphics[width=0.44\textwidth]{ch_intro_to_data/figures/emailSpamNumberMosaicPlot/emailSpamNumberMosaicRev}
+   \includegraphics[width=0.44\textwidth]{ch_intro_to_data_oi_biostat/figures/emailSpamNumberMosaicPlot/emailSpamNumberMosaicRev}
    \caption{Mosaic plot where emails are grouped by the \var{number} variable after they've been divided into \resp{spam} and \resp{not spam}.}
    \label{emailSpamNumberMosaicRev}
 \end{figure}
@@ -1244,7 +1235,7 @@ While pie charts are well known, they are not typically as useful as other chart
 
 \begin{figure}[h]
    \centering
-   \includegraphics[width=\textwidth]{ch_intro_to_data/figures/emailNumberPieChart/emailNumberPieChart}
+   \includegraphics[width=\textwidth]{ch_intro_to_data_oi_biostat/figures/emailNumberPieChart/emailNumberPieChart}
    \caption{A pie chart and bar plot of \var{number} for the \data{email} data set.}
    \label{emailNumberPieChart}
 \end{figure}
@@ -1294,7 +1285,7 @@ The \term{side-by-side box plot} \index{box plot!side-by-side box plot} is a tra
 
 \begin{figure}
    \centering
-   \includegraphics[width=\textwidth]{ch_intro_to_data/figures/countyIncomeSplitByPopGain/countyIncomeSplitByPopGain}
+   \includegraphics[width=\textwidth]{ch_intro_to_data_oi_biostat/figures/countyIncomeSplitByPopGain/countyIncomeSplitByPopGain}
    \caption{Side-by-side box plot (left panel) and hollow histograms (right panel) for \var{med\_\hspace{0.3mm}income}, where the counties are split by whether there was a population gain or loss from 2000 to 2010. The income data were collected between 2006 and 2010.}
    \label{countyIncomeSplitByPopGain}
 \end{figure}
@@ -1409,7 +1400,7 @@ We computed one possible difference under the independence model in Guided Pract
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=0.85\textwidth]{ch_intro_to_data/figures/discRandDotPlot/discRandDotPlot}
+\includegraphics[width=0.85\textwidth]{ch_intro_to_data_oi_biostat/figures/discRandDotPlot/discRandDotPlot}
 \caption{A stacked dot plot of differences from 100 simulations produced under the independence model, $H_0$, where \var{gender\_\hspace{0.3mm}sim} and \var{decision} are independent. Two of the 100 simulations had a difference of at least 29.2\%, the difference observed in the study.}
 \label{discRandDotPlot}
 \end{figure}
