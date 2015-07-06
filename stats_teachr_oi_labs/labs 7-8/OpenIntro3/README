@@ -1,0 +1,7 @@
+This module contains labs 7 and 8 adapted for StatsTeachR from OpenIntro.
+
+Lab 7 Introduction to linear regression:
+	This lab teaches students about simple linear regression (one prediction variable). The lab explores how to fit a linear model, assess the fit using model diagnostics, and compare models using multiple R squared. The data used in this lab is concerned with associations between cigarette content and carbon monoxide emissions based on 25 different brands of cigarettes. Solutions are provided for the ‘On Your Own’ exercises.
+
+Lab 8 Multiple Linear Regression:
+	This lab reviews simple linear regression and then introduces multiple linear regression. It walks students through how to create an MLR model in R and touches on backwards model selection. The data used in this lab contains 21 body dimension measurements, weight, height, age and gender of physically active individuals. Different body measurements are used to try and a build a model to predict a persons weight. There is no ‘On Your Own’ section in this lab. 

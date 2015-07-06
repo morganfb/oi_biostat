@@ -1,0 +1,10 @@
+Name: [OpenIntro3]
+Title: [OpenIntro labs 7-8; Regression]
+Date: 2014-08-01
+Author: Sara Nuñez <smnunez@umass.schoolph.edu>
+Version: v[1.0]
+Description: [description of the module contents/topics. 250 words. (no carriage returns)
+]
+Keywords: [Simple Linear Regression, Multiple Linear Regression, Model Diagnostics]
+Depends: [None] 
+Suggests: [Modules OpenIntro1 and OpenIntro2 (labs 1-6)]
