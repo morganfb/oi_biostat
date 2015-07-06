@@ -1,557 +1,257 @@
-\indexentry{data|hyperindexformat{\textbf}}{8}
-\indexentry{data!stroke|(hyperpage}{8}
-\indexentry{treatment group|hyperindexformat{\textbf}}{9}
-\indexentry{control group|hyperindexformat{\textbf}}{9}
-\indexentry{summary statistic|hyperindexformat{\textbf}}{10}
-\indexentry{data!stroke|)hyperpage}{10}
-\indexentry{data!FAMuSS|(hyperpage}{10}
-\indexentry{case|hyperindexformat{\textbf}}{11}
-\indexentry{variable|hyperindexformat{\textbf}}{11}
-\indexentry{data!FAMuSS|)hyperpage}{11}
-\indexentry{data matrix|hyperindexformat{\textbf}}{11}
-\indexentry{data!county|(hyperpage}{11}
-\indexentry{unit of observation|hyperindexformat{\textbf}}{11}
-\indexentry{observational unit|hyperindexformat{\textbf}}{11}
-\indexentry{numerical|hyperindexformat{\textbf}}{14}
-\indexentry{discrete|hyperindexformat{\textbf}}{14}
-\indexentry{continuous|hyperindexformat{\textbf}}{14}
-\indexentry{categorical|hyperindexformat{\textbf}}{14}
-\indexentry{levels|hyperindexformat{\textbf}}{14}
-\indexentry{ordinal categorical|hyperindexformat{\textbf}}{14}
-\indexentry{data!stroke|hyperpage}{14}
-\indexentry{nominal|hyperindexformat{\textbf}}{14}
-\indexentry{summary statistic|hyperpage}{15}
-\indexentry{scatterplot|hyperpage}{15}
-\indexentry{associated|hyperindexformat{\textbf}}{16}
-\indexentry{negative association|hyperindexformat{\textbf}}{16}
-\indexentry{positive association|hyperindexformat{\textbf}}{16}
-\indexentry{independent|hyperindexformat{\textbf}}{16}
-\indexentry{data!county|)hyperpage}{16}
-\indexentry{sample|(hyperpage}{17}
-\indexentry{population|(hyperpage}{17}
-\indexentry{population|hyperindexformat{\textbf}}{17}
-\indexentry{sample|hyperindexformat{\textbf}}{17}
-\indexentry{sample!random sample|(hyperpage}{17}
-\indexentry{population|hyperpage}{17}
-\indexentry{sample|hyperpage}{17}
-\indexentry{bias|hyperindexformat{\textbf}}{18}
-\indexentry{simple random sample|hyperindexformat{\textbf}}{18}
-\indexentry{non-response|hyperindexformat{\textbf}}{18}
-\indexentry{sample!non-response|hyperindexformat{\textbf}}{18}
-\indexentry{representative|hyperindexformat{\textbf}}{18}
-\indexentry{non-response bias|hyperindexformat{\textbf}}{18}
-\indexentry{sample!non-response bias|hyperindexformat{\textbf}}{18}
-\indexentry{convenience sample|hyperindexformat{\textbf}}{18}
-\indexentry{sample!convenience sample|hyperpage}{18}
-\indexentry{sample!random sample|)hyperpage}{18}
-\indexentry{population|)hyperpage}{18}
-\indexentry{sample|)hyperpage}{18}
-\indexentry{data!county|(hyperpage}{19}
-\indexentry{explanatory|hyperindexformat{\textbf}}{19}
-\indexentry{response|hyperindexformat{\textbf}}{19}
-\indexentry{data!county|)hyperpage}{19}
-\indexentry{independent|hyperindexformat{\textbf}}{19}
-\indexentry{dependent|hyperindexformat{\textbf}}{19}
-\indexentry{observational study|hyperindexformat{\textbf}}{20}
-\indexentry{cohort|hyperindexformat{\textbf}}{20}
-\indexentry{experiment|hyperindexformat{\textbf}}{20}
-\indexentry{randomized experiment|hyperindexformat{\textbf}}{20}
-\indexentry{placebo|hyperindexformat{\textbf}}{20}
-\indexentry{confounding variable|hyperindexformat{\textbf}}{21}
-\indexentry{prospective study|hyperindexformat{\textbf}}{21}
-\indexentry{retrospective studies|hyperindexformat{\textbf}}{21}
-\indexentry{sample!simple random sampling|hyperindexformat{\textbf}}{21}
-\indexentry{lurking variable|hyperindexformat{\textbf}}{21}
-\indexentry{confounding factor|hyperindexformat{\textbf}}{21}
-\indexentry{confounder|hyperindexformat{\textbf}}{21}
-\indexentry{sample!simple random sampling|hyperpage}{22}
-\indexentry{sample!stratified sampling|hyperpage}{22}
-\indexentry{sample!stratified sampling|hyperindexformat{\textbf}}{23}
-\indexentry{strata|hyperindexformat{\textbf}}{23}
-\indexentry{sample!strata|hyperindexformat{\textbf}}{23}
-\indexentry{sample!cluster sample|hyperindexformat{\textbf}}{23}
-\indexentry{sample!cluster|hyperindexformat{\textbf}}{23}
-\indexentry{sample!multistage sample|hyperindexformat{\textbf}}{23}
-\indexentry{sample!cluster sampling|hyperpage}{24}
-\indexentry{sample!multistage sampling|hyperpage}{24}
-\indexentry{experiment|hyperindexformat{\textbf}}{25}
-\indexentry{randomized experiment|hyperindexformat{\textbf}}{25}
-\indexentry{control|hyperindexformat{\textbf}}{25}
-\indexentry{replicate|hyperindexformat{\textbf}}{25}
-\indexentry{blocks|hyperindexformat{\textbf}}{25}
-\indexentry{blocking|hyperindexformat{\textbf}}{25}
-\indexentry{treatment group|hyperindexformat{\textbf}}{27}
-\indexentry{control group|hyperindexformat{\textbf}}{27}
-\indexentry{blind|hyperindexformat{\textbf}}{27}
-\indexentry{placebo|hyperindexformat{\textbf}}{27}
-\indexentry{placebo\nobreakspace  {}effect|hyperindexformat{\textbf}}{27}
-\indexentry{double-blind|hyperindexformat{\textbf}}{27}
-\indexentry{patients|hyperindexformat{\textbf}}{27}
-\indexentry{volunteers|hyperindexformat{\textbf}}{27}
-\indexentry{study participants|hyperindexformat{\textbf}}{27}
-\indexentry{data!email50|(hyperpage}{28}
-\indexentry{scatterplot|hyperindexformat{\textbf}}{28}
-\indexentry{data!cars|(hyperpage}{28}
-\indexentry{data!cars|)hyperpage}{28}
-\indexentry{dot plot|hyperindexformat{\textbf}}{29}
-\indexentry{mean|hyperindexformat{\textbf}}{29}
-\indexentry{mean!average|hyperpage}{29}
-\indexentry{distribution|hyperindexformat{\textbf}}{29}
-\indexentry{Greek!mu@mu ($\mu$)|hyperpage}{30}
-\indexentry{weighted mean|hyperindexformat{\textbf}}{31}
-\indexentry{mean!weighted mean|hyperpage}{31}
-\indexentry{histogram|hyperindexformat{\textbf}}{31}
-\indexentry{data density|hyperindexformat{\textbf}}{31}
-\indexentry{tail|hyperindexformat{\textbf}}{31}
-\indexentry{skew!tail|hyperpage}{31}
-\indexentry{skew!right skewed|hyperindexformat{\textbf}}{31}
-\indexentry{skew!left skewed|hyperindexformat{\textbf}}{31}
-\indexentry{symmetric|hyperindexformat{\textbf}}{31}
-\indexentry{skew!symmetric|hyperpage}{31}
-\indexentry{skew!example: very strong|hyperpage}{32}
-\indexentry{long tail|hyperindexformat{\textbf}}{32}
-\indexentry{skew!long tail|hyperindexformat{\textbf}}{32}
-\indexentry{mode|hyperindexformat{\textbf}}{32}
-\indexentry{modality!unimodal|hyperindexformat{\textbf}}{32}
-\indexentry{modality!bimodal|hyperindexformat{\textbf}}{32}
-\indexentry{modality!multimodal|hyperindexformat{\textbf}}{32}
-\indexentry{variability|hyperpage}{33}
-\indexentry{deviation|hyperindexformat{\textbf}}{33}
-\indexentry{variance|hyperindexformat{\textbf}}{34}
-\indexentry{standard deviation|hyperindexformat{\textbf}}{34}
-\indexentry{s@$s$|hyperpage}{34}
-\indexentry{Greek!sigma@sigma ($\sigma$)|hyperpage}{34}
-\indexentry{box plot|hyperindexformat{\textbf}}{36}
-\indexentry{median|hyperindexformat{\textbf}}{36}
-\indexentry{median|hyperindexformat{\textbf}}{36}
-\indexentry{interquartile range|hyperindexformat{\textbf}}{36}
-\indexentry{IQR|hyperindexformat{\textbf}}{36}
-\indexentry{variability|hyperpage}{36}
-\indexentry{first quartile|hyperindexformat{\textbf}}{36}
-\indexentry{quartile!first quartile|hyperpage}{36}
-\indexentry{percentile|hyperindexformat{\textbf}}{36}
-\indexentry{third quartile|hyperindexformat{\textbf}}{36}
-\indexentry{quartile!third quartile|hyperpage}{36}
-\indexentry{Q$_1$|hyperpage}{36}
-\indexentry{Q$_3$|hyperpage}{36}
-\indexentry{interquartile range|hyperpage}{37}
-\indexentry{whiskers|hyperindexformat{\textbf}}{37}
-\indexentry{outlier|hyperindexformat{\textbf}}{37}
-\indexentry{outlier|hyperindexformat{\textbf}}{37}
-\indexentry{skew!example: strong|hyperpage}{37}
-\indexentry{sample statistic|hyperpage}{38}
-\indexentry{summary statistic|hyperpage}{38}
-\indexentry{robust estimates|hyperindexformat{\textbf}}{38}
-\indexentry{skew!example: extreme|hyperpage}{39}
-\indexentry{transformation|hyperindexformat{\textbf}}{39}
-\indexentry{data!email50|)hyperpage}{40}
-\indexentry{data!county|(hyperpage}{40}
-\indexentry{intensity map|(hyperpage}{40}
-\indexentry{intensity map|hyperindexformat{\textbf}}{40}
-\indexentry{intensity map|)hyperpage}{43}
-\indexentry{data!county|)hyperpage}{43}
-\indexentry{data!email|(hyperpage}{44}
-\indexentry{contingency table|hyperindexformat{\textbf}}{44}
-\indexentry{row totals|hyperindexformat{\textbf}}{44}
-\indexentry{contingency table!row totals|hyperpage}{44}
-\indexentry{column totals|hyperindexformat{\textbf}}{44}
-\indexentry{contingency table!column totals|hyperpage}{44}
-\indexentry{frequency table|hyperindexformat{\textbf}}{44}
-\indexentry{relative frequency table|hyperindexformat{\textbf}}{44}
-\indexentry{bar plot|hyperindexformat{\textbf}}{44}
-\indexentry{contingency table!row proportions|hyperindexformat{\textbf}}{44}
-\indexentry{contingency table!column proportion|hyperindexformat{\textbf}}{45}
-\indexentry{bar plot!segmented bar plot|hyperindexformat{\textbf}}{47}
-\indexentry{mosaic plot|hyperindexformat{\textbf}}{47}
-\indexentry{pie chart|hyperindexformat{\textbf}}{49}
-\indexentry{data!email|)hyperpage}{49}
-\indexentry{data!county|(hyperpage}{49}
-\indexentry{side-by-side box plot|hyperindexformat{\textbf}}{49}
-\indexentry{box plot!side-by-side box plot|hyperpage}{49}
-\indexentry{hollow histogram|hyperindexformat{\textbf}}{49}
-\indexentry{data!county|)hyperpage}{51}
-\indexentry{data!discrimination|(hyperpage}{51}
-\indexentry{skew!example: slight to moderate|hyperpage}{51}
-\indexentry{randomization|hyperindexformat{\textbf}}{53}
-\indexentry{simulation|hyperindexformat{\textbf}}{53}
-\indexentry{data!discrimination|)hyperpage}{55}
-\indexentry{probability|(hyperpage}{56}
-\indexentry{random process|(hyperpage}{57}
-\indexentry{random process|hyperindexformat{\textbf}}{57}
-\indexentry{outcome|hyperindexformat{\textbf}}{57}
-\indexentry{probability|hyperindexformat{\textbf}}{57}
-\indexentry{Law of Large Numbers|hyperindexformat{\textbf}}{57}
-\indexentry{random process|)hyperpage}{58}
-\indexentry{disjoint|(hyperpage}{58}
-\indexentry{mutually exclusive|(hyperpage}{58}
-\indexentry{disjoint|hyperindexformat{\textbf}}{58}
-\indexentry{mutually exclusive|hyperindexformat{\textbf}}{58}
-\indexentry{Addition Rule|hyperindexformat{\textbf}}{59}
-\indexentry{data!email|(hyperpage}{59}
-\indexentry{data!email|)hyperpage}{59}
-\indexentry{event|(hyperpage}{59}
-\indexentry{sets|hyperpage}{59}
-\indexentry{collections|hyperpage}{59}
-\indexentry{event|hyperindexformat{\textbf}}{59}
-\indexentry{event|)hyperpage}{60}
-\indexentry{disjoint|)hyperpage}{60}
-\indexentry{mutually exclusive|)hyperpage}{60}
-\indexentry{deck of cards|hyperpage}{60}
-\indexentry{Venn diagrams|hyperindexformat{\textbf}}{60}
-\indexentry{suits|hyperindexformat{\textbf}}{60}
-\indexentry{face card|hyperindexformat{\textbf}}{60}
-\indexentry{General Addition Rule|hyperindexformat{\textbf}}{61}
-\indexentry{data!email|(hyperpage}{62}
-\indexentry{data!email|)hyperpage}{62}
-\indexentry{probability distribution|hyperindexformat{\textbf}}{62}
-\indexentry{sample space|hyperindexformat{\textbf}}{64}
-\indexentry{S@$S$|hyperpage}{64}
-\indexentry{complement|hyperindexformat{\textbf}}{64}
-\indexentry{Ac@$A^c$|hyperpage}{64}
-\indexentry{independent|hyperindexformat{\textbf}}{65}
-\indexentry{Multiplication Rule|hyperindexformat{\textbf}}{66}
-\indexentry{data!family\_college|(hyperpage}{68}
-\indexentry{marginal probability|(hyperpage}{69}
-\indexentry{joint probability|(hyperpage}{69}
-\indexentry{marginal probability|hyperindexformat{\textbf}}{69}
-\indexentry{joint probability|hyperindexformat{\textbf}}{69}
-\indexentry{marginal probability|hyperindexformat{\textbf}}{69}
-\indexentry{joint probability|hyperindexformat{\textbf}}{69}
-\indexentry{table proportions|hyperindexformat{\textbf}}{69}
-\indexentry{marginal probability|)hyperpage}{70}
-\indexentry{joint probability|)hyperpage}{70}
-\indexentry{conditional probability|(hyperpage}{70}
-\indexentry{conditional probability|hyperindexformat{\textbf}}{70}
-\indexentry{outcome of interest|hyperindexformat{\textbf}}{70}
-\indexentry{condition|hyperindexformat{\textbf}}{70}
-\indexentry{conditional probability|)hyperpage}{72}
-\indexentry{data!family\_college|)hyperpage}{72}
-\indexentry{data!smallpox|(hyperpage}{72}
-\indexentry{General Multiplication Rule|hyperindexformat{\textbf}}{73}
-\indexentry{data!smallpox|)hyperpage}{75}
-\indexentry{tree diagram|(hyperpage}{75}
-\indexentry{tree diagram|hyperindexformat{\textbf}}{75}
-\indexentry{tree diagram|hyperindexformat{\textbf}}{75}
-\indexentry{primary|hyperindexformat{\textbf}}{75}
-\indexentry{secondary|hyperindexformat{\textbf}}{75}
-\indexentry{gambler's fallacy|hyperindexformat{\textbf}}{75}
-\indexentry{Bayes' Theorem|(hyperpage}{77}
-\indexentry{false negative|hyperindexformat{\textbf}}{78}
-\indexentry{false positive|hyperindexformat{\textbf}}{78}
-\indexentry{Bayes' Theorem|hyperindexformat{\textbf}}{80}
-\indexentry{Bayesian statistics|hyperindexformat{\textbf}}{82}
-\indexentry{Bayes' Theorem|)hyperpage}{82}
-\indexentry{tree diagram|)hyperpage}{82}
-\indexentry{conditional probability|)hyperpage}{82}
-\indexentry{probability|)hyperpage}{82}
-\indexentry{without replacement|hyperindexformat{\textbf}}{83}
-\indexentry{with replacement|hyperindexformat{\textbf}}{83}
-\indexentry{random variable|(hyperpage}{84}
-\indexentry{expectation|(hyperpage}{85}
-\indexentry{random variable|hyperindexformat{\textbf}}{85}
-\indexentry{expected value|hyperindexformat{\textbf}}{85}
-\indexentry{EX@$E(X)$|hyperpage}{85}
-\indexentry{Greek!mu ($\mu $)|hyperpage}{85}
-\indexentry{expectation|)hyperpage}{86}
-\indexentry{variance|hyperpage}{87}
-\indexentry{standard deviation|hyperpage}{87}
-\indexentry{Greek!sigma ($\sigma $)|hyperpage}{87}
-\indexentry{linear combination|hyperindexformat{\textbf}}{89}
-\indexentry{random variable|)hyperpage}{92}
-\indexentry{data!FCID|(hyperpage}{93}
-\indexentry{hollow histogram|(hyperpage}{93}
-\indexentry{probability density function|hyperindexformat{\textbf}}{94}
-\indexentry{density|hyperindexformat{\textbf}}{94}
-\indexentry{distribution|hyperindexformat{\textbf}}{94}
-\indexentry{hollow histogram|)hyperpage}{94}
-\indexentry{data!FCID|)hyperpage}{95}
-\indexentry{distribution!normal|(hyperpage}{107}
-\indexentry{normal curve|hyperindexformat{\textbf}}{107}
-\indexentry{distribution!normal|hyperindexformat{\textbf}}{107}
-\indexentry{standard normal distribution|hyperindexformat{\textbf}}{108}
-\indexentry{parameter|hyperindexformat{\textbf}}{108}
-\indexentry{Z-score|hyperindexformat{\textbf}}{109}
-\indexentry{Z@$Z$|hyperpage}{109}
-\indexentry{percentile|hyperindexformat{\textbf}}{110}
-\indexentry{normal probability table|hyperindexformat{\textbf}}{111}
-\indexentry{normal probability plot|(hyperpage}{117}
-\indexentry{normal probability plot|hyperindexformat{\textbf}}{117}
-\indexentry{quantile-quantile plot|hyperindexformat{\textbf}}{117}
-\indexentry{skew!example: very strong|hyperpage}{119}
-\indexentry{normal probability plot|)hyperpage}{121}
-\indexentry{distribution!normal|)hyperpage}{121}
-\indexentry{distribution!Bernoulli|(hyperpage}{121}
-\indexentry{Milgram, Stanley|hyperpage}{121}
-\indexentry{trial|hyperindexformat{\textbf}}{121}
-\indexentry{success|hyperindexformat{\textbf}}{121}
-\indexentry{failure|hyperindexformat{\textbf}}{121}
-\indexentry{probability of a success|hyperindexformat{\textbf}}{121}
-\indexentry{distribution!Bernoulli|hyperindexformat{\textbf}}{121}
-\indexentry{sample proportion|hyperindexformat{\textbf}}{122}
-\indexentry{distribution!Bernoulli|)hyperpage}{122}
-\indexentry{distribution!geometric|(hyperpage}{123}
-\indexentry{independent and identically distributed (iid)|hyperindexformat{\textbf}}{123}
-\indexentry{exponentially|hyperindexformat{\textbf}}{123}
-\indexentry{distribution!geometric|hyperindexformat{\textbf}}{123}
-\indexentry{distribution!geometric|)hyperpage}{125}
-\indexentry{distribution!binomial|(hyperpage}{125}
-\indexentry{distribution!binomial|hyperindexformat{\textbf}}{126}
-\indexentry{n choose k|hyperindexformat{\textbf}}{126}
-\indexentry{factorial|hyperindexformat{\textbf}}{126}
-\indexentry{distribution!binomial!normal approximation|(hyperpage}{129}
-\indexentry{distribution!binomial!normal approximation|)hyperpage}{132}
-\indexentry{distribution!binomial|)hyperpage}{132}
-\indexentry{distribution!negative binomial|(hyperpage}{132}
-\indexentry{distribution!negative binomial|hyperindexformat{\textbf}}{132}
-\indexentry{distribution!negative binomial|)hyperpage}{135}
-\indexentry{distribution!Poisson|(hyperpage}{136}
-\indexentry{distribution!Poisson|hyperindexformat{\textbf}}{136}
-\indexentry{rate|hyperindexformat{\textbf}}{136}
-\indexentry{Greek!lambda@lambda ($\lambda$)|hyperpage}{136}
-\indexentry{generalized linear model|hyperindexformat{\textbf}}{137}
-\indexentry{distribution!Poisson|)hyperpage}{137}
-\indexentry{point estimate|(hyperpage}{150}
-\indexentry{point estimate!single mean|(hyperpage}{151}
-\indexentry{population mean|hyperindexformat{\textbf}}{151}
-\indexentry{sample mean|hyperindexformat{\textbf}}{151}
-\indexentry{point estimate|hyperindexformat{\textbf}}{151}
-\indexentry{sampling variation|hyperindexformat{\textbf}}{151}
-\indexentry{population parameters|hyperindexformat{\textbf}}{151}
-\indexentry{point estimate!single mean|)hyperpage}{152}
-\indexentry{running mean|hyperindexformat{\textbf}}{152}
-\indexentry{sampling distribution|hyperindexformat{\textbf}}{152}
-\indexentry{sampling distribution|hyperindexformat{\textbf}}{155}
-\indexentry{error|hyperindexformat{\textbf}}{155}
-\indexentry{standard error (SE)|hyperindexformat{\textbf}}{155}
-\indexentry{SE|hyperpage}{155}
-\indexentry{standard error!single mean|hyperpage}{156}
-\indexentry{point estimate|)hyperpage}{158}
-\indexentry{confidence interval|(hyperpage}{158}
-\indexentry{confidence interval|hyperindexformat{\textbf}}{158}
-\indexentry{confident|hyperindexformat{\textbf}}{161}
-\indexentry{Central Limit Theorem|hyperpage}{163}
-\indexentry{confidence interval!confidence level|(hyperpage}{163}
-\indexentry{confidence interval!confidence level|)hyperpage}{165}
-\indexentry{confidence interval!confidence level|)hyperpage}{167}
-\indexentry{margin of error|hyperindexformat{\textbf}}{167}
-\indexentry{confidence interval!interpretation|(hyperpage}{168}
-\indexentry{confidence interval!interpretation|)hyperpage}{169}
-\indexentry{confidence interval|)hyperpage}{169}
-\indexentry{Central Limit Theorem!normal data|(hyperpage}{169}
-\indexentry{Central Limit Theorem!normal data|)hyperpage}{170}
-\indexentry{hypothesis testing|(hyperpage}{170}
-\indexentry{Hypothesis testing|hyperindexformat{\textbf}}{170}
-\indexentry{Hypothesis testing framework|hyperindexformat{\textbf}}{170}
-\indexentry{:|hyperindexformat{\textbf}}{171}
-\indexentry{null hypothesis ($H_0$)|hyperindexformat{\textbf}}{171}
-\indexentry{alternative hypothesis ($H_A$)|hyperindexformat{\textbf}}{171}
-\indexentry{null value|hyperindexformat{\textbf}}{172}
-\indexentry{significance level|hyperindexformat{\textbf}}{173}
-\indexentry{hypothesis testing!using normal model|)}{174}
-\indexentry{p-value|hyperindexformat{\textbf}}{174}
-\indexentry{p-value|hyperindexformat{\textbf}}{174}
-\indexentry{hypothesis testing!p-value|hyperindexformat{\textbf}}{174}
-\indexentry{hypothesis testing!p-value|(hyperpage}{175}
-\indexentry{data!school sleep|)}{177}
-\indexentry{data!school sleep|(hyperpage}{177}
-\indexentry{skew!example: moderate|hyperpage}{178}
-\indexentry{one-sided|hyperindexformat{\textbf}}{178}
-\indexentry{two-sided|hyperindexformat{\textbf}}{178}
-\indexentry{p-value!interpretation example|hyperpage}{179}
-\indexentry{hypothesis testing!p-value|)hyperpage}{180}
-\indexentry{hypothesis testing!decision errors|(hyperpage}{181}
-\indexentry{Type\nobreakspace  {}1 Error|hyperindexformat{\textbf}}{181}
-\indexentry{Type\nobreakspace  {}2 Error|hyperindexformat{\textbf}}{181}
-\indexentry{hypothesis testing!decision errors|)hyperpage}{182}
-\indexentry{significance level|hyperindexformat{\textbf}}{182}
-\indexentry{hypothesis testing!significance level|hyperpage}{182}
-\indexentry{data!school sleep|(hyperpage}{182}
-\indexentry{data!school sleep|)hyperpage}{183}
-\indexentry{hypothesis testing!significance level|(hyperpage}{184}
-\indexentry{significance level|(hyperpage}{184}
-\indexentry{significance level|)hyperpage}{185}
-\indexentry{hypothesis testing!significance level|)hyperpage}{185}
-\indexentry{hypothesis testing|)hyperpage}{185}
-\indexentry{Central Limit Theorem|(hyperpage}{185}
-\indexentry{skew!example: moderate|hyperpage}{186}
-\indexentry{skew!example: strong|hyperpage}{186}
-\indexentry{time series data|hyperindexformat{\textbf}}{188}
-\indexentry{skew!example: very strong|hyperpage}{188}
-\indexentry{skew!strongly skewed guideline|hyperpage}{189}
-\indexentry{Central Limit Theorem|)hyperpage}{189}
-\indexentry{unbiased|hyperindexformat{\textbf}}{189}
-\indexentry{confidence interval!using normal model|(hyperpage}{189}
-\indexentry{margin of error|hyperpage}{190}
-\indexentry{confidence interval!using normal model|)hyperpage}{190}
-\indexentry{hypothesis testing!using normal model|(hyperpage}{191}
-\indexentry{margin of error|(hyperpage}{194}
-\indexentry{margin of error|)hyperpage}{195}
-\indexentry{power|hyperindexformat{\textbf}}{196}
-\indexentry{statistically significant|hyperindexformat{\textbf}}{197}
-\indexentry{practically significant|hyperindexformat{\textbf}}{197}
-\indexentry{effect size|hyperpage}{211}
-\indexentry{Central Limit Theorem!normal data|)hyperpage}{212}
-\indexentry{t-distribution|(hyperpage}{213}
-\indexentry{distribution!$t$|(hyperpage}{213}
-\indexentry{degrees of freedom (df)!$t$-distribution|hyperindexformat{\textbf}}{213}
-\indexentry{t-table|hyperindexformat{\textbf}}{214}
-\indexentry{distribution!$t$|)hyperpage}{216}
-\indexentry{t-distribution|)hyperpage}{216}
-\indexentry{data!dolphins and mercury|(hyperpage}{217}
-\indexentry{data!dolphins and mercury|)hyperpage}{218}
-\indexentry{data!white fish and mercury|(hyperpage}{219}
-\indexentry{data!white fish and mercury|)hyperpage}{219}
-\indexentry{T-score|hyperindexformat{\textbf}}{220}
-\indexentry{paired data|(hyperpage}{221}
-\indexentry{data!textbooks|(hyperpage}{221}
-\indexentry{paired|hyperindexformat{\textbf}}{221}
-\indexentry{skew!example: strong|hyperpage}{222}
-\indexentry{data!textbooks|)hyperpage}{223}
-\indexentry{paired data|)hyperpage}{223}
-\indexentry{data!stem cells, heart function|(hyperpage}{224}
-\indexentry{point estimate!difference of means|(hyperpage}{224}
-\indexentry{point estimate!difference of means|)hyperpage}{224}
-\indexentry{standard error (SE)!difference in means|hyperpage}{224}
-\indexentry{standard error (SE)!difference in means|hyperpage}{224}
-\indexentry{data!stem cells, heart function|)hyperpage}{226}
-\indexentry{data!baby\_smoke|(hyperpage}{226}
-\indexentry{skew!example: strong|hyperpage}{227}
-\indexentry{data!baby\_smoke|)hyperpage}{229}
-\indexentry{data!two exam comparison|(hyperpage}{229}
-\indexentry{data!two exam comparison|)hyperpage}{230}
-\indexentry{pooled standard deviation|hyperindexformat{\textbf}}{232}
-\indexentry{rejection regions|hyperindexformat{\textbf}}{234}
-\indexentry{power|hyperindexformat{\textbf}}{234}
-\indexentry{effect size|hyperindexformat{\textbf}}{234}
-\indexentry{analysis of variance (ANOVA)|(hyperpage}{239}
-\indexentry{analysis of variance (ANOVA)|hyperindexformat{\textbf}}{239}
-\indexentry{data!MLB batting|(hyperpage}{240}
-\indexentry{data snooping|hyperindexformat{\textbf}}{242}
-\indexentry{data fishing|hyperindexformat{\textbf}}{242}
-\indexentry{prosecutor's fallacy|hyperindexformat{\textbf}}{242}
-\indexentry{mean square between groups ($MSG$)|hyperindexformat{\textbf}}{243}
-\indexentry{degrees of freedom (df)!ANOVA|hyperpage}{243}
-\indexentry{mean square error ($MSE$)|hyperindexformat{\textbf}}{243}
-\indexentry{sum of squares between groups|hyperindexformat{\textbf}}{243}
-\indexentry{sum of squares total ($SST$)|hyperindexformat{\textbf}}{243}
-\indexentry{sum of squared errors ($SSE$)|hyperindexformat{\textbf}}{243}
-\indexentry{F test|hyperindexformat{\textbf}}{244}
-\indexentry{data!MLB batting|)hyperpage}{245}
-\indexentry{residual|hyperindexformat{\textbf}}{245}
-\indexentry{significance level!multiple comparisons|(hyperpage}{246}
-\indexentry{multiple comparisons|hyperindexformat{\textbf}}{248}
-\indexentry{Bonferroni correction|hyperindexformat{\textbf}}{248}
-\indexentry{significance level!multiple comparisons|)hyperpage}{249}
-\indexentry{analysis of variance (ANOVA)|)hyperpage}{249}
-\indexentry{data!Ebola poll|(hyperpage}{267}
-\indexentry{success|hyperindexformat{\textbf}}{268}
-\indexentry{failure|hyperindexformat{\textbf}}{268}
-\indexentry{success-failure condition|hyperindexformat{\textbf}}{268}
-\indexentry{standard error (SE)!single proportion|hyperpage}{268}
-\indexentry{point estimate!single proportion|hyperpage}{269}
-\indexentry{success-failure condition|hyperindexformat{\textbf}}{269}
-\indexentry{data!Ebola poll|)hyperpage}{269}
-\indexentry{data!nuclear arms reduction|(hyperpage}{270}
-\indexentry{data!nuclear arms reduction|)hyperpage}{271}
-\indexentry{margin of error|(hyperpage}{271}
-\indexentry{margin of error|hyperindexformat{\textbf}}{271}
-\indexentry{data!Congress approval rating|(hyperpage}{272}
-\indexentry{data!Congress approval rating|)hyperpage}{272}
-\indexentry{margin of error|)hyperpage}{272}
-\indexentry{point estimate!difference of proportions|hyperpage}{273}
-\indexentry{standard error (SE)!difference in proportions|hyperpage}{273}
-\indexentry{data!health care|(hyperpage}{274}
-\indexentry{data!health care|)hyperpage}{274}
-\indexentry{data!mammography|(hyperpage}{275}
-\indexentry{data!breast cancer|(hyperpage}{275}
-\indexentry{pooled proportion|hyperindexformat{\textbf}}{275}
-\indexentry{pooled proportion|hyperindexformat{\textbf}}{276}
-\indexentry{data!breast cancer|)hyperpage}{277}
-\indexentry{data!mammography|)hyperpage}{277}
-\indexentry{data!racial make-up of jury|(hyperpage}{279}
-\indexentry{chi-square statistic|hyperpage}{282}
-\indexentry{data!racial make-up of jury|)hyperpage}{282}
-\indexentry{chi-square distribution|hyperindexformat{\textbf}}{282}
-\indexentry{degrees of freedom (df)!chi-square|hyperindexformat{\textbf}}{282}
-\indexentry{chi-square table|hyperindexformat{\textbf}}{282}
-\indexentry{data!racial make-up of jury|(hyperpage}{285}
-\indexentry{data!racial make-up of jury|)hyperpage}{285}
-\indexentry{data!S\&P500 stock data|(hyperpage}{286}
-\indexentry{data!S\&P500 stock data|)hyperpage}{289}
-\indexentry{data!search algorithm|(hyperpage}{290}
-\indexentry{data!search algorithm|)hyperpage}{294}
-\indexentry{data!approval ratings|(hyperpage}{294}
-\indexentry{data!approval ratings|)hyperpage}{295}
-\indexentry{data!medical consultant|(hyperpage}{295}
-\indexentry{data!medical consultant|)hyperpage}{297}
-\indexentry{data!racial make-up of jury|(hyperpage}{299}
-\indexentry{data!racial make-up of jury|)hyperpage}{299}
-\indexentry{data!CPR and blood thinner|(hyperpage}{300}
-\indexentry{permutation test|hyperindexformat{\textbf}}{302}
-\indexentry{data!CPR and blood thinner|)hyperpage}{303}
-\indexentry{Z-test|hyperpage}{320}
-\indexentry{linear regression|hyperindexformat{\textbf}}{324}
-\indexentry{parameter|hyperpage}{324}
-\indexentry{Greek!beta@beta ($\beta$)|hyperpage}{324}
-\indexentry{predictor|hyperindexformat{\textbf}}{324}
-\indexentry{data!possum|(hyperpage}{326}
-\indexentry{residual|(hyperpage}{328}
-\indexentry{residual|hyperindexformat{\textbf}}{328}
-\indexentry{residual plot|hyperindexformat{\textbf}}{330}
-\indexentry{data!possum|)hyperpage}{330}
-\indexentry{residual|)hyperpage}{330}
-\indexentry{correlation|(hyperpage}{331}
-\indexentry{correlation|hyperindexformat{\textbf}}{331}
-\indexentry{correlation|)hyperpage}{331}
-\indexentry{least squares regression|(hyperpage}{333}
-\indexentry{least squares criterion|hyperindexformat{\textbf}}{334}
-\indexentry{least squares line|hyperindexformat{\textbf}}{334}
-\indexentry{time series|hyperindexformat{\textbf}}{334}
-\indexentry{point-slope|hyperindexformat{\textbf}}{336}
-\indexentry{least squares regression|)hyperpage}{337}
-\indexentry{least squares regression!interpreting parameters|(hyperpage}{338}
-\indexentry{least squares regression!interpreting parameters|)hyperpage}{338}
-\indexentry{least squares regression!extrapolation|(hyperpage}{338}
-\indexentry{extrapolation|hyperindexformat{\textbf}}{339}
-\indexentry{least squares regression!extrapolation|)hyperpage}{339}
-\indexentry{least squares regression!R-squared ($R^2$)|(hyperpage}{339}
-\indexentry{least squares regression!R-squared ($R^2$)|hyperindexformat{\textbf}}{339}
-\indexentry{least squares regression!R-squared ($R^2$)|)hyperpage}{340}
-\indexentry{indicator variable|hyperindexformat{\textbf}}{341}
-\indexentry{multiple regression|hyperpage}{341}
-\indexentry{high leverage|hyperindexformat{\textbf}}{342}
-\indexentry{influential point|hyperindexformat{\textbf}}{342}
-\indexentry{data!midterm elections|(hyperpage}{344}
-\indexentry{midterm election|hyperpage}{344}
-\indexentry{data!midterm elections|)hyperpage}{347}
-\indexentry{multiple regression|(hyperpage}{365}
-\indexentry{data!mario\_kart|(hyperpage}{365}
-\indexentry{indicator variable|hyperpage}{365}
-\indexentry{multiple regression|hyperindexformat{\textbf}}{367}
-\indexentry{collinear|hyperindexformat{\textbf}}{369}
-\indexentry{adjusted r squared@adjusted $R^2$ ($R_{adj}^2$)|(hyperpage}{369}
-\indexentry{adjusted r squared@adjusted $R^2$ ($R_{adj}^2$)|hyperindexformat{\textbf}}{370}
-\indexentry{degrees of freedom (df)!regression|hyperindexformat{\textbf}}{370}
-\indexentry{adjusted r squared@adjusted $R^2$ ($R_{adj}^2$)|)hyperpage}{370}
-\indexentry{model selection|(hyperpage}{371}
-\indexentry{full model|hyperindexformat{\textbf}}{371}
-\indexentry{stepwise|hyperindexformat{\textbf}}{372}
-\indexentry{backward elimination|hyperindexformat{\textbf}}{372}
-\indexentry{forward selection|hyperindexformat{\textbf}}{373}
-\indexentry{model selection|)hyperpage}{374}
-\indexentry{multiple regression!model assumptions|(hyperpage}{375}
-\indexentry{diagnostic plots|hyperindexformat{\textbf}}{375}
-\indexentry{time series|hyperindexformat{\textbf}}{376}
-\indexentry{confidence interval|hyperpage}{377}
-\indexentry{multiple regression!model assumptions|)hyperpage}{377}
-\indexentry{data!mario\_kart|)hyperpage}{377}
-\indexentry{multiple regression|)hyperpage}{377}
-\indexentry{logistic regression|(hyperpage}{379}
-\indexentry{logistic regression|hyperindexformat{\textbf}}{379}
-\indexentry{generalized linear model|hyperindexformat{\textbf}}{379}
-\indexentry{data!email|(hyperpage}{379}
-\indexentry{indicator variable|hyperpage}{380}
-\indexentry{logit transformation|hyperindexformat{\textbf}}{380}
-\indexentry{natural splines|hyperindexformat{\textbf}}{385}
-\indexentry{data!email|)hyperpage}{387}
-\indexentry{logistic regression|)hyperpage}{387}
+\indexentry{data|hyperindexformat{\textbf}}{7}
+\indexentry{data!stroke|(hyperpage}{7}
+\indexentry{treatment group|hyperindexformat{\textbf}}{8}
+\indexentry{control group|hyperindexformat{\textbf}}{8}
+\indexentry{summary statistic|hyperindexformat{\textbf}}{9}
+\indexentry{data!stroke|)hyperpage}{9}
+\indexentry{data!FAMuSS|(hyperpage}{9}
+\indexentry{case|hyperindexformat{\textbf}}{10}
+\indexentry{variable|hyperindexformat{\textbf}}{10}
+\indexentry{data!FAMuSS|)hyperpage}{10}
+\indexentry{data matrix|hyperindexformat{\textbf}}{10}
+\indexentry{data!county|(hyperpage}{10}
+\indexentry{unit of observation|hyperindexformat{\textbf}}{10}
+\indexentry{observational unit|hyperindexformat{\textbf}}{10}
+\indexentry{numerical|hyperindexformat{\textbf}}{13}
+\indexentry{discrete|hyperindexformat{\textbf}}{13}
+\indexentry{continuous|hyperindexformat{\textbf}}{13}
+\indexentry{categorical|hyperindexformat{\textbf}}{13}
+\indexentry{levels|hyperindexformat{\textbf}}{13}
+\indexentry{ordinal categorical|hyperindexformat{\textbf}}{13}
+\indexentry{data!stroke|hyperpage}{13}
+\indexentry{nominal|hyperindexformat{\textbf}}{13}
+\indexentry{summary statistic|hyperpage}{14}
+\indexentry{scatterplot|hyperpage}{14}
+\indexentry{associated|hyperindexformat{\textbf}}{15}
+\indexentry{negative association|hyperindexformat{\textbf}}{15}
+\indexentry{positive association|hyperindexformat{\textbf}}{15}
+\indexentry{independent|hyperindexformat{\textbf}}{15}
+\indexentry{data!county|)hyperpage}{15}
+\indexentry{sample|(hyperpage}{16}
+\indexentry{population|(hyperpage}{16}
+\indexentry{population|hyperindexformat{\textbf}}{16}
+\indexentry{sample|hyperindexformat{\textbf}}{16}
+\indexentry{sample!random sample|(hyperpage}{16}
+\indexentry{population|hyperpage}{16}
+\indexentry{sample|hyperpage}{16}
+\indexentry{bias|hyperindexformat{\textbf}}{17}
+\indexentry{simple random sample|hyperindexformat{\textbf}}{17}
+\indexentry{non-response|hyperindexformat{\textbf}}{17}
+\indexentry{sample!non-response|hyperindexformat{\textbf}}{17}
+\indexentry{representative|hyperindexformat{\textbf}}{17}
+\indexentry{non-response bias|hyperindexformat{\textbf}}{17}
+\indexentry{sample!non-response bias|hyperindexformat{\textbf}}{17}
+\indexentry{convenience sample|hyperindexformat{\textbf}}{17}
+\indexentry{sample!convenience sample|hyperpage}{17}
+\indexentry{sample!random sample|)hyperpage}{17}
+\indexentry{population|)hyperpage}{17}
+\indexentry{sample|)hyperpage}{17}
+\indexentry{data!county|(hyperpage}{18}
+\indexentry{explanatory|hyperindexformat{\textbf}}{18}
+\indexentry{response|hyperindexformat{\textbf}}{18}
+\indexentry{data!county|)hyperpage}{18}
+\indexentry{independent|hyperindexformat{\textbf}}{18}
+\indexentry{dependent|hyperindexformat{\textbf}}{18}
+\indexentry{observational study|hyperindexformat{\textbf}}{19}
+\indexentry{cohort|hyperindexformat{\textbf}}{19}
+\indexentry{experiment|hyperindexformat{\textbf}}{19}
+\indexentry{randomized experiment|hyperindexformat{\textbf}}{19}
+\indexentry{placebo|hyperindexformat{\textbf}}{19}
+\indexentry{confounding variable|hyperindexformat{\textbf}}{20}
+\indexentry{prospective study|hyperindexformat{\textbf}}{20}
+\indexentry{retrospective studies|hyperindexformat{\textbf}}{20}
+\indexentry{sample!simple random sampling|hyperindexformat{\textbf}}{20}
+\indexentry{lurking variable|hyperindexformat{\textbf}}{20}
+\indexentry{confounding factor|hyperindexformat{\textbf}}{20}
+\indexentry{confounder|hyperindexformat{\textbf}}{20}
+\indexentry{sample!simple random sampling|hyperpage}{21}
+\indexentry{sample!stratified sampling|hyperpage}{21}
+\indexentry{sample!stratified sampling|hyperindexformat{\textbf}}{22}
+\indexentry{strata|hyperindexformat{\textbf}}{22}
+\indexentry{sample!strata|hyperindexformat{\textbf}}{22}
+\indexentry{sample!cluster sample|hyperindexformat{\textbf}}{22}
+\indexentry{sample!cluster|hyperindexformat{\textbf}}{22}
+\indexentry{sample!multistage sample|hyperindexformat{\textbf}}{22}
+\indexentry{sample!cluster sampling|hyperpage}{23}
+\indexentry{sample!multistage sampling|hyperpage}{23}
+\indexentry{experiment|hyperindexformat{\textbf}}{24}
+\indexentry{randomized experiment|hyperindexformat{\textbf}}{24}
+\indexentry{control|hyperindexformat{\textbf}}{24}
+\indexentry{replicate|hyperindexformat{\textbf}}{24}
+\indexentry{blocks|hyperindexformat{\textbf}}{24}
+\indexentry{blocking|hyperindexformat{\textbf}}{24}
+\indexentry{treatment group|hyperindexformat{\textbf}}{26}
+\indexentry{control group|hyperindexformat{\textbf}}{26}
+\indexentry{blind|hyperindexformat{\textbf}}{26}
+\indexentry{placebo|hyperindexformat{\textbf}}{26}
+\indexentry{placebo\nobreakspace  {}effect|hyperindexformat{\textbf}}{26}
+\indexentry{double-blind|hyperindexformat{\textbf}}{26}
+\indexentry{patients|hyperindexformat{\textbf}}{26}
+\indexentry{volunteers|hyperindexformat{\textbf}}{26}
+\indexentry{study participants|hyperindexformat{\textbf}}{26}
+\indexentry{data!email50|(hyperpage}{27}
+\indexentry{scatterplot|hyperindexformat{\textbf}}{27}
+\indexentry{data!cars|(hyperpage}{27}
+\indexentry{data!cars|)hyperpage}{27}
+\indexentry{dot plot|hyperindexformat{\textbf}}{28}
+\indexentry{mean|hyperindexformat{\textbf}}{28}
+\indexentry{mean!average|hyperpage}{28}
+\indexentry{distribution|hyperindexformat{\textbf}}{28}
+\indexentry{Greek!mu@mu ($\mu$)|hyperpage}{29}
+\indexentry{weighted mean|hyperindexformat{\textbf}}{30}
+\indexentry{mean!weighted mean|hyperpage}{30}
+\indexentry{histogram|hyperindexformat{\textbf}}{30}
+\indexentry{data density|hyperindexformat{\textbf}}{30}
+\indexentry{tail|hyperindexformat{\textbf}}{30}
+\indexentry{skew!tail|hyperpage}{30}
+\indexentry{skew!right skewed|hyperindexformat{\textbf}}{30}
+\indexentry{skew!left skewed|hyperindexformat{\textbf}}{30}
+\indexentry{symmetric|hyperindexformat{\textbf}}{30}
+\indexentry{skew!symmetric|hyperpage}{30}
+\indexentry{skew!example: very strong|hyperpage}{31}
+\indexentry{long tail|hyperindexformat{\textbf}}{31}
+\indexentry{skew!long tail|hyperindexformat{\textbf}}{31}
+\indexentry{mode|hyperindexformat{\textbf}}{31}
+\indexentry{modality!unimodal|hyperindexformat{\textbf}}{31}
+\indexentry{modality!bimodal|hyperindexformat{\textbf}}{31}
+\indexentry{modality!multimodal|hyperindexformat{\textbf}}{31}
+\indexentry{variability|hyperpage}{32}
+\indexentry{deviation|hyperindexformat{\textbf}}{32}
+\indexentry{variance|hyperindexformat{\textbf}}{33}
+\indexentry{standard deviation|hyperindexformat{\textbf}}{33}
+\indexentry{s@$s$|hyperpage}{33}
+\indexentry{Greek!sigma@sigma ($\sigma$)|hyperpage}{33}
+\indexentry{box plot|hyperindexformat{\textbf}}{35}
+\indexentry{median|hyperindexformat{\textbf}}{35}
+\indexentry{median|hyperindexformat{\textbf}}{35}
+\indexentry{interquartile range|hyperindexformat{\textbf}}{35}
+\indexentry{IQR|hyperindexformat{\textbf}}{35}
+\indexentry{variability|hyperpage}{35}
+\indexentry{first quartile|hyperindexformat{\textbf}}{35}
+\indexentry{quartile!first quartile|hyperpage}{35}
+\indexentry{percentile|hyperindexformat{\textbf}}{35}
+\indexentry{third quartile|hyperindexformat{\textbf}}{35}
+\indexentry{quartile!third quartile|hyperpage}{35}
+\indexentry{Q$_1$|hyperpage}{35}
+\indexentry{Q$_3$|hyperpage}{35}
+\indexentry{interquartile range|hyperpage}{36}
+\indexentry{whiskers|hyperindexformat{\textbf}}{36}
+\indexentry{outlier|hyperindexformat{\textbf}}{36}
+\indexentry{outlier|hyperindexformat{\textbf}}{36}
+\indexentry{skew!example: strong|hyperpage}{36}
+\indexentry{sample statistic|hyperpage}{37}
+\indexentry{summary statistic|hyperpage}{37}
+\indexentry{robust estimates|hyperindexformat{\textbf}}{37}
+\indexentry{skew!example: extreme|hyperpage}{38}
+\indexentry{transformation|hyperindexformat{\textbf}}{38}
+\indexentry{data!email50|)hyperpage}{39}
+\indexentry{data!county|(hyperpage}{39}
+\indexentry{intensity map|(hyperpage}{39}
+\indexentry{intensity map|hyperindexformat{\textbf}}{39}
+\indexentry{intensity map|)hyperpage}{42}
+\indexentry{data!county|)hyperpage}{42}
+\indexentry{data!email|(hyperpage}{43}
+\indexentry{contingency table|hyperindexformat{\textbf}}{43}
+\indexentry{row totals|hyperindexformat{\textbf}}{43}
+\indexentry{contingency table!row totals|hyperpage}{43}
+\indexentry{column totals|hyperindexformat{\textbf}}{43}
+\indexentry{contingency table!column totals|hyperpage}{43}
+\indexentry{frequency table|hyperindexformat{\textbf}}{43}
+\indexentry{relative frequency table|hyperindexformat{\textbf}}{43}
+\indexentry{bar plot|hyperindexformat{\textbf}}{43}
+\indexentry{contingency table!row proportions|hyperindexformat{\textbf}}{43}
+\indexentry{contingency table!column proportion|hyperindexformat{\textbf}}{44}
+\indexentry{bar plot!segmented bar plot|hyperindexformat{\textbf}}{46}
+\indexentry{mosaic plot|hyperindexformat{\textbf}}{46}
+\indexentry{pie chart|hyperindexformat{\textbf}}{48}
+\indexentry{data!email|)hyperpage}{48}
+\indexentry{data!county|(hyperpage}{48}
+\indexentry{side-by-side box plot|hyperindexformat{\textbf}}{48}
+\indexentry{box plot!side-by-side box plot|hyperpage}{48}
+\indexentry{hollow histogram|hyperindexformat{\textbf}}{48}
+\indexentry{data!county|)hyperpage}{50}
+\indexentry{data!discrimination|(hyperpage}{50}
+\indexentry{skew!example: slight to moderate|hyperpage}{50}
+\indexentry{randomization|hyperindexformat{\textbf}}{52}
+\indexentry{simulation|hyperindexformat{\textbf}}{52}
+\indexentry{data!discrimination|)hyperpage}{54}
+\indexentry{point estimate|(hyperpage}{57}
+\indexentry{point estimate!single mean|(hyperpage}{58}
+\indexentry{population mean|hyperindexformat{\textbf}}{58}
+\indexentry{sample mean|hyperindexformat{\textbf}}{58}
+\indexentry{point estimate|hyperindexformat{\textbf}}{58}
+\indexentry{sampling variation|hyperindexformat{\textbf}}{58}
+\indexentry{population parameters|hyperindexformat{\textbf}}{58}
+\indexentry{point estimate!single mean|)hyperpage}{59}
+\indexentry{running mean|hyperindexformat{\textbf}}{59}
+\indexentry{sampling distribution|hyperindexformat{\textbf}}{59}
+\indexentry{sampling distribution|hyperindexformat{\textbf}}{62}
+\indexentry{error|hyperindexformat{\textbf}}{62}
+\indexentry{standard error (SE)|hyperindexformat{\textbf}}{62}
+\indexentry{SE|hyperpage}{62}
+\indexentry{standard error!single mean|hyperpage}{63}
+\indexentry{point estimate|)hyperpage}{65}
+\indexentry{confidence interval|(hyperpage}{65}
+\indexentry{confidence interval|hyperindexformat{\textbf}}{65}
+\indexentry{confident|hyperindexformat{\textbf}}{68}
+\indexentry{Central Limit Theorem|hyperpage}{70}
+\indexentry{confidence interval!confidence level|(hyperpage}{70}
+\indexentry{confidence interval!confidence level|)hyperpage}{72}
+\indexentry{confidence interval!confidence level|)hyperpage}{74}
+\indexentry{margin of error|hyperindexformat{\textbf}}{74}
+\indexentry{confidence interval!interpretation|(hyperpage}{75}
+\indexentry{confidence interval!interpretation|)hyperpage}{76}
+\indexentry{confidence interval|)hyperpage}{76}
+\indexentry{Central Limit Theorem!normal data|(hyperpage}{76}
+\indexentry{Central Limit Theorem!normal data|)hyperpage}{77}
+\indexentry{hypothesis testing|(hyperpage}{77}
+\indexentry{Hypothesis testing|hyperindexformat{\textbf}}{77}
+\indexentry{Hypothesis testing framework|hyperindexformat{\textbf}}{77}
+\indexentry{:|hyperindexformat{\textbf}}{78}
+\indexentry{null hypothesis ($H_0$)|hyperindexformat{\textbf}}{78}
+\indexentry{alternative hypothesis ($H_A$)|hyperindexformat{\textbf}}{78}
+\indexentry{null value|hyperindexformat{\textbf}}{79}
+\indexentry{significance level|hyperindexformat{\textbf}}{80}
+\indexentry{hypothesis testing!using normal model|)}{81}
+\indexentry{p-value|hyperindexformat{\textbf}}{81}
+\indexentry{p-value|hyperindexformat{\textbf}}{81}
+\indexentry{hypothesis testing!p-value|hyperindexformat{\textbf}}{81}
+\indexentry{hypothesis testing!p-value|(hyperpage}{82}
+\indexentry{data!school sleep|)}{84}
+\indexentry{data!school sleep|(hyperpage}{84}
+\indexentry{skew!example: moderate|hyperpage}{85}
+\indexentry{one-sided|hyperindexformat{\textbf}}{85}
+\indexentry{two-sided|hyperindexformat{\textbf}}{85}
+\indexentry{p-value!interpretation example|hyperpage}{86}
+\indexentry{hypothesis testing!p-value|)hyperpage}{87}
+\indexentry{hypothesis testing!decision errors|(hyperpage}{88}
+\indexentry{Type\nobreakspace  {}1 Error|hyperindexformat{\textbf}}{88}
+\indexentry{Type\nobreakspace  {}2 Error|hyperindexformat{\textbf}}{88}
+\indexentry{hypothesis testing!decision errors|)hyperpage}{89}
+\indexentry{significance level|hyperindexformat{\textbf}}{89}
+\indexentry{hypothesis testing!significance level|hyperpage}{89}
+\indexentry{data!school sleep|(hyperpage}{89}
+\indexentry{data!school sleep|)hyperpage}{90}
+\indexentry{hypothesis testing!significance level|(hyperpage}{91}
+\indexentry{significance level|(hyperpage}{91}
+\indexentry{significance level|)hyperpage}{92}
+\indexentry{hypothesis testing!significance level|)hyperpage}{92}
+\indexentry{hypothesis testing|)hyperpage}{92}
+\indexentry{Central Limit Theorem|(hyperpage}{92}
+\indexentry{skew!example: moderate|hyperpage}{93}
+\indexentry{skew!example: strong|hyperpage}{93}
+\indexentry{time series data|hyperindexformat{\textbf}}{95}
+\indexentry{skew!example: very strong|hyperpage}{95}
+\indexentry{skew!strongly skewed guideline|hyperpage}{96}
+\indexentry{Central Limit Theorem|)hyperpage}{96}
+\indexentry{unbiased|hyperindexformat{\textbf}}{96}
+\indexentry{confidence interval!using normal model|(hyperpage}{96}
+\indexentry{margin of error|hyperpage}{97}
+\indexentry{confidence interval!using normal model|)hyperpage}{97}
+\indexentry{hypothesis testing!using normal model|(hyperpage}{98}
+\indexentry{margin of error|(hyperpage}{101}
+\indexentry{margin of error|)hyperpage}{102}
+\indexentry{power|hyperindexformat{\textbf}}{103}
+\indexentry{statistically significant|hyperindexformat{\textbf}}{104}
+\indexentry{practically significant|hyperindexformat{\textbf}}{104}
+\indexentry{effect size|hyperpage}{118}
