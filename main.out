@@ -1,0 +1,63 @@
+\BOOKMARK [0][-]{chapter.1}{1 Introduction to data}{}% 1
+\BOOKMARK [1][-]{section.1.1}{1.1 Case study}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{1.2 Data basics}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.3}{1.3 Overview of data collection principles}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.4}{1.4 Observational studies and sampling strategies}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.5}{1.5 Experiments}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.6}{1.6 Examining numerical data}{chapter.1}% 7
+\BOOKMARK [1][-]{section.1.7}{1.7 Considering categorical data}{chapter.1}% 8
+\BOOKMARK [1][-]{section.1.8}{1.8 Case study: gender discrimination \(special topic\)}{chapter.1}% 9
+\BOOKMARK [0][-]{chapter.2}{2 Probability \(special topic\)}{}% 10
+\BOOKMARK [1][-]{section.2.1}{2.1 Defining probability \(special topic\)}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.2}{2.2 Conditional probability \(special topic\)}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.3}{2.3 Sampling from a small population \(special topic\)}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.4}{2.4 Random variables \(special topic\)}{chapter.2}% 14
+\BOOKMARK [1][-]{section.2.5}{2.5 Continuous distributions \(special topic\)}{chapter.2}% 15
+\BOOKMARK [1][-]{section.2.6}{2.6 Exercises}{chapter.2}% 16
+\BOOKMARK [0][-]{chapter.3}{3 Distributions of random variables}{}% 17
+\BOOKMARK [1][-]{section.3.1}{3.1 Normal distribution}{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.2}{3.2 Evaluating the normal approximation}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.3}{3.3 Geometric distribution \(special topic\)}{chapter.3}% 20
+\BOOKMARK [1][-]{section.3.4}{3.4 Binomial distribution \(special topic\)}{chapter.3}% 21
+\BOOKMARK [1][-]{section.3.5}{3.5 More discrete distributions \(special topic\)}{chapter.3}% 22
+\BOOKMARK [1][-]{section.3.6}{3.6 Exercises}{chapter.3}% 23
+\BOOKMARK [0][-]{chapter.4}{4 Foundations for inference}{}% 24
+\BOOKMARK [1][-]{section.4.1}{4.1 Variability in estimates}{chapter.4}% 25
+\BOOKMARK [1][-]{section.4.2}{4.2 Confidence intervals}{chapter.4}% 26
+\BOOKMARK [1][-]{section.4.3}{4.3 Hypothesis testing}{chapter.4}% 27
+\BOOKMARK [1][-]{section.4.4}{4.4 Examining the Central Limit Theorem Closer \(Special Topic\)}{chapter.4}% 28
+\BOOKMARK [1][-]{section.4.5}{4.5 Inference for other estimators}{chapter.4}% 29
+\BOOKMARK [1][-]{section.4.6}{4.6 Sample size and power \(special topic\)}{chapter.4}% 30
+\BOOKMARK [1][-]{section.4.7}{4.7 Exercises}{chapter.4}% 31
+\BOOKMARK [0][-]{chapter.5}{5 Inference for numerical data}{}% 32
+\BOOKMARK [1][-]{section.5.1}{5.1 One-sample means with the t-distribution}{chapter.5}% 33
+\BOOKMARK [1][-]{section.5.2}{5.2 Paired data}{chapter.5}% 34
+\BOOKMARK [1][-]{section.5.3}{5.3 Difference of two means}{chapter.5}% 35
+\BOOKMARK [1][-]{section.5.4}{5.4 Power calculations for a difference of means \(special topic\)}{chapter.5}% 36
+\BOOKMARK [1][-]{section.5.5}{5.5 Comparing many means with ANOVA \(special topic\)}{chapter.5}% 37
+\BOOKMARK [1][-]{section.5.6}{5.6 Exercises}{chapter.5}% 38
+\BOOKMARK [0][-]{chapter.6}{6 Inference for categorical data}{}% 39
+\BOOKMARK [1][-]{section.6.1}{6.1 Inference for a single proportion}{chapter.6}% 40
+\BOOKMARK [1][-]{section.6.2}{6.2 Difference of two proportions}{chapter.6}% 41
+\BOOKMARK [1][-]{section.6.3}{6.3 Testing for goodness of fit using chi-square \(special topic\)}{chapter.6}% 42
+\BOOKMARK [1][-]{section.6.4}{6.4 Testing for independence in two-way tables \(special topic\)}{chapter.6}% 43
+\BOOKMARK [1][-]{section.6.5}{6.5 Small sample hypothesis testing for a proportion \(special topic\)}{chapter.6}% 44
+\BOOKMARK [1][-]{section.6.6}{6.6 Randomization test \(special topic\)}{chapter.6}% 45
+\BOOKMARK [1][-]{section.6.7}{6.7 Exercises}{chapter.6}% 46
+\BOOKMARK [0][-]{chapter.7}{7 Introduction to linear regression}{}% 47
+\BOOKMARK [1][-]{section.7.1}{7.1 Line fitting, residuals, and correlation}{chapter.7}% 48
+\BOOKMARK [1][-]{section.7.2}{7.2 Fitting a line by least squares regression}{chapter.7}% 49
+\BOOKMARK [1][-]{section.7.3}{7.3 Types of outliers in linear regression}{chapter.7}% 50
+\BOOKMARK [1][-]{section.7.4}{7.4 Inference for linear regression}{chapter.7}% 51
+\BOOKMARK [1][-]{section.7.5}{7.5 Exercises}{chapter.7}% 52
+\BOOKMARK [0][-]{chapter.8}{8 Multiple and logistic regression}{}% 53
+\BOOKMARK [1][-]{section.8.1}{8.1 Introduction to multiple regression}{chapter.8}% 54
+\BOOKMARK [1][-]{section.8.2}{8.2 Model selection}{chapter.8}% 55
+\BOOKMARK [1][-]{section.8.3}{8.3 Checking model assumptions using graphs}{chapter.8}% 56
+\BOOKMARK [1][-]{section.8.4}{8.4 Introduction to logistic regression}{chapter.8}% 57
+\BOOKMARK [1][-]{section.8.5}{8.5 Exercises}{chapter.8}% 58
+\BOOKMARK [0][-]{appendix.A}{A End of chapter exercise solutions}{}% 59
+\BOOKMARK [0][-]{appendix.B}{B Distribution tables}{}% 60
+\BOOKMARK [1][-]{section.B.1}{B.1 Normal Probability Table}{appendix.B}% 61
+\BOOKMARK [1][-]{section.B.2}{B.2 t-Probability Table}{appendix.B}% 62
+\BOOKMARK [1][-]{section.B.3}{B.3 Chi-Square Probability Table}{appendix.B}% 63
