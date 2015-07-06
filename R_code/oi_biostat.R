@@ -54,5 +54,20 @@ famuss.oi.biostat[c(1,2,3,595),c("sex", "age", "race", "height", "weight", "actn
 
 xtable(famuss.oi.biostat[c(1,2,3,595),c( "sex", "age", "race", "height", "weight", "actn3.r577x", "ndrm.ch")],digits = 1)
 
+<<<<<<< HEAD
+#  Load diabetes dataset
+
+setwd("~/oi_biostat/data/cdc_diabetes/excel")
+
+diabetes.cdc.2012 = read.csv("diabetes_cdc_2012.csv")
+setwd("~/oi_biostat/data/cdc_diabetes")
+save(diabetes.cdc.2012, file="diabetes.cdc.2012.Rdata")
 
 
+hist(diabetes.cdc.2012$percent.men.diabetes)
+plot(diabetes.cdc.2012$percent.men.obese, diabetes.cdc.2012$percent.men.diabetes)
+plot(diabetes.cdc.2012$percent.women.diabetes, diabetes.cdc.2012$percent.men.diabetes)
+=======
+
+
+>>>>>>> origin/master
