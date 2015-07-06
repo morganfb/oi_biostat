@@ -67,7 +67,20 @@ save(diabetes.cdc.2012, file="diabetes.cdc.2012.Rdata")
 hist(diabetes.cdc.2012$percent.men.diabetes)
 plot(diabetes.cdc.2012$percent.men.obese, diabetes.cdc.2012$percent.men.diabetes)
 plot(diabetes.cdc.2012$percent.women.diabetes, diabetes.cdc.2012$percent.men.diabetes)
-=======
 
+  
+#  Load LEAP data
 
->>>>>>> origin/master
+setwd("~/oi_biostat/data/leap/excel")
+
+leap = read.csv("leap_demo_outcome.csv")
+setwd("~/oi_biostat/data/leap")
+leap[leap==""] = NA
+
+leap = droplevels(leap)
+save(leap, file="leap.Rdata")
+
+addmargins(table(leap$treatment.group, leap$outcome.V60))
+
+table(is.na(leap$outcome.V60))
+
