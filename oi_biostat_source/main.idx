@@ -20,70 +20,62 @@
 \indexentry{!leap|hyperpage}{15}
 \indexentry{response variable|hyperindexformat{\textbf}}{15}
 \indexentry{explanatory variable|hyperindexformat{\textbf}}{15}
-\indexentry{scatterplot|hyperpage}{16}
-\indexentry{positive association|hyperindexformat{\textbf}}{16}
-\indexentry{independent|hyperindexformat{\textbf}}{16}
-\indexentry{positive association|hyperindexformat{\textbf}}{16}
-\indexentry{negative association|hyperindexformat{\textbf}}{16}
-\indexentry{independent|hyperindexformat{\textbf}}{18}
-\indexentry{sample|(hyperpage}{19}
-\indexentry{population|(hyperpage}{19}
-\indexentry{experiment|hyperindexformat{\textbf}}{19}
-\indexentry{placebo|hyperindexformat{\textbf}}{19}
-\indexentry{observational study|hyperindexformat{\textbf}}{19}
-\indexentry{cohort|hyperindexformat{\textbf}}{19}
-\indexentry{experiment|hyperindexformat{\textbf}}{20}
-\indexentry{control|hyperindexformat{\textbf}}{20}
-\indexentry{blocks|hyperindexformat{\textbf}}{20}
-\indexentry{blocking|hyperindexformat{\textbf}}{20}
-\indexentry{stratification|hyperindexformat{\textbf}}{20}
-\indexentry{replicate|hyperindexformat{\textbf}}{20}
-\indexentry{prospective study|hyperindexformat{\textbf}}{21}
-\indexentry{retrospective studies|hyperindexformat{\textbf}}{21}
-\indexentry{mean|hyperindexformat{\textbf}}{22}
-\indexentry{mean!average|hyperpage}{22}
-\indexentry{distribution|hyperindexformat{\textbf}}{22}
-\indexentry{median|hyperindexformat{\textbf}}{22}
-\indexentry{deviation|hyperindexformat{\textbf}}{23}
-\indexentry{variance|hyperindexformat{\textbf}}{23}
-\indexentry{standard deviation|hyperindexformat{\textbf}}{23}
-\indexentry{s@$s$|hyperpage}{23}
-\indexentry{interquartile range|hyperindexformat{\textbf}}{24}
-\indexentry{first quartile|hyperindexformat{\textbf}}{24}
-\indexentry{quartile!first quartile|hyperpage}{24}
-\indexentry{percentile|hyperindexformat{\textbf}}{24}
-\indexentry{third quartile|hyperindexformat{\textbf}}{24}
-\indexentry{quartile!third quartile|hyperpage}{24}
-\indexentry{Q$_1$|hyperpage}{24}
-\indexentry{Q$_3$|hyperpage}{24}
-\indexentry{robust estimates|hyperindexformat{\textbf}}{24}
-\indexentry{sample statistic|hyperpage}{24}
-\indexentry{summary statistic|hyperpage}{24}
-\indexentry{dot plot|hyperindexformat{\textbf}}{25}
-\indexentry{histogram|hyperindexformat{\textbf}}{25}
-\indexentry{data density|hyperindexformat{\textbf}}{25}
-\indexentry{skew!example: very strong|hyperpage}{26}
-\indexentry{tail|hyperindexformat{\textbf}}{26}
-\indexentry{skew!tail|hyperpage}{26}
-\indexentry{skew!right skewed|hyperindexformat{\textbf}}{26}
-\indexentry{skew!left skewed|hyperindexformat{\textbf}}{26}
-\indexentry{symmetric|hyperindexformat{\textbf}}{26}
-\indexentry{skew!symmetric|hyperpage}{26}
-\indexentry{mode|hyperindexformat{\textbf}}{26}
-\indexentry{modality!unimodal|hyperindexformat{\textbf}}{27}
-\indexentry{modality!bimodal|hyperindexformat{\textbf}}{27}
-\indexentry{modality!multimodal|hyperindexformat{\textbf}}{27}
-\indexentry{boxplot|hyperindexformat{\textbf}}{27}
-\indexentry{median|hyperindexformat{\textbf}}{27}
-\indexentry{whiskers|hyperindexformat{\textbf}}{27}
-\indexentry{outlier|hyperindexformat{\textbf}}{28}
-\indexentry{scatterplot|hyperindexformat{\textbf}}{29}
-\indexentry{associated|hyperindexformat{\textbf}}{29}
-\indexentry{linearly associated|hyperindexformat{\textbf}}{29}
-\indexentry{positively associated|hyperindexformat{\textbf}}{29}
-\indexentry{negatively associated|hyperindexformat{\textbf}}{29}
+\indexentry{experiment|hyperindexformat{\textbf}}{16}
+\indexentry{placebo|hyperindexformat{\textbf}}{16}
+\indexentry{observational study|hyperindexformat{\textbf}}{16}
+\indexentry{cohort|hyperindexformat{\textbf}}{16}
+\indexentry{experiment|hyperindexformat{\textbf}}{17}
+\indexentry{control|hyperindexformat{\textbf}}{17}
+\indexentry{blocks|hyperindexformat{\textbf}}{17}
+\indexentry{blocking|hyperindexformat{\textbf}}{17}
+\indexentry{stratification|hyperindexformat{\textbf}}{17}
+\indexentry{replicate|hyperindexformat{\textbf}}{17}
+\indexentry{prospective study|hyperindexformat{\textbf}}{18}
+\indexentry{retrospective studies|hyperindexformat{\textbf}}{18}
+\indexentry{mean|hyperindexformat{\textbf}}{19}
+\indexentry{mean!average|hyperpage}{19}
+\indexentry{distribution|hyperindexformat{\textbf}}{19}
+\indexentry{median|hyperindexformat{\textbf}}{19}
+\indexentry{deviation|hyperindexformat{\textbf}}{20}
+\indexentry{variance|hyperindexformat{\textbf}}{20}
+\indexentry{standard deviation|hyperindexformat{\textbf}}{20}
+\indexentry{s@$s$|hyperpage}{21}
+\indexentry{interquartile range|hyperindexformat{\textbf}}{21}
+\indexentry{first quartile|hyperindexformat{\textbf}}{21}
+\indexentry{quartile!first quartile|hyperpage}{21}
+\indexentry{percentile|hyperindexformat{\textbf}}{21}
+\indexentry{third quartile|hyperindexformat{\textbf}}{21}
+\indexentry{quartile!third quartile|hyperpage}{21}
+\indexentry{Q$_1$|hyperpage}{21}
+\indexentry{Q$_3$|hyperpage}{21}
+\indexentry{robust estimates|hyperindexformat{\textbf}}{21}
+\indexentry{sample statistic|hyperpage}{21}
+\indexentry{summary statistic|hyperpage}{21}
+\indexentry{dot plot|hyperindexformat{\textbf}}{22}
+\indexentry{histogram|hyperindexformat{\textbf}}{23}
+\indexentry{skew!example: very strong|hyperpage}{23}
+\indexentry{data density|hyperindexformat{\textbf}}{23}
+\indexentry{tail|hyperindexformat{\textbf}}{23}
+\indexentry{skew!tail|hyperpage}{23}
+\indexentry{skew!right skewed|hyperindexformat{\textbf}}{23}
+\indexentry{skew!left skewed|hyperindexformat{\textbf}}{23}
+\indexentry{symmetric|hyperindexformat{\textbf}}{24}
+\indexentry{skew!symmetric|hyperpage}{24}
+\indexentry{mode|hyperindexformat{\textbf}}{24}
+\indexentry{modality!unimodal|hyperindexformat{\textbf}}{24}
+\indexentry{modality!bimodal|hyperindexformat{\textbf}}{24}
+\indexentry{modality!multimodal|hyperindexformat{\textbf}}{24}
+\indexentry{boxplot|hyperindexformat{\textbf}}{24}
+\indexentry{median|hyperindexformat{\textbf}}{25}
+\indexentry{whiskers|hyperindexformat{\textbf}}{25}
+\indexentry{outlier|hyperindexformat{\textbf}}{25}
+\indexentry{scatterplot|hyperindexformat{\textbf}}{26}
+\indexentry{associated|hyperindexformat{\textbf}}{26}
+\indexentry{linearly associated|hyperindexformat{\textbf}}{26}
+\indexentry{positively associated|hyperindexformat{\textbf}}{26}
+\indexentry{negatively associated|hyperindexformat{\textbf}}{26}
 \indexentry{independent|hyperindexformat{\textbf}}{29}
-\indexentry{data!cars|(hyperpage}{29}
+\indexentry{data!cars|(hyperpage}{30}
 \indexentry{data!email|(hyperpage}{31}
 \indexentry{frequency table|hyperindexformat{\textbf}}{31}
 \indexentry{relative frequency table|hyperindexformat{\textbf}}{31}

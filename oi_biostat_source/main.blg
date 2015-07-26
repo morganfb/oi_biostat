@@ -6,10 +6,6 @@ A level-1 auxiliary file: extraTeX/preamble/copyright.aux
 A level-1 auxiliary file: extraTeX/preamble/preface_oi_biostat.aux
 A level-1 auxiliary file: ch_intro_to_data_oi_biostat/TeX/ch_intro_to_data_oi_biostat.aux
 A level-1 auxiliary file: ch_intro_to_data_oi_biostat/TeX/ch_intro_to_data_oi_biostat_ex.aux
-A level-1 auxiliary file: extraTeX/eoceSolutions/eoceSolutions.aux
-A level-1 auxiliary file: extraTeX/appendix/TeX/zTable.aux
-A level-1 auxiliary file: extraTeX/appendix/TeX/tTable.aux
-A level-1 auxiliary file: extraTeX/appendix/TeX/chiSquareTable.aux
 A level-1 auxiliary file: extraTeX/index/index.aux
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -29,7 +25,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 You've used 1 entry,
             6047 wiz_defined-function locations,
-            1138 strings with 8445 characters,
+            1134 strings with 8301 characters,
 and the built_in function-call counts, 1306 in all, are:
 = -- 64
 > -- 58

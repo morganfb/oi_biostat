@@ -174,9 +174,19 @@ boxplot(altitude.3462$clutch.size)
 #data matrix for 1.2.1
 frog.altitude[c(1:3, 150),] 
 
-#  NA not showing up in the tabgle
+#  NA not showing up in the table
 
 library(xtable)
 xtable(frog.altitude[c(1:3,150),c( "altitude", "latitude", "egg.size", "clutch.size", 
                                           "clutch.volume", "body.size")], 
        caption = "Frog Study Data Matrix", label = "FrogAltitudeDF", digits = 2 )
+
+setwd("~/oi_biostat/oi_biostat_source/ch_intro_to_data_oi_biostat/figures/clutchVolVsBodySize")
+
+plot(frog.altitude$clutch.volume ~ frog.altitude$body.size)
+dev.copy(pdf,"clutchVolVsBodySize.pdf")
+dev.off()
+
+
+plot(frog.altitude$clutch.volume ~ frog.altitude$altitude)
+plot(frog.altitude$body.size ~ frog.altitude$altitude)
