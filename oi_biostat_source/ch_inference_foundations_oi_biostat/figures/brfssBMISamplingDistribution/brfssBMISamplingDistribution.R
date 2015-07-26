@@ -27,45 +27,35 @@ brfss.sample<-brfss.df[sample.vec,]
 ######################################################
 library(openintro)
 data(COL)
-setwd('~/OI_Biostat/oi_biostat_source/ch_inference_foundations_oi_biostat/figures/95PercentConfidenceInterval')
+setwd('~/OI_Biostat/oi_biostat_source/ch_inference_foundations_oi_biostat/figures/brfssBMISamplingDistribution')
 
-myPDF('95PercentConfidenceInterval.pdf', 6, 4,
-      mar = c(2, 1, 1, 1),
-      mgp = c(2.7, 0.9, 0))
-m <- mean(brfss.df$bmi)
-s <- sd(brfss.df$bmi)
-n <- 100
-k <- 25
-SE <- s/sqrt(n)
-
-means <- c()
-SE    <- c()
-for(i in 1:k){
-  temp <- sample(nrow(brfss.df), n)
-  d    <- brfss.df$bmi[temp]
-  means[i] <- mean(d, na.rm = TRUE)
-  SE[i]    <- sd(d)/sqrt(n)
+N <- 100000
+means <- rep(0, N)
+pb <- txtProgressBar(0, N, style = 3)
+for (i in 1:N) {
+  temp <- sample(nrow(brfss.df), 40000)
+  means[i] <- mean(brfss.df$bmi[temp], na.rm = TRUE)
+  setTxtProgressBar(pb, i)
 }
-xR <- m + 4 * c(-1, 1) * s / sqrt(n)
-yR <- c(0, 41 * k / 40)
-plot(xR, yR,
+
+myPDF('brfssBMISamplingDistribution.pdf', 8, 3.15,
+      mar = c(3.3, 4, 1.4, 1),
+      mgp = c(2.7,0.55,0))
+
+plot(0, 0,
      type = 'n',
-     xlab = 'BMI',
+     xlim = c(26.25, 26.45),
+     ylim = c(0, 1350 * N / 15000),
+     xlab = '',
      ylab = '',
      axes = FALSE)
-abline(v = m, lty = 2, col = COL[6])
-axis(1, at = m, expression(mu*' = 26.35'),
-     cex.axis = 1.15)
-for(i in 1:k){
-  ci <- means[i] + 2 * c(-1, 1) * SE[i]
-  if(abs(means[i] - m) > 1.96 * SE[i]){
-    col <- COL[4]
-    points(means[i], i, cex = 1.4, col = col)
-    lines(ci, rep(i, 2), col = col, lwd = 4)
-  } else {
-    col <- COL[1]
-  }
-  points(means[i], i, pch = 20, cex = 1.2, col = col)
-  lines(ci, rep(i, 2), col = col)
-}
+mtext("Sample mean for n = 40,000", 1, 2)
+mtext("Frequency", 2, line = 3, las = 0)
+m <- mean(brfss.df$bmi, na.rm = TRUE)
+s <- sd(brfss.df$bmi, na.rm = TRUE) / 10
+histPlot(means, col = COL[1], breaks = 50, add = TRUE)
+abline(h = 0)
+axis(1, at = seq(26.25, 26.45, 0.05))
+axis(2, at = seq(0, 10000, 1000))
+
 dev.off()

@@ -55,6 +55,10 @@ q <- c(seq(0.00001, 0.0009, 0.00001),
        seq(0.9991, 0.99999, 0.00001))
 ms <- quantile(means, q)
 nq <- qnorm(q)
+
+
+
+
 plot(nq, ms,
      xlab = "",
      ylab = 'Sample means',

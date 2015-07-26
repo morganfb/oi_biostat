@@ -27,45 +27,41 @@ brfss.sample<-brfss.df[sample.vec,]
 ######################################################
 library(openintro)
 data(COL)
-setwd('~/OI_Biostat/oi_biostat_source/ch_inference_foundations_oi_biostat/figures/95PercentConfidenceInterval')
+source("~/figures/brfssBMIsampHistograms.R", chdir = TRUE)
+setwd('~/OI_Biostat/oi_biostat_source/ch_inference_foundations_oi_biostat/figures/brfssBMIrunningMean')
 
-myPDF('95PercentConfidenceInterval.pdf', 6, 4,
-      mar = c(2, 1, 1, 1),
-      mgp = c(2.7, 0.9, 0))
-m <- mean(brfss.df$bmi)
-s <- sd(brfss.df$bmi)
-n <- 100
-k <- 25
-SE <- s/sqrt(n)
+xBars <- cumsum(brfss.sample$bmi)/ (1:length(brfss.sample$bmi))
 
-means <- c()
-SE    <- c()
-for(i in 1:k){
-  temp <- sample(nrow(brfss.df), n)
-  d    <- brfss.df$bmi[temp]
-  means[i] <- mean(d, na.rm = TRUE)
-  SE[i]    <- sd(d)/sqrt(n)
-}
-xR <- m + 4 * c(-1, 1) * s / sqrt(n)
-yR <- c(0, 41 * k / 40)
-plot(xR, yR,
-     type = 'n',
-     xlab = 'BMI',
-     ylab = '',
-     axes = FALSE)
-abline(v = m, lty = 2, col = COL[6])
-axis(1, at = m, expression(mu*' = 26.35'),
-     cex.axis = 1.15)
-for(i in 1:k){
-  ci <- means[i] + 2 * c(-1, 1) * SE[i]
-  if(abs(means[i] - m) > 1.96 * SE[i]){
-    col <- COL[4]
-    points(means[i], i, cex = 1.4, col = col)
-    lines(ci, rep(i, 2), col = col, lwd = 4)
-  } else {
-    col <- COL[1]
-  }
-  points(means[i], i, pch = 20, cex = 1.2, col = col)
-  lines(ci, rep(i, 2), col = col)
-}
+myPDF('brfssBMIrunningMean.pdf', 7,4,
+      mfrow = 2:1,
+      mar=c(3.3, 4, 1, 1))
+
+plot(xBars[1:300],
+     type = "l",
+     axes = FALSE,
+     xlab = "",
+     ylab = "Running mean ",
+     col = COL[1],
+     lwd = 2)
+axis(1, at = seq(0, 300, 25))
+axis(2, at = seq(20, 35, 1))
+mtext("Sample size", 1, 2)
+
+par(mar = c(3.5, 4.5, 0.5, 0.5))
+
+plot(xBars[1:5000],
+     type = "l",
+     axes = FALSE,
+     xlab = "",
+     ylab = "Running mean",
+     col = COL[1],
+     lwd = 2)
+axis(1, at = seq(0, 5000, 200))
+axis(2, at = seq(20, 35, 1))
+mtext("Sample size", 1, 2)
+
 dev.off()
+
+mean(brfss.sample$bmi)
+sd(brfss.sample$bmi)
+
