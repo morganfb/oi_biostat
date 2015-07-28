@@ -16,28 +16,30 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.2.5}Experiments}{17}{subsection.1.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.6}Observational studies}{18}{subsection.1.2.6}
+\contentsline {subsection}{\numberline {1.2.6}Reducing bias in human experiments}{18}{subsection.1.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.3}Examining numerical data}{19}{section.1.3}
+\contentsline {subsection}{\numberline {1.2.7}Observational studies}{21}{subsection.1.2.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.1}Measures of center: mean and median}{19}{subsection.1.3.1}
+\contentsline {section}{\numberline {1.3}Examining numerical data}{22}{section.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.2}Measures of spread: standard deviation and interquartile range}{20}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.1}Measures of center: mean and median}{22}{subsection.1.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.3}Robust statistics}{21}{subsection.1.3.3}
+\contentsline {subsection}{\numberline {1.3.2}Measures of spread: standard deviation and interquartile range}{23}{subsection.1.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.4}Visualizing distributions of data: dot plots and histograms}{22}{subsection.1.3.4}
+\contentsline {subsection}{\numberline {1.3.3}Robust statistics}{25}{subsection.1.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.5}Boxplots, quantiles, outliers}{24}{subsection.1.3.5}
+\contentsline {subsection}{\numberline {1.3.4}Visualizing distributions of data: dot plots and histograms}{25}{subsection.1.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.6}Scatterplots}{26}{subsection.1.3.6}
+\contentsline {subsection}{\numberline {1.3.5}Boxplots, quantiles, outliers}{28}{subsection.1.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.7}Transforming data (special topic)}{30}{subsection.1.3.7}
+\contentsline {subsection}{\numberline {1.3.6}Scatterplots}{29}{subsection.1.3.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.4}Considering categorical data}{31}{section.1.4}
+\contentsline {subsection}{\numberline {1.3.7}Transforming data (special topic)}{33}{subsection.1.3.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.1}Contingency tables}{31}{subsection.1.4.1}
+\contentsline {section}{\numberline {1.4}Considering categorical data}{34}{section.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.2}Bar plots}{33}{subsection.1.4.2}
+\contentsline {subsection}{\numberline {1.4.1}Contingency tables}{34}{subsection.1.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.3}Comparing numerical data across groups}{33}{subsection.1.4.3}
+\contentsline {subsection}{\numberline {1.4.2}Bar plots}{36}{subsection.1.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.4.3}Comparing numerical data across groups}{36}{subsection.1.4.3}
