@@ -281,8 +281,6 @@ Much of this text examines both numerical and graphical ways to examine possible
 The first step in conducting research is to identify questions to investigate. A clearly articulated research question is also essential in identifying the type of subjects to be studied, relevant variables, and how data should be measured. In order to obtain reliable data, it is also important to consider \textit{how} data are collected.
 
 
-
-
 \subsection{Populations and samples}
 \label{populationsAndSamples}
 
@@ -308,11 +306,12 @@ Each of these questions refers to a target \term{population}. In the first quest
 
 Anecdotal evidence is typically composed of unusual observations that are easy recall based on their striking characteristics. Physicians are sometimes more likely to remember the characteristics of patient with an unusually good response to a drug than the features of the many patients who did not respond.  The dangers of drawing general conclusions from anecdotal information are obvious. No single observation can be used to draw conclusions about a population; often, the anecdotal case may not be remembered correctly or may have been measured in error.  To learn about the characteristics of a population, it is necessary to examine a sample of many cases drawn randomly the population.
 
-Thomas Jefferson, the second president of the United States, recognized the pitfall of drawing conclusions
-from a single observation. In a letter to his nephew, he wrote `` The patient, treated on the fashionable
-theory, sometimes gets well in spite of the medicine. The medicine therefore restored him, and the young
-doctor receives new courage to proceed in his bold experiments on the lives of his fellow creatures. ''
-\footnote{Jefferson, T. (1985). Letters, 1760–1826. Ed. Merrill D. Peterson. New York: Viking.}
+Thomas Jefferson, the second president of the United States, recognized the pitfall of drawing
+conclusions from a single observation. In a letter to his nephew, he wrote `` The patient,
+treated on the fashionable theory, sometimes gets well in spite of the medicine. The medicine
+therefore restored him, and the young doctor receives new courage to proceed in his bold
+experiments on the lives of his fellow creatures. '' \footnote{Jefferson, T. (1985). Letters,
+1760–1826. Ed. Merrill D. Peterson. New York: Viking.}
 
 While it is incorrect to generalize from individual observations, scientists know that interesting observations can be valuable.  Striking observations may be a reason to question assumptions or to design a study to examine an unconventional question more closely.  Cures for certain diseases have been discovered in research inspired by a response to a new drug of a patient with a disease thought be be incurable.  \textit{Insert references sent by D Longo and D. Spriggs here.}  
 
@@ -421,8 +420,11 @@ Studies where the researchers assign treatments to cases are called \termsub{exp
 
 %these are the actual principles, whereas blocking is a way to achive randomization.
 \begin{description}
+
 	\item[Controlling.] Researchers assign treatments to cases, and they do their best to \term{control} for any other differences in the groups.  For example, infants in the LEAP study had be between 4 and 11 months of age and had to have severe eczema and/or allergies to eggs.  
+
 	\item[Randomization.] Researchers randomize patients into treatment groups to account for variables that cannot be controlled. For example, some infants may have been more susceptible to peanut allergies because of an unmeasured genetic condition. Randomizing patients into the treatment or control group helps even out such differences. In situations where researchers suspect that variables other than the treatment may influence the response, they may first group individuals into \term{blocks} and then, within each block, randomize cases to treatment groups; this technique is referred to as \term{blocking} or \term{stratification}.  In the LEAP study, infants were stratified into two cohorts based on whether or not the child developed a red, swollen mark (a wheal) after a skin test.  The data examined earlier from the LEAP study includes only the patients without a wheal after the skin test.  General methods for combining strata in when analyzing blocked data are relatively complicated and will not be covered in this book.
+
 	\item[Replication.] The more cases researchers observe, the more accurately they can estimate the effect of the explanatory variable on the response. In a single study, we \term{replicate} by collecting a sufficiently large sample.  The LEAP study randomized a total of 640 infants, 542 in the block without the wheal response.
 	
 		\item[Blocking.] Researchers sometimes know or suspect that variables, other than the treatment, influence the response. Under these circumstances, they may first group individuals based on this variable into \term{blocks} and then randomize cases within each block to the treatment groups. This strategy is often referred to as \term{blocking}. For instance, if we are looking at the effect of a drug on heart attacks, we might first split patients in the study into low-risk and high-risk blocks, then randomly assign half the patients from each block to the control group and the other half to the treatment group, as shown in Figure~\ref{figureShowingBlocking}. This strategy ensures each treatment group has an equal number of low-risk and high-risk patients.
@@ -439,8 +441,7 @@ Studies where the researchers assign treatments to cases are called \termsub{exp
 	\end{figure}
 	
 
-
-It is important to incorporate the first three experimental design principles into any study, and this book describes applicable methods for analyzing data from such experiments. Blocking is a slightly more advanced technique, and statistical methods in this book may be extended to analyze data collected using blocking.
+It is important to incorporate at least the first three experimental design principles into any study, and this book describes applicable methods for analyzing data from such experiments. Blocking is a slightly more advanced technique, and statistical methods in this book may be extended to analyze data collected using blocking.
 
 
 
@@ -552,22 +553,24 @@ A simple random sample would likely draw individuals from all 30 villages, which
 
 \textit{some revisions from JV in this section}
 
-This section introduces techniques for exploring and summarizing numerical variables. The \data{frog\_altitude} dataset from Section~\ref{dataBasics} provides rich opportunities for examples. 
+This section introduces techniques for exploring and summarizing numerical variables, using the \data{frog\_altitude} dataset from Section~\ref{dataBasics}.
+
+
 
 \subsection{Measures of center: mean and median}
 \label{measuresOfCenterAndSpread}
 
 The \term{mean}, sometimes called the \indexthis{average}{mean!average}, is a common way to measure the center of a \term{distribution} of data. To find the average clutch volume for all observed egg clutches, we add up all the clutch volumes and divide by the total number of clutches. For computational convenience, the volumes are rounded to the first~decimal.
 \begin{eqnarray}
-\bar{x} = \frac{177.8 + 257.0 + \cdots + 933.3}{431} = 882.5 mm^{3}
+\bar{x} = \frac{177.8 + 257.0 + \cdots + 933.3}{431} = 882.5 \textrm{mm}^{3}
 \label{sampleMeanEquation}
 \end{eqnarray}
-The sample mean is often labeled $\bar{x}$\marginpar[\raggedright$\bar{x}$\\\footnotesize sample\\ mean]{\raggedright$\bar{x}$\\\footnotesize sample\\ mean}. The letter $x$ is being used as a generic placeholder for the variable of interest, \var{clutch.volume}, and the bar over on the $x$ communicates that the average volume of the 431 clutches was $882.5{}mm^{3}$. It is useful to think of the mean as the balancing point of the distribution. 
+The sample mean is often labeled $\overline{x}$\marginpar[\raggedright$\overline{x}$\\\footnotesize sample\\ mean]{\raggedright$\overline{x}$\\\footnotesize sample\\ mean}. The letter $x$ is being used as a generic placeholder for the variable of interest, \var{clutch.volume}, and the bar over on the $x$ communicates that the average volume of the 431 clutches was $882.5\textrm{mm}^{3}$. It is useful to think of the mean as the balancing point of the distribution. 
 
 \begin{termBox}{\tBoxTitle{Mean}%
 		The sample mean of a numerical variable is computed as the sum of all of the observations divided by the number of observations:
 		\begin{eqnarray}
-		\bar{x} = \frac{x_1+x_2+\cdots+x_n}{n}
+		\overline{x} = \frac{x_1+x_2+\cdots+x_n}{n}
 		\label{meanEquation}
 		\end{eqnarray}
 		where $x_1, x_2, \dots, x_n$ represent the $n$ observed values.}
@@ -577,7 +580,8 @@ $n$\\\footnotesize sample size]{\raggedright\vspace{-8mm}
 	
 	$n$\\\footnotesize sample size}\vspace{-2mm}
 
-Another measure of center is the \term{median}, which is the middle number in a distribution after the values have been ordered from smallest to largest. If the distribution contains an even number of observations, the median is the average of the middle two observations. There are 431 clutches in the dataset, so the median is the clutch volume of the $216^{th}_{}$ observation in the \var{clutch.volume} variable: 831.8 $mm^{2}$.
+Another measure of center is the \term{median}, which is the middle number in a distribution after the values have been ordered from smallest to largest. If the distribution contains an even number of observations, the median is the average of the middle two observations. There are 431 clutches in the dataset, so the median is the clutch volume of the $216^{th}$ observation in sorted values of \var{clutch.volume}: $831.8 \textrm{mm}^{2}$.
+
 \begin{comment}
 \begin{exercise}
 	Examine Equations~\eqref{sampleMeanEquation} and~\eqref{meanEquation} above. What does $x_1$ correspond to? And $x_2$? Can you infer a general meaning to what $x_i$ might represent?\footnote{$x_1$ corresponds to the number of characters in the first email in the sample (21.7, in thousands), $x_2$ to the number of characters in the second email (7.0, in thousands), and $x_i$ corresponds to the number of characters in the $i^{th}$ email in the data set.}
@@ -595,6 +599,8 @@ The \data{email50} data set represents a sample from a larger population of emai
 \end{example}
 \end{comment}
 
+\textit{We have removed the concept of a weighted mean here; we do not have a context for it.  But it is an important idea that can be profitably used later, perhaps with the brfss data.  Perhaps we can re-insert it later.}
+
 \begin{comment}
 \begin{example}{We might like to compute the average income per person in the US. To do so, we might first think to take the mean of the per capita incomes across the 3,143 counties in the \data{county} data set. What would be a better approach?} \label{wtdMeanOfIncome}
 	The \data{county} data set is special in that each county actually represents many individual people. If we were to simply average across the \var{income} variable, we would be treating counties with 5,000 and 5,000,000 residents equally in the calculations. Instead, we should compute the total income for each county, add up all the counties' totals, and then divide by the number of people in all the counties. If we completed these steps with the \data{county} data, we would find that the per capita income for the US is \$27,348.43. Had we computed the \emph{simple} mean of per capita income across counties, the result would have been just \$22,504.70!
@@ -608,47 +614,54 @@ Example~\ref{wtdMeanOfIncome} used what is called a \term{weighted mean}\index{m
 \subsection{Measures of spread: standard deviation and interquartile range}
 \label{variability}
 
-The standard deviation roughly describes how far away the typical observation is from the mean. The distance of an observation from its mean its \term{deviation}. Below are the deviations for the $1^{st}_{}$, $2^{nd}_{}$, $3^{rd}$, and $431^{th}_{}$ observations in the \var{clutch.volume} variable. For computational convenience, clutch volume is rounded to the first decimal.
+\textsl{Don't like the verbal description of the sd here, but have not replaced it yet.  Note also that I have changed some bar to overline.  Let me know which you think is better in the pdf; I like overline}
+
+The standard deviation measures approximately the distance between a  typical observation and the mean. The distance of an observation from its mean its \term{deviation}. Below are the deviations for the $1^{st}$, $2^{nd}$, $3^{rd}$, and $431^{th}$ observations in the \var{clutch.volume} variable. For computational convenience, clutch volume is rounded to the first decimal.
 %not sure why 431 doesn't show up as subscript
+% multi-char subscripts have to be in braces
 \begin{align*}
-x_1^{}-\bar{x} &= 177.8 - 882.5 = -704.7 \hspace{5mm}\text{ } \\
-x_2^{}-\bar{x} &= 257.0 - 882.5 = -625.5 \\
-x_3^{}-\bar{x} &= 151.4 - 882.5 = -731.1 \\
+x_1-\bar{x} &= 177.8 - 882.5 = -704.7 \hspace{5mm}\text{ } \\
+x_2-\bar{x} &= 257.0 - 882.5 = -625.5 \\
+x_3-\bar{x} &= 151.4 - 882.5 = -731.1 \\
 &\ \vdots \\
-x_431^{}-\bar{x} &= 933.2 - 882.5 = 50.7
+x_{431}-\bar{x} &= 933.2 - 882.5 = 50.7
 \end{align*}
 % library(openintro); d <- email50$num_char; round(mean(d),1); d[c(1,2,3,50)]; d[c(1,2,3,50)] - round(mean(d),1); (d[c(1,2,3,50)] - round(mean(d)))^2; sum((d - round(mean(d)))^2)/49; sqrt(sum((d - round(mean(d)))^2)/49); var(d); sd(d)
-If we square these deviations and then take an average, the result is about equal to the sample \term{variance}\label{varianceIsDefined}, denoted by $s_{}^2$\marginpar[\raggedright$s^2_{}$\\\footnotesize sample variance]{\raggedright$s^2_{}$\\\footnotesize sample variance}:
+If we square these deviations and then take an average, the result is about equal to the sample \term{variance}\label{varianceIsDefined}, denoted by $s^2$\marginpar[\raggedright$s^2$\\\footnotesize sample variance]{\raggedright$s^2$\\\footnotesize sample variance}:
 \begin{align*}
-s_{}^2 &= \frac{-704.7_{}^2 + (-625.5)_{}^2 + (-731.1)_{}^2 + \cdots + 50.7_{}^2}{431-1} \\
+s^2 &= \frac{(-704.7)^2 + (-625.5)^2 + (-731.1)^2 + \cdots + (50.7)^2}{431-1} \\
 &= \frac{496,602.09 + 391,250.25 + 534,507.21 + \cdots + 2570.49}{430} \\
 &= 143,680.9
 \end{align*}
-We divide by $n-1$, rather than dividing by $n$, when computing the variance; you need not worry about this mathematical nuance for the material in this textbook. 
+The denominator is $n-1$, rather than dividing by $n$, when computing the variance; this mathematical nuance comes from statistical theory not covered here.
 
-The \term{standard deviation} is defined as the square root of the variance:
+The \term{standard deviation} is the square root of the variance:
 $$s=\sqrt{143,680.9} = 379.05$$
 \marginpar[\raggedright\vspace{-10mm}
 
 $s$\\\footnotesize sample standard deviation]{\raggedright\vspace{-10mm}
 	
 	$s$\\\footnotesize sample standard deviation
-}\index{s@$s$}The standard deviation of clutch volume for the egg clutches observed is about 380 $mm^{3}$.\\
+}\index{s@$s$}The standard deviation of clutch volume for the egg clutches observed is about $380 \textrm{mm}^{3}$.\\
+
+\textit{excellent place to give an interpretation of sd, referring back to verbal definition}
 
 \textbf{insert tip box for SD formula}\\
 
-Variability can also be described by the \term{interquartile range} (IQR).  To calculate the IQR, find the \term{first quartile} \index{quartile!first quartile} (the $25^{th}$ \hiddenterm{percentile}, i.e. 25\% of the data fall below this value) and the \term{third quartile} \index{quartile!third quartile} (the $75^{th}$ percentile). These are often labeled $Q_1$ \index{Q$_1$} and $Q_3$\index{Q$_3$}, respectively. The IQR is the difference: $Q_3 - Q_1$.
+Variability can also be measured by the \term{interquartile range} (IQR).  To calculate the IQR, find the \term{first quartile} \index{quartile!first quartile} (the $25^{th}$ \hiddenterm{percentile}, i.e. 25\% of the data fall below this value) and the \term{third quartile} \index{quartile!third quartile} (the $75^{th}$ percentile). These are often labeled $Q_1$ \index{Q$_1$} and $Q_3$\index{Q$_3$}, respectively. The IQR is the difference: $Q_3 - Q_1$.
 
-The IQR for \var{clutch.volume} is $1096.0 - 609.6 = 486.4_(mm)^{3}$.
+The IQR for \var{clutch.volume} is $1096.0 - 609.6 = 486.4\textrm{mm}^{3}$.
 
-\begin{comment}
+
 \begin{termBox}{\tBoxTitle{Variance and standard deviation}
 		The variance is roughly the average squared distance from the mean. The standard deviation is the square root of the variance. The standard deviation is useful when considering how close the data are to the mean.}
 \end{termBox}
 
 Formulas and methods used to compute the variance and standard deviation for a population are similar to those used for a sample.\footnote{The only difference is that the population variance has a division by $n$ instead of $n-1$.} However, like the mean, the population values have special symbols: $\sigma_{}^2$\marginpar[\raggedright$\sigma_{}^2$\\\footnotesize population variance\\ \hspace{2mm}]{\raggedright$\sigma_{}^2$\\\footnotesize population variance\\ \hspace{2mm}} for the variance and $\sigma$\marginpar[\raggedright$\sigma$\\\footnotesize population standard deviation\\ \hspace{2mm}]{\raggedright$\sigma$\\\footnotesize population standard deviation\\ \hspace{2mm}} for the standard deviation. The symbol $\sigma$ \index{Greek!sigma@sigma ($\sigma$)} is the Greek letter \emph{sigma}.
 
+\textit{I have re-inserted the figures from Open Intro here; I like them.  The will have to be redone for the frog data.  The code for producing the figures is in the directory containing the figure.}
 
+%\begin{comment}
 \begin{figure}
 	\centering
 	\includegraphics[width=\mycaptionwidth]{ch_intro_to_data_oi_biostat/figures/sdAsRuleForEmailNumChar/sdAsRuleForEmailNumChar}
@@ -676,7 +689,7 @@ Formulas and methods used to compute the variance and standard deviation for a p
 \end{example}
 
 In practice, the variance and standard deviation are sometimes used as a means to an end, where the ``end'' is being able to accurately estimate the uncertainty associated with a sample statistic. For example, in Chapter~\ref{foundationsForInference} we will use the variance and standard deviation to assess how close the sample mean is to the population mean.
-\end{comment}
+%\end{comment}
 
 \subsection{Robust statistics}
 
