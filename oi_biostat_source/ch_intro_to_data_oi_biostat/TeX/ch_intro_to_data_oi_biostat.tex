@@ -633,7 +633,7 @@ s^2 &= \frac{(-704.7)^2 + (-625.5)^2 + (-731.1)^2 + \cdots + (50.7)^2}{431-1} \\
 &= \frac{496,602.09 + 391,250.25 + 534,507.21 + \cdots + 2570.49}{430} \\
 &= 143,680.9
 \end{align*}
-The denominator is $n-1$, rather than dividing by $n$, when computing the variance; this mathematical nuance comes from statistical theory not covered here.
+The denominator is $n-1$ rather than $n$ when computing the variance; this mathematical nuance comes from statistical theory and the reason for it is not covered here.
 
 The \term{standard deviation} is the square root of the variance:
 $$s=\sqrt{143,680.9} = 379.05$$
@@ -642,7 +642,7 @@ $$s=\sqrt{143,680.9} = 379.05$$
 $s$\\\footnotesize sample standard deviation]{\raggedright\vspace{-10mm}
 	
 	$s$\\\footnotesize sample standard deviation
-}\index{s@$s$}The standard deviation of clutch volume for the egg clutches observed is about $380 \textrm{mm}^{3}$.\\
+}\index{s@$s$}The standard deviation of clutch volume for the egg clutches observed is about $380 \textrm{mm}^{3}$.  \\
 
 \textit{excellent place to give an interpretation of sd, referring back to verbal definition}
 
@@ -693,17 +693,23 @@ In practice, the variance and standard deviation are sometimes used as a means t
 
 \subsection{Robust statistics}
 
+\textit{I wrote this using the famuss data because I thought the frogs would not be as illustrative. But when I checked, it is a pretty good example of this.  In the R code for this chapter, you will find the summary statistics for the clutch.volume data with and without the 4 largest observations, along with the code for a dotPlot.  dotPlot() requires that the openintro package be loaded, so  you have to install it from the web, then precede the dotplot command with library(openintro)}
+
+\textit{If you agree, please replace the example below with one using clutch.volume and revise accordingly.  Because this is an important concept we could  leave both examples but it may interrupt the flow.}
+
 The median and IQR are called \term{robust estimates} because extreme observations have little effect on their values. The mean and standard deviation are much more affected by changes in extreme observations.
 
-\textbf{adapt this for the largest value in \var{clutch.size}}
+In \data{famuss} there are six observed weights larger than 270 pounds (273, 291, 295, 305, 308 and 317); these weights are evident in Figure~\ref{famussWeightDotPlotRobustEx} Despite the size of these weights, it is unlikely that the observations are errors, since the six values are clustered above 270. How do these three weights affect the summary statistics for the weight variable in \data{famuss}?  These large weights are evident in the plot below.
 
-How are the \indexthis{sample statistics}{sample statistic} of the \data{num\_\hspace{0.3mm}char} data set affected by the observation, 64,401? What would have happened if this email wasn't observed? What would happen to these \indexthis{summary statistics}{summary statistic} if the observation at 64,401 had been even larger, say 150,000? These scenarios are plotted alongside the original data in Figure~\ref{email50NumCharDotPlotRobustEx}, and sample statistics are computed under each scenario in Table~\ref{robustOrNotTable}.
+How are the \indexthis{sample statistics}{sample statistic} of the \var{weight} affected by these observations?  The sample statistics are computed under each of two scenarios in Table~\ref{robustOrNotTable},  one with and one without these large observations. The table shows that neither the median or the interquartile range change when the six largest observations are dropped, but the mean and standard deviation both become lower.  Because the standard deviation depends on the squared distances of observations from the mean, its change is more noticeable.  Typically, extreme observations have a greater effect on the standard deviation than on the mean.
+
+\textit{plot needs to be fancified using myPDF() in openintro}
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=\textwidth]{ch_intro_to_data_oi_biostat/figures/email50NumCharDotPlotRobustEx/email50NumCharDotPlotRobustEx}
-	\caption{Dot plots of the original character count data and two modified data sets.}
-	\label{email50NumCharDotPlotRobustEx}
+	\includegraphics[width=\textwidth]{ch_intro_to_data_oi_biostat/figures/famussWeightDotPlotRobustEx/famussWeightDotPlotRobustEx}
+	\caption{Dot plots of the weight variable in \data{famuss}.}
+	\label{famussWeightDotPlotRobustEx}
 \end{figure}
 
 \begin{table}[ht]
@@ -713,17 +719,18 @@ How are the \indexthis{sample statistics}{sample statistic} of the \data{num\_\h
 		& \hspace{0mm} & \multicolumn{2}{c}{\bf robust} & \hspace{2mm} & \multicolumn{2}{c}{\bf not robust} \\
 		scenario && median & IQR && $\bar{x}$ & $s$ \\ 
 		\hline
-		original \var{num\_\hspace{0.3mm}char} data 	&& 6,890 & 12,875 && 11,600 & 13,130 \\
-		% library(openintro); data(email50); d <- email50$num_char; median(d); diff(quantile(d, c(0.25,0.75))); mean(d); sd(d)
-		drop 66,924 observation		&& 6,768 & 11,702 && 10,521 & 10,798 \\
-		% library(openintro); data(email50); d <- email50$num_char; d <- d[-which.max(d)]; median(d); diff(quantile(d, c(0.25,0.75))); mean(d); sd(d)
-		move 66,924 to 150,000		&& 6,890 & 12,875 && 13,310 & 22,434 \\
-		% library(openintro); data(email50); d <- email50$num_char; d[which.max(d)] <- 100000; median(d); diff(quantile(d, c(0.25,0.75))); mean(d); sd(d)
+		original \var{weight} data 	&& 150 & 42 && 155.65 & 34.59 \\
+		% our R code goes here
+		drop six largest observations && 150 & 42 && 154.2 & 31.58 \\
+		% our R code goes here
+		
 		\hline
 	\end{tabular}
 	\caption{A comparison of how the median, IQR, mean ($\bar{x}$), and standard deviation ($s$) change when extreme observations are present.}
 	\label{robustOrNotTable}
 \end{table}
+
+
 
 \begin{comment}
 \begin{exercise} \label{numCharWhichIsMoreRobust}

@@ -66,44 +66,43 @@
 \indexentry{Greek!sigma@sigma ($\sigma$)|hyperpage}{25}
 \indexentry{robust estimates|hyperindexformat{\textbf}}{27}
 \indexentry{sample statistic|hyperpage}{27}
-\indexentry{summary statistic|hyperpage}{27}
 \indexentry{dot plot|hyperindexformat{\textbf}}{28}
-\indexentry{histogram|hyperindexformat{\textbf}}{28}
-\indexentry{data density|hyperindexformat{\textbf}}{28}
-\indexentry{skew!example: very strong|hyperpage}{29}
-\indexentry{tail|hyperindexformat{\textbf}}{29}
-\indexentry{skew!tail|hyperpage}{29}
-\indexentry{skew!right skewed|hyperindexformat{\textbf}}{29}
-\indexentry{skew!left skewed|hyperindexformat{\textbf}}{29}
-\indexentry{symmetric|hyperindexformat{\textbf}}{29}
-\indexentry{skew!symmetric|hyperpage}{29}
-\indexentry{mode|hyperindexformat{\textbf}}{29}
-\indexentry{modality!unimodal|hyperindexformat{\textbf}}{30}
-\indexentry{modality!bimodal|hyperindexformat{\textbf}}{30}
-\indexentry{modality!multimodal|hyperindexformat{\textbf}}{30}
-\indexentry{boxplot|hyperindexformat{\textbf}}{30}
-\indexentry{median|hyperindexformat{\textbf}}{30}
-\indexentry{whiskers|hyperindexformat{\textbf}}{30}
-\indexentry{outlier|hyperindexformat{\textbf}}{31}
+\indexentry{histogram|hyperindexformat{\textbf}}{29}
+\indexentry{data density|hyperindexformat{\textbf}}{29}
+\indexentry{skew!example: very strong|hyperpage}{30}
+\indexentry{tail|hyperindexformat{\textbf}}{30}
+\indexentry{skew!tail|hyperpage}{30}
+\indexentry{skew!right skewed|hyperindexformat{\textbf}}{30}
+\indexentry{skew!left skewed|hyperindexformat{\textbf}}{30}
+\indexentry{symmetric|hyperindexformat{\textbf}}{30}
+\indexentry{skew!symmetric|hyperpage}{30}
+\indexentry{mode|hyperindexformat{\textbf}}{30}
+\indexentry{modality!unimodal|hyperindexformat{\textbf}}{31}
+\indexentry{modality!bimodal|hyperindexformat{\textbf}}{31}
+\indexentry{modality!multimodal|hyperindexformat{\textbf}}{31}
+\indexentry{boxplot|hyperindexformat{\textbf}}{31}
+\indexentry{median|hyperindexformat{\textbf}}{31}
+\indexentry{whiskers|hyperindexformat{\textbf}}{31}
+\indexentry{outlier|hyperindexformat{\textbf}}{32}
 \indexentry{scatterplot|hyperindexformat{\textbf}}{32}
-\indexentry{associated|hyperindexformat{\textbf}}{32}
-\indexentry{linearly associated|hyperindexformat{\textbf}}{32}
-\indexentry{positively associated|hyperindexformat{\textbf}}{32}
-\indexentry{negatively associated|hyperindexformat{\textbf}}{32}
-\indexentry{independent|hyperindexformat{\textbf}}{36}
-\indexentry{data!cars|(hyperpage}{36}
-\indexentry{data!email|(hyperpage}{37}
-\indexentry{frequency table|hyperindexformat{\textbf}}{37}
-\indexentry{relative frequency table|hyperindexformat{\textbf}}{37}
-\indexentry{contingency table|hyperindexformat{\textbf}}{37}
-\indexentry{marginal totals|hyperindexformat{\textbf}}{37}
-\indexentry{row totals|hyperindexformat{\textbf}}{37}
-\indexentry{column totals|hyperindexformat{\textbf}}{37}
-\indexentry{contingency table!row proportions|hyperindexformat{\textbf}}{37}
-\indexentry{contingency table!column proportion|hyperindexformat{\textbf}}{38}
-\indexentry{bar plot|hyperindexformat{\textbf}}{39}
-\indexentry{bar plot!segmented bar plot|hyperindexformat{\textbf}}{39}
-\indexentry{side-by-side box plot|hyperindexformat{\textbf}}{39}
-\indexentry{box plot!side-by-side box plot|hyperpage}{39}
-\indexentry{hollow histogram|hyperindexformat{\textbf}}{39}
-\indexentry{data!county|)}{40}
+\indexentry{associated|hyperindexformat{\textbf}}{33}
+\indexentry{linearly associated|hyperindexformat{\textbf}}{33}
+\indexentry{positively associated|hyperindexformat{\textbf}}{33}
+\indexentry{negatively associated|hyperindexformat{\textbf}}{33}
+\indexentry{independent|hyperindexformat{\textbf}}{33}
+\indexentry{data!cars|(hyperpage}{37}
+\indexentry{data!email|(hyperpage}{38}
+\indexentry{frequency table|hyperindexformat{\textbf}}{38}
+\indexentry{relative frequency table|hyperindexformat{\textbf}}{38}
+\indexentry{contingency table|hyperindexformat{\textbf}}{38}
+\indexentry{marginal totals|hyperindexformat{\textbf}}{38}
+\indexentry{row totals|hyperindexformat{\textbf}}{38}
+\indexentry{column totals|hyperindexformat{\textbf}}{38}
+\indexentry{contingency table!row proportions|hyperindexformat{\textbf}}{38}
+\indexentry{contingency table!column proportion|hyperindexformat{\textbf}}{39}
+\indexentry{bar plot|hyperindexformat{\textbf}}{40}
+\indexentry{bar plot!segmented bar plot|hyperindexformat{\textbf}}{40}
+\indexentry{side-by-side box plot|hyperindexformat{\textbf}}{40}
+\indexentry{box plot!side-by-side box plot|hyperpage}{40}
+\indexentry{hollow histogram|hyperindexformat{\textbf}}{40}
+\indexentry{data!county|)}{41}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.28)  28 JUL 2015 12:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.28)  29 JUL 2015 16:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1130,200 +1130,206 @@ t line 691.
 
 [26 <./ch_intro_to_data_oi_biostat/figures/severalDiffDistWithSdOf1/severalDiff
 DistWithSdOf1.pdf>]
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 698.
+<ch_intro_to_data_oi_biostat/figures/famussWeightDotPlotRobustEx/famussWeightDo
+tPlotRobustEx.pdf, id=324, 505.89pt x 505.89pt>
+File: ch_intro_to_data_oi_biostat/figures/famussWeightDotPlotRobustEx/famussWei
+ghtDotPlotRobustEx.pdf Graphic file (type pdf)
 
-<ch_intro_to_data_oi_biostat/figures/email50NumCharDotPlotRobustEx/email50NumCh
-arDotPlotRobustEx.pdf, id=324, 507.8975pt x 102.3825pt>
-File: ch_intro_to_data_oi_biostat/figures/email50NumCharDotPlotRobustEx/email50
-NumCharDotPlotRobustEx.pdf Graphic file (type pdf)
-
-<use ch_intro_to_data_oi_biostat/figures/email50NumCharDotPlotRobustEx/email50N
-umCharDotPlotRobustEx.pdf>
-Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/email50NumCharDotP
-lotRobustEx/email50NumCharDotPlotRobustEx.pdf used on input line 704.
-(pdftex.def)             Requested size: 393.87128pt x 79.40028pt.
- [27 <./ch_intro_to_data_oi_biostat/figures/email50NumCharDotPlotRobustEx/email
-50NumCharDotPlotRobustEx.pdf>]
+<use ch_intro_to_data_oi_biostat/figures/famussWeightDotPlotRobustEx/famussWeig
+htDotPlotRobustEx.pdf>
+Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/famussWeightDotPlo
+tRobustEx/famussWeightDotPlotRobustEx.pdf used on input line 710.
+(pdftex.def)             Requested size: 393.87128pt x 393.87471pt.
+ [27]
 <ch_intro_to_data_oi_biostat/figures/emailCharactersDotPlot/emailCharactersDotP
-lot.pdf, id=344, 542.025pt x 90.3375pt>
+lot.pdf, id=334, 542.025pt x 90.3375pt>
 File: ch_intro_to_data_oi_biostat/figures/emailCharactersDotPlot/emailCharacter
 sDotPlot.pdf Graphic file (type pdf)
 
 <use ch_intro_to_data_oi_biostat/figures/emailCharactersDotPlot/emailCharacters
 DotPlot.pdf>
 Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/emailCharactersDot
-Plot/emailCharactersDotPlot.pdf used on input line 751.
+Plot/emailCharactersDotPlot.pdf used on input line 758.
 (pdftex.def)             Requested size: 393.87128pt x 65.64668pt.
 
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 <ch_intro_to_data_oi_biostat/figures/emailCharactersDotPlot/emailCharactersDotP
-lotStacked.pdf, id=345, 361.35pt x 144.54pt>
+lotStacked.pdf, id=335, 361.35pt x 144.54pt>
 File: ch_intro_to_data_oi_biostat/figures/emailCharactersDotPlot/emailCharacter
 sDotPlotStacked.pdf Graphic file (type pdf)
 
 <use ch_intro_to_data_oi_biostat/figures/emailCharactersDotPlot/emailCharacters
 DotPlotStacked.pdf>
 Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/emailCharactersDot
-Plot/emailCharactersDotPlotStacked.pdf used on input line 758.
+Plot/emailCharactersDotPlotStacked.pdf used on input line 765.
 (pdftex.def)             Requested size: 283.5878pt x 113.43546pt.
 
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[28 <./ch_intro_to_data_oi_biostat/figures/famussWeightDotPlotRobustEx/famussWe
+ightDotPlotRobustEx.pdf>]
 <ch_intro_to_data_oi_biostat/figures/email50NumCharHist/email50NumCharHist.pdf,
- id=349, 436.63126pt x 223.83624pt>
+ id=355, 436.63126pt x 223.83624pt>
 File: ch_intro_to_data_oi_biostat/figures/email50NumCharHist/email50NumCharHist
 .pdf Graphic file (type pdf)
 
 <use ch_intro_to_data_oi_biostat/figures/email50NumCharHist/email50NumCharHist.
 pdf>
 Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/email50NumCharHist
-/email50NumCharHist.pdf used on input line 781.
+/email50NumCharHist.pdf used on input line 788.
 (pdftex.def)             Requested size: 322.97733pt x 165.57132pt.
- [28 <./ch_intro_to_data_oi_biostat/figures/emailCharactersDotPlot/emailCharact
-ersDotPlot.pdf> <./ch_intro_to_data_oi_biostat/figures/emailCharactersDotPlot/e
-mailCharactersDotPlotStacked.pdf>] [29 <./ch_intro_to_data_oi_biostat/figures/e
+
+Underfull \vbox (badness 1694) has occurred while \output is active []
+
+ [29 <./ch_intro_to_data_oi_biostat/figures/emailCharactersDotPlot/emailCharact
+ersDotPlot.pdf>] [30 <./ch_intro_to_data_oi_biostat/figures/emailCharactersDotP
+lot/emailCharactersDotPlotStacked.pdf> <./ch_intro_to_data_oi_biostat/figures/e
 mail50NumCharHist/email50NumCharHist.pdf>]
 <ch_intro_to_data_oi_biostat/figures/singleBiMultiModalPlots/singleBiMultiModal
-Plots.pdf, id=389, 418.56375pt x 144.54pt>
+Plots.pdf, id=395, 418.56375pt x 144.54pt>
 File: ch_intro_to_data_oi_biostat/figures/singleBiMultiModalPlots/singleBiMulti
 ModalPlots.pdf Graphic file (type pdf)
 
 <use ch_intro_to_data_oi_biostat/figures/singleBiMultiModalPlots/singleBiMultiM
 odalPlots.pdf>
 Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/singleBiMultiModal
-Plots/singleBiMultiModalPlots.pdf used on input line 812.
+Plots/singleBiMultiModalPlots.pdf used on input line 819.
 (pdftex.def)             Requested size: 393.87128pt x 136.01096pt.
 
 <ch_intro_to_data_oi_biostat/figures/boxPlotLayoutNumVar/boxPlotLayoutNumVar.pd
-f, id=393, 397.485pt x 274.02374pt>
+f, id=399, 397.485pt x 274.02374pt>
 File: ch_intro_to_data_oi_biostat/figures/boxPlotLayoutNumVar/boxPlotLayoutNumV
 ar.pdf Graphic file (type pdf)
 
 <use ch_intro_to_data_oi_biostat/figures/boxPlotLayoutNumVar/boxPlotLayoutNumVa
 r.pdf>
 Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/boxPlotLayoutNumVa
-r/boxPlotLayoutNumVar.pdf used on input line 839.
+r/boxPlotLayoutNumVar.pdf used on input line 846.
 (pdftex.def)             Requested size: 279.45082pt x 192.65575pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[30 <./ch_intro_to_data_oi_biostat/figures/singleBiMultiModalPlots/singleBiMult
-iModalPlots.pdf>]
-Underfull \vbox (badness 5847) has occurred while \output is active []
-
- [31 <./ch_intro_to_data_oi_biostat/figures/boxPlotLayoutNumVar/boxPlotLayoutNu
-mVar.pdf>]
+[31 <./ch_intro_to_data_oi_biostat/figures/singleBiMultiModalPlots/singleBiMult
+iModalPlots.pdf>] [32 <./ch_intro_to_data_oi_biostat/figures/boxPlotLayoutNumVa
+r/boxPlotLayoutNumVar.pdf>]
 <ch_intro_to_data_oi_biostat/figures/clutchVolVsBodySize/clutchVolVsBodySize.pd
-f, id=432, 505.89pt x 505.89pt>
+f, id=436, 505.89pt x 505.89pt>
 File: ch_intro_to_data_oi_biostat/figures/clutchVolVsBodySize/clutchVolVsBodySi
 ze.pdf Graphic file (type pdf)
 
 <use ch_intro_to_data_oi_biostat/figures/clutchVolVsBodySize/clutchVolVsBodySiz
 e.pdf>
 Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/clutchVolVsBodySiz
-e/clutchVolVsBodySize.pdf used on input line 907.
+e/clutchVolVsBodySize.pdf used on input line 914.
 (pdftex.def)             Requested size: 315.09822pt x 315.09976pt.
 
 <ch_intro_to_data_oi_biostat/figures/famussHeightVsWeight/famussHeightVsWeight.
-pdf, id=434, 505.89pt x 505.89pt>
+pdf, id=438, 505.89pt x 505.89pt>
 File: ch_intro_to_data_oi_biostat/figures/famussHeightVsWeight/famussHeightVsWe
 ight.pdf Graphic file (type pdf)
 
 <use ch_intro_to_data_oi_biostat/figures/famussHeightVsWeight/famussHeightVsWei
 ght.pdf>
 Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/famussHeightVsWeig
-ht/famussHeightVsWeight.pdf used on input line 919.
+ht/famussHeightVsWeight.pdf used on input line 926.
 (pdftex.def)             Requested size: 315.09822pt x 315.09976pt.
 
 <ch_intro_to_data_oi_biostat/figures/famussHeightVsBmi/famussHeightVsBmi.pdf, i
-d=437, 505.89pt x 505.89pt>
+d=441, 505.89pt x 505.89pt>
 File: ch_intro_to_data_oi_biostat/figures/famussHeightVsBmi/famussHeightVsBmi.p
 df Graphic file (type pdf)
 
 <use ch_intro_to_data_oi_biostat/figures/famussHeightVsBmi/famussHeightVsBmi.pd
 f>
 Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/famussHeightVsBmi/
-famussHeightVsBmi.pdf used on input line 929.
+famussHeightVsBmi.pdf used on input line 936.
 (pdftex.def)             Requested size: 315.09822pt x 315.09976pt.
 
-Underfull \vbox (badness 1168) has occurred while \output is active []
-
- [32]
-[33 <./ch_intro_to_data_oi_biostat/figures/clutchVolVsBodySize/clutchVolVsBodyS
-ize.pdf>] [34 <./ch_intro_to_data_oi_biostat/figures/famussHeightVsWeight/famus
-sHeightVsWeight.pdf>] [35 <./ch_intro_to_data_oi_biostat/figures/famussHeightVs
-Bmi/famussHeightVsBmi.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 936--937
+Underfull \hbox (badness 10000) in paragraph at lines 943--944
 
  []
 
+[33] [34 <./ch_intro_to_data_oi_biostat/figures/clutchVolVsBodySize/clutchVolVs
+BodySize.pdf>] [35 <./ch_intro_to_data_oi_biostat/figures/famussHeightVsWeight/
+famussHeightVsWeight.pdf>] [36 <./ch_intro_to_data_oi_biostat/figures/famussHei
+ghtVsBmi/famussHeightVsBmi.pdf>]
 
-LaTeX Warning: Reference `carsPriceVsWeight' on page 36 undefined on input line
- 957.
-
-
-LaTeX Warning: Hyper reference `county_fed_spendVsPoverty' on page 36 undefined
- on input line 958.
-
-
-LaTeX Warning: Reference `county_fed_spendVsPoverty' on page 36 undefined on in
-put line 958.
+LaTeX Warning: Reference `carsPriceVsWeight' on page 37 undefined on input line
+ 964.
 
 
-LaTeX Warning: Reference `email50LinesCharacters' on page 36 undefined on input
- line 958.
+LaTeX Warning: Hyper reference `county_fed_spendVsPoverty' on page 37 undefined
+ on input line 965.
 
-[36] [37] [38]
+
+LaTeX Warning: Reference `county_fed_spendVsPoverty' on page 37 undefined on in
+put line 965.
+
+
+LaTeX Warning: Reference `email50LinesCharacters' on page 37 undefined on input
+ line 965.
+
+[37]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 1116.
+
+ [38] [39]
 <ch_intro_to_data_oi_biostat/figures/emailNumberBarPlot/emailNumberBarPlot.pdf,
- id=501, 505.89pt x 216.81pt>
+ id=505, 505.89pt x 216.81pt>
 File: ch_intro_to_data_oi_biostat/figures/emailNumberBarPlot/emailNumberBarPlot
 .pdf Graphic file (type pdf)
 
 <use ch_intro_to_data_oi_biostat/figures/emailNumberBarPlot/emailNumberBarPlot.
 pdf>
 Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/emailNumberBarPlot
-/emailNumberBarPlot.pdf used on input line 1216.
+/emailNumberBarPlot.pdf used on input line 1223.
 (pdftex.def)             Requested size: 354.48174pt x 151.92474pt.
 
 <ch_intro_to_data_oi_biostat/figures/emailSpamNumberSegBar/emailSpamNumberSegBa
-r.pdf, id=502, 325.215pt x 252.945pt>
+r.pdf, id=506, 325.215pt x 252.945pt>
 File: ch_intro_to_data_oi_biostat/figures/emailSpamNumberSegBar/emailSpamNumber
 SegBar.pdf Graphic file (type pdf)
 
 <use ch_intro_to_data_oi_biostat/figures/emailSpamNumberSegBar/emailSpamNumberS
 egBar.pdf>
 Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/emailSpamNumberSeg
-Bar/emailSpamNumberSegBar.pdf used on input line 1231.
+Bar/emailSpamNumberSegBar.pdf used on input line 1238.
 (pdftex.def)             Requested size: 181.18343pt x 140.92262pt.
 
 <ch_intro_to_data_oi_biostat/figures/emailSpamNumberSegBar/emailSpamNumberSegBa
-rSta.pdf, id=503, 325.215pt x 252.945pt>
+rSta.pdf, id=507, 325.215pt x 252.945pt>
 File: ch_intro_to_data_oi_biostat/figures/emailSpamNumberSegBar/emailSpamNumber
 SegBarSta.pdf Graphic file (type pdf)
 
 <use ch_intro_to_data_oi_biostat/figures/emailSpamNumberSegBar/emailSpamNumberS
 egBarSta.pdf>
 Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/emailSpamNumberSeg
-Bar/emailSpamNumberSegBarSta.pdf used on input line 1235.
+Bar/emailSpamNumberSegBarSta.pdf used on input line 1242.
 (pdftex.def)             Requested size: 181.18343pt x 140.92262pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[39 <./ch_intro_to_data_oi_biostat/figures/emailNumberBarPlot/emailNumberBarPlo
+[40 <./ch_intro_to_data_oi_biostat/figures/emailNumberBarPlot/emailNumberBarPlo
 t.pdf>]
 <ch_intro_to_data_oi_biostat/figures/countyIncomeSplitByPopGain/countyIncomeSpl
-itByPopGain.pdf, id=523, 542.025pt x 289.08pt>
+itByPopGain.pdf, id=528, 542.025pt x 289.08pt>
 File: ch_intro_to_data_oi_biostat/figures/countyIncomeSplitByPopGain/countyInco
 meSplitByPopGain.pdf Graphic file (type pdf)
 
 <use ch_intro_to_data_oi_biostat/figures/countyIncomeSplitByPopGain/countyIncom
 eSplitByPopGain.pdf>
 Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/countyIncomeSplitB
-yPopGain/countyIncomeSplitByPopGain.pdf used on input line 1305.
+yPopGain/countyIncomeSplitByPopGain.pdf used on input line 1312.
 (pdftex.def)             Requested size: 393.87128pt x 210.06944pt.
-) [40 <./ch_intro_to_data_oi_biostat/figures/emailSpamNumberSegBar/emailSpamNum
+) [41 <./ch_intro_to_data_oi_biostat/figures/emailSpamNumberSegBar/emailSpamNum
 berSegBar.pdf> <./ch_intro_to_data_oi_biostat/figures/emailSpamNumberSegBar/ema
-ilSpamNumberSegBarSta.pdf>] [41 <./ch_intro_to_data_oi_biostat/figures/countyIn
+ilSpamNumberSegBarSta.pdf>] [42 <./ch_intro_to_data_oi_biostat/figures/countyIn
 comeSplitByPopGain/countyIncomeSplitByPopGain.pdf>]
 \openout2 = `ch_intro_to_data_oi_biostat/TeX/ch_intro_to_data_oi_biostat_ex.aux
 '.
@@ -1358,8 +1364,8 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 51.
  ) 
 Here is how much of TeX's memory you used:
- 14619 strings out of 493109
- 236156 string characters out of 6135003
+ 14620 strings out of 493109
+ 236141 string characters out of 6135003
  436915 words of memory out of 5000000
  17639 multiletter control sequences out of 15000+600000
  17423 words of font info for 64 fonts, out of 8000000 for 9000
@@ -1394,10 +1400,10 @@ type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2014/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type
 1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/
 public/wasy/wasy10.pfb>
-Output written on main.pdf (41 pages, 499305 bytes).
+Output written on main.pdf (42 pages, 507230 bytes).
 PDF statistics:
- 677 PDF objects out of 1000 (max. 8388607)
- 561 compressed objects within 6 object streams
- 138 named destinations out of 1000 (max. 500000)
+ 682 PDF objects out of 1000 (max. 8388607)
+ 565 compressed objects within 6 object streams
+ 139 named destinations out of 1000 (max. 500000)
  131 words of extra memory for PDF output out of 10000 (max. 10000000)
 

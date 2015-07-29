@@ -187,6 +187,57 @@ plot(frog.altitude$clutch.volume ~ frog.altitude$body.size)
 dev.copy(pdf,"clutchVolVsBodySize.pdf")
 dev.off()
 
-
+library(openintro)
 plot(frog.altitude$clutch.volume ~ frog.altitude$altitude)
 plot(frog.altitude$body.size ~ frog.altitude$altitude)
+
+with(frog.altitude, dotPlot(clutch.volume))
+with(frog.altitude, clutch.volume[clutch.volume > 2000])
+
+with(frog.altitude, median(clutch.volume))
+with(frog.altitude, IQR(clutch.volume))
+with(frog.altitude, mean(clutch.volume))
+with(frog.altitude, sd(clutch.volume))
+
+a = frog.altitude$clutch.volume <= 2000
+
+with(frog.altitude, median(clutch.volume[a]))
+with(frog.altitude, IQR(clutch.volume[a]))
+with(frog.altitude, mean(clutch.volume[a]))
+with(frog.altitude, sd(clutch.volume[a]))
+
+# exploring famuss and frogs for robust statistic examples
+
+library(openintro)
+with(famuss.oi.biostat, hist(weight))
+
+#  histogram shows several outliers
+
+with(famuss.oi.biostat, dotPlot(weight))
+
+with(famuss.oi.biostat, max(weight))
+
+with(famuss.oi.biostat, weight[weight > 300])
+with(famuss.oi.biostat, weight[weight > 270])
+with(famuss.oi.biostat, median(weight))
+with(famuss.oi.biostat, IQR(weight))
+with(famuss.oi.biostat, mean(weight))
+with(famuss.oi.biostat, sd(weight)) 
+
+    
+a = famuss.oi.biostat$weight <=270
+
+with(famuss.oi.biostat, median(weight[a]))
+with(famuss.oi.biostat, IQR(weight[a]))
+with(famuss.oi.biostat, mean(weight[a]))
+with(famuss.oi.biostat, sd(weight[a])) 
+
+
+with(famuss.oi.biostat, dotPlot(weight))
+plot.storage = file.path("~", "oi_biostat", "oi_biostat_source", "ch_intro_to_data_oi_biostat",
+                         "figures", "famussWeightDotPlotRobustEx")
+plot.storage
+setwd(plot.storage)
+pdf("famussWeightDotPlotRobustEx.pdf")
+with(famuss.oi.biostat, dotPlot(weight))
+dev.off()
