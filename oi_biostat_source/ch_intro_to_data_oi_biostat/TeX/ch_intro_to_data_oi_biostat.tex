@@ -492,18 +492,11 @@ Some previous research tells us that using sunscreen actually reduces skin cance
 
 Sun exposure is what is called a \term{confounding variable},\footnote{Also called a \term{lurking variable}, \term{confounding factor}, or a \term{confounder}.} which is a variable that is correlated with both the explanatory and response variables. While one method to justify making causal conclusions from observational studies is to exhaust the search for confounding variables, there is no guarantee that all confounding variables can be examined or measured.
 
-The \data{famuss} data set is an observational study with confounding variables, and its data cannot easily be used to make causal conclusions.
+The \data{famuss} data set is an observational study with confounding variables, and its data should not be used to make causal conclusions.
 
-\begin{comment}
-\begin{exercise}
-Figure~\ref{multiunitsVsOwnership} shows a negative association between the homeownership rate and the percentage of multi-unit structures in a county. However, it is unreasonable to conclude that there is a causal relationship between the two variables. Suggest one or more other variables that might explain the relationship visible in Figure~\ref{multiunitsVsOwnership}.\footnote{Answers will vary. Population density may be important. If a county is very dense, then this may require a larger fraction of residents to live in multi-unit structures. Additionally, the high density may contribute to increases in property value, making homeownership infeasible for many residents.}
-\end{exercise}
+Observational studies come in two forms: prospective and retrospective studies. A \term{prospective study} identifies individuals and collects information as events unfold. For instance, medical researchers may identify and follow a group of similar individuals over many years to assess the possible influences of behavior on cancer risk. One example of such a study is The Nurses' Health Study, started in 1976 and expanded in 1989.\footnote{\oiRedirect{textbook-channing_nurse_study}{www.channing.harvard.edu/nhs}} This prospective study recruits registered nurses and then collects data from them using questionnaires. \termsub{Retrospective studies}{retrospective studies} collect data after events have taken place, e.g. researchers may review past events in medical records. Some data sets, may contain both prospectively- and retrospectively-collected variables. \textit{need an example of this.  famuss does not qualify, I think.  The flanders dental study would qualify but has not been introduced at this point}
 
-\end{comment}
-
-Observational studies come in two forms: prospective and retrospective studies. A \term{prospective study} identifies individuals and collects information as events unfold. For instance, medical researchers may identify and follow a group of similar individuals over many years to assess the possible influences of behavior on cancer risk. One example of such a study is The Nurses' Health Study, started in 1976 and expanded in 1989.\footnote{\oiRedirect{textbook-channing_nurse_study}{www.channing.harvard.edu/nhs}} This prospective study recruits registered nurses and then collects data from them using questionnaires. \termsub{Retrospective studies}{retrospective studies} collect data after events have taken place, e.g. researchers may review past events in medical records. Some data sets, may contain both prospectively- and retrospectively-collected variables. \textsl{need an example of this.  famuss does not qualify, I think.  The flanders dental study would qualify but has not been introduced at this point}
-
-\textsl{have commented out the section on sampling methods, though I like it.  It will take some work to find example to make the sampling methods concrete}
+\textit{have commented out the section on sampling methods, though I like it.  It will take some work to find example to make the sampling methods concrete. I have left the OpenIntro source for this topic in our source}
 
 \begin{comment}
 
@@ -553,13 +546,10 @@ A simple random sample would likely draw individuals from all 30 villages, which
 \section[Examining numerical data]{Examining numerical data}
 \label{numericalData}
 
-
 This section introduces techniques for exploring and summarizing numerical variables, using the \data{frog\_altitude} dataset from Section~\ref{dataBasics}.
 
-
-
 \subsection{Measures of center: mean and median}
-\label{measuresOfCenterAndSpread}
+\label{measuresOfCenter}
 
 The \term{mean}, sometimes called the \indexthis{average}{mean!average}, is a common way to measure the center of a \term{distribution} of data. To find the average clutch volume for all observed egg clutches, we add up all the clutch volumes and divide by the total number of clutches. For computational convenience, the volumes are rounded to the first~decimal.
 \begin{eqnarray}
@@ -583,39 +573,23 @@ $n$\\\footnotesize sample size]{\raggedright\vspace{-8mm}
 
 Another measure of center is the \term{median}, which is the middle number in a distribution after the values have been ordered from smallest to largest. If the distribution contains an even number of observations, the median is the average of the middle two observations. There are 431 clutches in the dataset, so the median is the clutch volume of the $216^{th}$ observation in sorted values of \var{clutch.volume}: $831.8 \textrm{mm}^{2}$.
 
+\textit{Removed exercises, but the second in this spot defines population mean.  We should recapture that, but not in a footnote.}
+
 \begin{comment}
 \begin{exercise}
 	Examine Equations~\eqref{sampleMeanEquation} and~\eqref{meanEquation} above. What does $x_1$ correspond to? And $x_2$? Can you infer a general meaning to what $x_i$ might represent?\footnote{$x_1$ corresponds to the number of characters in the first email in the sample (21.7, in thousands), $x_2$ to the number of characters in the second email (7.0, in thousands), and $x_i$ corresponds to the number of characters in the $i^{th}$ email in the data set.}
 \end{exercise}
 
-\begin{exercise}
-	What was $n$ in this sample of emails?\footnote{The sample size was $n=50$.}
-\end{exercise}
-The \data{email50} data set represents a sample from a larger population of emails that were received in January and March. We could compute a mean for this population in the same way as the sample mean, however, the population mean has a special label: $\mu$\marginpar[\raggedright$\mu$\\\footnotesize population\\ mean]{\raggedright$\mu$\\\footnotesize population\\ mean}. \index{Greek!mu@mu ($\mu$)} The symbol $\mu$ is the Greek letter \emph{mu} and represents the average of all observations in the population. Sometimes a subscript, such as $_x$, is used to represent which variable the population mean refers to, e.g. $\mu_x$.
-\end{comment}
 
-\begin{comment}
-\begin{example}{The average number of characters across all emails can be estimated using the sample data. Based on the sample of 50 emails, what would be a reasonable estimate of $\mu_x$, the mean number of characters in all emails in the \data{email} data set? (Recall that \data{email50} is a sample from \data{email}.)}
-	The sample mean, 11,600, may provide a reasonable estimate of $\mu_x$. While this number will not be perfect, it provides a \emph{point estimate} of the population mean. In Chapter~\ref{foundationsForInference} and beyond, we will develop tools to characterize the accuracy of point estimates, and we will find that point estimates based on larger samples tend to be more accurate than those based on smaller samples.
-\end{example}
-\end{comment}
 
 \textit{We have removed the concept of a weighted mean here; we do not have a context for it.  But it is an important idea that can be profitably used later, perhaps with the brfss data.  Perhaps we can re-insert it later.}
 
-\begin{comment}
-\begin{example}{We might like to compute the average income per person in the US. To do so, we might first think to take the mean of the per capita incomes across the 3,143 counties in the \data{county} data set. What would be a better approach?} \label{wtdMeanOfIncome}
-	The \data{county} data set is special in that each county actually represents many individual people. If we were to simply average across the \var{income} variable, we would be treating counties with 5,000 and 5,000,000 residents equally in the calculations. Instead, we should compute the total income for each county, add up all the counties' totals, and then divide by the number of people in all the counties. If we completed these steps with the \data{county} data, we would find that the per capita income for the US is \$27,348.43. Had we computed the \emph{simple} mean of per capita income across counties, the result would have been just \$22,504.70!
-\end{example}
 
-Example~\ref{wtdMeanOfIncome} used what is called a \term{weighted mean}\index{mean!weighted mean}, which will not be a key topic in this textbook. However, we have provided an online supplement on weighted means for interested readers:
-\begin{center}
-	\oiRedirect{textbook-weighted_mean_supplement}{www.openintro.org/stat/down/supp/wtdmean.pdf}
-\end{center}
-\end{comment}
+
 \subsection{Measures of spread: standard deviation and interquartile range}
-\label{variability}
+\label{measuresOfSpread}
 
-\textsl{Don't like the verbal description of the sd here, but have not replaced it yet.  Note also that I have changed some bar to overline.  Let me know which you think is better in the pdf; I like overline}
+\textit{Don't like the verbal description of the sd here, but have not replaced it yet.  Note also that I have changed some bar to overline.  Let me know which you think is better in the pdf; I like overline}
 
 The standard deviation measures approximately the distance between a  typical observation and the mean. The distance of an observation from its mean its \term{deviation}. Below are the deviations for the $1^{st}$, $2^{nd}$, $3^{rd}$, and $431^{th}$ observations in the \var{clutch.volume} variable. For computational convenience, clutch volume is rounded to the first decimal.
 %not sure why 431 doesn't show up as subscript
@@ -627,6 +601,8 @@ x_3-\bar{x} &= 151.4 - 882.5 = -731.1 \\
 &\ \vdots \\
 x_{431}-\bar{x} &= 933.2 - 882.5 = 50.7
 \end{align*}
+
+\textit{We need to insert code in the source here for the above calculations and remove the code from OI}
 % library(openintro); d <- email50$num_char; round(mean(d),1); d[c(1,2,3,50)]; d[c(1,2,3,50)] - round(mean(d),1); (d[c(1,2,3,50)] - round(mean(d)))^2; sum((d - round(mean(d)))^2)/49; sqrt(sum((d - round(mean(d)))^2)/49); var(d); sd(d)
 If we square these deviations and then take an average, the result is about equal to the sample \term{variance}\label{varianceIsDefined}, denoted by $s^2$\marginpar[\raggedright$s^2$\\\footnotesize sample variance]{\raggedright$s^2$\\\footnotesize sample variance}:
 \begin{align*}
@@ -645,7 +621,7 @@ $s$\\\footnotesize sample standard deviation]{\raggedright\vspace{-10mm}
 	$s$\\\footnotesize sample standard deviation
 }\index{s@$s$}The standard deviation of clutch volume for the egg clutches observed is about $380 \textrm{mm}^{3}$.  \\
 
-\textit{excellent place to give an interpretation of sd, referring back to verbal definition}
+\textit{excellent place to give an interpretation of sd, referring back to verbal definition, or perhaps to use it to mention the empirical rule, which is in the caption to one of the Open Intro plots}
 
 \textbf{insert tip box for SD formula}\\
 
