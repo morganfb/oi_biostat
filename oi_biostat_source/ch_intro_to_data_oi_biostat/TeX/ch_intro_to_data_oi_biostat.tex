@@ -35,7 +35,7 @@ Scientists seek to answer questions using rigorous methods and careful observati
 \end{enumerate}
 Statistics as a subject focuses on making stages 2-4 objective, rigorous, and efficient. That~is, statistics has three primary components: How best can we collect data? How should it be analyzed? And what can we infer from the analysis?  
 
-Many scientific investigations can be conducted with a small number of data collection techniques and analytic tools. This chapter provides a brief introduction to the basic principles of these areas that will be encountered later in the book, and illustrates the important role statistics plays in medicine and biology.
+Many scientific investigations can be conducted with a few important data collection techniques and analytic tools. This chapter provides a brief introduction to the basic principles of these areas that will be encountered later in the book, and illustrates the important role statistics plays in medicine and biology.
 
 \section[Case study]{Case study: Preventing Peanut Allergies}
 \label{basicExampleOfPeanutAllergies}
@@ -169,7 +169,7 @@ The data in Table~\ref{FrogAltitudeDF} are organized as a \term{data matrix}. Ea
 
 \index{data!FAMuSS|(}
 
-The functional polymorphisms Associated with Human Muscle Size and Strength study (FAMuSS) \footnote{Thompson PD, Moyna M, Seip, R, et al., 2004.  Functional Polymorphisms Associated with Human Muscle Size and Strength.  Medicine and Science in Sports and Exercise 36:1132 - 1139}, funded by the National Institutes of Health (NIH), measured a variety of demographic, phenotypic, and genetic characteristics of about 1300 participants. Data from the study has been used in many subsequent populations \footnote{Pescatello L, et al. Highlights from the functional single nucleotide polymorphisms associated with human muscle size and strength or FAMuSS study, BioMed Research International 2013.}, such as a study examining the relationship between muscle strength and a location on the gene \textsl{actn3} \footnote{Clarkson P, et al., Journal of Applied Physiology 99: 154–163, 2005.} Four rows of the \data{FAMuSS} dataset are shown in Table~\ref{FAMuSSDF}, and the variables are summarized in Table~\ref{FAMuSS_subset_Variables}.  Additional 
+The functional polymorphisms Associated with Human Muscle Size and Strength study (FAMuSS) \footnote{Thompson PD, Moyna M, Seip, R, et al., 2004.  Functional Polymorphisms Associated with Human Muscle Size and Strength.  Medicine and Science in Sports and Exercise 36:1132 - 1139}, funded by the National Institutes of Health (NIH), measured a variety of demographic, phenotypic, and genetic characteristics of about 1300 participants. Data from the study has been used in many subsequent populations \footnote{Pescatello L, et al. Highlights from the functional single nucleotide polymorphisms associated with human muscle size and strength or FAMuSS study, BioMed Research International 2013.}, such as a study examining the relationship between muscle strength and the genotype at a location on the gene \textsl{actn3} \footnote{Clarkson P, et al., Journal of Applied Physiology 99: 154–163, 2005.} Four rows of the \data{FAMuSS} dataset are shown in Table~\ref{FAMuSSDF}, and the variables are summarized in Table~\ref{FAMuSS_subset_Variables}.  Additional 
 
 % add ref to Foulkes website for the data
 
@@ -220,7 +220,7 @@ The functional polymorphisms Associated with Human Muscle Size and Strength stud
 
 \index{data!FAMuSS|)}
 
-The variables \var{age}, \var{height}, \var{weight}, and \var{ndrm.ch} are \term{numerical} variables. They can take on a wide range of numerical values, and it is possible to add, subtract, or take averages with these values. On the other hand, we would not classify a variable reporting telephone area codes as numerical since their average, sum, and difference have no clear meaning. Age measured in years is said to be \term{discrete}, since it can only take numerical values with jumps. On the other hand, percent change in strength in the non-dominant arm (\var{ndrm.ch}) is said to be \term{continuous}.
+The variables \var{age}, \var{height}, \var{weight}, and \var{ndrm.ch} are \term{numerical} variables. They can take on a wide range of numerical values, and it is possible to add, subtract, or take averages with these values. On the other hand, we would not classify a variable sex or race  as numerical since their average, sum, and difference have no meaning. Age measured in years is said to be \term{discrete}, since it can only take numerical values with jumps. On the other hand, percent change in strength in the non-dominant arm (\var{ndrm.ch}) is said to be \term{continuous}.
 
 The variables \var{sex}, \var{race}, and \var{actn3.3577x} are \term{categorical} variables, \footnote{sometimes called \term{nominal} variables.} and the possible values are called the variable's \term{levels}. For example, the levels of \var{actn3.3577x} are the three possible genotypes at this particular locus: CC, CT, or TT. Categorical variables with levels that have a natural ordering can be more specifically referred to as \term{ordered categorical} variables. There are no ordered categorical variables in the \data{FAMuSS} data, but it would be easy to create one.  Age of the participants grouped into 5 year intervals (15 - 20, 21 - 25, 26 - 30, etc) would be an ordered categorical variable.  Statistical software such as \textsf{R} call categorical variables \term{factors}, and the possible values of factors are called \term{levels}.
 
@@ -235,14 +235,13 @@ The variables \var{sex}, \var{race}, and \var{actn3.3577x} are \term{categorical
 In the \data{frog} data, the variables \var{latitude}, \var{altitude}, \var{egg.size}, \var{clutch.size}, \var{clutch.volume}, and \var{body.size} are all continuous variables.  \textit{JV: agree about latitude?}
 
 
-
 \begin{example}{Suppose a research assistant collected data on the first 20 individuals to visit one of the new walk in clinics being offered by a major commercial pharmacies.  In addition to other variables, the research assistant collected age (measured as less than 21, 21 - 65, and older than 65 years of age), sex, height, weight, and reason for the visit.  Classify each of the variables as continuous numerical, discrete numerical, or categorical.}
 Height and weight are continuous, numerical variables. Age as  measured by the research assistant is ordered categorical. Sex and the reason for the visit are nominal categorical variables; sex has two categories, while reason for the visit will have many possible values.The number of siblings and student height represent numerical variables. 
 \end{example}
 
 %% perhaps use the frog study here as well
 
-\begin{exercise} \index{!leap}
+\begin{exercise} \index{!LEAP}
 Characterize the data types for the variables \var{participant.ID} \var{treatment.group} and \var{overall.V60.outcome} from the LEAP study in Section~\ref{basicExampleOfPeanutAllergies}.  \footnote{All these variables measure non-numerical quantities, and are categorical. The variables   \var{treatment.group} and \var{outcome.V60.overall} have two values or levels, while \var{participant.ID} has many possible values.}
 \end{exercise}
 
@@ -253,7 +252,7 @@ Many studies are motivated by a researcher examining a possible relationship bet
 
 A \term{response variable} measures an outcome of interest, while an \term{explanatory variable} may be useful in predicting or understanding the response variable. There may be several possible explanatory variables for a single response variable in a given study.
 
-Researchers were interested in using the \data{FAMuSS} data in order to answer the following question: is ACTN3 genotype associated with variation in muscle function? The ACTN3 gene codes for a protein involved in muscle function. A common polymorphism of ACTN3 at residue 577 that changes C to T produces a stop codon; TT individuals are unable to produce any ACTN3 protein in their muscle. The TT genotype does not cause any discernible phenotype changes, which suggests that the ACTN3 protein is not critical to muscle function. However, the ACTN3 gene is highly conserved, and may potentially influence variation in muscle function.  \textit{`conserved' is a technical term that needs a definition.  Perhaps we can avoid it altogether.  There are too many technical terms in this paragraph generally.}
+Researchers were interested in using the \data{FAMuSS} data in order to answer several questions, including: is ACTN3 genotype associated with variation in muscle function? The ACTN3 gene codes for a protein involved in muscle function. A common polymorphism of ACTN3 at residue 577 that changes C to T produces a stop codon; TT individuals are unable to produce any ACTN3 protein in their muscle. The TT genotype does not cause any discernible phenotype changes, which suggests that the ACTN3 protein is not critical to muscle function. However, the ACTN3 gene is highly conserved, and may potentially influence variation in muscle function.  \textit{`conserved' is a technical term that needs a definition.  Perhaps we can avoid it altogether.  There are too many technical terms in this paragraph generally.}
 
 The response variable in this study is \var{ndrm.ch}, the change in non-dominant arm strength, with strength gain being used as a way to measure muscle function. The explanatory variable of interest is \var{actn3.r557x}, ACTN3 genotype at residue 577.  Later in the text we will examine methods for characterizing a relationship numerically.  \textit{too vague}
 
@@ -265,7 +264,7 @@ Use the variables from the \data{FAMuSS} data set described in Table~\ref{FAMuSS
 Much of this text examines both numerical and graphical ways to examine possible relationships between two variable.  Scatterplots for numerical variables and mosaic plots for categorical variables are discussed later in this chapter.  \textit{need ref to section}
 
 
-\begin{comment}
+%\begin{comment}
 
 
 
