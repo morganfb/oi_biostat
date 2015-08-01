@@ -573,7 +573,6 @@ $n$\\\footnotesize sample size]{\raggedright\vspace{-8mm}
 
 Another measure of center is the \term{median}, which is the middle number in a distribution after the values have been ordered from smallest to largest. If the distribution contains an even number of observations, the median is the average of the middle two observations. There are 431 clutches in the dataset, so the median is the clutch volume of the $216^{th}$ observation in sorted values of \var{clutch.volume}: $831.8 \textrm{mm}^{2}$.
 
-\textit{Removed exercises, but the second in this spot defines population mean.  We should recapture that, but not in a footnote.}
 
 \begin{comment}
 \begin{exercise}
@@ -625,9 +624,9 @@ $s$\\\footnotesize sample standard deviation]{\raggedright\vspace{-10mm}
 
 \textbf{insert tip box for SD formula}\\
 
-Variability can also be measured by the \term{interquartile range} (IQR).  To calculate the IQR, find the \term{first quartile} \index{quartile!first quartile} (the $25^{th}$ \hiddenterm{percentile}, i.e. 25\% of the data fall below this value) and the \term{third quartile} \index{quartile!third quartile} (the $75^{th}$ percentile). These are often labeled $Q_1$ \index{Q$_1$} and $Q_3$\index{Q$_3$}, respectively. The IQR is the difference: $Q_3 - Q_1$.
+Variability can also be measured using the \term{interquartile range} (IQR).  To calculate the IQR, find the \term{first quartile} \index{quartile!first quartile} (the $25^{th}$ \hiddenterm{percentile}, i.e. 25\% of the data fall below this value) and the \term{third quartile} \index{quartile!third quartile} (the $75^{th}$ percentile). These are often labeled $Q_1$ \index{Q$_1$} and $Q_3$\index{Q$_3$}, respectively. The IQR is the difference: $Q_3 - Q_1$.
 
-The IQR for \var{clutch.volume} is $1096.0 - 609.6 = 486.4\textrm{mm}^{3}$.
+The IQR for \var{clutch.volume} is $1096.0 - 609.6 = 486.4\textrm{mm}^{3}$.  The middle $50\%$ if the values for \var{clutch.volume} lie between $609.6$ and $1096.0$.
 
 
 \begin{termBox}{\tBoxTitle{Variance and standard deviation}
@@ -636,7 +635,7 @@ The IQR for \var{clutch.volume} is $1096.0 - 609.6 = 486.4\textrm{mm}^{3}$.
 
 Formulas and methods used to compute the variance and standard deviation for a population are similar to those used for a sample.\footnote{The only difference is that the population variance has a division by $n$ instead of $n-1$.} However, like the mean, the population values have special symbols: $\sigma_{}^2$\marginpar[\raggedright$\sigma_{}^2$\\\footnotesize population variance\\ \hspace{2mm}]{\raggedright$\sigma_{}^2$\\\footnotesize population variance\\ \hspace{2mm}} for the variance and $\sigma$\marginpar[\raggedright$\sigma$\\\footnotesize population standard deviation\\ \hspace{2mm}]{\raggedright$\sigma$\\\footnotesize population standard deviation\\ \hspace{2mm}} for the standard deviation. The symbol $\sigma$ \index{Greek!sigma@sigma ($\sigma$)} is the Greek letter \emph{sigma}.
 
-\textit{I have re-inserted the figures from Open Intro here; I like them.  The will have to be redone for the frog data.  The code for producing the figures is in the directory containing the figure.}
+\textit{I have re-inserted the figures from Open Intro here; I like them.  They will have to be redone for the frog data.  The code for producing the OI figures is in the directory containing the figure, we should be able to mimic it}
 
 %\begin{comment}
 \begin{figure}
@@ -661,12 +660,14 @@ Formulas and methods used to compute the variance and standard deviation for a p
 	On page~\pageref{shapeFirstDiscussed}, the concept of shape of a distribution was introduced. A good description of the shape of a distribution should include modality and whether the distribution is symmetric or skewed to one side. Using Figure~\ref{severalDiffDistWithSdOf1} as an example, explain why such a description is important.\footnote{Figure~\ref{severalDiffDistWithSdOf1} shows three distributions that look quite different, but all have the same mean, variance, and standard deviation. Using modality, we can distinguish between the first plot (bimodal) and the last two (unimodal). Using skewness, we can distinguish between the last plot (right skewed) and the first two. While a picture, like a histogram, tells a more complete story, we can use modality and shape (symmetry/skew) to characterize basic information about a~distribution.}
 \end{exercise}
 
+\textit{have left the example below in so we remember to replace it.  It is a good one.}
+
 \begin{example}{Describe the distribution of the \var{num\_\hspace{0.3mm}char} variable using the histogram in Figure~\vref{email50NumCharHist}. The description should incorporate the center, variability, and shape of the distribution, and it should also be placed in context: the number of characters in emails. Also note any especially unusual cases.}
 	The distribution of email character counts is unimodal and very strongly skewed to the high end. Many of the counts fall near the mean at 11,600, and most fall within one standard deviation (13,130) of the mean. There is one exceptionally long email with about 65,000 characters.
 \end{example}
 
 In practice, the variance and standard deviation are sometimes used as a means to an end, where the ``end'' is being able to accurately estimate the uncertainty associated with a sample statistic. For example, in Chapter~\ref{foundationsForInference} we will use the variance and standard deviation to assess how close the sample mean is to the population mean.
-%\end{comment}
+
 
 \subsection{Robust statistics}
 
@@ -675,6 +676,8 @@ In practice, the variance and standard deviation are sometimes used as a means t
 \textit{If you agree, please replace the example below with one using clutch.volume and revise accordingly.  Because this is an important concept we could  leave both examples but it may interrupt the flow.}
 
 The median and IQR are called \term{robust estimates} because extreme observations have little effect on their values. The mean and standard deviation are much more affected by changes in extreme observations.
+
+\textit{Suggest that we change this to the frog data, then put the famuss example of extreme values in an exercise at the end of the chapter}
 
 In \data{famuss} there are six observed weights larger than 270 pounds (273, 291, 295, 305, 308 and 317); these weights are evident in Figure~\ref{famussWeightDotPlotRobustEx} Despite the size of these weights, it is unlikely that the observations are errors, since the six values are clustered above 270. How do these three weights affect the summary statistics for the weight variable in \data{famuss}?  These large weights are evident in the plot below.
 
@@ -707,22 +710,8 @@ How are the \indexthis{sample statistics}{sample statistic} of the \var{weight} 
 	\label{robustOrNotTable}
 \end{table}
 
+\textit{Open Intro source mixed with out changes from here on.  We have to replace the dot plot examples with some from our data.  We may have some things out of order, esp dotplot used earlier.}
 
-
-\begin{comment}
-\begin{exercise} \label{numCharWhichIsMoreRobust}
-	(a) Which is more affected by extreme observations, the mean or median? Table~\ref{robustOrNotTable} may be helpful. (b) Is the standard deviation or IQR more affected by extreme observations?\footnote{(a) Mean is affected more. (b) Standard deviation is affected more. Complete explanations are provided in the material following Guided Practice~\ref{numCharWhichIsMoreRobust}.}
-\end{exercise}
-\end{comment}
-\begin{comment}
-\begin{example}{The median and IQR do not change much under the three scenarios in Table~\ref{robustOrNotTable}. Why might this be the case?}
-	The median and IQR are only sensitive to numbers near $Q_1$, the median, and $Q_3$. Since values in these regions are relatively stable -- there aren't large jumps between observations -- the median and IQR estimates are also quite stable.
-\end{example}
-
-\begin{exercise}
-	The distribution of vehicle prices tends to be right skewed, with a few luxury and sports cars lingering out into the right tail. If you were searching for a new car and cared about price, should you be more interested in the mean or median price of vehicles sold, assuming you are in the market for a regular car?\footnote{Buyers of a ``regular car'' should be concerned about the median price. High-end car sales can drastically inflate the mean price while the median will be more robust to the influence of those sales.}
-\end{exercise}
-\end{comment}
 \subsection{Visualizing distributions of data: dot plots and histograms}
 \label{DotPlotsAndHistograms}
 

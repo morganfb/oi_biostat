@@ -32,20 +32,16 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.4.1}Measures of center: mean and median}{28}{subsection.1.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.2}Robust statistics}{29}{subsection.1.4.2}
+\contentsline {subsection}{\numberline {1.4.2}Boxplots, quantiles, outliers}{29}{subsection.1.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.3}Visualizing distributions of data: dot plots and histograms}{30}{subsection.1.4.3}
+\contentsline {subsection}{\numberline {1.4.3}Scatterplots}{31}{subsection.1.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.4}Boxplots, quantiles, outliers}{33}{subsection.1.4.4}
+\contentsline {subsection}{\numberline {1.4.4}Transforming data (special topic)}{35}{subsection.1.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.5}Scatterplots}{34}{subsection.1.4.5}
+\contentsline {section}{\numberline {1.5}Considering categorical data}{36}{section.1.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.6}Transforming data (special topic)}{38}{subsection.1.4.6}
+\contentsline {subsection}{\numberline {1.5.1}Contingency tables}{36}{subsection.1.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.5}Considering categorical data}{39}{section.1.5}
+\contentsline {subsection}{\numberline {1.5.2}Bar plots}{38}{subsection.1.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.5.1}Contingency tables}{39}{subsection.1.5.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.5.2}Bar plots}{41}{subsection.1.5.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.5.3}Comparing numerical data across groups}{41}{subsection.1.5.3}
+\contentsline {subsection}{\numberline {1.5.3}Comparing numerical data across groups}{38}{subsection.1.5.3}
