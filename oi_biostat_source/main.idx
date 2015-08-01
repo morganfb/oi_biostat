@@ -47,16 +47,14 @@
 \indexentry{blocking|hyperindexformat{\textbf}}{23}
 \indexentry{stratification|hyperindexformat{\textbf}}{23}
 \indexentry{replicate|hyperindexformat{\textbf}}{23}
-\indexentry{blocks|hyperindexformat{\textbf}}{23}
-\indexentry{blocking|hyperindexformat{\textbf}}{23}
 \indexentry{treatment group|hyperindexformat{\textbf}}{25}
 \indexentry{control group|hyperindexformat{\textbf}}{25}
 \indexentry{blinded|hyperindexformat{\textbf}}{25}
 \indexentry{placebo|hyperindexformat{\textbf}}{25}
+\indexentry{placebo\nobreakspace  {}effect|hyperindexformat{\textbf}}{25}
 \indexentry{patients|hyperindexformat{\textbf}}{25}
 \indexentry{volunteers|hyperindexformat{\textbf}}{25}
 \indexentry{study participants|hyperindexformat{\textbf}}{25}
-\indexentry{placebo\nobreakspace  {}effect|hyperindexformat{\textbf}}{26}
 \indexentry{double-blind|hyperindexformat{\textbf}}{26}
 \indexentry{confounding variable|hyperindexformat{\textbf}}{27}
 \indexentry{prospective study|hyperindexformat{\textbf}}{27}
@@ -80,26 +78,26 @@
 \indexentry{quartile!third quartile|hyperpage}{30}
 \indexentry{Q$_1$|hyperpage}{30}
 \indexentry{Q$_3$|hyperpage}{30}
-\indexentry{Greek!sigma@sigma ($\sigma$)|hyperpage}{31}
-\indexentry{robust estimates|hyperindexformat{\textbf}}{33}
+\indexentry{Greek!sigma@sigma ($\sigma$)|hyperpage}{30}
+\indexentry{robust estimates|hyperindexformat{\textbf}}{32}
 \indexentry{sample statistic|hyperpage}{33}
 \indexentry{dot plot|hyperindexformat{\textbf}}{33}
-\indexentry{histogram|hyperindexformat{\textbf}}{35}
-\indexentry{data density|hyperindexformat{\textbf}}{35}
+\indexentry{histogram|hyperindexformat{\textbf}}{34}
+\indexentry{data density|hyperindexformat{\textbf}}{34}
 \indexentry{tail|hyperindexformat{\textbf}}{35}
 \indexentry{skew!tail|hyperpage}{35}
 \indexentry{skew!right skewed|hyperindexformat{\textbf}}{35}
+\indexentry{skew!left skewed|hyperindexformat{\textbf}}{35}
+\indexentry{symmetric|hyperindexformat{\textbf}}{35}
+\indexentry{skew!symmetric|hyperpage}{35}
+\indexentry{mode|hyperindexformat{\textbf}}{35}
+\indexentry{modality!unimodal|hyperindexformat{\textbf}}{35}
+\indexentry{modality!bimodal|hyperindexformat{\textbf}}{35}
+\indexentry{modality!multimodal|hyperindexformat{\textbf}}{35}
 \indexentry{skew!example: very strong|hyperpage}{36}
-\indexentry{skew!left skewed|hyperindexformat{\textbf}}{36}
-\indexentry{symmetric|hyperindexformat{\textbf}}{36}
-\indexentry{skew!symmetric|hyperpage}{36}
-\indexentry{mode|hyperindexformat{\textbf}}{36}
-\indexentry{modality!unimodal|hyperindexformat{\textbf}}{36}
-\indexentry{modality!bimodal|hyperindexformat{\textbf}}{36}
-\indexentry{modality!multimodal|hyperindexformat{\textbf}}{36}
 \indexentry{boxplot|hyperindexformat{\textbf}}{37}
 \indexentry{median|hyperindexformat{\textbf}}{37}
-\indexentry{whiskers|hyperindexformat{\textbf}}{38}
+\indexentry{whiskers|hyperindexformat{\textbf}}{37}
 \indexentry{outlier|hyperindexformat{\textbf}}{38}
 \indexentry{scatterplot|hyperindexformat{\textbf}}{38}
 \indexentry{associated|hyperindexformat{\textbf}}{38}
