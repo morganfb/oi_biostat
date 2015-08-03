@@ -1,0 +1,23 @@
+This is makeindex, version 2.15 [TeX Live 2014] (kpathsea + Thai support).
+Scanning input file main.idx....
+!! Input index error (file = main.idx, line = 20):
+   -- Illegal null field.
+done (122 entries accepted, 1 rejected).
+Sorting entries....done (906 comparisons).
+Generating output file main.ind....
+## Warning (input = main.idx, line = 108; output = main.ind, line = 35):
+   -- Unmatched range opening operator (.
+## Warning (input = main.idx, line = 123; output = main.ind, line = 36):
+   -- Unmatched range closing operator ).
+
+## Warning (input = main.idx, line = 109; output = main.ind, line = 37):
+   -- Unmatched range opening operator (.
+
+## Warning (input = main.idx, line = 25; output = main.ind, line = 115):
+   -- Inconsistent page encapsulator hyperindexformat{\textbf} within range.
+
+## Warning (input = main.idx, line = 26; output = main.ind, line = 141):
+   -- Inconsistent page encapsulator hyperindexformat{\textbf} within range.
+done (178 lines written, 5 warnings).
+Output written in main.ind.
+Transcript written in main.ilg.

@@ -24,7 +24,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.3.5}Experiments}{22}{subsection.1.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.6}Reducing bias in human experiments}{23}{subsection.1.3.6}
+\contentsline {subsection}{\numberline {1.3.6}Reducing bias in human experiments}{25}{subsection.1.3.6}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.3.7}Observational studies}{26}{subsection.1.3.7}
 \defcounter {refsection}{0}\relax 
@@ -32,16 +32,22 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.4.1}Measures of center: mean and median}{28}{subsection.1.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.2}Boxplots, quantiles, outliers}{29}{subsection.1.4.2}
+\contentsline {subsection}{\numberline {1.4.2}Measures of spread: standard deviation and interquartile range}{29}{subsection.1.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.3}Scatterplots}{31}{subsection.1.4.3}
+\contentsline {subsection}{\numberline {1.4.3}Robust statistics}{33}{subsection.1.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.4}Transforming data (special topic)}{35}{subsection.1.4.4}
+\contentsline {subsection}{\numberline {1.4.4}Visualizing distributions of data: dot plots and histograms}{34}{subsection.1.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.5}Considering categorical data}{36}{section.1.5}
+\contentsline {subsection}{\numberline {1.4.5}Boxplots, quantiles, outliers}{37}{subsection.1.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.5.1}Contingency tables}{36}{subsection.1.5.1}
+\contentsline {subsection}{\numberline {1.4.6}Scatterplots}{38}{subsection.1.4.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.5.2}Bar plots}{38}{subsection.1.5.2}
+\contentsline {subsection}{\numberline {1.4.7}Transforming data (special topic)}{43}{subsection.1.4.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.5.3}Comparing numerical data across groups}{38}{subsection.1.5.3}
+\contentsline {section}{\numberline {1.5}Considering categorical data}{44}{section.1.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.5.1}Contingency tables}{44}{subsection.1.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.5.2}Bar plots}{46}{subsection.1.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.5.3}Comparing numerical data across groups}{46}{subsection.1.5.3}
