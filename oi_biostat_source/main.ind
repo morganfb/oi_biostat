@@ -1,178 +1,176 @@
 \begin{theindex}
 
-  \item associated, \hyperindexformat{\textbf}{39}
+  \item associated, \hyperindexformat{\textbf}{35}
 
   \indexspace
 
-  \item bar plot, \hyperindexformat{\textbf}{46}
-    \subitem segmented bar plot, \hyperindexformat{\textbf}{46}
-  \item blinded, \hyperindexformat{\textbf}{25}
+  \item bar plot, \hyperindexformat{\textbf}{42}
+    \subitem segmented bar plot, \hyperindexformat{\textbf}{43}
+  \item blinded, \hyperindexformat{\textbf}{24}
   \item blocking, \hyperindexformat{\textbf}{23}
   \item blocks, \hyperindexformat{\textbf}{23}
-  \item box plot
-    \subitem side-by-side box plot, \hyperpage{46}
-  \item boxplot, \hyperindexformat{\textbf}{37}
+  \item boxplot, \hyperindexformat{\textbf}{34}
+    \subitem side-by-side boxplot, \hyperpage{45}
 
   \indexspace
 
   \item categorical, \hyperindexformat{\textbf}{14}
   \item cohort, \hyperindexformat{\textbf}{22}
-  \item column totals, \hyperindexformat{\textbf}{44}
+  \item column totals, \hyperindexformat{\textbf}{40}
   \item confounder, \hyperindexformat{\textbf}{27}
   \item confounding factor, \hyperindexformat{\textbf}{27}
   \item confounding variable, \hyperindexformat{\textbf}{27}
-  \item contingency table, \hyperindexformat{\textbf}{44}
-    \subitem column proportion, \hyperindexformat{\textbf}{45}
-    \subitem row proportions, \hyperindexformat{\textbf}{44}
+  \item contingency table, \hyperindexformat{\textbf}{40}
+    \subitem column proportion, \hyperindexformat{\textbf}{41}
+    \subitem row proportions, \hyperindexformat{\textbf}{40}
   \item continuous, \hyperindexformat{\textbf}{14}
   \item control, \hyperindexformat{\textbf}{23}
-  \item control group, \hyperindexformat{\textbf}{25}
-  \item convenience sample, \hyperindexformat{\textbf}{19}
+  \item control group, \hyperindexformat{\textbf}{24}
+  \item convenience sample, \hyperindexformat{\textbf}{20}
 
   \indexspace
 
   \item data, \hyperindexformat{\textbf}{8}
-    \subitem cars, \hyperpage{43}
-    \subitem county, 47
-    \subitem email, \hyperpage{44}
-    \subitem FAMuSS, \hyperpage{13}
-    \subitem frog, \hyperpage{11--13}
-    \subitem leap, \hyperpage{9--11}
-  \item data density, \hyperindexformat{\textbf}{35}
+    \subitem famuss, \hyperpage{13--14}, \hyperpage{36--37}, 
+		\hyperpage{40--46}
+    \subitem frog, \hyperpage{12--13}, \hyperpage{28--36}, 
+		\hyperpage{38--39}, \hyperpage{46}
+    \subitem LEAP, \hyperpage{9--12}, \hyperpage{23--24}
+  \item data density, \hyperindexformat{\textbf}{32}
   \item data matrix, \hyperindexformat{\textbf}{13}
   \item deviation, \hyperindexformat{\textbf}{29}
+  \item df, \hyperindexformat{\see{degrees of freedom (df)}}{47}
   \item discrete, \hyperindexformat{\textbf}{14}
   \item distribution, \hyperindexformat{\textbf}{28}
-  \item dot plot, \hyperindexformat{\textbf}{34}
+  \item dot plot, \hyperindexformat{\textbf}{31}
   \item double-blind, \hyperindexformat{\textbf}{26}
 
   \indexspace
 
-  \item experiment, \hyperindexformat{\textbf}{21, 22}
-  \item explanatory variable, \hyperindexformat{\textbf}{15}
+  \item experiment, \hyperindexformat{\textbf}{22, 23}
+  \item explanatory variable, \hyperindexformat{\textbf}{16}
 
   \indexspace
 
   \item factors, \hyperindexformat{\textbf}{14}
-  \item first quartile, \hyperindexformat{\textbf}{30}
-  \item frequency table, \hyperindexformat{\textbf}{44}
+  \item first quartile, \hyperindexformat{\textbf}{31}
+  \item frequency table, \hyperindexformat{\textbf}{40}
 
   \indexspace
 
   \item Greek
-    \subitem sigma ($\sigma$), \hyperpage{31}
+    \subitem sigma ($\sigma$), \hyperpage{30}
 
   \indexspace
 
-  \item histogram, \hyperindexformat{\textbf}{35}
-  \item hollow histogram, \hyperindexformat{\textbf}{46}
+  \item histogram, \hyperindexformat{\textbf}{32}
+  \item hollow histogram, \hyperindexformat{\textbf}{45}
 
   \indexspace
 
-  \item independent, \hyperindexformat{\textbf}{39}
-  \item interquartile range, \hyperindexformat{\textbf}{30}
+  \item independent, \hyperindexformat{\textbf}{37}
+  \item interquartile range, \hyperindexformat{\textbf}{31}
 
   \indexspace
 
   \item levels, \hyperindexformat{\textbf}{14}
-  \item linearly associated, \hyperindexformat{\textbf}{39}
+  \item linearly associated, \hyperindexformat{\textbf}{35}
   \item lurking variable, \hyperindexformat{\textbf}{27}
 
   \indexspace
 
-  \item marginal totals, \hyperindexformat{\textbf}{44}
+  \item marginal totals, \hyperindexformat{\textbf}{40}
   \item mean, \hyperindexformat{\textbf}{28}
     \subitem average, \hyperpage{28}
   \item median, \hyperindexformat{\textbf}{29}, 
-		\hyperindexformat{\textbf}{37}
+		\hyperindexformat{\textbf}{34}
   \item modality
-    \subitem bimodal, \hyperindexformat{\textbf}{37}
-    \subitem multimodal, \hyperindexformat{\textbf}{37}
-    \subitem unimodal, \hyperindexformat{\textbf}{37}
-  \item mode, \hyperindexformat{\textbf}{36}
+    \subitem bimodal, \hyperindexformat{\textbf}{33}
+    \subitem multimodal, \hyperindexformat{\textbf}{33}
+    \subitem unimodal, \hyperindexformat{\textbf}{33}
+  \item mode, \hyperindexformat{\textbf}{33}
 
   \indexspace
 
-  \item negatively associated, \hyperindexformat{\textbf}{39}
+  \item negatively associated, \hyperindexformat{\textbf}{35}
   \item nominal, \hyperindexformat{\textbf}{14}
-  \item non-response, \hyperindexformat{\textbf}{20}
-  \item non-response bias, \hyperindexformat{\textbf}{20}
-  \item numerical, \hyperindexformat{\textbf}{13}
+  \item non-response, \hyperindexformat{\textbf}{21}
+  \item non-response bias, \hyperindexformat{\textbf}{21}
+  \item numerical, \hyperindexformat{\textbf}{14}
 
   \indexspace
 
   \item observational study, \hyperindexformat{\textbf}{22}
   \item ordered categorical, \hyperindexformat{\textbf}{14}
-  \item outlier, \hyperindexformat{\textbf}{38}
+  \item outlier, \hyperindexformat{\textbf}{34}
 
   \indexspace
 
-  \item patients, \hyperindexformat{\textbf}{25}
-  \item percentile, \hyperindexformat{\textbf}{30}
+  \item patients, \hyperindexformat{\textbf}{24}
+  \item percentile, \hyperindexformat{\textbf}{31}
   \item placebo, \hyperindexformat{\textbf}{22}, 
-		\hyperindexformat{\textbf}{25}
-  \item placebo\nobreakspace  {}effect, \hyperindexformat{\textbf}{25}
-  \item population, \hyperindexformat{\textbf}{17}, \hyperpage{16--21}
-  \item positively associated, \hyperindexformat{\textbf}{39}
+		\hyperindexformat{\textbf}{24}
+  \item placebo\nobreakspace  {}effect, \hyperindexformat{\textbf}{24}
+  \item population, \hyperindexformat{\textbf}{17}, \hyperpage{17--22}
+  \item positively associated, \hyperindexformat{\textbf}{35}
+  \item probability sample, \hyperindexformat{\see{sample}}{47}
   \item prospective study, \hyperindexformat{\textbf}{27}
 
   \indexspace
 
-  \item Q$_1$, \hyperpage{30}
-  \item Q$_3$, \hyperpage{30}
   \item quartile
-    \subitem first quartile, \hyperpage{30}
-    \subitem third quartile, \hyperpage{30}
+    \subitem first quartile ($Q_1$), \hyperpage{31}
+    \subitem third quartile ($Q_3$), \hyperpage{31}
 
   \indexspace
 
-  \item relative frequency table, \hyperindexformat{\textbf}{44}
-  \item relative risk, \hyperindexformat{\textbf}{10}
-  \item replicate, \hyperindexformat{\textbf}{23}
-  \item representative, \hyperindexformat{\textbf}{20}
-  \item response variable, \hyperindexformat{\textbf}{15}
+  \item relative frequency table, \hyperindexformat{\textbf}{40}
+  \item relative risk, \hyperindexformat{\textbf}{11}
+  \item replication, \hyperindexformat{\textbf}{23}
+  \item representative, \hyperindexformat{\textbf}{21}
+  \item response variable, \hyperindexformat{\textbf}{16}
   \item retrospective studies, \hyperindexformat{\textbf}{27}
-  \item robust estimates, \hyperindexformat{\textbf}{33}
-  \item row totals, \hyperindexformat{\textbf}{44}
+  \item robust estimates, \hyperindexformat{\textbf}{32}
+  \item row totals, \hyperindexformat{\textbf}{40}
 
   \indexspace
 
   \item $s$, \hyperpage{30}
-  \item sample, \hyperindexformat{\textbf}{17}, \hyperpage{16--21}
-    \subitem convenience sample, \hyperpage{19}
-    \subitem non-response, \hyperindexformat{\textbf}{20}
-    \subitem non-response bias, \hyperindexformat{\textbf}{20}
-    \subitem random sample, \hyperpage{20--21}
-  \item sample statistic, \hyperpage{33}
-  \item scatterplot, \hyperindexformat{\textbf}{38}
-  \item side-by-side box plot, \hyperindexformat{\textbf}{46}
-  \item simple random samples, \hyperindexformat{\textbf}{20}
+  \item sample, \hyperindexformat{\textbf}{17}, \hyperpage{17--22}
+    \subitem convenience sample, \hyperpage{20}
+    \subitem non-response, \hyperindexformat{\textbf}{21}
+    \subitem non-response bias, \hyperindexformat{\textbf}{21}
+    \subitem random sample, \hyperpage{20--22}
+  \item scatterplot, \hyperindexformat{\textbf}{35}
+  \item side-by-side boxplot, \hyperindexformat{\textbf}{45}
+  \item simple random sample, \hyperindexformat{\textbf}{20}
   \item skew
-    \subitem example: very strong, \hyperpage{36}
-    \subitem left skewed, \hyperindexformat{\textbf}{36}
-    \subitem right skewed, \hyperindexformat{\textbf}{36}
-    \subitem symmetric, \hyperpage{36}
-    \subitem tail, \hyperpage{36}
+    \subitem left skewed, \hyperindexformat{\textbf}{33}
+    \subitem right skewed, \hyperindexformat{\textbf}{33}
+    \subitem tail, \hyperpage{33}
   \item standard deviation, \hyperindexformat{\textbf}{30}
   \item stratification, \hyperindexformat{\textbf}{23}
-  \item study participants, \hyperindexformat{\textbf}{25}
+  \item study participants, \hyperindexformat{\textbf}{24}
   \item summary statistic, \hyperindexformat{\textbf}{10}
-  \item symmetric, \hyperindexformat{\textbf}{36}
-  \item systematic sample, \hyperindexformat{\textbf}{20}
+  \item symmetric, \hyperindexformat{\textbf}{33}
+  \item systematic sample, \hyperindexformat{\textbf}{21}
 
   \indexspace
 
-  \item tail, \hyperindexformat{\textbf}{36}
-  \item third quartile, \hyperindexformat{\textbf}{30}
-  \item treatment group, \hyperindexformat{\textbf}{25}
+  \item tail, \hyperindexformat{\textbf}{33}
+  \item third quartile, \hyperindexformat{\textbf}{31}
+  \item transformation, \hyperindexformat{\textbf}{38}
+  \item treatment group, \hyperindexformat{\textbf}{24}
+  \item two-way tables, \hyperindexformat{\textbf}{40}
 
   \indexspace
 
+  \item variables, \hyperindexformat{\textbf}{12}
   \item variance, \hyperindexformat{\textbf}{29}
-  \item volunteers, \hyperindexformat{\textbf}{25}
+  \item volunteers, \hyperindexformat{\textbf}{24}
 
   \indexspace
 
-  \item whiskers, \hyperindexformat{\textbf}{37}
+  \item whiskers, \hyperindexformat{\textbf}{34}
 
 \end{theindex}

@@ -219,7 +219,7 @@ frog.altitude[c(1:3, 150),]
 library(xtable)
 xtable(frog.altitude[c(1:3,150),c( "altitude", "latitude", "egg.size", "clutch.size", 
                                           "clutch.volume", "body.size")], 
-       caption = "Frog Study Data Matrix", label = "FrogAltitudeDF", digits = 2 )
+       caption = "Frog Study Data Matrix", label = "FrogDF", digits = 2 )
 
 setwd("~/oi_biostat/oi_biostat_source/ch_intro_to_data_oi_biostat/figures/clutchVolVsBodySize")
 

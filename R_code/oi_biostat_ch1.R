@@ -206,6 +206,17 @@ with(frog.altitude, IQR(clutch.volume[a]))
 with(frog.altitude, mean(clutch.volume[a]))
 with(frog.altitude, sd(clutch.volume[a]))
 
+#frog histogram
+hist(frog.altitude$clutch.volume)
+hist(frog.altitude$clutch.volume, plot=FALSE)
+
+#frog boxplot
+
+boxplot(frog.altitude$clutch.volume)
+boxplot(frog.altitude$clutch.volume, plot=FALSE)
+
+#scatterplot: clutch volume versus body size
+
 # exploring famuss and frogs for robust statistic examples
 
 library(openintro)
@@ -241,3 +252,31 @@ setwd(plot.storage)
 pdf("famussWeightDotPlotRobustEx.pdf")
 with(famuss.oi.biostat, dotPlot(weight))
 dev.off()
+
+#categorical data, famuss tables
+
+#frequency table
+library(xtable)
+a = addmargins(table(famuss$actn3.r577x))
+genotype.table = matrix(a, ncol=4, byrow=T)
+colnames(genotype.table) = c("CC", "CT", "TT", "Sum")
+rownames(genotype.table) = "Counts"
+xtable(genotype.table, digits = 0, caption = "A frequency table for the actn3.r577x variable.", label = "famussFrequencyTable")
+
+#contingency table
+library(xtable)
+genotype.by.race.table = addmargins(table(famuss$race, famuss$actn3.r577x))
+xtable(genotype.by.race.table, digits = 0, caption = "A contingency table for race and actn3.r577x.", label = "famussContingencyTable")
+
+#row proportions table
+library(xtable)
+row.prop.table = table(famuss$race, famuss$actn3.r577x)[1:5,]; row.prop.table / rep(rowSums(row.prop.table), 3); rowSums(row.prop.table)
+xtable(genotype.by.race.table, digits = 0, caption = "A contingency table with row proportions for the race and actn3.r577x variables.", label = "famussRowPropTable")
+173/595; 261/595; 161/595
+
+#column proportions table
+library(xtable)
+col.prop.table = table(famuss$race, famuss$actn3.r577x)[1:5,]; col.prop.table / rep(colSums(col.prop.table), 3); colSums(col.prop.table)
+xtable(genotype.by.race.table, digits = 0, caption = "A contingency table with column proportions for the race and actn3.r577x variables.", label = "famussColPropTable")
+27/595; 55/595; 467/595; 23/595; 23/595
+
