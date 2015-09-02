@@ -41,16 +41,25 @@ If $16.\bar{6}$\% of the time the first die is a \resp{1} and $1/6^{th}$ of \emp
 Here is an example from genetics.
 
 \begin{example}
-Cystic fibrosis (CF) is a life-threatening genetic disorder characterized by the buildup of thick mucus in the lungs and pancreas, caused by mutations in the \textit{CFTR} gene. Defective copies of \textit{CFTR} can result in the reduced quantity and/or function of the CFTR protein, which transports sodium and chloride across cell membranes. CF is an autosomal recessive disorder -- an individual only develops CF if they have inherited two affected copies of \textit{CFTR}. Individuals with one normal copy and one defective copy are known as carriers; they do not develop CF, but may pass the disease-causing mutation onto their offspring.
+Cystic fibrosis (CF) is a life-threatening genetic disorder characterized by the buildup of thick mucus in the lungs and pancreas, caused by mutations in the \textit{CFTR} gene located on chromosome 7. Defective copies of \textit{CFTR} can result in the reduced quantity and/or function of the CFTR protein, which transports sodium and chloride across cell membranes. CF is an autosomal recessive disorder -- an individual only develops CF if they have inherited two affected copies of \textit{CFTR}. Individuals with one normal copy and one defective copy are known as carriers; they do not develop CF, but may pass the disease-causing mutation onto their offspring.
 
-Suppose that both members of a couple are CF carriers. What is the probability that a child of this couple will be affected by CF?  During reproduction, each parent passes along one copy of the \textit{CFTR} gene, with each copy passed along with probability 1/2.  So half of the time, the mother (for instance) will pass along the defective copy, and about half of those times, the father will pass along a defective copy.  The child will therefore be affected with probability $(1/2) \times (1/2) = 1/4$.
+Suppose that both members of a couple are CF carriers. What is the probability that a child of this couple will be affected by CF?  During reproduction, each parent passes along one copy of the \textit{CFTR} gene, with each copy passed along with probability 1/2. Figure \ref{fig:cfInheritance} shows the four possible genotypes for a child of these parents, with the paternal chromosome in blue and the maternal chromosome in green.  Each of the four outcomes (wild-type CFTR, wild-type CFTR),  (wild-type CFTR, CFTR mutation) (CFTR mutation, wild-type CFTR) and (CFTR mutation, CFTR mutation), so the child will be affected with probability $1/4$.
+
+\textit{example changed from JV wording to no use independence so we can use the example earlier.}
 	
 \end{example}
+
+\begin{figure}
+\includegraphics[width= 0.75\textwidth]{./figures/cfInheritance/cfInheritance.pdf}
+\caption{Pattern of inheritance of a child of two unaffected carriers of CFTR}
+\label{fig:cfInheritance}
+\end{figure}
+
 
 \begin{exercise}
 Suppose the father is affected by CF and the mother is an unaffected carrier.  What is the probability that their child will be affected by the disease?
 
-\textit{Solution}  Since the father is affected, he will always pass along a defective copy of the gene.  Since the mother will pass along a defective copy half of the time, the child will be affected half of the time.
+\textit{Solution}  Since the father is affected, he will always pass along a defective copy of the gene.  Since the mother will pass along a defective copy half of the time, the child will be affected half of the time, or with probability $1/4$.
 
 \end{exercise}
 
@@ -98,5 +107,39 @@ P(\text{rolling a \resp{1}})
 $P(A)$\vspace{1mm}\\\footnotesize Probability of\\outcome $A$]{\raggedright\vspace{-13mm}
 
 $P(A)$\vspace{1mm}\\\footnotesize Probability of\\outcome $A$}As we become more comfortable with this notation, we will abbreviate it further. For instance, if it is clear that the process is ``rolling a die'', we could abbreviate $P($rolling a \resp{1}$)$ as~$P($\resp{1}$)$. 
+
+\subsection{Disjoint or mutually exclusive outcomes}
+
+\index{disjoint|(}
+\index{mutually exclusive|(}
+
+Two outcomes are called \term{disjoint} or \term{mutually exclusive} if they cannot both happen. For instance, if we roll a die, the outcomes \resp{1} and \resp{2} are disjoint since they cannot both occur. On the other hand, the outcomes \resp{1} and ``rolling an odd number'' are not disjoint since both occur if the outcome of the roll is a \resp{1}. The terms \emph{disjoint} and \emph{mutually exclusive} are equivalent and interchangeable.
+
+Calculating the probability of disjoint outcomes is easy. When rolling a die, the outcomes \resp{1} and \resp{2} are disjoint, and we compute the probability that one of these outcomes will occur by adding their separate probabilities:
+\begin{eqnarray*}
+P(\text{\resp{1} or \resp{2}}) = P(\text{\resp{1}})+P(\text{\resp{2}}) = 1/6 + 1/6 = 1/3
+\end{eqnarray*}
+What about  the probability of rolling a \resp{1}, \resp{2}, \resp{3}, \resp{4}, \resp{5}, or \resp{6}? Here again, all of the outcomes are disjoint so we add the probabilities:
+\begin{eqnarray*}
+&&P(\text{\resp{1} or \resp{2} or \resp{3} or \resp{4} or \resp{5} or \resp{6}}) \\
+	&&\quad= P(\text{\resp{1}})+P(\text{\resp{2}})+P(\text{\resp{3}})+P(\text{\resp{4}})+P(\text{\resp{5}})+P(\text{\resp{6}}) \\
+	&&\quad= 1/6 + 1/6 + 1/6 + 1/6 + 1/6 + 1/6 = 1.
+\end{eqnarray*}
+The \term{Addition Rule} guarantees the accuracy of this approach when the outcomes are disjoint. 
+
+\begin{termBox}{\tBoxTitle{Addition Rule of disjoint outcomes} If $A_1$ and $A_2$ represent two disjoint outcomes, then the probability that one of them occurs is given by
+\begin{eqnarray*}
+P(A_1\text{ or } A_2) = P(A_1) + P(A_2)
+\end{eqnarray*}
+If there are many disjoint outcomes $A_1$, ..., $A_k$, then the probability that one of these outcomes will occur is
+\begin{eqnarray}
+P(A_1) + P(A_2) + \cdots + P(A_k)
+\end{eqnarray}
+}
+\end{termBox}
+
+\begin{exercise}
+We are interested in the probability of rolling a \resp{1}, \resp{4}, or \resp{5}. (a) Explain why the outcomes \resp{1}, \resp{4}, and \resp{5} are disjoint. (b) Apply the Addition Rule for disjoint outcomes to determine $P($\resp{1} or \resp{4} or \resp{5}$)$.\footnote{(a) The random process is a die roll, and at most one of these outcomes can come up. This means they are disjoint outcomes. (b)~$P($\resp{1} or \resp{4} or \resp{5}$) = P($\resp{1}$)+P($\resp{4}$)+P($\resp{5}$) = \frac{1}{6} + \frac{1}{6} + \frac{1}{6} = \frac{3}{6} = \frac{1}{2}$}
+\end{exercise}
 
 
