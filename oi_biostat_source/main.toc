@@ -49,3 +49,21 @@
 \contentsline {subsection}{\numberline {1.5.2}Bar plots}{42}{subsection.1.5.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.5.3}Comparing numerical data across groups}{45}{subsection.1.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.6}Exercises}{47}{section.1.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.6.1}Case study: using stents to prevent strokes}{47}{subsection.1.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.6.2}Data basics}{48}{subsection.1.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.6.3}Overview of data collection principles}{50}{subsection.1.6.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.6.4}Observational studies and sampling strategies}{52}{subsection.1.6.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.6.5}Experiments}{55}{subsection.1.6.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.6.6}Examining numerical data}{57}{subsection.1.6.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.6.7}Considering categorical data}{64}{subsection.1.6.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.6.8}Case study: gender discrimination}{66}{subsection.1.6.8}
