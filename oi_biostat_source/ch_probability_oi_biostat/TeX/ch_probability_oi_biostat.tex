@@ -114,7 +114,7 @@ $P(A)$\vspace{1mm}\\\footnotesize Probability of\\outcome $A$}As we become more 
 \index{disjoint|(}
 \index{mutually exclusive|(}
 
-Two outcomes are called \term{disjoint} or \term{mutually exclusive} if they cannot both happen. For instance, if we roll a die, the outcomes \resp{1} and \resp{2} are disjoint since they cannot both occur. On the other hand, the outcomes \resp{1} and ``rolling an odd number'' are not disjoint since both occur if the outcome of the roll is a \resp{1}. The terms \emph{disjoint} and \emph{mutually exclusive} are equivalent and interchangeable.
+Two outcomes are called \term{disjoint} or \term{mutually exclusive} if they cannot both happen. When rolling a die, the outcomes \resp{1} and \resp{2} are disjoint since they cannot both occur.  In the cystic fibrosis example, the two outcomes of a wild-type gene from the mother and a mutated gene from the father and a mutated gene from the mother, wild-type from the father are disjoint.   In the die example, the outcomes \resp{1} and ``rolling an odd number'' are not disjoint since both occur if the outcome of the roll is a \resp{1}. The outcomes of a child being affected and having at least one mutated copy of CFTR and  not disjoint. The terms \emph{disjoint} and \emph{mutually exclusive} are equivalent and interchangeable.
 
 Calculating the probability of disjoint outcomes is easy. When rolling a die, the outcomes \resp{1} and \resp{2} are disjoint, and we compute the probability that one of these outcomes will occur by adding their separate probabilities:
 \begin{eqnarray*}
@@ -126,6 +126,8 @@ What about  the probability of rolling a \resp{1}, \resp{2}, \resp{3}, \resp{4},
 	&&\quad= P(\text{\resp{1}})+P(\text{\resp{2}})+P(\text{\resp{3}})+P(\text{\resp{4}})+P(\text{\resp{5}})+P(\text{\resp{6}}) \\
 	&&\quad= 1/6 + 1/6 + 1/6 + 1/6 + 1/6 + 1/6 = 1.
 \end{eqnarray*}
+The probability that a child will be an unaffected carrier in the CF example is $(1/2) = (1/2) = 1/4$.
+
 The \term{Addition Rule} guarantees the accuracy of this approach when the outcomes are disjoint. 
 
 \begin{termBox}{\tBoxTitle{Addition Rule of disjoint outcomes} If $A_1$ and $A_2$ represent two disjoint outcomes, then the probability that one of them occurs is given by
@@ -139,8 +141,20 @@ P(A_1) + P(A_2) + \cdots + P(A_k)
 }
 \end{termBox}
 
-\begin{exercise}
-We are interested in the probability of rolling a \resp{1}, \resp{4}, or \resp{5}. (a) Explain why the outcomes \resp{1}, \resp{4}, and \resp{5} are disjoint. (b) Apply the Addition Rule for disjoint outcomes to determine $P($\resp{1} or \resp{4} or \resp{5}$)$.\footnote{(a) The random process is a die roll, and at most one of these outcomes can come up. This means they are disjoint outcomes. (b)~$P($\resp{1} or \resp{4} or \resp{5}$) = P($\resp{1}$)+P($\resp{4}$)+P($\resp{5}$) = \frac{1}{6} + \frac{1}{6} + \frac{1}{6} = \frac{3}{6} = \frac{1}{2}$}
-\end{exercise}
+Probability problems rarely consider individual outcomes and instead consider \indexthis{\emph{sets}}{sets} or \indexthis{\emph{collections}}{collections} of outcomes. Let $A$ represent the event where a die roll results in \resp{1} or \resp{2} and $B$~represent the event that the die roll is a \resp{4} or a \resp{6}. We write $A$ as the set of outcomes $\{$\resp{1},~\resp{2}$\}$ and $B=\{$\resp{4}, \resp{6}$\}$. These sets are commonly called \termsub{events}{event}. Because $A$ and $B$ have no elements in common, they are disjoint events. $A$ and $B$ are represented in Figure~\ref{disjointSets}.
+
+\begin{figure}[hhh]
+\centering
+\includegraphics[width=0.55\textwidth]{ch_probability/figures/disjointSets/disjointSets}
+\caption{Three events, $A$, $B$, and $D$, consist of outcomes from rolling a die. $A$ and $B$ are disjoint since they do not have any outcomes in common.}
+\label{disjointSets}
+\end{figure}
+
+The Addition Rule applies to both disjoint outcomes and disjoint events. The probability that one of the disjoint events $A$ or $B$ occurs is the sum of the separate probabilities:
+\begin{align*}
+P(A\text{ or }B) = P(A) + P(B) = 1/3 + 1/3 = 2/3
+\end{align*}
+
+
 
 
