@@ -16,7 +16,7 @@ Like all mathematical tools, probability becomes easier to understand and work w
 
 We begin with some familiar examples.
 
-\begin{example}{A ``die'', the singular of dice, is a cube with six faces numbered \resp{1}, \resp{2}, \resp{3}, \resp{4}, \resp{5}, and \resp{6}. What is the chance of getting \resp{1} when rolling a die?}\label{probOf1}
+\begin{example}\label{dieAllOutcomesex}{A ``die'', the singular of dice, is a cube with six faces numbered \resp{1}, \resp{2}, \resp{3}, \resp{4}, \resp{5}, and \resp{6}. What is the chance of getting \resp{1} when rolling a die?}\label{probOf1}
 If the die is fair, then the chance of a \resp{1} is as good as the chance of any other number. Since there are six outcomes, the chance must be 1-in-6 or, equivalently, $1/6$.
 \end{example}
 
@@ -34,19 +34,20 @@ Since the chance of rolling a \resp{2} is $1/6$ or $16.\bar{6}\%$, the chance of
 Alternatively, we could have noticed that not rolling a \resp{2} is the same as getting a \resp{1}, \resp{3}, \resp{4}, \resp{5}, or \resp{6}, which makes up five of the six equally likely outcomes and has probability $5/6$.
 \end{example}
 
-\begin{example}{Consider rolling two dice. If $1/6^{th}$ of the time the first die is a \resp{1} and $1/6^{th}$ of those times the second die is a \resp{1}, what is the chance of getting two \resp{1}s?}\label{probOf2Ones}
+\begin{example}\label{dieProportionProbex} {Consider rolling two dice. If $1/6^{th}$ of the time the first die is a \resp{1} and $1/6^{th}$ of those times the second die is a \resp{1}, what is the chance of getting two \resp{1}s?}\label{probOf2Ones}
 If $16.\bar{6}$\% of the time the first die is a \resp{1} and $1/6^{th}$ of \emph{those} times the second die is also a \resp{1}, then the chance that both dice are \resp{1} is $(1/6)\times (1/6)$ or $1/36$.
 \end{example}
 
 Here is an example from genetics.
 
 \begin{example}
-Cystic fibrosis (CF) is a life-threatening genetic disorder characterized by the buildup of thick mucus in the lungs and pancreas, caused by mutations in the \textit{CFTR} gene located on chromosome 7. Defective copies of \textit{CFTR} can result in the reduced quantity and/or function of the CFTR protein, which transports sodium and chloride across cell membranes. CF is an autosomal recessive disorder -- an individual only develops CF if they have inherited two affected copies of \textit{CFTR}. Individuals with one normal copy and one defective copy are known as carriers; they do not develop CF, but may pass the disease-causing mutation onto their offspring.
+Cystic fibrosis (CF) is a life-threatening genetic disorder characterized by the buildup of thick mucus in the lungs and pancreas, caused by mutations in the \textit{CFTR} gene located on chromosome 7. Defective copies of \textit{CFTR} can result in the reduced quantity and/or function of the CFTR protein, which transports sodium and chloride across cell membranes. CF is an autosomal recessive disorder -- an individual only develops CF if they have inherited two affected copies of \textit{CFTR}. Individuals with one normal (wild-type) copy and one defective (mutated) copy are known as carriers; they do not develop CF, but may pass the disease-causing mutation onto their offspring.
 
-Suppose that both members of a couple are CF carriers. What is the probability that a child of this couple will be affected by CF?  During reproduction, each parent passes along one copy of the \textit{CFTR} gene, with each copy passed along with probability 1/2. Figure \ref{fig:cfInheritance} shows the four possible genotypes for a child of these parents, with the paternal chromosome in blue and the maternal chromosome in green.  Each of the four outcomes (wild-type CFTR, wild-type CFTR),  (wild-type CFTR, CFTR mutation) (CFTR mutation, wild-type CFTR) and (CFTR mutation, CFTR mutation), so the child will be affected with probability $1/4$.
+Suppose that both members of a couple are CF carriers. What is the probability that a child of this couple will be affected by CF?  The problem sounds a bit more complicated than calculating probabilities for the outcome of rolling a die, but can be solved with the same simple methods.  We show two solutions.
 
-\textit{example changed from JV wording to no use independence so we can use the example earlier. Add a second solution using the argument used in the dice examples about proportions, and point out that the method of solving this problem is the same as with the dice.  In fact, put that at the beginning.}
-	
+\textit{Solution 1: Enumerate all of the possible outcomes and exploit the fact that the outcomes are equally likely, as in \ref{dieAllOutcomesex}  During reproduction, each parent passes along one copy of the \textit{CFTR} gene, with each copy passed along with probability 1/2. Figure \ref{fig:cfInheritance} shows the four possible genotypes for a child of these parents, with the paternal chromosome in blue, the maternal chromosome in green,  chromosomes with the wild-type and mutated version of CFTR marked with $+$ and$-$.  Each of the four outcomes (wild-type CFTR, wild-type CFTR),  (wild-type CFTR, CFTR mutation) (CFTR mutation, wild-type CFTR) and (CFTR mutation, CFTR mutation), so the child will be affected with probability $1/4$.  It is important to recognize that the child being an unaffected carrier consists of two distinct outcomes, not one.
+
+\textit{Solution 2:  Calculate the proportion of outcomes that produce an affected child, as in \ref{dieProportionProbex}.}  During reproduction, half of the time, the mother will pass along an affected gene.  When the child receives an affected gene from the mother, about half of those times, the father will have passed along an affected gene.	So the proportion of times the child will be affected is $(1/2) \times (1/2) = 1/4$.
 \end{example}
 
 \begin{figure}

@@ -40,3 +40,7 @@ Thumbs.db
 #  editor working files #
 ############
 *.swp
+
+data/famuss/.Rhistory
+
+*.png
