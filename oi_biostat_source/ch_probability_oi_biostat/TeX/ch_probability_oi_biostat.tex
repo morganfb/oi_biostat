@@ -47,7 +47,7 @@ If $16.\bar{6}$\% of the time the first die is a \resp{1} and $1/6^{th}$ of \emp
 
 Here is an example from genetics.
 
-\begin{example}
+\begin{example} \label{CFInheritanceExample}
 Cystic fibrosis (CF) is a life-threatening genetic disorder characterized by the buildup of thick mucus in the lungs and pancreas, caused by mutations in the \textit{CFTR} gene located on chromosome 7. Defective copies of \textit{CFTR} can result in the reduced quantity and/or function of the CFTR protein, which transports sodium and chloride across cell membranes. CF is an autosomal recessive disorder -- an individual only develops CF if they have inherited two affected copies of \textit{CFTR}. Individuals with one normal (wild-type) copy and one defective (mutated) copy are known as carriers; they do not develop CF, but may pass the disease-causing mutation onto their offspring.
 
 Suppose that both members of a couple are CF carriers. What is the probability that a child of this couple will be affected by CF?  The problem sounds a bit more complicated than calculating probabilities for the outcome of rolling a die, but can be solved with the same simple methods.  We show two solutions.
@@ -361,7 +361,6 @@ P(A) + P(A^c) = 1, \quad\text{i.e.}\quad P(A) = 1-P(A^c)
 \end{eqnarray}\vspace{-6.5mm}}
 \end{termBox}
 
-
 In simple examples, computing $A$ or $A^c$ is feasible in a few steps. However, using the complement can save a lot of time as problems grow in complexity.
 
 \begin{exercise}
@@ -415,6 +414,174 @@ Under.wk.20 & 0.00 \\
 \textit{value labels should be modified}
 
 \textit{not satisfied with the way this example worked out; it should be improved or changed}
+
+\subsection{Independence}
+\label{probabilityIndependence}
+
+Just as variables and observations can be independent, random phenomena can be independent, too. Two phenomena or processes are \term{independent} if knowing the outcome of one provides no information about the outcome of the other. For instance, flipping a coin and rolling a die are two independent processes -- knowing the coin was heads does not help determine the outcome of a die roll. On the other hand, stock prices usually move up or down together, so they are not independent.
+
+Independence was used implicitly on page~\pageref{CFInheritanceExample} in the second solution to the probability that two carriers will have an affected child with cystic fibrosis.  The assumption that half of the offspring who have received a mutated CF gene from the mother will receive a mutated gene from the father is essentially an independence assumption -- genes are passed along from the mother and father independently.
+
+Example~\ref{probOf2Ones} provides a basic example of two independent processes: rolling two dice. We want to determine the probability that both will be \resp{1}. Suppose one of the dice is red and the other white. If the outcome of the red die is a \resp{1}, it provides no information about the outcome of the white die. We first encountered this same question in Example~\ref{probOf2Ones} (page~\pageref{probOf2Ones}), where we calculated the probability using the following reasoning: $1/6^{th}$ of the time the red die is a \resp{1}, and $1/6^{th}$ of \emph{those} times the white die will also be \resp{1}. This is illustrated in Figure~\ref{indepForRollingTwo1s}. Because the rolls are independent, the probabilities of the corresponding outcomes can be multiplied to get the final answer: $(1/6)\times(1/6)=1/36$. This can be generalized to many independent processes. 
+
+\begin{figure}[hht]
+\centering
+\includegraphics[width=0.6\textwidth]{ch_probability/figures/indepForRollingTwo1s/indepForRollingTwo1s}
+\caption{$1/6^{th}$ of the time, the first roll is a \resp{1}. Then $1/6^{th}$ of \emph{those} times, the second roll will also be a \resp{1}.}
+\label{indepForRollingTwo1s}
+\end{figure}
+
+\begin{example}{What if there was also a blue die independent of the other two? What is the probability of rolling the three dice and getting all \resp{1}s?}\label{threeDice}
+The same logic applies from Example~\ref{probOf2Ones}. If $1/36^{th}$ of the time the white and red dice are both \resp{1}, then $1/6^{th}$ of \emph{those} times the blue die will also be \resp{1}, so multiply:
+{\begin{align*}
+P(white=\text{\small\resp{1} and } red=\text{\small\resp{1} and } blue=\text{\small\resp{1}})
+	&= P(white=\text{\small\resp{1}})\times P(red=\text{\small\resp{1}})\times P(blue=\text{\small\resp{1}}) \\
+	&= (1/6)\times (1/6)\times (1/6)
+	= 1/216
+\end{align*}} \vspace{-7mm}
+\end{example}
+
+Example~\ref{threeDice} illustrates what is called the Multiplication Rule for independent processes. 
+
+\begin{termBox}{\tBoxTitle{\term{Multiplication Rule} for independent processes}
+If $A$ and $B$ represent events from two different and independent processes, then the probability that both $A$ and $B$ occur can be calculated as the product of their separate probabilities: \vspace{-1.5mm}
+\begin{eqnarray}\label{eqForIndependentEvents}
+P(A \text{ and }B) = P(A) \times  P(B)
+\end{eqnarray}
+Similarly, if there are $k$ events $A_1$, ..., $A_k$ from $k$ independent processes, then the probability they all occur is\vspace{-1.5mm}
+\begin{eqnarray*}
+P(A_1) \times  P(A_2)\times  \cdots \times  P(A_k)
+\end{eqnarray*}\vspace{-6mm}}
+\end{termBox}
+
+In applications to biology or medicine, complicated probability problems are often solved with the simple ideas used in the dice examples.
+
+\begin{exercise} \label{ex2Handedness}
+About 9\% of people are left-handed. Suppose 2 people are selected at random from the U.S. population. Because the sample size of 2 is very small relative to the population, it is reasonable to assume these two people are independent. (a)~What is the probability that both are left-handed? (b)~What is the probability that both are right-handed?\footnote{(a) The probability the first person is left-handed is $0.09$, which is the same for the second person. We apply the Multiplication Rule for independent processes to determine the probability that both will be left-handed: $0.09\times 0.09 = 0.0081$.
+
+(b) It is reasonable to assume the proportion of people who are ambidextrous (both right and left handed) is nearly 0, which results in $P($right-handed$)=1-0.09=0.91$. Using the same reasoning as in part~(a), the probability that both will be right-handed is $0.91\times 0.91 = 0.8281$.}
+\end{exercise}
+
+\textC{\newpage}
+
+\begin{exercise} \label{ex5Handedness}
+Suppose 5 people are selected at random.\footnote{(a)~The abbreviations \resp{RH} and \resp{LH} are used for right-handed and left-handed, respectively. Since each are independent, we apply the Multiplication Rule for independent processes:
+\begin{align*}
+P(\text{all five are \resp{RH}})
+&= P(\text{first = \resp{RH}, second = \resp{RH}, ..., fifth = \resp{RH}}) \\
+&= P(\text{first = \resp{RH}})\times P(\text{second = \resp{RH}})\times  \dots \times P(\text{fifth = \resp{RH}}) \\
+&= 0.91\times 0.91\times 0.91\times 0.91\times 0.91 = 0.624
+\end{align*}
+
+(b)~Using the same reasoning as in~(a), $0.09\times 0.09\times 0.09\times 0.09\times 0.09 = 0.0000059$
+
+(c)~Use the complement, $P($all five are \resp{RH}$)$, to answer this question:
+\begin{align*}
+P(\text{not all \resp{RH}})
+	= 1 - P(\text{all \resp{RH}})
+	= 1 - 0.624 = 0.376
+\end{align*}} \vspace{-1.5mm}
+\begin{enumerate}
+\setlength{\itemsep}{0mm}
+\item[(a)] What is the probability that all are right-handed?
+\item[(b)] What is the probability that all are left-handed?
+\item[(c)] What is the probability that not all of the people are right-handed?
+\end{enumerate}
+\end{exercise}
+
+Suppose the variables \var{handedness} and \var{gender} are independent, i.e. knowing someone's \var{gender} provides no useful information about their \var{handedness} and vice-versa. Then we can compute whether a randomly selected person is right-handed and female\footnote{The actual proportion of the U.S. population that is \resp{female} is about 50\%, and so we use 0.5 for the probability of sampling a woman. However, this probability does differ in other countries.} using the Multiplication Rule:
+\begin{eqnarray*}
+P(\text{right-handed and female}) &=& P(\text{right-handed}) \times  P(\text{female}) \\
+&=& 0.91 \times  0.50 = 0.455
+\end{eqnarray*}
+
+
+\begin{exercise}
+Three people are selected at random.\footnote{Brief answers are provided. (a)~This can be written in probability notation as $P($a randomly selected person is male and right-handed$)=0.455$. (b) 0.207. (c) 0.045. (d) 0.0093.} \vspace{-1.5mm}
+\begin{enumerate}
+\setlength{\itemsep}{0mm}
+\item[(a)] What is the probability that the first person is male and right-handed?
+\item[(b)] What is the probability that the first two people are male and right-handed?.
+\item[(c)] What is the probability that the third person is female and left-handed?
+\item[(d)] What is the probability that the first two people are male and right-handed and the third person is female and left-handed?
+\end{enumerate}
+\end{exercise}
+
+\begin{example} \textit{Mandatory drug testing}
+
+Mandatory drug testing in the work place is common in professions such as air traffic controllers, transportation workers and government security agencies.  A false positive in a drug screening test occurs when the test incorrectly indicates that a screened person is an illegal drug user.  Suppose a mandatory drug test has a false-positive rate of 1.2\% (i.e., has probability  0.012 of indicating that an employee is using illegal drugs even when that is not the case), and suppose a company uses the test to screen employees for drug use.  Given 150 employees who are in reality drug free, what is the probability that at least one will (falsely) test positive if the outcome of one drug test has no affect on the other 149?  
+   
+The solution uses independence (the assumption that the outcome of one test has no effect on the others) and the multiplication rule to calculate the probability of the complement of the event asked about.
+
+   \begin{align*} 
+   P(\text{At least 1 "+"}) &= P(\text{1 or 2 or 3 \ldots or 150 are "+"}) \\
+           &= 1 - P(\text{None are "+"}) \\
+           &= 1 - P(\text{150 "-"}) \\
+ P(\text{150 are "-"}) &= P(\text{1 is "-"})^{150} \\
+           &= (0.988)^{150} = 0.16.
+    \end{align*}
+   So $P(\text{At least 1 is "+"})  = 1 - P(\text{150 are "-"}) = 0.84.$
+ 
+   \textit{should we be more formal here in defining events?}
+
+Some people find the result surprising.  Even when using a test with a small probability of a false positive, the company is more than 80\% likely to incorrectly claim at least one employee is an illegal drug user.
+
+\end{example}
+
+\begin{exercise}
+Because of the high likelihood of at least one false positive in company wide drug screening programs, an individual with a positive test is almost always re-tested with a different screening test, one that is more expensive than the first but with a lower false positive probability.  Suppose the second test has a false positive rate of 0.8\%.  What is the probability that an employee who is not using illegal drugs will test positive on both tests?
+
+\textit{solution to be added if we keep the problem}
+
+\end{exercise}
+
+\begin{exercise} \label{exABOBloodGroups}
+
+There are eight different common blood types, which are determined by the presence of certain antigens located on cell surfaces. Antigens are substances used by the immune system to recognize self versus non-self; if the immune system encounters antigens not normally found on the body's own cells, it will attack the foreign cells. When patients receive blood transfusions, it is critical that the antigens of transfused cells match those of the patient's, or else an immune system response will be triggered.
+
+The ABO blood group system consists of four different blood groups, which describe whether an individual's red blood cells carry the A antigen, B antigen, both, or neither. The ABO gene has three alleles: ${I}^{A}$, ${I}^{B}$, and \textit{i}. The \textit{i} allele is recessive to both ${I}^{A}$ and ${I}^{B}$, and does not produce antigens; thus, an individual with genotype ${I}^{A}i$ is blood group A and an individual with genotype ${I}^{B}i$ is blood group B. The ${I}^{A}$ and ${I}^{B}$ are codominant, such that individuals of ${I}^{A}$${I}^{B}$ genotype are AB. Individuals homozygous for the \textit{i} allele are known as blood group O, with neither A nor B antigens.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width= 0.75\textwidth]{./figures/abo_draft.png}
+	\caption{Inheritance of ABO blood groups.}
+	\label{fig:aboInheritance}
+\end{figure}
+
+\begin{enumerate}[a)]
+	\item \textit{ABO, Independence.} Suppose that both members of a couple have Group AB blood. 
+	\begin{enumerate}[i.]
+		\item What is the probability that a child of this couple will have Group A blood?
+		\item What is the probability that they have two children with Group A blood?
+	\end{enumerate}
+
+    \textit{solutions to be added if we keep the exercise}
+  
+  \end{exercise}
+
+
+The examples in this section have used independence to solve probability problems.  Sometimes the definition of independence can be used to check whether two events are independent -- two events $A$ and $B$ are independent if they satisfy Equation~\eqref{eqForIndependentEvents}.
+
+
+
+\begin{example}{If we shuffle up a deck of cards and draw one, is the event that the card is a heart independent of the event that the card is an ace?}
+The probability the card is a heart is $1/4$ and the probability that it is an ace is $1/13$. The probability the card is the ace of hearts is $1/52$. We check whether Equation~\ref{eqForIndependentEvents} is satisfied:
+\begin{align*}
+P({\color{redcards}\heartsuit})\times P(\text{ace}) = \frac{1}{4}\times \frac{1}{13} = \frac{1}{52} 
+					= P({\color{redcards}\heartsuit}\text{ and ace})
+\end{align*}
+Because the equation holds, the event that the card is a heart and the event that the card is an ace are independent events.
+\end{example}
+
+%%%%%%
+
+
+\section{Conditional probability}
+\label{conditionalProbabilitySection}
+
+
+
+
 
 % index commands below should be inserted just before section on sampling from a small population
 
