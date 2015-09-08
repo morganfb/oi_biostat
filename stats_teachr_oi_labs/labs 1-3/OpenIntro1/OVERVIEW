@@ -1,9 +1,0 @@
-Name: [OpenIntro1]
-Title: [OpenIntro labs 1-3; Introductory Topics]
-Date: 2014-07-17
-Author: Sara Nuñez
-Version: v[1.0]
-Description: [This module contains 3 lab assignments adapted for StatsTeachR from OpenIntro. Lab 1 provides an intro to data, lab 2 contains an intro probability and simulations, and lab 3 contains an intro to the normal distribution.]
-Keywords: [summary statistics, subsetting, normality, plots, simulations]
-Depends: [None] 
-Suggests: [None]

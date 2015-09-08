@@ -1,9 +1,0 @@
-Name: [OpenIntro2]
-Title: [OpenIntro labs 4-6; Inference]
-Date: 2014-07-29
-Author: Sara Nuñez <smnunez@umass.schoolph.edu>
-Version: v[1.0]
-Description: [This module contains 4 lab assignments adapted for StatsTeachR from OpenIntro. Lab 4A gives an introduction to sampling distributions, lab4B introduces confidence levels and intervals, and labs 5-6 introduce inference.]
-Keywords: [Sampling Distribution, Simulations, For Loops, Confidence Levels, Confidence Intervals, Inference]
-Depends: [None] 
-Suggests: [Completing module ‘OpenIntro1’ prior to working on this module]
