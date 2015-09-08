@@ -187,6 +187,96 @@ plot(frog.altitude$clutch.volume ~ frog.altitude$body.size)
 dev.copy(pdf,"clutchVolVsBodySize.pdf")
 dev.off()
 
-
+library(openintro)
 plot(frog.altitude$clutch.volume ~ frog.altitude$altitude)
 plot(frog.altitude$body.size ~ frog.altitude$altitude)
+
+with(frog.altitude, dotPlot(clutch.volume))
+with(frog.altitude, clutch.volume[clutch.volume > 2000])
+
+with(frog.altitude, median(clutch.volume))
+with(frog.altitude, IQR(clutch.volume))
+with(frog.altitude, mean(clutch.volume))
+with(frog.altitude, sd(clutch.volume))
+
+a = frog.altitude$clutch.volume <= 2000
+
+with(frog.altitude, median(clutch.volume[a]))
+with(frog.altitude, IQR(clutch.volume[a]))
+with(frog.altitude, mean(clutch.volume[a]))
+with(frog.altitude, sd(clutch.volume[a]))
+
+#frog histogram
+hist(frog.altitude$clutch.volume)
+hist(frog.altitude$clutch.volume, plot=FALSE)
+
+#frog boxplot
+
+boxplot(frog.altitude$clutch.volume)
+boxplot(frog.altitude$clutch.volume, plot=FALSE)
+
+#scatterplot: clutch volume versus body size
+
+# exploring famuss and frogs for robust statistic examples
+
+library(openintro)
+with(famuss.oi.biostat, hist(weight))
+
+#  histogram shows several outliers
+
+with(famuss.oi.biostat, dotPlot(weight))
+
+with(famuss.oi.biostat, max(weight))
+
+with(famuss.oi.biostat, weight[weight > 300])
+with(famuss.oi.biostat, weight[weight > 270])
+with(famuss.oi.biostat, median(weight))
+with(famuss.oi.biostat, IQR(weight))
+with(famuss.oi.biostat, mean(weight))
+with(famuss.oi.biostat, sd(weight)) 
+
+    
+a = famuss.oi.biostat$weight <=270
+
+with(famuss.oi.biostat, median(weight[a]))
+with(famuss.oi.biostat, IQR(weight[a]))
+with(famuss.oi.biostat, mean(weight[a]))
+with(famuss.oi.biostat, sd(weight[a])) 
+
+
+with(famuss.oi.biostat, dotPlot(weight))
+plot.storage = file.path("~", "oi_biostat", "oi_biostat_source", "ch_intro_to_data_oi_biostat",
+                         "figures", "famussWeightDotPlotRobustEx")
+plot.storage
+setwd(plot.storage)
+pdf("famussWeightDotPlotRobustEx.pdf")
+with(famuss.oi.biostat, dotPlot(weight))
+dev.off()
+
+#categorical data, famuss tables
+
+#frequency table
+library(xtable)
+a = addmargins(table(famuss$actn3.r577x))
+genotype.table = matrix(a, ncol=4, byrow=T)
+colnames(genotype.table) = c("CC", "CT", "TT", "Sum")
+rownames(genotype.table) = "Counts"
+xtable(genotype.table, digits = 0, caption = "A frequency table for the actn3.r577x variable.", label = "famussFrequencyTable")
+
+#contingency table
+library(xtable)
+genotype.by.race.table = addmargins(table(famuss$race, famuss$actn3.r577x))
+xtable(genotype.by.race.table, digits = 0, caption = "A contingency table for race and actn3.r577x.", label = "famussContingencyTable")
+
+#row proportions table
+library(xtable)
+row.prop.table = table(famuss$race, famuss$actn3.r577x)[1:5,]; row.prop.table / rep(rowSums(row.prop.table), 3); rowSums(row.prop.table)
+xtable(genotype.by.race.table, digits = 0, caption = "A contingency table with row proportions for the race and actn3.r577x variables.", label = "famussRowPropTable")
+173/595; 261/595; 161/595
+
+#column proportions table
+library(xtable)
+col.prop.table = table(famuss$race, famuss$actn3.r577x)[1:5,]; col.prop.table / rep(colSums(col.prop.table), 3); colSums(col.prop.table)
+xtable(genotype.by.race.table, digits = 0, caption = "A contingency table with column proportions for the race and actn3.r577x variables.", label = "famussColPropTable")
+27/595; 55/595; 467/595; 23/595; 23/595
+

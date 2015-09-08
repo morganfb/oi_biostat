@@ -20,35 +20,40 @@ Pending
 \chapter{Introduction to data}
 \label{introductionToData}
 
-%\begin{tipBox}{\tipBoxTitle[Chapter Goal:]{Thinking about data}
-%Understand basics about data organization, data types, numerical summaries of data, graphical summaries of data, and foundational techniques for data collection. We begin and end the chapter with case studies.}
-%\end{tipBox}
-
-Scientists seek to answer questions using rigorous methods and careful observations. These observations -- collected from the likes of field notes, surveys, and experiments -- form the backbone of a statistical investigation and are called \term{data}. Statistics is the study of how best to collect, analyze, and draw conclusions from data. It is helpful to put statistics in the context of a general process of investigation:
+Scientists seek to answer questions using rigorous methods and careful observations. These observations -- collected from the likes of field notes, surveys, and experiments -- form the backbone of a statistical investigation and are called \term{data}. Statistics is the study of how to best collect, analyze, and draw conclusions from data. It is helpful to place statistics in the context of a general process of investigation:
 \begin{enumerate}
 \setlength{\itemsep}{0mm}
 \item Identify a question or problem.
 \item Collect relevant data on the topic.
 \item Analyze the data.
 \item Form a conclusion.
-%\item Make decisions based on the conclusion.
 \end{enumerate}
-Statistics as a subject focuses on making stages 2-4 objective, rigorous, and efficient. That~is, statistics has three primary components: How best can we collect data? How should it be analyzed? And what can we infer from the analysis?  
+Statistics as a subject focuses on making stages 2-4 objective, rigorous, and efficient. That~is, statistics has three primary components: How can data best be collected? How should it be analyzed? What can be inferred from the analysis?  
 
-Many scientific investigations can be conducted with a small number of data collection techniques and analytic tools. This chapter provides a brief introduction to the basic principles of these areas that will be encountered later in the book, and illustrates the important role statistics plays in medicine and biology.
+This chapter provides a brief introduction to the basic principles of data collection techniques and analytic tools, and illustrates the important role statistics plays in medicine and biology.
 
-\section[Case study]{Case study: Preventing Peanut Allergies}
-\label{basicExampleOfPeanutAllergies}
+\textit{JV: Make reference to how this chapter can be used by either someone new to statistics or someone who has had the material before?}
 
-\index{data!leap|(}
+\textit{JV: Something to address later -- where in the formatting does it specify that the first paragraph in a section does not get indented, but the others do...}
 
- Section~\ref{basicExampleOfPeanutAllergies} introduces an important problem in medicine: evaluating the effect of an intervention. Terms in this section, and indeed much of this chapter, will all be revisited later in more detail.
+\section[Case study]{Case study: preventing peanut allergies}
+\label{leapCaseStudy}
 
-The proportion of young children with peanut allergies in Western countries has doubled in the last 10 years. Does the exposure to peanut products during the first 5 years of a child's life reduced the probability that a child will develop an allergy?  This section describes an experiment (a clinical trial, in the terminology of medical research) designed to assess the effectiveness of exposing infants at risk for peanut allergy either to consume or avoid peanut products during the first 5 years of life.  The study was called the ''Learning Early about Peanut Allergy'' (LEAP), enrolled children in the United Kingdom between 2006 and 2009, and was reported in the New England Journal of Medicine in 2015. .\footnote{Du Toit, George, et al. Randomized trial of peanut consumption in infants at risk for peanut allergy. New England Journal of Medicine 372.9 (2015): 803-813.}  Earlier research had suggested that infants predisposed to peanut allergies might develop resistance to the allergy with exposure to peanut products before the allergy appeared.
+\index{data!LEAP|(}
 
-The study team selected 640 infants with either or both of excema and egg allergies and randomly assigned each child to peanut consumption (the treatment group) or avoidance (the control group) for five years. In this study, the control group provides a reference point for estimating the effect of peanut exposure in the treatment group. Each child was tested for a peanut allergy at age 5 using an oral food challenge (OFC); the main analysis was based on 530 children with a negative skin test at the time of study entry. Among these 530 children, 263 were assigned to `Peanut Avoidance' and 267 to `Peanut Consumption'. The outcome at 5 years was coded as either `Fail OFC' (allergic reaction) or `Pass OFC' (no allergic reaction. The dataset \data{LEAP} contains the treatment and outcome data the 530 children.
+Section~\ref{leapCaseStudy} introduces an important problem in medicine: evaluating the effect of an intervention. \textit{JV: Intervention should be defined, could work in a dependent clause.} Terms in this section, and indeed much of this chapter, will all be revisited later in more detail.
 
-Table \ref{peanutStudyResultsDF} shows the participant's study ID number, treatment assignment and outcome from the OFC for 5 children.  All five of these children passed the food challenge.
+The proportion of young children in Western countries with peanut allergies has doubled in the last 10 years. Previous research suggests that exposing infants to peanut-based foods, rather than excluding such foods from their diets, may be an effective strategy for preventing the development of peanut allergies. This section describes an experiment (a clinical trial, in the terminology of medical research) designed to address the following research question: Does early exposure to peanut products reduce the probability that a child will develop peanut allergies? 
+
+The "Learning Early about Peanut Allergy" (LEAP) study was reported in the New England Journal of Medicine in 2015.\footnote{Du Toit, George, et al. Randomized trial of peanut consumption in infants at risk for peanut allergy. New England Journal of Medicine 372.9 (2015): 803-813.} The study team enrolled children in the United Kingdom between 2006 and 2009, selecting 640 infants with eczema, egg allergy, or both. Each child was randomly assigned to the treatment group (peanut consumption) or the control group (peanut avoidance); children in the treatment group were fed at least 6 grams of peanut protein until 5 years of age, while children in the control group were to avoid consuming peanut protein until 5 years of age. \textit{In this study, the control group provides a reference point for estimating the effect of peanut exposure in the treatment group. JV: This last sentence comes off as a bit technical/vague, perhaps due to "estimating the effect" -- could be omitted, I think.}
+
+At age 5, each child was tested for peanut allergy using an oral food challenge (OFC): 5 grams of peanut protein in a single dose. Children had been previously been tested for peanut allergy through a skin test, conducted at the time of study entry; the main analysis presented in the paper was based on the 530 children with a negative skin test result. Of these children, 263 were assigned to "Peanut Avoidance" and 267 to "Peanut Consumption." The outcome at 5 years was reported as either "Fail OFC" (allergic reaction) or "Pass OFC" (no allergic reaction). 
+
+Table \ref{leapStudyResultsDF} shows the participant study ID number, treatment assignment, and OFC outcome for 5 children. All five of these children passed the food challenge. 
+ 
+\textit{JV: The last two row labels should be corrected to 529 and 530; not sure how to fix that in the R code. We should be careful later on to clarify that in the file, the row.names column corresponds to the dataset with all 640 children. Alternatively, that column could be omitted and a separate dataset made with the children with a positive skin test, which could be analyzed in an end-of-chapter exercise.}
+
+\textit{JV: Just curious...so 267 for the peanut consumption group includes the one child with a positive skin test?}
 
 % latex table generated in R 3.1.1 by xtable 1.7-4 package
 % Wed Jul 15 13:59:17 2015
@@ -66,16 +71,13 @@ Table \ref{peanutStudyResultsDF} shows the participant's study ID number, treatm
   640 & LEAP\_997608 & Peanut Consumption & PASS OFC \\ 
    \hline
 \end{tabular}
-
 \caption{Results for five children from the peanut study.}
-\label{peanutStudyResultsDF}
-
+\label{leapStudyResultsDF}
 \end{table}
 
 % library(xtable); xtable(LEAP[c(1,2,3,529, 530),c( "participant.ID", "treatment.group", "overall.V60.outcome")])
 
-
-Summary tables are generally more helpful than individual participant listings  when looking for patterns in data. Table~\ref{peanutStudyResults} shows outcomes grouped by treatment group and the result of the OFC test.
+Summary tables are generally more helpful than individual participant listings  when looking for patterns in data. Table~\ref{leapStudyResults} shows outcomes grouped by treatment group and the result of the OFC test. From this table, it is possible to compute some simple summary statistics. 
 
 % latex table generated in R 3.1.1 by xtable 1.7-4 package
 % Thu Jul 16 07:12:04 2015
@@ -91,22 +93,23 @@ Peanut Avoidance & 36 & 227 & 263 \\
    \hline
 \end{tabular}
 \caption{LEAP Study Results} 
-\label{peanutStudyResults}
+\label{leapStudyResults}
 \end{table}
-%outcome.table = addmargins(table(LEAP$treatment.group, LEAP$overall.V60.outcome))
-%xtable(outcome.table, digits = 0, caption = "LEAP Study Results", caption  = "peanutStudyResults")
+%library(xtable); outcome.table = addmargins(table(LEAP$treatment.group, LEAP$overall.V60.outcome)); xtable(outcome.table, digits = 0, caption = "LEAP Study Results", caption  = "leapStudyResults")
 
-The table makes it possible to compute some simple summary statistics. A \term{summary statistic} is a single number summarizing a large amount of data.\footnote{Formally, a summary statistic is a value computed from the data. Some summary statistics are more useful than others.} In the Peanut Avoidance intervention, the proportion of participants failing the food challenge a 5 years of age was 36/263 = 0.137 (13.7\%); in the Peanut Consumption intervention, the proportion failing was 5/267 = 0.019 (1.9\%). The difference between these two proportions 11.8\% is a single summary statistic showing the gap between the two proportions.  A second summary statistic, the ratio of the two proportions, 0.137/0.019 = 7.31, indicates that the proportion failing on the Avoidance group was more than 7 times that on the Consumption group.   This ratio is called a \term{relative risk}.
+A \term{summary statistic} is a single number summarizing a large amount of data.\footnote{Formally, a summary statistic is a value computed from the data. Some summary statistics are more useful than others.} In the Peanut Avoidance group, the proportion of participants failing the food challenge at 5 years of age is 36/263 = 0.137 (13.7\%); in the Peanut Consumption intervention, the proportion failing is 5/267 = 0.019 (1.9\%). The difference between these two proportions, 11.8\%, is a single summary statistic describing the extent to which these two proportions differ. A second summary statistic, the ratio of the two proportions, 0.137/0.019 = 7.31, indicates that the proportion failing in the Avoidance group is more than 7 times that of the Consumption group.   This ratio is called a \term{relative risk}.
+	
+\textit{JV: Interpretation of RR should be more clearly stated here, or else RR should be omitted entirely.}
 
-The summary statistics for the LEAP study highlight an important point -- the results of a study can sometimes be surprising.  Someone unaware of early preliminary results about the potential value of exposure to peanut products (perhaps a parent of a child allergic to eggs) might be justifiably skeptical about the advisability of feeding peanut butter to his or her child.  The LEAP study suggests that, at least in children similar to those in the study, the benefit might be substantial. 
+The summary statistics for the LEAP study highlight an important point -- the results of a study can sometimes be surprising.  A parent of a child already known to be allergic to eggs might be justifiably skeptical about feeding peanut butter to their child.  The LEAP study suggests that, at least for children similar to those enrolled in the study, the benefits of early exposure might be substantial. 
 
-There are important aspects of the study to be cautious about.  This study was conducted in the United Kingdom at a single site of pediatric care, and it is not at all clear that results in children from that site can be generalized to other countries or cultures.  Even if the study can be generalized, the results also raise an important statistical issue.  Peanut consumption among infants susceptible to peanut allergies should be adopted only if the study results are definitive  Does the study provide definitive evidence that peanut consumption is beneficial? In other words, is the 11.8\% difference between the two groups larger than one would expect by chance variation alone? 
+There are important aspects of the study to be cautious about.  This study was conducted in the United Kingdom at a single site of pediatric care; it is not at all clear that results in children from that site can be generalized to other countries or cultures.  Furthermore, the results also raise an important statistical issue: does the study provide definitive evidence that peanut consumption is beneficial? In other words, is the 11.8\% difference between the two groups larger than one would expect by chance variation alone? 
 
-Suppose a coin is flipped 100 times. While the chance a coin lands heads in any given coin flip is 50\%, it is unlikely for exactly 50 heads to be observed. This type of fluctuation is part of almost experiment or study. It may well be possible that the 8\% difference in the stent study is due to this natural variation. However, the larger the difference we observe (for a particular study size), the less credible it is that the difference is due to chance alone. If out of 100 flips, a coin landed heads up only 5 times, it would be reasonable to doubt that the outcome was due to chance; perhaps the coin is weighted so that tails are more likely to occur.
+Suppose a coin is flipped 100 times. While the chance a coin lands heads in any given coin flip is 50\%, observing exactly 50 heads is unlikely; instead, the coin may land heads 43 times, 51 times, 59 times, etc. This type of fluctuation is part of almost any experiment or study. It may well be possible that the 11.8\% difference in the peanut allergy study is only due to this natural variation, and that the two interventions are actually equally effective. However, the larger the difference observed (for a particular study size), the less credible it is that the difference is due to chance alone. If out of 100 flips, a coin landed heads only 5 times, it would be reasonable to doubt that the outcome was due to chance; perhaps the coin is weighted so that tails are more likely to occur.
 
-The material on hypothesis testing will provide the statistical tools to examine this issue. In LEAP, we will be able to show that the 11.8\% difference was indeed larger that that expected by chance alone if the two interventions were equally effective at preventing subsequent allergies.
+For the LEAP study, the 11.8\% difference is indeed larger than that expected by chance alone, suggesting that peanut consumption is the more effective intervention for preventing subsequent allergies. The material on hypothesis testing in later chapters will provide the statistical tools to examine this issue.
 
-\index{data!leap|)}
+\index{data!LEAP|)}
 
 
 \section{Data basics}
@@ -116,10 +119,10 @@ Effective presentation and description of data is a first step in most analyses.
 
 
 \subsection{Observations, variables, and data matrices}
-\label{basicExampleOfFrogAltitude}
+\label{frogDataExample}
 
 \index{data!frog|(}
-This section describes data used in a study published in the \textit{Journal of Evolutionary Biology} about maternal investment at differing altitudes, conducted in a frog species endemic to the Tibetan Plateau $($\textit{Rana kukunoris}$)$\footnote{ Chen, W., et al. Maternal investment increases with altitude in a frog on the Tibetan Plateau. Journal of evolutionary biology 26.12 (2013): 2710-2715.}. Reproduction is a costly process for females, necessitating a trade-off between individual egg size and total number of eggs produced. Researchers collected measurements on egg clutches found at breeding ponds across 11 study sites; for 5 sites, they also collected data on individual female frogs.
+This section describes data used in a study published in the \textit{Journal of Evolutionary Biology} about maternal investment at differing altitudes, conducted in a frog species endemic to the Tibetan Plateau (\textit{Rana kukunoris}).\footnote{ Chen, W., et al. Maternal investment increases with altitude in a frog on the Tibetan Plateau. Journal of evolutionary biology 26.12 (2013): 2710-2715.} Reproduction is a costly process for females, necessitating a trade-off between individual egg size and total number of eggs produced. Researchers collected measurements on egg clutches found at breeding ponds across 11 study sites; for 5 sites, they also collected data on individual female frogs.
 
 % latex table generated in R 3.1.1 by xtable 1.7-4 package
 % Fri Jul 17 09:47:19 2015
@@ -136,42 +139,44 @@ This section describes data used in a study published in the \textit{Journal of 
    \hline
 \end{tabular}
 \caption{Frog Study Data Matrix} 
-\label{FrogAltitudeDF}
+\label{frogDF}
+\end{table}
+%library(xtable); xtable(frog.altitude[c(1,2,3,529, 530),c( "altitude", "latitude", "egg.size", "clutch.size", "clutch.volume", "body.size")], digits = 2, caption = "Frog Study Data Matrix", label = "frogDF" )
+
+Table~\ref{frogDF} displays rows 1, 2, 3, and 150 of the data from the 431 clutches. The complete set of observations will be referred to as the \data{frog} dataset. Each row in the table corresponds to a single clutch, indicating where the clutch was collected (\var{altitude} and \var{latitude}), \var{egg.size}, \var{clutch.size}, \var{clutch.volume}, and \var{body.size} of the mother when available. "NA" corresponds to a missing value; information on individual females was not collected for that particular site. The columns represent characteristics, called \term{variables}, for each clutch.
+
+For example, the first row represents a clutch collected at altitude 3,462 meters above sea level, latitude 34.82 degrees; the clutch contained an estimated 182 eggs, with individual eggs averaging 1.95 mm in diameter, for a total volume of 177.8 mm$^{3}$. The eggs were laid by a female measuring 3.63 cm long. It is important to understand the definitions of variables, as they are not always obvious. For example, why has \var{clutch.size} not been recorded as whole numbers? This has to do with how the observations were collected. In a given clutch, researchers counted approximately 5 grams' worth of eggs and then estimated the total number of eggs based on the mass of the entire clutch. Definitions of the variables are given in Table~\ref{frogVariables}.\footnote{The data discussed here are in the original scale; in the published paper, values have been log-transformed.}
+
+\begin{table}[t]
+	\centering\small
+	\begin{tabular}{lp{10.5cm}}
+		\hline
+		{\bf variable} & {\bf description} \\
+		\hline
+		\var{altitude} & Altitude of the study site in meters above sea level \\
+		\var{latitude} & Latitude of the study site measured in degrees \\
+		\var{egg.size} & Average diameter of an individual egg to the 0.01 mm  \\
+		\var{clutch.size} & Estimated number of eggs in clutch\\
+		\var{clutch.volume} & Volume of egg clutch in mm$^3$  \\
+		\var{body.size} & Length of mother frog in cm \\
+		\hline
+	\end{tabular}
+	\caption{Variables and their descriptions for the \data{frog} dataset.\vspaceB{-3.5mm}}
+	\label{frogVariables}
 \end{table}
 
-%library(xtable)
-%xtable(frog.altitude[c(1,2,3,529, 530),c( "altitude", "latitude", "egg.size", "clutch.size", 
-%	    "clutch.volume", "body.size")], digits = 2, 
-%	    caption = "Frog Study Data Matrix", label = "FrogAltitudeDF" )
-	
- 
-
-Table~\ref{FrogAltitudeDF} displays rows 1, 2, 3, and 150 of the data from the 431 clutches. The complete set of observations will be referred to as the \data{frog} dataset. Each row in the table corresponds to a single clutch, indicating where the clutch was collected (\var{altitude} and \var{latitude}), \var{egg.size}, \var{clutch.size}, \var{clutch.volume}, and \var{body.size} of the mother when available. \texttt{NA} corresponds to a missing value; information on individual females was not collected for that particular site. The columns represent characteristics, called \var{variables}, for each clutch.
-
-For example, the first row represents a clutch collected at altitude 3,462 meters above sea level, latitude 34.82 degrees; the clutch contained an estimated 182 eggs, with individual eggs averaging 1.95 mm in diameter, for a total volume of 177.8 mm$^{3}$. The eggs were laid by a female measuring 3.63 cm long. It is important to understand the definitions of variables, as they are not always obvious. For example, why has \var{clutch.size} not been recorded as whole numbers? This has to do with how the observations were collected. In a given clutch, researchers counted approximately 5 grams' worth of eggs and then estimated the total number of eggs based on the mass of the entire clutch. Definitions of the variables are given in Table~\ref{FrogAltitudeDF}.
-
-\textit{JV:please create this table of defs, using the famuss table as a model.  Also, we should add that the data discussed here are in the original scale, not transformed, as in the paper.  Note that I have changed some variable names.  Please see the R file oi\_biosta\_ch1.R}
-
-$[$variable definitions$]$
-\begin{comment}
-To measure egg size, 10-30 eggs per clutch were measured. "To obtain a measure of individual egg size, we averaged the minimum and maximum diameter of each egg $($to 0.01 mm$)$." Unclear whether that means each egg has a certain min and max diameter, or whether they averaged largest and smallest diameters of the sample... No details given on how clutch volume was measured; doesn't seem like it was calculated, but maybe I just can't calculate the volume of a sphere correctly. For clutches with mother data, they found pairs of frogs in amplexus, put them in buckets, and waited until females oviposited. Directly afterwards, they measured female body size and clutch characteristics.
-\end{comment}
-
-The data in Table~\ref{FrogAltitudeDF} are organized as a \term{data matrix}. Each row of a data matrix corresponds to a unique observational unit, and each column corresponds to a variable. A data matrix for the LEAP study introduced in Section~\ref{basicExampleOfPeanutAllergies} is shown in Table~\vref{peanutStudyResultsDF}, in which the cases were patients and three variables were recorded for each patient. Data matrices are a convenient way to record and store data. If the data are collected for another individual, another row can easily be added; similarly, another column can be added for a new variable.
+The data in Table~\ref{frogDF} are organized as a \term{data matrix}. Each row of a data matrix corresponds to a unique observational unit, and each column corresponds to a variable. A data matrix for the LEAP study introduced in Section~\ref{leapCaseStudy} is shown in Table~\ref{leapStudyResultsDF} on page~\pageref{leapStudyResultsDF}, in which the cases were patients and three variables were recorded for each patient. Data matrices are a convenient way to record and store data. If the data are collected for another individual, another row can easily be added; similarly, another column can be added for a new variable.
 
 \index{data!frog|)}
-% county data set removed from here
 
 % revisions to here 17 jul 2015.  Fix error in caption vs label in famuss tables, put labels in R code for xtable
 
 \subsection{Types of variables}
 \label{variableTypes}
 
-\index{data!FAMuSS|(}
+\index{data!famuss|(}
 
-The functional polymorphisms Associated with Human Muscle Size and Strength study (FAMuSS) \footnote{Thompson PD, Moyna M, Seip, R, et al., 2004.  Functional Polymorphisms Associated with Human Muscle Size and Strength.  Medicine and Science in Sports and Exercise 36:1132 - 1139}, funded by the National Institutes of Health (NIH), measured a variety of demographic, phenotypic, and genetic characteristics of about 1300 participants. Data from the study has been used in many subsequent populations \footnote{Pescatello L, et al. Highlights from the functional single nucleotide polymorphisms associated with human muscle size and strength or FAMuSS study, BioMed Research International 2013.}, such as a study examining the relationship between muscle strength and a location on the gene \textsl{actn3} \footnote{Clarkson P, et al., Journal of Applied Physiology 99: 154–163, 2005.} Four rows of the \data{FAMuSS} dataset are shown in Table~\ref{FAMuSSDF}, and the variables are summarized in Table~\ref{FAMuSS_subset_Variables}.  Additional 
-
-% add ref to Foulkes website for the data
+The Functional polymorphisms Associated with Human Muscle Size and Strength study (FAMuSS), funded by the National Institutes of Health (NIH), measured a variety of demographic, phenotypic, and genetic characteristics for about 1,300 participants.\footnote{Thompson PD, Moyna M, Seip, R, et al., 2004.  Functional Polymorphisms Associated with Human Muscle Size and Strength.  Medicine and Science in Sports and Exercise 36:1132 - 1139} Data from the study has been used in many subsequent studies\footnote{Pescatello L, et al. Highlights from the functional single nucleotide polymorphisms associated with human muscle size and strength or FAMuSS study, BioMed Research International 2013.}, such as one examining the relationship between muscle strength and genotype at a location on the ACTN3 gene.\footnote{Clarkson P, et al., Journal of Applied Physiology 99: 154-163, 2005.} Four rows of the \data{famuss} dataset are shown in Table~\ref{famussDF}, and the variables are summarized in Table~\ref{famussVariables}.\footnote{Data freely available at \url{http://people.umass.edu/foulkes/asg/data.html}}
 
 % latex table generated in R 3.1.2 by xtable 1.7-4 package
 % Tue Jun 30 14:27:16 2015
@@ -190,13 +195,11 @@ The functional polymorphisms Associated with Human Muscle Size and Strength stud
 	\end{tabular}
 	
 	
-	\caption{Four rows from the \data{FAMuSS} data matrix.}
-	\label{FAMuSSDF}
+	\caption{Four rows from the \data{famuss} data matrix.}
+	\label{famussDF}
 \end{table}
 
-%famuss[c(1,2,3,595),c("sex", "age", "race", "height", "weight", "actn3.r577x", "ndrm.ch")]
-
-%library(xtable);xtable(famuss[c(1,2,3,595),c( "sex", "age", "race", "height", "weight", "actn3.r577x", "ndrm.ch")],digits = 1, caption = "FAMuSSDF")
+%library(xtable); xtable(famuss[c(1,2,3,595),c( "sex", "age", "race", "height", "weight", "actn3.r577x", "ndrm.ch")],digits = 1, caption = "famussDF")
 
 
 \begin{table}[t]
@@ -207,22 +210,24 @@ The functional polymorphisms Associated with Human Muscle Size and Strength stud
 		\hline
 		\var{sex} & Sex of the participant \\
 		\var{age} & Age in years   \\
-		\var{race} & Recorded as African AM (African American), Caucasian, Hispanic and Other.  \\
+		\var{race} & Recorded as African Am (African American), Caucasian, Asian, Hispanic and Other \\
 		\var{height} & Height in inches    \\
 		\var{weight} & Weight in lbs  \\
-		\var{actn3.r577x} & Genotype at the location r577x in the gene actn3. The four genotypes observed were CC, CT and TT \\
+		\var{actn3.r577x} & Genotype at the location r577x in the ACTN3 gene. \\
 		\var{ndrm.ch} & Percent change in strength in the non-dominant arm, comparing strength after to before training \\
 		\hline
 	\end{tabular}
-	\caption{Variables and their descriptions for the \data{FAMuSS} data set.\vspaceB{-3.5mm}}
-	\label{FAMuSS_subset_Variables}
+	\caption{Variables and their descriptions for the \data{famuss} data set.\vspaceB{-3.5mm}}
+	\label{famussVariables}
 \end{table}
 
-\index{data!FAMuSS|)}
+\index{data!famuss|)}
 
-The variables \var{age}, \var{height}, \var{weight}, and \var{ndrm.ch} are \term{numerical} variables. They can take on a wide range of numerical values, and it is possible to add, subtract, or take averages with these values. On the other hand, we would not classify a variable reporting telephone area codes as numerical since their average, sum, and difference have no clear meaning. Age measured in years is said to be \term{discrete}, since it can only take numerical values with jumps. On the other hand, percent change in strength in the non-dominant arm (\var{ndrm.ch}) is said to be \term{continuous}.
+The variables \var{age}, \var{height}, \var{weight}, and \var{ndrm.ch} are \term{numerical} variables. They can take on a wide range of numerical values, and it is possible to add, subtract, or take averages with these values. On the other hand, a variable reporting telephone numbers would not be classified as numerical, since  averages, sums, and differences in this context would have no meaning. Age measured in years is said to be \term{discrete}, since it can only take numerical values with jumps. On the other hand, percent change in strength in the non-dominant arm (\var{ndrm.ch}) is said to be \term{continuous}.
 
-The variables \var{sex}, \var{race}, and \var{actn3.3577x} are \term{categorical} variables, \footnote{sometimes called \term{nominal} variables.} and the possible values are called the variable's \term{levels}. For example, the levels of \var{actn3.3577x} are the three possible genotypes at this particular locus: CC, CT, or TT. Categorical variables with levels that have a natural ordering can be more specifically referred to as \term{ordered categorical} variables. There are no ordered categorical variables in the \data{FAMuSS} data, but it would be easy to create one.  Age of the participants grouped into 5 year intervals (15 - 20, 21 - 25, 26 - 30, etc) would be an ordered categorical variable.  Statistical software such as \textsf{R} call categorical variables \term{factors}, and the possible values of factors are called \term{levels}.
+The variables \var{sex}, \var{race}, and \var{actn3.r577x} are \term{categorical} variables, and the possible values are called the variable's \term{levels}.\footnote{Categorical variables are sometimes called \term{nominal} variables.} For example, the levels of \var{actn3.r577x} are the three possible genotypes at this particular locus: CC, CT, or TT. Categorical variables with levels that have a natural ordering can be more specifically referred to as \term{ordered categorical} variables. There are no ordered categorical variables in the \data{famuss} data, but it would be easy to create one; age of the participants grouped into 5-year intervals (15-20, 21-25, 26-30, etc.) would be an ordered categorical variable.  Statistical software such as \textsf{R} calls categorical variables \term{factors}, and the possible values of factors are called \term{levels}.
+
+In the \data{frog} data, the variables \var{egg.size}, \var{clutch.size}, \var{clutch.volume}, and \var{body.size} are all continuous variables.  \textit{DH: JV, agree about latitude? JV: I don't think either altitude or latitude qualifies, because they refer to 11 specific locations; both function more like categorical variables in this context.}
 
 
 \begin{figure}
@@ -232,161 +237,121 @@ The variables \var{sex}, \var{race}, and \var{actn3.3577x} are \term{categorical
 \label{variables}
 \end{figure}
 
-In the \data{frog} data, the variables \var{latitude}, \var{altitude}, \var{egg.size}, \var{clutch.size}, \var{clutch.volume}, and \var{body.size} are all continuous variables.  \textit{JV: agree about latitude?}
-
-
-
-\begin{example}{Suppose a research assistant collected data on the first 20 individuals to visit one of the new walk in clinics being offered by a major commercial pharmacies.  In addition to other variables, the research assistant collected age (measured as less than 21, 21 - 65, and older than 65 years of age), sex, height, weight, and reason for the visit.  Classify each of the variables as continuous numerical, discrete numerical, or categorical.}
-Height and weight are continuous, numerical variables. Age as  measured by the research assistant is ordered categorical. Sex and the reason for the visit are nominal categorical variables; sex has two categories, while reason for the visit will have many possible values.The number of siblings and student height represent numerical variables. 
+\begin{example}{Suppose a research assistant collected data on the first 20 individuals to visit one of the new walk-in clinics being offered by major commercial pharmacies.  In addition to other variables, the research assistant collected age (measured as less than 21, 21 - 65, and older than 65 years of age), sex, height, weight, and reason for the visit.  Classify each of the variables as continuous numerical, discrete numerical, or categorical.}
+Height and weight are continuous numerical variables. Age as measured by the research assistant is ordered categorical. Sex and the reason for the visit are nominal categorical variables; sex has two categories, while reason for the visit will have many possible values. 
 \end{example}
 
 %% perhaps use the frog study here as well
 
-\begin{exercise} \index{!leap}
-Characterize the data types for the variables \var{participant.ID} \var{treatment.group} and \var{overall.V60.outcome} from the LEAP study in Section~\ref{basicExampleOfPeanutAllergies}.  \footnote{All these variables measure non-numerical quantities, and are categorical. The variables   \var{treatment.group} and \var{outcome.V60.overall} have two values or levels, while \var{participant.ID} has many possible values.}
+\begin{exercise} \index{!LEAP}
+Characterize the variables \var{participant.ID}, \var{treatment.group}, and \var{overall.V60.outcome} from the LEAP study (discussed in Section~\ref{leapCaseStudy}). \footnote{These variables measure non-numerical quantities, and thus are categorical variables. The variables  \var{treatment.group} and \var{outcome.V60.overall} have two values or levels, while \var{participant.ID} has many possible values.}
 \end{exercise}
 
 \subsection{Relationships between variables}
 \label{variableRelations}
 
-Many studies are motivated by a researcher examining a possible relationship between two or more variables. Statistical relationships between two variables occur when they tend to vary in a related way.
+Many studies are motivated by a researcher examining a possible relationship between two or more variables. Statistical relationships between two variables occur when they tend to vary in a related way. A \term{response variable} measures an outcome of interest, while an \term{explanatory variable} may be useful in predicting or understanding the response variable. There may be several possible explanatory variables for a single response variable in a given study.
 
-A \term{response variable} measures an outcome of interest, while an \term{explanatory variable} may be useful in predicting or understanding the response variable. There may be several possible explanatory variables for a single response variable in a given study.
+Researchers were interested in using the \data{famuss} data to answer several questions, including: is ACTN3 genotype associated with variation in muscle function? The ACTN3 gene codes for a protein involved in muscle function. A common mutation (polymorphism) at residue 577 in the ACTN3 gene changes C to T; TT individuals are unable to produce any ACTN3 protein in their muscle. Thus, researchers hypothesized that ACTN3 genotype might influence muscle function in humans. The response variable in this study is \var{ndrm.ch}, the change in non-dominant arm strength, with strength gain being used as a way to measure muscle function. The explanatory variable of interest is \var{actn3.r557x}, ACTN3 genotype at residue 577.  
 
-Researchers were interested in using the \data{FAMuSS} data in order to answer the following question: is ACTN3 genotype associated with variation in muscle function? The ACTN3 gene codes for a protein involved in muscle function. A common polymorphism of ACTN3 at residue 577 that changes C to T produces a stop codon; TT individuals are unable to produce any ACTN3 protein in their muscle. The TT genotype does not cause any discernible phenotype changes, which suggests that the ACTN3 protein is not critical to muscle function. However, the ACTN3 gene is highly conserved, and may potentially influence variation in muscle function.  \textit{`conserved' is a technical term that needs a definition.  Perhaps we can avoid it altogether.  There are too many technical terms in this paragraph generally.}
+Both numerical and graphical ways to examine possible relationships between two variables will be covered later in the text.
 
-The response variable in this study is \var{ndrm.ch}, the change in non-dominant arm strength, with strength gain being used as a way to measure muscle function. The explanatory variable of interest is \var{actn3.r557x}, ACTN3 genotype at residue 577.  Later in the text we will examine methods for characterizing a relationship numerically.  \textit{too vague}
+\begin{example}{In the study conducted on Tibetan frogs, researchers collected measurements on egg clutches and female frogs at 11 study sites, located at differing altitudes. Identify the explanatory and response variables in the study.}
+The explanatory variable examined in the study is \var{altitude}. The variables \var{egg.size}, \var{clutch.size}, \var{clutch.volume}, and \var{body.size} are response variables measuring the level of maternal investment. 
+\end{example}	
 
 \begin{exercise}
-Use the variables from the \data{FAMuSS} data set described in Table~\ref{FAMuSS_subset_Variables} to pose two questions about the relationships between these variables that are different from the question of interest to the research team. \footnote{Two sample questions: (1)  Do participants appear respond differently to training according to race?  (2)  Do male participants appear to respond differently to training than females.}
+Refer to the variables from the \data{famuss} data set described in Table~\ref{famussVariables} to formulate two questions about the relationships between these variables that differ from the one addressed by the research team.\footnote{Two sample questions: (1)  Do participants appear respond differently to training according to race?  (2)  Do male participants appear to respond differently to training than females?}
 
 \end{exercise}
 
-Much of this text examines both numerical and graphical ways to examine possible relationships between two variable.  Scatterplots for numerical variables and mosaic plots for categorical variables are discussed later in this chapter.  \textit{need ref to section}
-
-
-\begin{comment}
-
-
-
-
-
-%%%%%
 \section{Data collection principles}
-\label{DataCollectionPrinciples}
+\label{dataCollectionPrinciples}
 
 \index{sample|(}
 \index{population|(}
 
-The first step in conducting research is to identify questions to investigate. A clearly articulated research question is also essential in identifying the type of subjects to be studied, relevant variables, and how data should be measured. In order to obtain reliable data, it is also important to consider \textit{how} data are collected.
-
-
-
+The first step in conducting research is to identify questions to investigate. A clearly articulated research question is essential for selecting subjects to be studied, identifying relevant variables, and determining how data should be measured. In order to obtain reliable data, it is also important to consider \textit{how} data are collected.
 
 \subsection{Populations and samples}
 \label{populationsAndSamples}
 
-
 \begin{enumerate}
 \setlength{\itemsep}{0mm}
+
 \item What is the average mercury content in swordfish in the Atlantic Ocean?
-\item If an infant seems predisposed to a peanut allergy, is it better to introduce or to avoid that peanut products during the first 6 months of the infant's life.
+
+\item If an infant seems predisposed to a peanut allergy, is it better to introduce or to avoid peanut products during the first 6 months of the infant's life?
+
+\item What proportion of female college students experience sexual victimization?
 
 \end{enumerate}
+
 Each of these questions refers to a target \term{population}. In the first question, the target population is all swordfish in the Atlantic ocean, and each fish represents a case. Almost always, it is either too expensive or logistically impossible to collect data for every case in a population, so nearly all research is based on samples from populations. A \term{sample} represents a subset of the cases and is often a small fraction of the population. For instance, 60 swordfish (or some other number) in the population might be selected, and this sample data may be used (with some assumptions) to provide an estimate of the population average and answer the research question.
 
-\textit{Removed the exercise question on identifying samples for three reasons: the stent example is gone; it refers to the stent example as if it was a drug (it isn't); and I want us to be both realistic and clear about samples.  They are almost never random samples from the ideal target population. If asked, I think almost any student, even at the high school level would say that drawing a random sample from the population of people with a disease is fundamentally impossible.  We can replace the stent example by LEAP, but as in other trials, the validity comes from the randomization among the recruited subjects, not the assumption of it being a RS.}
-
-\textit{We can introduce a question using LEAP}
-
-\textit{I think this is one of our biggest challenges throughout: provide a clear, honest intro to statistics as it is used, not as it is idealized in the math stat books.  The idealization is useful in the theoretical books; it is downright silly at the intro level and causes us to lose good students.}
-
-
+\textit{DH: Removed the exercise question on identifying samples for three reasons: the stent example is gone; it refers to the stent example as if it was a drug (it isn't); and I want us to be both realistic and clear about samples.  They are almost never random samples from the ideal target population. If asked, I think almost any student, even at the high school level would say that drawing a random sample from the population of people with a disease is fundamentally impossible.  We can replace the stent example by LEAP, but as in other trials, the validity comes from the randomization among the recruited subjects, not the assumption of it being a RS.}
 
 \subsection{Anecdotal evidence}
-\label{anecdotalEvidenceSubsection}
+\label{anecdotalEvidence}
 
-Anecdotal evidence is typically composed of unusual observations that are easy recall based on their striking characteristics. Physicians are sometimes more likely to remember the characteristics of patient with an unusually good response to a drug than the features of the many patients who did not respond.  The dangers of drawing general conclusions from anecdotal information are obvious. No single observation can be used to draw conclusions about a population; often, the anecdotal case may not be remembered correctly or may have been measured in error.  To learn about the characteristics of a population, it is necessary to examine a sample of many cases drawn randomly the population.
+Anecdotal evidence is typically composed of unusual observations that are easily recalled based on their striking characteristics. Physicians are sometimes more likely to remember the characteristics of a single patient with an unusually good response to a drug as opposed to the many patients who did not respond.  The dangers of drawing general conclusions from anecdotal information are obvious; no single observation can be used to draw conclusions about a population. Often, the anecdotal case may not have been remembered correctly or may have involved errors in measurements.  To learn about the characteristics of a population, it is necessary to examine a sample of many cases drawn randomly from the population.
 
-Thomas Jefferson, the second president of the United States, recognized the pitfall of drawing conclusions
-from a single observation. In a letter to his nephew, he wrote `` The patient, treated on the fashionable
-theory, sometimes gets well in spite of the medicine. The medicine therefore restored him, and the young
-doctor receives new courage to proceed in his bold experiments on the lives of his fellow creatures. ''
-\footnote{Jefferson, T. (1985). Letters, 1760–1826. Ed. Merrill D. Peterson. New York: Viking.}
+Thomas Jefferson, the second president of the United States, recognized the pitfall of
+drawing conclusions from a single observation. In a letter to his nephew, he wrote "The patient, treated on the fashionable theory, sometimes gets well in spite of the medicine. The medicine therefore restored him, and the young doctor receives new courage to proceed in his bold experiments on the lives of his fellow creatures." \footnote{Jefferson, T.(1985). Letters, 1760–1826. Ed. Merrill D. Peterson. New York: Viking.}
 
-While it is incorrect to generalize from individual observations, scientists know that interesting observations can be valuable.  Striking observations may be a reason to question assumptions or to design a study to examine an unconventional question more closely.  Cures for certain diseases have been discovered in research inspired by a response to a new drug of a patient with a disease thought be be incurable.  \textit{Insert references sent by D Longo and D. Spriggs here.}  
+\textit{JV: I find the reference to TJ rather funny, but I suspect the story only appeals to people with a very specific sense of humor...Would it break your heart to omit this? Doing so may also improve the flow here.}
+
+While it is incorrect to generalize from individual observations, scientists know that unusual observations can sometimes be valuable; such observations may be a reason to question previously held assumptions or to design a study to examine an unconventional perspective.  Cures for certain diseases have been discovered through research inspired by a patient with a disease thought be be incurable responding to a new drug.  \textit{DH: Insert references sent by D Longo and D. Spriggs here. JV: This last sentence is too vague/unwieldy, adjust once references are included.}  
 
 An anecdotal observation can never be the basis for a conclusion, but it may well lead to the design of a more systematic study that could be definitive.
 
-\begin{termBox}{\tBoxTitle{Anecdotal evidence}
-Be careful of data collected in a haphazard fashion. Such evidence may be true and verifiable, but it may only represent extraordinary cases.}
-\end{termBox}
-
-
-%\begin{comment}
 \subsection{Sampling from a population}
 
-Sampling from a population is a useful tool in population based research in the health sciences.  When done carefully, it provides reliable information about the health characteristics of a large population without having to measure those characteristics on every member, often an impossible task.  The US Centers for Disease Control (US CDC) conducts many such surveys, including the Behavioral Risk Factors Surveillance System (BRFSS)\footnote{\url{ http://www.cdc.gov/brfss/}}.  The BRFSS conducts approximately 400,000 telephone interviews annually to ask U.S. residents regarding their health-related risk behaviors, chronic health conditions, and use of preventive services.  The CDC conducts similar surveys in diabetes, health care access, and immunization.  The World Health Organization (WHO) conducts the World Health Survey in partnership  with approximately 70 countries to learn about the health of adult populations and the health systems in these countries \footnote{\url{http://www.who.int/healthinfo/survey/en/}}.  In 2000, the US Department of Justice released the \textit{The Sexual Victimization of College Women} \footnote{\url{https://www.ncjrs.gov/pdffiles1/nij/182369.pdf}}, based on a survey of 4,446 women undergraduates conducted in 1996.  \textit{we should check to see if the data are available.}
+Sampling from a population is a useful tool in population-based research in the health sciences.  When done carefully, it provides reliable information about the health characteristics of a large population without having to directly measure those characteristics for each member, which is often an impossible task.  The US Centers for Disease Control (US CDC) conducts many such surveys, including the Behavioral Risk Factors Surveillance System (BRFSS)\footnote{\url{ http://www.cdc.gov/brfss/}}.  The BRFSS conducts approximately 400,000 telephone interviews annually to ask U.S. residents questions regarding their health-related risk behaviors, chronic health conditions, and use of preventive services.  The CDC conducts similar surveys for diabetes, health care access, and immunization. Likewise, the World Health Organization (WHO) conducts the World Health Survey in partnership  with approximately 70 countries to learn about the health of adult populations and the health systems in those countries.\footnote{\url{http://www.who.int/healthinfo/survey/en/}}  In 2000, the US Department of Justice released the \textit{The Sexual Victimization of College Women}, based on a survey conducted in 1996 of 4,446 undergraduate women.\footnote{\url{https://www.ncjrs.gov/pdffiles1/nij/182369.pdf}}  
 
+\textit{DH: we should check to see if the data are available at DoJ website. JV: The page for the sexual victimization survey only references NCVS data, which is freely available online (scroll down to "Codebooks and Datasets" under Documentation section), but I couldn't find data for questions specific to that survey. Perhaps better to switch to a survey for which data are available online? For example, Gender and Violent Victimization, see http://doi.org/10.3886/ICPSR27082.v1}
 
+\textit{DH: placeholder for the Harvard survey, despite its flaws}
 
- \textit{placeholder for the Harvard Survey, despite its flaws}
+Sampling from a population is easier when the population is relatively small and members of the population are easy to identify and contact.  For instance, the quality care team at an integrated health care system, such as Kaiser Permanente or Harvard Pilgrim Health Care, might like to learn about how members of the system perceive quality of care.  Since health plans have contact information for each of their members, a selected subset can be contacted (with their consent) for participation in an interview or mailed survey.  More complex methods are required for other surveys, such as the study on sexual victimization of college women. 
 
+One common downfall in conducting a sample is to use a \term{convenience sample}\index{sample!convenience sample}, in which individuals who are easily accessible are more likely to be included in the sample. For instance, the quality control team in the healthcare plan might ask interviewers to approach plan members visiting an outpatient clinic during a particular week.  The sample would fail to enroll generally healthy members who typically do not use outpatient services or schedule routine physical examinations. Similarly, the Department of Justice could have only sampled women in colleges or universities in or near the District of Columbia.
 
-Sampling from a population is easier when a population is relatively small and members of the population are easy to identify and reach.  For instance, the quality care team at an integrated health care system, such as Kaiser Permanente or Harvard Pilgrim Health Care might like to learn about the perception of care by members of the system.  Since health plans have contact information for each of their members, a selected subset can be contacted and, with their consent, participate in an interview or mailed survey.  More complex methods are used in surveys such as the study of sexual victimization of college women.  The general principle of sampling is straightforward; a sample from a population is useful in learning about a population only when the sample matches, on average, the characteristics of the population.  
-
-One common downfall in conducting a sample is to use  a \term{convenience sample}\index{sample!convenience sample}, where individuals who are easily accessible are more likely to be included in the sample. For instance, the quality control team in the health care plan might ask interviewers to approach plan members visiting an outpatient clinic during a particular week.  The sample would not enroll generally healthy members who typically do not use outpatient services or schedule routine physical examinations. 
-
-Random sampling is best way to insure that a sample reflects a population, because random samples do not reflect the conscious or unconscious bias of the team gathering the sample.  Even a well-defined sampling strategy can lead to an unrepresentative sample if there are substantial barriers to subject participation, such as questions that assume participants are fluent in English or calls to potential participants that do not account for working hours or time-zone differences.   The easiest random samples to analyze are those in which each member of a population has the same chance of being sampled. In \term{simple random samples}, each member of the population is chosen directly for the sample, with probability the size of the sample divided by the size of the population. Simple random samples are essentially equivalent to how raffles are conducted. In the health plan example, a subset of members might be chosen randomly from the plan membership roster and called.  More complex sampling methods are sometimes used in larger populations, and despite their complexity, are often designed to ensure that each member of a population has equal chance of being included in the sample.  The Department of Justice report of sexual victimization describes the sampling strategy used to draw a random sample of women attending 2- or 4-year colleges with at least 1,000 students during the fall of 1996.  \textsl{OpenIntro}, third edition, Section 1.4.2 describes the 4 most commonly used sampling strategies.
- 
-
-Sometimes a simple random sample is difficult to implement and an alternative method is helpful. One such substitute is a \term{systematic sample}, where one case is sampled after letting a fixed number of others, say 10 other cases, pass by. Since this approach uses a mechanism that is not easily subject to personal biases, it often yields a reasonably representative sample. This book will focus on random samples since the use of systematic samples is uncommon and requires additional considerations of the context.
-
-The act of taking a simple random sample helps minimize bias, however, bias can crop up in other ways.
-Even when people are picked at random, e.g. for surveys, caution must be exercised if the \term{non-response} \index{sample!non-response|textbf} is high. For instance, if only 30\% of the people randomly sampled for a survey actually respond, then it is unclear whether the results are \term{representative} of the entire population. This \term{non-response bias} \index{sample!non-response bias|textbf} can skew results.  Since it is usually impossible to obtain reliable results from surveys with high non-response rates, it is best to minimize the barriers that might discourage subject participation, such as English only surveys in populations where some members may not use English as a first language. 
-
-\textit{adapt Open Intro graphic here?  I have left them in for placeholders}
-
-
-
-
+\begin{figure}
+	\centering
+	\includegraphics[width=0.47\textwidth]{ch_intro_to_data_oi_biostat/figures/sampleHealthPlan/sampleConvenienceHealthPlan}
+	\caption{Instead of sampling from all members equally, approaching members visiting a clinic during a particular week would disproportionately select members who typically use outpatient services.}
+	\label{sampleConvenienceHealthPlan}
+\end{figure}
 
 \index{sample!random sample|(}
 
+The general principle of sampling is straightforward; a sample from a population is useful for learning about a population only when the sample matches, on average, the characteristics of the population. Random sampling is the best way to ensure that a sample reflects a population, because random samples do not reflect the conscious or unconscious bias of the team gathering the sample.  However, even a well-defined sampling strategy can lead to an unrepresentative sample if there are substantial barriers to subject participation, such as questions that assume participants are fluent in English or calls to potential participants that do not account for working hours or time-zone differences. 
 
-
-
+The easiest random samples to analyze are those in which each member of a population has the same chance of being sampled. In a \term{simple random sample}, each member of the population is directly chosen at random for the sample, with probability the size of the sample divided by the size of the population. Simple random samples are essentially equivalent to how raffles are conducted. For example, if there are 5 prizes available and 100 people each have a single ticket, each person has a 5\% chance (5/100) of being called. In the health plan example, a subset of members might be chosen randomly from the plan membership roster for an interview. \textsl{OpenIntro}, third edition, Section 1.4.2 describes the four most commonly used sampling strategies. 
 
 \begin{figure}[ht]
-\centering
-\includegraphics[width=0.47\textwidth]{ch_intro_to_data_oi_biostat/figures/popToSample/popToSampleGraduates}
-\caption{In this graphic, five graduates are randomly selected from the population to be included in the sample.}
-\label{popToSampleGraduates}
+	\centering
+	\includegraphics[width=0.47\textwidth]{ch_intro_to_data_oi_biostat/figures/sampleHealthPlan/sampleHealthPlan}
+	\caption{In this graphic, five members are randomly selected from the population to be interviewed.}
+	\label{sampleHealthPlan}
 \end{figure}
 
+Sometimes a simple random sample is difficult to implement and an alternative method is helpful. One such substitute is a \term{systematic sample}, in which one case is sampled after letting a fixed number of other cases pass by. Since this approach uses a mechanism that is not easily subject to personal biases, it often yields a reasonably representative sample. This book will focus on random samples since the use of systematic samples is uncommon and requires additional considerations of the context. \textit{JV: It may be possible to omit this paragraph. If not, needs an example.}
 
-
-\begin{figure}
-\centering
-\includegraphics[width=0.47\textwidth]{ch_intro_to_data_oi_biostat/figures/popToSample/popToSubSampleGraduates}
-\caption{Instead of sampling from all graduates equally, a nutrition major might inadvertently pick graduates with health-related majors disproportionately often.}
-\label{popToSubSampleGraduates}
-\end{figure}
-
-
-
+The act of taking a simple random sample helps minimize bias, but bias can crop up in other ways. Even when people are picked at random, caution must be exercised if the \term{non-response} \index{sample!non-response|textbf} is high. For instance, if only 30\% of the people randomly sampled for a survey actually respond, then it is unclear whether the results are truly \term{representative} of the entire population. Such \term{non-response bias} \index{sample!non-response bias|textbf} can skew results; it is important to minimize barriers that might discourage subject participation in order to collect reliable data.
 
 \begin{figure}[h]
-\centering
-\includegraphics[width=0.5\textwidth]{ch_intro_to_data_oi_biostat/figures/popToSample/surveySample}
-\caption{Due to the possibility of non-response, surveys studies may only reach a certain group within the population. It is difficult, and often times impossible, to completely fix this problem.}
-\label{surveySample}
+	\centering
+	\includegraphics[width=0.5\textwidth]{ch_intro_to_data_oi_biostat/figures/sampleHealthPlan/sampleNonResponseHealthPlan}
+	\caption{Due to the possibility of non-response, surveys studies may only reach a certain group within the population. For example, a survey written in English may only result in responses from health plan members fluent in English.}
+	\label{sampleNonResponseHealthPlan}
 \end{figure}
 
 
 \begin{exercise}
 	
-\textit{replace this with a better example}
+\textit{DH: replace this with a better example}
 We can easily access ratings for products, sellers, and companies through websites. These ratings are based only on those people who go out of their way to provide a rating. If 50\% of online reviews for a product are negative, do you think this means that 50\% of buyers are dissatisfied with the product?\footnote{Answers will vary. From our own anecdotal experiences, we believe people tend to rant more about products that fell below expectations than rave about those that perform as expected. For this reason, we suspect there is a negative bias in product ratings on sites like Amazon. However, since our experiences may not be representative, we also keep an open mind.}
 \end{exercise}
 
@@ -394,113 +359,85 @@ We can easily access ratings for products, sellers, and companies through websit
 \index{population|)}
 \index{sample|)}
 
-%\end{comment}
-
 \subsection{Introducing experiments and observational studies}
-%reversed the order for clarity
-Experiments and observational studies are the two primary types of study designs.
 
-\textit{revisions to here 25jul 16:57}
+Experiments and observational studies are the two primary types of study designs used to collect data.
 
-When researchers want to investigate the possibility of a causal connection, they conduct an \term{experiment}. For instance, we may suspect that administering a certain drug will reduce mortality in heart attack patients. To find evidence for a causal connection between the explanatory and response variables, researchers will collect a sample of individuals and split them into groups. The individuals in each group are randomly assigned into one of two groups: the first group receives a \term{placebo} (fake treatment) and the second group receives the drug. 
+When researchers want to investigate the possibility of a causal connection, they conduct an \term{experiment}. For instance, it might be hypothesized that administering a certain drug will reduce mortality in heart attack patients. To find evidence for a causal connection between the explanatory and response variables, researchers will collect a sample of individuals and randomly assign them into one of two groups. The first group, called a control group, may receive either a \term{placebo} (an inert substance with the appearance of the study drug) or a commonly used drug known to have some effect; the second group (the experimental group) receives the new drug. 
 
-Researchers perform an \term{observational study} when they collect data in a way that does not directly interfere with how the data arise. For instance, researchers may collect information via surveys, review medical or company records, or follow a \term{cohort} of many similar individuals to study why certain diseases might develop. In each of these situations, researchers merely observe the data that arise. Observational studies can provide evidence of an association between variables, but they cannot by themselves show a causal connection. 
+Researchers perform an \term{observational study} when they collect data in a way that does not directly interfere with how the data arise. For instance, to study why certain diseases develop, researchers may collect information through conducting surveys, reviewing medical or company records, or following a \term{cohort} of many similar individuals. In each of these situations, researchers merely observe the data that arise. Observational studies can provide evidence of an association between variables, but they cannot by themselves show a causal connection. In general, causation can only be inferred from a randomized experiment.
 
-%\begin{tipBox}{\tipBoxTitle{association $\neq$ causation}
-%In general, association does not imply causation, and causation can only be inferred from a randomized experiment.}
-%\end{tipBox}
+\subsection[Experiments]{Experiments}
+\label{experiments}
 
-%%%%%
-\subsection[Experiments]{Experiments \sectionvideohref{youtube-g7JGe_ykB3I&list=PLkIselvEzpM6pZ76FD3NoCvvgkj_p-dE8}}
-\label{experimentsSection}
+Studies in which researchers assign treatments to cases are called \termsub{experiments}{experiment}. Randomized experiments are generally built on three principles.
 
-Studies where the researchers assign treatments to cases are called \termsub{experiments}{experiment}. Randomized experiments are generally built on three principles.
+\index{data!LEAP|(}
 
-%\subsection{Principles of experimental design}
-%\label{experimentalDesignPrinciples}
-
-%these are the actual principles, whereas blocking is a way to achive randomization.
 \begin{description}
-	\item[Controlling.] Researchers assign treatments to cases, and they do their best to \term{control} for any other differences in the groups. For example, in the stent study, patients in both groups received medical management, which included medications, management of stroke risk factors, and counseling on lifestyle modification. Effectively controlling variables is essential for making meaningful comparisons between treatment and control groups.
-	\item[Randomization.] Researchers randomize patients into treatment groups to account for variables that cannot be controlled. For example, some patients may have been more susceptible to stroke than others due to dietary habits or genetic risk factors. Randomizing patients into the treatment or control group helps even out such differences. In situations where researchers suspect that variables other than the treatment influence the response, they may first group individuals into \term{blocks} and then, within each block, randomize cases to treatment groups; this technique is referred to as \term{blocking} or \term{stratification}. Methods for analyzing blocked data are relatively complicated and will not be covered in this book.
-	\item[Replication.] The more cases researchers observe, the more accurately they can estimate the effect of the explanatory variable on the response. In a single study, we \term{replicate} by collecting a sufficiently large sample.
+
+	\item[Controlling.] Researchers assign treatments to cases, doing their best to \term{control} for any other differences in the groups. For example, all infants enrolled in the LEAP study were required to be between 4 and 11 months of age, with severe eczema and/or allergies to eggs.
+
+	\item[Randomization.] Researchers randomize patients into treatment groups to account for variables that cannot be controlled. For example, some infants may have been more susceptible to peanut allergies because of an unmeasured genetic condition. Randomly assigning patients to the treatment or control group helps even out such differences. In situations where researchers suspect that variables other than the treatment may influence the response, they may first group individuals into \term{blocks} and then, within each block, randomize cases to treatment groups; this technique is referred to as \term{blocking} or \term{stratification}.  In the LEAP study, infants were stratified into two cohorts based on whether or not the child developed a red, swollen mark (a wheal) after a skin test at the time of enrollment. The main analysis of the study analyzed data collected for infants without a wheal after the skin test. Figure~\ref{leapBlocking} illustrates the blocking scheme used in the study. General methods for analyzing blocked data are relatively complicated and will not be covered in this book.
+
+	\item[Replication.] The more cases researchers observe, the more accurately they can estimate the effect of the explanatory variable on the response. In a single study, \term{replication} is accomplished by collecting a sufficiently large sample. The LEAP study randomized a total of 640 infants; 542 infants were in the block without the wheal response. 
+
 \end{description}
 
-\begin{comment}
+It is important to incorporate the three experimental design principles into any study; this book describes applicable methods for analyzing data from such experiments. Blocking is a slightly more advanced technique, and statistical methods in this book may be extended to analyze data collected using blocking.
+	
+\textit{DH: Update the following figure for the LEAP data. JV: I changed the labels, but I'm getting lost in how to change the number in individuals in each group so that they are not equal.}
+
 	\begin{figure}
 		\centering
-		\includegraphics[width=0.78\textwidth]{ch_intro_to_data_oi_biostat/figures/figureShowingBlocking/figureShowingBlocking}
-		\caption{Blocking using a variable depicting patient risk. Patients are first divided into low-risk and high-risk blocks, then each block is evenly separated into the treatment groups using randomization. This strategy ensures an equal representation of patients in each treatment group from both the low-risk and high-risk categories.}
-		\label{figureShowingBlocking}
+		\includegraphics[width=0.78\textwidth]{ch_intro_to_data_oi_biostat/figures/leapBlocking/leapBlocking}
+		\caption{A simplified schematic of the blocking scheme used in the LEAP study, depicting 54 patients that underwent randomization. Patients are first divided into groups based on response to the initial skin test, then each block is evenly separated into the treatment groups using randomization. This strategy ensures an even representation of patients in each treatment group from both the skin test positive and skin test negative groups.}
+		\label{leapBlocking}
 	\end{figure}
-	
-	\item[Blocking.] Researchers sometimes know or suspect that variables, other than the treatment, influence the response. Under these circumstances, they may first group individuals based on this variable into \term{blocks} and then randomize cases within each block to the treatment groups. This strategy is often referred to as \term{blocking}. For instance, if we are looking at the effect of a drug on heart attacks, we might first split patients in the study into low-risk and high-risk blocks, then randomly assign half the patients from each block to the control group and the other half to the treatment group, as shown in Figure~\ref{figureShowingBlocking}. This strategy ensures each treatment group has an equal number of low-risk and high-risk patients.
 
-It is important to incorporate the first three experimental design principles into any study, and this book describes applicable methods for analyzing data from such experiments. Blocking is a slightly more advanced technique, and statistical methods in this book may be extended to analyze data collected using blocking.
-\end{comment}
-
-\begin{comment}
+\index{data!LEAP|)}
 
 \subsection{Reducing bias in human experiments}
 \label{biasInHumanExperiments}
 
-Randomized experiments are the gold standard for data collection, but they do not ensure an unbiased perspective into the cause and effect relationships in all cases. Human studies are perfect examples where bias can unintentionally arise. Here we reconsider a study where a new drug was used to treat heart attack patients.\footnote{Anturane Reinfarction Trial Research Group. 1980. Sulfinpyrazone in the prevention of sudden death after myocardial infarction. New England Journal of Medicine 302(5):250-256.} In particular, researchers wanted to know if the drug reduced deaths in patients.
+Randomized experiments are the gold standard for data collection, but they do not automatically ensure an unbiased perspective in all cases. Human studies are perfect examples where bias can arise unintentionally. 
 
-These researchers designed a randomized experiment because they wanted to draw causal conclusions about the drug's effect. Study volunteers\footnote{Human subjects are often called \term{patients}, \term{volunteers}, or \term{study participants}.} were randomly placed into two study groups. One group, the \term{treatment group}, received the drug. The other group, called the \term{control group}, did not receive any drug treatment.
+In 1980, researchers reported the results of a study assessing the efficacy of a new drug used to treat heart attack patients.\footnote{Anturane Reinfarction Trial Research Group. 1980. Sulfinpyrazone in the prevention of sudden death after myocardial infarction. New England Journal of Medicine 302(5):250-256.} Researchers wanted to know whether the drug reduced deaths in patients; in order to draw causal conclusions about the effect of the drug, they designed a randomized experiment in which study volunteers were randomly assigned to one of two study groups.\footnote{Human subjects are often called \term{patients}, \term{volunteers}, or \term{study participants}.} The \term{treatment group} received the drug; the other group, called the \term{control group}, did not receive any drug treatment.
 
-Put yourself in the place of a person in the study. If you are in the treatment group, you are given a fancy new drug that you anticipate will help you. On the other hand, a person in the other group doesn't receive the drug and sits idly, hoping her participation doesn't increase her risk of death. These perspectives suggest there are actually two effects: the one of interest is the effectiveness of the drug, and the second is an emotional effect that is difficult to quantify.
+Typically, researchers do not want patients to know which group they are in. The emotional response of a patient who knows they are either receiving or not receiving a potentially helpful new drug may cause different behavior between the two groups. In order to eliminate this source of bias from the study, researchers conduct a \term{blinded} study in which patients are kept uninformed about their treatment. Patients in the control group, instead of being given a drug, are given an inert substance called a \term{placebo}. An effective placebo is the key to making a study truly blind. A placebo may often result in a slight but real improvement in patients; this effect is referred to as the \term{placebo~effect}.\footnote{Kaptchuk, TJ and Miller, FG. 2015.Placebo effects in medicine, New England Journal of Medicine, 373(1):8-9.}
 
-Researchers aren't usually interested in the emotional effect, which might bias the study. To circumvent this problem, researchers do not want patients to know which group they are in. When researchers keep the patients uninformed about their treatment, the study is said to be \term{blind}. But there is one problem: if a patient doesn't receive a treatment, she will know she is in the control group. The solution to this problem is to give fake treatments to patients in the control group. A fake treatment is called a \term{placebo}, and an effective placebo is the key to making a study truly blind. A classic example of a placebo is a sugar pill that is made to look like the actual treatment pill. Often times, a placebo results in a slight but real improvement in patients. This effect has been dubbed the \term{placebo~effect}.
-
-The patients are not the only ones who should be blinded: doctors and researchers can accidentally bias a study. When a doctor knows a patient has been given the real treatment, she might inadvertently give that patient more attention or care than a patient that she knows is on the placebo. To guard against this bias, which again has been found to have a measurable effect in some instances, most modern studies employ a \term{double-blind} setup where doctors or researchers who interact with patients are, just like the patients, unaware of who is or is not receiving the treatment.\footnote{There are always some researchers involved in the study who do know which patients are receiving which treatment. However, they do not interact with the study's patients and do not tell the blinded health care professionals who is receiving which treatment.}
+The patients are not the only ones who should be blinded: doctors and researchers can accidentally bias a study. For example, out of concern for potential side effects of a new drug, a doctor might inadvertently give a patient in the treatment group more attention and care than they would to a patient known to be taking a placebo. To guard against this bias, which has also been found to have a measurable effect in some instances, most modern studies employ a \term{double-blind} setup in which doctors who interact with patients are, just like the patients, unaware of who is or is not receiving the experimental treatment.\footnote{There are always some researchers involved in the study who do know which patients are receiving which treatment. However, they do not directly interact with patients and do not tell the blinded health care professionals who is receiving which treatment.}
 
 \begin{exercise}
-	Look back to the study in Section~\ref{basicExampleOfStentsAndStrokes} where researchers were testing whether stents were effective at reducing strokes in at-risk patients. Is this an experiment? Was the study blinded? Was it double-blinded?\footnote{The researchers assigned the patients into their treatment groups, so this study was an experiment. However, the patients could distinguish what treatment they received, so this study was not blind. The study could not be double-blind since it was not blind.}
+	Look back to the study in Section~\ref{leapCaseStudy} in which researchers were testing whether peanut product consumption was effective at reducing the likelihood of peanut allergies in children at-risk for these allergies. Is this an experiment? Was the study blinded? Was it double-blinded? \footnote{The researchers assigned the patients into their treatment groups, so this study was an experiment. However, the patients (and their parents) could distinguish which treatment they received, so this study was not blind. The study could not be double-blind since it was not blind.}
 \end{exercise}
-
-\end{comment}
-
-%%%%%
-%\section[Observational studies and sampling strategies]{Observational studies and sampling strategies %\sectionvideohref{youtube-n1xSeGPGQEg&list=PLkIselvEzpM6pZ76FD3NoCvvgkj_p-dE8}}
 
 \subsection{Observational studies}
 
-Generally, data in observational studies are collected only by monitoring what occurs, while experiments require the primary explanatory variable in a study be assigned for each subject by the researchers.
+Generally, data in observational studies are collected only by monitoring what occurs, while experiments require researchers to assign the primary explanatory variable in a study for each subject \textit{JV: This sentence should be reworded for clarity, not sure how.} Making causal conclusions based on experiments is often reasonable; however, making the same causal conclusions solely based on observational data should be avoided. 
 
-Making causal conclusions based on experiments is often reasonable. However, making the same causal conclusions based on observational data can be treacherous and is not recommended. Thus, observational studies are generally only sufficient to show associations.
+\textit{DH: This is another instance where absolute statements are risky.  The data on smoking and lung cancer are all observational, or were until a short time ago.  I wonder if we should mention that. JV: I have adjusted the language in the first paragraph. Scroll down past the sunscreen example to see where I think the mention of smoking and lung cancer can come in.}
 
-\begin{comment}
-
-\begin{exercise} \label{sunscreenLurkingExample}
-Suppose an observational study tracked sunscreen use and skin cancer, and it was found that the more sunscreen someone used, the more likely the person was to have skin cancer. Does this mean sunscreen \emph{causes} skin cancer?\footnote{No. See the paragraph following the exercise for an explanation.}
-\end{exercise}
-
-Some previous research tells us that using sunscreen actually reduces skin cancer risk, so maybe there is another variable that can explain this hypothetical association between sunscreen usage and skin cancer. One important piece of information that is absent is sun exposure. If someone is out in the sun all day, she is more likely to use sunscreen \emph{and} more likely to get skin cancer. Exposure to the sun is unaccounted for in the simple investigation.
-\begin{center}
-\includegraphics[height=1.0in]{ch_intro_to_data_oi_biostat/figures/variables/sunCausesCancer}
-\end{center}
+Suppose an observational study tracked sunscreen use and skin cancer, finding that the more sunscreen a person uses, the more likely they are to have skin cancer. However, this does not mean that sunscreen \emph{causes} skin cancer. One important piece of missing information is sun exposure -- if someone is out in the sun all day, they are both more likely to use sunscreen and to get skin cancer. Sun exposure is a  \term{confounding variable}: a variable correlated with both the explanatory and response variables.\footnote{Also called a \term{lurking variable}, \term{confounding factor}, or a \term{confounder}.} There is no guarantee that all confounding variables can be examined or measured; as a result, it is difficult to justify making causal conclusions from observational studies. 
 % Some studies:
 % http://www.sciencedirect.com/science/article/pii/S0140673698121682
 % http://archderm.ama-assn.org/cgi/content/abstract/122/5/537
 % Study with a similar scenario to that described here:
 % http://onlinelibrary.wiley.com/doi/10.1002/ijc.22745/full
 
-Sun exposure is what is called a \term{confounding variable},\footnote{Also called a \term{lurking variable}, \term{confounding factor}, or a \term{confounder}.} which is a variable that is correlated with both the explanatory and response variables. While one method to justify making causal conclusions from observational studies is to exhaust the search for confounding variables, there is no guarantee that all confounding variables can be examined or measured.
+\begin{center}
+	\includegraphics[height=1.0in]{ch_intro_to_data_oi_biostat/figures/variables/sunCausesCancer}
+\end{center}
 
-In the same way, the \data{county} data set is an observational study with confounding variables, and its data cannot easily be used to make causal conclusions.
+Observational studies are useful in that they can reveal interesting patterns or associations, providing researchers with the information necessary to design follow-up experiments. For example...
 
-\end{comment}
+\textit{JV: Smoking and lung cancer can come in here, or anything else that illustrates the point, which I think is an important one. There might also be an example here that asks for a description of a reasonable follow-up experiment from some observational data -- frog and famuss both seem too difficult, though.}
 
-\begin{exercise}
-Figure~\ref{multiunitsVsOwnership} shows a negative association between the homeownership rate and the percentage of multi-unit structures in a county. However, it is unreasonable to conclude that there is a causal relationship between the two variables. Suggest one or more other variables that might explain the relationship visible in Figure~\ref{multiunitsVsOwnership}.\footnote{Answers will vary. Population density may be important. If a county is very dense, then this may require a larger fraction of residents to live in multi-unit structures. Additionally, the high density may contribute to increases in property value, making homeownership infeasible for many residents.}
-\end{exercise}
+Observational studies come in two forms: prospective and retrospective studies. A \term{prospective study} identifies individuals and collects information as events unfold. For instance, medical researchers may identify and follow a group of similar individuals over many years to assess the possible influences of behavior on cancer risk. One example of such a study is The Nurses' Health Study, started in 1976 and expanded in 1989.\footnote{\texttt{\oiRedirect{textbook-channing_nurse_study}{www.channing.harvard.edu/nhs}}} This prospective study recruits registered nurses and then collects data from them using questionnaires. \termsub{Retrospective studies}{retrospective studies} collect data after events have taken place, e.g. researchers may review past events in medical records. Some datasets may contain both prospectively- and retrospectively-collected variables. \textit{DH: need an example of this.  famuss does not qualify, I think.  The flanders dental study would qualify but has not been introduced at this point. JV: The dental study can be introduced here in the same way as the Nurses' Health study, then.}
 
-Observational studies come in two forms: prospective and retrospective studies. A \term{prospective study} identifies individuals and collects information as events unfold. For instance, medical researchers may identify and follow a group of similar individuals over many years to assess the possible influences of behavior on cancer risk. One example of such a study is The Nurses' Health Study, started in 1976 and expanded in 1989.\footnote{\oiRedirect{textbook-channing_nurse_study}{www.channing.harvard.edu/nhs}} This prospective study recruits registered nurses and then collects data from them using questionnaires. \termsub{Retrospective studies}{retrospective studies} collect data after events have taken place, e.g. researchers may review past events in medical records. Some data sets, such as \data{county}, may contain both prospectively- and retrospectively-collected variables. Local governments prospectively collect some variables as events unfolded (e.g. retails sales) while the federal government retrospectively collected others during the 2010 census (e.g. county population counts).
-
-\textbf{[briefly discuss simple random sampling]}
+\textit{DH: I have commented out the section on sampling methods, though I like it.  It will take some work to find example to make the sampling methods concrete. I have left the OpenIntro source for this topic in our source.}
 
 \begin{comment}
-
 \subsection{Four sampling methods (special topic)}
 \label{fourSamplingMethods}
 \label{threeSamplingMethods}
@@ -542,152 +479,161 @@ A simple random sample would likely draw individuals from all 30 villages, which
 
 \end{comment}
 
-
-%%%%%
-\section[Examining numerical data]{Examining numerical data \sectionvideohref{youtube-Xm0PPtci3JE&list=PLkIselvEzpM6pZ76FD3NoCvvgkj_p-dE8}}
+\section[Examining numerical data]{Examining numerical data}
 \label{numericalData}
 
-\textit{some revisions from JV in this section}
+\index{data!frog|(}
 
-This section introduces techniques for exploring and summarizing numerical variables. The \data{frog\_altitude} dataset from Section~\ref{dataBasics} provides rich opportunities for examples. 
+This section introduces techniques for exploring and summarizing numerical variables, using the \data{frog} data from Section~\ref{dataBasics}.
 
 \subsection{Measures of center: mean and median}
-\label{measuresOfCenterAndSpread}
+\label{measuresOfCenter}
 
-The \term{mean}, sometimes called the \indexthis{average}{mean!average}, is a common way to measure the center of a \term{distribution} of data. To find the average clutch volume for all observed egg clutches, we add up all the clutch volumes and divide by the total number of clutches. For computational convenience, the volumes are rounded to the first~decimal.
+The \term{mean}, sometimes called the \indexthis{average}{mean!average}, is a common way to measure the center of a \term{distribution} of data. To find the average clutch volume for the observed egg clutches, we add up all the clutch volumes and divide by the total number of clutches. For computational convenience, the volumes are rounded to the first~decimal.
 \begin{eqnarray}
-\bar{x} = \frac{177.8 + 257.0 + \cdots + 933.3}{431} = 882.5 mm^{3}
+\overline{x} = \frac{177.8 + 257.0 + \cdots + 933.3}{431} = 882.5\ \textrm{mm}^{3}
 \label{sampleMeanEquation}
 \end{eqnarray}
-The sample mean is often labeled $\bar{x}$\marginpar[\raggedright$\bar{x}$\\\footnotesize sample\\ mean]{\raggedright$\bar{x}$\\\footnotesize sample\\ mean}. The letter $x$ is being used as a generic placeholder for the variable of interest, \var{clutch.volume}, and the bar over on the $x$ communicates that the average volume of the 431 clutches was $882.5{}mm^{3}$. It is useful to think of the mean as the balancing point of the distribution. 
+The sample mean is often labeled $\overline{x}$\marginpar[\raggedright$\overline{x}$\\\footnotesize sample\\ mean]{\raggedright$\overline{x}$\\\footnotesize sample\\ mean}. The letter $x$ is being used as a generic placeholder for the variable of interest, \var{clutch.volume}, and the bar over the $x$ communicates that the average volume of the 431 clutches is $882.5\textrm{mm}^{3}$. It is useful to think of the mean as the balancing point of the distribution. \textit{JV: This last sentence needs some further clarification if is to be included -- I do not think the meaning is obvious to someone new to statistics.}
 
 \begin{termBox}{\tBoxTitle{Mean}%
 		The sample mean of a numerical variable is computed as the sum of all of the observations divided by the number of observations:
 		\begin{eqnarray}
-		\bar{x} = \frac{x_1+x_2+\cdots+x_n}{n}
+		\overline{x} = \frac{x_1+x_2+\cdots+x_n}{n}
 		\label{meanEquation}
 		\end{eqnarray}
 		where $x_1, x_2, \dots, x_n$ represent the $n$ observed values.}
-\end{termBox}\marginpar[\raggedright\vspace{-8mm}
+\end{termBox}
 
+\begin{comment}
+\marginpar[\raggedright\vspace{-8mm}
 $n$\\\footnotesize sample size]{\raggedright\vspace{-8mm}
-	
-	$n$\\\footnotesize sample size}\vspace{-2mm}
+$n$\\\footnotesize sample size}\vspace{-2mm}
+\end{comment}
 
-Another measure of center is the \term{median}, which is the middle number in a distribution after the values have been ordered from smallest to largest. If the distribution contains an even number of observations, the median is the average of the middle two observations. There are 431 clutches in the dataset, so the median is the clutch volume of the $216^{th}_{}$ observation in the \var{clutch.volume} variable: 831.8 $mm^{2}$.
+Another measure of center is the \term{median}, which is the middle number in a distribution after the values have been ordered from smallest to largest. If the distribution contains an even number of observations, the median is the average of the middle two observations. There are 431 clutches in the dataset, so the median is the clutch volume of the $216^{th}$ observation in the sorted values of \var{clutch.volume}: $831.8\ \textrm{mm}^{3}$.
+
+
 \begin{comment}
 \begin{exercise}
 	Examine Equations~\eqref{sampleMeanEquation} and~\eqref{meanEquation} above. What does $x_1$ correspond to? And $x_2$? Can you infer a general meaning to what $x_i$ might represent?\footnote{$x_1$ corresponds to the number of characters in the first email in the sample (21.7, in thousands), $x_2$ to the number of characters in the second email (7.0, in thousands), and $x_i$ corresponds to the number of characters in the $i^{th}$ email in the data set.}
 \end{exercise}
 
-\begin{exercise}
-	What was $n$ in this sample of emails?\footnote{The sample size was $n=50$.}
-\end{exercise}
-The \data{email50} data set represents a sample from a larger population of emails that were received in January and March. We could compute a mean for this population in the same way as the sample mean, however, the population mean has a special label: $\mu$\marginpar[\raggedright$\mu$\\\footnotesize population\\ mean]{\raggedright$\mu$\\\footnotesize population\\ mean}. \index{Greek!mu@mu ($\mu$)} The symbol $\mu$ is the Greek letter \emph{mu} and represents the average of all observations in the population. Sometimes a subscript, such as $_x$, is used to represent which variable the population mean refers to, e.g. $\mu_x$.
 \end{comment}
 
-\begin{comment}
-\begin{example}{The average number of characters across all emails can be estimated using the sample data. Based on the sample of 50 emails, what would be a reasonable estimate of $\mu_x$, the mean number of characters in all emails in the \data{email} data set? (Recall that \data{email50} is a sample from \data{email}.)}
-	The sample mean, 11,600, may provide a reasonable estimate of $\mu_x$. While this number will not be perfect, it provides a \emph{point estimate} of the population mean. In Chapter~\ref{foundationsForInference} and beyond, we will develop tools to characterize the accuracy of point estimates, and we will find that point estimates based on larger samples tend to be more accurate than those based on smaller samples.
-\end{example}
-\end{comment}
+\textit{DH: We have removed the concept of a weighted mean here; we do not have a context for it.  But it is an important idea that can be profitably used later, perhaps with the brfss data.  Perhaps we can re-insert it later. JV: Recommend introducing weighted mean in probability with calculating expected value.}
 
-\begin{comment}
-\begin{example}{We might like to compute the average income per person in the US. To do so, we might first think to take the mean of the per capita incomes across the 3,143 counties in the \data{county} data set. What would be a better approach?} \label{wtdMeanOfIncome}
-	The \data{county} data set is special in that each county actually represents many individual people. If we were to simply average across the \var{income} variable, we would be treating counties with 5,000 and 5,000,000 residents equally in the calculations. Instead, we should compute the total income for each county, add up all the counties' totals, and then divide by the number of people in all the counties. If we completed these steps with the \data{county} data, we would find that the per capita income for the US is \$27,348.43. Had we computed the \emph{simple} mean of per capita income across counties, the result would have been just \$22,504.70!
-\end{example}
-
-Example~\ref{wtdMeanOfIncome} used what is called a \term{weighted mean}\index{mean!weighted mean}, which will not be a key topic in this textbook. However, we have provided an online supplement on weighted means for interested readers:
-\begin{center}
-	\oiRedirect{textbook-weighted_mean_supplement}{www.openintro.org/stat/down/supp/wtdmean.pdf}
-\end{center}
-\end{comment}
 \subsection{Measures of spread: standard deviation and interquartile range}
-\label{variability}
+\label{measuresOfSpread}
 
-The standard deviation roughly describes how far away the typical observation is from the mean. The distance of an observation from its mean its \term{deviation}. Below are the deviations for the $1^{st}_{}$, $2^{nd}_{}$, $3^{rd}$, and $431^{th}_{}$ observations in the \var{clutch.volume} variable. For computational convenience, clutch volume is rounded to the first decimal.
+\textit{DH: Don't like the verbal description of the sd here, but have not replaced it yet.  Note also that I have changed some bar to overline.  Let me know which you think is better in the pdf; I like overline. JV: I also like overline, since I prefer reading at relatively small magnification. I will change the rest to overline.}
+
+The standard deviation measures approximately the distance between a  typical observation and the mean. The distance of an observation from its mean its \term{deviation}. Below are the deviations for the $1^{st}$, $2^{nd}$, $3^{rd}$, and $431^{th}$ observations in the \var{clutch.volume} variable. For computational convenience, clutch volume is rounded to the first decimal.
 %not sure why 431 doesn't show up as subscript
+% multi-char subscripts have to be in braces
 \begin{align*}
-x_1^{}-\bar{x} &= 177.8 - 882.5 = -704.7 \hspace{5mm}\text{ } \\
-x_2^{}-\bar{x} &= 257.0 - 882.5 = -625.5 \\
-x_3^{}-\bar{x} &= 151.4 - 882.5 = -731.1 \\
+x_1-\overline{x} &= 177.8 - 882.5 = -704.7 \hspace{5mm}\text{ } \\
+x_2-\overline{x} &= 257.0 - 882.5 = -625.5 \\
+x_3-\overline{x} &= 151.4 - 882.5 = -731.1 \\
 &\ \vdots \\
-x_431^{}-\bar{x} &= 933.2 - 882.5 = 50.7
+x_{431}-\overline{x} &= 933.2 - 882.5 = 50.7
 \end{align*}
-% library(openintro); d <- email50$num_char; round(mean(d),1); d[c(1,2,3,50)]; d[c(1,2,3,50)] - round(mean(d),1); (d[c(1,2,3,50)] - round(mean(d)))^2; sum((d - round(mean(d)))^2)/49; sqrt(sum((d - round(mean(d)))^2)/49); var(d); sd(d)
-If we square these deviations and then take an average, the result is about equal to the sample \term{variance}\label{varianceIsDefined}, denoted by $s_{}^2$\marginpar[\raggedright$s^2_{}$\\\footnotesize sample variance]{\raggedright$s^2_{}$\\\footnotesize sample variance}:
+% library(openintro); d <- frog.altitude$clutch.volume; round(mean(d),1); d[c(1,2,3,431)]; d[c(1,2,3,431)] - round(mean(d),1); (d[c(1,2,3,431)] - round(mean(d)))^2; sum((d - round(mean(d)))^2)/49; sqrt(sum((d - round(mean(d)))^2)/49); var(d); sd(d)
+
+If we square these deviations and then take an average, the result is the sample \term{variance}\label{varianceFirstDiscussed}, denoted by $s^2$\marginpar[\raggedright$s^2$\\\footnotesize sample variance]{\raggedright$s^2$\\\footnotesize sample variance}:
 \begin{align*}
-s_{}^2 &= \frac{-704.7_{}^2 + (-625.5)_{}^2 + (-731.1)_{}^2 + \cdots + 50.7_{}^2}{431-1} \\
+s^2 &= \frac{(-704.7)^2 + (-625.5)^2 + (-731.1)^2 + \cdots + (50.7)^2}{431-1} \\
 &= \frac{496,602.09 + 391,250.25 + 534,507.21 + \cdots + 2570.49}{430} \\
 &= 143,680.9
 \end{align*}
-We divide by $n-1$, rather than dividing by $n$, when computing the variance; you need not worry about this mathematical nuance for the material in this textbook. 
+The denominator is $n-1$ rather than $n$ when computing the variance; this mathematical nuance comes from statistical theory and the reason for doing so is not covered in this text.
 
-The \term{standard deviation} is defined as the square root of the variance:
+The \term{standard deviation} is the square root of the variance:
 $$s=\sqrt{143,680.9} = 379.05$$
 \marginpar[\raggedright\vspace{-10mm}
 
 $s$\\\footnotesize sample standard deviation]{\raggedright\vspace{-10mm}
-	
-	$s$\\\footnotesize sample standard deviation
-}\index{s@$s$}The standard deviation of clutch volume for the egg clutches observed is about 380 $mm^{3}$.\\
-
-\textbf{insert tip box for SD formula}\\
-
-Variability can also be described by the \term{interquartile range} (IQR).  To calculate the IQR, find the \term{first quartile} \index{quartile!first quartile} (the $25^{th}$ \hiddenterm{percentile}, i.e. 25\% of the data fall below this value) and the \term{third quartile} \index{quartile!third quartile} (the $75^{th}$ percentile). These are often labeled $Q_1$ \index{Q$_1$} and $Q_3$\index{Q$_3$}, respectively. The IQR is the difference: $Q_3 - Q_1$.
-
-The IQR for \var{clutch.volume} is $1096.0 - 609.6 = 486.4_(mm)^{3}$.
+$s$\\\footnotesize sample standard deviation
+}\index{s@$s$} The standard deviation of clutch volume for the egg clutches observed is about $380\ \textrm{mm}^{3}$.  \textit{DH: excellent place to give an interpretation of sd, referring back to verbal definition, or perhaps to use it to mention the empirical rule, which is in the caption to one of the Open Intro plots. JV: Return to this once verbal definition of SD is refined. The empirical rule is best introduced with a picture -- I considered introducing it in an example after histograms, but that would interrupt the flow. May work in the transforming data subsection.}
 
 \begin{comment}
-\begin{termBox}{\tBoxTitle{Variance and standard deviation}
-		The variance is roughly the average squared distance from the mean. The standard deviation is the square root of the variance. The standard deviation is useful when considering how close the data are to the mean.}
-\end{termBox}
+\begin{figure}
+\centering
+\includegraphics[width=\mycaptionwidth]{ch_intro_to_data_oi_biostat/figures/sdAsRuleForEmailNumChar/sdAsRuleForEmailNumChar}
+\caption{In the \var{num\_\hspace{0.3mm}char} data, 41 of the 50 emails (82\%) are within 1~standard deviation of the mean, and 47 of the 50 emails (94\%) are within 2 standard deviations. Usually about 70\% of the data are within 1 standard deviation of the mean and 95\% are within 2 standard deviations, though this rule of thumb is less accurate for skewed data, as shown in this example.}
+\label{sdAsRuleForEmailNumChar}
+\end{figure}
+\end{comment}
 
 Formulas and methods used to compute the variance and standard deviation for a population are similar to those used for a sample.\footnote{The only difference is that the population variance has a division by $n$ instead of $n-1$.} However, like the mean, the population values have special symbols: $\sigma_{}^2$\marginpar[\raggedright$\sigma_{}^2$\\\footnotesize population variance\\ \hspace{2mm}]{\raggedright$\sigma_{}^2$\\\footnotesize population variance\\ \hspace{2mm}} for the variance and $\sigma$\marginpar[\raggedright$\sigma$\\\footnotesize population standard deviation\\ \hspace{2mm}]{\raggedright$\sigma$\\\footnotesize population standard deviation\\ \hspace{2mm}} for the standard deviation. The symbol $\sigma$ \index{Greek!sigma@sigma ($\sigma$)} is the Greek letter \emph{sigma}.
 
-
-\begin{figure}
-	\centering
-	\includegraphics[width=\mycaptionwidth]{ch_intro_to_data_oi_biostat/figures/sdAsRuleForEmailNumChar/sdAsRuleForEmailNumChar}
-	\caption{In the \var{num\_\hspace{0.3mm}char} data, 41 of the 50 emails (82\%) are within 1~standard deviation of the mean, and 47 of the 50 emails (94\%) are within 2 standard deviations. Usually about 70\% of the data are within 1 standard deviation of the mean and 95\% are within 2 standard deviations, though this rule of thumb is less accurate for skewed data, as shown in this example.}
-	\label{sdAsRuleForEmailNumChar}
-\end{figure}
-
-\begin{tipBox}{\tipBoxTitle{standard deviation describes variability}
-		Focus on the conceptual meaning of the standard deviation as a descriptor of variability rather than the formulas. Usually 70\% of the data will be within one standard deviation of the mean and about 95\% will be within two standard deviations. However, as seen in Figures~\ref{sdAsRuleForEmailNumChar} and~\ref{severalDiffDistWithSdOf1}, these percentages are not strict rules.}
-\end{tipBox}
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.64\textwidth]{ch_intro_to_data_oi_biostat/figures/severalDiffDistWithSdOf1/severalDiffDistWithSdOf1}
-	\caption{Three very different population distributions with the same mean $\mu=0$ and standard deviation $\sigma=1$.}
-	\label{severalDiffDistWithSdOf1}
-\end{figure}
-
-\begin{exercise}
-	On page~\pageref{shapeFirstDiscussed}, the concept of shape of a distribution was introduced. A good description of the shape of a distribution should include modality and whether the distribution is symmetric or skewed to one side. Using Figure~\ref{severalDiffDistWithSdOf1} as an example, explain why such a description is important.\footnote{Figure~\ref{severalDiffDistWithSdOf1} shows three distributions that look quite different, but all have the same mean, variance, and standard deviation. Using modality, we can distinguish between the first plot (bimodal) and the last two (unimodal). Using skewness, we can distinguish between the last plot (right skewed) and the first two. While a picture, like a histogram, tells a more complete story, we can use modality and shape (symmetry/skew) to characterize basic information about a~distribution.}
-\end{exercise}
-
-\begin{example}{Describe the distribution of the \var{num\_\hspace{0.3mm}char} variable using the histogram in Figure~\vref{email50NumCharHist}. The description should incorporate the center, variability, and shape of the distribution, and it should also be placed in context: the number of characters in emails. Also note any especially unusual cases.}
-	The distribution of email character counts is unimodal and very strongly skewed to the high end. Many of the counts fall near the mean at 11,600, and most fall within one standard deviation (13,130) of the mean. There is one exceptionally long email with about 65,000 characters.
-\end{example}
+\begin{comment}
+%JV: Not really necessary to point forward here, since it has already been done in the case study section.
 
 In practice, the variance and standard deviation are sometimes used as a means to an end, where the ``end'' is being able to accurately estimate the uncertainty associated with a sample statistic. For example, in Chapter~\ref{foundationsForInference} we will use the variance and standard deviation to assess how close the sample mean is to the population mean.
 \end{comment}
 
+\begin{comment}
+\begin{tipBox}{\tipBoxTitle{standard deviation describes variability}
+		Focus on the conceptual meaning of the standard deviation as a descriptor of variability rather than the formulas. Usually 70\% of the data will be within one standard deviation of the mean and about 95\% will be within two standard deviations. However, as seen in Figures~\ref{sdAsRuleForEmailNumChar} and~\ref{severalDiffDistWithSdOf1}, these percentages are not strict rules.}
+\end{tipBox}
+\end{comment}
+
+\begin{termBox}{\tBoxTitle{Standard Deviation}
+		The sample standard deviation of a numerical variable is computed as the square root of the variance, which is the sum of squared deviations divided by the number of observations minus 1.
+		\begin{eqnarray}
+		s = \sqrt{\frac{({x_1 - \overline{x})}^{2}+({x_2 - \overline{x})}^{2}+\cdots+({x_n - \overline{x})}^{2}}{n-1}}
+		\label{SDEquation}
+		\end{eqnarray}
+		where $x_1, x_2, \dots, x_n$ represent the $n$ observed values.}
+\end{termBox}
+
+Variability can also be measured using the \term{interquartile range} (IQR).  To calculate the IQR, find the \term{first quartile} \index{quartile!first quartile ($Q_1$)} (the $25^{th}$ \hiddenterm{percentile}, i.e. 25\% of the data fall below this value) and the \term{third quartile} \index{quartile!third quartile ($Q_3$)} (the $75^{th}$ percentile). These are often labeled $Q_1$ and $Q_3$, respectively. The IQR is the difference: $Q_3 - Q_1$.
+
+The IQR for \var{clutch.volume} is $1096.0 - 609.6 = 486.4\ \textrm{mm}^{3}$.  The middle $50\%$ of the values for \var{clutch.volume} lie between $609.6\ \textrm{mm}^{3}$ and $1096.0\ \textrm{mm}^{3}$.
+
 \subsection{Robust statistics}
 
-The median and IQR are called \term{robust estimates} because extreme observations have little effect on their values. The mean and standard deviation are much more affected by changes in extreme observations.
-
-\textbf{adapt this for the largest value in \var{clutch.size}}
-
-How are the \indexthis{sample statistics}{sample statistic} of the \data{num\_\hspace{0.3mm}char} data set affected by the observation, 64,401? What would have happened if this email wasn't observed? What would happen to these \indexthis{summary statistics}{summary statistic} if the observation at 64,401 had been even larger, say 150,000? These scenarios are plotted alongside the original data in Figure~\ref{email50NumCharDotPlotRobustEx}, and sample statistics are computed under each scenario in Table~\ref{robustOrNotTable}.
+In the \data{frog} data, there are four observed clutch volumes larger than 2,000 $\textrm{mm}^{3}$ (2138.0, 2630.3, 2454.7, 2511.9). These values can be clearly identified by plotting the data as points on a single axis, as shown in Figure~\ref{frogClutchVolDotPlot}; this basic graphical display is known as a \term{dot plot}. How do these extreme values affect the summary statistics for the clutch volume variable in the \data{frog} data?
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=\textwidth]{ch_intro_to_data_oi_biostat/figures/email50NumCharDotPlotRobustEx/email50NumCharDotPlotRobustEx}
-	\caption{Dot plots of the original character count data and two modified data sets.}
-	\label{email50NumCharDotPlotRobustEx}
+	\includegraphics[width=\textwidth]{ch_intro_to_data_oi_biostat/figures/frogClutchVolDotPlot/frogClutchVolDotPlot}
+	\caption{Dot plot of the clutch volume variable in the \data{frog} data.}
+	\label{frogClutchVolDotPlot}
+\end{figure}
+
+The sample statistics are computed under each of two scenarios in Table~\ref{frogRobustOrNotTable}, one with and one without the four largest observations. The median and IQR are referred to as \term{robust estimates} because extreme observations have little effect on their values. For these data, the median does not change, while the IQR differs by only about 6 $\textrm{mm}^{3}$. In contrast, the mean and standard deviation are much more affected, particularly the standard deviation; since standard deviation depends on the squared distances from the mean, its change in the presence of large observations is more noticeable. Typically, extreme observations have a greater effect on the standard deviation than on the mean.
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{l c cc c cc}
+		\hline
+		& \hspace{0mm} & \multicolumn{2}{c}{\bf robust} & \hspace{2mm} & \multicolumn{2}{c}{\bf not robust} \\
+		scenario && median & IQR && $\overline{x}$ & $s$ \\ 
+		\hline
+		original \var{frog} data 	&& 831.8 & 486.9 && 882.5 & 379.1 \\
+		% library(openintro); data(frog.altitude); d <- frog.altitude$clutch.volume; median(d); IQR(d); mean(d); sd(d)
+		drop four largest observations && 831.8 & 493.92 && 867.9 & 349.2 \\
+		% library(openintro); data(frog.altitude); d <- frog.altitude$clutch.volume; a <- d<= 2000; median(d[a]); IQR(d[a]); mean(d[a]); sd(d[a])
+		\hline
+	\end{tabular}
+	\caption{A comparison of how the median, IQR, mean ($\overline{x}$), and standard deviation ($s$) change when extreme observations are present.}
+	\label{frogRobustOrNotTable}
+\end{table}
+
+\textit{JV: Agree that famuss data can be used in end-of-chapter exercise.}
+
+\begin{comment}
+In \data{famuss} there are six observed weights larger than 270 pounds (273, 291, 295, 305, 308 and 317); these weights are evident in Figure~\ref{famussWeightDotPlotRobustEx} Despite the size of these weights, it is unlikely that the observations are errors, since the six values are clustered above 270. How do these three weights affect the summary statistics for the weight variable in \data{famuss}?  These large weights are evident in the plot below.
+
+How are the \indexthis{sample statistics}{sample statistic} of the \var{weight} affected by these observations?  The sample statistics are computed under each of two scenarios in Table~\ref{robustOrNotTable},  one with and one without these large observations. The table shows that neither the median or the interquartile range change when the six largest observations are dropped, but the mean and standard deviation both become lower.  Because the standard deviation depends on the squared distances of observations from the mean, its change is more noticeable.  Typically, extreme observations have a greater effect on the standard deviation than on the mean.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=\textwidth]{ch_intro_to_data_oi_biostat/figures/famussWeightDotPlotRobustEx/famussWeightDotPlotRobustEx}
+	\caption{Dot plots of the weight variable in \data{famuss}.}
+	\label{famussWeightDotPlotRobustEx}
 \end{figure}
 
 \begin{table}[ht]
@@ -697,251 +643,143 @@ How are the \indexthis{sample statistics}{sample statistic} of the \data{num\_\h
 		& \hspace{0mm} & \multicolumn{2}{c}{\bf robust} & \hspace{2mm} & \multicolumn{2}{c}{\bf not robust} \\
 		scenario && median & IQR && $\bar{x}$ & $s$ \\ 
 		\hline
-		original \var{num\_\hspace{0.3mm}char} data 	&& 6,890 & 12,875 && 11,600 & 13,130 \\
-		% library(openintro); data(email50); d <- email50$num_char; median(d); diff(quantile(d, c(0.25,0.75))); mean(d); sd(d)
-		drop 66,924 observation		&& 6,768 & 11,702 && 10,521 & 10,798 \\
-		% library(openintro); data(email50); d <- email50$num_char; d <- d[-which.max(d)]; median(d); diff(quantile(d, c(0.25,0.75))); mean(d); sd(d)
-		move 66,924 to 150,000		&& 6,890 & 12,875 && 13,310 & 22,434 \\
-		% library(openintro); data(email50); d <- email50$num_char; d[which.max(d)] <- 100000; median(d); diff(quantile(d, c(0.25,0.75))); mean(d); sd(d)
+		original \var{weight} data 	&& 150 & 42 && 155.65 & 34.59 \\
+		% our R code goes here
+		drop six largest observations && 150 & 42 && 154.2 & 31.58 \\
+		% our R code goes here
+		
 		\hline
 	\end{tabular}
 	\caption{A comparison of how the median, IQR, mean ($\bar{x}$), and standard deviation ($s$) change when extreme observations are present.}
 	\label{robustOrNotTable}
 \end{table}
-
-\begin{comment}
-\begin{exercise} \label{numCharWhichIsMoreRobust}
-	(a) Which is more affected by extreme observations, the mean or median? Table~\ref{robustOrNotTable} may be helpful. (b) Is the standard deviation or IQR more affected by extreme observations?\footnote{(a) Mean is affected more. (b) Standard deviation is affected more. Complete explanations are provided in the material following Guided Practice~\ref{numCharWhichIsMoreRobust}.}
-\end{exercise}
 \end{comment}
-\begin{comment}
-\begin{example}{The median and IQR do not change much under the three scenarios in Table~\ref{robustOrNotTable}. Why might this be the case?}
-	The median and IQR are only sensitive to numbers near $Q_1$, the median, and $Q_3$. Since values in these regions are relatively stable -- there aren't large jumps between observations -- the median and IQR estimates are also quite stable.
-\end{example}
 
-\begin{exercise}
-	The distribution of vehicle prices tends to be right skewed, with a few luxury and sports cars lingering out into the right tail. If you were searching for a new car and cared about price, should you be more interested in the mean or median price of vehicles sold, assuming you are in the market for a regular car?\footnote{Buyers of a ``regular car'' should be concerned about the median price. High-end car sales can drastically inflate the mean price while the median will be more robust to the influence of those sales.}
-\end{exercise}
-\end{comment}
-\subsection{Visualizing distributions of data: dot plots and histograms}
-\label{DotPlotsAndHistograms}
+\subsection{Visualizing distributions of data: histograms and boxplots}
+\label{histogramsBoxplots}
 
-Graphical summaries are useful tools for visualizing how data are distributed. A \term{dot plot} provides the most basic of displays, representing data as points plotted on a single axis. 
+Visualizing how data are distributed can reveal characteristics of the data that are not obvious from summary statistics. Graphical summaries, such as histograms and boxplots, complement the information provided by numerical summaries.
 
-An example using the number of characters from 50 emails is shown in Figure~\ref{emailCharactersDotPlot}. A stacked version of this dot plot is shown in Figure~\ref{emailCharactersDotPlotStacked}.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=\textwidth]{ch_intro_to_data_oi_biostat/figures/emailCharactersDotPlot/emailCharactersDotPlot}
-	\caption{A dot plot of \var{num\_\hspace{0.3mm}char} for the \data{email50} data set.}
-	\label{emailCharactersDotPlot}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.72\textwidth]{ch_intro_to_data_oi_biostat/figures/emailCharactersDotPlot/emailCharactersDotPlotStacked}
-	\caption{A stacked dot plot of \var{num\_\hspace{0.3mm}char} for the \data{email50} data set. The~values have been rounded to the nearest 2,000 in this plot.}
-	\label{emailCharactersDotPlotStacked}
-\end{figure}
-
-Dot plots show the exact value for each observation. This is useful for small data sets, but they can become hard to read with larger samples. Rather than showing the value of each observation, we prefer to think of the value as belonging to a \emph{bin}. For example, in the \data{email50} data set, we create a table of counts for the number of cases with character counts between 0 and 5,000, then the number of cases between 5,000 and 10,000, and so on. Observations that fall on the boundary of a bin (e.g. 5,000) are allocated to the lower bin. This tabulation is shown in Table~\ref{binnedNumCharTable}. These binned counts are plotted as bars in Figure~\ref{email50NumCharHist} into what is called a \term{histogram}, which resembles the stacked dot plot shown in Figure~\ref{emailCharactersDotPlotStacked}.
+Dot plots show the exact value of each observation; while this is useful for small datasets, dot plots are not ideal for larger samples. Instead, observations can be grouped into bins and plotted as bars to form a \term{histogram}. Table~\ref{frogBinnedClutchVolTable} shows the number of clutches with volume between 0 and 200 $\textrm{mm}^{3}$, 200 and 400 $\textrm{mm}^{3}$, etc. up until 2,600 and 2,800 $\textrm{mm}^{3}$. These binned counts are plotted in Figure~\ref{frogHist}.
 
 \begin{table}[ht]
 	\centering\small
 	\begin{tabular}{l ccc ccc ccc c}
 		\hline
-		Characters & \\
-		(in thousands) & \raisebox{1.5ex}[0pt]{0-5} & \raisebox{1.5ex}[0pt]{5-10} & \raisebox{1.5ex}[0pt]{10-15} & \raisebox{1.5ex}[0pt]{15-20} & \raisebox{1.5ex}[0pt]{20-25} & \raisebox{1.5ex}[0pt]{25-30} & \raisebox{1.5ex}[0pt]{$\cdots$} & \raisebox{1.5ex}[0pt]{55-60} & \raisebox{1.5ex}[0pt]{60-65} \\
+		\raisebox{-1.5ex}[0pt]{Clutch volumes} & \\
+		& \raisebox{1.5ex}[0pt]{0-200} & \raisebox{1.5ex}[0pt]{200-400} & \raisebox{1.5ex}[0pt]{400-600} & \raisebox{1.5ex}[0pt]{600-800} & \raisebox{1.5ex}[0pt]{$\cdots$} & \raisebox{1.5ex}[0pt]{2400-2600} & \raisebox{1.5ex}[0pt]{2600-2800} \\
 		\hline
-		Count & 19 & 12 & 6 & 2 & 3 & 5 & $\cdots$ & 0 & 1 \\
+		\raisebox{-.25ex}[0pt]{Count} & \raisebox{-.25ex}[0pt]{4} & \raisebox{-.25ex}[0pt]{29} & \raisebox{-.25ex}[0pt]{69} & \raisebox{-.25ex}[0pt]{99} & \raisebox{-.25ex}[0pt]{$\cdots$} & \raisebox{-.25ex}[0pt]{2} & \raisebox{-.25ex}[0pt]{1} \\
 		\hline
 	\end{tabular}
-	\caption{The counts for the binned \var{num\_\hspace{0.3mm}char} data.}
-	\label{binnedNumCharTable}
+	\caption{The counts for the binned \var{clutch.volume} data.}
+	\label{frogBinnedClutchVolTable}
 \end{table}
+% hist(frog.altitude$clutch.volume, breaks = 14, plot = FALSE)
 
-\begin{figure}[bth]
+\begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.82\textwidth]{ch_intro_to_data_oi_biostat/figures/email50NumCharHist/email50NumCharHist}
-	\caption{A histogram of \var{num\_\hspace{0.3mm}char}. This distribution is very strongly skewed to the right.\index{skew!example: very strong}}
-	\label{email50NumCharHist}
+	\includegraphics[width=0.82\textwidth]{ch_intro_to_data_oi_biostat/figures/frogHist/frogHist}
+	\caption{A histogram of \var{clutch.volume}.}
+	\label{frogHist}
 \end{figure}
 
-Histograms provide a view of the \term{data density}. Higher bars represent where the data are relatively more common. For instance, there are many more emails with fewer than 20,000 characters than emails with at least 20,000 in the data set. The bars make it easy to see how the density of the data changes relative to the number of characters.
+Histograms provide a view of the \term{data density}. Higher bars indicate more common observations, while lower bars represent relatively rare observations. For instance, there are many more egg clutches with volumes smaller than 1,500 $\textrm{mm}^{3}$ than clutches with larger volumes. The bars make it easy to see how the density of the data changes relative to clutch volume.
 
-Histograms are especially convenient for describing the shape of the data distribution\label{shapeFirstDiscussed}. Figure~\ref{email50NumCharHist} shows that most emails have a relatively small number of characters, while fewer emails have a very large number of characters. When data trail off to the right in this way and have a longer right \hiddenterm{tail}\index{skew!tail}, the shape is said to be \termsub{right skewed}{skew!right skewed}.\footnote{Other ways to describe data that are skewed to the right: \termni{skewed to the right}, \termni{skewed to the high end}, or \termni{skewed to the positive end}.}
+Histograms are especially convenient for describing the shape of the data distribution\label{shapeFirstDiscussed}. Figure~\ref{frogHist} shows that most clutches have a relatively small volume, while fewer clutches are very large. When data trail off to the right, with a long right \hiddenterm{tail}\index{skew!tail}, the data are said to be \termsub{right skewed}{skew!right skewed}.\footnote{Other ways to describe data that are skewed to the right: \termni{skewed to the right}, \termni{skewed to the high end}, or \termni{skewed to the positive end}.} Data with the reverse characteristic -- a long, thin tail to the left -- are said to be \termsub{left skewed}{skew!left skewed}. The term \term{symmetric} is used to describe data that show roughly equal trailing off in both directions.
 
-Data sets with the reverse characteristic -- a long, thin tail to the left -- are said to be \termsub{left skewed}{skew!left skewed}. We also say that such a distribution has a long left tail. Data sets that show roughly equal trailing off in both directions are called \term{symmetric}.\index{skew!symmetric}
+A \term{mode} is represented by a prominent peak in the distribution.\footnote{Another definition of mode, which is not typically used in statistics, is the value with the most occurrences. It is common to have \emph{no} observations with the same value in a data set, which makes this other definition useless for many real datasets.} Figure~\ref{singleBiMultiModalPlots} shows histograms that have one, two, or three prominent peaks. Such distributions are called \termsub{unimodal}{modality!unimodal}, \termsub{bimodal}{modality!bimodal}, and \termsub{multimodal}{modality!multimodal}, respectively. Any distribution with more than two prominent peaks is called multimodal. Notice that there was one prominent peak in the unimodal distribution with a second less prominent peak that was not counted since it only differs from its neighboring bins by a few observations. \textit{JV: Last sentence should be refined -- thoughts on how to communicate that "prominent" is a subjective term?}
 
 \begin{comment}
-\begin{termBox}{\tBoxTitle{Long tails to identify skew}%
-		When data trail off in one direction, the distribution has a \term{long tail}. \index{skew!long tail|textbf} If a distribution has a long left tail, it is left skewed. If a distribution has a long right tail, it is right skewed.}
-\end{termBox}
-
-\begin{exercise}
-	Take a look at the dot plots in Figures~\ref{emailCharactersDotPlot} and~\ref{emailCharactersDotPlotStacked}. Can you see the skew in the data? Is it easier to see the skew in this histogram or the dot plots?\footnote{The skew is visible in all three plots, though the flat dot plot is the least useful. The stacked dot plot and histogram are helpful visualizations for identifying skew.}
-\end{exercise}
-
-\begin{exercise}
-	Besides the mean (since it was labeled), what can you see in the dot plots that you cannot see in the histogram?\footnote{Character counts for individual emails.}
-\end{exercise}
+\begin{tipBox}{\tipBoxTitle{Looking for modes}
+		Looking for modes isn't about finding a clear and correct answer about the number of modes in a distribution, which is why \emph{prominent} is not rigorously defined in this book. The important part of this examination is to better understand your data and how it might be structured.}
+\end{tipBox}
 \end{comment}
-
-In addition to looking at whether a distribution is skewed or symmetric, histograms can be used to identify modes. A \term{mode} is represented by a prominent peak in the distribution.\footnote{Another definition of mode, which is not typically used in statistics, is the value with the most occurrences. It is common to have \emph{no} observations with the same value in a data set, which makes this other definition useless for many real data sets.} There is only one prominent peak in the histogram of \var{num\_\hspace{0.3mm}char}.
-
-Figure~\ref{singleBiMultiModalPlots} shows histograms that have one, two, or three prominent peaks. Such distributions are called \termsub{unimodal}{modality!unimodal}, \termsub{bimodal}{modality!bimodal}, and \termsub{multimodal}{modality!multimodal}, respectively. Any distribution with more than 2 prominent peaks is called multimodal. Notice that there was one prominent peak in the unimodal distribution with a second less prominent peak that was not counted since it only differs from its neighboring bins by a few observations.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\textwidth]{ch_intro_to_data_oi_biostat/figures/singleBiMultiModalPlots/singleBiMultiModalPlots}
-	\caption{Counting only prominent peaks, the distributions are (left to right) unimodal, bimodal, and multimodal.}
+	\caption{From left to right: unimodal, bimodal, and multimodal distributions.}
 	\label{singleBiMultiModalPlots}
 \end{figure}
 
 \begin{exercise}
-	Figure~\ref{email50NumCharHist} reveals only one prominent mode in the number of characters. Is the distribution unimodal, bimodal, or multimodal?\footnote{Unimodal. Remember that \emph{uni} stands for 1 (think \emph{uni}cycles). Similarly, \emph{bi} stands for~2 (think \emph{bi}cycles). (We're hoping a \emph{multicycle} will be invented to complete this analogy.)} %This is what would get a #tryingtoohard tag on the internet.
+	Describe the distribution of \var{clutch.volume} using the histogram in Figure~\ref{frogHist}. Are the data skewed? Is it a unimodal, bimodal, or multimodal distribution? \footnote{The data is strongly skewed to the right; while many counts fall in the 600-1,000 $\textrm {mm}^{3}$ range, there are a few clutches with volume greater than 1,500 $\textrm {mm}^{3}$. The distribution is unimodal, with only one prominent peak.}
 \end{exercise}
 
 \begin{comment}
+%This will be a good end-of-chapter exercise.
 
-\begin{exercise}
-	Height measurements of young students and adult teachers at a K-3 elementary school were taken. How many modes would you anticipate in this height data set?\footnote{There might be two height groups visible in the data set: one of the students and one of the adults. That is, the data are probably bimodal.}
-\end{exercise}
-
-\begin{tipBox}{\tipBoxTitle{Looking for modes}
-		Looking for modes isn't about finding a clear and correct answer about the number of modes in a distribution, which is why \emph{prominent} is not rigorously defined in this book. The important part of this examination is to better understand your data and how it might be structured.}
-\end{tipBox}
-
-\end{comment}
-
-\subsection{Boxplots, quantiles, outliers}
-
-A \term{boxplot} summarizes a dataset using five statistics while also plotting unusual observations. Figure~\ref{boxPlotLayoutNumVar} provides a vertical dot plot alongside a box plot of the \var{num\_\hspace{0.3mm}char} variable from the \data{email50} data set.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.86\mycaptionwidth]{ch_intro_to_data_oi_biostat/figures/boxPlotLayoutNumVar/boxPlotLayoutNumVar}
-	\caption{A vertical dot plot next to a labeled box plot for the number of characters in 50 emails. The median (6,890), splits the data into the bottom 50\% and the top 50\%, marked in the dot plot by horizontal dashes and open circles, respectively.}
-	\label{boxPlotLayoutNumVar}
+\begin{figure}
+\centering
+\includegraphics[width=0.64\textwidth]{ch_intro_to_data_oi_biostat/figures/severalDiffDistWithSdOf1/severalDiffDistWithSdOf1}
+\caption{Three very different population distributions with the same mean $\mu=0$ and standard deviation $\sigma=1$.}
+\label{severalDiffDistWithSdOf1}
 \end{figure}
 
-The first step in building a box plot is drawing a dark line denoting the \term{median}, which splits the data in half. Figure~\ref{boxPlotLayoutNumVar} shows 50\% of the data falling below the median (dashes) and other 50\% falling above the median (open circles). 
-
-The second step in building a box plot is drawing a rectangle to represent the middle 50\% of the data, which is the IQR.
-
-\begin{comment}
-\begin{termBox}{\tBoxTitle{Interquartile range (IQR)}
-		The IQR\index{interquartile range} is the length of the box in a box plot. It is computed as
-		\begin{eqnarray*}
-			IQR = Q_3 - Q_1
-		\end{eqnarray*}
-		where $Q_1$ and $Q_3$ are the $25^{th}$ and $75^{th}$ percentiles.}
-\end{termBox}
-
 \begin{exercise}
-	What percent of the data fall between $Q_1$ and the median? What percent is between the median and $Q_3$?\footnote{Since $Q_1$ and $Q_3$ capture the middle 50\% of the data and the median splits the data in the middle, 25\% of the data fall between $Q_1$ and the median, and another 25\% falls between the median and $Q_3$.}
+	On page~\pageref{shapeFirstDiscussed}, the concept of shape of a distribution was introduced. A good description of the shape of a distribution should include modality and whether the distribution is symmetric or skewed to one side. Using Figure~\ref{severalDiffDistWithSdOf1} as an example, explain why such a description is important.\footnote{Figure~\ref{severalDiffDistWithSdOf1} shows three distributions that look quite different, but all have the same mean, variance, and standard deviation. Using modality, we can distinguish between the first plot (bimodal) and the last two (unimodal). Using skewness, we can distinguish between the last plot (right skewed) and the first two. While a picture, like a histogram, tells a more complete story, we can use modality and shape (symmetry/skew) to characterize basic information about a~distribution.}
 \end{exercise}
+
 \end{comment}
 
-Extending out from the box, the \term{whiskers} capture the data that fall between $1.5\times IQR$.\footnote{While the choice of exactly 1.5 is arbitrary, it is the most commonly used value for box plots.} In Figure~\ref{boxPlotLayoutNumVar}, the upper whisker does not extend to the last three points, which is beyond $Q_3 + 1.5\times IQR$, and so it extends only to the last point below this limit. The lower whisker stops at the lowest value, 33, since there is no additional data to reach; the lower whisker's limit is not shown in the figure because the plot does not extend down to $Q_1 - 1.5\times IQR$. In a sense, the box is like the body of the box plot and the whiskers are like its arms trying to reach the rest of the data.
+A \term{boxplot} summarizes a dataset using five statistics while also plotting unusual observations.\footnote{Boxplots are also known as box-and-whisker plots.} Figure~\ref{frogBoxPlot} provides a vertical dot plot alongside a boxplot of the \var{clutch.volume} variable from the \data{frog} dataset. 
 
-Any observation that lies beyond the whiskers is labeled with a dot. The purpose of labeling these points is to help identify any observations that appear to be unusually distant from the rest of the data. These observations are called outliers; An \term{outlier} is an observation that appears extreme relative to the rest of the data. In this case, it would be reasonable to classify the emails with character counts of 41,623, 42,793, and 64,401 as outliers since they are numerically distant from most of the data. Outliers can potentially provide insight into interesting properties of the data. 
+\begin{figure}[th]
+	\centering
+	\includegraphics[width=0.86\mycaptionwidth]{ch_intro_to_data_oi_biostat/figures/frogBoxPlot/frogBoxPlot}
+	\caption{A vertical dot plot next to a labeled boxplot for the volumes of 431 egg clutches. The median (831.8 $\textrm {mm}^{3}$), splits the data into the bottom 50\% and the top 50\%, marked in the dot plot by horizontal dashes and open circles, respectively.}
+	\label{frogBoxPlot}
+\end{figure}
 
-\begin{comment}
-\begin{termBox}{\tBoxTitle{Outliers are extreme}
-		An \term{outlier} is an observation that appears extreme relative to the rest of the data.}
-\end{termBox}
-\end{comment}
-\begin{comment}
-\begin{tipBox}{\tipBoxTitle{Why it is important to look for outliers}
-		Examination of data for possible outliers serves many useful purposes, including\vspace{-2mm}
-		\begin{enumerate}
-			\setlength{\itemsep}{0mm}
-			\item Identifying \indexthis{strong skew}{skew!example: strong} in the distribution.
-			\item Identifying data collection or entry errors. For instance, we re-examined the email purported to have 64,401 characters to ensure this value was accurate.
-			\item Providing insight into interesting properties of the data.\vspace{0.5mm}
-		\end{enumerate}}
-	\end{tipBox}
-\end{comment}
-\begin{comment}	
-	\begin{exercise}
-		The observation 64,401, a suspected outlier, was found to be an accurate observation. What would such an observation suggest about the nature of character counts in emails?\footnote{That occasionally there may be very long emails.}\end{exercise}
-	
-	\begin{exercise}
-		Using Figure~\ref{boxPlotLayoutNumVar}, estimate the following values for \var{num\_\hspace{0.3mm}char} in the \data{email50} data set: (a) $Q_1$, (b) $Q_3$, and (c) IQR.\footnote{These visual estimates will vary a little from one person to the next: $Q_1=$ 3,000, $Q_3=$ 15,000, $\text{IQR}=Q_3 - Q_1 = $ 12,000. (The true values: $Q_1=$ 2,536, $Q_3=$ 15,411, $\text{IQR} = $ 12,875.)}
-	\end{exercise}
-	
-	\CalculatorVideos{how to create statistical summaries and box plots}
-\end{comment}
+In a boxplot, a rectangle extending from the first quartile to the third quartile represents the middle 50\% of the data (the IQR); the rectangle is split in half by the \term{median}. Extending outwards from the box, the \term{whiskers} capture the data that fall between $Q_1 - 1.5\times IQR$ and $Q_3 + 1.5\times IQR$.\footnote{While the choice of exactly 1.5 is arbitrary, it is a commonly used value for drawing boxplots.} Note that the whiskers must end at data points; the values given by adding or subtracting $1.5\times IQR$ define the maximum reach of the whiskers. For example, for the \var{clutch.volume} variable: $Q_3 + 1.5\times IQR = 1,096.5 - 1.5\times 486.4 = 1,826.1\ \textrm {mm}^{3}$. However, there was no clutch with volume 1,826.1\ $\textrm {mm}^{3}$; thus, the upper whisker extends to 1,819.7 $\textrm {mm}^{3}$, the largest observation that is smaller than $Q_3 + 1.5\times IQR$.
+
+Any observation that lies beyond the whiskers is labeled with a dot; these observations are called outliers. An \term{outlier} is a value that appears extreme relative to the rest of the data. For the \var{clutch.volume} variable, there are several large outliers and no small outliers, indicating the presence of some unusually large egg clutches. Outliers can potentially provide insight into interesting properties of the data. 
 
 \subsection{Scatterplots}
 \label{scatterPlots}
 
-%introduce context for choosing variable to pair with clutch volume
+A \term{scatterplot} provides a case-by-case view of data for two numerical variables. In the \data{frog} data, \var{clutch.volume} and \var{body.size} are two numerical variables of interest; previous research has reported that larger body size allows females to produce larger egg clutches. The relationship between clutch volume and female body size is examined via scatterplot in Figure~\ref{frogClutchVolBodySize}. In any scatterplot, each point represents a single case. Since body size was measured for 129 frogs, there are 129 points in Figure~\ref{frogClutchVolBodySize}.
 
-A \term{scatterplot} provides a case-by-case view of data for two numerical variables. In Figure \#, a scatterplot is used to examine the relationship between clutch volume and female body size in the \data{frog} dataset. In any scatterplot, each point represents a single case. Since body size was measured for 129 frogs, there are 129 points in Figure \label{clutchVolVsBodySize}.
-
-The \var{clutch.volume} and \var{body.size} are said to be \term{associated} because the plot shows a discernible pattern. Since the points tend to lie in a straight line, the two variables are \term{linearly associated}.
-
-Two variables are \term{positively associated} if increasing values of one tend to occur with increasing values of the other; similarly, variables are \term{negatively associated} if increasing values of one variable occurs with decreasing values of the other. Figure \# shows an upward trend -- larger frogs tend to produce clutches with larger volume. Frog embryos are surrounded by a gelatinous matrix that may protect developing embryos from temperature fluctuation or ultraviolet radiation; these observations suggest that larger females are capable of producing greater quantities of this material.
+The variables \var{clutch.volume} and \var{body.size} are said to be \term{associated} because the plot shows a discernible pattern. Since the points tend to lie in a straight line, the two variables are \term{linearly associated}. Two variables are \term{positively associated} if increasing values of one tend to occur with increasing values of the other; similarly, variables are \term{negatively associated} if increasing values of one variable occurs with decreasing values of the other. Figure~\ref{frogClutchVolBodySize} shows an upward trend -- as expected, larger frogs tend to produce egg clutches with larger volumes. Frog embryos are surrounded by a gelatinous matrix that may protect developing embryos from temperature fluctuation or ultraviolet radiation; these observations suggest that larger females are indeed capable of producing greater quantities of this material.
 
 \begin{figure}
 \centering
 \includegraphics[width=0.8\textwidth]
-{ch_intro_to_data_oi_biostat/figures/clutchVolVsBodySize/clutchVolVsBodySize}
+{ch_intro_to_data_oi_biostat/figures/frogClutchVolBodySize/frogClutchVolBodySize}
 \caption{A scatterplot showing \var{clutch.volume} (horizontal axis) vs. \var{body.size} (vertical axis). }
-\label{clutchVolVsBodySize}
+\label{frogClutchVolBodySize}
 \end{figure}
 
+\index{data!frog|)}
+\index{data!famuss|(}
 
-Figure ~\ref{famuss_height_weight} shows the relationship between \var{height} and \var{weight} for participants in the FAMuSS study.  Each point on the plot represents a participant. As expected, taller participants tend to be heavier, so the variables \var{height} and \var{weight} are positively associated.  \textit{plot should be fancified, and one of the heavy participants highlighted.}
-
-
-\begin{figure}
-\centering
-\includegraphics[width=0.8\textwidth]
-{ch_intro_to_data_oi_biostat/figures/famussHeightVsWeight/famussHeightVsWeight}
-\caption{A scatterplot showing \var{height} (horizontal axis) vs. \var{weight} (vertical axis). }
-\label{famuss_height_weight}
-\end{figure}
-
-Because taller people tend, naturally, to be heavier, weight itself is not a good measure of whether someone is overweight.  Body mass index (BMI) is a measure of weight that is less affected by a person's height.  In the metric system, BMI is a person's weight in kilograms (kg) divided by his or her height in meters squared.  If height and weight are measured in inches and pounds, then BMI is weight in pounds divided by height in inches squared, then multiplied by 703. The \data{famuss} dataset includes the variable \var{bmi} for each participant, and figure ~\ref{famuss_height_bmi} shows the relationship between \var{height} and \var{bmi}.  The strong upward trend in Figure~\ref{famuss_height_weight} is no longer evident, indicating that \var{height} and \var{bmi} have a much weaker association.  For this reason, the US NIH, the World Health Organization and other health agencies use BMI rather that weight as a measure of obesity.
-
-\begin{figure}
-\centering
-\includegraphics[width=0.8\textwidth]
-{ch_intro_to_data_oi_biostat/figures/famussHeightVsBmi/famussHeightVsBmi.pdf}
-\caption{A scatterplot showing \var{height} (horizontal axis) vs.  \var{bmi} (vertical axis).} 
-\label{famuss_height_bmi}
-\end{figure}
-
-If two variables are not associated, then they are said to be \term{independent}. That is, two variables are independent if there is no evident relationship between the two.  It is generally not easy to determine definitively from a scatterplot whether two variables are independent, even in ~\ref{famuss_height_bmi}.
-
-\begin{caution}{association does not imply causation}{Labeling variables as \emph{explanatory} and \emph{response} does not guarantee the relationship between the two is causal, even if there is an association identified between the two variables. We use these labels only to keep track of which variable we suspect influences the other.  Taller people do tend to be heavier, a variety of genetic and environmental factors influence weight as well.}
-\end{caution}
-
-\begin{comment}
+Figure~\ref{famussHeightWeight} shows the relationship between \var{height} and \var{weight} for participants in the FAMuSS study.  Each point on the plot represents a participant. As expected, taller participants tend to be heavier, so the variables \var{height} and \var{weight} are positively associated.  
 
 \begin{figure}[h]
-   \centering
-   \includegraphics[width=0.8\textwidth]{ch_intro_to_data_oi_biostat/figures/email50LinesCharacters/email50LinesCharacters}
-   \caption{A scatterplot of \var{line\_\hspace{0.3mm}breaks} versus \var{num\_\hspace{0.3mm}char} for the \data{email50} data.}
-   \label{email50LinesCharacters}
+\centering
+\includegraphics[width=0.8\textwidth]
+{ch_intro_to_data_oi_biostat/figures/famussHeightWeight/famussHeightWeight}
+\caption{A scatterplot showing \var{height} (horizontal axis) vs. \var{weight} (vertical axis). One participant 70.5 inches tall and weighing 308 pounds is highlighted.}
+\label{famussHeightWeight}
 \end{figure}
 
-\textC{\setlength{\captionwidth}{\mycaptionwidth}}
+Taller people naturally tend to be heavier; as a consequence, weight itself is not a good measure of whether someone is overweight. Body mass index (BMI) is a measure of weight that is less affected by a person's height. A BMI of 30 or above is considered overweight.\footnote{\url{http://www.nhlbi.nih.gov/health/educational/lose_wt/risk.htm}} In the metric system, BMI is calculated as weight in kilograms (kg) divided by height squared ($\textrm {m}^{2}$). If height and weight are measured in inches and pounds, as in the \data{famuss} data, then BMI is weight in pounds (lb) divided by height squared ($\textrm {in}^{2}$), then multiplied by 703. The \data{famuss} data includes the variable \var{bmi} for each participant, and Figure~\ref{famussHeightBmi} shows the relationship between \var{height} and \var{bmi}. The strong upward trend in Figure~\ref{famussHeightWeight} is no longer evident, indicating that \var{height} and \var{bmi} have a much weaker association. For this reason, health agencies such as the US NIH and the World Health Organization (WHO) use BMI as a measure of obesity. 
 
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]
+{ch_intro_to_data_oi_biostat/figures/famussHeightBmi/famussHeightBmi.pdf}
+\caption{A scatterplot showing \var{height} (horizontal axis) vs.  \var{bmi} (vertical axis). The same individual highlighted in Figure~\ref{famussHeightWeight} is marked here, with BMI 43.56.} 
+\label{famussHeightBmi}
+\end{figure}
 
-\begin{exercise}
-What do scatterplots reveal about the data, and how might they be useful?\footnote{Answers may vary. Scatterplots are helpful in quickly spotting associations relating variables, whether those associations come in the form of simple trends or whether those relationships are more complex.}
-\end{exercise}
-\end{comment}
+If two variables are not associated, then they are said to be \term{independent}. That is, two variables are independent if there is no evident relationship between the two.  Generally, it is not easy to determine definitively whether two variables are independent from looking at a scatterplot, even in Figure~\ref{famussHeightBmi}.
 
-\index{data!cars|(}
-\begin{example}{Consider a new data set of 54 cars with two variables: vehicle price and~weight.\footnote{Subset of data from \oiRedirect{textbook-1993_car_data}{www.amstat.org/publications/jse/v1n1/datasets.lock.html}} A scatterplot of vehicle price versus weight is shown in Figure~\ref{carsPriceVsWeight}. What can be said about the relationship between these variables?}
-The relationship is evidently nonlinear, as highlighted by the dashed line. This is different from previous scatterplots we've seen, such as Figure~\vref{county_fed_spendVsPoverty} and Figure~\ref{email50LinesCharacters}, which show relationships that are very linear.
-\end{example}
-%commented out scatterplot for now to improve formatting
+\index{data!famuss|)}
+
+\textit{JV: Need an example here showing a nonlinear relationship (along the lines of the car price vs weight example). Anything in famuss or LEAP? Might even work to quickly introduce caries data.}
+
 \begin{comment}
 \begin{figure}[h]
    \centering
@@ -949,42 +787,36 @@ The relationship is evidently nonlinear, as highlighted by the dashed line. This
    \caption{A scatterplot of \var{price} versus \var{weight} for 54 cars.}
    \label{carsPriceVsWeight}
 \end{figure}
+
+\begin{example}{Consider a new data set of 54 cars with two variables: vehicle price and~weight.\footnote{Subset of data from \oiRedirect{textbook-1993_car_data}{www.amstat.org/publications/jse/v1n1/datasets.lock.html}} A scatterplot of vehicle price versus weight is shown in Figure~\ref{carsPriceVsWeight}. What can be said about the relationship between these variables?}
+	The relationship is evidently nonlinear, as highlighted by the dashed line. This is different from previous scatterplots we've seen, such as Figure~\vref{county_fed_spendVsPoverty} and Figure~\ref{email50LinesCharacters}, which show relationships that are very linear.
 \end{example}
-\index{data!cars|)}
-\end{comment}
-\begin{comment}
-\begin{exercise}
-Describe two variables that would have a horseshoe shaped association in a scatterplot.\footnote{Consider the case where your vertical axis represents something ``good'' and your horizontal axis represents something that is only good in moderation. Health and water consumption fit this description since water becomes toxic when consumed in excessive quantities.}
-\end{exercise}
 \end{comment}
 
-\subsection{Transforming data (special topic)}
-
-\textit{We should include a section on transforming data, esp since the frog data has been transformed.}
-
-\begin{comment}
 \subsection{Transforming data (special topic)}
 \label{transformingDataSubsection}
 
-When data are very strongly skewed, we sometimes transform them so they are easier to model. Consider the histogram of salaries for Major League Baseball players' salaries from 2010, which is shown in Figure~\ref{histMLBSalariesReg}.
+\index{data!frog|(}
+
+\textit{DH: We should include a section on transforming data, esp since the frog data has been transformed. JV: Agree. I replaced the MLB histograms with ones for the clutch volume data; left the scatterplots as a placeholder, as I'm not sure the clutch volume vs body size plot is a good candidate for that example. This would be a good place to introduce the empirical rule, since the transformation on frogs makes the data look more normal; empirical rule will be discussed in more detail once normal distribution is introduced, anyways (so seems fine that it would first be mentioned as part of a special topic).}
+
+Scientists may choose to transform strongly skewed data in order to make them easier to model and analyze. A \term{transformation} is a rescaling of the data using a function. Consider the histogram of egg clutch volumes from the \data{frog} data, shown in Figure~\ref{frogHistReg}. In the published paper, researchers used a $\textrm {log}_{10}$ transformation on the data before conducting analyses. Figure~\ref{frogHistLog} shows a plot of the $\textrm {log}_{10}$ of clutch volumes.
 
 \begin{figure}[ht]
 \centering
 \subfigure[]{
-\includegraphics[width=0.46\textwidth]{ch_intro_to_data_oi_biostat/figures/histMLBSalaries/histMLBSalariesReg}
-\label{histMLBSalariesReg}
+\includegraphics[width=0.46\textwidth]{ch_intro_to_data_oi_biostat/figures/frogHistTransformed/frogHistReg}
+\label{frogHistReg}
 }
 \subfigure[]{
-\includegraphics[width=0.46\textwidth]{ch_intro_to_data_oi_biostat/figures/histMLBSalaries/histMLBSalariesLog}
-\label{histMLBSalariesLog}
+\includegraphics[width=0.46\textwidth]{ch_intro_to_data_oi_biostat/figures/frogHistTransformed/frogHistLog}
+\label{frogHistLog}
 }
-\caption{\subref{histMLBSalariesReg} Histogram of MLB player salaries for 2010, in millions of dollars. \subref{histMLBSalariesLog} Histogram of the log-transformed MLB player salaries for 2010.}
-\label{histMLBSalaries}
+\caption{\subref{frogHistReg} Histogram of egg clutch volumes. \subref{frogHistLog} Histogram of the log-transformed egg clutch volumes.}
+\label{frogHistTransform}
 \end{figure}
 
-\begin{example}{The histogram of MLB player salaries is useful in that we can see the data are extremely skewed\index{skew!example: extreme} and centered (as gauged by the median) at about \$1 million. What isn't useful about this plot?}
-Most of the data are collected into one bin in the histogram and the data are so strongly skewed that many details in the data are obscured.
-\end{example}
+\textit{JV: Text after this point (in this section) needs re-writing.}
 
 There are some standard transformations that are often applied when much of the data cluster near zero (relative to the larger values in the data set) and all observations are positive. A \term{transformation} is a rescaling of the data using a function. For instance, a plot of the natural logarithm\footnote{Statisticians often write the natural logarithm as $\log$. You might be more familiar with it being written as $\ln$.} of player salaries results in a new histogram in Figure~\ref{histMLBSalariesLog}. Transformed data are sometimes easier to work with when applying statistical models because the transformed data are much less skewed and outliers are usually less extreme.
 
@@ -1006,67 +838,40 @@ Transformations can also be applied to one or both variables in a scatterplot. A
 
 Transformations other than the logarithm can be useful, too. For instance, the square root ($\sqrt{\text{original observation}}$) and inverse ($\frac{1}{\text{original observation}}$) are used by statisticians. Common goals in transforming data are to see the data structure differently, reduce skew, assist in modeling, or straighten a nonlinear relationship in a scatterplot.
 
-\index{data!email50|)}
-\end{comment}
-
-\begin{comment}
-\subsection{Mapping data (special topic)}
-
-\index{data!county|(}
-\index{intensity map|(}
-
-The \data{county} data set offers many numerical variables that we could plot using dot plots, scatterplots, or box plots, but these miss the true nature of the data. Rather, when we encounter geographic data, we should map it using an \term{intensity map}, where colors are used to show higher and lower values of a variable. Figures~\ref{countyIntensityMaps1} and~\ref{countyIntensityMaps2} shows intensity maps for federal spending per capita (\var{fed\_\hspace{0.3mm}spend}), poverty rate in percent (\var{poverty}), homeownership rate in percent (\var{homeownership}), and median household income (\var{med\_\hspace{0.3mm}income}). The color key indicates which colors correspond to which values. Note that the intensity maps are not generally very helpful for getting precise values in any given county, but they are very helpful for seeing geographic trends and generating interesting research questions.
-
-\begin{figure}
-\centering
-\subfigure[]{\includegraphics[width=\textwidth]{ch_intro_to_data_oi_biostat/figures/countyIntensityMaps/countyFedSpendMap}\label{countyFedSpendMap}}
-\subfigure[]{\includegraphics[width=\textwidth]{ch_intro_to_data_oi_biostat/figures/countyIntensityMaps/countyPovertyMap}\label{countyPovertyMap}}
-\caption{\subref{countyFedSpendMap} Map of federal spending (dollars per capita). \subref{countyPovertyMap} Intensity map of poverty rate (percent).}
-\label{countyIntensityMaps1}
-\end{figure}
-
-\begin{figure}
-\centering
-\subfigure[]{\includegraphics[width=\textwidth]{ch_intro_to_data_oi_biostat/figures/countyIntensityMaps/countyHomeownershipMap}\label{countyHomeownershipMap}}
-\subfigure[]{\includegraphics[width=\textwidth]{ch_intro_to_data_oi_biostat/figures/countyIntensityMaps/countyMedIncomeMap}\label{countyMedIncomeMap}}
-\caption{\subref{countyHomeownershipMap} Intensity map of homeownership rate (percent). \subref{countyMedIncomeMap} Intensity map of median household income (\$1000s).}
-\label{countyIntensityMaps2}
-\end{figure}
-
-\textC{\pagebreak}
-
-\begin{example}{What interesting features are evident in the \var{fed\_\hspace{0.3mm}spend} and \var{poverty} intensity maps?}
-The federal spending intensity map shows substantial spending in the Dakotas and along the central-to-western part of the Canadian border, which may be related to the oil boom in this region. There are several other patches of federal spending, such as a vertical strip in eastern Utah and Arizona and the area where Colorado, Nebraska, and Kansas meet. There are also seemingly random counties with very high federal spending relative to their neighbors. If we did not cap the federal spending range at \$18 per capita, we would actually find that some counties have extremely high federal spending while there is almost no federal spending in the neighboring counties. These high-spending counties might contain military bases, companies with large government contracts, or other government facilities with many employees.
-
-Poverty rates are evidently higher in a few locations. Notably, the deep south shows higher poverty rates, as does the southwest border of Texas. The vertical strip of eastern Utah and Arizona, noted above for its higher federal spending, also appears to have higher rates of poverty (though generally little correspondence is seen between the two variables).  High poverty rates are evident in the Mississippi flood plains a little north of New Orleans and also in a large section of Kentucky and West Virginia.
-\end{example}
-
-\begin{exercise}
-What interesting features are evident in the \var{med\_\hspace{0.3mm}income} intensity map in Figure~\ref{countyMedIncomeMap}?\footnote{Note: answers will vary. There is a very strong correspondence between high earning and metropolitan areas. You might look for large cities you are familiar with and try to spot them on the map as dark spots.}
-\end{exercise}
-
-\index{intensity map|)}
-\index{data!county|)}
-\end{comment}
-
+\index{data!frog|)}
 
 \textC{\newpage}
 
 
-\section[Considering categorical data]{Considering categorical data \sectionvideohref{youtube-7NhNeADL8fA&list=PLkIselvEzpM6pZ76FD3NoCvvgkj_p-dE8}}
+\section[Considering categorical data]{Considering categorical data }
 \label{categoricalData}
 
-\index{data!email|(}
+\index{data!famuss|(}
 
-Like numerical data, categorical data can also be organized and analyzed; however, numerical calculations cannot be done with categorical data. In this section, we will introduce tables and other basic tools for categorical data, using the \data{FAMuSS} dataset introduced in Section~\ref{variableTypes}. 
-
-% library(openintro); data(email); dim(email)
+Like numerical data, categorical data can also be organized and analyzed; however, numerical calculations cannot be done with categorical data. In this section, we will introduce tables and other basic tools for categorical data, using the \data{famuss} dataset introduced in Section~\ref{variableTypes}. 
 
 \subsection{Contingency tables}
-A table for a single variable is called a \term{frequency table}. Table \# is a frequency table for the \var{actn3.r577x} variable. Recall that \var{actn3.r577x} is a categorical variable that describes genotype at a particular locus on the ACTN3 gene: CC, CT, or TT. If we replaced the counts with percentages or proportions, the table would be called a \term{relative frequency table}.
+A table for a single variable is called a \term{frequency table}. Table \ref{famussFrequencyTable} is a frequency table for the \var{actn3.r577x} variable. Recall that \var{actn3.r577x} is a categorical variable describing genotype at a location on the ACTN3 gene: CC, CT, or TT. If we replaced the counts with percentages or proportions, the table would be called a \term{relative frequency table}.
 
-$[$insert frequency table for \texttt{actn3.r577x}$]$
+% latex table generated in R 3.0.2 by xtable 1.7-4 package
+% Mon Aug 10 15:53:11 2015
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{rrrrr}
+		\hline
+		& CC & CT & TT & Sum \\ 
+		\hline
+		Counts & 173 & 261 & 161 & 595 \\ 
+		\hline
+	\end{tabular}
+	\caption{A frequency table for the \var{actn3.r577x} variable.} 
+	\label{famussFrequencyTable}
+\end{table}
+%library(openintro); library(xtable); data(famuss); a = addmargins(table(famuss$actn3.r577x)); genotype.table = matrix(a, ncol=4, byrow=T); colnames(genotype.table) = c("CC", "CT", "TT", "Sum"); rownames(genotype.table) = "Counts"; xtable(genotype.table, digits = 0, caption = "A frequency table for the actn3.r577x variable.", label = "famussFrequencyTable")
 
+%JV: There is probably a cleaner way to generate this table, but wasn't sure how... OI version is below.
+
+\begin{comment}
 \begin{table}[htb]
 	\centering
 	\begin{tabular}{cccc}
@@ -1080,13 +885,36 @@ $[$insert frequency table for \texttt{actn3.r577x}$]$
 	\label{emailNumberTable}
 \end{table}
 %library(openintro); library(xtable); data(email); xtable(table(email[,c("html")]))
+\end{comment}
 
-Table \# summarizes two variables: \var{race} and \var{actn3.r577x}. A table that summarizes data for two categorical variables in this way is called a \term{contingency table}. Each value in the table represents the number of times a particular combination of variable outcomes occurred. For example, the first row of the table shows that of the African-American individuals, 16 are CC, 6 are CT, and 5 are TT. 
+Table \ref{famussContingencyTable} summarizes two variables: \var{race} and \var{actn3.r577x}. A table that summarizes data for two categorical variables in this way is called a \term{contingency table}.\footnote{Contingency tables are also known as \term{two-way tables}.} Each value in the table represents the number of times a particular combination of variable outcomes occurred. For example, the first row of the table shows that of the African-American individuals, 16 are CC, 6 are CT, and 5 are TT. 
 
 Row and column totals, known collectively as \term{marginal totals}, are also included. The \term{row totals} provide the total counts across each row; \term{column totals} are the total counts down each column.
 
-$[$insert race by genotype table$]$
+% latex table generated in R 3.0.2 by xtable 1.7-4 package
+% Fri Aug 07 11:43:29 2015
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{rrrrr}
+		\hline
+		& CC & CT & TT & Sum \\ 
+		\hline
+		African Am & 16 & 6 & 5 & 27 \\ 
+		Asian & 21 & 18 & 16 & 55 \\ 
+		Caucasian & 125 & 216 & 126 & 467 \\ 
+		Hispanic & 4 & 10 & 9 & 23 \\ 
+		Other & 7 & 11 & 5 & 23 \\ 
+		Sum & 173 & 261 & 161 & 595 \\ 
+		\hline
+	\end{tabular}
+	\caption{A contingency table for \var{race} and \var{actn3.r577x}.} 
+	\label{famussContingencyTable}
+\end{table}
+%library(xtable); data(famuss); genotype.by.race.table = addmargins(table(famuss$race, famuss$actn3.r577x)); xtable(genotype.by.race.table, digits = 0, caption = "A contingency table for race and actn3.r577x.", label = "famussContingencyTable")
 
+\textit{JV: Not sure how they added the variable labels to their table. I have left the OI tables and code in the source.}
+
+\begin{comment}
 \begin{table}[ht]
 \centering
 \begin{tabular}{ll  ccc  rr}
@@ -1105,10 +933,32 @@ $[$insert race by genotype table$]$
 \label{emailSpamNumberTableTotals}
 %library(openintro); library(xtable); data(email); tab <- table(email[,c("spam", "number")])[2:1,]; xtable(tab); rowSums(tab); colSums(tab); sum(tab)
 \end{table}
+\end{comment}
 
-%\subsection{Row and column proportions}
-Table \# shows the row proportions for Table \#. The \termsub{row proportions}{contingency table!row proportions} are computed as the counts divided by their row totals. The value 16 at the intersection of \resp{African American} and\resp{CC} is replaced by $16/27=0.593$; i.e., 16 divided by the row total, 27. The value 0.593 corresponds to the proportion of African-Americans in the study of the CC genotype.
+Table~\ref{famussRowPropTable} shows the row proportions for Table~\ref{famussContingencyTable}. The \termsub{row proportions}{contingency table!row proportions} are computed as the counts divided by their row totals. The value 16 at the intersection of \resp{African American} and \resp{CC} is replaced by $16/27=0.593$; i.e., 16 divided by the row total, 27. The value 0.593 corresponds to the proportion of African-Americans in the study with genotype CC.
 
+% latex table generated in R 3.0.2 by xtable 1.7-4 package
+% Fri Aug 07 11:46:57 2015
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{rrrrr}
+		\hline
+		& CC & CT & TT & Sum \\ 
+		\hline
+		African Am & $16/27=0.593$ & $6/27=0.222$ & $5/27=0.185$ & $27/27=1.00$ \\ 
+		Asian & $21/55=0.382$ & $18/55=0.327$ & $16/55=0.291$ & $55/44=1.00$ \\ 
+		Caucasian & $125/467=0.267$ & $216/467=0.463$ & $126/467=0.270$ & $467/467=1.00$ \\ 
+		Hispanic & $4/23=0.174$ & $10/23=0.435$ & $9/23=0.391$ & $23/23=1.00$ \\ 
+		Other & $7/23=0.304$ & $11/23=0.478$ & $5/23=0.217$ & $23/23=1.00$ \\ 
+		Sum & $173/595=0.291$ & $261/595=0.438$ & $161/595=0.271$ & $595/595=1.00$ \\ 
+		\hline
+	\end{tabular}
+	\caption{A contingency table with row proportions for the \var{race} and \var{actn3.r577x} variables.} 
+	\label{famussRowPropTable}
+\end{table}
+%library(xtable); data(famuss); row.prop.table = table(famuss$race, famuss$actn3.r577x)[1:5,]; row.prop.table / rep(rowSums(row.prop.table), 3); rowSums(row.prop.table); xtable(genotype.by.race.table, digits = 0, caption = "A contingency table with row proportions for the race and actn3.r577x variables.", label = "famussRowPropTable"); 173/595; 261/595; 161/595
+
+\begin{comment}
 \begin{table}
 \centering
 \begin{tabular}{l rrr r}
@@ -1128,9 +978,42 @@ Total & $549/3921 = 0.140$ & $2827/3921 = 0.721$ &
 \label{rowPropSpamNumber}
 % library(openintro); data(email); g <- table(email$spam, email$number)[2:1,]; g / rep(rowSums(g), 3); rowSums(g)
 \end{table}
+\end{comment}
 
-A contingency table of the column proportions is computed in a similar way, where each \termsub{column proportion}{contingency table!column proportion} is computed as the count divided by the corresponding column total. Table \# shows such a table, and here the value 0.092 indicates that 9.2\% of CC individuals in the study are African-American.
+\begin{example}{What does Table~\ref{famussRowPropTable} highlight about the distribution of genotypes between different populations?} 
+Ggenotype distributions vary between populations. For the Caucasian individuals sampled in the study, CT is the most common genotype at 46.3\%. In contrast, over half (59.3\%) of African Americans sampled are CC. CC is also the most common genotype for Asians, but in this population, genotypes are more evenly distributed: 38.2\% of Asians sampled are CC, 32.7\% are CT, and 29.1\% are TT.
+\end{example}
 
+A contingency table of the column proportions is computed in a similar way, in which each \termsub{column proportion}{contingency table!column proportion} is computed as the count divided by the corresponding column total. Table~\ref{famussColPropTable} shows such a table, and here the value 0.092 indicates that 9.2\% of CC individuals in the study are African-American.
+
+% latex table generated in R 3.0.2 by xtable 1.7-4 package
+% Fri Aug 07 12:13:27 2015
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{rrrrr}
+		\hline
+		& CC & CT & TT & Sum \\ 
+		\hline
+		African Am & $16/173=0.092$ & $6/261=0.037$ & $5/161=0.191$ & $27/595=0.045$ \\ 
+		Asian & $21/173=0.080$ & $18/261=0.104$ & $16/161=0.993$ & $55/595=0.092$ \\ 
+		Caucasian & $125/173=0.776$ & $216/261=0.828$ & $126/161=0.728$ & $467/595=0.785$ \\ 
+		Hispanic & $4/173=0.023$ & $10/261=0.062$ & $9/161=0.034$ & $23/595=0.038$ \\ 
+		Other & $7/173=0.027$ & $11/261=0.063$ & $5/161=0.031$ & $23/595=0.038$ \\ 
+		Sum & $173/173=1.000$ & $261/261=1.000$ & $161/161=1.000$ & $595/595=1.000$ \\ 
+		\hline
+	\end{tabular}
+	\caption{A contingency table with column proportions for the \var{race} and \var{actn3.r577x} variables.} 
+	\label{famussColPropTable}
+\end{table}
+%library(xtable); data(famuss); col.prop.table = table(famuss$race, famuss$actn3.r577x)[1:5,]; col.prop.table / rep(colSums(col.prop.table), 3); colSums(col.prop.table); xtable(genotype.by.race.table, digits = 0, caption = "A contingency table with column proportions for the race and actn3.r577x variables.", label = "famussColPropTable"); 27/595; 55/595; 467/595; 23/595; 23/595
+
+\textit{JV: Not sure if the following exercise is very clear, but there should be something here to warn against misinterpretation of the column proportions in this context. Important to point out that one limitation of the data is uneven representation between groups.}
+
+\begin{exercise}
+As computed in Table~\ref{famussColPropTable}, 77.6\% of CC individuals in the study are Caucasian. Does this data suggest that in the general population, people of CC genotype are highly likely to be Caucasian?\footnote{No, this is not a reasonable conclusion to draw from the data. The high proportion of Caucasians among CC individuals primarily reflects the large number of Caucasians sampled in the study -- 78.5\% of the people sampled are Caucasian. The uneven representation of different races is one limitation of the \data{famuss} data.}
+\end{exercise}
+
+\begin{comment}
 \begin{table}[h]
 \centering\small
 \begin{tabular}{l rrr r}
@@ -1149,6 +1032,8 @@ Total & 1.000 & 1.000 & 1.000 & 1.000 \\
 \label{colPropSpamNumber}
 % library(openintro); data(email); g <- table(email$spam, email$number)[2:1,]; g / rep(colSums(g), rep(2, 3)); g; colSums(g)
 \end{table}
+\end{comment}
+
 \begin{comment}
 We could also have checked for an association between \var{spam} and \var{number} in Table~\ref{rowPropSpamNumber} using row proportions. When comparing these row proportions, we would look down columns to see if the fraction of emails with no numbers, small numbers, and big numbers varied from \resp{spam} to \resp{not~spam}.
 
@@ -1190,36 +1075,49 @@ Look back to Tables~\ref{rowPropSpamNumber} and~\ref{colPropSpamNumber}. Which w
 \end{exercise}
 \end{comment}
 
-\textC{\newpage}
-
 \subsection{Bar plots}
-A bar plot is a common way to display a single categorical variable. The left panel of Figure \# shows a \term{bar plot} for the \var{actn3.r577x} variable. In the right panel, the counts are converted into proportions (e.g. $173/595=0.291$ for \resp{none}), showing the proportion of observations that are in each level (i.e. in each category).
+A bar plot is a common way to display a single categorical variable. The left panel of Figure~\ref{famussBarPlot} shows a \term{bar plot} for the \var{actn3.r577x} variable. In the right panel, the counts are converted into proportions (e.g. $173/595=0.291$ for the \resp{CC} genotype), showing the proportion of observations that are in each level (i.e. in each category).
 
 \begin{figure}[bht]
 	\centering
-	\includegraphics[width=0.9\textwidth]{ch_intro_to_data_oi_biostat/figures/emailNumberBarPlot/emailNumberBarPlot}
-	\caption{Two bar plots of \var{number}. The left panel shows the counts, and the right panel shows the proportions in each group.}
-	\label{emailNumberBarPlot}
+	\includegraphics[width=0.9\textwidth]{ch_intro_to_data_oi_biostat/figures/famussBarPlot/famussBarPlot}
+	\caption{Two bar plots of \var{actn3.r577x}. The left panel shows the counts, and the right panel shows the proportions for each genotype.}
+	\label{famussBarPlot}
 \end{figure}
 
-%\subsection{Segmented bar and mosaic plots}
-%\label{segmentedBarPlotsAndIndependence}
+\textit{JV: After poking around in the R code for the segmented plots, I found out that they are made by overlaying a second graph on top of the other -- a method that only works well for one category mapped onto the total; I tested out this method to make Figure~\ref{famussSegBarPlot}, showing Caucasians as a part of the total, but it's not a particularly interesting/relevant plot.} 
+	
+\textit{JV: With the help of Google, I figured out how to make segmented bar plots using a different method -- plots follow, one using genotype for the bars and one using race for the bars. The following paragraph needs to be re-written based on which plots we ultimately decide to include, and introduce the context for examining race and genotype together (mutant allele known to exist at different frequencies in various human populations). I did not find a way to make the standardized segmented plots.}
 
-Segmented bar plots provide a way to visualize the information in contingency tables. A \termsub{segmented bar plot}{bar plot!segmented bar plot} is a graphical display of contingency table information. For example, a segmented bar plot representing Table \# is shown in \#, where a bar plot was created using the \var{actn3.r577x} variable, with each group divided by the levels of \var{race}. The column proportions of Table \# have been translated into a standardized segmented bar plot in Figure \#, which is a helpful visualization of the races represented in each level of \var{actn3.r577x}.
+Segmented bar plots provide a way to visualize the information in contingency tables. A \termsub{segmented bar plot}{bar plot!segmented bar plot} is a graphical display of contingency table information. For example, a segmented bar plot using data from Table~\ref{famussContingencyTable} is shown in Figure~\ref{famussSegBarPlot}, where a bar plot was created using the \var{actn3.r577x} variable, with each group divided by the levels of \var{race}. The column proportions of Table~\ref{famussColPropTable} have been translated into a standardized segmented bar plot in Figure~\ref{famussSegBarSta}, which is a helpful visualization of the races represented in each level of \var{actn3.r577x}.
 
 \begin{figure}[h]
 \centering
 \subfigure[]{
-\includegraphics[width=0.46\textwidth]{ch_intro_to_data_oi_biostat/figures/emailSpamNumberSegBar/emailSpamNumberSegBar}
-\label{emailSpamNumberSegBar}
+\includegraphics[width=0.46\textwidth]{ch_intro_to_data_oi_biostat/figures/famussSegBar/famussSegBar}
+\label{famussSegBar}
 }
 \subfigure[]{
-\includegraphics[width=0.46\textwidth]{ch_intro_to_data_oi_biostat/figures/emailSpamNumberSegBar/emailSpamNumberSegBarSta}
-\label{emailSpamNumberSegBarSta}
+\includegraphics[width=0.46\textwidth]{ch_intro_to_data_oi_biostat/figures/famussSegBar/famussSegBarSta}
+\label{famussSegBarSta}
 }
-\caption{\subref{emailSpamNumberSegBar} Segmented bar plot for numbers found in emails, where the counts have been further broken down by \var{spam}. \subref{emailSpamNumberSegBarSta} Standardized version of Figure~\subref{emailSpamNumberSegBar}.}
-\label{emailSpamNumberSegBarPlot}
+\caption{\subref{famussSegBar} Segmented bar plot for individuals by genotype, in which the counts have been further broken down by Caucasian (blue) and not-Caucasian (yellow). \subref{famussSegBarSta} Standardized version of Figure~\subref{famussSegBar}.}
+\label{famussSegBarPlot}
 \end{figure}
+
+\begin{figure}[h!]
+\includegraphics[width=0.9\textwidth]{ch_intro_to_data_oi_biostat/figures/famussSegBar/famussSegBarTest} 
+\caption{Segmented bar plot for individuals by race, where the counts have been further broken down by genotype.}
+\label{famussSegBarTest}
+\end{figure}
+
+\begin{figure}[h!]
+\includegraphics[width=0.9\textwidth]{ch_intro_to_data_oi_biostat/figures/famussSegBar/famussSegBarTestB}
+\caption{Segmented bar plot for individuals by genotype, where the counts have been further broken down by \var{race}.}
+\label{famussSegBarTestB}
+\end{figure}
+
+\textit{JV: I don't particularly like the mosaic plots, and they may not be the best choice for displaying the \data{famuss} data, anyways. I also think the pie chart section doesn't necessarily need to be included.}
 
 \begin{comment}
 \begin{example}{Examine both of the segmented bar plots. Which is more useful?}
@@ -1273,25 +1171,36 @@ While pie charts are well known, they are not typically as useful as other chart
    \label{emailNumberPieChart}
 \end{figure}
 
-\index{data!email|)}
 \end{comment}
 
+\newpage
 \subsection{Comparing numerical data across groups}
 \label{comparingAcrossGroups}
-Some of the more interesting investigations can be considered by examining numerical data across groups. In this section, two convenient methods are introduced: side-by-side box plots and hollow histograms.
+In this section, two convenient methods for examining numerical data across groups are introduced: side-by-side boxplots and hollow histograms. The \term{side-by-side boxplot} \index{boxplot!side-by-side boxplot} is a traditional tool for comparing across categories. The \termsub{hollow histogram}{hollow histogram} method plots the outlines of histograms for each group onto the same axes.
 
-The \term{side-by-side box plot} \index{box plot!side-by-side box plot} is a traditional tool for comparing across groups. Another useful plotting method uses \termsub{hollow histograms}{hollow histogram} to compare numerical data across groups. These are just the outlines of histograms of each group put on the same plot.
+Recall the question introduced in Section~\ref{variableRelations}: is ACTN3 genotype associated with variation in muscle function? To explore this question, genotype and variation in muscle function (measured by \var{ndrm.ch}) can be compared using side-by-side boxplots and hollow histograms, as shown in Figure~\ref{famussGenoMuscFunc}. The histograms are useful for seeing distribution shape, skew, and groups of anomalies, while the side-by-side boxplots are especially useful for comparing centers and spreads. Comparison of median change in non-dominant arm strength between the two groups reveals that the TT genotype is associated with a greater increase in strength than CC or TT. In other words, the T allele appears to be associated with greater muscle function.
 
-Recall the question introduced in Section~\ref{variableRelations}: is ACTN3 genotype associated with variation in muscle function? To explore this question, genotype and variation in muscle function (measured by \var{ndrm.ch}) can be compared using side-by-side boxplots and hollow histograms. The histograms are useful for seeing distribution shape, skew, and groups of anomalies, while the side-by-side boxplots are especially useful for comparing centers and spreads. Comparison of median change in non-dominant arm strength between the two groups reveals that the TT genotype is associated with a greater increase in strength than CC or TT. In other words, the T allele appears to be associated with greater muscle function.
-
-\begin{figure}
+\begin{figure}[h]
    \centering
-   \includegraphics[width=\textwidth]{ch_intro_to_data_oi_biostat/figures/countyIncomeSplitByPopGain/countyIncomeSplitByPopGain}
-   \caption{Side-by-side box plot (left panel) and hollow histograms (right panel) for \var{med\_\hspace{0.3mm}income}, where the counties are split by whether there was a population gain or loss from 2000 to 2010. The income data were collected between 2006 and 2010.}
-   \label{countyIncomeSplitByPopGain}
+   \includegraphics[width=\textwidth]{ch_intro_to_data_oi_biostat/figures/famussGenoMuscFunc/famussGenoMuscFunc}
+   \caption{Side-by-side boxplot (left panel) and hollow histograms (right panel) for \var{ndrm.ch}, split by ACTN3 genotype.}
+   \label{famussGenoMuscFunc}
 \end{figure}
 
-Not all data will show such apparent trends. For example, consider the question of interest in the \data{frog} dataset: how does maternal investment vary with altitude? Researchers collected data at 11 altitudes from 2,035 to 3,495 m above sea level, measuring attributes of egg clutches such as clutch volume. A side-by-side boxplot comparing clutch volume across altitudes is shown in Figure \#. It seems that as a general rule, clutches found at higher altitudes have greater volume. However, more advanced statistical methods are required to thoroughly investigate the potential association between altitude and clutch size.  
+\index{data!famuss|)}
+
+\index{data!frog|(}
+
+Not all data will show such apparent trends. For example, consider the question of interest in the \data{frog} dataset: how does maternal investment vary with altitude? Researchers collected data at 11 altitudes from 2,035 to 3,495 m above sea level, measuring attributes of egg clutches such as clutch volume. A side-by-side boxplot comparing clutch volume across altitudes is shown in Figure~\ref{frogClutchVolAlt}. It seems that as a general rule, clutches found at higher altitudes have greater volume. However, more advanced statistical methods, such as those used in the published study, are required to thoroughly investigate the potential association between altitude and clutch size. 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{ch_intro_to_data_oi_biostat/figures/frogClutchVolAlt/frogClutchVolAlt}
+	\caption{Side-by-side boxplot comparing the distribution of \var{clutch.volume} for different altitudes.}
+	\label{frogClutchVolAlt}
+\end{figure} 
+
+\index{data!frog|)}
 
 \begin{comment}
 \begin{exercise} \label{comparingPriceByTypeExercise}
@@ -1301,132 +1210,6 @@ Use the plots in Figure~\ref{countyIncomeSplitByPopGain} to compare the incomes 
 \begin{exercise}
 What components of each plot in Figure~\ref{countyIncomeSplitByPopGain} do you find most useful?\footnote{Answers will vary. The side-by-side box plots are especially useful for comparing centers and spreads, while the hollow histograms are more useful for seeing distribution shape, skew, and groups of anomalies.}
 \end{exercise}
-\end{comment}
-\index{data!county|)}
-
-\begin{comment}
-%___________________________________________
-\section[Case study: gender discrimination (special topic)]{Case study: gender discrimination \sectionvideohref{youtube-2pHhjx9hyM4&list=PLkIselvEzpM6pZ76FD3NoCvvgkj_p-dE8} \\(special topic)}
-\label{caseStudyGenderDiscrimination}
-
-\index{data!discrimination|(}
-
-\begin{example}{Suppose your professor splits the students in class into two groups: students on the left and students on the right. If $\hat{p}_{_L}$ and $\hat{p}_{_R}$ represent the proportion of students who own an Apple product on the left and right, respectively, would you be surprised if $\hat{p}_{_L}$ did not {exactly} equal $\hat{p}_{_R}$?}\label{classRightLeftSideApple}
-While the proportions would probably be close to each other, it would be unusual for them to be exactly the same. We would probably observe a small difference due to {chance}.
-\end{example}
-
-\begin{exercise}
-If we don't think the side of the room a person sits on in class is related to whether the person owns an Apple product, what assumption are we making about the relationship between these two variables?\footnote{We would be assuming that these two variables are independent.}
-\end{exercise}
-
-\subsection{Variability within data}
-\label{variabilityWithinData}
-
-We consider a study investigating gender discrimination in the 1970s, which is set in the context of personnel decisions within a bank.\footnote{Rosen B and Jerdee T. 1974. Influence of sex role stereotypes on personnel decisions. Journal of Applied Psychology 59(1):9-14.} The research question we hope to answer is, ``Are females unfairly discriminated against in promotion decisions made by male managers?"
-
-The participants in this study are 48 male bank supervisors attending a management institute at the University of North Carolina in 1972. They were asked to assume the role of the personnel director of a bank and were given a personnel file to judge whether the person should be promoted to a branch manager position. The files given to the participants were identical, except that half of them indicated the candidate was male and the other half indicated the candidate was female. These files were randomly assigned to the subjects.
-
-\begin{exercise}
-Is this an observational study or an experiment? What implications does the study type have on what can be inferred from the results?\footnote{The study is an experiment, as subjects were randomly assigned a male file or a female file. Since this is an experiment, the results can be used to evaluate a causal relationship between gender of a candidate and the promotion decision.}
-\end{exercise}
-
-For each supervisor we record the gender associated with the assigned file and the promotion decision. Using the results of the study summarized in Table~\ref{discriminationResults}, we would like to evaluate if females are unfairly discriminated against in promotion decisions. In this study, a smaller proportion of females are promoted than males (0.583 versus 0.875), but it is unclear whether the difference provides \emph{convincing evidence} that females are unfairly discriminated against.
-
-\begin{table}[ht]
-\centering
-\begin{tabular}{l l cc rr}
-& & \multicolumn{2}{c}{\var{decision}} \\
-  \cline{3-4}
-		&			& 	{promoted} 	& {not promoted} & Total & \hspace{3mm}  \\ 
-  \cline{2-5}
-		&	{male} 			& 21    		& 3   & 24  	 \\ 
-  \raisebox{1.5ex}[0pt]{\var{gender}}		&	{female} 	& 14    		& 10     & 24	 \\ 
-  \cline{2-5}
-  		&	Total		& 35	& 13	&  48 \\
-  \cline{2-5}
-\end{tabular}
-\caption{Summary results for the gender discrimination study.}
-\label{discriminationResults}
-\end{table}
-
-\begin{example}{Statisticians are sometimes called upon to evaluate the strength of evidence. When looking at the rates of promotion for males and females in this study, what comes to mind as we try to determine whether the data show convincing evidence of a real difference?} \label{discriminationResultsWhatIsConvincingEvidence}
-The observed promotion rates (58.3\% for females versus 87.5\% for males) suggest there might be discrimination against women in promotion decisions. However, we cannot be sure if the observed difference represents discrimination or is just from random chance. Generally there is a little bit of fluctuation in sample data, and we wouldn't expect the sample proportions to be \emph{exactly} equal, even if the truth was that the promotion decisions were independent of gender.
-\end{example}
-
-Example~\ref{discriminationResultsWhatIsConvincingEvidence} is a reminder that the observed outcomes in the sample may not perfectly reflect the true relationships between variables in the underlying population. Table~\ref{discriminationResults} shows there were 7 fewer promotions in the female group than in the male group, a difference in promotion rates of 29.2\% $\left( \frac{21}{24} - \frac{14}{24} = 0.292 \right)$. This difference is large, but the sample size for the study is small, making it unclear if this observed difference represents discrimination or whether it is simply due to chance. We label these two competing claims, $H_0$ and $H_A$:
-\begin{itemize}
-\setlength{\itemsep}{0mm}
-\item[$H_0$:] \textbf{Independence model.} The variables \var{gender} and \var{decision} are independent. They have no relationship, and the observed difference between the proportion of males and females who were promoted, 29.2\%, was due to chance.
-\item[$H_A$:] \textbf{Alternative model.} The variables \var{gender} and \var{decision} are \emph{not} independent. The difference in promotion rates of 29.2\% was not due to chance, and equally qualified females are less likely to be promoted than males.
-\end{itemize}
-
-What would it mean if the independence model, which says the variables \var{gender} and \var{decision} are unrelated, is true? It would mean each banker was going to decide whether to promote the candidate without regard to the gender indicated on the file. That~is, the difference in the promotion percentages was due to the way the files were randomly divided to the bankers, and the randomization just happened to give rise to a relatively large difference of 29.2\%.
-
-Consider the alternative model: bankers were influenced by which gender was listed on the personnel file. If this was true, and especially if this influence was substantial, we would expect to see some difference in the promotion rates of male and female candidates. If this gender bias was against females, we would expect a smaller fraction of promotion decisions for female personnel files relative to the male files.
-
-We choose between these two competing claims by assessing if the data conflict so much with $H_0$ that the independence model cannot be deemed reasonable. If this is the case, and the data support $H_A$, then we will reject the notion of independence and conclude there was discrimination.
-
-\subsection{Simulating the study}
-\label{simulatingTheStudy}
-
-Table~\ref{discriminationResults} shows that 35 bank supervisors recommended promotion and 13 did not. Now, suppose the bankers' decisions were independent of gender. Then, if we conducted the experiment again with a different random arrangement of files, differences in promotion rates would be based only on random fluctuation. We can actually perform this \term{randomization}, which simulates what would have happened if the bankers' decisions had been independent of gender but we had distributed the files differently.
-
-In this \term{simulation}, we thoroughly shuffle 48 personnel files, 24 labeled \resp{male\_\hspace{0.3mm}sim} and 24 labeled \resp{female\_\hspace{0.3mm}sim}, and deal these files into two stacks. We will deal 35 files into the first stack, which will represent the 35 supervisors who recommended promotion. The second stack will have 13 files, and it will represent the 13 supervisors who recommended against promotion. Then, as we did with the original data, we tabulate the results and determine the fraction of \resp{male\_\hspace{0.3mm}sim} and \resp{female\_\hspace{0.3mm}sim} who were promoted. The randomization of files in this simulation is independent of the promotion decisions, which means any difference in the two fractions is entirely due to chance. Table~\ref{discriminationRand1} show the results of such a simulation.
-
-\begin{table}[ht]
-\centering
-\begin{tabular}{l l cc rr}
-& & \multicolumn{2}{c}{\var{decision}} \\
-  \cline{3-4}
-		&			& 	{promoted} 	& {not promoted} & Total & \hspace{3mm}  \\ 
-  \cline{2-5}
-		&	\resp{male\_\hspace{0.3mm}sim} 					& 18    		& 6    & 24 	 \\ 
-  \raisebox{1.5ex}[0pt]{\var{gender\_\hspace{0.3mm}sim}}		&	\resp{female\_\hspace{0.3mm}sim} 	& 17    		& 7 & 24    	 \\ 
-  \cline{2-5}
-  & Total	& 35 & 13 & 48
-\end{tabular}
-\caption{Simulation results, where any difference in promotion rates between \resp{male\_\hspace{0.3mm}sim} and \resp{female\_\hspace{0.3mm}sim} is purely due to chance.}
-\label{discriminationRand1}
-\end{table}
-
-\begin{exercise} \label{sampleDifferenceInMaleAndFemaleDiscrimination}
-What is the difference in promotion rates between the two simulated groups in Table~\ref{discriminationRand1}? How does this compare to the observed 29.2\% in the actual groups?\footnote{$18/24 - 17/24=0.042$ or about 4.2\% in favor of the men. This difference due to chance is much smaller than the difference observed in the actual groups.}
-\end{exercise}
-
-
-\textC{\pagebreak}
-
-\subsection{Checking for independence}
-
-We computed one possible difference under the independence model in Guided Practice~\ref{sampleDifferenceInMaleAndFemaleDiscrimination}, which represents one difference due to chance. While in this first simulation, we physically dealt out files, it is more efficient to perform this simulation using a computer. Repeating the simulation on a computer, we get another difference due to chance: -0.042. And another: 0.208. And so on until we repeat the simulation enough times that we have a good idea of what represents the \emph{distribution of differences from chance alone}. Figure~\ref{discRandDotPlot} shows a plot of the differences found from 100 simulations, where each dot represents a simulated difference between the proportions of male and female files that were recommended for promotion.
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.85\textwidth]{ch_intro_to_data_oi_biostat/figures/discRandDotPlot/discRandDotPlot}
-\caption{A stacked dot plot of differences from 100 simulations produced under the independence model, $H_0$, where \var{gender\_\hspace{0.3mm}sim} and \var{decision} are independent. Two of the 100 simulations had a difference of at least 29.2\%, the difference observed in the study.}
-\label{discRandDotPlot}
-\end{figure}
-
-Note that the distribution of these simulated differences is centered around 0. We simulated these differences assuming that the independence model was true, and under this condition, we expect the difference to be zero with some random fluctuation. We would generally be surprised to see a difference of \emph{exactly} 0: sometimes, just by chance, the difference is higher than 0, and other times it is lower than zero.
-
-\begin{example}{How often would you observe a difference of at least 29.2\% (0.292) according to Figure~\ref{discRandDotPlot}? Often, sometimes, rarely, or never?}
-It appears that a difference of at least 29.2\% due to chance alone would only happen about 2\% of the time according to Figure~\ref{discRandDotPlot}. Such a low probability indicates a rare event.
-\end{example}
-
-\textC{\newpage}
-
-The difference of 29.2\% being a rare event suggests two possible interpretations of the results of the study:
-\begin{itemize}
-\setlength{\itemsep}{0mm}
-\item[$H_0$] \textbf{Independence model.} Gender has no effect on promotion decision, and we observed a difference that would only happen rarely.
-\item[$H_A$] \textbf{Alternative model.} Gender has an effect on promotion decision, and what we observed was actually due to equally qualified women being discriminated against in promotion decisions, which explains the large difference of 29.2\%.
-\end{itemize}
-Based on the simulations, we have two options. (1)~We conclude that the study results do not provide strong evidence against the independence model. That is, we do not have sufficiently strong evidence to conclude there was gender discrimination. (2)~We conclude the evidence is sufficiently strong to reject $H_0$ and assert that there was gender discrimination. When we conduct formal studies, usually we reject the notion that we just happened to observe a rare event.\footnote{This reasoning does not generally extend to anecdotal observations. Each of us observes incredibly rare events every day, events we could not possibly hope to predict. However, in the non-rigorous setting of anecdotal evidence, almost anything may appear to be a rare event, so the idea of looking for rare events in day-to-day activities is treacherous. For example, we might look at the lottery: there was only a 1 in 176 million chance that the Mega Millions numbers for the largest jackpot in history (March 30, 2012) would be (2, 4, 23, 38, 46) with a Mega ball of (23), but nonetheless those numbers came up! However, no matter what numbers had turned up, they would have had the same incredibly rare odds. That is, \emph{any set of numbers we could have observed would ultimately be incredibly rare}. This type of situation is typical of our daily lives: each possible event in itself seems incredibly rare, but if we consider every alternative, those outcomes are also incredibly rare. We should be cautious not to misinterpret such anecdotal evidence.} So in this case, we reject the independence model in favor of the alternative. That is, we are concluding the data provide strong evidence of gender discrimination against women by the supervisors.
-
-\index{data!discrimination|)}
-
-One field of statistics, statistical inference, is built on evaluating whether such differences are due to chance. In statistical inference, statisticians evaluate which model is most reasonable given the data. Errors do occur, just like rare events, and we might choose the wrong model. While we do not always choose correctly, statistical inference gives us tools to control and evaluate how often these errors occur. In Chapter~\ref{foundationsForInference}, we give a formal introduction to the problem of model selection. We spend the next two chapters building a foundation of probability and theory necessary to make that discussion rigorous.
-
 \end{comment}
 
 \end{doublespace}

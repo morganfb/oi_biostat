@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex version 2.4 $
+% $ biblatex version 2.5 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -15,6 +15,589 @@
       \aftergroup\endinput}
   {}
 \endgroup
+
+\entry{data:smoking}{misc}{}
+  \field{note}{National STEM Centre,
+  \oiRedirect{textbook-Stats4Schools_smoking}{Large Datasets from
+  stats4schools}.}
+\endentry
+
+\entry{data:ciaFactbook}{misc}{}
+  \field{note}{CIA Factbook, \oiRedirect{textbook-cia_factbook}{Country
+  Comparisons, 2014}.}
+\endentry
+
+\entry{data:durhamAQI:2011}{misc}{}
+  \field{note}{US Environmental Protection Agency,
+  \oiRedirect{textbook-airdata_2011}{AirData, 2011.}}
+\endentry
+
+\entry{survey:immigFL:2012}{misc}{}
+  \field{note}{SurveyUSA, \oiRedirect{textbook-SurveyUSA_18927}{News Poll
+  \#18927}, data collected Jan 27-29, 2012}
+\endentry
+
+\entry{survey:raiseTaxes:2015}{misc}{}
+  \field{note}{Public Policy Polling, \oiRedirect{textbook-PPP_30215}{Americans
+  on College Degrees, Classic Literature, the Seasons, and More}, data
+  collected Feb 20-22, 2015}
+\endentry
+
+\entry{Allais:2011}{article}{}
+  \name{author}{7}{}{%
+    {{}%
+     {Allais}{A.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Romoli}{R.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Rolando}{R.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Airola}{A.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Castagnoli~Gabellari}{C.~G.}%
+     {I.}{I.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Allais}{A.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Benedetto}{B.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer}%
+  }
+  \strng{namehash}{AG+1}
+  \strng{fullhash}{AGRMRSAGCGIARBC1}
+  \field{sortinit}{A}
+  \field{number}{1}
+  \field{pages}{173\bibrangedash 175}
+  \field{title}{\oiRedirect{textbook-acupuncture_migraine_2011}{Ear acupuncture
+  in the treatment of migraine attacks: a randomized trial on the efficacy of
+  appropriate versus inappropriate acupoints}}
+  \field{volume}{32}
+  \field{journaltitle}{Neurological Sci.}
+  \field{year}{2011}
+\endentry
+
+\entry{Allison+Cicchetti:1975}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Allison}{A.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Cicchetti}{C.}%
+     {D.V.}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{ATCD1}
+  \strng{fullhash}{ATCD1}
+  \field{sortinit}{A}
+  \field{pages}{442}
+  \field{title}{\oiRedirect{textbook-mammal_sleep_1975}{Sleep in mammals:
+  ecological and constitutional correlates}}
+  \field{volume}{75}
+  \field{journaltitle}{Arch. Hydrobiol}
+  \field{year}{1975}
+\endentry
+
+\entry{Audera:2001}{article}{}
+  \true{moreauthor}
+  \name{author}{4}{}{%
+    {{}%
+     {Audera}{A.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Patulny}{P.}%
+     {R.V.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Sander}{S.}%
+     {B.H.}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Douglas}{D.}%
+     {R.M.}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {AUSTRALASIAN MEDICAL PUBLISHING COMPANY LTD}%
+  }
+  \strng{namehash}{AC+1}
+  \strng{fullhash}{ACPRSBDR+1}
+  \field{sortinit}{A}
+  \field{number}{7}
+  \field{pages}{359\bibrangedash 362}
+  \field{title}{\oiRedirect{textbook-vitamin_C_cold_treatment_2001}{Mega-dose
+  vitamin C in treatment of the common cold: a randomised controlled trial}}
+  \field{volume}{175}
+  \field{journaltitle}{Medical Journal of Australia}
+  \field{year}{2001}
+\endentry
+
+\entry{Backstrom:2011}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Backstrom}{B.}%
+     {Lars}{L.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{BL1}
+  \strng{fullhash}{BL1}
+  \field{sortinit}{B}
+  \field{title}{\oiRedirect{textbook-anatomy-of-facebook}{Anatomy of Facebook}}
+  \field{journaltitle}{Facebook Data Team’s Notes}
+  \field{year}{2011}
+\endentry
+
+\entry{Bucciol:2011}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Bucciol}{B.}%
+     {Alessandro}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Piovesan}{P.}%
+     {Marco}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Elsevier}%
+  }
+  \strng{namehash}{BAPM1}
+  \strng{fullhash}{BAPM1}
+  \field{sortinit}{B}
+  \field{number}{1}
+  \field{pages}{73\bibrangedash 78}
+  \field{title}{\oiRedirect{textbook-luck-cheating}{Luck or cheating? A field
+  experiment on honesty with children}}
+  \field{volume}{32}
+  \field{journaltitle}{Journal of Economic Psychology}
+  \field{year}{2011}
+\endentry
+
+\entry{Fisher:1936}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Fisher}{F.}%
+     {R.A}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{FR1}
+  \strng{fullhash}{FR1}
+  \field{sortinit}{F}
+  \field{pages}{179\bibrangedash 188}
+  \field{title}{\oiRedirect{textbook-taxonomy_multiple_measurements_1936}{The
+  Use of Multiple Measurements in Taxonomic Problems}}
+  \field{volume}{7}
+  \field{journaltitle}{Annals of Eugenics}
+  \field{year}{1936}
+\endentry
+
+\entry{Garbutt:2012}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Garbutt}{G.}%
+     {J.M.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Banister}{B.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Spitznagel}{S.}%
+     {E.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Piccirillo}{P.}%
+     {J.F.}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {American Medical Association}%
+  }
+  \strng{namehash}{GJ+1}
+  \strng{fullhash}{GJBCSEPJ1}
+  \field{sortinit}{G}
+  \field{number}{7}
+  \field{pages}{685\bibrangedash 692}
+  \field{title}{\oiRedirect{textbook-amoxicillin_acute_rhinosinusitis_2012}{Amoxicillin
+  for Acute Rhinosinusitis: A Randomized Controlled Trial}}
+  \field{volume}{307}
+  \field{journaltitle}{JAMA: The Journal of the American Medical Association}
+  \field{year}{2012}
+\endentry
+
+\entry{Graham:2010}{article}{}
+  \name{author}{7}{}{%
+    {{}%
+     {Graham}{G.}%
+     {D.J.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ouellet-Hellstrom}{O.-H.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {MaCurdy}{M.}%
+     {T.E.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ali}{A.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Sholley}{S.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Worrall}{W.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kelman}{K.}%
+     {J.A.}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Am Med Assoc}%
+  }
+  \strng{namehash}{GD+1}
+  \strng{fullhash}{GDOHRMTAFSCWCKJ1}
+  \field{sortinit}{G}
+  \field{issn}{0098-7484}
+  \field{number}{4}
+  \field{pages}{411}
+  \field{title}{Risk of acute myocardial infarction, stroke, heart failure, and
+  death in elderly Medicare patients treated with rosiglitazone or
+  pioglitazone}
+  \field{volume}{304}
+  \field{journaltitle}{JAMA}
+  \field{year}{2010}
+\endentry
+
+\entry{Hepler:2013}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Hepler}{H.}%
+     {Justin}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Albarrac{\'\i}n}{A.}%
+     {Dolores}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {American Psychological Association}%
+  }
+  \strng{namehash}{HJAD1}
+  \strng{fullhash}{HJAD1}
+  \field{sortinit}{H}
+  \field{number}{6}
+  \field{pages}{1060}
+  \field{title}{\oiRedirect{textbook-dispositional-attitude}{Attitudes without
+  objects - Evidence for a dispositional attitude, its measurement, and its
+  consequences}}
+  \field{volume}{104}
+  \field{journaltitle}{Journal of personality and social psychology}
+  \field{year}{2013}
+\endentry
+
+\entry{McDowan:2003}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {McGowan}{M.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{MJ1}
+  \strng{fullhash}{MJ1}
+  \field{sortinit}{M}
+  \field{title}{{Health Education: Does the Buteyko Institute Method make a
+  difference?}}
+  \field{volume}{58}
+  \field{journaltitle}{Thorax}
+  \field{year}{2003}
+\endentry
+
+\entry{Nieman:2009}{article}{}
+  \name{author}{6}{}{%
+    {{}%
+     {Nieman}{N.}%
+     {D.C.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Cayea}{C.}%
+     {E.J.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Austin}{A.}%
+     {M.D.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Henson}{H.}%
+     {D.A.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {McAnulty}{M.}%
+     {S.R.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Jin}{J.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Elsevier}%
+  }
+  \strng{namehash}{ND+1}
+  \strng{fullhash}{NDCEAMHDMSJF1}
+  \field{sortinit}{N}
+  \field{number}{6}
+  \field{pages}{414\bibrangedash 418}
+  \field{title}{\oiRedirect{textbook-chia_seeds_2009}{Chia seed does not
+  promote weight loss or alter disease risk factors in overweight adults}}
+  \field{volume}{29}
+  \field{journaltitle}{Nutrition Research}
+  \field{year}{2009}
+\endentry
+
+\entry{Orr:2009}{article}{}
+  \name{author}{6}{}{%
+    {{}%
+     {Orr}{O.}%
+     {E.S.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Sisic}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ross}{R.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Simmering}{S.}%
+     {M.G.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Arseneault}{A.}%
+     {J.M.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Orr}{O.}%
+     {R.R.}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Mary Ann Liebert, Inc.}%
+  }
+  \strng{namehash}{OE+1}
+  \strng{fullhash}{OESMRCSMAJOR1}
+  \field{sortinit}{O}
+  \field{number}{3}
+  \field{pages}{337\bibrangedash 340}
+  \field{title}{\oiRedirect{textbook-shyness_FB_usage_2009}{The influence of
+  shyness on the use of Facebook in an undergraduate sample}}
+  \field{volume}{12}
+  \field{journaltitle}{CyberPsychology \& Behavior}
+  \field{year}{2009}
+\endentry
+
+\entry{news:bullySleep}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Parker-Pope}{P.-P.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{PPT1}
+  \strng{fullhash}{PPT1}
+  \field{sortinit}{P}
+  \field{title}{\oiRedirect{textbook-school_bully_sleepy_2011}{The School Bully
+  Is Sleepy}}
+  \field{journaltitle}{New York Times}
+  \field{year}{2011}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
+\entry{Piff:2012}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Piff}{P.}%
+     {P.K.}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Stancato}{S.}%
+     {D.M.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {C{\^o}t{\'e}}{C.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Mendoza-Denton}{M.-D.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Keltner}{K.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {National Acad Sciences}%
+  }
+  \strng{namehash}{PP+1}
+  \strng{fullhash}{PPSDCSMDRKD1}
+  \field{sortinit}{P}
+  \field{title}{Higher social class predicts increased unethical behavior}
+  \field{journaltitle}{Proceedings of the National Academy of Sciences}
+  \field{year}{2012}
+\endentry
+
+\entry{news:smokingDementia}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Rabin}{R.}%
+     {R.C.}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{RR1}
+  \strng{fullhash}{RR1}
+  \field{sortinit}{R}
+  \field{title}{\oiRedirect{textbook-nytimes_smoking_dementia}{Risks: Smokers
+  Found More Prone to Dementia}}
+  \field{journaltitle}{New York Times}
+  \field{year}{2010}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
+\entry{Ritz+Yu+Chapa+Fruin:2000}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Ritz}{R.}%
+     {B.}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Yu}{Y.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Chapa}{C.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Fruin}{F.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{RB+1}
+  \strng{fullhash}{RBYFCGFS1}
+  \field{sortinit}{R}
+  \field{number}{5}
+  \field{pages}{502\bibrangedash 511}
+  \field{title}{\oiRedirect{textbook-air_pollution_preterm_birth_2000}{Effect
+  of air pollution on preterm birth among children born in Southern California
+  between 1989 and 1993}}
+  \field{volume}{11}
+  \field{journaltitle}{Epidemiology}
+  \field{year}{2000}
+\endentry
+
+\entry{Turnbull+Brown+Hu:1974}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Turnbull}{T.}%
+     {B.}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Brown}{B.}%
+     {B.}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Hu}{H.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{TB+1}
+  \strng{fullhash}{TBBBHM1}
+  \field{sortinit}{T}
+  \field{pages}{74\bibrangedash 80}
+  \field{title}{\oiRedirect{textbook-heart_transplant_1974}{Survivorship of
+  Heart Transplant Data}}
+  \field{volume}{69}
+  \field{journaltitle}{Journal of the American Statistical Association}
+  \field{year}{1974}
+\endentry
 
 \lossort
 \endlossort
