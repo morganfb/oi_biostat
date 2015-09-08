@@ -219,7 +219,7 @@ By the sampling distribution, we also see that the point estimator will have som
 In sampling, the larger the sample size the better. The precision of the sample mean increases as you observe more data in your sample.}
 \end{tipBox}
 
-Standard deviation is the most obvious method to quantify variability. We use the standard deviation of the sampling distribution denoted  $\sigma_{\bar{x}}$ or $s$ in some contexts to measure sampling variation of the sample mean. In this book we will continue to use $\sigma_{\bar{x}}$. \footnote{Caution: The standard deviation of the sample mean is not equivalent to the estimate for the standard deviation of the population. Those are measuring two separate quantities.}
+Standard deviation is the most obvious method to quantify variability. We use the standard deviation of the sampling distribution denoted  $\sigma_{\bar{x}}$ or $s$ in some contexts to measure sampling variation of the sample mean. \footnote{Caution: The standard deviation of the sample mean is not equivalent to the estimate for the standard deviation of the population. Those are measuring two separate quantities.}
 
 Just as with the definition of standard deviation in \textbf{Chapter 1}, the standard deviation of the sample mean, tells us how far the typical estimate is away from the actual population mean. It also is a very good metric for the typical \term{error} of the point estimate, and for this reason we usually call this version of standard deviation the \term{standard error (SE)} \index{SE}\marginpar[\raggedright\vspace{-4mm} $SE$\\\footnotesize standard\\error]{\raggedright\vspace{-4mm} $SE$\\\footnotesize standard\\error} of the estimate. \footnote{In general, standard error is the standard deviation of samples and estimates whereas we use the term standard deviation for populations or distributions. Look AT \textbf{SOME REFERENCE} for a clearer distinction of standard error versus standard deviation.} 
 
@@ -247,7 +247,7 @@ Again what we are doing in $R$ is creating an approximate sampling distribution 
 \begin{verbatim}
 > sample.means<-matrix(data=NA,nrow=1000, ncol=1) #to store the sample means
 > for(i in 1:1000){
-+   sample<-sample(x=brfss.df\$bmi, size=40000, replace=FALSE)
++   sample<-sample(x=brfss.df$bmi, size=40000, replace=FALSE)
 +   sample.means[i]<-mean(sample)
 + }
 > sd(sample.means)
@@ -344,73 +344,90 @@ Figure~\ref{95PercentConfidenceInterval} shows this process with 25 samples, whe
 
 \subsection{Confidence intervals through computation}
 
-Figure~\ref{95PercentConfidenceInterval} should give you inspiration on how to achieve an estimate of a 95\% confidence interval through computation. Our goal, again, is to find a range of values that hopefully contain the true population parameter. If we have the ability to resample from our population and observe many independent samples, the natural method to estimate a confidence interval is through the sampling distribution of sample means like we saw in Figure~\ref{brfssBMISamplingDistribution}. We observed there that the true population parameter was extremely close to the mean of the sampling distribution. Thus a reasonable estimation for the confidence interval would be to take the middle 95\% of all the sample means of the sampling distribution. Below we have pseudocode that implements this procedure (which highly resembles the pseudocode for approximating a sampling distribution from Section ~\ref{seOfTheMean})
+Figure~\ref{95PercentConfidenceInterval} should give you inspiration on how to achieve an estimate of a 95\% confidence interval through computation. Our goal, again, is to find a range of values that hopefully contains the population parameter. If we have the ability to independently resample from our population, the natural method to estimate a confidence interval is through the sampling distribution like in Figure~\ref{brfssBMISamplingDistribution}. We observed there that the mean of the sampling distribution was extremely close to the mean of the population we were sampling from. Thus a reasonable estimation for a 95\% confidence interval would be to take the middle 95\% of the sampling distribution. Below we have pseudocode that implements this procedure \footnote{This highly resembles the pseudocode for approximating a sampling distribution from Section ~\ref{seOfTheMean}}
 \begin{verbatim}
 (1) Have a place to store all the sample means that we will calculate
 (2) Take a sample from the BRFSS dataset of 40,000
 (3) Calculate the sample mean from this specific sample and store it in (1)
 (4) Repeat (2) and (3) many many times 
-(5) Use the middle 95% of values as your 95% confidence interval. 
+(5) Use the middle 95% of values as the 95% confidence interval. 
 \end{verbatim}
 
-We can build off the method of approximation the sampling distribution to compute a 95\% confidence interval. Once we have the array of 100,000 sample means (referred to as \var{sample.means} within the $R$ code) calculated at each of the 100,000 repetitions, instead of simply plotting these values as a histogram, we can look at the cutoffs to get the middle 95\% of sample means. The confidence interval itself is the BMI value  $c_1$ such that 2.5\% of the distribution is below and another BMI value $c_2$ such that 2.5\% of the distribution values is greater than $c_2$. In order to find these values, recall from the distributions unit ~\ref{distributions} that we need to use the \var{quantile()} function in $R$. Particularly 
+We can build off the method of approximation the sampling distribution to compute a 95\% confidence interval. Instead of plotting the values of the sample means (stored as \var{sample.means} within the $R$ code) to create the sampling distribution, we can find the values to get the middle 95\% of sample means.  
+
+The confidence interval itself is the BMI value  $c_1$ such that 2.5\% of the \var{sample.mean} values is below $c_1$ and another BMI value $c_2$ such that 2.5\% of the distribution values is greater than $c_2$. In order to find these values, recall from the distributions unit ~\ref{distributions} that we need to use the \var{quantile()} function in $R$. Particularly using \var{sample.means} as the vector that that stores the sample means. 
 \begin{verbatim}
 confidence.interval<-quantile(x=sample.means,c(0.025,0.975))
 > confidence.interval
     2.5%    97.5% 
 26.30493 26.39697 
 \end{verbatim}
-We see that the interval (26.30493,26.39697) is an estimation for a 95\% confidence interval using the sampling distribution of sample means. Therefore we can say that we are 95\% confident that the true population mean BMI is between 26.30493 and 26.39697. Similarly we can also say that after calculating many many confidence intervals from many different observed samples, 95\% of all the confidence intervals that we calculated will contain the true population mean. 
+We see that the interval (26.30,26.40) is an estimation for a 95\% confidence interval using the sampling distribution of sample means. Therefore we can say that we are 95\% confident that the population mean BMI is between 26.30 and 26.40. Similarly we can also say that after calculating many confidence intervals from many different observed samples, 95\% of all the confidence intervals that we calculated will contain the population mean. 
 
 \begin{exercise}
 Say we were interested in creating a 90\% confidence interval and a 50\% confidence interval. (a) how do you think the widths of the confidence intervals would compare? (b) How would we use the \var{quantile()} function to find the 90\% and 50\% confidence intervals from using the array \var{sample.means}?
- \footnote{(a) We would expect the 50\% confidence interval would have the smallest width. In general the more confidence we are, the larger the confidence interval width .(b) Remember we want the middle percent of observed sample means. Therefore for the 90\% confidence interval, the $R$ code would be \var{quantile(x=sample.means,c(0.05,0.95))}. For a 50\% confidence interval, the code would be \var{quantile(x=sample.means,c(0.25,0.75))}}
+ \footnote{(a) We would expect the 50\% confidence interval would have the smaller width. In general the more confident we are, the larger the confidence interval width will be.(b) Remember we want the middle percent of observed sample means. Therefore for the 90\% confidence interval using \var{sample.means} again to store the sample means, the $R$ code would be \var{quantile(x=sample.means,c(0.05,0.95))}. For a 50\% confidence interval, the code would be \var{quantile(x=sample.means,c(0.25,0.75))}}
 \end{exercise}
 
 \subsection{Calculating an approximate 95\% confidence interval}
-Computing the confidence interval from resampling is straightforward and serves as a great estimate for any confidence interval for the population. However we ask ourselves, is this realistic? In general do we have the ability to resample the US population independently 100,000 times? Generally no. Most times we cannot observe 100,000 sample means of BMI values let alone 100,000 samples from the US population. More often than not, researchers only view 1 sample of 40,000 individuals and thus only 1 sample mean. How do we calculate a confidence level from only observing one sample then? 
+Computing the confidence interval from resampling is straightforward and serves as a great estimate for any confidence interval for the population. However we ask ourselves, is this realistic beyond simulation? In general do we have the ability to resample the US population independently 100,000 times? Generally no. Most times we cannot observe 100,000 sample means of BMI values let alone 100,000 complete samples from the US population. More often than not, researchers only view 1 sample and thus calculate only 1 sample mean. How then do we calculate a confidence level from only observing one sample mean? 
 
-We see from the computation in Section ~\ref{seOfTheMean} and Figure ~\ref{netBMISamplingDistribution} that the sampling distribution is centered around the true mean and that a confidence interval is derived from the point estimate's sampling distribution. Therefore it makes sense to build the confidence interval around the point estimate that we observe as the point estimate is the most plausible value of the parameter. The standard error, which is a measure of the uncertainty associated with the point estimate, and the predetermined confidence level provide a guide for how large or small we should make the confidence interval. 
+We see from the computation in Section ~\ref{seOfTheMean} and Figure ~\ref{brfssBMISamplingDistribution} that the sampling distribution is centered around the population mean and that a confidence interval is derived from that sampling distribution. Therefore it becomes intuitive to build the confidence interval around the observed sample mean  as the point estimate is the most plausible value for the population parameter. The width of the interval should encompass the confidence level as well as the uncertainty associated with the point estimate. The standard error becomes a natural measurement of uncertainty for building the interval.  
 
-With an interval at the 95\% confidence level, roughly 95\% of the time the estimate that you observe from resampling will be within approximately 2 standard errors\footnote{1.96 to be more precise if the distribution is closer to a Normal Distribution. Details coming up in Section ~\ref{sampdistmean}} of the parameter, the true value. Therefore we can create an interval that is 2 standard errors from the point estimate on either side. We then can be roughly 95\% \term{confident} that we have captured the true parameter with the confidence interval calculated by Equation ~\ref{95PercentConfidenceIntervalFormula} from the sample that we observe:
+Roughly 95\% of the time, the estimate that is observed from resampling will be within approximately 2 standard errors\footnote{1.96 to be more precise if the sampling distribution resembles a Normal Distribution. Details coming up in Section ~\ref{sampdistmean}} of the population parameter. Therefore we can create a 95\% confidence interval that is 2 standard errors from the point estimate on either side of the sample mean. We then can be roughly \term{95\% confident} that we have captured the population parameter with the confidence interval calculated by Equation ~\ref{95PercentConfidenceIntervalFormula} from the sample that we observe:
 \begin{eqnarray}
 \text{point estimate}\ \pm\ 2 \times SE \footnote{95\% confidence corresponds closer to 1.96 standard errors away} 
 \label{95PercentConfidenceIntervalFormula}
 \end{eqnarray}
-Using the BMI sample from ~\ref{seOfTheMean} with an observed sample mean of 26.35551 and standard deviation of 5.288141, we calculate  the 95\% confidence interval 
+Using the BMI sample from ~\ref{seOfTheMean} with an observed sample mean of 26.36 and sample standard deviation of 5.29, we calculate  the 95\% confidence interval. 
 \begin{align*}
 \text{point estimate}\ &\pm\ 2 \times SE\\
-26.35551 &\pm 2\times \frac{5.288141}{\sqrt{40000}}\\
-26.35551 &\pm 0.05288141\\
-(26.3022 &, 26.4079)
+26.36 &\pm 2\times \frac{5.29}{\sqrt{40000}}\\
+26.36 &\pm  0.053\\
+(26.31 &, 26.41)
 \end{align*}
-While not exact, we see that the confidence interval simulated through $R$  achieves a very similar confidence interval as the one above through calculation. The difference is due to randomness within the sample since both the point estimate and the standard error vary depending on the values that we observe as well as the approximation to 2 standard errors for a 95\% confidence interval.
+While not exact, we see that the confidence interval simulated through $R$  achieves a very similar confidence interval as the one above through calculation. The difference is due to randomness within the samples since both the point estimate and the standard error vary among samples.
 \begin{exercise}
-In Figure~\ref{95PercentConfidenceInterval}, one interval does not contain a BMI value of 26.35088. Does this imply that the true mean cannot be 26.35088? \footnote{Just as some observations occur more than 2 standard deviations from the mean, some point estimates will be more than 2 standard errors from the parameter. A confidence interval only provides a plausible range of values for a parameter. While we might say other values are implausible based on the data, this does not mean they are impossible.}
+In Figure~\ref{95PercentConfidenceInterval}, one interval does not contain a BMI value of 26.36. Does this imply that the average population BMI cannot be 26.36? \footnote{Just as some observations occur more than 2 standard deviations from the mean, some point estimates will be more than 2 standard errors from the parameter. A confidence interval only provides a plausible range of values for a parameter. While we might say other values are implausible based on the data, this does not mean they are absolutely impossible.}
 \end{exercise}
 
-The rule where about 95\% of observations are within 2 standard deviations of the mean is only approximately true. However, it holds very well for the normal distribution. As we will soon see in Section ~\ref{cltSection}, the mean tends to be normally distributed when the sample size is sufficiently large. Similarly in the next section, we will see how to find the number of standard deviations with changing confidence levels more precisely. 
+We forewarn that "about 95\% of observations are within 2 standard deviations of the mean" is only approximately true. This rule of thumb holds very well for the normal distribution. As we will soon see in Section ~\ref{cltSection}, the sample mean tends to be normally distributed when the sample size is sufficiently large. 
 
-% library(openintro); library(xtable); data(run10); data(run10Samp); mean(run10Samp$time); sd(run10Samp$time); sd(run10$time, na.rm=TRUE)
+\begin{example}{We are curious about how the average heights of men and women differ and create 95\% confidence intervals for the average male height and the average female height. The \data{BRFSS BMI} data can be divided using the \var{sex} variable. Among the 40,000 individuals within the \data{BRFSS BMI}, there are 16,843 men and 23,157 women. The average male height is 70.22 inches and the average female height is 64.38. The sample standard deviations for males and females  are 3.00 and 2.80 respectively. What are the 95\% confidence intervals for the average male and female height in the US? }\label{CIforGenderHeight}
+We calculate both 95\% confidence intervals using the formula \[\text{point estimate}\ \pm\ 2 \times SE\] using the information given above: 
+\begin{align*}
+\text{men: point estimate}\ &\pm\ 2 \times SE\\
+70.22 &\pm 2\times \frac{3.00}{\sqrt{16843}}\\
+70.22 &\pm  0.05 \\
+(70.17 &, 70.27)
+\end{align*}
+\begin{align*}
+\text{women: point estimate}\ &\pm\ 2 \times SE\\
+64.38 &\pm 2\times \frac{2.80}{\sqrt{23157}}\\
+64.38 &\pm  0.04\\
+(64.34 &, 64.42)
+\end{align*}
+The confidence intervals for average height by gender are different. With different centers and different widths, the underlying distributions for male and female heights are different. \end{example}
 
-\begin{exercise} \label{95CIExerciseForAgeOfRun10Samp1}
-The sample data suggest the average adult's age is about 46.64 years with a standard error of 0.09 years (estimated using the sample standard deviation, 17.35). What is an approximate 95\% confidence interval for the average age of all of the US adults?\footnote{Again apply Equation~(\ref{95PercentConfidenceIntervalFormula}): $46.64 \ \pm \ 2\times 0.09 \rightarrow (46.46, 46.82)$. We interpret this interval as follows: We are about 95\% confident the average age of all US adults was between 46.46 and 46.82 years. Looking at the entire dataset (normally we do not have this luxury!) we see that the average age is 46.719 which is indeed within our confidence interval.}
+The creation of the 95\% confidence interval depends on the center and the standard error. In Section ~\ref{changingTheConfidenceLevelSection}, we will see how the multiplier changes beyond 2 standard deviations as confidence levels change. 
+
+\begin{exercise} \label{95CIExerciseForBRFSSAge}
+The sample data \data{BRFSS BMI} suggest the average adult's age is about 46.64 years with a standard error of 0.09 years (estimated using the sample standard deviation, 17.35). What is an approximate 95\% confidence interval for the average age of US adults?\footnote{Again apply Equation~(\ref{95PercentConfidenceIntervalFormula}): $46.64 \ \pm \ 2\times 0.09 \rightarrow (46.46, 46.82)$. We interpret this interval as follows: We are about 95\% confident the average age of US adults was between 46.46 and 46.82 years. Looking at the entire dataset \data{BRFSS} that represents the US population more closely (normally we do not have this luxury!) we see that the average age is 46.72 which is indeed within our confidence interval.}
 \end{exercise}
-%library(openintro); data(run10Samp); mean(run10Samp$age); sd(run10Samp$age)
 
-\subsection{A sampling distribution for the mean}
+\subsection{The sample size for a sampling distribution}
 \label{sampdistmean}
 
-In Section~\ref{seOfTheMean}, we introduced a sampling distribution for $\bar{x}$, the average BMI value for samples of size 1,000 and 100,000. We examined this distribution earlier in Figure~\ref{netBMISamplingDistribution}. We see with larger sample sizes, we get a more accurate depiction of the sampling distribution as stated previously. This histogram with 100,000 repetitions of random samples is shown in the left panel of Figure~\ref{netTimeBigSamplingDistribution}.
+In Section~\ref{seOfTheMean}, we introduced a sampling distribution for $\bar{x}$, the average BMI value for samples of size 5 and 50. We examined this distribution earlier in Figure~\ref{brfssBMISamplingDistribution}. We see with larger sample sizes like $n=40,000$, the sampling variation decreases significantly than if $n=5$ or $n=50$. In Figure ~\ref{sampleMeanPrecision}, the sampling distribution for $n=5$ was slightly skewed but the sampling distribution for $n=50$ looks more symmetric. We show in Figure \~ref{sampDistNormal} a histogram of the sample means for 100,000 different random samples of size $n=50$ with a normal probability plot of those sample means. 
 
 \begin{figure}[hht]
    \centering
-   \includegraphics[width=\textwidth]{ch_inference_foundations_oi_biostat/figures/netTimeBigSamplingDistribution/netTimeBigSamplingDistribution}
-   \caption{The left panel shows a histogram of the sample means for 100,000 different random samples. The right panel shows a normal probability plot of those sample means.}
-   \label{netTimeBigSamplingDistribution}
+   \includegraphics[width=\textwidth]{ch_inference_foundations_oi_biostat/figures/sampDistNormal/sampDistNormal}
+   \caption{The left panel shows a histogram of the sample means for 100,000 different random samples of size $n=100$. The right panel shows a normal probability plot of those sample means.}
+   \label{sampDistNormal}
 \end{figure}
 
-Does this distribution look familiar (think back to Chapter 2 of probability distributions)? Hopefully so! The distribution of sample means closely resembles the normal distribution (see Section~\ref{normalDist}). A normal probability plot of these sample means is shown in the right panel of Figure~\ref{netTimeBigSamplingDistribution}. Because all of the points closely fall around a straight line, we can conclude the distribution of sample means is nearly normal. This result can be explained by the Central Limit Theorem\footnote{A more formal definition coming soon}.
+Does this distribution look familiar (think back to Chapter 2 of probability distributions)? Hopefully so! The distribution of sample means closely resembles the normal distribution (see Section~\ref{normalDist}). A normal probability plot of these sample means is shown in the right panel of Figure~\ref{sampDistNormal}. Because all of the points closely fall around a straight line, we can conclude the distribution of sample means is nearly normal. This result can be explained by the Central Limit Theorem\footnote{A more formal definition coming soon.}.
 
 \begin{termBox}{\tBoxTitle{Central Limit Theorem, informal description}
 If a sample consists of at least 30 independent observations and the data are not strongly skewed, then the distribution of the sample mean is well approximated by a~normal model.\index{Central Limit Theorem}}
@@ -421,22 +438,22 @@ If a sample consists of at least 30 independent observations and the data are no
 
 We introduce the Central Limit Theorem uses this cutoff at 30 in this text but this cutoff varies from book to book  As a quick exercise both in statistical exploration but also more practice in algorithmic thinking, think about how you would visually test if 30 independent observations is a sufficient number of observations to approximate the distribution to a normal model. Let's use the \data{BRFSS} data to sample from like before. 
 
-Again remember we are testing if the normal model is a good approximation for the the sampling distribution of the sample mean with a sample size of 30. Creating a sampling distribution for sample sizes of $n=5,10,20,30$ and overlaying a normal approximation on the histogram is a great guide. \footnote{Use the same code for creating a sampling distribution but vary the sample size. Then use the code: 
-\var{hist(sample.means, freq=FALSE )\\
-curve(dnorm(x,mean=mean(sample.means), sd=sqrt(var(sample.means))), add = TRUE)} to add the normal curve on top of the histogram.}
+Again remember we are testing if the normal model is a good approximation for the the sampling distribution with a sample size of 30. Creating a sampling distribution for sample sizes of $n=5,10,20,30$ and overlaying a normal approximation on the histogram is a great guide. \footnote{Use the same code for creating a sampling distribution but vary the sample size. Then use the code: 
+\var{hist(sample.means, freq=FALSE ) \\
+curve(dnorm(x,mean=mean(sample.means), sd=sqrt(var(sample.means))), add = TRUE)} where the function \var{curve()} adds the normal curve on top of the histogram.}
 
-In Figure ~\ref{cltThirty} we see the sampling distributions of the sample mean for sample sizes of 5, 10, 20 and 30. The curve on top is a normal density curve with the normal distribution where $\mu$ is the mean of all the sample means and $\sigma$ is the standard deviation of the sample means.
-
+In Figure ~\ref{cltThirty} we see the sampling distributions of the sample mean for sample sizes of 5, 10, 20 and 30. The curve on top is a normal density curve with the normal distribution $\mathcal{N}(\mu, \sigma)$ where $\mu$ is the mean of the sample means and $\sigma$ is the standard deviation of the sample means.
+FIX THISSSSSS
 \begin{figure}[hht] 
    \centering
-   \includegraphics[width=\textwidth]{ch_inference_foundations_oi_biostat/figures/netTimeBigSamplingDistribution/clt_30.png}
+   \includegraphics[width=\textwidth]{ch_inference_foundations_oi_biostat/figures/clt30/clt30}
      \label{cltThirty}
-   \caption{The sampling distribution of sample means with different sample sizes. With a normal density curve on top, we see that for $n=30$, a normal model is a fitting approximation confirming the cutoff for the Central Limit Theorem.}
+   \caption{The sampling distribution of sample means with different sample sizes $n=5, 10, 20, 30$. With a normal density curve on top, we see that for $n=30$, a normal model is a fitting approximation confirming the Central Limit Theorem rule of thumb.}
 \end{figure}
 
 We will apply this informal version of the Central Limit Theorem for now, and discuss its details further in Section~\ref{cltSection}.
 
-The choice of using 2 standard errors in Equation~(\ref{95PercentConfidenceIntervalFormula}) was based on our general guideline that roughly 95\% of the time, observations are within two standard deviations of the mean. Under the normal model, with a sufficient number of samples, we can make this more accurate by using 1.96 in place of  2.
+The choice of using 2 standard errors in Equation~(\ref{95PercentConfidenceIntervalFormula}) was based on our general guideline that roughly 95\% of the time, observations are within two standard deviations of the mean. Under the normal model, with a sufficient number of samples ($n\geq 30$), we can make this more accurate by using 1.96 in place of  2.
 \begin{eqnarray}
 \text{point estimate}\ \pm\ 1.96\times SE
 \label{95PercentCIWhenUsingNormalModel}
@@ -447,8 +464,16 @@ If a point estimate, such as $\bar{x}$, is associated with a normal model with s
 \label{changingTheConfidenceLevelSection}
 
 \index{confidence interval!confidence level|(}
+6 Changing the confidence level
+? Motivation: Sometimes your problem parameters don?t need you to be 95% confident. Sometimes (for
+example with life threatening tests) you need to be more confident. Solution: you can change your
+confidence level.
 
-Suppose we want to consider confidence intervals where the confidence level is somewhat higher than 95\%. Perhaps we would like a confidence level of 99\% or even lower like 90\%. Think back to the analogy about trying to catch a fish: if we want to be more sure that we will catch the fish, we should use a wider net. To create a 99\% confidence level, we must also widen our 95\% interval. On the other hand, if we want an interval with lower confidence, such as 90\%, we could make our original 95\% interval slightly slimmer.
+
+
+We have only discussed confidence intervals at the 95\% confidence level. Some situations, however, require conclusions to be more than 95\% confident. Consider a test for diagonosing a deathly disease in which doctors need to be more accurate. Perhaps we would like a confidence level of 99\%. There are also some scenarios where the problem parameters only require you to be 90\%
+
+want to consider confidence intervals where the confidence level is somewhat higher than 95\%. Perhaps we would like a confidence level of 99\% or even lower like 90\%. Think back to the analogy about trying to catch a fish: if we want to be more sure that we will catch the fish, we should use a wider net. To create a 99\% confidence level, we must also widen our 95\% interval. On the other hand, if we want an interval with lower confidence, such as 90\%, we could make our original 95\% interval slightly slimmer.
 
 The 95\% confidence interval structure provides guidance in how to make intervals with new confidence levels. Below is a general 95\% confidence interval for a point estimate where the point estimate follows a nearly normal distribution.
 \begin{eqnarray}

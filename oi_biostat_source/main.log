@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.30)  25 JUL 2015 21:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  26 JUL 2015 16:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -6,7 +6,7 @@ entering extended mode
 **main.tex
 (./main.tex
 LaTeX2e <2014/05/01>
-Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+Babel <3.9k> and hyphenation patterns for 78 languages loaded.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/bk10.clo
@@ -85,7 +85,7 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@width=\dimen112
 )
 (/usr/local/texlive/2014/texmf-dist/tex/latex/tools/varioref.sty
-Package: varioref 2014/07/03 v1.5a package for extended references (FMi)
+Package: varioref 2011/10/02 v1.4z package for extended references (FMi)
 \c@vrcnt=\count92
 )
 (/usr/local/texlive/2014/texmf-dist/tex/latex/soul/soul.sty
@@ -240,7 +240,7 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfig@bottom=\skip55
 )
 (/usr/local/texlive/2014/texmf-dist/tex/latex/tools/multicol.sty
-Package: multicol 2014/08/24 v1.8g multicolumn formatting (FMi)
+Package: multicol 2014/04/23 v1.8e multicolumn formatting (FMi)
 \c@tracingmulticols=\count114
 \mult@box=\box28
 \multicol@leftmargin=\dimen137
@@ -454,6 +454,10 @@ Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 \titlewidthlast=\dimen152
 \titlewidthfirst=\dimen153
 )
+(/usr/local/texlive/2014/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
 (/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2014/04/23 v1.1a Standard LaTeX Color (DPC)
 
@@ -544,10 +548,6 @@ Package hyperref Info: Backreferencing OFF on input line 4463.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
 \c@Hy@tempcnt=\count129
-(/usr/local/texlive/2014/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip11
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)
 LaTeX Info: Redefining \url on input line 5041.
 \XeTeXLinkMargin=\dimen155
 \Fld@menulength=\count130
@@ -582,10 +582,10 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \Hy@SectionHShift=\skip60
 )
 (/usr/local/texlive/2014/texmf-dist/tex/latex/biblatex/biblatex.sty
-Package: biblatex 2014/06/25 v2.9a programmable bibliographies (PK/JW/AB)
+Package: biblatex 2013/11/25 v2.8a programmable bibliographies (PK/JW/AB)
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/biblatex/biblatex1.sty
-Package: biblatex1 2014/06/25 v2.9a programmable bibliographies (bibtex) (PK/JW
+Package: biblatex1 2013/11/25 v2.8a programmable bibliographies (bibtex) (PK/JW
 /AB)
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/etoolbox/etoolbox.sty
@@ -724,7 +724,7 @@ Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/biblatex/blx-compat.def
-File: blx-compat.def 2014/06/25 v2.9a biblatex compatibility (PK/JW/AB)
+File: blx-compat.def 2013/11/25 v2.8a biblatex compatibility (PK/JW/AB)
 )
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
@@ -743,23 +743,23 @@ Package biblatex Info: Trying to load natbib compatibility...
 Package biblatex Info: ... file 'blx-natbib.def' found.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/biblatex/blx-natbib.def
-File: blx-natbib.def 2014/06/25 v2.9a biblatex compatibility (PK/JW/AB)
+File: blx-natbib.def 2013/11/25 v2.8a biblatex compatibility (PK/JW/AB)
 )
 Package biblatex Info: Trying to load bibliography style 'authortitle-ibid'...
 Package biblatex Info: ... file 'authortitle-ibid.bbx' found.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/biblatex/bbx/authortitle-ibid.bbx
-File: authortitle-ibid.bbx 2014/06/25 v2.9a biblatex bibliography style (PK/JW/
+File: authortitle-ibid.bbx 2013/11/25 v2.8a biblatex bibliography style (PK/JW/
 AB)
 Package biblatex Info: Trying to load bibliography style 'authortitle'...
 Package biblatex Info: ... file 'authortitle.bbx' found.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/biblatex/bbx/authortitle.bbx
-File: authortitle.bbx 2014/06/25 v2.9a biblatex bibliography style (PK/JW/AB)
+File: authortitle.bbx 2013/11/25 v2.8a biblatex bibliography style (PK/JW/AB)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
-File: standard.bbx 2014/06/25 v2.9a biblatex bibliography style (PK/JW/AB)
+File: standard.bbx 2013/11/25 v2.8a biblatex bibliography style (PK/JW/AB)
 \c@bbx:relatedcount=\count293
 \c@bbx:relatedtotal=\count294
 )))
@@ -767,7 +767,7 @@ Package biblatex Info: Trying to load citation style 'authortitle-ibid'...
 Package biblatex Info: ... file 'authortitle-ibid.cbx' found.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/biblatex/cbx/authortitle-ibid.cbx
-File: authortitle-ibid.cbx 2014/06/25 v2.9a biblatex citation style (PK/JW/AB)
+File: authortitle-ibid.cbx 2013/11/25 v2.8a biblatex citation style (PK/JW/AB)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
 Package biblatex Info: Redefining '\footcite'.
@@ -810,19 +810,21 @@ Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/biblatex/lbx/english.lbx
-File: english.lbx 2014/06/25 v2.9a biblatex localization (PK/JW/AB)
+File: english.lbx 2013/11/25 v2.8a biblatex localization (PK/JW/AB)
 )
 \@quotelevel=\count303
 \@quotereset=\count304
 
 (./main.aux (./extraTeX/preamble/copyright.aux)
 (./extraTeX/preamble/preface_oi_biostat.aux)
-(./ch_intro_to_data_oi_biostat/TeX/ch_intro_to_data_oi_biostat.aux
+(./ch_inference_foundations_oi_biostat/TeX/ch_inference_foundations_oi_biostat.
+aux
 
-LaTeX Warning: Label `clutchVolVsBodySize' multiply defined.
+LaTeX Warning: Label `2ndSchSleepHTExample' multiply defined.
 
-) (./ch_intro_to_data_oi_biostat/TeX/ch_intro_to_data_oi_biostat_ex.aux)
-(./extraTeX/index/index.aux))
+)
+(./ch_inference_foundations_oi_biostat/TeX/ch_inference_foundations_oi_biostat_
+ex.aux) (./extraTeX/index/index.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
@@ -927,15 +929,19 @@ Package biblatex Info: Automatic encoding selection.
 \openout3 = `main-blx.bib'.
 
 Package biblatex Info: Trying to load bibliographic data...
+
+
+Package biblatex Warning: File 'main.bbl' created by wrong version.
+
 Package biblatex Info: ... file 'main.bbl' found.
- (./main.bbl)
+(./main.bbl)
 Package biblatex Info: Reference section=0 on input line 24.
 Package biblatex Info: Reference segment=0 on input line 24.
 LaTeX Font Info:    Try loading font information for U+wasy on input line 27.
-
-(/usr/local/texlive/2014/texmf-dist/tex/latex/wasysym/uwasy.fd
+ (/usr/local/texlive/2014/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
-) [1
+)
+[1
 
 
 
@@ -989,6 +995,10 @@ LaTeX Warning: Reference `multipleAndLogisticRegression' on page 5 undefined on
  input line 42.
 
 
+LaTeX Warning: Reference `introductionToData' on page 5 undefined on input line
+ 49.
+
+
 Overfull \hbox (0.10315pt too wide) in paragraph at lines 49--50
 []\OT1/cmr/m/n/10 An in-tro-duc-tion to re-gres-sion with two vari-ables.
  []
@@ -1002,308 +1012,871 @@ LaTeX Warning: Reference `distributionTables' on page 6 undefined on input line
  77.
 
 [6]) [7]
-\openout2 = `ch_intro_to_data_oi_biostat/TeX/ch_intro_to_data_oi_biostat.aux'.
+\openout2 = `ch_inference_foundations_oi_biostat/TeX/ch_inference_foundations_o
+i_biostat.aux'.
 
- (./ch_intro_to_data_oi_biostat/TeX/ch_intro_to_data_oi_biostat.tex
-Chapter 1.
+
+(./ch_inference_foundations_oi_biostat/TeX/ch_inference_foundations_oi_biostat.
+tex
+Chapter 4.
 [8
 
 
 
-] [9] [10] [11] [12]
-Missing character: There is no â in font cmr8!
-Missing character: There is no € in font cmr8!
-Missing character: There is no “ in font cmr8!
- [13]
-<ch_intro_to_data_oi_biostat/figures/variables/variables.pdf, id=153, 303.1325p
-t x 108.405pt>
-File: ch_intro_to_data_oi_biostat/figures/variables/variables.pdf Graphic file 
-(type pdf)
+]
 
-<use ch_intro_to_data_oi_biostat/figures/variables/variables.pdf>
-Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/variables/variable
-s.pdf used on input line 230.
-(pdftex.def)             Requested size: 224.5095pt x 80.28955pt.
+Package caption Warning: \label without proper \caption on input line 47.
+See the caption package documentation for explanation.
 
-Overfull \hbox (35.33556pt too wide) in paragraph at lines 235--236
-[]\OT1/cmr/m/n/10 In the \OT1/cmtt/m/n/10 frog \OT1/cmr/m/n/10 data, the vari-a
-bles \OT1/cmtt/m/n/10 latitude\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 altitude\OT1/c
-mr/m/n/10 , \OT1/cmtt/m/n/10 egg.size\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 clutch.
-size\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 clutch.volume\OT1/cmr/m/n/10 ,
+
+LaTeX Warning: Reference `brfssBMIVariables' on page 9 undefined on input line 
+34.
+
+[9]
+<ch_inference_foundations_oi_biostat/figures/brfssBMIsampHistograms/brfssBMIsam
+pHistograms.pdf, id=143, 505.89pt x 216.81pt>
+File: ch_inference_foundations_oi_biostat/figures/brfssBMIsampHistograms/brfssB
+MIsampHistograms.pdf Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/brfssBMIsampHistograms/brfssBM
+IsampHistograms.pdf>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/brfssBMIsa
+mpHistograms/brfssBMIsampHistograms.pdf used on input line 84.
+(pdftex.def)             Requested size: 393.87128pt x 168.80344pt.
+ [10 <./ch_inference_foundations_oi_biostat/figures/brfssBMIsampHistograms/brfs
+sBMIsampHistograms.pdf>] [11]
+<ch_inference_foundations_oi_biostat/figures/brfssBMIRunningMean/brfssBMIRunnin
+gMean.pdf, id=181, 505.89pt x 289.08pt>
+File: ch_inference_foundations_oi_biostat/figures/brfssBMIRunningMean/brfssBMIR
+unningMean.pdf Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/brfssBMIRunningMean/brfssBMIRu
+nningMean.pdf>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/brfssBMIRu
+nningMean/brfssBMIRunningMean.pdf used on input line 155.
+(pdftex.def)             Requested size: 393.87128pt x 225.07126pt.
+
+<ch_inference_foundations_oi_biostat/figures/brfssBMISampVar/brfssBMISampVar20.
+pdf, id=184, 505.89pt x 252.945pt>
+File: ch_inference_foundations_oi_biostat/figures/brfssBMISampVar/brfssBMISampV
+ar20.pdf Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/brfssBMISampVar/brfssBMISampVa
+r20.pdf>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/brfssBMISa
+mpVar/brfssBMISampVar20.pdf used on input line 164.
+(pdftex.def)             Requested size: 393.87128pt x 196.93736pt.
+ [12 <./ch_inference_foundations_oi_biostat/figures/brfssBMIRunningMean/brfssBM
+IRunningMean.pdf>]
+<ch_inference_foundations_oi_biostat/figures/brfssBMISampleMeanPrecision/brfssB
+MISampleMeanPrecision.pdf, id=202, 578.16pt x 226.8475pt>
+File: ch_inference_foundations_oi_biostat/figures/brfssBMISampleMeanPrecision/b
+rfssBMISampleMeanPrecision.pdf Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/brfssBMISampleMeanPrecision/br
+fssBMISampleMeanPrecision.pdf>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/brfssBMISa
+mpleMeanPrecision/brfssBMISampleMeanPrecision.pdf used on input line 182.
+(pdftex.def)             Requested size: 393.87128pt x 154.53809pt.
+ [13 <./ch_inference_foundations_oi_biostat/figures/brfssBMISampVar/brfssBMISam
+pVar20.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
+
  []
 
-[14 <./ch_intro_to_data_oi_biostat/figures/variables/variables.pdf>]
-Underfull \hbox (badness 2158) in paragraph at lines 246--246
-[][][]\OT1/cmr/m/n/8 All these vari-ables mea-sure non-numerical quan-ti-ties, 
-and are cat-e-gor-i-cal. The vari-ables
+
+<ch_inference_foundations_oi_biostat/figures/brfssBMISamplingDistribution/brfss
+BMISamplingDistribution.pdf, id=218, 578.16pt x 226.8475pt>
+File: ch_inference_foundations_oi_biostat/figures/brfssBMISamplingDistribution/
+brfssBMISamplingDistribution.pdf Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/brfssBMISamplingDistribution/b
+rfssBMISamplingDistribution.pdf>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/brfssBMISa
+mplingDistribution/brfssBMISamplingDistribution.pdf used on input line 199.
+(pdftex.def)             Requested size: 334.79298pt x 131.35703pt.
+ [14 <./ch_inference_foundations_oi_biostat/figures/brfssBMISampleMeanPrecision
+/brfssBMISampleMeanPrecision.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 219--220
+
  []
 
 
-Overfull \hbox (4.26787pt too wide) in paragraph at lines 245--247
-[][]\OT1/cmr/bx/n/10 Guided Prac-tice 1.2[]  []\OT1/cmr/m/n/10 Char-ac-ter-ize 
-the data types for the vari-ables \OT1/cmtt/m/n/10 participant.ID
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
+
  []
 
-[15] [16] <extraTeX/icons/video_camera.png, id=188, 156.1032pt x 150.5625pt>
-File: extraTeX/icons/video_camera.png Graphic file (type png)
+[15 <./ch_inference_foundations_oi_biostat/figures/brfssBMISamplingDistribution
+/brfssBMISamplingDistribution.pdf>]
+Overfull \hbox (5.12524pt too wide) in paragraph at lines 248--248
+[]\OT1/cmtt/m/n/10 > sample.means<-matrix(data=NA,nrow=1000, ncol=1) #to store 
+the sample means[] 
+ []
 
-<use extraTeX/icons/video_camera.png>
-Package pdftex.def Info: extraTeX/icons/video_camera.png used on input line 414
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 269--270
+
+ []
+
+[17]
+
+LaTeX Warning: Reference `inferenceForNumericalData' on page 18 undefined on in
+put line 305.
+
+[18] [19]
+<ch_inference_foundations_oi_biostat/figures/95PercentConfidenceInterval/95Perc
+entConfidenceInterval.pdf, id=302, 433.62pt x 289.08pt>
+File: ch_inference_foundations_oi_biostat/figures/95PercentConfidenceInterval/9
+5PercentConfidenceInterval.pdf Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/95PercentConfidenceInterval/95
+PercentConfidenceInterval.pdf>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/95PercentC
+onfidenceInterval/95PercentConfidenceInterval.pdf used on input line 340.
+(pdftex.def)             Requested size: 295.40346pt x 196.94672pt.
+ [20 <./ch_inference_foundations_oi_biostat/figures/95PercentConfidenceInterval
+/95PercentConfidenceInterval.pdf>]
+
+LaTeX Warning: Reference `distributions' on page 21 undefined on input line 358
 .
-(pdftex.def)             Requested size: 17.6978pt x 17.07164pt.
- [17 <./extraTeX/icons/video_camera.png (PNG copy)>]
 
-LaTeX Warning: Reference `multiunitsVsOwnership' on page 18 undefined on input 
-line 495.
-
-
-LaTeX Warning: Reference `multiunitsVsOwnership' on page 18 undefined on input 
-line 495.
-
-File: extraTeX/icons/video_camera.png Graphic file (type png)
-<use extraTeX/icons/video_camera.png>
-Package pdftex.def Info: extraTeX/icons/video_camera.png used on input line 547
-.
-(pdftex.def)             Requested size: 17.6978pt x 17.07164pt.
- [18]
-Underfull \hbox (badness 10000) in paragraph at lines 570--571
-
- []
-
-[19]
-Underfull \hbox (badness 10000) in paragraph at lines 627--634
-
- []
-
-
-Underfull \vbox (badness 5490) has occurred while \output is active []
-
- [20]
-Underfull \hbox (badness 10000) in paragraph at lines 635--636
-
- []
-
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 682.
-
-<ch_intro_to_data_oi_biostat/figures/email50NumCharDotPlotRobustEx/email50NumCh
-arDotPlotRobustEx.pdf, id=224, 507.8975pt x 102.3825pt>
-File: ch_intro_to_data_oi_biostat/figures/email50NumCharDotPlotRobustEx/email50
-NumCharDotPlotRobustEx.pdf Graphic file (type pdf)
-
-<use ch_intro_to_data_oi_biostat/figures/email50NumCharDotPlotRobustEx/email50N
-umCharDotPlotRobustEx.pdf>
-Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/email50NumCharDotP
-lotRobustEx/email50NumCharDotPlotRobustEx.pdf used on input line 688.
-(pdftex.def)             Requested size: 393.87128pt x 79.40028pt.
-
-Underfull \vbox (badness 1590) has occurred while \output is active []
-
- [21 <./ch_intro_to_data_oi_biostat/figures/email50NumCharDotPlotRobustEx/email
-50NumCharDotPlotRobustEx.pdf>]
-<ch_intro_to_data_oi_biostat/figures/emailCharactersDotPlot/emailCharactersDotP
-lot.pdf, id=244, 542.025pt x 90.3375pt>
-File: ch_intro_to_data_oi_biostat/figures/emailCharactersDotPlot/emailCharacter
-sDotPlot.pdf Graphic file (type pdf)
-
-<use ch_intro_to_data_oi_biostat/figures/emailCharactersDotPlot/emailCharacters
-DotPlot.pdf>
-Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/emailCharactersDot
-Plot/emailCharactersDotPlot.pdf used on input line 735.
-(pdftex.def)             Requested size: 393.87128pt x 65.64668pt.
-
-<ch_intro_to_data_oi_biostat/figures/emailCharactersDotPlot/emailCharactersDotP
-lotStacked.pdf, id=245, 361.35pt x 144.54pt>
-File: ch_intro_to_data_oi_biostat/figures/emailCharactersDotPlot/emailCharacter
-sDotPlotStacked.pdf Graphic file (type pdf)
-
-<use ch_intro_to_data_oi_biostat/figures/emailCharactersDotPlot/emailCharacters
-DotPlotStacked.pdf>
-Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/emailCharactersDot
-Plot/emailCharactersDotPlotStacked.pdf used on input line 742.
-(pdftex.def)             Requested size: 283.5878pt x 113.43546pt.
- [22 <./ch_intro_to_data_oi_biostat/figures/emailCharactersDotPlot/emailCharact
-ersDotPlot.pdf> <./ch_intro_to_data_oi_biostat/figures/emailCharactersDotPlot/e
-mailCharactersDotPlotStacked.pdf>]
-<ch_intro_to_data_oi_biostat/figures/email50NumCharHist/email50NumCharHist.pdf,
- id=270, 436.63126pt x 223.83624pt>
-File: ch_intro_to_data_oi_biostat/figures/email50NumCharHist/email50NumCharHist
+[21] [22]
+<ch_inference_foundations_oi_biostat/figures/sampDistNormal/sampDistNormal.pdf,
+ id=357, 578.16pt x 226.8475pt>
+File: ch_inference_foundations_oi_biostat/figures/sampDistNormal/sampDistNormal
 .pdf Graphic file (type pdf)
 
-<use ch_intro_to_data_oi_biostat/figures/email50NumCharHist/email50NumCharHist.
+<use ch_inference_foundations_oi_biostat/figures/sampDistNormal/sampDistNormal.
 pdf>
-Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/email50NumCharHist
-/email50NumCharHist.pdf used on input line 765.
-(pdftex.def)             Requested size: 322.97733pt x 165.57132pt.
- [23 <./ch_intro_to_data_oi_biostat/figures/email50NumCharHist/email50NumCharHi
-st.pdf>]
-<ch_intro_to_data_oi_biostat/figures/singleBiMultiModalPlots/singleBiMultiModal
-Plots.pdf, id=289, 418.56375pt x 144.54pt>
-File: ch_intro_to_data_oi_biostat/figures/singleBiMultiModalPlots/singleBiMulti
-ModalPlots.pdf Graphic file (type pdf)
-
-<use ch_intro_to_data_oi_biostat/figures/singleBiMultiModalPlots/singleBiMultiM
-odalPlots.pdf>
-Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/singleBiMultiModal
-Plots/singleBiMultiModalPlots.pdf used on input line 796.
-(pdftex.def)             Requested size: 393.87128pt x 136.01096pt.
-
-<ch_intro_to_data_oi_biostat/figures/boxPlotLayoutNumVar/boxPlotLayoutNumVar.pd
-f, id=293, 397.485pt x 274.02374pt>
-File: ch_intro_to_data_oi_biostat/figures/boxPlotLayoutNumVar/boxPlotLayoutNumV
-ar.pdf Graphic file (type pdf)
-
-<use ch_intro_to_data_oi_biostat/figures/boxPlotLayoutNumVar/boxPlotLayoutNumVa
-r.pdf>
-Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/boxPlotLayoutNumVa
-r/boxPlotLayoutNumVar.pdf used on input line 823.
-(pdftex.def)             Requested size: 279.45082pt x 192.65575pt.
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/sampDistNo
+rmal/sampDistNormal.pdf used on input line 425.
+(pdftex.def)             Requested size: 393.87128pt x 154.53809pt.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: Reference `normalDist' on page 23 undefined on input line 430.
 
-[24 <./ch_intro_to_data_oi_biostat/figures/singleBiMultiModalPlots/singleBiMult
-iModalPlots.pdf>] [25 <./ch_intro_to_data_oi_biostat/figures/boxPlotLayoutNumVa
-r/boxPlotLayoutNumVar.pdf>]
-<ch_intro_to_data_oi_biostat/figures/clutchVolVsBodySize/clutchVolVsBodySize.pd
-f, id=332, 505.89pt x 505.89pt>
-File: ch_intro_to_data_oi_biostat/figures/clutchVolVsBodySize/clutchVolVsBodySi
-ze.pdf Graphic file (type pdf)
 
-<use ch_intro_to_data_oi_biostat/figures/clutchVolVsBodySize/clutchVolVsBodySiz
-e.pdf>
-Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/clutchVolVsBodySiz
-e/clutchVolVsBodySize.pdf used on input line 891.
-(pdftex.def)             Requested size: 315.09822pt x 315.09976pt.
+Underfull \hbox (badness 10000) in paragraph at lines 433--434
 
-<ch_intro_to_data_oi_biostat/figures/famussHeightVsWeight/famussHeightVsWeight.
-pdf, id=334, 505.89pt x 505.89pt>
-File: ch_intro_to_data_oi_biostat/figures/famussHeightVsWeight/famussHeightVsWe
-ight.pdf Graphic file (type pdf)
+ []
 
-<use ch_intro_to_data_oi_biostat/figures/famussHeightVsWeight/famussHeightVsWei
-ght.pdf>
-Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/famussHeightVsWeig
-ht/famussHeightVsWeight.pdf used on input line 903.
-(pdftex.def)             Requested size: 315.09822pt x 315.09976pt.
- [26] [27 <./ch_intro_to_data_oi_biostat/figures/clutchVolVsBodySize/clutchVolV
-sBodySize.pdf>] [28 <./ch_intro_to_data_oi_biostat/figures/famussHeightVsWeight
-/famussHeightVsWeight.pdf>]
-<ch_intro_to_data_oi_biostat/figures/famussHeightVsBmi/famussHeightVsBmi.pdf, i
-d=364, 505.89pt x 505.89pt>
-File: ch_intro_to_data_oi_biostat/figures/famussHeightVsBmi/famussHeightVsBmi.p
-df Graphic file (type pdf)
+[23]
 
-<use ch_intro_to_data_oi_biostat/figures/famussHeightVsBmi/famussHeightVsBmi.pd
-f>
-Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/famussHeightVsBmi/
-famussHeightVsBmi.pdf used on input line 913.
-(pdftex.def)             Requested size: 315.09822pt x 315.09976pt.
+Package caption Warning: \label without proper \caption on input line 451.
+See the caption package documentation for explanation.
 
-Underfull \hbox (badness 10000) in paragraph at lines 920--921
+
+LaTeX Warning: Reference `cltThirty' on page 24 undefined on input line 445.
+
+
+<ch_inference_foundations_oi_biostat/figures/netTimeBigSamplingDistribution/clt
+_30.png, id=371, 1076.02pt x 768.8725pt>
+File: ch_inference_foundations_oi_biostat/figures/netTimeBigSamplingDistributio
+n/clt_30.png Graphic file (type png)
+
+<use ch_inference_foundations_oi_biostat/figures/netTimeBigSamplingDistribution
+/clt_30.png>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/netTimeBig
+SamplingDistribution/clt_30.png used on input line 449.
+(pdftex.def)             Requested size: 393.87128pt x 281.43977pt.
+ [24 <./ch_inference_foundations_oi_biostat/figures/sampDistNormal/sampDistNorm
+al.pdf>]
+
+Package caption Warning: \label without proper \caption on input line 485.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `choosingZForCI' on page 25 undefined on input line 47
+5.
+
+[25 <./ch_inference_foundations_oi_biostat/figures/netTimeBigSamplingDistributi
+on/clt_30.png>]
+
+Package caption Warning: \label without proper \caption on input line 485.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `choosingZForCI' on page 26 undefined on input line 47
+8.
+
+
+<ch_inference_foundations_oi_biostat/figures/choosingZForCI/choosingZForCI.pdf,
+ id=404, 546.04pt x 277.035pt>
+File: ch_inference_foundations_oi_biostat/figures/choosingZForCI/choosingZForCI
+.pdf Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/choosingZForCI/choosingZForCI.
+pdf>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/choosingZF
+orCI/choosingZForCI.pdf used on input line 483.
+(pdftex.def)             Requested size: 393.87128pt x 199.83281pt.
+ [26 <./ch_inference_foundations_oi_biostat/figures/choosingZForCI/choosingZFor
+CI.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 506--507
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 514--515
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 519--520
+
+ []
+
+
+<ch_inference_foundations_oi_biostat/figures/choosingZForCI/brfssSampHist.png, 
+id=425, 627.34375pt x 471.7625pt>
+File: ch_inference_foundations_oi_biostat/figures/choosingZForCI/brfssSampHist.
+png Graphic file (type png)
+
+<use ch_inference_foundations_oi_biostat/figures/choosingZForCI/brfssSampHist.p
+ng>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/choosingZF
+orCI/brfssSampHist.png used on input line 526.
+(pdftex.def)             Requested size: 295.40346pt x 222.1531pt.
+
+Underfull \hbox (badness 1874) in paragraph at lines 527--527
+[]\OT1/cmr/m/n/10 Figure 4.13: |We draw a his-togram of the men's weights in th
+e
+ []
+
+[27]
+Underfull \hbox (badness 10000) in paragraph at lines 542--543
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 545--546
 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [29 <./ch_intro_to_data_oi_biostat/figures/famussHeightVsBmi/famussHeightVsBmi
-.pdf>]
+ [28 <./ch_inference_foundations_oi_biostat/figures/choosingZForCI/brfssSampHis
+t.png>]
 
-LaTeX Warning: Reference `carsPriceVsWeight' on page 30 undefined on input line
- 941.
-
-
-LaTeX Warning: Hyper reference `county_fed_spendVsPoverty' on page 30 undefined
- on input line 942.
+Package caption Warning: \label without proper \caption on input line 485.
+See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `county_fed_spendVsPoverty' on page 30 undefined on in
-put line 942.
+LaTeX Warning: Reference `choosingZForCI' on page 29 undefined on input line 54
+8.
 
 
-LaTeX Warning: Reference `email50LinesCharacters' on page 30 undefined on input
- line 942.
+Package caption Warning: \label without proper \caption on input line 485.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `choosingZForCI' on page 29 undefined on input line 54
+8.
+
+[29]
+Underfull \hbox (badness 10000) in paragraph at lines 581--583
+
+ []
 
 [30]
-File: extraTeX/icons/video_camera.png Graphic file (type png)
- <use extraTeX/icons/video_camera.png>
-Package pdftex.def Info: extraTeX/icons/video_camera.png used on input line 105
-6.
-(pdftex.def)             Requested size: 17.6978pt x 17.07164pt.
- [31] [32]
-<ch_intro_to_data_oi_biostat/figures/emailNumberBarPlot/emailNumberBarPlot.pdf,
- id=404, 505.89pt x 216.81pt>
-File: ch_intro_to_data_oi_biostat/figures/emailNumberBarPlot/emailNumberBarPlot
+Underfull \hbox (badness 10000) in paragraph at lines 614--615
+
+ []
+
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 665--666
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 671--672
+
+ []
+
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 683--684
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 694--695
+
+ []
+
+[33]
+
+LaTeX Warning: Reference `some section' on page 34 undefined on input line 705.
+
+
+
+Underfull \vbox (badness 6893) has occurred while \output is active []
+
+ [34]
+Underfull \hbox (badness 10000) in paragraph at lines 718--719
+
+ []
+
+[35]
+<ch_inference_foundations_oi_biostat/figures/pValueOneSidedSleepStudyExplained/
+pValueOneSidedSleepStudyExplained.pdf, id=519, 496.85625pt x 198.7425pt>
+File: ch_inference_foundations_oi_biostat/figures/pValueOneSidedSleepStudyExpla
+ined/pValueOneSidedSleepStudyExplained.pdf Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/pValueOneSidedSleepStudyExplai
+ned/pValueOneSidedSleepStudyExplained.pdf>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/pValueOneS
+idedSleepStudyExplained/pValueOneSidedSleepStudyExplained.pdf used on input lin
+e 740.
+(pdftex.def)             Requested size: 354.48174pt x 141.7935pt.
+
+<ch_inference_foundations_oi_biostat/figures/2ndSchSleepHTExample/2ndSchSleepHT
+Example.pdf, id=522, 433.62pt x 172.645pt>
+File: ch_inference_foundations_oi_biostat/figures/2ndSchSleepHTExample/2ndSchSl
+eepHTExample.pdf Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/2ndSchSleepHTExample/2ndSchSle
+epHTExample.pdf>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/2ndSchSlee
+pHTExample/2ndSchSleepHTExample.pdf used on input line 749.
+(pdftex.def)             Requested size: 354.48174pt x 141.14304pt.
+ [36 <./ch_inference_foundations_oi_biostat/figures/pValueOneSidedSleepStudyExp
+lained/pValueOneSidedSleepStudyExplained.pdf> <./ch_inference_foundations_oi_bi
+ostat/figures/2ndSchSleepHTExample/2ndSchSleepHTExample.pdf>]
+[37]
+Underfull \hbox (badness 10000) in paragraph at lines 795--796
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 799--800
+
+ []
+
+[38]
+Underfull \hbox (badness 10000) in paragraph at lines 815--816
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 819--820
+
+ []
+
+
+<ch_inference_foundations_oi_biostat/figures/histOfSleepForCollegeThatWasChecki
+ngForMoreThan7Hours/histOfSleepForCollegeThatWasCheckingForMoreThan7Hours.pdf, 
+id=560, 361.35pt x 216.81pt>
+File: ch_inference_foundations_oi_biostat/figures/histOfSleepForCollegeThatWasC
+heckingForMoreThan7Hours/histOfSleepForCollegeThatWasCheckingForMoreThan7Hours.
+pdf Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/histOfSleepForCollegeThatWasCh
+eckingForMoreThan7Hours/histOfSleepForCollegeThatWasCheckingForMoreThan7Hours.p
+df>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/histOfSlee
+pForCollegeThatWasCheckingForMoreThan7Hours/histOfSleepForCollegeThatWasCheckin
+gForMoreThan7Hours.pdf used on input line 826.
+(pdftex.def)             Requested size: 260.82794pt x 156.49014pt.
+ [39 <./ch_inference_foundations_oi_biostat/figures/histOfSleepForCollegeThatWa
+sCheckingForMoreThan7Hours/histOfSleepForCollegeThatWasCheckingForMoreThan7Hour
+s.pdf>]
+<ch_inference_foundations_oi_biostat/figures/pValueOneSidedSleepStudy/pValueOne
+SidedSleepStudybrfss.pdf, id=582, 487.8225pt x 190.7125pt>
+File: ch_inference_foundations_oi_biostat/figures/pValueOneSidedSleepStudy/pVal
+ueOneSidedSleepStudybrfss.pdf Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/pValueOneSidedSleepStudy/pValu
+eOneSidedSleepStudybrfss.pdf>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/pValueOneS
+idedSleepStudy/pValueOneSidedSleepStudybrfss.pdf used on input line 841.
+(pdftex.def)             Requested size: 287.52434pt x 112.4059pt.
+ [40 <./ch_inference_foundations_oi_biostat/figures/pValueOneSidedSleepStudy/pV
+alueOneSidedSleepStudybrfss.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 864--865
+
+ []
+
+[41] [42] [43]
+File: ch_inference_foundations_oi_biostat/figures/2ndSchSleepHTExample/2ndSchSl
+eepHTExample.pdf Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/2ndSchSleepHTExample/2ndSchSle
+epHTExample.pdf>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/2ndSchSlee
+pHTExample/2ndSchSleepHTExample.pdf used on input line 977.
+(pdftex.def)             Requested size: 354.48174pt x 141.14304pt.
+ [44]
+<ch_inference_foundations_oi_biostat/figures/type1ErrorDoublingExampleFigure/ty
+pe1ErrorDoublingExampleFigure.pdf, id=660, 397.485pt x 144.54pt>
+File: ch_inference_foundations_oi_biostat/figures/type1ErrorDoublingExampleFigu
+re/type1ErrorDoublingExampleFigure.pdf Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/type1ErrorDoublingExampleFigur
+e/type1ErrorDoublingExampleFigure.pdf>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/type1Error
+DoublingExampleFigure/type1ErrorDoublingExampleFigure.pdf used on input line 99
+4.
+(pdftex.def)             Requested size: 275.70868pt x 100.2598pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1002--1003
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1018--1019
+
+ []
+
+[45 <./ch_inference_foundations_oi_biostat/figures/type1ErrorDoublingExampleFig
+ure/type1ErrorDoublingExampleFigure.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 1046--1047
+
+ []
+
+[46]
+
+LaTeX Warning: Reference `modeling' on page 47 undefined on input line 1051.
+
+
+<ch_inference_foundations_oi_biostat/figures/cltSimulations/cltSimulations.pdf,
+ id=687, 490.83376pt x 578.16pt>
+File: ch_inference_foundations_oi_biostat/figures/cltSimulations/cltSimulations
 .pdf Graphic file (type pdf)
 
-<use ch_intro_to_data_oi_biostat/figures/emailNumberBarPlot/emailNumberBarPlot.
+<use ch_inference_foundations_oi_biostat/figures/cltSimulations/cltSimulations.
 pdf>
-Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/emailNumberBarPlot
-/emailNumberBarPlot.pdf used on input line 1200.
-(pdftex.def)             Requested size: 354.48174pt x 151.92474pt.
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/cltSimulat
+ions/cltSimulations.pdf used on input line 1055.
+(pdftex.def)             Requested size: 393.87128pt x 463.9578pt.
 
-<ch_intro_to_data_oi_biostat/figures/emailSpamNumberSegBar/emailSpamNumberSegBa
-r.pdf, id=405, 325.215pt x 252.945pt>
-File: ch_intro_to_data_oi_biostat/figures/emailSpamNumberSegBar/emailSpamNumber
-SegBar.pdf Graphic file (type pdf)
+Underfull \hbox (badness 10000) in paragraph at lines 1071--1072
 
-<use ch_intro_to_data_oi_biostat/figures/emailSpamNumberSegBar/emailSpamNumberS
-egBar.pdf>
-Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/emailSpamNumberSeg
-Bar/emailSpamNumberSegBar.pdf used on input line 1215.
-(pdftex.def)             Requested size: 181.18343pt x 140.92262pt.
-
-<ch_intro_to_data_oi_biostat/figures/emailSpamNumberSegBar/emailSpamNumberSegBa
-rSta.pdf, id=406, 325.215pt x 252.945pt>
-File: ch_intro_to_data_oi_biostat/figures/emailSpamNumberSegBar/emailSpamNumber
-SegBarSta.pdf Graphic file (type pdf)
-
-<use ch_intro_to_data_oi_biostat/figures/emailSpamNumberSegBar/emailSpamNumberS
-egBarSta.pdf>
-Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/emailSpamNumberSeg
-Bar/emailSpamNumberSegBarSta.pdf used on input line 1219.
-(pdftex.def)             Requested size: 181.18343pt x 140.92262pt.
+ []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[33 <./ch_intro_to_data_oi_biostat/figures/emailNumberBarPlot/emailNumberBarPlo
-t.pdf>]
-<ch_intro_to_data_oi_biostat/figures/countyIncomeSplitByPopGain/countyIncomeSpl
-itByPopGain.pdf, id=426, 542.025pt x 289.08pt>
-File: ch_intro_to_data_oi_biostat/figures/countyIncomeSplitByPopGain/countyInco
-meSplitByPopGain.pdf Graphic file (type pdf)
-
-<use ch_intro_to_data_oi_biostat/figures/countyIncomeSplitByPopGain/countyIncom
-eSplitByPopGain.pdf>
-Package pdftex.def Info: ch_intro_to_data_oi_biostat/figures/countyIncomeSplitB
-yPopGain/countyIncomeSplitByPopGain.pdf used on input line 1289.
-(pdftex.def)             Requested size: 393.87128pt x 210.06944pt.
-) [34 <./ch_intro_to_data_oi_biostat/figures/emailSpamNumberSegBar/emailSpamNum
-berSegBar.pdf> <./ch_intro_to_data_oi_biostat/figures/emailSpamNumberSegBar/ema
-ilSpamNumberSegBarSta.pdf>] [35 <./ch_intro_to_data_oi_biostat/figures/countyIn
-comeSplitByPopGain/countyIncomeSplitByPopGain.pdf>]
-\openout2 = `ch_intro_to_data_oi_biostat/TeX/ch_intro_to_data_oi_biostat_ex.aux
-'.
+LaTeX Warning: Reference `inferenceForNumericalData' on page 47 undefined on in
+put line 1074.
 
 
-No file ch_intro_to_data_oi_biostat/TeX/ch_intro_to_data_oi_biostat_ex.tex.
+LaTeX Warning: Reference `inferenceForCategoricalData' on page 47 undefined on 
+input line 1074.
+
+[47] [48 <./ch_inference_foundations_oi_biostat/figures/cltSimulations/cltSimul
+ations.pdf>]
+<ch_inference_foundations_oi_biostat/figures/pokerProfitsCanApplyNormalToSampMe
+an/pokerProfitsCanApplyNormalToSampMean.pdf, id=711, 361.35pt x 216.81pt>
+File: ch_inference_foundations_oi_biostat/figures/pokerProfitsCanApplyNormalToS
+ampMean/pokerProfitsCanApplyNormalToSampMean.pdf Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/pokerProfitsCanApplyNormalToSa
+mpMean/pokerProfitsCanApplyNormalToSampMean.pdf>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/pokerProfi
+tsCanApplyNormalToSampMean/pokerProfitsCanApplyNormalToSampMean.pdf used on inp
+ut line 1092.
+(pdftex.def)             Requested size: 275.05893pt x 165.02597pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1099--1100
+
+ []
+
+[49 <./ch_inference_foundations_oi_biostat/figures/pokerProfitsCanApplyNormalTo
+SampMean/pokerProfitsCanApplyNormalToSampMean.pdf>]
+
+LaTeX Warning: Reference `inferenceForNumericalData' on page 50 undefined on in
+put line 1114.
+
+
+LaTeX Warning: Reference `inferenceForCategoricalData' on page 50 undefined on 
+input line 1114.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1137--1138
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [50]
+[51] [52]
+<ch_inference_foundations_oi_biostat/figures/sulphStudyFindPValueUsingNormalApp
+rox/sulphStudyFindPValueUsingNormalApprox.pdf, id=761, 433.62pt x 158.5925pt>
+File: ch_inference_foundations_oi_biostat/figures/sulphStudyFindPValueUsingNorm
+alApprox/sulphStudyFindPValueUsingNormalApprox.pdf Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/sulphStudyFindPValueUsingNorma
+lApprox/sulphStudyFindPValueUsingNormalApprox.pdf>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/sulphStudy
+FindPValueUsingNormalApprox/sulphStudyFindPValueUsingNormalApprox.pdf used on i
+nput line 1221.
+(pdftex.def)             Requested size: 287.85083pt x 105.27519pt.
+ [53 <./ch_inference_foundations_oi_biostat/figures/sulphStudyFindPValueUsingNo
+rmalApprox/sulphStudyFindPValueUsingNormalApprox.pdf>]
+
+LaTeX Warning: Reference `overviewOfDataCollectionPrinciples' on page 54 undefi
+ned on input line 1262.
+
+
+LaTeX Warning: Reference `experimentsSection' on page 54 undefined on input lin
+e 1262.
+
+[54]
+Underfull \hbox (badness 10000) in paragraph at lines 1308--1309
+
+ []
+
+[55] [56]
+<ch_inference_foundations_oi_biostat/figures/power132And141/power132And141.pdf,
+ id=803, 515.9275pt x 237.88875pt>
+File: ch_inference_foundations_oi_biostat/figures/power132And141/power132And141
+.pdf Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/power132And141/power132And141.
+pdf>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/power132An
+d141/power132And141.pdf used on input line 1351.
+(pdftex.def)             Requested size: 393.87128pt x 181.61403pt.
+ [57 <./ch_inference_foundations_oi_biostat/figures/power132And141/power132And1
+41.pdf>]
+
+LaTeX Warning: Characters dropped after `\end{comment}' on input line 1395.
+
+
+Overfull \hbox (7.81052pt too wide) in paragraph at lines 1390--1397
+[]\OT1/cmr/m/n/10 -------------------------------------------------------------
+-----------------------------------------------------
+ []
+
+) [58]
+\openout2 = `ch_inference_foundations_oi_biostat/TeX/ch_inference_foundations_o
+i_biostat_ex.aux'.
+
+
+(./ch_inference_foundations_oi_biostat/TeX/ch_inference_foundations_oi_biostat_
+ex.tex
+<ch_inference_foundations_oi_biostat/figures/eoce/credits/credits.pdf, id=834, 
+433.62pt x 216.81pt>
+File: ch_inference_foundations_oi_biostat/figures/eoce/credits/credits.pdf Grap
+hic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/eoce/credits/credits.pdf>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/eoce/credi
+ts/credits.pdf used on input line 57.
+(pdftex.def)             Requested size: 273.14645pt x 136.58109pt.
+
+Overfull \hbox (2.05553pt too wide) in paragraph at lines 57--57
+[]$ $[]$ 
+ []
+
+[59
+
+
+ <./ch_inference_foundations_oi_biostat/figures/eoce/credits/credits.pdf>]
+
+LaTeX Warning: Citation 'Heinz:2003' on page 60 undefined on input line 87.
+
+
+<ch_inference_foundations_oi_biostat/figures/eoce/bdims/bdims_heights.pdf, id=8
+61, 433.62pt x 216.81pt>
+File: ch_inference_foundations_oi_biostat/figures/eoce/bdims/bdims_heights.pdf 
+Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/eoce/bdims/bdims_heights.pdf>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/eoce/bdims
+/bdims_heights.pdf used on input line 87.
+(pdftex.def)             Requested size: 241.84842pt x 120.92645pt.
+
+Overfull \hbox (2.05553pt too wide) in paragraph at lines 87--87
+[]$ $[]$ 
+ []
+
+[60 <./ch_inference_foundations_oi_biostat/figures/eoce/bdims/bdims_heights.pdf
+>]
+
+LaTeX Warning: Citation 'data:gss:2010' on page 61 undefined on input line 122.
+
+
+[61]
+<ch_inference_foundations_oi_biostat/figures/eoce/tgSpending/tgSpending.pdf, id
+=914, 433.62pt x 216.81pt>
+File: ch_inference_foundations_oi_biostat/figures/eoce/tgSpending/tgSpending.pd
+f Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/eoce/tgSpending/tgSpending.pdf
+>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/eoce/tgSpe
+nding/tgSpending.pdf used on input line 184.
+(pdftex.def)             Requested size: 275.70868pt x 137.86137pt.
+
+<ch_inference_foundations_oi_biostat/figures/eoce/relationship/rel_hist.pdf, id
+=915, 361.35pt x 172.645pt>
+File: ch_inference_foundations_oi_biostat/figures/eoce/relationship/rel_hist.pd
+f Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/eoce/relationship/rel_hist.pdf
+>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/eoce/relat
+ionship/rel_hist.pdf used on input line 193.
+(pdftex.def)             Requested size: 256.01392pt x 122.318pt.
+
+Underfull \vbox (badness 3323) has occurred while \output is active []
+
+ [62 <./ch_inference_foundations_oi_biostat/figures/eoce/tgSpending/tgSpending.
+pdf>]
+
+LaTeX Warning: Citation 'data:nsfg:2010' on page 63 undefined on input line 202
+.
+
+
+<ch_inference_foundations_oi_biostat/figures/eoce/ageAtMar/ageAtMar_hist.pdf, i
+d=940, 433.62pt x 216.81pt>
+File: ch_inference_foundations_oi_biostat/figures/eoce/ageAtMar/ageAtMar_hist.p
+df Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/eoce/ageAtMar/ageAtMar_hist.pd
+f>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/eoce/ageAt
+Mar/ageAtMar_hist.pdf used on input line 202.
+(pdftex.def)             Requested size: 275.70868pt x 137.86137pt.
+ [63 <./ch_inference_foundations_oi_biostat/figures/eoce/relationship/rel_hist.
+pdf> <./ch_inference_foundations_oi_biostat/figures/eoce/ageAtMar/ageAtMar_hist
+.pdf>]
+
+LaTeX Warning: Citation 'webpage:GRE' on page 64 undefined on input line 227.
+
+
+<ch_inference_foundations_oi_biostat/figures/eoce/ballBearing/ballBearing.pdf, 
+id=965, 433.62pt x 216.81pt>
+File: ch_inference_foundations_oi_biostat/figures/eoce/ballBearing/ballBearing.
+pdf Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/eoce/ballBearing/ballBearing.p
+df>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/eoce/ballB
+earing/ballBearing.pdf used on input line 272.
+(pdftex.def)             Requested size: 236.32516pt x 118.16406pt.
+ [64]
+
+LaTeX Warning: Citation 'Graybill:1994' on page 65 undefined on input line 302.
+
+
+
+<ch_inference_foundations_oi_biostat/figures/eoce/gifted/gifted_count_hist.pdf,
+ id=986, 433.62pt x 216.81pt>
+File: ch_inference_foundations_oi_biostat/figures/eoce/gifted/gifted_count_hist
+.pdf Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/eoce/gifted/gifted_count_hist.
+pdf>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/eoce/gifte
+d/gifted_count_hist.pdf used on input line 302.
+(pdftex.def)             Requested size: 196.93564pt x 98.46674pt.
+
+Overfull \hbox (27.26646pt too wide) in paragraph at lines 302--302
+[][] 
+ []
+
+
+<ch_inference_foundations_oi_biostat/figures/eoce/gifted/gifted_momIQ_hist.pdf,
+ id=989, 433.62pt x 216.81pt>
+File: ch_inference_foundations_oi_biostat/figures/eoce/gifted/gifted_momIQ_hist
+.pdf Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/eoce/gifted/gifted_momIQ_hist.
+pdf>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/eoce/gifte
+d/gifted_momIQ_hist.pdf used on input line 336.
+(pdftex.def)             Requested size: 207.33345pt x 103.66731pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 336--336
+
+ []
+
+[65 <./ch_inference_foundations_oi_biostat/figures/eoce/ballBearing/ballBearing
+.pdf> <./ch_inference_foundations_oi_biostat/figures/eoce/gifted/gifted_count_h
+ist.pdf>] [66 <./ch_inference_foundations_oi_biostat/figures/eoce/gifted/gifted
+_momIQ_hist.pdf>] [67]
+<ch_inference_foundations_oi_biostat/figures/eoce/penniesAges/penniesAges_pop.p
+df, id=1066, 418.56375pt x 216.81pt>
+File: ch_inference_foundations_oi_biostat/figures/eoce/penniesAges/penniesAges_
+pop.pdf Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/eoce/penniesAges/penniesAges_p
+op.pdf>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/eoce/penni
+esAges/penniesAges_pop.pdf used on input line 445.
+(pdftex.def)             Requested size: 196.93564pt x 102.00656pt.
+
+Overfull \hbox (2.05554pt too wide) in paragraph at lines 445--445
+$[]$ $[]$ 
+ []
+
+
+<ch_inference_foundations_oi_biostat/figures/eoce/penniesAges/penniesAges_n5.pd
+f, id=1067, 216.81pt x 172.645pt>
+File: ch_inference_foundations_oi_biostat/figures/eoce/penniesAges/penniesAges_
+n5.pdf Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/eoce/penniesAges/penniesAges_n
+5.pdf>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/eoce/penni
+esAges/penniesAges_n5.pdf used on input line 445.
+(pdftex.def)             Requested size: 128.00696pt x 101.93605pt.
+
+<ch_inference_foundations_oi_biostat/figures/eoce/penniesAges/penniesAges_n30.p
+df, id=1068, 216.81pt x 172.645pt>
+File: ch_inference_foundations_oi_biostat/figures/eoce/penniesAges/penniesAges_
+n30.pdf Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/eoce/penniesAges/penniesAges_n
+30.pdf>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/eoce/penni
+esAges/penniesAges_n30.pdf used on input line 445.
+(pdftex.def)             Requested size: 128.00696pt x 101.93605pt.
+
+<ch_inference_foundations_oi_biostat/figures/eoce/penniesAges/penniesAges_n100.
+pdf, id=1069, 216.81pt x 172.645pt>
+File: ch_inference_foundations_oi_biostat/figures/eoce/penniesAges/penniesAges_
+n100.pdf Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/eoce/penniesAges/penniesAges_n
+100.pdf>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/eoce/penni
+esAges/penniesAges_n100.pdf used on input line 445.
+(pdftex.def)             Requested size: 128.00696pt x 101.93605pt.
+
+<ch_inference_foundations_oi_biostat/figures/eoce/cltSimSYM/cltSimSYM_pop.pdf, 
+id=1072, 307.1475pt x 140.525pt>
+File: ch_inference_foundations_oi_biostat/figures/eoce/cltSimSYM/cltSimSYM_pop.
+pdf Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/eoce/cltSimSYM/cltSimSYM_pop.p
+df>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/eoce/cltSi
+mSYM/cltSimSYM_pop.pdf used on input line 463.
+(pdftex.def)             Requested size: 196.93564pt x 90.10294pt.
+
+<ch_inference_foundations_oi_biostat/figures/eoce/cltSimSYM/cltSimSYM_n5.pdf, i
+d=1073, 230.8625pt x 144.54pt>
+File: ch_inference_foundations_oi_biostat/figures/eoce/cltSimSYM/cltSimSYM_n5.p
+df Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/eoce/cltSimSYM/cltSimSYM_n5.pd
+f>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/eoce/cltSi
+mSYM/cltSimSYM_n5.pdf used on input line 463.
+(pdftex.def)             Requested size: 126.04169pt x 78.91277pt.
+
+<ch_inference_foundations_oi_biostat/figures/eoce/cltSimSYM/cltSimSYM_samp.pdf,
+ id=1074, 230.8625pt x 144.54pt>
+File: ch_inference_foundations_oi_biostat/figures/eoce/cltSimSYM/cltSimSYM_samp
+.pdf Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/eoce/cltSimSYM/cltSimSYM_samp.
+pdf>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/eoce/cltSi
+mSYM/cltSimSYM_samp.pdf used on input line 463.
+(pdftex.def)             Requested size: 126.04169pt x 78.91277pt.
+
+<ch_inference_foundations_oi_biostat/figures/eoce/cltSimSYM/cltSimSYM_n25.pdf, 
+id=1075, 230.8625pt x 144.54pt>
+File: ch_inference_foundations_oi_biostat/figures/eoce/cltSimSYM/cltSimSYM_n25.
+pdf Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/eoce/cltSimSYM/cltSimSYM_n25.p
+df>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/eoce/cltSi
+mSYM/cltSimSYM_n25.pdf used on input line 463.
+(pdftex.def)             Requested size: 126.04169pt x 78.91277pt.
+ [68 <./ch_inference_foundations_oi_biostat/figures/eoce/penniesAges/penniesAge
+s_pop.pdf> <./ch_inference_foundations_oi_biostat/figures/eoce/penniesAges/penn
+iesAges_n5.pdf> <./ch_inference_foundations_oi_biostat/figures/eoce/penniesAges
+/penniesAges_n30.pdf> <./ch_inference_foundations_oi_biostat/figures/eoce/penni
+esAges/penniesAges_n100.pdf> <./ch_inference_foundations_oi_biostat/figures/eoc
+e/cltSimSYM/cltSimSYM_pop.pdf>]
+<ch_inference_foundations_oi_biostat/figures/eoce/cltSimLS/cltSimLS_pop.pdf, id
+=1120, 307.1475pt x 140.525pt>
+File: ch_inference_foundations_oi_biostat/figures/eoce/cltSimLS/cltSimLS_pop.pd
+f Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/eoce/cltSimLS/cltSimLS_pop.pdf
+>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/eoce/cltSi
+mLS/cltSimLS_pop.pdf used on input line 476.
+(pdftex.def)             Requested size: 196.93564pt x 90.10294pt.
+
+<ch_inference_foundations_oi_biostat/figures/eoce/cltSimLS/cltSimLS_n81.pdf, id
+=1121, 230.8625pt x 144.54pt>
+File: ch_inference_foundations_oi_biostat/figures/eoce/cltSimLS/cltSimLS_n81.pd
+f Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/eoce/cltSimLS/cltSimLS_n81.pdf
+>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/eoce/cltSi
+mLS/cltSimLS_n81.pdf used on input line 476.
+(pdftex.def)             Requested size: 126.04169pt x 78.91277pt.
+
+<ch_inference_foundations_oi_biostat/figures/eoce/cltSimLS/cltSimLS_samp.pdf, i
+d=1122, 230.8625pt x 144.54pt>
+File: ch_inference_foundations_oi_biostat/figures/eoce/cltSimLS/cltSimLS_samp.p
+df Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/eoce/cltSimLS/cltSimLS_samp.pd
+f>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/eoce/cltSi
+mLS/cltSimLS_samp.pdf used on input line 476.
+(pdftex.def)             Requested size: 126.04169pt x 78.91277pt.
+
+<ch_inference_foundations_oi_biostat/figures/eoce/cltSimLS/cltSimLS_n18.pdf, id
+=1123, 230.8625pt x 144.54pt>
+File: ch_inference_foundations_oi_biostat/figures/eoce/cltSimLS/cltSimLS_n18.pd
+f Graphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/eoce/cltSimLS/cltSimLS_n18.pdf
+>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/eoce/cltSi
+mLS/cltSimLS_n18.pdf used on input line 476.
+(pdftex.def)             Requested size: 126.04169pt x 78.91277pt.
+ [69 <./ch_inference_foundations_oi_biostat/figures/eoce/cltSimSYM/cltSimSYM_n5
+.pdf> <./ch_inference_foundations_oi_biostat/figures/eoce/cltSimSYM/cltSimSYM_s
+amp.pdf> <./ch_inference_foundations_oi_biostat/figures/eoce/cltSimSYM/cltSimSY
+M_n25.pdf> <./ch_inference_foundations_oi_biostat/figures/eoce/cltSimLS/cltSimL
+S_pop.pdf> <./ch_inference_foundations_oi_biostat/figures/eoce/cltSimLS/cltSimL
+S_n81.pdf> <./ch_inference_foundations_oi_biostat/figures/eoce/cltSimLS/cltSimL
+S_samp.pdf> <./ch_inference_foundations_oi_biostat/figures/eoce/cltSimLS/cltSim
+LS_n18.pdf>]
+<ch_inference_foundations_oi_biostat/figures/eoce/ipod/ipod_popdist.pdf, id=117
+9, 433.62pt x 216.81pt>
+File: ch_inference_foundations_oi_biostat/figures/eoce/ipod/ipod_popdist.pdf Gr
+aphic file (type pdf)
+
+<use ch_inference_foundations_oi_biostat/figures/eoce/ipod/ipod_popdist.pdf>
+Package pdftex.def Info: ch_inference_foundations_oi_biostat/figures/eoce/ipod/
+ipod_popdist.pdf used on input line 539.
+(pdftex.def)             Requested size: 295.40346pt x 147.71004pt.
+
+[70 <./ch_inference_foundations_oi_biostat/figures/eoce/ipod/ipod_popdist.pdf>]
+
+LaTeX Warning: Citation 'webpage:spam' on page 71 undefined on input line 567.
+
+[71]) [72]
 \openout2 = `extraTeX/index/index.aux'.
 
-(./extraTeX/index/index.tex)
+ (./extraTeX/index/index.tex)
 No file main.ind.
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 51.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 51.
 (./main.aux (./extraTeX/preamble/copyright.aux)
 (./extraTeX/preamble/preface_oi_biostat.aux)
-(./ch_intro_to_data_oi_biostat/TeX/ch_intro_to_data_oi_biostat.aux)
-(./ch_intro_to_data_oi_biostat/TeX/ch_intro_to_data_oi_biostat_ex.aux)
-(./extraTeX/index/index.aux))
+(./ch_inference_foundations_oi_biostat/TeX/ch_inference_foundations_oi_biostat.
+aux)
+(./ch_inference_foundations_oi_biostat/TeX/ch_inference_foundations_oi_biostat_
+ex.aux) (./extraTeX/index/index.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 51.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 51.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 55FA85FEECFDBE516E554C0822441D20;330.
+(rerunfilecheck)             Checksum: 14F8D6057990DCBFFC6AD7C862F09E1B;672.
 
 
 LaTeX Warning: There were undefined references.
@@ -1311,50 +1884,67 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
+
+Package biblatex Warning: Please (re)run BibTeX on the file(s):
+(biblatex)                main
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 51.
  ) 
 Here is how much of TeX's memory you used:
- 14574 strings out of 493109
- 234293 string characters out of 6135003
- 436915 words of memory out of 5000000
- 17620 multiletter control sequences out of 15000+600000
- 17423 words of font info for 64 fonts, out of 8000000 for 9000
+ 15249 strings out of 493117
+ 253135 string characters out of 6135433
+ 436356 words of memory out of 5000000
+ 17883 multiletter control sequences out of 15000+600000
+ 19162 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,17n,58p,1799b,663s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-}</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
-</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
-/usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></u
-sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr
-/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/
-local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/l
-ocal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/loc
-al/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local
-/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/t
-exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/tex
-live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texli
-ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/
-2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/201
-4/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2014/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2014/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2014/texmf
--dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2014/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2014/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2014/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2014/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2014/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2014/texmf-dist/font
-s/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2014/texmf-dist/fonts/
-type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2014/texmf-dist/fonts/ty
-pe1/public/wasy/wasy10.pfb>
-Output written on main.pdf (35 pages, 456573 bytes).
+ 42i,17n,41p,1356b,893s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.24} has been referenced but does not ex
+ist, replaced by a fixed one
+
+{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<
+/usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></
+usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></u
+sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr
+/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/l
+ocal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/
+local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/l
+ocal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/lo
+cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/loca
+l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/
+texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/te
+xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texl
+ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texliv
+e/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/
+2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/20
+14/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2014
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2014/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2014/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2014/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2014/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2014/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2014/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2014/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2014/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2014/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmti9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmtt9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/cm
+-super/sfrm0900.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/cm-s
+uper/sfrm1000.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/wasy/w
+asy10.pfb>
+Output written on main.pdf (72 pages, 1116007 bytes).
 PDF statistics:
- 568 PDF objects out of 1000 (max. 8388607)
- 468 compressed objects within 5 object streams
- 117 named destinations out of 1000 (max. 500000)
- 116 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1479 PDF objects out of 1728 (max. 8388607)
+ 1275 compressed objects within 13 object streams
+ 480 named destinations out of 1000 (max. 500000)
+ 273 words of extra memory for PDF output out of 10000 (max. 10000000)
 

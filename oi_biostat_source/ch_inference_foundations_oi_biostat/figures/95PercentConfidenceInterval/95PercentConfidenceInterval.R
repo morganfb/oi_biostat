@@ -20,7 +20,7 @@ bmi<-(brfss.df$weight * 703)/ (height.total^2)
 brfss.df<-cbind(brfss.df,height.total,weight.dif,bmi)
 
 # sample 40k from brfss data to use as our sample
-set.seed(102)
+set.seed(100)
 sample.vec<-sample(1:nrow(brfss.df),size = 40000,replace = FALSE)
 brfss.sample<-brfss.df[sample.vec,]
 
