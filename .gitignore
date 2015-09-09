@@ -1,6 +1,20 @@
 
+<<<<<<< Updated upstream
 *.swp
 
 *.log
 
 data/famuss/.Rhistory
+=======
+oi_biostat_source/ch_intro_to_data_oi_biostat/TeX/ch_intro_to_data_oi_biostat.log
+
+*.log
+
+oi_biostat_source/main.pdf
+
+oi_biostat_source/main-blx.bib
+
+oi_biostat_source/main-blx.bib
+>>>>>>> Stashed changes
+
+oi_biostat_source/main-blx.bib
