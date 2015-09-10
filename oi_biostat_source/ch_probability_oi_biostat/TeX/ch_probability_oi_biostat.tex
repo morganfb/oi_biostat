@@ -592,13 +592,55 @@ Conditional probability is used to  characterize how the probability of an outco
 
 
 
-% go to next section, asthma example
 
 
+\subsection{Marginal and joint probabilities}
+\label{marginalAndJointProbabilities}
+
+%\index{marginal probability|(}
+%\index{joint probability|(}
+
+% two tables below will be used to open the discussion of marginal and joint probabiites
+
+% latex table generated in R 3.0.1 by xtable 1.7-1 package
+% Thu Sep 10 11:36:48 2015
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrr}
+  \hline
+ & Diabetes & No Diabetes & Sum \\ 
+  \hline
+Less than 20 years & 200 & 86664 & 86864 \\ 
+  20 to 44 years & 4300 & 98724 & 103024 \\ 
+  45 to 64 years & 13400 & 68526 & 81926 \\ 
+  Greater than 64 years & 11200 & 30306 & 41506 \\ 
+  Sum & 29100 & 284220 & 313320 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+%  xtable(diabetes.age.table.thousands, digits = 0)
+%  this table uses census counts; still not perfect, but closer
+
+% latex table generated in R 3.0.1 by xtable 1.7-1 package
+% Thu Sep 10 11:44:44 2015
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrr}
+  \hline
+ & Diabetes & No Diabetes & Sum \\ 
+  \hline
+Less than 20 years & 0.001 & 0.277 & 0.277 \\ 
+  20 to 44 years & 0.014 & 0.315 & 0.329 \\ 
+  45 to 64 years & 0.043 & 0.219 & 0.261 \\ 
+  Greater than 64 years & 0.036 & 0.097 & 0.132 \\ 
+  Sum & 0.093 & 0.907 & 1.000 \\ 
+   \hline
+\end{tabular}
+\end{table}
 
 
-
-
+% xtable(diabetes.age.table.prop, digits = 3)
 
 
 
