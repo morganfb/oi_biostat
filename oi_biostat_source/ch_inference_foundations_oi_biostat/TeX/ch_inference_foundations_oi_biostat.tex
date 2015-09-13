@@ -27,7 +27,7 @@ These questions encompass the broader idea of statistical inference in Chapter \
 
 Chapter \ref {foundationsForInference} provides the groundwork for inference on a larger population from observing one sample, and later chapters will cover inference comparing two or more distinct populations. While the equations and details change depending on the setting, the foundations and general procedures for inference are the same throughout statistics. Understanding the foundation with point estimates in this chapter will provide familiarity for upcoming chapters. 
 
-After looking at the data in Section \ref{brfssData} that the CDC could use in making these inferences, section \ref{variabilityInEstimates} will give us an introduction to point estimates, the sampling distribution that these estimates are drawn from and the variability of these estimates. Section \ref{confidenceIntervals} will give us tools to incorporate this variability. Rather than a single value, these policy makers can provide, instead, a confidence interval or a range of values that they believe are likely estimates. However with comparison, researchers might still want to compare point values against each other instead of ranges of values. Hypothesis testing in Section \ref{hypothesisTesting} allows the researchers to infer using point estimates while still encompassing the variability that the point estimates in section \ref{variabilityInEstimates} did not. The hypothesis testing framework gives us structure to do so and uses the same moving parts as a confidence interval. 
+After looking at the data in Section \ref{brfssData} that the CDC could use in making these inferences, section \ref{variabilityInEstimates} will give us an introduction to point estimates, the sampling distribution that these estimates are drawn from, and the variability of these estimates. Section \ref{confidenceIntervals} will give us tools to incorporate this variability. Rather than a single value, these policy makers can provide, instead, a confidence interval or a range of values that they believe are likely estimates. However with comparison, researchers might still want to compare point values against each other instead of ranges of values. Hypothesis testing in Section \ref{hypothesisTesting} allows the researchers to infer using point estimates while still encompassing the variability that the point estimates in section \ref{variabilityInEstimates} did not. The hypothesis testing framework gives us structure to do so and uses the same moving parts as a confidence interval. 
 
 \section{BRFSS Data}
 \label{brfssData}
@@ -44,14 +44,14 @@ The Behavioral Risk Factor Surveillance System (BRFSS) by the CDC was started in
 \var{height} & In feet and inches where, for example, 5' 5" is listed as 505 \\
 \var{weight} & In pounds\\
 \end{tabular}
-\label{brfssBMIVariables}
 \caption{Variables of interest and their descriptions for the \data{BRFSS} data set.}
+\label{brfssBMIVariables}
 \end{table}
 
 The calculation of a BMI index from weight and height using both Metric and Imperial is \[BMI=\frac{\mathrm{weight_{kg}}}{\mathrm{height_{m}}^2}=\frac{\mathrm{weight_{lb}}}{\mathrm{height_{in}}^2}\cdot 703\]
-where $\mathrm{weight_{kg}}$ and $\mathrm{height_{m}}$ is the weight and height measured in kilograms and meters while $\mathrm{weight_{lb}}$ and $\mathrm{height_{in}}$ is the weight and height in pounds and inches. 
+where $\mathrm{weight_{kg}}$ and $\mathrm{height_{m}}$ is the weight and height measured in kilograms and meters respectively while $\mathrm{weight_{lb}}$ and $\mathrm{height_{in}}$ is the weight and height in pounds and inches respectively. 
 
-Therefore by using the \data{BRFSS} data, we can use our sample of heights and weights to calculate BMI values for each observation. The \data{BRFSS} data comprises of 170,000 observations, and the CDC is hoping to infer the characteristics of adults in the United States, our target population. A target population is the group that the statistician is interested in and wants to draw conclusions about. 
+Therefore from the \data{BRFSS} data, we can use a sample of heights and weights to calculate BMI values for each person in our sample. Thus, each person's BMI value will be considered a single observation. The \data{BRFSS} data comprises of 170,000 observations, and the CDC is hoping to infer the characteristics of adults in the United States, our target population. A target population is the group that the statistician is interested in and wants to draw conclusions about. 
 
 We take a sample of 40,000 adults from the \data{BRFSS} data to use as our observed sample. We will refer to this random sample of 40,000 adults as \data{BRFSS BMI} from now on. Part of this dataset with the BMI calculation is shown in ~\ref{brfssBMIData}. 
 
@@ -77,14 +77,14 @@ We take a sample of 40,000 adults from the \data{BRFSS} data to use as our obser
 \end{table}
 
 
-This simple random sample from \data{BRFSS} will be used to draw conclusions about the target population of US adults. This is the practice of statistical inference in the broadest sense. Let's explore the data with the tools from Chapter 1 in Figure~\ref{exploreBMI} before we estimate the average BMI in the US. 
+This simple random sample from \data{BRFSS} will be used to draw conclusions about the target population of US adults. \footnote{We note that the conductors of the \data{BRFSS} data did not use a simple random sample to obtain the data. We instead will assume so for our purposes but sampling methodology can be found \url{http://www.cdc.gov/brfss/annual_data/2000/pdf/overview_00.pdf}.} This is the practice of statistical inference in the broadest sense. Let's explore the data with the tools from Chapter 1 in Figure~\ref{exploreBMI} before we estimate the average BMI in the US. 
 
 \begin{figure}
 \centering
 \includegraphics[width =  \textwidth]{ch_inference_foundations_oi_biostat/figures/brfssBMIsampHistograms/brfssBMIsampHistograms}
 %hist(brfss.sample$bmi, main="Histogram of brfss.sample BMI", xlab="BMI")
 %boxplot(brfss.sample$bmi, main = "Boxplot of brfss.sample BMI")
-\caption{Histogram and boxplot of BMI for the \data{BRFSS BMI} data. The data is skewed right by both the histogram and the box plot. We can see from the box plot that it has many outliers}
+\caption{Histogram and boxplot of BMI for the \data{BRFSS BMI} data. The data is skewed right by both the histogram and the box plot.}
 \label{exploreBMI}
 \end{figure}
 
@@ -95,7 +95,7 @@ The data from \data{BRFSS BMI} is special because in order to do statistical inf
 
 \index{point estimate|(}
 
-If members at the CDC, after observing the sample of 40,000 BMI values, were asked to give their best guess for the average BMI in the US, what would it be? Here they would employ point estimation. A \term{point estimate} is a single value derived from sample data that serves as the "best guess" for that population parameter. Section ~\ref{variabilityInEstimates} will touch upon point estimates as well as the variability inherent in using this single number as the best guess. \footnote{While we focus on the the mean of BMIs in this chapter, questions regarding variation are often just as important in practice. For instance, potential action regarding obesity could change if the standard deviation of a person's BMI was 5 versus if it was 15.} 
+If members at the CDC, after observing the sample of 40,000 BMI values, were asked to give their best guess for the average BMI in the US, what would it be? Here, they would employ point estimation. A \term{point estimate} is a single value derived from sample data that serves as the "best guess" for that population parameter. Section ~\ref{variabilityInEstimates} will touch upon point estimates as well as the variability inherent in using this single number as the best guess.\footnote{While we focus on the the mean of BMIs in this chapter, questions regarding variation are often just as important in practice. For instance, potential action regarding obesity could change if the standard deviation of a person's BMI was 5 versus if it was 15.} 
 
 \subsection{Point estimates}
 \label{pointEstimates}
@@ -109,9 +109,9 @@ For notation, use $\mathrm{bmi}_1, \mathrm{bmi}_2, \ldots, \mathrm{bmi}_{40,000}
 \index{point estimate!single mean|(}
 and is the \term{point estimate} of the population mean\footnote{If we were interested in the values of another variable, \var{weight} denoted $w_1,\ldots w_{40,000}$ instead, we would denote the sample mean as $\bar{w}$}. 
 
-Suppose from the original respondents in \data{BRFSS}, we take a new sample of 40,000 people and recompute the mean; we will probably not get the same answer that we got using the \data{BRFSS BMI} data set. Estimates generally vary from one sample to another even with the same sample size, and low \term{sampling variation} can suggest our estimate may be close, but not exactly equal to the parameter. A larger sample size can ensure a closer estimate to the population parameter. In 2000, the US population was 282.2 million, \footnote{\url{http://www.census.gov/prod/2002pubs/c2kprof00-us.pdf}} 7,000 times our sample size of 40,000. 
+Suppose from the original respondents in \data{BRFSS}, we take a new sample of 40,000 people and recompute the mean; we will probably not get the same answer that we got using the \data{BRFSS BMI} data set. Estimates generally vary from one sample to another even with samples of the same sample size, and low \term{sampling variation} can suggest our estimate may be close, but not exactly equal to the parameter. A larger sample size can ensure a closer estimate to the population parameter. In 2000, the US population was 282.2 million, \footnote{\url{http://www.census.gov/prod/2002pubs/c2kprof00-us.pdf}} 7,000 times our sample size of 40,000. 
 
-What about generating point estimates of other \term{population parameters}, such as the population median or population standard deviation? We can estimate parameters based on sample statistics. For example, we estimate the population standard deviation for BMI using the sample standard deviation, and the population median using the sample median. Table ~\ref{BMIEstimates} provides the point estimates to other population parameters relating to BMI.
+What about generating point estimates of other \term{population parameters}, such as the population median or population standard deviation? We can estimate these parameters based on sample statistics as well. For example, we estimate the population standard deviation for BMI using the sample standard deviation, and the population median using the sample median. Table ~\ref{BMIEstimates} provides the point estimates to other population parameters relating to BMI.
 
 % latex table generated in R 3.1.1 by xtable 1.7-4 package
 % Sun Jul 19 20:25:13 2015
@@ -131,22 +131,22 @@ mean & 26.356 \\
 \end{table}
 
 \begin{exercise} \label{pointEstimateOfDesiredWeights}
-Suppose we want to estimate the average age for men and women in the US. If $\bar{\mathrm{age}}_{\mathrm{women}} = 47.35 $ years and $\bar{\mathrm{age}} _ {\mathrm{men}} = 45.67 $ years, what would be a good point estimate for the population age difference? \footnote{We could take the difference of the two sample means: $47.35 - 45.67 =  1.69$. Women are on average older than men by 1.69 years.}
+Suppose we want to estimate the average age for men and women in the US as well as the difference in ages. If $\bar{\mathrm{age}}_{\mathrm{women}} = 47.35 $ years and $\bar{\mathrm{age}} _ {\mathrm{men}} = 45.67 $ years, what would be a good point estimate for the population age difference? \footnote{We could take the difference of the two sample means: $47.35 - 45.67 =  1.69$. Women are on average older than men by 1.69 years.}
 \end{exercise}
 %men = brfss.sample[which(brfss.sample$sex == 1),]
 %women = brfss.sample[which(brfss.sample$sex == 2),]
 %mean(women$age) - mean(men$age)
 
 \begin{exercise}
-If you had to provide a point estimate of the population IQR for the BMI of participants, how might you make such an estimate using a sample?\footnote{To obtain a point estimate of the IQR for the population, we could take the IQR of the sample.}
+If you had to provide a point estimate of the population IQR for the BMI of participants, how might you make such an estimate using a sample?\footnote{To obtain a point estimate of the IQR for the population, we could take the IQR of a random sample from the population.}
 
 \index{point estimate!single mean|)}
 
 \end{exercise}
 
-The sample mean calculated from this \data{BRFSS BMI} sample of 40,000 will likely be different from the sample mean of a different set of 40,000 respondents from \data{BRFSS} data. Using $R$, we take another random sample from the \data{BRFSS} data of 40,000 and see that that the new sample mean for the BMI is 26.344. We note that estimates will differ across samples through sampling variation but the accuracy of the point estimate will get improve once more data becomes available and sample sizes increase.
+The sample mean calculated from this \data{BRFSS BMI} sample of 40,000 will likely be different from the sample mean of a different set of 40,000 respondents from \data{BRFSS} data. Using $R$, we take another random sample from the \data{BRFSS} data of 40,000 and see that that the new sample mean for the BMI is 26.344. We note that estimates will differ across samples through sampling variation but the accuracy of the point estimate will improve once more data becomes available and sample sizes increase.
 
-Consider a running mean from the \data{BRFSS BMI} data to explore increases in sample size. A \term{running mean} is a sequence of means, where each mean uses one more observation in its calculation than the mean directly before it in the sequence. In this case, the second mean is the average of the first two observations, $\mathrm{bmi}_1, \mathrm{bmi}_2$. The third number in the running mean sequence is the average of $\mathrm{bmi}_1, \mathrm{bmi}_2,$ and $\mathrm{bmi}_3$. 
+Consider a running mean from the \data{BRFSS BMI} data to explore increases in sample size and increase in accuracy. A \term{running mean} is a sequence of means, where each mean uses one more observation in its calculation than the mean directly before it in the sequence. In this case, the second mean is the average of the first two observations, $\mathrm{bmi}_1, \mathrm{bmi}_2$. The third number in the running mean sequence is the average of $\mathrm{bmi}_1, \mathrm{bmi}_2,$ and $\mathrm{bmi}_3$. 
 
 The running mean for \data{bmi} in the \data{BRFSS BMI} dataset is shown in Figure~\ref{BMIRunningMean}. We look at a running mean of 300 and 5000 observations. We note that as more values get included, the running mean converges closer to the sample mean of 26.36. Similarly if the sample size increases from 40,000 to 100,000, the sample mean from 100,000 observations will be closer to the average US population BMI than the sample mean of 40,000 observations. 
 
@@ -157,7 +157,7 @@ The running mean for \data{bmi} in the \data{BRFSS BMI} dataset is shown in Figu
       \label{BMIRunningMean}
 \end{figure}
 
-Sampling variation, however, is across samples of the same size. Figure ~\ref{runningSamplingVariation} displays the running means of two samples and of 20 samples. We see at each observation that the sample mean is not the same. There exists some sampling variation. Even more interesting, the variation decreases as the number of observations increases. We will explore this concept more in Section ~\ref{accuracyAndPrecision}. 
+Sampling variation, however, is across samples of the same size. Figure ~\ref{runningSamplingVariation} displays the running means of two samples and of 20 samples. We see at each number of observations that the sample mean is not the same. There exists some sampling variation. Even more interesting, the variation across the different running means decreases as the number of observations increases. We will explore this concept more in Section ~\ref{accuracyAndPrecision}. 
 
 \begin{figure}
    \centering
@@ -171,11 +171,11 @@ Sampling variation, however, is across samples of the same size. Figure ~\ref{ru
 \subsection{Accuracy and Precision of Point Estimates}
 \label{accuracyAndPrecision}
 
-Accuracy and precision have colloquially become interchangeable. In science, however, they both have very distinct meanings. Accuracy is a characteristic of how close the measurements are to their true value. Precision is the characteristic of how close the measurements are to themselves. 
+Accuracy and precision have colloquially become interchangeable. In science, however, they both have very distinct meanings. Accuracy is a characteristic of how close the measurements are to their true values. Precision is the characteristic of how close the measurements are to themselves. 
 
-Within inference and point estimates, the sample mean is always accurate. The sample mean does not contain any systematic error. The sample mean is only not equal to the population mean because of random sampling error. While the sample mean may not always be equal to the population mean, in expectation, the sample mean and population parameter are equivalent. We observe the accuracy of the sample mean in practice with 20 running means from Figure ~\ref{runningSamplingVariation}. The center of these running means is, in expectation, the population average BMI. 
+Within inference and point estimates, the sample mean is always accurate. The sample mean does not contain any systematic error. The sample mean is not equal to the population mean only because of random sampling error. While the sample mean may not always be equal to the population mean, in expectation, the sample mean and population parameter are equivalent. We observe the accuracy of the sample mean in practice with 20 running means from Figure ~\ref{runningSamplingVariation}. The center of these running means is, in expectation, the population average BMI. 
 
-While the sample mean is consistently accurate, it may not always be precise. As the sample size, n, increases, the randomness in the sample mean decreases. We look to sampling variation at different sample sizes as evidence. Figure ~\ref{sampleMeanPrecision} shows two histograms of sample means. The left histogram has sample means with a sample size of 5 and the right has a sample size of 50. All of these samples are randomly drawn from the \data{BRFSS} data, the sample mean calculated and plotted as an observation on the histogram. The histogram with $n=50$ has noticeably smaller variance than the histogram with $n=5$. The histogram with $n=5$ is also slightly skewed. As such, with larger sample sizes, the sample variation decreases, making the sample mean more precise across samples. We look to Section ~\ref{seOfTheMean} to quantify and measure sampling variation as more data becomes available. 
+While the sample mean is consistently accurate, it may not always be precise. As the sample size, $n$, increases, the randomness and variability in the sample mean decreases. We look to sampling variation at different sample sizes as evidence. Figure ~\ref{sampleMeanPrecision} shows two histograms of sample means. The left histogram has sample means with a sample size of 5 and the right has a sample size of 50. All of these samples are randomly drawn from the \data{BRFSS} data, the sample mean calculated and plotted as an observation on the histogram. The histogram with $n=50$ has noticeably smaller variance than the histogram with $n=5$. The histogram with $n=5$ is also slightly skewed. As such, with larger sample sizes, the sample variation decreases, making the sample mean more precise across samples. We look to Section ~\ref{seOfTheMean} to quantify and measure sampling variation as more data becomes available. 
 
 \begin{figure}
    \centering
@@ -187,10 +187,10 @@ While the sample mean is consistently accurate, it may not always be precise. As
 \subsection{Sampling Distribution and the Standard Error of the Mean}
 \label{seOfTheMean}
 
-From the random sample represented in \data{BRFSS BMI}, we estimated the average BMI of an adult in the United States to be 26.356. Suppose we take another random sample of 40,000 individuals and take its mean. In Section ~\ref{pointEstimates}, we then get 26.359. Suppose we took another (26.350) and another (26.349), and continue to do this many many times -- which we can do only because we have access to the larger \data{BRFSS} dataset. \footnote{The sampling distribution depends on the underlying distribution of the target population. In this case, while \data{BRFSS} is not quite the target population of all US adults, it is large enough illustrate the concept of sampling distribution and acts as a representative substitute to the US population. If we had complete data from the target population, there would be no need to take a sample mean measurement. In practice, we generally aren't even capable of taking another sample of 40,000 from \data{BRFSS}!} We can then build up a \term{sampling distribution} for the sample mean when the sample size is 40,000, shown in Figure~\ref{brfssBMISamplingDistribution}.
+From the random sample represented in \data{BRFSS BMI}, we estimated the average BMI of an adult in the United States to be 26.356. Suppose we take another random sample of 40,000 individuals and take its mean. In Section ~\ref{pointEstimates}, we then get 26.344. Suppose we took another (26.350) and another (26.349), and continue to do this many many times -- which we can do only because we have access to the larger \data{BRFSS} dataset. \footnote{The sampling distribution depends on the underlying distribution of the target population. In this case, while \data{BRFSS} is not quite the target population of all US adults, it is large enough to illustrate the concept of sampling distribution and acts as a representative substitute to the US population. If we had complete data from the target population, there would be no need to take a sample mean measurement. In practice, we generally are not even capable of taking another sample of 40,000 from \data{BRFSS}!} We can then build up a \term{sampling distribution} for the sample mean when the sample size is 40,000, shown in Figure~\ref{brfssBMISamplingDistribution}.
 
 \begin{termBox}{\tBoxTitle{Sampling distribution}
-The \term{sampling distribution} of a point estimate represents the distribution of the point estimate based on samples of a fixed size from a certain population. There is a unique sampling distribution that exists that is inherent to the point estimator you are measuring. Every time that you are calculating your point estimate from a particular sample of said size, your point estimate s one sample from the sampling distribution. Understanding the concept of a sampling distribution is central to understanding statistical inference.}
+The \term{sampling distribution} of a point estimate represents the distribution of the point estimate based on samples of a fixed size from a certain population. There is a unique sampling distribution that exists that is inherent to the point estimator you are measuring. Every time that you are calculating your point estimate from a particular sample of said size, your point estimate is one sample from the sampling distribution. Understanding the concept of a sampling distribution is central to understanding statistical inference.}
 \end{termBox}
 
 
@@ -211,12 +211,12 @@ Figure~\ref{brfssBMISamplingDistribution} is an approximation of the sampling di
 (5) Plot all the sample means you have stored in (1) as a histogram
 \end{verbatim}
   
-The sampling distribution, in this case, is likely to be unimodal and approximately symmetric. The sampling distribution is also centered exactly at the \data{BRFSS} population mean: $\mu=26.351$. Intuitively, this makes sense. The sample means should tend to ``fall around'' the mean that we are drawing from.
+The sampling distribution, in this case, is likely to be unimodal and approximately symmetric. The sampling distribution is also centered exactly at the \data{BRFSS} population mean: $\mu=26.351$. Intuitively, this makes sense. The sample means should tend to ``fall around'' the mean of the population that we are drawing from.
 
-By the sampling distribution, we also see that the point estimator will have some variability. We see the concept of sampling distribution introduced in Section ~\ref{accuracyAndPrecision} and note that the precision increases as the sample size gets larger. Point estimates, however, still vary sample by sample. There needs to be some metric to quantify the variability of the sample mean around the population mean.
+From the sampling distribution, we also see that the point estimator will have some variability, and from the concept of sampling distribution introduced in Section ~\ref{accuracyAndPrecision}, the precision increases as the sample size gets larger. Point estimates, however, still vary sample by sample. There needs to be some metric to quantify the variability of the sample mean around the population mean.
 
 \begin{tipBox}{\tipBoxTitle{More data means less variability}
-In sampling, the larger the sample size the better. The precision of the sample mean increases as you observe more data in your sample.}
+In sampling, the larger the sample size the better. The precision of the sample mean increases as more data is observed in the sample.}
 \end{tipBox}
 
 Standard deviation is the most obvious method to quantify variability. We use the standard deviation of the sampling distribution denoted  $\sigma_{\bar{x}}$ or $s$ in some contexts to measure sampling variation of the sample mean. \footnote{Caution: The standard deviation of the sample mean is not equivalent to the estimate for the standard deviation of the population. Those are measuring two separate quantities.}
@@ -228,7 +228,7 @@ The standard deviation associated with an estimate is called the \emph{standard 
 \end{termBox}
 
 \begin{exercise}
-(a) Would you rather use a small sample or a large sample when estimating a parameter? Why? (b) Using your reasoning from (a), would you expect a point estimate based on a small sample to have smaller or larger standard error than a point estimate based on a larger sample?\footnote{(a) Consider two random samples: one of size 10 and one of size 1000. Individual observations in the small sample are highly influential on the estimate while in larger samples these individual observations would more often average each other out. The larger sample would tend to provide a more accurate estimate. (b) If we think an estimate is better, we probably mean it typically has less error. Based on (a), our intuition suggests that a larger sample size corresponds to a smaller standard error.}
+(a) Would you rather use a small sample or a large sample when estimating a parameter? Why? (b) Using your reasoning from (a), would you expect a point estimate based on a small sample to have smaller or larger standard error than a point estimate based on a larger sample?\footnote{(a) Prefer a large sample. Consider two random samples: one of size 10 and one of size 1000. Individual observations in the small sample are highly influential on the estimate while in larger samples these individual observations would more often average each other out. The larger sample would tend to provide a more accurate estimate. (b) If we think an estimate is better, we probably mean it typically has less error. Based on (a), intuition suggests that a larger sample size corresponds to a smaller standard error.}
 \end{exercise}
 
 The standard error could be calculated if statisticians knew the sampling distribution. It would simply be the standard deviation of that sampling distribution. However when considering the case of the point estimate $\bar{x}$, there is one problem: most often, scientists only observe one sample, and there is no obvious way to estimate its standard error from a single sample. Computation methods and statistical theory, instead, provide helpful tools to address this issue. 
@@ -256,7 +256,7 @@ Again what we are doing in $R$ is creating an approximate sampling distribution 
 
 %While we do not have the exact sampling distribution, we do have the ability to calculate an approximate standard error. 
 
-This method, however, has one main issue. Practitioners rarely are able to repeatedly sample from their larger population. Instead the standard error of the sample mean can be calculated through the following equation: 
+This method, however, has one main issue. Practitioners rarely are able to repeatedly sample from the larger population. Instead the standard error of the sample mean can be calculated through the following equation: 
 
 \begin{termBox}{\tBoxTitle{Computing SE for the sample mean}
 Given $n$ independent observations from a population with standard deviation $\sigma$, the standard error of the sample mean is equal to \vspace{-1mm}
@@ -269,7 +269,7 @@ A reliable method to ensure sample observations are independent is to guarantee 
 }
 \end{termBox}
 
-There is one subtle issue of Equation~(\ref{seOfXBar}) that you might have realized: the population standard deviation is typically unknown. To resolve this problem, we can use the point estimate of the standard deviation from the sample. This estimate tends to be sufficiently good when the sample size is at least 30 and the population distribution is not strongly skewed. Thus, we often just use the sample standard deviation denoted $s$ instead of~$\sigma$ for the population standard deviation. When the sample size is smaller than 30, we will need to use a method to account for extra uncertainty in the standard error. If the skew condition is not met, a larger sample is needed to compensate for the extra skew. These topics are further discussed in Section~\ref{cltSection}. 
+There is one subtle issue of Equation~(\ref{seOfXBar}) that you might have realized: the population standard deviation is typically unknown. To resolve this problem, we can use the point estimate of the population standard deviation from the sample collected. This estimate tends to be sufficiently good when the sample size is at least 30 and the population distribution is not strongly skewed. Thus, we often just use the sample standard deviation denoted $s$ instead of~$\sigma$ for the population standard deviation. When the sample size is smaller than 30, we will need to use a method to account for extra uncertainty in the standard error. If the skew condition is not met, a larger sample is needed to compensate for the extra skew. These topics are further discussed in Section~\ref{cltSection}. 
 
 With the \data{BRFSS BMI} sample of 40,000, the standard error of the sample mean is calculated as
 
@@ -279,18 +279,17 @@ SE_{\bar{x}} = \frac{s}{\sqrt{n}} = \frac{5.288}{\sqrt{40000}} =  0.026
 where $s$ is the standard deviation of the sample and $n$ is the number of observations in the sample. We see that the standard error calculated $(0.026)$ is similar to the empirical standard deviation of the sampling distribution $(0.024)$. 
 
 \begin{exercise}
-In another sample of 40,000 US adults, the standard deviation of BMI is $s_y = 5.34$. Because the sample is a simple random sample and consists of less than 10\% of the United States population, the observations are independent. (a)~What is the standard error of the sample mean, $\bar{y}=26.36$? (b)~Would you be surprised if someone told you the average BMI of all US adults was actually 30? What about 26? \footnote{(a) Use Equation~(\ref{seOfXBar}) with the sample standard deviation to compute the standard error: $SE_{\bar{y}} = 5.34/\sqrt{40000} =  0.0267$. (b) It would be surprising if the true average BMI was 30. A BMI of 30 is many standard deviations away from the sample mean of 26.36. In other words, a BMI of 30 seems implausible given that our sample mean (26.36) is far from the "true mean" using the standard error of 0.0267 to identify what is close and what is not close. Even a BMI of 26 in this situation would be surprising given that is it more than one standard deviation away from the sample mean (standard error of 0.0267).}
+In another sample of 40,000 US adults, the standard deviation of BMI is $s_y = 5.34$. Because the sample is a simple random sample and consists of less than 10\% of the United States population, the observations are independent. (a)~What is the standard error of the sample mean, $\bar{y}=26.36$? (b)~Would you be surprised if someone told you the average BMI of all US adults was actually 30? What about 26? \footnote{(a) Use Equation~(\ref{seOfXBar}) with the sample standard deviation to compute the standard error: $SE_{\bar{y}} = 5.34/\sqrt{40000} =  0.0267$. (b) It would be surprising if the true average BMI was 30. A BMI of 30 is many many standard deviations away from the sample mean of 26.36. In other words, a BMI of 30 seems implausible given that our sample mean (26.36) is far from the "true mean" of 30 using the standard error of 0.0267 to identify what is close and what is not close. Even a BMI of 26 in this situation would be surprising given that is it more than one standard deviation (standard error of 0.0267) away from the sample mean.}
 \end{exercise}
-%include code
 
 
 \begin{exercise}
-(a) Would you be more trusting of a sample that has 100 observations or 400 observations? (b) We want to show mathematically that our estimate tends to be better when the sample size is larger. If the standard deviation of the individual observations is 10, what is our estimate of the standard error when the sample size is 100? What about when it is 400? (c) Explain how your answer to (b) mathematically justifies your intuition in part~(a).\footnote{(a) Look back to Section ~\ref{accuracyAndPrecision} on accuracy and precision. Extra observations are usually helpful in understanding the population, so a point estimate with 400 observations seems more trustworthy. (b) The standard error when the sample size is 100 is given by $SE_{100} = 10/\sqrt{100} = 1$. For 400: $SE_{400} = 10/\sqrt{400} = 0.5$. The larger sample has a smaller standard error. (c) The standard error of the sample with 400 observations is lower than that of the sample with 100 observations. The standard error describes the typical error, and since it is lower for the larger sample, this mathematically shows the estimate from the larger sample tends to be better -- though it does not guarantee that every large sample will provide a better estimate than a particular small sample.}
+(a) Would you be more trusting of a sample that has 100 observations or 400 observations? (b) We want to show mathematically that our estimate tends to be better when the sample size is larger. If the standard deviation of the individual observations is 10, what is our estimate of the standard error when the sample size is 100? What about when it is 400? (c) Explain how your answer to (b) mathematically justifies your intuition in part~(a).\footnote{(a) Look back to Section ~\ref{accuracyAndPrecision} on accuracy and precision. Extra observations are usually helpful in understanding the population, so a point estimate with 400 observations seems more trustworthy. (b) The standard error when the sample size is 100 is given by $SE_{100} = 10/\sqrt{100} = 1$. For 400: $SE_{400} = 10/\sqrt{400} = 0.5$. The larger sample has a smaller standard error. (c) The standard error of the sample with 400 observations is lower than that of the sample with 100 observations. The standard error describes the typical error, and since it is lower for the larger sample, this mathematically shows the estimate from the larger sample tends to be more trustworthy -- though it does not guarantee that every large sample will provide a better estimate than a particular small sample.}
 \end{exercise}
 
 \subsection{Basic properties of point estimates}
 
-We achieved three goals in this section. First, we determined that point estimates from a sample may be used to estimate population parameters. We also determined that these point estimates are not exact, and there exists some sampling variation. The sample mean is an example of a point estimate that is always accurate but not necessarily always precise. The precision of a point estimate can be represented through sampling variation and visualized through a sampling distribution, and the point estimate that we observe is a single observation in the estimate's entire sampling distribution. Lastly, we quantified this sampling variation and the uncertainty of the sample mean using what we call the standard error. The standard error of the sample mean can be mathematically represented in Equation~\eqref{seOfXBar} or through computation with $R$. While we could also quantify the standard error for other estimates -- such as the median, standard deviation, or any other number of statistics -- we will postpone these extensions until later chapters and courses.
+We achieved three goals in this section. First, we determined that point estimates from a sample may be used to estimate population parameters. We also determined that these point estimates are not exact, and there exists some sampling variation. The sample mean is an example of a point estimate that is always accurate but not necessarily always precise. The precision of a point estimate can be represented through sampling variation and visualized through a sampling distribution, and the point estimate that we observe is a single observation in the estimate's sampling distribution. Lastly, we quantified this sampling variation and the uncertainty of the sample mean using what we call the standard error. The standard error of the sample mean can be mathematically represented in Equation~\eqref{seOfXBar} or through computation using $R$. While we could also quantify the standard error for other estimates -- such as the median, standard deviation, or any other number of statistics -- we will postpone these extensions until later chapters and courses.
 
 \index{point estimate)}
 
