@@ -1,3 +1,5 @@
+%!TEX root=../../main.tex
+
 \chapter{Probability}
 \label{probability}
 
@@ -7,7 +9,7 @@
 
 %  I may have neglected to move some index commands from OI to this chapter.
 
-%\index{probability|(}  
+\index{probability|(}  
 
 
 What are the chances that a woman with an abnormal mammogram has breast cancer?  What is the likelihood that an overweight male teenager with high blood pressure will develop cardiovascular disease by the age of 50?  What is the probability that two parents who are unaffected carriers of a genetic mutation that causes cystic fibrosis will have a child that suffers from the disease. All of these questions use the language of probability, and despite how easy it is to ask these questions,  answers are not always easy to come by.  Probability also forms the foundation for data analysis and statistical inference, since nearly every conclusion to a study should be accompanied by a measure of uncertainty.  In the publication of  LEAP study discussed in Chapter 1, the manuscript included the probability that the results of the study could have been due simply to chance variation (a very small probability, as will be seen later in the text).
@@ -23,7 +25,7 @@ Like all mathematical tools, probability becomes easier to understand and work w
 
 We begin with some familiar examples.
 
-\begin{example}\label{dieAllOutcomesex}{A ``die'', the singular of dice, is a cube with six faces numbered \resp{1}, \resp{2}, \resp{3}, \resp{4}, \resp{5}, and \resp{6}. What is the chance of getting \resp{1} when rolling a die?}\label{probOf1}
+\begin{example}{A ``die'', the singular of dice, is a cube with six faces numbered \resp{1}, \resp{2}, \resp{3}, \resp{4}, \resp{5}, and \resp{6}. What is the chance of getting \resp{1} when rolling a die?}\label{probOf1}
 If the die is fair, then the chance of a \resp{1} is as good as the chance of any other number. Since there are six outcomes, the chance must be 1-in-6 or, equivalently, $1/6$.
 \end{example}
 
@@ -41,24 +43,23 @@ Since the chance of rolling a \resp{2} is $1/6$ or $16.\bar{6}\%$, the chance of
 Alternatively, we could have noticed that not rolling a \resp{2} is the same as getting a \resp{1}, \resp{3}, \resp{4}, \resp{5}, or \resp{6}, which makes up five of the six equally likely outcomes and has probability $5/6$.
 \end{example}
 
-\begin{example}\label{dieProportionProbex} {Consider rolling two dice. If $1/6^{th}$ of the time the first die is a \resp{1} and $1/6^{th}$ of those times the second die is a \resp{1}, what is the chance of getting two \resp{1}s?}\label{probOf2Ones}
+\begin{example} {Consider rolling two dice. If $1/6^{th}$ of the time the first die is a \resp{1} and $1/6^{th}$ of those times the second die is a \resp{1}, what is the chance of getting two \resp{1}s?}\label{probOf2Ones}
 If $16.\bar{6}$\% of the time the first die is a \resp{1} and $1/6^{th}$ of \emph{those} times the second die is also a \resp{1}, then the chance that both dice are \resp{1} is $(1/6)\times (1/6)$ or $1/36$.
 \end{example}
 
 Here is an example from genetics.
 
-\begin{example} \label{CFInheritanceExample}
-Cystic fibrosis (CF) is a life-threatening genetic disorder characterized by the buildup of thick mucus in the lungs and pancreas, caused by mutations in the \textit{CFTR} gene located on chromosome 7. Defective copies of \textit{CFTR} can result in the reduced quantity and/or function of the CFTR protein, which transports sodium and chloride across cell membranes. CF is an autosomal recessive disorder -- an individual only develops CF if they have inherited two affected copies of \textit{CFTR}. Individuals with one normal (wild-type) copy and one defective (mutated) copy are known as carriers; they do not develop CF, but may pass the disease-causing mutation onto their offspring.
+\begin{example} {Cystic fibrosis (CF) is a life-threatening genetic disorder characterized by the buildup of thick mucus in the lungs and pancreas, caused by mutations in the \textit{CFTR} gene located on chromosome 7. Defective copies of \textit{CFTR} can result in the reduced quantity and/or function of the CFTR protein, which transports sodium and chloride across cell membranes. CF is an autosomal recessive disorder -- an individual only develops CF if they have inherited two affected copies of \textit{CFTR}. Individuals with one normal (wild-type) copy and one defective (mutated) copy are known as carriers; they do not develop CF, but may pass the disease-causing mutation onto their offspring.}\label{CFInheritanceExample}
 
 Suppose that both members of a couple are CF carriers. What is the probability that a child of this couple will be affected by CF?  The problem sounds a bit more complicated than calculating probabilities for the outcome of rolling a die, but can be solved with the same simple methods.  We show two solutions.
 
 \textit{Solution 1: Enumerate all of the possible outcomes and exploit the fact that the outcomes are equally likely, as in \ref{dieAllOutcomesex}.}  During reproduction, each parent passes along one copy of the \textit{CFTR} gene, with each copy passed along with probability 1/2. Figure \ref{fig:cfInheritance} shows the four possible genotypes for a child of these parents, with the paternal chromosome in blue, the maternal chromosome in green,  chromosomes with the wild-type and mutated version of CFTR marked with $+$ and$-$.  Each of the four outcomes (wild-type CFTR, wild-type CFTR),  (wild-type CFTR, CFTR mutation) (CFTR mutation, wild-type CFTR) and (CFTR mutation, CFTR mutation), so the child will be affected with probability $1/4$.  It is important to recognize that the child being an unaffected carrier consists of two distinct outcomes, not one.
 
-\textit{Solution 2:  Calculate the proportion of outcomes that produce an affected child, as in \ref{dieProportionProbex}.}  During reproduction, half of the time, the mother will pass along an affected gene.  When the child receives an affected gene from the mother, about half of those times, the father will have passed along an affected gene.	So the proportion of times the child will be affected is $(1/2) \times (1/2) = 1/4$.
+\textit{Solution 2:  Calculate the proportion of outcomes that produce an affected child, as in \ref{probOf1}.}  During reproduction, half of the time, the mother will pass along an affected gene.  When the child receives an affected gene from the mother, about half of those times, the father will have passed along an affected gene.	So the proportion of times the child will be affected is $(1/2) \times (1/2) = 1/4$.
 \end{example}
 
 \begin{figure}
-\includegraphics[width= 0.75\textwidth]{./figures/cfInheritance/cfInheritance.pdf}
+\includegraphics[width= 0.75\textwidth]{ch_probability_oi_biostat/figures/cfInheritance/cfInheritance.pdf}
 \caption{Pattern of inheritance of a child of two unaffected carriers of CFTR}
 \label{fig:cfInheritance}
 \end{figure}
@@ -99,13 +100,13 @@ This definition of probability can be illustrated by rolling a die many times. L
 
 The behavior shown in \ref{fig:dieProp} matches most people's intuition about probability, but proving mathematically that the behavior is always true is surprisingly difficult and is beyond the level of this text.  Mathematicians call the result \textit{The Law of Large Numbers}, which is used to justify mathematically this intuitively appealing definition.
 
-%\index{Law of Large Numbers |(}
+\index{Law of Large Numbers |(}
 
 \begin{termBox}{\tBoxTitle{Law of Large Numbers}
 As more observations are collected, the proportion $\hat{p}_n$ of occurrences with a particular outcome converges to the probability $p$ of that outcome.}
 \end{termBox}
 
-%\index{Law of Large Numbers |)}
+\index{Law of Large Numbers |)}
 Occasionally the proportion will veer off from the probability and appear to defy the Law of Large Numbers, as $\hat{p}_n$ does many times in Figure~\ref{dieProp}. However, these deviations become smaller as the number of rolls increases.
 
 The notation $p$ is the probability of rolling a \resp{1}. We can also write this probability as
@@ -119,12 +120,12 @@ $P(A)$\vspace{1mm}\\\footnotesize Probability of\\outcome $A$]{\raggedright\vspa
 $P(A)$\vspace{1mm}\\\footnotesize Probability of\\outcome $A$}As we become more comfortable with this notation, we will abbreviate it further. For instance, if it is clear that the process is ``rolling a die'', we could abbreviate $P($rolling a \resp{1}$)$ as~$P($\resp{1}$)$.  We also have a notation for an event itself, so the event $A$ of rolling a 1 will be written as $A = \{\text{ rolling a 1}\}$, with associated probability $P(A)$. 
 
 
-%\index{random phenomena|)}
+\index{random phenomena|)}
 
 \subsection{Disjoint or mutually exclusive outcomes}
 
-%\index{disjoint|(}
-%\index{mutually exclusive|(}
+\index{disjoint|(}
+\index{mutually exclusive|(}
 
 Two outcomes are called \term{disjoint} or \term{mutually exclusive} if they cannot both happen. When rolling a die, the outcomes \resp{1} and \resp{2} are disjoint since they cannot both occur.  In the cystic fibrosis example, the two outcomes of a wild-type gene from the mother and a mutated gene from the father and a mutated gene from the mother, wild-type from the father are disjoint.   In the die example, the outcomes \resp{1} and ``rolling an odd number'' are not disjoint since both occur if the outcome of the roll is a \resp{1}. The outcomes of a child being affected and having at least one mutated copy of CFTR and  not disjoint. The terms \emph{disjoint} and \emph{mutually exclusive} are equivalent and interchangeable.
 
@@ -153,14 +154,14 @@ P(A_1) + P(A_2) + \cdots + P(A_k)
 }
 \end{termBox}
 
-%\index{event|(}
+\index{event|(}
 
 
 Probability problems rarely consider individual outcomes and instead consider \indexthis{\emph{sets}}{sets} or \indexthis{\emph{collections}}{collections} of outcomes. Let $A$ represent the event where a die roll results in \resp{1} or \resp{2} and $B$~represent the event that the die roll is a \resp{4} or a \resp{6}. We write $A$ as the set of outcomes $\{$\resp{1},~\resp{2}$\}$ and $B=\{$\resp{4}, \resp{6}$\}$. These sets are commonly called \termsub{events}{event}. Because $A$ and $B$ have no elements in common, they are disjoint events. $A$ and $B$ are represented in Figure~\ref{disjointSets}.
 
 \begin{figure}[hhh]
 \centering
-\includegraphics[width=0.55\textwidth]{ch_probability/figures/disjointSets/disjointSets}
+\includegraphics[width=0.55\textwidth]{ch_probability_oi_biostat/figures/disjointSets/disjointSets}
 \caption{Three events, $A$, $B$, and $D$, consist of outcomes from rolling a die. $A$ and $B$ are disjoint since they do not have any outcomes in common.}
 \label{disjointSets}
 \end{figure}
@@ -186,9 +187,9 @@ In Guided Practice~\ref{exerExaminingDisjointSetsABD}, you confirmed $B$ and $D$
 
 \textit{should we add more genetics problems here?  I have removed the email example because of the possible confusion between events involving sampling from a population vs a study sample.  If we think we can make that clear, we can use examples from famuss, perhaps by posing a problem of sampling members from the study participants.  Note also that this is moving more slowly than the Stat 102 notes, but we did show some of this material on the blackboard.  If we use this chapter in 102, perhaps we can move quickly to more complicated examples.}
 
-%\index{event|)}
-%\index{disjoint|)}
-%\index{mutually exclusive|)}
+\index{event|)}
+\index{disjoint|)}
+\index{mutually exclusive|)}
 
 \subsection{Probabilities when events are not disjoint}
 
@@ -214,7 +215,7 @@ Let's consider calculations for two events that are not disjoint in the context 
 
 \begin{figure}
 \centering
-\includegraphics[width=0.65\textwidth]{ch_probability/figures/cardsDiamondFaceVenn/cardsDiamondFaceVenn}
+\includegraphics[width=0.65\textwidth]{ch_probability_oi_biostat/figures/cardsDiamondFaceVenn/cardsDiamondFaceVenn}
 \caption{A Venn diagram for diamonds and face cards.}
 \label{cardsDiamondFaceVenn}
 \end{figure}
@@ -293,7 +294,7 @@ Chapter~\ref{introductionToData} emphasized the importance of plotting data to p
 
 \begin{figure}
 \centering
-\includegraphics[width=0.73\textwidth]{ch_probability/figures/diceSumDist/diceSumDist}
+\includegraphics[width=0.73\textwidth]{ch_probability_oi_biostat/figures/diceSumDist/diceSumDist}
 \caption{The probability distribution of the sum of two dice.}
 \label{diceSumDist}
 \end{figure}
@@ -302,11 +303,11 @@ In this bar plots, the bar heights represent the probabilities of outcomes. If t
 
 A graph of probability distribution can convey important information about a distribution quickly.
 
-The distribution of birth weights for 3,999,386 live births in the United States in 2010 is shown in figure \ref{fig:brthwtMarginalDist}.  The data are available as part of the US CDC National Vital Statistics System \footnote{http://205.207.175.93/vitalstats/ReportFolders/reportFolders.aspx }.   The graph of the distribution shows that most babies born weighed between 2000 and 5000 grams (2kg to 5 kg), but there were both small (less than 1000 grams) and large (greater than 5000 grams) babies. Pediatricians think of normal birthweight as between 2.5 and 5 kg.
+The distribution of birth weights for 3,999,386 live births in the United States in 2010 is shown in figure \ref{fig:birthwtMarginalDist}.  The data are available as part of the US CDC National Vital Statistics System \footnote{http://205.207.175.93/vitalstats/ReportFolders/reportFolders.aspx }.   The graph of the distribution shows that most babies born weighed between 2000 and 5000 grams (2kg to 5 kg), but there were both small (less than 1000 grams) and large (greater than 5000 grams) babies. Pediatricians think of normal birthweight as between 2.5 and 5 kg.
    \begin{figure}
-   \includegraphics[width= 0.75\textwidth]{./figures/brthwtMarginalDist.pdf}
+   \includegraphics[width=0.75\textwidth]{ch_probability_oi_biostat/figures/birthwtMarginalDist/birthwtMarginalDist.pdf}
    \caption{Distribution of birth weights (in grams) of babies born in the US in 2010}
-   \label{fig:brthwtMarginalDist}
+   \label{fig:birthwtMarginalDist}
    \end{figure}
    
 % R script for creating figure stored with the figure; needs to be improved
@@ -329,7 +330,7 @@ $A^c$\\\footnotesize Complement\\of outcome $A$}\index{Ac@$A^c$} of $D$ represen
 
 \begin{figure}[hht]
 \centering
-\includegraphics[width=0.55\textwidth]{ch_probability/figures/complementOfD/complementOfD}
+\includegraphics[width=0.55\textwidth]{ch_probability_oi_biostat/figures/complementOfD/complementOfD}
 \caption{Event $D=\{$\resp{2}, \resp{3}$\}$ and its complement, $D^c = \{$\resp{1}, \resp{4}, \resp{5}, \resp{6}$\}$. $S$~represents the sample space, which is the set of all possible events.}
 \label{complementOfD}
 \end{figure}
@@ -378,7 +379,7 @@ Sometimes, information from a graph can be combined with using the complement of
 
 \begin{figure}
   \centering
-  \includegraphics[width= 0.75\textwidth]{./figures/gestageMarginalDist.pdf}
+  \includegraphics[width=0.75\textwidth]{ch_probability_oi_biostat/figures/gestageMarginalDist/gestageMarginalDist.pdf}
   \caption{Distribution of gestational age for live births in the US in 2010, measured in weeks}
   \label{fig:gestageMarginalDist}
 \end{figure}
@@ -426,7 +427,7 @@ Example~\ref{probOf2Ones} provides a basic example of two independent processes:
 
 \begin{figure}[hht]
 \centering
-\includegraphics[width=0.6\textwidth]{ch_probability/figures/indepForRollingTwo1s/indepForRollingTwo1s}
+\includegraphics[width=0.6\textwidth]{ch_probability_oi_biostat/figures/indepForRollingTwo1s/indepForRollingTwo1s}
 \caption{$1/6^{th}$ of the time, the first roll is a \resp{1}. Then $1/6^{th}$ of \emph{those} times, the second roll will also be a \resp{1}.}
 \label{indepForRollingTwo1s}
 \end{figure}
@@ -507,9 +508,7 @@ Three people are selected at random.\footnote{Brief answers are provided. (a)~Th
 \end{enumerate}
 \end{exercise}
 
-\begin{example} \textit{Mandatory drug testing}
-
-Mandatory drug testing in the work place is common in professions such as air traffic controllers, transportation workers and government security agencies.  A false positive in a drug screening test occurs when the test incorrectly indicates that a screened person is an illegal drug user.  Suppose a mandatory drug test has a false-positive rate of 1.2\% (i.e., has probability  0.012 of indicating that an employee is using illegal drugs even when that is not the case), and suppose a company uses the test to screen employees for drug use.  Given 150 employees who are in reality drug free, what is the probability that at least one will (falsely) test positive if the outcome of one drug test has no affect on the other 149?  
+\begin{example}{\textit{Mandatory drug testing} Mandatory drug testing in the work place is common in professions such as air traffic controllers, transportation workers and government security agencies.  A false positive in a drug screening test occurs when the test incorrectly indicates that a screened person is an illegal drug user.  Suppose a mandatory drug test has a false-positive rate of 1.2\% (i.e., has probability  0.012 of indicating that an employee is using illegal drugs even when that is not the case), and suppose a company uses the test to screen employees for drug use.  Given 150 employees who are in reality drug free, what is the probability that at least one will (falsely) test positive if the outcome of one drug test has no affect on the other 149?}
    
 The solution uses independence (the assumption that the outcome of one test has no effect on the others) and the multiplication rule to calculate the probability of the complement of the event asked about.
 
@@ -543,7 +542,7 @@ The ABO blood group system consists of four different blood groups, which descri
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width= 0.75\textwidth]{./figures/abo_draft.png}
+	\includegraphics[width= 0.75\textwidth]{ch_probability_oi_biostat/figures/abo_draft/abo_draft.png}
 	\caption{Inheritance of ABO blood groups.}
 	\label{fig:aboInheritance}
 \end{figure}
@@ -554,10 +553,12 @@ The ABO blood group system consists of four different blood groups, which descri
 		\item What is the probability that a child of this couple will have Group A blood?
 		\item What is the probability that they have two children with Group A blood?
 	\end{enumerate}
+\end{enumerate}
+
+\end{exercise}
 
     \textit{solutions to be added if we keep the exercise}
   
-  \end{exercise}
 
 
 The examples in this section have used independence to solve probability problems.  Sometimes the definition of independence can be used to check whether two events are independent -- two events $A$ and $B$ are independent if they satisfy Equation~\eqref{eqForIndependentEvents}.
@@ -585,22 +586,28 @@ Because the equation holds, the event that the card is a heart and the event tha
 \section{Conditional probability}
 \label{conditionalProbabilitySection}
 
-The US CDC estimated that in 2012, 29.1 million people have type 2 diabetes, or about 9.3\% of the population \footnote{http://www.cdc.gov/diabetes/pubs/statsreport14/national-diabetes-report-web.pdf}. Twenty-one million of these cases of diabetes are diagnosed, while 8.1 million cases are undiagnosed (people living  with diabetes but they and their physicians are unaware that they have the disease).   A health care practitioner seeing a new patient and having no demographic or health information about the patient would expect that a 9.3\% chance that the  patient might have diabetes, diagnosed or otherwise.So in the entire population, the chance that someone chosen at random has diabetes is about 9.3\% or 0.093.  But intake interviews almost always gather background information about patients, so that a health care practitioner has additional information.  Between the ages of 20 and 44, 4.1\% of the population have diabetes, but by age 65 and older, 25.9\% of of that age group have diabetes.  Not surprisingly, the prevalence or probability of type two diabetes varies with age.  Knowing the age of a patient provides information about the chance of diabetes, so that age and diabetes status are not independent. While the probability of diabetes randomly member of the population is 0.93, the \textit{conditional} probability of diabetes in a person know to be 65 or older is 0.259. 
+Precise estimates are difficult to come by, but the US CDC estimated that in 2012, approximately 29.1 million people have type 2 diabetes, or about 9.3\% of the population. Twenty-one million of these cases of diabetes are diagnosed, while 8.1 million cases are undiagnosed (people living  with diabetes but they and their physicians are unaware that they have the disease).   A health care practitioner seeing a new patient and having no demographic or health information about the patient should expect a 9.3\% chance that the  patient might have diabetes, diagnosed or otherwise.   But intake interviews usually include background information about patients, so that a health care practitioner knows a bit more about a new patient. Not surprisingly, the prevalence or probability of type 2 diabetes varies with age. Between the ages of 20 and 44, approximately 4\% of the population have diabetes, but by age 65 and older, almost 27\% of of that age group have diabetes.  Knowing the age of a patient provides information about the chance of diabetes, so that age and diabetes status are not independent. While the probability of diabetes in randomly chosen member of the population is 0.093, the \textit{conditional} probability of diabetes in a person known to be 65 or older is about 0.27. 
 
 Conditional probability is used to  characterize how the probability of an outcome varies with the knowledge of another factor or condition, and is closely related to the concepts of marginal and joint probabilities.
-
-
-
-
 
 
 \subsection{Marginal and joint probabilities}
 \label{marginalAndJointProbabilities}
 
-%\index{marginal probability|(}
-%\index{joint probability|(}
+\index{marginal probability|(}
+\index{joint probability|(}
 
-% two tables below will be used to open the discussion of marginal and joint probabiites
+%  OI has a nice venn diagram for joint distributions, but the diabetes/age example is probably too complicated for the diagram
+
+Tables~\ref{DiabetesAgeContTable} and \ref{DiabetesAgeProbTable} provide additional information about the relationship between diabetes prevalence and age.  \footnote{Because the CDC provides only approximate numbers for diabetes prevalence, the numbers in the table are approximations to actual population counts.} Table~\ref{DiabetesAgeContTable} is a contingency table like those discussed in Chapter 1, but for the entire US 2012 population; the values in the table are in thousands, to make the table more readable.  The table shows in the first row, for instance, that in the entire population of approximately 313,320,000 approximately 200,000 individuals were in the age group less than 20 and suffered from type 2 diagnosis, or about 0.1\%. The table also provides the information among the approximately 86,864,000 individuals less than 20 years of age, only 200,000 suffered from type 2 diabetes, approximately 0.2\%. The distinction between the two statements is small but important -- the first provides information about the size of the type 2 diabetes population relative to the entire population and the second about the size of the diabetes population less than 20 year old  age group relative to the size of that age group. 
+
+\begin{exercise} \label{DiabetesAge20to44}
+
+What fraction of the US population are 45 to 64 years of age and have diabetes?  What fraction of the population age 45 to 64 have diabetes?
+
+\end{exercise}
+
+
 
 % latex table generated in R 3.0.1 by xtable 1.7-1 package
 % Thu Sep 10 11:36:48 2015
@@ -617,7 +624,18 @@ Less than 20 years & 200 & 86664 & 86864 \\
   Sum & 29100 & 284220 & 313320 \\ 
    \hline
 \end{tabular}
+\caption{Contingency table showing type 2 diabetes status and age group, in thousands}
+\label{DiabetesAgeContTable}
 \end{table}
+
+% can xtable insert comma separators automatically?  If not, I will add them by hand.
+
+The counts in Table~\ref{DiabetesAgeContTable} have been converted to proportions by dividing each value in the cells of the contingency table by the total population size, 313,320,000. The entries in this table show the proportions of the population in each of the 8 categories defined by diabetes status and age. If these proportions are interpreted as probabilities for randomly chosen individuals from the population, 0.014 in row 2 implies that the probability of selecting someone at random who has diabetes and whose age is between 20 and 44 is 0.014, or 1.4\%. The entries in the 8 main table cells (excluding the values in the margins) are called \term{joint probabilities} since they specify the probability of two events happening at the same time -- diabetes and a particular age group. In probability notation, $0.014 = P(\text{diabetes and age 20 to 44})$. It is common to also write this as $P(\text{diabetes, age 20 to 44})$, with a comma replacing ``and''.
+
+
+The values in the last row and column of the table are the sums of the corresponding rows or columns. Since 0.329 is the sum of the of the probabilities of the disjoint events (diabetes and age 20 to 44) and (no diabetes and age 20 to 44), it is the probability of being in the age group 20 to 44. The row and column sums are called \term{marginal probabilities}; they are probabilities about only one type of event, age in the case of 0.0329. The sum of the first column (0.093) is the marginal probability of a member of the population having diabetes.
+
+
 
 %  xtable(diabetes.age.table.thousands, digits = 0)
 %  this table uses census counts; still not perfect, but closer
@@ -637,10 +655,234 @@ Less than 20 years & 0.001 & 0.277 & 0.277 \\
   Sum & 0.093 & 0.907 & 1.000 \\ 
    \hline
 \end{tabular}
+\caption{Probability table summarizing diabetes status and age group}
+\label{DiabetesAgeProbTable}
+\end{table}
+%   xtable(diabetes.age.table.prop, digits = 3)
+
+
+\begin{termBox}{\tBoxTitle{Marginal and joint probabilities}
+If a probability is based on a single variable, it is a \emph{\hiddenterm{marginal probability}}. The probability of outcomes for two or more variables or processes is called a \emph{\hiddenterm{joint probability}}.}
+\end{termBox}
+
+\begin{exercise} 
+  {What is the interpretation of the value 0.907 in the last row of the table?  Of the value 1.000 in the bottom right corner? }
+\label{MarginalJointProbDiabetes}
+\end{exercise}
+
+
+\subsection{Defining conditional probability}
+
+\index{conditional probability|(}
+
+The probability that a randomly selected individual from the US has diabetes is 0.093, the sum of the first column in Table~\ref{DiabetesAgeProbTable}.  How does that probability change if we know the individual's age is 65 or greater?  Table~\ref{DiabetesAgeContTable} shows that 11,200,000 of the 41,506,000 people in that age group have diabetes, so the likelihood that someone from that age has diabetes is 
+\[  
+     \frac{11,200,000}{41,506,000} = 0.27,
+\]
+or 27\%.  The additional information about age allows a better estimate of the probability of diabetes; the conditional probability of diabetes, given the information that an individual is older than 65, is 0.27.
+
+Since 
+\begin{align*}
+     \frac{11,200,000}{41,506,000} &= \frac{11,200,000/313,320,000}{41,506,000/313,320,000} \\
+	                               &= \frac{0.036}{0.132} \\
+								   &= 0.270,
+\end{align*}
+the calculation of conditional probability could have been done using the values in Table~\ref{DiabetesAgeContTable}.  The conditional probability of diabetes given age 65 or greater is simply the ratio of the proportion of the population with diabetes and age 65 or greater divided by the proportion greater than age 65.  This leads to the mathematical definition of conditional probability.
+
+\begin{termBox}{\tBoxTitle{Conditional probability}
+The conditional probability of the outcome of interest $A$ given condition $B$ is computed as the following:
+\begin{align}
+P(A | B) = \frac{P(A\text{ and }B)}{P(B)}
+\label{condProbEq}
+\end{align}}
+\end{termBox}
+
+\begin{exercise}\label{familyCollegeProbOfParentsEqualNotGivenTeen}
+(a) Write out the following statement in conditional probability notation: ``\emph{The probability a randomly selected person has diabetes, given that his or her age is between 45 and 64 }''. Notice that the condition is now based on the {teenager}, not the {parent}. \\[1mm]
+(b) Calculate the conditional probability in part (a)
+(c) Write out the following statement in conditional probability notation: ``\emph{The probability a randomly selected person is between 45 and 64 years old, given that the person has diabetes}''. Notice that the condition is now based on the {diabetes}, not the {age}. \\[1mm]
+(d) Calculate the probability in part (c).
+\end{exercise}
+
+\subsection{Smallpox in Boston, 1721}
+
+\index{data!smallpox|(}
+
+\textit{I am not fond of small pox example, since it is a biased sample, but leaving it for now}
+
+The \data{smallpox} data set provides a sample of 6,224 individuals from the year 1721 who were exposed to smallpox in Boston.\footnote{Fenner F. 1988. \emph{Smallpox and Its Eradication (History of International Public Health, No. 6)}. Geneva: World Health Organization. ISBN 92-4-156110-6.} Doctors at the time believed that inoculation, which involves exposing a person to the disease in a controlled form, could reduce the likelihood of death.
+
+Each case represents one person with two variables: \var{inoculated} and \var{result}. The variable \var{inoculated} takes two levels: \resp{yes} or \resp{no}, indicating whether the person was inoculated or not. The variable \var{result} has outcomes \resp{lived} or \resp{died}. These data are summarized in Tables~\ref{smallpoxContingencyTable} and~\ref{smallpoxProbabilityTable}.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ll rr r}
+& & \multicolumn{2}{c}{inoculated} & \\
+\cline{3-4}
+& & \resp{yes} & \resp{no} & Total  \\
+\cline{2-5}
+		& \resp{lived}     & 238 & 5136 & 5374 \\
+\raisebox{1.5ex}[0pt]{\var{result}} &  \resp{died} \hspace{0.5cm} & 6 & 844 & 850  \\
+\cline{2-5}
+	& Total & 244 & 5980 & 6224 \\
+\end{tabular}
+\caption{Contingency table for the \data{smallpox} data set.}
+\label{smallpoxContingencyTable}
 \end{table}
 
+\begin{table}[h]
+\centering
+\begin{tabular}{ll rr r}
+& & \multicolumn{2}{c}{inoculated} & \\
+\cline{3-4}
+& & \resp{yes} & \resp{no} & Total  \\
+   \cline{2-5}
+ & \resp{lived}     & 0.0382 & 0.8252 & 0.8634 \\
+\raisebox{1.5ex}[0pt]{\var{result}} & \resp{died} \hspace{0.5cm} & 0.0010 & 0.1356  & 0.1366  \\
+   \cline{2-5}
+& Total & 0.0392 & 0.9608 & 1.0000 \\
+\end{tabular}
+\caption{Table proportions for the \data{smallpox} data, computed by dividing each count by the table total, 6224.\textC{\vspace{-2mm}}}
+\label{smallpoxProbabilityTable}
+\end{table}
 
-% xtable(diabetes.age.table.prop, digits = 3)
+%\textC{\newpage}
+
+\begin{exercise} \label{probDiedIfNotInoculated}
+Write out, in formal notation, the probability a randomly selected person who was not inoculated died from smallpox, and find this \mbox{probability.}\footnote{$P($\var{result} = \resp{died} $|$ \var{inoculated} = \resp{no}$) = \frac{P(\text{\var{result} = \resp{died} and \var{inoculated} = \resp{no}})}{P(\text{\var{inoculated} = \resp{no}})} = \frac{0.1356}{0.9608} = 0.1411$.}
+\end{exercise}
+
+\begin{exercise}
+Determine the probability that an inoculated person died from smallpox. How does this result compare with the result of Guided Practice~\ref{probDiedIfNotInoculated}?\footnote{$P($\var{result} = \resp{died} $|$ \var{inoculated} = \resp{yes}$) = \frac{P(\text{\var{result} = \resp{died} and \var{inoculated} = \resp{yes}})}{P(\text{\var{inoculated} = \resp{yes}})} = \frac{0.0010}{0.0392} = 0.0255$. The death rate for individuals who were inoculated is only about 1~in~40 while the death rate is about 1~in~7 for those who were not inoculated.}
+\end{exercise}
+
+\begin{exercise}\label{SmallpoxInoculationObsExpExercise}
+The people of Boston self-selected whether or not to be inoculated. (a) Is this study observational or was this an experiment? (b) Can we infer any causal connection using these data? (c) What are some potential confounding variables that might influence whether someone \resp{lived} or \resp{died} and also affect whether that person was inoculated?\footnote{Brief answers: (a)~Observational. (b)~No, we cannot infer causation from this observational study. (c)~Accessibility to the latest and best medical care. There are other valid answers for part~(c).}
+\end{exercise}
+
+\subsection{General multiplication rule}
+
+Section~\ref{probabilityIndependence} introduced the Multiplication Rule for independent processes. Here we provide the \term{General Multiplication Rule} for events that might not be independent.
+
+\begin{termBox}{\tBoxTitle{General Multiplication Rule}
+If $A$ and $B$ represent two outcomes or events, then \vspace{-1.5mm}
+\begin{eqnarray*}
+P(A\text{ and }B) = P(A | B)\times P(B)
+\end{eqnarray*} \vspace{-6.5mm} \par
+It is useful to think of $A$ as the outcome of interest and $B$ as the condition.}
+\end{termBox}
+This General Multiplication Rule is simply a rearrangement of the definition for conditional probability in Equation~(\ref{condProbEq}) on page~\pageref{condProbEq}.
+
+\begin{example}{Consider the \data{smallpox} data set. Suppose we are given only two pieces of information: 96.08\% of residents were not inoculated, and 85.88\% of the residents who were not inoculated ended up surviving. How could we compute the probability that a resident was not inoculated and lived?}
+We will compute our answer using the General Multiplication Rule and then verify it using Table~\ref{smallpoxProbabilityTable}. We want to determine
+\begin{eqnarray*}
+P(\text{\var{result} = \resp{lived} and \var{inoculated} = \resp{no}})
+\end{eqnarray*}
+and we are given that
+\begin{eqnarray*}
+P(\text{\var{result} = \resp{lived} }|\text{ \var{inoculated} = \resp{no}})=0.8588 \\
+P(\text{\var{inoculated} = \resp{no}})=0.9608
+\end{eqnarray*}
+Among the 96.08\% of people who were not inoculated, 85.88\% survived:
+\begin{eqnarray*}
+P(\text{\var{result} = \resp{lived} and \var{inoculated} = \resp{no}}) = 0.8588\times 0.9608 = 0.8251
+\end{eqnarray*}
+This is equivalent to the General Multiplication Rule. We can confirm this probability in Table~\ref{smallpoxProbabilityTable} at the intersection of \resp{no} and \resp{lived} (with a small rounding error).
+\end{example}
+
+\begin{exercise}
+Use $P($\var{inoculated} = \resp{yes}$) = 0.0392$ and $P($\var{result} = \resp{lived} $|$ \var{inoculated} = \resp{yes}$) = 0.9754$ to determine the probability that a person was both inoculated and lived.\footnote{The answer is 0.0382, which can be verified using Table~\ref{smallpoxProbabilityTable}.}
+\end{exercise}
+
+\begin{exercise}
+If 97.45\% of the people who were inoculated lived, what proportion of inoculated people must have died?\footnote{There were only two possible outcomes: \resp{lived} or \resp{died}. This means that 100\% - 97.45\% = 2.55\% of the people who were inoculated died.}
+\end{exercise}
+
+\begin{termBox}{\tBoxTitle{Sum of conditional probabilities}
+Let $A_1$, ..., $A_k$ represent all the disjoint outcomes for a variable or process. Then if $B$ is an event, possibly for another variable or process, we have: \vspace{-1mm}
+\begin{eqnarray*}
+P(A_1|B)+\cdots+P(A_k|B) = 1
+\end{eqnarray*}\vspace{-5.5mm} \par
+The rule for complements also holds when an event and its complement are conditioned on the same information: \vspace{-1.5mm}
+\begin{eqnarray*}
+P(A | B) = 1 - P(A^c | B)
+\end{eqnarray*}}
+\end{termBox}
+
+\begin{exercise}
+Based on the probabilities computed above, does it appear that inoculation is effective at reducing the risk of death from smallpox?\footnote{The samples are large relative to the difference in death rates for the ``inoculated'' and ``not inoculated'' groups, so it seems there is an association between \var{inoculated} and \var{outcome}. However, as noted in the solution to Guided Practice~\ref{SmallpoxInoculationObsExpExercise}, this is an observational study and we cannot be sure if there is a causal connection. (Further research has shown that inoculation is effective at reducing death rates.)}
+\end{exercise}
+
+
+\subsection{Independence and conditional probability}
+
+If two events are independent, knowing the outcome of one should provide no information about the other.  That intuitively clear statement can be shown mathematically. 
+
+\begin{exercise} \label{condProbOfRollingA1AfterOne1}
+Let $X$ and $Y$ represent the outcomes of rolling two dice.\footnote{Brief solutions: (a) $1/6$. (b) $1/36$. (c)~$\frac{P(Y = \text{ \resp{1} and }X=\text{ \resp{1}})}{P(X=\text{ \resp{1}})} = \frac{1/36}{1/6} = 1/6$. (d)~The probability is the same as in part~(c): $P(Y=1)=1/6$. The probability that $Y=1$ was unchanged by knowledge about $X$, which makes sense as $X$ and $Y$ are independent.}
+\begin{enumerate}[(a)]
+\item What is the probability that the first die, $X$, is \resp{1}?
+\item What is the probability that both $X$ and $Y$ are \resp{1}?
+\item Use the formula for conditional probability to compute $P(Y =$ \resp{1}$\ |\ X = $ \resp{1}$)$.
+\item What is $P(Y=1)$? Is this different from the answer from part (c)? Explain.
+\end{enumerate}
+\end{exercise}
+
+\textC{\newpage}
+
+It is not difficult to show in Guided Practice~\ref{condProbOfRollingA1AfterOne1}(c) that the conditioning information has no influence by using the Multiplication Rule for independence events:
+\begin{eqnarray*}
+P(Y=\text{\resp{1}}\ |\ X=\text{\resp{1}})
+	&=& \frac{P(Y=\text{\resp{1} and }X=\text{\resp{1}})}{P(X=\text{\resp{1}})} \\
+	&=& \frac{P(Y=\text{\resp{1}})\times \color{oiGB}P(X=\text{\resp{1}})}{\color{oiGB}P(X=\text{\resp{1}})} \\
+	&=& P(Y=\text{\resp{1}}) \\
+\end{eqnarray*}
+
+
+
+\begin{exercise}
+Casinos often rely on gamblers not understanding independence.  Suppose the last five outcomes on a roulette table were \resp{black}.  What is wrong with the reasoning that the next outcome is highly likely to be red?
+\end{exercise}
+
+There is a subtle but important point behind the last example.  The probability of the next six outcomes being black is different than the probability that the sixth outcome is black when a gambler has seen the last five outcomes and knows that they are black.  This is an example of an unconditional versus a conditional probability.
+
+\subsection{Tree diagrams}
+
+\index{data!smallpox|)}
+\index{tree diagram|(}
+
+\termsub{Tree diagrams}{tree diagram} are a tool to organize outcomes and probabilities around the structure of the data. They are most useful when two or more processes occur in a sequence and each process is conditioned on its predecessors.
+
+The \data{smallpox} data fit this description. We see the population as split by \var{inoculation}: \resp{yes} and \resp{no}. Following this split, survival rates were observed for each group. This structure is reflected in the \term{tree diagram} shown in Figure~\ref{smallpoxTreeDiagram}. The first branch for \var{inoculation} is said to be the \term{primary} branch while the other branches are \term{secondary}.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.93\textwidth]{ch_probability_oi_biostat/figures/smallpoxTreeDiagram/smallpoxTreeDiagram}
+\caption{A tree diagram of the \data{smallpox} data set.}
+\label{smallpoxTreeDiagram}
+\end{figure}
+
+Tree diagrams are annotated with marginal and conditional probabilities, as shown in Figure~\ref{smallpoxTreeDiagram}. This tree diagram splits the smallpox data by \var{inoculation} into the \resp{yes} and \resp{no} groups with respective marginal probabilities 0.0392 and 0.9608. The secondary branches are conditioned on the first, so we assign conditional probabilities to these branches. For example, the top branch in Figure~\ref{smallpoxTreeDiagram} is the probability that \var{result} = \resp{lived} conditioned on the information that \var{inoculated} = \resp{yes}. We may (and usually do) construct joint probabilities at the end of each branch in our tree by multiplying the numbers we come across as we move from left to right. These joint probabilities are computed using the General Multiplication Rule:
+\begin{eqnarray*}
+&& P(\text{\var{inoculated} = \resp{yes} and \var{result} = \resp{lived}}) \\
+	&&\quad = P(\text{\var{inoculated} = \resp{yes}})\times P(\text{\var{result} = \resp{lived}}|\text{\var{inoculated} = \resp{yes}}) \\
+	&&\quad = 0.0392\times 0.9754=0.0382
+\end{eqnarray*}
+
+\textit{replace the next example with the CF example: prob of affected child, no information about the carrier status of the parents.  Complicated tree}
+
+In addition to being a graphical representation of how to compute a probability, tree diagrams are a useful way to organize the information in a probability problem and can often reduce a seemingly difficult problem to a series of simple steps
+
+\begin{example}  
+
+In the general population, about 1 in 28 individuals is an unaffected carrier of a mutation in the cystic fibrosis gene, \textit{CFTR}, discussed in example~\ref{CFInheritanceExample}.  Most unaffected carriers are unaware that they harbor the mutation.  Suppose that people with cystic fibrosis do not live long enough to reproduce with a partner.  In the absence of any testing information, what is the probability that a child of two parent will have CF?
+	
+	\textit{solution not give for now, since I did not want to take the time to draw the tree.  This will be a good example to also solve algebraically, to show that the tree diagram is a representation of the theorem of total prob. Useful, since it will come up with Bayes Thm. Borrow some of the wording from the solution to the grade problem in OI that I removed here.}
+	
+\end{example}
+
+
+
 
 
 
@@ -648,10 +890,10 @@ Less than 20 years & 0.001 & 0.277 & 0.277 \\
 
 % index commands below should be inserted just before section on sampling from a small population
 
-%\index{Bayes' Theorem|)}
-%\index{tree diagram|)}
-%\index{conditional probability|)}
-%\index{probability|)}
+\index{Bayes' Theorem|)}
+\index{tree diagram|)}
+\index{conditional probability|)}
+\index{probability|)}
 
 
 

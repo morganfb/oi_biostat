@@ -1,0 +1,199 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}Introduction to data}{8}{chapter.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}Case study}{9}{section.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}Data basics}{12}{section.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.2.1}Observations, variables, and data matrices}{12}{subsection.1.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.2.2}Types of variables}{13}{subsection.1.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.2.3}Relationships between variables}{16}{subsection.1.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.3}Data collection principles}{17}{section.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.1}Populations and samples}{17}{subsection.1.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.2}Anecdotal evidence}{18}{subsection.1.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.3}Sampling from a population}{19}{subsection.1.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.4}Introducing experiments and observational studies}{22}{subsection.1.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.5}Experiments}{23}{subsection.1.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.6}Reducing bias in human experiments}{24}{subsection.1.3.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.7}Observational studies}{26}{subsection.1.3.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.4}Examining numerical data}{28}{section.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.4.1}Measures of center: mean and median}{28}{subsection.1.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.4.2}Measures of spread: standard deviation and interquartile range}{29}{subsection.1.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.4.3}Robust statistics}{31}{subsection.1.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.4.4}Visualizing distributions of data: histograms and boxplots}{32}{subsection.1.4.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.4.5}Scatterplots}{35}{subsection.1.4.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.4.6}Transforming data (special topic)}{38}{subsection.1.4.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.5}Considering categorical data}{40}{section.1.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.5.1}Contingency tables}{40}{subsection.1.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.5.2}Bar plots}{42}{subsection.1.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.5.3}Comparing numerical data across groups}{45}{subsection.1.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.6}Exercises}{47}{section.1.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.6.1}Case study: preventing peanut allergies}{47}{subsection.1.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.6.2}Data basics}{48}{subsection.1.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.6.3}Overview of data collection principles}{49}{subsection.1.6.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.6.4}Examining numerical data}{53}{subsection.1.6.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.6.5}Considering categorical data}{56}{subsection.1.6.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {2}Probability}{57}{chapter.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}Defining probability}{57}{section.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.1}Some examples}{57}{subsection.2.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.2}Probability}{60}{subsection.2.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.3}Disjoint or mutually exclusive outcomes}{61}{subsection.2.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.4}Probabilities when events are not disjoint}{63}{subsection.2.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.5}Probability distributions}{64}{subsection.2.1.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.6}Complement of an event}{67}{subsection.2.1.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.7}Independence}{69}{subsection.2.1.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}Conditional probability}{74}{section.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.1}Marginal and joint probabilities}{74}{subsection.2.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.2}Defining conditional probability}{75}{subsection.2.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.3}Smallpox in Boston, 1721}{76}{subsection.2.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.4}General multiplication rule}{77}{subsection.2.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.5}Independence and conditional probability}{79}{subsection.2.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.6}Tree diagrams}{80}{subsection.2.2.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.3}Exercises}{82}{section.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.1}Defining probability}{82}{subsection.2.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.2}Conditional probability}{85}{subsection.2.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.3}Sampling from a small population}{88}{subsection.2.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.4}Random variables}{89}{subsection.2.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.5}Continuous distributions}{91}{subsection.2.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}Foundations for inference}{93}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}BRFSS Data}{94}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Variability in estimates}{96}{section.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.1}Point estimates}{96}{subsection.4.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.2}Accuracy and Precision of Point Estimates}{97}{subsection.4.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.3}Sampling Distribution and the Standard Error of the Mean}{99}{subsection.4.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.4}Basic properties of point estimates}{103}{subsection.4.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.3}Confidence intervals}{104}{section.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3.1}Capturing the population parameter}{104}{subsection.4.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3.2}Confidence levels}{104}{subsection.4.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3.3}Confidence intervals through computation}{105}{subsection.4.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3.4}Calculating an approximate 95\% confidence interval}{107}{subsection.4.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3.5}The sample size for a sampling distribution}{109}{subsection.4.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Why 30?}{109}{subsubsection*.64}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3.6}Changing the confidence level}{111}{subsection.4.3.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3.7}Interpreting confidence intervals}{115}{subsection.4.3.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3.8}Nearly normal population with known SD (special topic)}{115}{subsection.4.3.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.4}Hypothesis testing}{117}{section.4.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4.1}Hypothesis testing framework}{117}{subsection.4.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Step 1: Formulating Hypotheses}{117}{subsubsection*.68}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Step 2: Specifying a Significance Level $\alpha $}{119}{subsubsection*.69}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Step 3: Calculating the Test Statistic}{119}{subsubsection*.70}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Step 4: Calculating the p-value}{120}{subsubsection*.71}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Step 5: Making your conclusion}{120}{subsubsection*.72}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4.2}Calculating p-values}{121}{subsection.4.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4.3}Testing hypotheses using confidence intervals}{126}{subsection.4.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4.4}Decision errors}{127}{subsection.4.4.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4.5}Two-sided versus One-sided hypothesis testing: Dos and Don'ts}{129}{subsection.4.4.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4.6}Choosing a significance level}{131}{subsection.4.4.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.5}Examining the Central Limit Theorem Closer (Special Topic)}{132}{section.4.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.6}Inference for other estimators}{135}{section.4.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.6.1}Confidence intervals for nearly normal point estimates}{136}{subsection.4.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.6.2}Hypothesis testing for nearly normal point estimates}{137}{subsection.4.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.6.3}Non-normal point estimates}{139}{subsection.4.6.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.6.4}When to retreat}{139}{subsection.4.6.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.7}Sample size and power (special topic)}{140}{section.4.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.7.1}Finding a sample size for a certain margin of error}{140}{subsection.4.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.7.2}Power and the Type 2 Error rate}{141}{subsection.4.7.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.7.3}Statistical significance versus practical significance}{143}{subsection.4.7.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.8}Exercises}{145}{section.4.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.8.1}Variability in estimates}{145}{subsection.4.8.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.8.2}Confidence intervals}{147}{subsection.4.8.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.8.3}Hypothesis testing}{149}{subsection.4.8.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.8.4}Examining the Central Limit Theorem}{154}{subsection.4.8.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.8.5}Inference for other estimators}{156}{subsection.4.8.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.8.6}Sample size and power}{157}{subsection.4.8.6}
