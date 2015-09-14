@@ -869,23 +869,147 @@ Tree diagrams are annotated with marginal and conditional probabilities, as show
 	&&\quad = 0.0392\times 0.9754=0.0382
 \end{eqnarray*}
 
-\textit{replace the next example with the CF example: prob of affected child, no information about the carrier status of the parents.  Complicated tree}
 
 In addition to being a graphical representation of how to compute a probability, tree diagrams are a useful way to organize the information in a probability problem and can often reduce a seemingly difficult problem to a series of simple steps
 
 \begin{example}  
 
-In the general population, about 1 in 28 individuals is an unaffected carrier of a mutation in the cystic fibrosis gene, \textit{CFTR}, discussed in example~\ref{CFInheritanceExample}.  Most unaffected carriers are unaware that they harbor the mutation.  Suppose that people with cystic fibrosis do not live long enough to reproduce with a partner.  In the absence of any testing information, what is the probability that a child of two parent will have CF?
+In the general population, about 1 in 28 individuals (approximately 3.6\%) is an unaffected carrier of a mutation in the cystic fibrosis gene, \textit{CFTR}, discussed in example~\ref{CFInheritanceExample}.  Most unaffected carriers are unaware that they harbor the mutation.  Suppose that people with cystic fibrosis do not live long enough to reproduce with a partner.  In the absence of any testing information, what is the probability that a child of two parent will have CF?
 	
-	\textit{solution not give for now, since I did not want to take the time to draw the tree.  This will be a good example to also solve algebraically, to show that the tree diagram is a representation of the theorem of total prob. Useful, since it will come up with Bayes Thm. Borrow some of the wording from the solution to the grade problem in OI that I removed here.}
+	\textit{solution not give for now, since I did not want to take the time to draw the tree.  This will be a good example to also solve algebraically, to show that the tree diagram is a representation of the theorem of total prob. Useful, since it will come up with Bayes Thm. Borrow some of the wording from the solution to the grade problem in OI that I removed here.  Below has a start of the solution}
 	
+	
+\textit{solution}
+The probabilities calculated in example~\ref{CFInheritanceExample} were conditional probabilities given the carrier status of the parents, though that term was not used in the example.  This exercise asks for an unconditional probability about the disease status of the child, with no additional information about the parents.  The solution uses methods already discussed, but combined is a series of steps.  
+
+The main steps are to first enumerate all the possibilities for carrier status of the parents, calculate the probabilities of each of those probabilities, then calculate the conditional probability of an affected child, given each of the possible outcomes of the parents, and finally use a tree to calculate the probability of a child being affected.
+
+Since the problem assumes that affected parents do not reproduce, the pair of parents must satisfy one of the events $A = \text{(neither parent is a carrier)}$, $B = \text{(the mother is a carrier, the father is not)}$, $C = \text{(the father is a carrier, the mother is not)}$, and $D = \text{(both parents are carriers)}$.  Since the carrier status of the mother is independent of that of the father, the probabilities of these events are
+
+\begin{itemize}
+	\item $P(A) = (1 - 0.036)(1 - 0.036) = 0.929$
+	
+	\item $P(B) = P(C) = (1 - 0.036)(0.036) = 0.035$
+	
+	\item $P(D) = (0.036)(0.036) = 0.001$
+\end{itemize}
+	
+These probabilities do not sum to one because the events where one or both parents are homozygous for the mutation, that is, are affected.
+
+\textit{solution continues now with the conditional probabilities and the tree.  We should think about whether this example is too big of a step from the others, and perhaps add an intermediate example}
+
+\end{example}
+
+\subsection{Bayes' Theorem}
+\label{bayesTheoremSubsection}
+
+\index{Bayes' Theorem|(}
+
+This chapter began with a straightforward question -- what are the chances that a woman with an abnormal (i.e., positive) mammogram has breast cancer?  For a clinician, this question can be rephrased as the conditional probability  that a woman has breast cancer, given that her mammogram is abnormal. This conditional probability is called the \term{positive predictive value} of a mammogram.  The characteristics of a mammogram (and diagnostic tests in general) are given with the reverse conditional probabilities --  the probability that if a woman fact has breast cancer, a mammogram will detect it.  More concisely, if $A = \text{(a mammogram is  positive)}$ and $B = \text{(a woman has breast cancer)}$, the first question is answered by finding $P(A|B)$, while the the known characteristics of a mammogram specify $P(B|A)$.
+
+Many problems provide information about  
+\begin{align*}
+P(\text{statement about variable 1} | \text{ statement about variable 2})
+\end{align*}
+but ask for the reverse conditional probability:
+\begin{align*}
+P(\text{statement about variable 2} | \text{ statement about variable 1})
+\end{align*}
+
+The problem arises so often in medicine, and is so important, that is useful to have several ways to approach the problem -- tree diagrams, a purely algebraic approach using Bayes' Theorem, and the construction of a large, hypothetical population that allows conditional probabilities to be calculated from contingency tables.  The first solution uses tree diagrams and more specific information about mammograms and breast cancer.
+
+
+\begin{example}{In Canada, about 0.35\% of women over 40 will develop breast cancer in any given year. A common screening test for cancer is the mammogram, but it is not perfect. In about 11\% of patients with breast cancer, the test gives a \term{false negative}: it indicates a woman does not have breast cancer when she does have breast cancer. Similarly, the test gives a \term{false positive} in 7\% of patients who do not have breast cancer: it indicates these patients have breast cancer when they actually do not.\footnote{The probabilities reported here were obtained using studies reported at \oiRedirect{textbook-breastCancerDotOrg_20090831b}{www.breastcancer.org} and \oiRedirect{textbook-ncbi_nih_breast_cancer}{www.ncbi.nlm.nih.gov/pmc/articles/PMC1173421}.} If a random selected woman over 40 is tested for breast cancer using a mammogram and the test is positive -- that is, the test suggests the woman has cancer -- what is the probability she has breast cancer?} 
+
+\label{probabilityOfBreastCancerGivenPositiveTestExample}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.93\textwidth]{ch_probability_oi_biostat/figures/BreastCancerTreeDiagram/BreastCancerTreeDiagram}
+\caption{Tree diagram for Example~\ref{probabilityOfBreastCancerGivenPositiveTestExample}, computing the probability a random patient who tests positive on a mammogram has breast cancer.}
+\label{BreastCancerTreeDiagram}
+\end{figure}
+
+The problem provides enough information to compute the probability of testing positive if a woman has breast cancer ($1.00-0.11=0.89$), but not the reverse conditional probability of cancer given a positive test result.  This reverse conditional probability may be broken into two pieces:
+\begin{align*}
+P(\text{has BC } | \text{ mammogram$^+$}) = \frac{P(\text{has BC and mammogram$^+$})}{P(\text{mammogram$^+$})}
+\end{align*}
+where ``has BC'' is an abbreviation for breast cancer and ``mammogram$^+$'' means the mammogram screening was positive. A tree diagram can be used to identify each probability and is shown in Figure~\ref{BreastCancerTreeDiagram}. The probability the woman has breast cancer and the mammogram is positive is
+\begin{align*}
+P(\text{has BC and mammogram$^+$}) &= P(\text{mammogram$^+$ } | \text{ has BC})P(\text{has BC}) \\
+	&= 0.89\times 0.0035 = 0.00312
+\end{align*}
+The probability of a positive test result is the sum of the two corresponding scenarios:
+\begin{align*}
+P(\text{\underline{\color{black}mammogram$^+$}}) &= P(\text{\underline{\color{black}mammogram$^+$} and has BC}) + P(\text{\underline{\color{black}mammogram$^+$} and no BC}) \\
+	&= P(\text{has BC})P(\text{mammogram$^+$ } | \text{ has BC}) \\
+	&\qquad\qquad	+ P(\text{no BC})P(\text{mammogram$^+$ } | \text{ no BC}) \\
+	&= 0.0035\times 0.89 + 0.9965\times 0.07 = 0.07288
+\end{align*}
+Then if the mammogram screening is positive for a patient, the probability the patient has breast cancer is
+\begin{align*}
+P(\text{has BC } | \text{ mammogram$^+$})
+	&= \frac{P(\text{has BC and mammogram$^+$})}{P(\text{mammogram$^+$})}\\
+	&= \frac{0.00312}{0.07288} \approx 0.0428
+\end{align*}
+Even with a positive mammogram, there is still only a~4\%~chance of breast cancer.  Most people find this a surprising result.  \textit{return to this to finish why low prevalence leads to low ppv. that is the important concept for pre-meds and others}
 \end{example}
 
 
+Consider again the last equation of Example~\ref{probabilityOfBreastCancerGivenPositiveTestExample}.
+Using the tree diagram, we can see that the numerator (the top of the fraction) is equal to the following product:
+\begin{align*}
+P(\text{has BC and mammogram$^+$}) = P(\text{mammogram$^+$ } | \text{ has BC})P(\text{has BC})
+\end{align*}
+The denominator -- the probability the screening was positive -- is equal to the sum of probabilities for each positive screening scenario:
+\begin{align*}
+P(\text{\underline{\color{black}mammogram$^+$}})
+	&= P(\text{\underline{\color{black}mammogram$^+$} and no BC})
+		+ P(\text{\underline{\color{black}mammogram$^+$} and has BC})
+\end{align*}
+In the example, each of the probabilities on the right side was broken down into a product of a conditional probability and marginal probability using the tree diagram.
+\begin{align*}
+P(\text{mammogram$^+$})
+	&= P(\text{mammogram$^+$ and no BC}) + P(\text{mammogram$^+$ and has BC}) \\
+	&= P(\text{mammogram$^+$ } | \text{ no BC})P(\text{no BC}) \\
+			   &\qquad\qquad + P(\text{mammogram$^+$ } | \text{ has BC})P(\text{has BC})
+\end{align*}
+We can see an application of Bayes' Theorem by substituting the resulting probability expressions into the numerator and denominator of the original conditional probability.
+\begin{align*}
+& P(\text{has BC } | \text{ mammogram$^+$})  \\
+& \qquad= \frac{P(\text{mammogram$^+$ } | \text{ has BC})P(\text{has BC})}
+	{P(\text{mammogram$^+$ } | \text{ no BC})P(\text{no BC}) + P(\text{mammogram$^+$ } | \text{ has BC})P(\text{has BC})}
+\end{align*}
 
+\begin{termBox}{\tBoxTitle{Bayes' Theorem}
+Consider the following conditional probability for variable 1 and variable 2:\vspace{-1.5mm}
+\begin{align*}
+P(\text{outcome $A_1$ of variable 1 } | \text{ outcome $B$ of variable 2})
+\end{align*}
+Bayes' Theorem states that this conditional probability can be identified as the following fraction:\vspace{-1.5mm}
+\begin{align}
+\frac{P(B | A_1) P(A_1)}
+	{P(B | A_1) P(A_1) + P(B | A_2) P(A_2) + \cdots + P(B | A_k) P(A_k)}
+	\label{equationOfBayesTheorem}
+\end{align}
+where $A_2$, $A_3$, ..., and $A_k$ represent all other possible outcomes of the first variable.}\index{Bayes' Theorem|textbf}
+\end{termBox}
 
+Bayes' Theorem is also called Bayes' rule.
 
+Bayes' Theorem is just a generalization of what we have done using tree diagrams. The numerator identifies the probability of getting both $A_1$ and $B$. The denominator is the marginal probability of getting $B$. This bottom component of the fraction appears long and complicated since we have to add up probabilities from all of the different ways to get $B$. We always completed this step when using tree diagrams. However, we usually did it in a separate step so it didn't seem as complex.
 
+To apply Bayes' Theorem correctly, there are two preparatory steps:
+\begin{enumerate}
+\setlength{\itemsep}{0mm}
+\item[(1)] First identify the marginal probabilities of each possible outcome of the first variable: $P(A_1)$, $P(A_2)$, ..., $P(A_k)$.
+\item[(2)] Then identify the probability of the outcome $B$, conditioned on each possible scenario for the first variable: $P(B | A_1)$, $P(B | A_2)$, ..., $P(B | A_k)$.
+\end{enumerate}
+Once each of these probabilities are identified, they can be applied directly within the formula.
+
+%%%%%
+%
+% revisions to here 14sep2015 11:36.  Not satisfied with the treatment of BR here, and we need more examples
 
 
 % index commands below should be inserted just before section on sampling from a small population
@@ -894,6 +1018,7 @@ In the general population, about 1 in 28 individuals is an unaffected carrier of
 \index{tree diagram|)}
 \index{conditional probability|)}
 \index{probability|)}
+
 
 
 
