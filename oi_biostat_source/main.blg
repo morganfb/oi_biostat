@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
+The style file: biblatex.bst
+I couldn't open database file eoce.bib
+---line 20 of file main.aux
+ : \bibdata{main-blx,eoce
+ :                       }
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: extraTeX/preamble/copyright.aux
+A level-1 auxiliary file: extraTeX/preamble/preface_oi_biostat.aux
+A level-1 auxiliary file: ch_intro_to_data_oi_biostat/TeX/ch_intro_to_data_oi_biostat.aux
+A level-1 auxiliary file: ch_intro_to_data_oi_biostat/TeX/ch_intro_to_data_oi_biostat_ex.aux
+A level-1 auxiliary file: ch_probability_oi_biostat/TeX/ch_probability_oi_biostat.aux
+A level-1 auxiliary file: ch_probability_oi_biostat/TeX/ch_probability_oi_biostat_ex.aux
+A level-1 auxiliary file: ch_inference_foundations_oi_biostat/TeX/ch_inference_foundations_oi_biostat.aux
+A level-1 auxiliary file: ch_inference_foundations_oi_biostat/TeX/ch_inference_foundations_oi_biostat_ex.aux
+A level-1 auxiliary file: extraTeX/index/index.aux
+Database file #1: main-blx.bib
+Warning--I didn't find a database entry for "Allais:2011"
+Warning--I didn't find a database entry for "Garbutt:2012"
+Warning--I didn't find a database entry for "Ritz+Yu+Chapa+Fruin:2000"
+Warning--I didn't find a database entry for "McDowan:2003"
+Warning--I didn't find a database entry for "Fisher:1936"
+Warning--I didn't find a database entry for "data:smoking"
+Warning--I didn't find a database entry for "data:ciaFactbook"
+Warning--I didn't find a database entry for "Hepler:2013"
+Warning--I didn't find a database entry for "news:smokingDementia"
+Warning--I didn't find a database entry for "news:bullySleep"
+Warning--I didn't find a database entry for "Audera:2001"
+Warning--I didn't find a database entry for "Allison+Cicchetti:1975"
+Warning--I didn't find a database entry for "data:durhamAQI:2011"
+Warning--I didn't find a database entry for "survey:immigFL:2012"
+Warning--I didn't find a database entry for "indepSwing"
+Warning--I didn't find a database entry for "poorLang"
+Warning--I didn't find a database entry for "eduSex"
+Warning--I didn't find a database entry for "Mizan:2011"
+Warning--I didn't find a database entry for "data:BRFSS2010"
+Warning--I didn't find a database entry for "globalWarming"
+Warning--I didn't find a database entry for "burgers"
+Warning--I didn't find a database entry for "Laeng:2007"
+Warning--I didn't find a database entry for "ciaFactBookHIV:2012"
+Warning--I didn't find a database entry for "data:scott"
+Warning--I didn't find a database entry for "cats"
+Warning--I didn't find a database entry for "acsIncome2005-2009"
+Warning--I didn't find a database entry for "Heinz:2003"
+Warning--I didn't find a database entry for "data:gss:2010"
+Warning--I didn't find a database entry for "data:nsfg:2010"
+Warning--I didn't find a database entry for "webpage:GRE"
+Warning--I didn't find a database entry for "Graybill:1994"
+Warning--I didn't find a database entry for "webpage:spam"
+Biblatex version: 3.0
+(There was 1 error message)

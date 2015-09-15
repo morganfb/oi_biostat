@@ -1,5 +1,7 @@
 %!TEX root=../../main.tex
 
+\begin{doublespace}
+
 \chapter{Probability}
 \label{probability}
 
@@ -59,11 +61,11 @@ Suppose that both members of a couple are CF carriers. What is the probability t
 \end{example}
 
 \begin{figure}
-\includegraphics[width= 0.75\textwidth]{ch_probability_oi_biostat/figures/cfInheritance/cfInheritance.pdf}
+\centering
+\includegraphics[width= 0.75\textwidth]{ch_probability_oi_biostat/figures/cfInheritance/cf_figure_draft_2.png}
 \caption{Pattern of inheritance of a child of two unaffected carriers of CFTR}
 \label{fig:cfInheritance}
 \end{figure}
-
 
 \begin{exercise}
 Suppose the father is affected by CF and the mother is an unaffected carrier.  What is the probability that their child will be affected by the disease?
@@ -161,7 +163,7 @@ Probability problems rarely consider individual outcomes and instead consider \i
 
 \begin{figure}[hhh]
 \centering
-\includegraphics[width=0.55\textwidth]{ch_probability_oi_biostat/figures/disjointSets/disjointSets}
+\includegraphics[width=0.55\textwidth]{ch_probability_oi_biostat/figures/disjointSets/disjointSets.png}
 \caption{Three events, $A$, $B$, and $D$, consist of outcomes from rolling a die. $A$ and $B$ are disjoint since they do not have any outcomes in common.}
 \label{disjointSets}
 \end{figure}
@@ -215,7 +217,7 @@ Let's consider calculations for two events that are not disjoint in the context 
 
 \begin{figure}
 \centering
-\includegraphics[width=0.65\textwidth]{ch_probability_oi_biostat/figures/cardsDiamondFaceVenn/cardsDiamondFaceVenn}
+\includegraphics[width=0.65\textwidth]{ch_probability_oi_biostat/figures/cardsDiamondFaceVenn/cardsDiamondFaceVenn.png}
 \caption{A Venn diagram for diamonds and face cards.}
 \label{cardsDiamondFaceVenn}
 \end{figure}
@@ -423,11 +425,13 @@ Just as variables and observations can be independent, random phenomena can be i
 
 Independence was used implicitly on page~\pageref{CFInheritanceExample} in the second solution to the probability that two carriers will have an affected child with cystic fibrosis.  The assumption that half of the offspring who have received a mutated CF gene from the mother will receive a mutated gene from the father is essentially an independence assumption -- genes are passed along from the mother and father independently.
 
+\textit{JV: note to self, fix color of dice (and also in example...)}
+
 Example~\ref{probOf2Ones} provides a basic example of two independent processes: rolling two dice. We want to determine the probability that both will be \resp{1}. Suppose one of the dice is red and the other white. If the outcome of the red die is a \resp{1}, it provides no information about the outcome of the white die. We first encountered this same question in Example~\ref{probOf2Ones} (page~\pageref{probOf2Ones}), where we calculated the probability using the following reasoning: $1/6^{th}$ of the time the red die is a \resp{1}, and $1/6^{th}$ of \emph{those} times the white die will also be \resp{1}. This is illustrated in Figure~\ref{indepForRollingTwo1s}. Because the rolls are independent, the probabilities of the corresponding outcomes can be multiplied to get the final answer: $(1/6)\times(1/6)=1/36$. This can be generalized to many independent processes. 
 
 \begin{figure}[hht]
 \centering
-\includegraphics[width=0.6\textwidth]{ch_probability_oi_biostat/figures/indepForRollingTwo1s/indepForRollingTwo1s}
+\includegraphics[width=0.6\textwidth]{ch_probability_oi_biostat/figures/indepForRollingTwo1s/indepForRollingTwo1s.png}
 \caption{$1/6^{th}$ of the time, the first roll is a \resp{1}. Then $1/6^{th}$ of \emph{those} times, the second roll will also be a \resp{1}.}
 \label{indepForRollingTwo1s}
 \end{figure}
@@ -1025,5 +1029,4 @@ Once each of these probabilities are identified, they can be applied directly wi
 
 
 
-
-
+\end{doublespace}
