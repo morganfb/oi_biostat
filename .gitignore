@@ -5,3 +5,5 @@
 *.bib
 *.gz
 *.log
+*.bbl
+*.blg
