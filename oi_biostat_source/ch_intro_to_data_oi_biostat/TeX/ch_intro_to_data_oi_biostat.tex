@@ -20,6 +20,8 @@ Pending
 \chapter{Introduction to data}
 \label{introductionToData}
 
+\textit{DH: The more I think about it, I am inclined to add material on genomic data. The level is too easy so far. And I think we should add back in the section on survey sampling. We should also add a summary at the end of the chapter to remind students what the goals for the chapter are.}
+
 Scientists seek to answer questions using rigorous methods and careful observations. These observations -- collected from the likes of field notes, surveys, and experiments -- form the backbone of a statistical investigation and are called \term{data}. Statistics is the study of how to best collect, analyze, and draw conclusions from data. It is helpful to place statistics in the context of a general process of investigation:
 \begin{enumerate}
 \setlength{\itemsep}{0mm}
@@ -36,16 +38,18 @@ This chapter provides a brief introduction to the basic principles of data colle
 
 \textit{JV: Something to address later -- where in the formatting does it specify that the first paragraph in a section does not get indented, but the others do...}
 
+\textit{DH: This is part of the latex default. I think it used to be standard in publishing.}
+
 \section[Case study]{Case study: preventing peanut allergies}
 \label{leapCaseStudy}
 
 \index{data!LEAP|(}
 
-Section~\ref{leapCaseStudy} introduces an important problem in medicine: evaluating the effect of an intervention. \textit{JV: Intervention should be defined, could work in a dependent clause.} Terms in this section, and indeed much of this chapter, will all be revisited later in more detail.
+Section~\ref{leapCaseStudy} introduces an important problem in medicine: evaluating the effect of an intervention. \textit{JV: Intervention should be defined, could work in a dependent clause. DH: Agree.} Terms in this section, and indeed much of this chapter, will all be revisited later in more detail.
 
 The proportion of young children in Western countries with peanut allergies has doubled in the last 10 years. Previous research suggests that exposing infants to peanut-based foods, rather than excluding such foods from their diets, may be an effective strategy for preventing the development of peanut allergies. This section describes an experiment (a clinical trial, in the terminology of medical research) designed to address the following research question: Does early exposure to peanut products reduce the probability that a child will develop peanut allergies? 
 
-The "Learning Early about Peanut Allergy" (LEAP) study was reported in the New England Journal of Medicine in 2015.\footnote{Du Toit, George, et al. Randomized trial of peanut consumption in infants at risk for peanut allergy. New England Journal of Medicine 372.9 (2015): 803-813.} The study team enrolled children in the United Kingdom between 2006 and 2009, selecting 640 infants with eczema, egg allergy, or both. Each child was randomly assigned to the treatment group (peanut consumption) or the control group (peanut avoidance); children in the treatment group were fed at least 6 grams of peanut protein until 5 years of age, while children in the control group were to avoid consuming peanut protein until 5 years of age. \textit{In this study, the control group provides a reference point for estimating the effect of peanut exposure in the treatment group. JV: This last sentence comes off as a bit technical/vague, perhaps due to "estimating the effect" -- could be omitted, I think.}
+The "Learning Early about Peanut Allergy" (LEAP) study was reported in the New England Journal of Medicine in 2015.\footnote{Du Toit, George, et al. Randomized trial of peanut consumption in infants at risk for peanut allergy. New England Journal of Medicine 372.9 (2015): 803-813.} The study team enrolled children in the United Kingdom between 2006 and 2009, selecting 640 infants with eczema, egg allergy, or both. Each child was randomly assigned to the treatment group (peanut consumption) or the control group (peanut avoidance); children in the treatment group were fed at least 6 grams of peanut protein daily until 5 years of age, while children in the control group were to avoid consuming peanut protein until 5 years of age. \textit{In this study, the control group provides a reference point for estimating the effect of peanut exposure in the treatment group. JV: This last sentence comes off as a bit technical/vague, perhaps due to "estimating the effect" -- could be omitted, I think.}
 
 At age 5, each child was tested for peanut allergy using an oral food challenge (OFC): 5 grams of peanut protein in a single dose. Children had been previously been tested for peanut allergy through a skin test, conducted at the time of study entry; the main analysis presented in the paper was based on the 530 children with a negative skin test result. Of these children, 263 were assigned to "Peanut Avoidance" and 267 to "Peanut Consumption." The outcome at 5 years was reported as either "Fail OFC" (allergic reaction) or "Pass OFC" (no allergic reaction). 
 
@@ -53,7 +57,13 @@ Table \ref{leapStudyResultsDF} shows the participant study ID number, treatment 
  
 \textit{JV: The last two row labels should be corrected to 529 and 530; not sure how to fix that in the R code. We should be careful later on to clarify that in the file, the row.names column corresponds to the dataset with all 640 children. Alternatively, that column could be omitted and a separate dataset made with the children with a positive skin test, which could be analyzed in an end-of-chapter exercise.}
 
+\textit{DH: Agree this is confusing; we should leave out the first col. Also possible I did not subset before making this table; needs checking.}
+
 \textit{JV: Just curious...so 267 for the peanut consumption group includes the one child with a positive skin test?}
+
+\textit{DH: I will check about the one child with + skin test.}
+
+\textit{DH: Edits to here, 01 Sept 2015.}
 
 % latex table generated in R 3.1.1 by xtable 1.7-4 package
 % Wed Jul 15 13:59:17 2015
@@ -232,9 +242,9 @@ In the \data{frog} data, the variables \var{egg.size}, \var{clutch.size}, \var{c
 
 \begin{figure}
 \centering
-\includegraphics[width=0.57\textwidth]{ch_intro_to_data_oi_biostat/figures/variables/variables.png}
+\includegraphics[width=0.70\textwidth]{ch_intro_to_data_oi_biostat/figures/variables/variableTypes.png}
 \caption{Breakdown of variables into their respective types.}
-\label{variables}
+\label{variableTypes}
 \end{figure}
 
 \begin{example}{Suppose a research assistant collected data on the first 20 individuals to visit one of the new walk-in clinics being offered by major commercial pharmacies.  In addition to other variables, the research assistant collected age (measured as less than 21, 21 - 65, and older than 65 years of age), sex, height, weight, and reason for the visit.  Classify each of the variables as continuous numerical, discrete numerical, or categorical.}
@@ -319,7 +329,7 @@ One common downfall in conducting a sample is to use a \term{convenience sample}
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.47\textwidth]{ch_intro_to_data_oi_biostat/figures/sampleHealthPlan/convenience_sampling.png}
+	\includegraphics[width=0.70\textwidth]{ch_intro_to_data_oi_biostat/figures/sampleHealthPlan/sampleConvenienceHealthPlan.png}
 	\caption{Instead of sampling from all members equally, approaching members visiting a clinic during a particular week would disproportionately select members who typically use outpatient services.}
 	\label{sampleConvenienceHealthPlan}
 \end{figure}
@@ -332,9 +342,9 @@ The easiest random samples to analyze are those in which each member of a popula
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.47\textwidth]{ch_intro_to_data_oi_biostat/figures/sampleHealthPlan/random_sample.png}
+	\includegraphics[width=0.70\textwidth]{ch_intro_to_data_oi_biostat/figures/sampleHealthPlan/sampleRandomHealthPlan.png}
 	\caption{In this graphic, five members are randomly selected from the population to be interviewed.}
-	\label{sampleHealthPlan}
+	\label{sampleRandomHealthPlan}
 \end{figure}
 
 Sometimes a simple random sample is difficult to implement and an alternative method is helpful. One such substitute is a \term{systematic sample}, in which one case is sampled after letting a fixed number of other cases pass by. Since this approach uses a mechanism that is not easily subject to personal biases, it often yields a reasonably representative sample. This book will focus on random samples since the use of systematic samples is uncommon and requires additional considerations of the context. \textit{JV: It may be possible to omit this paragraph. If not, needs an example.}
@@ -343,7 +353,7 @@ The act of taking a simple random sample helps minimize bias, but bias can crop 
 
 \begin{figure}[h]
 	\centering
-	{\includegraphics[width=0.5\textwidth]{ch_intro_to_data_oi_biostat/figures/sampleHealthPlan/non_response_bias.png}
+	{\includegraphics[width=0.70\textwidth]{ch_intro_to_data_oi_biostat/figures/sampleHealthPlan/sampleNonResponseHealthPlan.png}
 	\caption{Due to the possibility of non-response, surveys studies may only reach a certain group within the population. For example, a survey written in English may only result in responses from health plan members fluent in English.}}
 	\label{sampleNonResponseHealthPlan}
 \end{figure}
@@ -385,12 +395,10 @@ Studies in which researchers assign treatments to cases are called \termsub{expe
 \end{description}
 
 It is important to incorporate the three experimental design principles into any study; this book describes applicable methods for analyzing data from such experiments. Blocking is a slightly more advanced technique, and statistical methods in this book may be extended to analyze data collected using blocking.
-	
-\textit{DH: Update the following figure for the LEAP data. JV: I changed the labels, but I'm getting lost in how to change the number in individuals in each group so that they are not equal.}
 
 	\begin{figure}
 		\centering
-		\includegraphics[width=0.78\textwidth]{ch_intro_to_data_oi_biostat/figures/leapBlocking/leap_blocking_draft.png}
+		\includegraphics[width=0.78\textwidth]{ch_intro_to_data_oi_biostat/figures/leapBlocking/leapBlocking.png}
 		\caption{A simplified schematic of the blocking scheme used in the LEAP study, depicting 54 patients that underwent randomization. Patients are first divided into groups based on response to the initial skin test, then each block is evenly separated into the treatment groups using randomization. This strategy ensures an even representation of patients in each treatment group from both the skin test positive and skin test negative groups.}
 		\label{leapBlocking}
 	\end{figure}
@@ -426,7 +434,7 @@ Suppose an observational study tracked sunscreen use and skin cancer, finding th
 % http://onlinelibrary.wiley.com/doi/10.1002/ijc.22745/full
 
 \begin{center}
-	\includegraphics[height=1.0in]{ch_intro_to_data_oi_biostat/figures/variables/sunCausesCancer.png}
+	\includegraphics[height=1.25in]{ch_intro_to_data_oi_biostat/figures/variables/confoundingVariable.png}
 \end{center}
 
 Observational studies are useful in that they can reveal interesting patterns or associations, providing researchers with the information necessary to design follow-up experiments. For example...
