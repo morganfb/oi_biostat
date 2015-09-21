@@ -1,9 +1,9 @@
 \chapter{Foundations for inference} 
 \label{foundationsForInference}
 
-Imagine the United States Center for Disease Control and Prevention (CDC) influencing policy makers in curbing the national obesity problem. The members of the CDC's Division of Nutrition, Physical Activity, and Obesity (DNPAO) "focus on policy and environmental strategies to make healthy eating and active living accessible and affordable for everyone." \footnote{\url{http://www.cdc.gov/obesity/}} Before they give policy suggestions, however, the DNPAO must first diagnose this problem of obesity in the United States. One metric that these scientists would consider could be a person's Body Mass Index, also known as BMI. A person's BMI has been a helpful tool to capture both a person's height and weight within one measurement and can be used as a measure of body fat. A high BMI can be an indicator for high body fat. In medicine, BMI can be used to categorize a person as "underweight," "overweight" or "obese." 
+Imagine the United States Center for Disease Control and Prevention (CDC) influencing policy makers in curbing the national obesity problem. The members of the CDC's Division of Nutrition, Physical Activity, and Obesity (DNPAO) "focus on policy and environmental strategies to make healthy eating and active living accessible and affordable for everyone." \footnote{\url{http://www.cdc.gov/obesity/}} Before they give policy suggestions, however, the DNPAO must first diagnose this problem of obesity in the United States. One metric that these scientists would consider could be a person's Body Mass Index, also known as BMI. A person's BMI has been a helpful tool to capture both a person's height and weight within one measurement. BMI can also be used as a measure of body fat with a high BMI as an indicator for high body fat. In medicine, BMI is used to categorize a person as "underweight," "overweight" or "obese." 
 
-These policy makers can be interested in a couple of questions. What is the average population BMI for all adults in the United States? Instead of providing a single number, what is a plausible range values for the average BMI in the United States? Finally using the categorization of BMI values and ranges that the World Health Organization (WHO) provides, noting that it does not consider muscularity, is the average BMI in the United States considered an average healthy BMI? Below is a categorization of BMI values and ranges
+These policy makers are interested in a couple of questions. What is the average population BMI for all adults in the United States? Instead of providing a single number, what is a plausible range values for the average BMI in the United States? Finally using the categorization of BMI values and ranges that the World Health Organization (WHO) provides, noting that it disregards muscularity, is the average BMI in the United States considered an average healthy BMI? Below is a categorization of BMI values and ranges
 \footnote{\url{http://apps.who.int/bmi/index.jsp?introPage=intro_3.html}}
 
 \begin{center}
@@ -23,15 +23,15 @@ Obese & $\geq30$\tabularnewline
 \end{tabular}
 \end{center}
 
-These questions encompass the broader idea of statistical inference in Chapter \ref{foundationsForInference}. Inference is a set of tools used to estimate properties or parameters about a population after observing a sample from this population. Inference also allows for different levels of quality or confidence of these parameter estimates. Once we have a parameter estimate, the average BMI in the United States for example, we can ask ourselves how confident we are that this estimate is representative of the greater population of the US. For example, a classic inferential question is, ``How sure are we that the estimated mean, $\bar{x}$, is near the population mean, $\mu$?'' Statistical inference includes asking these questions but also determining which estimates to use.
+These questions encompass the broader idea of statistical inference covered in Chapter \ref{foundationsForInference}. Inference is a set of tools used to estimate properties or parameters about a population after observing a sample from the population. Inference also allows for different levels of quality or confidence of these parameter estimates. Once the parameter estimate is calculated, the average BMI in the United States for example, scientists can ask how confident they are that this estimate is representative of the greater population of the US. For example, a classic inferential question is, ``How likely is it that the estimated mean, $\bar{x}$, is near the population mean, $\mu$?'' Statistical inference includes asking these questions but also determining which estimates to use.
 
 Chapter \ref {foundationsForInference} provides the groundwork for inference on a larger population from observing one sample, and later chapters will cover inference comparing two or more distinct populations. While the equations and details change depending on the setting, the foundations and general procedures for inference are the same throughout statistics. Understanding the foundation with point estimates in this chapter will provide familiarity for upcoming chapters. 
 
-After looking at the data in Section \ref{brfssData} that the CDC could use in making these inferences, section \ref{variabilityInEstimates} will give us an introduction to point estimates, the sampling distribution that these estimates are drawn from, and the variability of these estimates. Section \ref{confidenceIntervals} will give us tools to incorporate this variability. Rather than a single value, these policy makers can provide, instead, a confidence interval or a range of values that they believe are likely estimates. However with comparison, researchers might still want to compare point values against each other instead of ranges of values. Hypothesis testing in Section \ref{hypothesisTesting} allows the researchers to infer using point estimates while still encompassing the variability that the point estimates in section \ref{variabilityInEstimates} did not. The hypothesis testing framework gives us structure to do so and uses the same moving parts as a confidence interval. 
+After looking at the data in Section \ref{brfssData} that the CDC could use in making these inferences, section \ref{variabilityInEstimates} will provide an introduction to point estimates, the sampling distribution that these estimates are drawn from, and the variability of these estimates. Section \ref{confidenceIntervals} will present tools to incorporate this variability. Rather than a single value, these policy makers can provide, instead, a range of values that they believe are likely estimates. Researchers could also want to compare the values they observe to some benchmark they believe in. Hypothesis testing in Section \ref{hypothesisTesting} allows the researchers use point estimates for comparisons while still encompassing the variability that confidence intervals provide. The hypothesis testing framework gives us structure to do so and uses the same moving parts as a confidence interval. 
 
 \section{BRFSS Data}
 \label{brfssData}
-The Behavioral Risk Factor Surveillance System (BRFSS) by the CDC was started in 1984 and is the world's largest on-going telephone health survey system. This survey is nationwide and aims to "monitor state-level prevalence of major behavioral risks among adults associated with premature morbidity and mortality." \footnote{\url{http://www.cdc.gov/brfss/about/about_brfss.htm}}  Topics like smoking, alcohol use, diet and exercise are included in this questionnaire. The annual survey data from 2000, \data{BRFSS}, includes records on 289 variables and could be used to estimate the average BMI of the US population. The variables that we are particularly interested in with calculating BMI are listed in Table  ~\ref{brfssBMIVariables}. 
+The Behavioral Risk Factor Surveillance System (BRFSS), organized by the CDC, was started in 1984 and is the world's largest on-going telephone health survey system. This survey is nationwide and aims to "monitor state-level prevalence of major behavioral risks among adults associated with premature morbidity and mortality." \footnote{\url{http://www.cdc.gov/brfss/about/about_brfss.htm}} Topics like smoking, alcohol use, diet and exercise are included in this questionnaire. The annual survey data from 2000, \data{BRFSS}, includes records on 289 variables and could be used to estimate the average BMI of the US population. The variables that we are particularly interested in with calculating BMI are listed in Table  ~\ref{brfssBMIVariables}. 
 \begin{comment} http://www.cdc.gov/brfss/annual_data/annual_2000.htm#information\end{comment}
 \begin{table}[h]
 \centering\small
@@ -51,10 +51,9 @@ The Behavioral Risk Factor Surveillance System (BRFSS) by the CDC was started in
 The calculation of a BMI index from weight and height using both Metric and Imperial is \[BMI=\frac{\mathrm{weight_{kg}}}{\mathrm{height_{m}}^2}=\frac{\mathrm{weight_{lb}}}{\mathrm{height_{in}}^2}\cdot 703\]
 where $\mathrm{weight_{kg}}$ and $\mathrm{height_{m}}$ is the weight and height measured in kilograms and meters respectively while $\mathrm{weight_{lb}}$ and $\mathrm{height_{in}}$ is the weight and height in pounds and inches respectively. 
 
-Therefore from the \data{BRFSS} data, we can use a sample of heights and weights to calculate BMI values for each person in our sample. Thus, each person's BMI value will be considered a single observation. The \data{BRFSS} data comprises of 170,000 observations, and the CDC is hoping to infer the characteristics of adults in the United States, our target population. A target population is the group that the statistician is interested in and wants to draw conclusions about. 
+The heights and weights from the \data{BRFSS} data can be used to calculate BMI values for each person in the sample. Thus, each person's BMI value will be considered a single observation. The \data{BRFSS} data comprises of 170,000 observations, and the CDC is hoping to infer the characteristics of adults in the United States, the target population. A target population is the group that the statistician is interested in and wants to draw conclusions about. 
 
-We take a sample of 40,000 adults from the \data{BRFSS} data to use as our observed sample. We will refer to this random sample of 40,000 adults as \data{BRFSS BMI} from now on. Part of this dataset with the BMI calculation is shown in ~\ref{brfssBMIData}. 
-
+A simple random sample of 40,000 adults from the \data{BRFSS} data is taken to be used as the observed sample. \footnote{The \data{BRFSS} data without including weights was not a simple random sample. Rather the CDC,after collecting the data, edited, processed and weighted the data to make the values act like a simple random sample from the US population. Thus noncoverage and nonresponse become equal among all groupings of the population. The edited and weighted data is the \data{BRFSS} data that the CDC provides. The weighting formulae can be found \url{http://www.cdc.gov/brfss/annual_data/2010/pdf/overview_10.pdf} under the Data Processing section.} This random sample of 40,000 adults will be referred to as \data{BRFSS BMI} from now on. Part of this dataset with the BMI calculation is shown in Table ~\ref{brfssBMIData}. 
 
 % latex table generated in R 3.1.1 by xtable 1.7-4 package
 % Sun Jul 19 13:57:10 2015
@@ -76,42 +75,39 @@ We take a sample of 40,000 adults from the \data{BRFSS} data to use as our obser
 \label{brfssBMIData}
 \end{table}
 
-
-This simple random sample from \data{BRFSS} will be used to draw conclusions about the target population of US adults. \footnote{We note that the conductors of the \data{BRFSS} data did not use a simple random sample to obtain the data. We instead will assume so for our purposes but sampling methodology can be found \url{http://www.cdc.gov/brfss/annual_data/2000/pdf/overview_00.pdf}.} This is the practice of statistical inference in the broadest sense. Let's explore the data with the tools from Chapter 1 in Figure~\ref{exploreBMI} before we estimate the average BMI in the US. 
+This simple random sample from \data{BRFSS}, \data{BRFSS BMI}, will be used to draw conclusions about the target population of US adults. This is the practice of statistical inference in the broadest sense. Before estimating the average BMI in the US, Figure ~\ref{exploreBMI} provides a graphical exploration using the tools from Chapter \ref{introductionToData}. The histogram and box plot both show that the BMI values are skewed right suggesting the median of these BMIs is lower than the mean. 
 
 \begin{figure}
 \centering
 \includegraphics[width =  \textwidth]{ch_inference_foundations_oi_biostat/figures/brfssBMIsampHistograms/brfssBMIsampHistograms}
-%hist(brfss.sample$bmi, main="Histogram of brfss.sample BMI", xlab="BMI")
-%boxplot(brfss.sample$bmi, main = "Boxplot of brfss.sample BMI")
 \caption{Histogram and boxplot of BMI for the \data{BRFSS BMI} data. The data is skewed right by both the histogram and the box plot.}
 \label{exploreBMI}
 \end{figure}
 
-The data from \data{BRFSS BMI} is special because in order to do statistical inference, the dataset needs to be representative of the population of interest. In this case, because the size of \data{BRFSS BMI} is so large and drawn randomly from \data{BRFSS}, we can assume that our data is representative and our estimates will be close to the population parameters.  Now that we have a general idea of what the data looks like, we can begin with statistical inference.
+The data from \data{BRFSS BMI} is special because in order to do statistical inference, the dataset needs to be representative of the population of interest. In this case, because the size of \data{BRFSS BMI} is so large and drawn randomly from \data{BRFSS}, the data can be assumed to be representative and that the estimates will be close to the population parameters. \footnote{In 2000, the US population was 282.2 million, \footnote{\url{http://www.census.gov/prod/2002pubs/c2kprof00-us.pdf}} 7,000 times the sample size of 40,000.} The foundations of statistical inference follows naturally after the data has been examined and explored, 
 
 \section{Variability in estimates}
 \label{variabilityInEstimates}
 
 \index{point estimate|(}
 
-If members at the CDC, after observing the sample of 40,000 BMI values, were asked to give their best guess for the average BMI in the US, what would it be? Here, they would employ point estimation. A \term{point estimate} is a single value derived from sample data that serves as the "best guess" for that population parameter. Section ~\ref{variabilityInEstimates} will touch upon point estimates as well as the variability inherent in using this single number as the best guess.\footnote{While we focus on the the mean of BMIs in this chapter, questions regarding variation are often just as important in practice. For instance, potential action regarding obesity could change if the standard deviation of a person's BMI was 5 versus if it was 15.} 
+If members at the CDC, after observing the sample of 40,000 BMI values, were asked to give their best guess for the average BMI in the US, what would it be? Here, they would employ point estimation. A \term{point estimate} is a single value derived from sample data that serves as the "best guess" for that population parameter. Section ~\ref{variabilityInEstimates} will touch upon point estimates as well as the variability inherent in using this single number as the best guess.\footnote{While this chapter focuses on the the mean of BMIs, questions regarding variation are often just as important in practice. For instance, potential action regarding obesity could change if the standard deviation of a person's BMI was 5 versus if it was 15.} 
 
 \subsection{Point estimates}
 \label{pointEstimates}
 
-A likely choice to estimate the \term{population mean} from our sample is to simply take the \term{sample mean}. That is, use the average BMI of all 40,000 survey respondents in our sample as our estimate for the average BMI among US adults. 
+A likely choice to estimate the \term{population mean} from the \data{BRFSS BMI} sample is to simply take the \term{sample mean}. That is, use the average BMI of all 40,000 survey respondents in the sample as the estimate for the average BMI among US adults. 
 
-For notation, use $\mathrm{bmi}_1, \mathrm{bmi}_2, \ldots, \mathrm{bmi}_{40,000}$  to represent the BMI for each survey respondent in our sample \data{BRFSS BMI}. The sample mean for BMI using our 40,000 observations is 
+For notation, use $\mathrm{bmi}_1, \mathrm{bmi}_2, \ldots, \mathrm{bmi}_{40,000}$  to represent the BMI for each survey respondent in the \data{BRFSS BMI} sample. The sample mean for BMI using the 40,000 observations is 
 \begin{eqnarray*}
-\bar{\mathrm{bmi}} = \frac{30.40 + 23.40 + 25.10 + \dots}{40,000} = 26.356
+\bar{\mathrm{bmi}} = \frac{30.41 + 23.40 + 25.10 + \dots}{40,000} = 26.356
 \end{eqnarray*}
 \index{point estimate!single mean|(}
-and is the \term{point estimate} of the population mean\footnote{If we were interested in the values of another variable, \var{weight} denoted $w_1,\ldots w_{40,000}$ instead, we would denote the sample mean as $\bar{w}$}. 
+and is the \term{point estimate} of the population mean\footnote{If \var{weight} is the variable of interest, instead, the sample mean of observations denoted $w_1,\ldots w_{40,000}$ would be $\bar{w}$}. 
 
-Suppose from the original respondents in \data{BRFSS}, we take a new sample of 40,000 people and recompute the mean; we will probably not get the same answer that we got using the \data{BRFSS BMI} data set. Estimates generally vary from one sample to another even with samples of the same sample size, and low \term{sampling variation} can suggest our estimate may be close, but not exactly equal to the parameter. A larger sample size can ensure a closer estimate to the population parameter. In 2000, the US population was 282.2 million, \footnote{\url{http://www.census.gov/prod/2002pubs/c2kprof00-us.pdf}} 7,000 times our sample size of 40,000. 
+Suppose from the original respondents in \data{BRFSS}, a new sample of 40,000 people is taken and the mean calculated; the answer would likely not be the same as the sample mean from the  \data{BRFSS BMI} data set. Estimates generally vary from one sample to another even with samples of the same sample size. Low \term{sampling variation} can suggest that the estimate may be close, but not exactly equal to the parameter. A larger sample size can ensure a closer estimate to the population parameter than an estimate taken from a smaller sized sample. 
 
-What about generating point estimates of other \term{population parameters}, such as the population median or population standard deviation? We can estimate these parameters based on sample statistics as well. For example, we estimate the population standard deviation for BMI using the sample standard deviation, and the population median using the sample median. Table ~\ref{BMIEstimates} provides the point estimates to other population parameters relating to BMI.
+What about generating point estimates of other \term{population parameters}, such as the population median or population standard deviation? Sample statistics can help estimate these parameters as well. For example, the population standard deviation for BMI can be estimated using the sample standard deviation, and the population median using the sample median. Table ~\ref{BMIEstimates} provides the point estimates from \data{BRFSS BMI} to other population parameters relating to BMI.
 
 % latex table generated in R 3.1.1 by xtable 1.7-4 package
 % Sun Jul 19 20:25:13 2015
@@ -131,41 +127,48 @@ mean & 26.356 \\
 \end{table}
 
 \begin{exercise} \label{pointEstimateOfDesiredWeights}
-Suppose we want to estimate the average age for men and women in the US as well as the difference in ages. If $\bar{\mathrm{age}}_{\mathrm{women}} = 47.35 $ years and $\bar{\mathrm{age}} _ {\mathrm{men}} = 45.67 $ years, what would be a good point estimate for the population age difference? \footnote{We could take the difference of the two sample means: $47.35 - 45.67 =  1.69$. Women are on average older than men by 1.69 years.}
+Suppose the CDC was interested in an estimate for the average age for men and women in the US as well as the difference in ages. If $\bar{\mathrm{age}}_{\mathrm{women}} = 47.35 $ years and $\bar{\mathrm{age}} _ {\mathrm{men}} = 45.67 $ years, what would be a good point estimate for the population age difference? \footnote{Take the difference of the two sample means: $\bar{\mathrm{age}}_{\mathrm{women}} - \bar{\mathrm{age}} _ {\mathrm{men}} = 47.35 - 45.67 =  1.69$. Women are on average older than men by 1.69 years.}
 \end{exercise}
 %men = brfss.sample[which(brfss.sample$sex == 1),]
 %women = brfss.sample[which(brfss.sample$sex == 2),]
 %mean(women$age) - mean(men$age)
 
 \begin{exercise}
-If you had to provide a point estimate of the population IQR for the BMI of participants, how might you make such an estimate using a sample?\footnote{To obtain a point estimate of the IQR for the population, we could take the IQR of a random sample from the population.}
+Provide a point estimate of the population IQR for the BMI of participants using a sample.\footnote{To obtain a point estimate of the IQR for the population, use the IQR of a random sample from the population.}
 
 \index{point estimate!single mean|)}
 
 \end{exercise}
 
-The sample mean calculated from this \data{BRFSS BMI} sample of 40,000 will likely be different from the sample mean of a different set of 40,000 respondents from \data{BRFSS} data. Using $R$, we take another random sample from the \data{BRFSS} data of 40,000 and see that that the new sample mean for the BMI is 26.344. We note that estimates will differ across samples through sampling variation but the accuracy of the point estimate will improve once more data becomes available and sample sizes increase.
+The sample mean calculated from this \data{BRFSS BMI} sample of 40,000 will likely be different from the sample mean of a different set of 40,000 respondents from \data{BRFSS} data. Using $R$, take another random sample from the \data{BRFSS} data of 40,000 and note that that the new sample mean for the BMI is 26.344. Estimates will differ across samples through sampling variation but the accuracy of the point estimate will improve once more data becomes available and sample sizes increase.
 
 Consider a running mean from the \data{BRFSS BMI} data to explore increases in sample size and increase in accuracy. A \term{running mean} is a sequence of means, where each mean uses one more observation in its calculation than the mean directly before it in the sequence. In this case, the second mean is the average of the first two observations, $\mathrm{bmi}_1, \mathrm{bmi}_2$. The third number in the running mean sequence is the average of $\mathrm{bmi}_1, \mathrm{bmi}_2,$ and $\mathrm{bmi}_3$. 
 
-The running mean for \data{bmi} in the \data{BRFSS BMI} dataset is shown in Figure~\ref{BMIRunningMean}. We look at a running mean of 300 and 5000 observations. We note that as more values get included, the running mean converges closer to the sample mean of 26.36. Similarly if the sample size increases from 40,000 to 100,000, the sample mean from 100,000 observations will be closer to the average US population BMI than the sample mean of 40,000 observations. 
+The running mean for \data{BMI} in the \data{BRFSS BMI} dataset is shown in Figure~\ref{BMIRunningMean} for 300 and 5,000 observations. As more values get included, the running mean converges closer to the sample mean of 26.36. Similarly if the sample size increases from 40,000 to 100,000, the sample mean from 100,000 observations will be closer to the average US population BMI than the sample mean of 40,000 observations. 
 
 \begin{figure}
    \centering
    \includegraphics[width=\textwidth]{ch_inference_foundations_oi_biostat/figures/brfssBMIRunningMean/brfssBMIRunningMean}
-   \caption{The running means from the \var{BRFSS BMI} sample of 40,000 observations. The mean stabilizes and approaches the mean of the entire sample $\bar{x} = 26.36$ as the number of observations increases}
+   \caption{The running means from the \var{BRFSS BMI} sample of 40,000 observations. The mean stabilizes and approaches the mean of the entire sample $\bar{\mathrm{bmi}} = 26.36$ as the number of observations increases}
       \label{BMIRunningMean}
 \end{figure}
 
-Sampling variation, however, is across samples of the same size. Figure ~\ref{runningSamplingVariation} displays the running means of two samples and of 20 samples. We see at each number of observations that the sample mean is not the same. There exists some sampling variation. Even more interesting, the variation across the different running means decreases as the number of observations increases. We will explore this concept more in Section ~\ref{accuracyAndPrecision}. 
+Sampling variation, however, is across samples of the same size. Figure ~\ref{runningSamplingVariation} displays the running means of two samples from \data{BRFSS}. With a small sample size, the path of the running means are not the same. There exists some sample variation. But as the number of observations increase, the running means for these two samples converge to the same value. The variation across the different running means decreases as the number of observations increases. Figure ~\ref{runningSamplingVariation20} illustrates this more clearly by calculating the running means of 20 independent samples of 40,000 observations. At sample sizes of less than 150, the sample variation is extremely large, but as the number of observations get larger, the sampling variation decreases. We will explore this concept more in Section ~\ref{accuracyAndPrecision}. 
+
+Figure ~\ref{runningSamplingVariation20} 
+\begin{figure}
+   \centering
+   \includegraphics[width=\textwidth]{ch_inference_foundations_oi_biostat/figures/brfssBMISampVar/brfssBMISampVar}
+   \caption{The running mean of two samples drawn from \data{BRFSS}. The exists high sampling variation at the beginning but as the sample sizes increase, the running mean values converge.}
+	\label{runningSamplingVariation}
+\end{figure}
 
 \begin{figure}
    \centering
    \includegraphics[width=\textwidth]{ch_inference_foundations_oi_biostat/figures/brfssBMISampVar/brfssBMISampVar20}
    \caption{Many running means from different samples of 40,000 observations from \data{BRFSS}. The sampling variation decreases as the number of observations gets larger.}
-	\label{runningSamplingVariation}
+	\label{runningSamplingVariation20}
 \end{figure}
-
 
 
 \subsection{Accuracy and Precision of Point Estimates}
@@ -173,35 +176,34 @@ Sampling variation, however, is across samples of the same size. Figure ~\ref{ru
 
 Accuracy and precision have colloquially become interchangeable. In science, however, they both have very distinct meanings. Accuracy is a characteristic of how close the measurements are to their true values. Precision is the characteristic of how close the measurements are to themselves. 
 
-Within inference and point estimates, the sample mean is always accurate. The sample mean does not contain any systematic error. The sample mean is not equal to the population mean only because of random sampling error. While the sample mean may not always be equal to the population mean, in expectation, the sample mean and population parameter are equivalent. We observe the accuracy of the sample mean in practice with 20 running means from Figure ~\ref{runningSamplingVariation}. The center of these running means is, in expectation, the population average BMI. 
+Within inference and point estimates, the sample mean is always accurate. The sample mean does not contain any systematic error. The sample mean is not equal to the population mean only because of random sampling error. While the sample mean may not always be equal to the population mean, in expectation, the sample mean and population parameter are equivalent. We observe the accuracy of the sample mean in practice with 20 running means from Figure ~\ref{runningSamplingVariation20}. The center of these running means is, in expectation, the population average BMI. 
 
-While the sample mean is consistently accurate, it may not always be precise. As the sample size, $n$, increases, the randomness and variability in the sample mean decreases. We look to sampling variation at different sample sizes as evidence. Figure ~\ref{sampleMeanPrecision} shows two histograms of sample means. The left histogram has sample means with a sample size of 5 and the right has a sample size of 50. All of these samples are randomly drawn from the \data{BRFSS} data, the sample mean calculated and plotted as an observation on the histogram. The histogram with $n=50$ has noticeably smaller variance than the histogram with $n=5$. The histogram with $n=5$ is also slightly skewed. As such, with larger sample sizes, the sample variation decreases, making the sample mean more precise across samples. We look to Section ~\ref{seOfTheMean} to quantify and measure sampling variation as more data becomes available. 
+While the sample mean is consistently accurate, it may not always be precise. As the sample size, $n$, increases, the randomness and variability in the sample mean decreases. Sampling variation at different sample sizes serves as evidence. Figure ~\ref{sampleMeanPrecision} shows two histograms of sample means. The left histogram has sample means with a sample size of 5 and the right has a sample size of 50. All of these samples are randomly drawn from the \data{BRFSS} data, the sample mean calculated and plotted as an observation on the histogram. The histogram with $n=50$ has noticeably smaller variance than the histogram with $n=5$. The histogram with $n=5$ is also slightly skewed. As such, with larger sample sizes, the sample variation decreases, making the sample mean more precise across samples. Section ~\ref{seOfTheMean} provides guidance on how to quantify and measure sampling variation as more data becomes available. 
 
 \begin{figure}
    \centering
    \includegraphics[width=\textwidth]{ch_inference_foundations_oi_biostat/figures/brfssBMISampleMeanPrecision/brfssBMISampleMeanPrecision}
-   \caption{Sample means of size $n=5$ and $n=50$.}
+   \caption{Sample means of size $n=5$ and $n=50$. The histogram with $n=50$ has a smaller variance.}
    \label{sampleMeanPrecision}
 \end{figure}
  
 \subsection{Sampling Distribution and the Standard Error of the Mean}
 \label{seOfTheMean}
 
-From the random sample represented in \data{BRFSS BMI}, we estimated the average BMI of an adult in the United States to be 26.356. Suppose we take another random sample of 40,000 individuals and take its mean. In Section ~\ref{pointEstimates}, we then get 26.344. Suppose we took another (26.350) and another (26.349), and continue to do this many many times -- which we can do only because we have access to the larger \data{BRFSS} dataset. \footnote{The sampling distribution depends on the underlying distribution of the target population. In this case, while \data{BRFSS} is not quite the target population of all US adults, it is large enough to illustrate the concept of sampling distribution and acts as a representative substitute to the US population. If we had complete data from the target population, there would be no need to take a sample mean measurement. In practice, we generally are not even capable of taking another sample of 40,000 from \data{BRFSS}!} We can then build up a \term{sampling distribution} for the sample mean when the sample size is 40,000, shown in Figure~\ref{brfssBMISamplingDistribution}.
+From the random sample represented in \data{BRFSS BMI}, average BMI of an adult in the United States is estimated to be the sample mean, 26.356. Suppose another random sample of 40,000 individuals is taken and its mean calculated. In Section ~\ref{pointEstimates}, the value was 26.344. Suppose this happens again (26.350) and again (26.349), and continue to do this many many times -- which can only happen with access to the larger \data{BRFSS} dataset. \footnote{The sampling distribution depends on the underlying distribution of the target population. In this case, while \data{BRFSS} is not quite the target population of all US adults, it is large enough to illustrate the concept of sampling distribution and acts as a representative substitute to the US population. If the CDC had complete data from the target population, there would be no need to take a sample mean measurement. In practice, people generally are not even capable of taking another sample of 40,000 from \data{BRFSS}!} From these values, a \term{sampling distribution} for the sample mean can be constructed when the sample size is 40,000, shown in Figure~\ref{brfssBMISamplingDistribution}.
 
 \begin{termBox}{\tBoxTitle{Sampling distribution}
-The \term{sampling distribution} of a point estimate represents the distribution of the point estimate based on samples of a fixed size from a certain population. There is a unique sampling distribution that exists that is inherent to the point estimator you are measuring. Every time that you are calculating your point estimate from a particular sample of said size, your point estimate is one sample from the sampling distribution. Understanding the concept of a sampling distribution is central to understanding statistical inference.}
+The \term{sampling distribution} of a point estimate represents the distribution of the point estimate based on samples of a fixed size from a certain population. There is a unique sampling distribution that exists that is inherent to the point estimator that is being measured. Every time that the point estimate is calculated from a particular sample of said size, the point estimate is one sample from the sampling distribution. Understanding the concept of a sampling distribution is central to understanding statistical inference.}
 \end{termBox}
-
 
 \begin{figure}
    \centering
-   \includegraphics[width=0.85\textwidth]{ch_inference_foundations_oi_biostat/figures/brfssBMISamplingDistribution/brfssBMISamplingDistribution}
+   \includegraphics[width=\textwidth]{ch_inference_foundations_oi_biostat/figures/brfssBMISamplingDistribution/brfssBMISamplingDistribution}
    \caption{A histogram of 100,000 sample means for BMI, where the samples are of size $n=40,000$. }
       \label{brfssBMISamplingDistribution}
 \end{figure}
 
-Figure~\ref{brfssBMISamplingDistribution} is an approximation of the sampling distribution. To truly get the sampling distribution, one would need to sample every possible unique combination of 40,000 respondents from the entire US adult population (and not just the \data{BRFSS} data set). However we note that just as the running mean becomes a better approximation of the population average as more data becomes available, the approximation of the sampling distribution also resembles more closely the sampling distribution as we take more and more samples. We note again that precision increases significantly as the sample size $n=40,000$ with the sample means of $n=40,000$ ranging from 26.25 to 26.45, a much smaller range than for $n=5$ or $n=50$ in Figure ~\ref{sampleMeanPrecision}. We can create an approximation of the sampling distribution of the sampling mean with the following pseudocode \footnote{Refer to the appendix for R code}: 
+Figure~\ref{brfssBMISamplingDistribution} is an approximation of the sampling distribution. To truly get the sampling distribution, one would need to sample every possible unique combination of 40,000 respondents from the entire US adult population (and not just the \data{BRFSS} data set). However just as the running mean becomes a better approximation of the population average as more data becomes available, the approximation of the sampling distribution also resembles more closely the sampling distribution as more and more samples are drawn. An approximation of the sampling distribution of the sampling mean can be created with the following pseudocode \footnote{Refer to the appendix for R code}: 
 
 \begin{verbatim}
 (1) Have a place to store all the sample means that we will calculate
@@ -211,7 +213,7 @@ Figure~\ref{brfssBMISamplingDistribution} is an approximation of the sampling di
 (5) Plot all the sample means you have stored in (1) as a histogram
 \end{verbatim}
   
-The sampling distribution, in this case, is likely to be unimodal and approximately symmetric. The sampling distribution is also centered exactly at the \data{BRFSS} population mean: $\mu=26.351$. Intuitively, this makes sense. The sample means should tend to ``fall around'' the mean of the population that we are drawing from.
+The sampling distribution, in this case, is unimodal and approximately symmetric. The sampling distribution is also centered exactly at the target population's mean. Intuitively, this makes sense. The sample means should tend to ``fall around'' the mean of the population that we are drawing from.
 
 From the sampling distribution, we also see that the point estimator will have some variability, and from the concept of sampling distribution introduced in Section ~\ref{accuracyAndPrecision}, the precision increases as the sample size gets larger. Point estimates, however, still vary sample by sample. There needs to be some metric to quantify the variability of the sample mean around the population mean.
 
@@ -219,42 +221,44 @@ From the sampling distribution, we also see that the point estimator will have s
 In sampling, the larger the sample size the better. The precision of the sample mean increases as more data is observed in the sample.}
 \end{tipBox}
 
-Standard deviation is the most obvious method to quantify variability. We use the standard deviation of the sampling distribution denoted  $\sigma_{\bar{x}}$ or $s$ in some contexts to measure sampling variation of the sample mean. \footnote{Caution: The standard deviation of the sample mean is not equivalent to the estimate for the standard deviation of the population. Those are measuring two separate quantities.}
+Standard deviation is the most obvious method to quantify variability. The standard deviation of the sampling distribution denoted  $\sigma_{\bar{x}}$ or $s$ in some contexts is used to measure sampling variation of the sample mean. \footnote{Caution: The standard deviation of the sample mean is not equivalent to the estimate for the standard deviation of the population. Those are measuring two separate quantities.}
 
-Just as with the definition of standard deviation in \textbf{Chapter 1}, the standard deviation of the sample mean, tells us how far the typical estimate is away from the actual population mean. It also is a very good metric for the typical \term{error} of the point estimate, and for this reason we usually call this version of standard deviation the \term{standard error (SE)} \index{SE}\marginpar[\raggedright\vspace{-4mm} $SE$\\\footnotesize standard\\error]{\raggedright\vspace{-4mm} $SE$\\\footnotesize standard\\error} of the estimate. \footnote{In general, standard error is the standard deviation of samples and estimates whereas we use the term standard deviation for populations or distributions. Look AT \textbf{SOME REFERENCE} for a clearer distinction of standard error versus standard deviation.} 
+Just as with the definition of standard deviation in Chapter ~\ref{introductionToData}, the standard deviation of the sample mean indicates how far the typical estimate is away from the population mean. It also is a very good metric for the typical \term{error} of the point estimate, and for this reason, this version of standard deviation is called the \term{standard error (SE)} \index{SE}\marginpar[\raggedright\vspace{-4mm} $SE$\\\footnotesize standard\\error]{\raggedright\vspace{-4mm} $SE$\\\footnotesize standard\\error} of the estimate. 
 
 \begin{termBox}{\tBoxTitle{Standard error of an estimate}
 The standard deviation associated with an estimate is called the \emph{standard error}. It describes the typical error or uncertainty associated with the estimate.}
 \end{termBox}
 
+\begin{tipBox}{\tipBoxTitle{"Standard Deviation" $\neq$ "Standard Error"}
+Remember, the term "standard error" is not interchangeable with "standard deviation". Standard deviation describes the spread of values within the sample. Using means, the standard error is the standard deviation of the sample mean and describes how accurate the sample mean is to the population mean.}
+\end{tipBox}
+
 \begin{exercise}
-(a) Would you rather use a small sample or a large sample when estimating a parameter? Why? (b) Using your reasoning from (a), would you expect a point estimate based on a small sample to have smaller or larger standard error than a point estimate based on a larger sample?\footnote{(a) Prefer a large sample. Consider two random samples: one of size 10 and one of size 1000. Individual observations in the small sample are highly influential on the estimate while in larger samples these individual observations would more often average each other out. The larger sample would tend to provide a more accurate estimate. (b) If we think an estimate is better, we probably mean it typically has less error. Based on (a), intuition suggests that a larger sample size corresponds to a smaller standard error.}
+(a) Would you rather use a small sample or a large sample when estimating a parameter? Why? (b) Using reasoning from (a), would you expect a point estimate based on a small sample to have smaller or larger standard error than a point estimate based on a larger sample?\footnote{(a) Prefer a large sample. Consider two random samples: one of size 10 and one of size 1000. Individual observations in the small sample are highly influential on the estimate while in larger samples these individual observations would more often average each other out. The larger sample would tend to provide a more accurate estimate. (b) If we think an estimate is better, we probably mean it typically has less error. Based on (a), intuition suggests that a larger sample size corresponds to a smaller standard error. In general the standard error for an estimate gets smaller as the samples get larger.}
 \end{exercise}
 
-The standard error could be calculated if statisticians knew the sampling distribution. It would simply be the standard deviation of that sampling distribution. However when considering the case of the point estimate $\bar{x}$, there is one problem: most often, scientists only observe one sample, and there is no obvious way to estimate its standard error from a single sample. Computation methods and statistical theory, instead, provide helpful tools to address this issue. 
+The standard error could be calculated if statisticians knew the exact sampling distribution. It would simply be the standard deviation of that sampling distribution.  However when considering the case of the point estimate $\bar{x}$, there is one problem: most often, scientists only observe one sample, and there is no obvious way to estimate the standard error from a single sample. Computation methods and statistical theory, instead, provide helpful tools to address this issue. 
 
-Instead of only observing one sample from \data{BRFSS}, imagine if we could repeatedly sample from \data{BRFSS} as with creating the approximation to the sampling distribution. After many iterations, the standard deviation of the sample means becomes a fairly reasonable estimate of the standard error of the sample mean. In pseudocode: 
+Instead of only observing one sample from \data{BRFSS}, imagine the possibility of repeatedly sampling from \data{BRFSS} \footnote{just like creating the approximation to the sampling distribution}. While scientists do not have the exact sampling distribution,they do have the ability to calculate an approximate standard error. After many iterations, the standard deviation of the many sample means calculated becomes a fairly reasonable estimate of the standard error of the sample mean. In pseudocode: 
 \begin{verbatim}
 (1) Have a place to store all the sample means that we will calculate
 (2) Take a sample from the BRFSS dataset of 40,000
 (3) Calculate the sample mean from this specific sample and store it in (1)
 (4) Repeat (2) and (3) many many times 
 (5) Calculate the standard deviation of the values in (1). This is an 
-	estimation of your standard error
+	estimation of the standard error of the sample mean.
 \end{verbatim}
 
-Again what we are doing in $R$ is creating an approximate sampling distribution and then using the standard deviation from this approximation to be our estimate for the standard error. We do this with the following code:\footnote{This computing experience samples without replacement to simulate experimenting in the real world. Theory states however that individual BMI values need to be independent. A reliable method to ensure sample observations are independent is to guarantee that the sample from the population is a simple random sample with a size that is less than 10\% of the population. This 10\% rule, remember, is used as a rule of thumb. By sampling without replacement within a finite population, we will see that \var{sd(sample.means)} is not exactly the theoretical standard error but quite close.}
+The algorithm above can be implemented in $R$. The $R$ code first creates an approximate sampling distribution and then uses the standard deviation from the approximation to be the estimate for the standard error. The $R$ code is as follows:\footnote{This computing experience samples without replacement to simulate experimenting in the real world. Theory states however that individual BMI values need to be independent. A reliable method to ensure independence is to do a simple random sample from the population that is less than 10\% of the population. This 10\% rule, however, is used as a rule of thumb. By sampling without replacement within a finite population,\var{sd(sample.means)} is not exactly the theoretical standard error but quite close.}
 \begin{verbatim}
 > sample.means<-matrix(data=NA,nrow=1000, ncol=1) #to store the sample means
-> for(i in 1:1000){
+> for(i in 1:1000){ #do 1,000 iterations
 +   sample<-sample(x=brfss.df$bmi, size=40000, replace=FALSE)
 +   sample.means[i]<-mean(sample)
 + }
 > sd(sample.means)
 [1] 0.02359317 
 \end{verbatim}
-
-%While we do not have the exact sampling distribution, we do have the ability to calculate an approximate standard error. 
 
 This method, however, has one main issue. Practitioners rarely are able to repeatedly sample from the larger population. Instead the standard error of the sample mean can be calculated through the following equation: 
 
@@ -265,31 +269,31 @@ SE_{\text{ sample mean}} = \frac{\sigma}{\sqrt{n}}
 \label{seOfXBar}
 \end{eqnarray}\vspace{-3mm}%
 
-A reliable method to ensure sample observations are independent is to guarantee that the sample you have from the population is a simple random sample with a size that is less than 10\% of the population.\index{standard error!single mean}
+A reliable method to ensure sample observations are independent is to guarantee that the sample from the population is a simple random sample with a size that is less than 10\% of the population.\index{standard error!single mean}
 }
 \end{termBox}
 
-There is one subtle issue of Equation~(\ref{seOfXBar}) that you might have realized: the population standard deviation is typically unknown. To resolve this problem, we can use the point estimate of the population standard deviation from the sample collected. This estimate tends to be sufficiently good when the sample size is at least 30 and the population distribution is not strongly skewed. Thus, we often just use the sample standard deviation denoted $s$ instead of~$\sigma$ for the population standard deviation. When the sample size is smaller than 30, we will need to use a method to account for extra uncertainty in the standard error. If the skew condition is not met, a larger sample is needed to compensate for the extra skew. These topics are further discussed in Section~\ref{cltSection}. 
+There is one subtle issue of Equation~(\ref{seOfXBar}): the population standard deviation is typically unknown. To resolve this problem, Section \ref{pointEstimates} suggests that the "best guess" for the population standard deviation can be used as a substitute. The point estimate of the population standard deviation can be used from an observed sample as a replacement instead. This estimate tends to be sufficiently good when the sample size is at least 30 and the population distribution is not strongly skewed. Thus, the sample standard deviation denoted $s$ is generally used more instead of the population standard deviation ~$\sigma$ in Equation \ref{seOfXBar}. When the sample size is smaller than 30, an additional method to account for extra uncertainty in the standard error needs to be used. If the skew condition is not met, a larger sample is needed to compensate for the extra skew. These topics are further discussed in Section~\ref{cltSection}. 
 
 With the \data{BRFSS BMI} sample of 40,000, the standard error of the sample mean is calculated as
 
 \begin{eqnarray*}
 SE_{\bar{x}} = \frac{s}{\sqrt{n}} = \frac{5.288}{\sqrt{40000}} =  0.026
 \end{eqnarray*}
-where $s$ is the standard deviation of the sample and $n$ is the number of observations in the sample. We see that the standard error calculated $(0.026)$ is similar to the empirical standard deviation of the sampling distribution $(0.024)$. 
+where $s$ is the standard deviation of the sample and $n$ is the number of observations in the sample. We see that the standard error calculated $(0.026)$ is similar to the empirical standard deviation of the sampling distribution that was calculated above $(0.024)$. 
 
 \begin{exercise}
-In another sample of 40,000 US adults, the standard deviation of BMI is $s_y = 5.34$. Because the sample is a simple random sample and consists of less than 10\% of the United States population, the observations are independent. (a)~What is the standard error of the sample mean, $\bar{y}=26.36$? (b)~Would you be surprised if someone told you the average BMI of all US adults was actually 30? What about 26? \footnote{(a) Use Equation~(\ref{seOfXBar}) with the sample standard deviation to compute the standard error: $SE_{\bar{y}} = 5.34/\sqrt{40000} =  0.0267$. (b) It would be surprising if the true average BMI was 30. A BMI of 30 is many many standard deviations away from the sample mean of 26.36. In other words, a BMI of 30 seems implausible given that our sample mean (26.36) is far from the "true mean" of 30 using the standard error of 0.0267 to identify what is close and what is not close. Even a BMI of 26 in this situation would be surprising given that is it more than one standard deviation (standard error of 0.0267) away from the sample mean.}
+In another sample of 40,000 US adults, the standard deviation of BMI is $s_\mathrm{bmi} = 5.34$. Because the sample is a simple random sample and consists of less than 10\% of the United States population, the observations are independent. (a)~What is the standard error of the sample mean, $\bar{bmi}=26.36$? (b)~Would you be surprised if someone told you the average BMI of all US adults was actually 30? What about 26? \footnote{(a) Use Equation~(\ref{seOfXBar}) with the sample standard deviation to compute the standard error: $SE_{\bar{\mathrm{bmi}}} = 5.34/\sqrt{40000} =  0.0267$. (b) It would be surprising if the average BMI of the US population was 30. A BMI of 30 is many many standard deviations away from the sample mean of 26.36. In other words, a BMI of 30 seems implausible given that our sample mean (26.36) is far from the population mean of 30 using the standard error of 0.0267 to identify what is close and what is not close. Even a BMI of 26 in this situation would be surprising given that the sample mean is more than one standard deviation (standard error of 0.0267) away from the population mean.}
 \end{exercise}
 
 
 \begin{exercise}
-(a) Would you be more trusting of a sample that has 100 observations or 400 observations? (b) We want to show mathematically that our estimate tends to be better when the sample size is larger. If the standard deviation of the individual observations is 10, what is our estimate of the standard error when the sample size is 100? What about when it is 400? (c) Explain how your answer to (b) mathematically justifies your intuition in part~(a).\footnote{(a) Look back to Section ~\ref{accuracyAndPrecision} on accuracy and precision. Extra observations are usually helpful in understanding the population, so a point estimate with 400 observations seems more trustworthy. (b) The standard error when the sample size is 100 is given by $SE_{100} = 10/\sqrt{100} = 1$. For 400: $SE_{400} = 10/\sqrt{400} = 0.5$. The larger sample has a smaller standard error. (c) The standard error of the sample with 400 observations is lower than that of the sample with 100 observations. The standard error describes the typical error, and since it is lower for the larger sample, this mathematically shows the estimate from the larger sample tends to be more trustworthy -- though it does not guarantee that every large sample will provide a better estimate than a particular small sample.}
+(a) As review, should you be more trusting of a sample that has 100 observations or 400 observations? (b) We want to show mathematically that estimates tends to be better when the sample size is larger. If the standard deviation of the individual observations is 10, what is the estimate of the standard error when the sample size is 100? What about when it is 400? (c) Explain how your answer to (b) mathematically justifies your intuition in part~(a).\footnote{(a) Look back to Section ~\ref{accuracyAndPrecision} on accuracy and precision. Extra observations are usually helpful in understanding the population, so a point estimate with 400 observations seems more trustworthy. (b) The standard error when the sample size is 100 is given by $SE_{100} = 10/\sqrt{100} = 1$. For 400: $SE_{400} = 10/\sqrt{400} = 0.5$. The larger sample has a smaller standard error. Therefore the sample mean with the large sample size will generally be closer to the population sample mean than the sample mean with $n=100$. (c) The standard error of the sample with 400 observations is lower than that of the sample with 100 observations. The standard error describes the typical error, and since it is lower for the larger sample, this mathematically shows the estimate from the larger sample tends to be more trustworthy (smaller standard error) -- though it does not guarantee that every large sample will provide a better estimate than a particular small sample.}
 \end{exercise}
 
 \subsection{Basic properties of point estimates}
 
-We achieved three goals in this section. First, we determined that point estimates from a sample may be used to estimate population parameters. We also determined that these point estimates are not exact, and there exists some sampling variation. The sample mean is an example of a point estimate that is always accurate but not necessarily always precise. The precision of a point estimate can be represented through sampling variation and visualized through a sampling distribution, and the point estimate that we observe is a single observation in the estimate's sampling distribution. Lastly, we quantified this sampling variation and the uncertainty of the sample mean using what we call the standard error. The standard error of the sample mean can be mathematically represented in Equation~\eqref{seOfXBar} or through computation using $R$. While we could also quantify the standard error for other estimates -- such as the median, standard deviation, or any other number of statistics -- we will postpone these extensions until later chapters and courses.
+Three goals were achieved in this section. First, point estimates from a sample were may be used to estimate population parameters. These point estimates also are not exact, and there exists some sampling variation. The sample mean is an example of a point estimate that is always accurate but not necessarily always precise. The precision of a point estimate can be represented through sampling variation and visualized through a sampling distribution. The point estimate that is observe is a single observation in the estimate's sampling distribution. Lastly, sampling variation and the uncertainty of the sample mean can be quantified using the standard error. The standard error of the sample mean can be mathematically represented in Equation~\eqref{seOfXBar} or approximately calculated through computation in $R$. While the standard error for other estimates -- such as the median, standard deviation, or any other number of statistics -- can also be quantified, these extensions will be postponed until later chapters and courses.
 
 \index{point estimate)}
 
@@ -299,51 +303,53 @@ We achieved three goals in this section. First, we determined that point estimat
 
 \index{confidence interval|(}
 
-A point estimate, we saw in Section~\ref{pointEstimates} provides a single plausible value for a parameter. However, a point estimate is rarely perfect and exact; usually there is some error in the estimate. We know that there exists sampling variation but a single point estimate does not convey how large this sampling variation is without including the point estimate's standard error. Instead of supplying just a point estimate, the next logical step would be to provide a plausible \emph{range of values} to estimate the true value of the parameter.
+A point estimate from Section~\ref{pointEstimates} provides a single plausible value for a parameter. However, a point estimate is rarely perfect and exact; usually there is some error in the estimate. Section~\ref{pointEstimates} shows there exists sampling variation but a single point estimate does not convey how large this sampling variation is without including the point estimate's standard error as well. Instead of supplying a point estimate and standard error separately, the next logical step would be to provide a plausible \emph{range of values} to estimate the true value of the parameter.
 
-In this section and in Section~\ref{hypothesisTesting}, we will emphasize the special case where the point estimate is a sample mean and the parameter that we are interested in is the population mean. In Section~\ref{aFrameworkForInference}, we generalize these methods for a variety of point estimates and population parameters that we will encounter in Chapter~\ref{inferenceForNumericalData} and beyond.
+This section and Section~\ref{hypothesisTesting} will emphasize the special case where the point estimate is a sample mean and the parameter of interest is the population mean. Section~\ref{aFrameworkForInference} generalizes these methods for a variety of point estimates and population parameters that will be encounter in Chapter~\ref{inferenceForNumericalData} and beyond.
 
 \subsection{Capturing the population parameter}
 
 A plausible range of values for the population parameter is called a \term{confidence interval}. The width of an interval provides a gauge of how large the sampling variation is. For the same confidence level, the larger the interval indicates the larger sampling variation and standard error.
 
-Using only a point estimate is like fishing in a murky lake with a spear, and using a confidence interval is like fishing in the same lake with a net. We can throw a spear where we see fish, but we will probably miss. On the other hand, if we toss a net in that area, we have a good chance of catching the fish.
+Using only a point estimate is like fishing in a murky lake with a spear, and using a confidence interval is like fishing in the same lake with a net. Throwing a spear where fishermen see fish, they will probably miss. On the other hand, if fishermen toss a net in that area, they have a good chance of catching the fish.
 
-If we report a point estimate, we probably will not hit the exact population parameter. There is likely to be some error associated with this estimate. On the other hand, if we report a range of plausible values -- a confidence interval -- we have a good shot at capturing the parameter within our range. As with fishing, the goal of the confidence interval is to include the population parameter within it. 
+Similarly if a point estimate is reported, the exact population parameter will probably not be hit. There is likely to be error associated with this estimate. On the other hand, if a range of plausible values is reported -- a confidence interval -- it becomes more likely that the parameter is captured within the range. As with fishing, the goal of the confidence interval is to include the population parameter within it. 
 
 \begin{exercise}
-If we want to be very certain we capture the population parameter, should we use a wider interval or a smaller interval?\footnote{If we want to be more certain we will capture the fish, we might use a wider net. Likewise, we use a wider confidence interval if we want to be more certain that we capture the parameter. The more values we include in our range, the more likely it is that this range contains the true value since the interval contains simply \emph{more} values. However just capturing the parameter with the widest interval is not always the best when constructing a confidence interval. We can always capture the parameter with an interval going from $-\infty$ to $+\infty$ but does range does not increase our understanding of the population parameter.}
+If we want to be very certain we capture the population parameter, should we use a wider interval or a smaller interval?\footnote{If we want to be more certain when capturing a fish, we might use a wider net. Likewise, we use a wider confidence interval if we want to be more certain that we capture the parameter. The more values included in the range, the more likely it is that this range contains the true value. The interval contains simply \emph{more} values. However capturing the parameter is not always the only goal when constructing a confidence interval. The parameter will always be captured with the widest interval going from $-\infty$ to $+\infty$ but this range does not increase understanding of the population parameter. } 
 \end{exercise}
 \begin{exercise}
-Suppose we have a confidence interval that is 10 units wide and that we are 50\% confident that the range encompasses the population parameter. If we had another interval that was instead 5 units wide centered at the same value as our original interval, are we now more or less confident than 50\% that the range will include the population parameter? \footnote{We are less confident than 50\% that the smaller interval includes the population parameter simply because it is smaller and contains fewer values. Using a smaller net, we are less confident that we have captured the true value.}
+Suppose a confidence interval is 10 units wide and we are 50\% confident that the range encompasses the population parameter. If another interval was instead 5 units wide centered at the same value as the original interval, are we now more or less confident than 50\% that the range will include the population parameter? \footnote{We are less than 50\% confident that the smaller interval includes the population parameter. Using a smaller net with fewer values, we are less confident that the population parameter is captured.}
 \end{exercise}
 
 \subsection{Confidence levels}
+\label{confidenceLevels}
 
-The size of our fishing net depends on how confident we want to be in catching a fish. Similarly, the size or width of our confidence intervals depends on how confident we want to be in estimating the true value of the parameter in question. Before we even jump into the calculation of the confidence interval itself, let's first understand what it means to be "confident." 
+The size of a fishing net depends on how confident fishermen want to be in catching a fish. Similarly, the size or width of a confidence intervals depends on how confident scientists want to be in estimating the true value of the parameter in question. Before jumping into the calculation of the confidence interval itself, the term "confident" needs to be first understood. 
 
-Before scientists embark on most inference processes, they first much choose a confidence level. For a confidence interval, the confidence level is a percent that affects how wide the interval you calculate is. Confidence levels, in general, are associated with a level of uncertainty and how much you are allowing your test to commit a Type I Error or a false positive. Section~\ref{DecisionErrors} goes into more depth on Type 1 and Type 2 Errors. 
+Before scientists embark on most inference processes, they first much choose a confidence level. For a confidence interval, the confidence level is a percent that affects how wide the interval is. Confidence levels, in general, are associated with a level of uncertainty and how much a confidence interval or hypothesis test is allowed to commit a Type I Error or a false positive. Section~\ref{DecisionErrors} goes into more depth on Type 1 and Type 2 Errors. 
 
-For example if you wanted to say that we are 75\% confident that the population mean BMI is between two values, 75\% would be our measure of uncertainty and 25\% would be the probability of committing a Type 1 Error. In the context of confidence intervals, there is a 25\% chance that the confidence interval does not include the population parameter when in fact, it should. The Type I error is also known as $\alpha$.  
+For example if the CDC says that they are 75\% confident that the population mean BMI is between two values, 75\% would be the measure of uncertainty and 25\% would be the probability of committing a Type 1 Error. In the context of confidence intervals, there is a 25\% chance that the confidence interval does not include the population parameter when in fact, it should. The Type I error is also known as $\alpha$.  
 
 \begin{example}{Consider extreme confidence levels. What are the implications of a 100\% confidence level confidence interval? How about a 0.001\% confidence level?} \label{extremeConfidenceLevels}
-A 100\% confidence level is equivalent to $\alpha = 0\%$. The confidence interval we create will \emph{always} capture the population parameter. Therefore in order to guarantee this, the confidence interval will be $[-\infty, \infty]$ . Consider a confidence level of 0.001\%. This extremely low confidence level results in a very high Type 1 Error. In many cases when building a 0.001\% confidence interval, the confidence interval will not capture the population parameter. Therefore we can foresee this interval being extremely narrow. 
+A 100\% confidence level is equivalent to $\alpha = 0\%$. The confidence interval created will \emph{always} capture the population parameter. Therefore in order to guarantee this, the confidence interval will be $[-\infty, \infty]$ . Consider a confidence level of 0.001\%. This extremely low confidence level results in a very high Type 1 Error. In many cases when building a 0.001\% confidence interval, the confidence interval will not capture the population parameter. Therefore this interval is expected to be extremely narrow. 
 \end{example}
 
-Statisticians generally use a confidence level of 95\% per tradition but Section ~\ref{significanceLevel} demonstrates that any confidence level is allowed given varying inference goals in mind. But what does "95\% confident" truly mean? Suppose we took many samples and built a confidence interval based on each sample. Then to be 95\% confident, we would see approximately 95\% of those intervals would contain the actual mean, the population parameter, $\mu$. In this case, if we took 100 independent samples and built 100 confidence intervals, 95 of these confidence intervals would contain the average US BMI and 5 of these would not.
+Statisticians generally use a confidence level of 95\% per tradition but Section ~\ref{significanceLevel} demonstrates that any confidence level is allowed keeping inference goals in mind. But what does "95\% confident" truly mean? Suppose many samples were drawn and confidence intervals were built based on each sample. Then to be 95\% confident, approximately 95\% of those intervals would contain the actual mean, the population parameter, $\mu$. In the case with BMI, if the CDC took 100 independent samples and built 100 confidence intervals, 95 of these confidence intervals would contain the average US BMI and 5 of these would not.
 
-Figure~\ref{95PercentConfidenceInterval} shows this process with 25 samples, where 24 of the resulting confidence intervals contain the average BMI for the population and one does not.
+Figure~\ref{95PercentConfidenceInterval} shows this process with 25 samples randomly drawn, where 24 of the resulting confidence intervals contain the average BMI for the population and one does not. 
 
 \begin{figure}[hht]
    \centering
-   \includegraphics[width=0.75\textwidth]{ch_inference_foundations_oi_biostat/figures/95PercentConfidenceInterval/95PercentConfidenceInterval}
+   \includegraphics[width=\textwidth]{ch_inference_foundations_oi_biostat/figures/95PercentConfidenceInterval/95PercentConfidenceInterval}
    \caption{Twenty-five samples of size $n=100$ were taken from the \data{BRFSS} data set. For each sample, a confidence interval was created to try to capture the average BMI for the population. Only~1 of these~25 intervals did not capture the true mean.}
    \label{95PercentConfidenceInterval}
 \end{figure}
 
 \subsection{Confidence intervals through computation}
+\label{confidenceIntervalsComputation}
 
-Figure~\ref{95PercentConfidenceInterval} should give you inspiration on how to achieve an estimate of a 95\% confidence interval through computation. Our goal, again, is to find a range of values that hopefully contains the population parameter. If we have the ability to independently resample from our population, the natural method to estimate a confidence interval is through the sampling distribution like in Figure~\ref{brfssBMISamplingDistribution}. We observed there that the mean of the sampling distribution was extremely close to the mean of the population we were sampling from. Thus a reasonable estimation for a 95\% confidence interval would be to take the middle 95\% of the sampling distribution. Below we have pseudocode that implements this procedure \footnote{This highly resembles the pseudocode for approximating a sampling distribution from Section ~\ref{seOfTheMean}}
+Figure~\ref{95PercentConfidenceInterval} should give inspiration on how to achieve an estimate of a 95\% confidence interval through computation. The goal, again, is to find a range of values that hopefully contains the population parameter. The natural method to estimate a confidence interval is through the sampling distribution from Figure~\ref{brfssBMISamplingDistribution} if independently resampling from the population is feasible. The mean of the sampling distribution was shown to be extremely close to the mean of the population, and thus a reasonable estimation for a 95\% confidence interval would be to take the middle 95\% of the sampling distribution. Below is pseudocode that implements this procedure using samples of size 40,000 \footnote{This highly resembles the pseudocode for approximating a sampling distribution from Section ~\ref{seOfTheMean}}
 \begin{verbatim}
 (1) Have a place to store all the sample means that we will calculate
 (2) Take a sample from the BRFSS dataset of 40,000
@@ -352,48 +358,52 @@ Figure~\ref{95PercentConfidenceInterval} should give you inspiration on how to a
 (5) Use the middle 95% of values as the 95% confidence interval. 
 \end{verbatim}
 
-We can build off the method of approximation the sampling distribution to compute a 95\% confidence interval. Instead of plotting the values of the sample means (stored as \var{sample.means} within the $R$ code) to create the sampling distribution, we can find the values to get the middle 95\% of sample means.  
+Instead of plotting the values of the sample means (stored as \var{sample.means} within the $R$ code) to create the sampling distribution, the 95\% confidence interval is just the middle 95\% of all sample means calculated. 
 
-The confidence interval itself is the BMI value  $c_1$ such that 2.5\% of the \var{sample.mean} values is below $c_1$ and another BMI value $c_2$ such that 2.5\% of the distribution values is greater than $c_2$. In order to find these values, recall from the distributions unit ~\ref{distributions} that we need to use the \var{quantile()} function in $R$. Particularly using \var{sample.means} as the vector that that stores the sample means. 
+The confidence interval itself is the BMI value  $c_1$ such that 2.5\% of the \var{sample.mean} values is below $c_1$ and another BMI value $c_2$ such that 2.5\% of the distribution values is greater than $c_2$. In order to find these values, recall from the distributions unit ~\ref{distributions} that we need to use the \var{quantile()} function in $R$. Particularly use the \var{quantil()} function on \var{sample.means}, the vector that that stores the sample means. 
 \begin{verbatim}
 confidence.interval<-quantile(x=sample.means,c(0.025,0.975))
 > confidence.interval
     2.5%    97.5% 
 26.30493 26.39697 
 \end{verbatim}
-We see that the interval (26.30,26.40) is an estimation for a 95\% confidence interval using the sampling distribution of sample means. Therefore we can say that we are 95\% confident that the population mean BMI is between 26.30 and 26.40. Similarly we can also say that after calculating many confidence intervals from many different observed samples, 95\% of all the confidence intervals that we calculated will contain the population mean. 
+The interval (26.30,26.40) is an estimation for a 95\% confidence interval using the sampling distribution of sample means. Scientists at the CDC can say that they are 95\% confident that the population mean BMI is between 26.30 and 26.40. Similarly after calculating many confidence intervals from many different observed samples, 95\% of all the confidence intervals that were calculated will contain the population mean. 
 
 \begin{exercise}
-Say we were interested in creating a 90\% confidence interval and a 50\% confidence interval. (a) how do you think the widths of the confidence intervals would compare? (b) How would we use the \var{quantile()} function to find the 90\% and 50\% confidence intervals from using the array \var{sample.means}?
- \footnote{(a) We would expect the 50\% confidence interval would have the smaller width. In general the more confident we are, the larger the confidence interval width will be.(b) Remember we want the middle percent of observed sample means. Therefore for the 90\% confidence interval using \var{sample.means} again to store the sample means, the $R$ code would be \var{quantile(x=sample.means,c(0.05,0.95))}. For a 50\% confidence interval, the code would be \var{quantile(x=sample.means,c(0.25,0.75))}}
+Say the CDC was interested in creating a 90\% confidence interval and a 50\% confidence interval. (a) how do the widths of the confidence intervals would compare? (b) How would the \var{quantile()} function be used to find the 90\% and 50\% confidence intervals from using the array \var{sample.means}?
+ \footnote{(a) The 50\% confidence interval would be expected to have the smaller width. In general the more confident people are, the larger the confidence interval width will be.(b) Remember to grab the middle percent of observed sample means. Therefore using \var{sample.means}, the $R$ code for calculating a 90\% confidence interval  would be \var{quantile(x=sample.means,c(0.05,0.95))}. For a 50\% confidence interval, the code would be \var{quantile(x=sample.means,c(0.25,0.75))}}
 \end{exercise}
 
 \subsection{Calculating an approximate 95\% confidence interval}
-Computing the confidence interval from resampling is straightforward and serves as a great estimate for any confidence interval for the population. However we ask ourselves, is this realistic beyond simulation? In general do we have the ability to resample the US population independently 100,000 times? Generally no. Most times we cannot observe 100,000 sample means of BMI values let alone 100,000 complete samples from the US population. More often than not, researchers only view 1 sample and thus calculate only 1 sample mean. How then do we calculate a confidence level from only observing one sample mean? 
+\label{calculate95confidence}
 
-We see from the computation in Section ~\ref{seOfTheMean} and Figure ~\ref{brfssBMISamplingDistribution} that the sampling distribution is centered around the population mean and that a confidence interval is derived from that sampling distribution. Therefore it becomes intuitive to build the confidence interval around the observed sample mean  as the point estimate is the most plausible value for the population parameter. The width of the interval should encompass the confidence level as well as the uncertainty associated with the point estimate. The standard error becomes a natural measurement of uncertainty for building the interval.  
+Computing the confidence interval from resampling is straightforward and serves as a great estimate for any confidence interval for the population. However, is this realistic beyond simulation? In general do scientists have the ability to resample the US population independently 100,000 times? Generally no. Most times people can't observe 100,000 sample means of BMI values let alone 100,000 complete samples from the US population. More often than not, researchers only view 1 sample and thus calculate only 1 sample mean. How then are confidence intervals calculated from only observing one sample mean? 
 
-Roughly 95\% of the time, the estimate that is observed from resampling will be within approximately 2 standard errors\footnote{1.96 to be more precise if the sampling distribution resembles a Normal Distribution. Details coming up in Section ~\ref{sampdistmean}} of the population parameter. Therefore we can create a 95\% confidence interval that is 2 standard errors from the point estimate on either side of the sample mean. We then can be roughly \term{95\% confident} that we have captured the population parameter with the confidence interval calculated by Equation ~\ref{95PercentConfidenceIntervalFormula} from the sample that we observe:
+The confidence interval can be completely defined by two attributes: its center and its width. A confidence interval from previous computation is derived from a sampling distribution and ideally should be centered at the population parameter. However only observing one sample, it becomes intuitive to build the confidence interval around the observed sample mean. 
+  
+The width of the interval should encompass the confidence level, in this case 95\%, as well as the uncertainty associated with the point estimate. Recall from Section \ref{seOfTheMean} the definition standard error, and thus it becomes a natural measurement of uncertainty for building the interval.  
+
+Roughly 95\% of the time, the estimate that is observed from resampling will be within approximately 2 standard errors\footnote{1.96 to be more precise if the sampling distribution resembles a Normal Distribution. Details coming up in Section ~\ref{sampdistmean}} of the population parameter. Therefore the 95\% confidence interval is 2 standard errors wide on either side of the sample mean. Equation ~\ref{95PercentConfidenceIntervalFormula} allows scientists to be roughly \term{95\% confident} that the confidence interval has captured the population parameter from the sample observed:
 \begin{eqnarray}
 \text{point estimate}\ \pm\ 2 \times SE \footnote{95\% confidence corresponds closer to 1.96 standard errors away} 
 \label{95PercentConfidenceIntervalFormula}
 \end{eqnarray}
-Using the BMI sample from ~\ref{seOfTheMean} with an observed sample mean of 26.36 and sample standard deviation of 5.29, we calculate  the 95\% confidence interval. 
+Using the BMI sample from ~\ref{seOfTheMean} with an observed sample mean of 26.36 and sample standard deviation of 5.29, the 95\% confidence interval is calculated. 
 \begin{align*}
 \text{point estimate}\ &\pm\ 2 \times SE\\
 26.36 &\pm 2\times \frac{5.29}{\sqrt{40000}}\\
 26.36 &\pm  0.053\\
 (26.31 &, 26.41)
 \end{align*}
-While not exact, we see that the confidence interval simulated through $R$  achieves a very similar confidence interval as the one above through calculation. The difference is due to randomness within the samples since both the point estimate and the standard error vary among samples.
+While not exact, the confidence interval simulated through $R$  achieves a very similar confidence interval as the one through calculation. The difference is due to randomness within the samples observed.
 \begin{exercise}
-In Figure~\ref{95PercentConfidenceInterval}, one interval does not contain a BMI value of 26.36. Does this imply that the average population BMI cannot be 26.36? \footnote{Just as some observations occur more than 2 standard deviations from the mean, some point estimates will be more than 2 standard errors from the parameter. A confidence interval only provides a plausible range of values for a parameter. While we might say other values are implausible based on the data, this does not mean they are absolutely impossible.}
+In Figure~\ref{95PercentConfidenceInterval}, one interval does not contain a BMI value of 26.36. Does this imply that the average population BMI cannot be 26.36? \footnote{Just as some observations occur more than 2 standard deviations from the mean, some point estimates will be more than 2 standard errors from the parameter. A confidence interval only provides a plausible range of values for a parameter. While other values are implausible based on the data, this does not mean they are absolutely impossible.}
 \end{exercise}
 
-We forewarn that "about 95\% of observations are within 2 standard deviations of the mean" is only approximately true. This rule of thumb holds very well for the normal distribution. As we will soon see in Section ~\ref{cltSection}, the sample mean tends to be normally distributed when the sample size is sufficiently large. 
+The statement "about 95\% of observations are within 2 standard deviations of the mean" is only approximately true. This rule of thumb holds very well for the normal distribution. As Section ~\ref{cltSection} soon shows, the sample mean tends to be normally distributed when the sample size is sufficiently large. 
 
-\begin{example}{We are curious about how the average heights of men and women differ and create 95\% confidence intervals for the average male height and the average female height. The \data{BRFSS BMI} data can be divided using the \var{sex} variable. Among the 40,000 individuals within the \data{BRFSS BMI}, there are 16,843 men and 23,157 women. The average male height is 70.22 inches and the average female height is 64.38. The sample standard deviations for males and females  are 3.00 and 2.80 respectively. What are the 95\% confidence intervals for the average male and female height in the US? }\label{CIforGenderHeight}
-We calculate both 95\% confidence intervals using the formula \[\text{point estimate}\ \pm\ 2 \times SE\] using the information given above: 
+\begin{example}{The CDC is also curious about how the average heights of men and women differ and create 95\% confidence intervals for the average male height and the average female height. The \data{BRFSS BMI} data can be divided using the \var{sex} variable. Among the 40,000 individuals within the \data{BRFSS BMI}, there are 16,843 men and 23,157 women. The average male height is 70.22 inches and the average female height is 64.38. The sample standard deviations for males and females  are 3.00 and 2.80 respectively. What are the 95\% confidence intervals for the average male and female height in the US? }\label{CIforGenderHeight}
+Both 95\% confidence intervals are calculated using the formula \[\text{point estimate}\ \pm\ 2 \times SE\] and the information given above: 
 \begin{align*}
 \text{men: point estimate}\ &\pm\ 2 \times SE\\
 70.22 &\pm 2\times \frac{3.00}{\sqrt{16843}}\\
@@ -406,18 +416,19 @@ We calculate both 95\% confidence intervals using the formula \[\text{point esti
 64.38 &\pm  0.04\\
 (64.34 &, 64.42)
 \end{align*}
-The confidence intervals for average height by gender are different. With different centers and different widths, the underlying distributions for male and female heights are different. \end{example}
+With different centers and different widths, the confidence intervals for average height by gender are different.  
+\end{example}
 
-The creation of the 95\% confidence interval depends on the center and the standard error. In Section ~\ref{changingTheConfidenceLevelSection}, we will see how the multiplier changes beyond 2 standard deviations as confidence levels change. 
+The creation of the 95\% confidence interval depends on the center and the standard error. In Section ~\ref{changingTheConfidenceLevelSection}, we will see how the multiplier changes beyond 2 standard errors as confidence levels change. 
 
 \begin{exercise} \label{95CIExerciseForBRFSSAge}
-The sample data \data{BRFSS BMI} suggest the average adult's age is about 46.64 years with a standard error of 0.09 years (estimated using the sample standard deviation, 17.35). What is an approximate 95\% confidence interval for the average age of US adults?\footnote{Again apply Equation~(\ref{95PercentConfidenceIntervalFormula}): $46.64 \ \pm \ 2\times 0.09 \rightarrow (46.46, 46.82)$. We interpret this interval as follows: We are about 95\% confident the average age of US adults was between 46.46 and 46.82 years. Looking at the entire dataset \data{BRFSS} that represents the US population more closely (normally we do not have this luxury!) we see that the average age is 46.72 which is indeed within our confidence interval.}
+The sample data \data{BRFSS BMI} suggests the average adult's age is about 46.64 years with a standard error of 0.09 years (estimated using the sample standard deviation, 17.35). What is an approximate 95\% confidence interval for the average age of US adults?\footnote{Again apply Equation~(\ref{95PercentConfidenceIntervalFormula}): $46.64 \ \pm \ 2\times 0.09 \rightarrow (46.46, 46.82)$. The interpretation of the interval is, "We are about 95\% confident the average age of US adults is between 46.46 and 46.82 years." Looking at the entire \data{BRFSS} dataset that the \data{BRFSS BMI} sample is drawn from (normally we do not have this luxury!), the average age is 46.72 which is indeed within the confidence interval just calculated.}
 \end{exercise}
 
 \subsection{The sample size for a sampling distribution}
 \label{sampdistmean}
 
-In Section~\ref{seOfTheMean}, we introduced a sampling distribution for $\bar{x}$, the average BMI value for samples of size 5 and 50. We examined this distribution earlier in Figure~\ref{brfssBMISamplingDistribution}. We see with larger sample sizes like $n=40,000$, the sampling variation decreases significantly than if $n=5$ or $n=50$. In Figure ~\ref{sampleMeanPrecision}, the sampling distribution for $n=5$ was slightly skewed but the sampling distribution for $n=50$ looks more symmetric. We show in Figure \~ref{sampDistNormal} a histogram of the sample means for 100,000 different random samples of size $n=50$ with a normal probability plot of those sample means. 
+In Section~\ref{seOfTheMean}, a sampling distribution for $\bar{\mathrm{bmi}}$, the average BMI value for samples of size 5 and 50, was introduced in Figure~\ref{brfssBMISamplingDistribution}. With larger sample sizes like $n=40,000$, the sampling variation decreases significantly than with $n=5$ or $n=50$. In Figure ~\ref{sampleMeanPrecision}, the sampling distribution for $n=5$ was slightly skewed but the sampling distribution for $n=50$ looks more symmetric. Figure \~ref{sampDistNormal} is a histogram of the sample means for 100,000 different random samples of size $n=50$ with a normal probability plot of those sample means. 
 
 \begin{figure}[hht]
    \centering
@@ -426,7 +437,7 @@ In Section~\ref{seOfTheMean}, we introduced a sampling distribution for $\bar{x}
    \label{sampDistNormal}
 \end{figure}
 
-Does this distribution look familiar (think back to Chapter 2 of probability distributions)? Hopefully so! The distribution of sample means closely resembles the normal distribution (see Section~\ref{normalDist}). A normal probability plot of these sample means is shown in the right panel of Figure~\ref{sampDistNormal}. Because all of the points closely fall around a straight line, we can conclude the distribution of sample means is nearly normal. This result can be explained by the Central Limit Theorem\footnote{A more formal definition coming soon.}.
+Does this distribution look familiar (think back to Chapter ~\ref{modeling} of probability distributions)? Hopefully so! The distribution of sample means closely resembles the normal distribution (see Section~\ref{normalDist}). A normal probability plot of these sample means is shown in the right panel of Figure~\ref{sampDistNormal}. The distribution of sample means is nearly normal because all of the points closely fall around a straight line. This result can be explained by the Central Limit Theorem\footnote{A more formal definition coming soon in ~\ref{cltSection}}.
 
 \begin{termBox}{\tBoxTitle{Central Limit Theorem, informal description}
 If a sample consists of at least 30 independent observations and the data are not strongly skewed, then the distribution of the sample mean is well approximated by a~normal model.\index{Central Limit Theorem}}
@@ -435,72 +446,68 @@ If a sample consists of at least 30 independent observations and the data are no
 \subsubsection{Why 30?}
 \label{why30}
 
-We introduce the Central Limit Theorem uses this cutoff at 30 in this text but this cutoff varies from book to book  As a quick exercise both in statistical exploration but also more practice in algorithmic thinking, think about how you would visually test if 30 independent observations is a sufficient number of observations to approximate the distribution to a normal model. Let's use the \data{BRFSS} data to sample from like before. 
+The Central Limit Theorem uses a cutoff at 30 in this text but can very from book to book. As a quick exercise in statistical exploration and algorithmic thinking, think about how one would visually test if 30 independent observations is a sufficient number of observations to approximate the distribution to a normal model.  The \data{BRFSS} data can be used to sample from like before. 
 
-Again remember we are testing if the normal model is a good approximation for the the sampling distribution with a sample size of 30. Creating a sampling distribution for sample sizes of $n=5,10,20,30$ and overlaying a normal approximation on the histogram is a great guide. \footnote{Use the same code for creating a sampling distribution but vary the sample size. Then use the code: 
+To determine if 30 observations is a sufficient number, other values below 30 should also be considered to see if the cutoff is truly around 30 observations. Creating a sampling distribution of the sample mean for sample sizes of $n=5,10,20,30$ and overlaying a normal approximation on the histogram is a great guide to see if the distribution is approximated by a normal model. \footnote{Use the same code for creating a sampling distribution but vary the sample size. Then use the code: 
 \var{hist(sample.means, freq=FALSE ) \\
 curve(dnorm(x,mean=mean(sample.means), sd=sqrt(var(sample.means))), add = TRUE)} where the function \var{curve()} adds the normal curve on top of the histogram.}
 
-In Figure ~\ref{cltThirty} we see the sampling distributions of the sample mean for sample sizes of 5, 10, 20 and 30. The curve on top is a normal density curve with the normal distribution $\mathcal{N}(\mu, \sigma)$ where $\mu$ is the mean of the sample means and $\sigma$ is the standard deviation of the sample means.
-FIX THISSSSSS
+Figure ~\ref{cltThirty} displays the sampling distributions of the sample mean for sample sizes of 5, 10, 20 and 30. The curve on top is a normal density curve with the normal distribution $\mathcal{N}(\mu, \sigma^2)$ where $\mu$ is the mean of the sample means and $\sigma$ is the standard deviation of the sample means.
+
 \begin{figure}[hht] 
    \centering
    \includegraphics[width=\textwidth]{ch_inference_foundations_oi_biostat/figures/clt30/clt30}
-     \label{cltThirty}
-   \caption{The sampling distribution of sample means with different sample sizes $n=5, 10, 20, 30$. With a normal density curve on top, we see that for $n=30$, a normal model is a fitting approximation confirming the Central Limit Theorem rule of thumb.}
+   \label{cltThirty}
+   \caption{The sampling distribution of sample means with different sample sizes $n=5, 10, 20, 30$. With a normal density curve on top, a normal model is begins to become a fitting approximation for  $n=30$, confirming the Central Limit Theorem rule of thumb.}
 \end{figure}
 
-We will apply this informal version of the Central Limit Theorem for now, and discuss its details further in Section~\ref{cltSection}.
+This section will consider this informal version of the Central Limit Theorem for now, and Section ~\ref{cltSection} will discuss further details. 
 
-The choice of using 2 standard errors in Equation~(\ref{95PercentConfidenceIntervalFormula}) was based on our general guideline that roughly 95\% of the time, observations are within two standard deviations of the mean. Under the normal model, with a sufficient number of samples ($n\geq 30$), we can make this more accurate by using 1.96 in place of  2.
+The choice of using 2 standard errors in Equation~(\ref{95PercentConfidenceIntervalFormula}) was based on the general guideline that roughly 95\% of the time, observations are within two standard deviations of the mean. Under the normal model, with a sufficient number of samples ($n\geq 30$), the equation can be more accurate by using 1.96 in place of 2.
 \begin{eqnarray}
 \text{point estimate}\ \pm\ 1.96\times SE
 \label{95PercentCIWhenUsingNormalModel}
 \end{eqnarray}
-If a point estimate, such as $\bar{x}$, is associated with a normal model with standard error $SE$, then we use this more precise 1.96 to create a  95\% confidence interval. 
+Use Equation ~\ref{95PercentCIWhenUsingNormalModel} to create a 95\% confidence interval if a point estimate, such as $\bar{x}$, is associated with a normal model with standard error $SE$.
 
 \subsection{Changing the confidence level}
 \label{changingTheConfidenceLevelSection}
 
 \index{confidence interval!confidence level|(}
-6 Changing the confidence level
-? Motivation: Sometimes your problem parameters don?t need you to be 95% confident. Sometimes (for
-example with life threatening tests) you need to be more confident. Solution: you can change your
-confidence level.
+Section ~\ref{confidenceLevels} foreshadowed confidence intervals using confidence levels beyond 95\% confident. Just as fishermen can fish with many different sizes of nets, scientists can create many different confidence intervals from the same sample by simply changing the confidence level. The CDC measuring the average BMI for US adults is a fairly low risk problem if the population parameter were measured incorrectly. Imagine instead the US Food and Drug Administration (FDA) was studying a drug's effects on children. The FDA might require evidence at the 99\% confidence level instead of simply the 95\% confidence level. Parameters that have life threatening implications or problems that are higher risk \footnote{In many cases generally, these are not the only factors that determine a confidence level. Factors like funding, logistics, the number of observations all are considered when choosing a confidence level} call for an increase in confidence level for both calculating confidence intervals and performing hypothesis tests. 
 
+Think back to the analogy about trying to catch a fish: if fishermen want to be more sure that they will catch the fish, they should use a wider net. To create a 99\% confidence level, scientists must also widen the 95\% interval. On the other hand, if they want an interval with lower confidence, such as 90\%, they could make the original 95\% interval slightly slimmer.
 
-
-We have only discussed confidence intervals at the 95\% confidence level. Some situations, however, require conclusions to be more than 95\% confident. Consider a test for diagonosing a deathly disease in which doctors need to be more accurate. Perhaps we would like a confidence level of 99\%. There are also some scenarios where the problem parameters only require you to be 90\%
-
-want to consider confidence intervals where the confidence level is somewhat higher than 95\%. Perhaps we would like a confidence level of 99\% or even lower like 90\%. Think back to the analogy about trying to catch a fish: if we want to be more sure that we will catch the fish, we should use a wider net. To create a 99\% confidence level, we must also widen our 95\% interval. On the other hand, if we want an interval with lower confidence, such as 90\%, we could make our original 95\% interval slightly slimmer.
-
-The 95\% confidence interval structure provides guidance in how to make intervals with new confidence levels. Below is a general 95\% confidence interval for a point estimate where the point estimate follows a nearly normal distribution.
+The 95\% confidence interval structure provides guidance on creating intervals with confidence levels beyond 95\%. Below is a general 95\% confidence interval for a point estimate where the point estimate follows a nearly normal distribution.
 \begin{eqnarray}
 \text{point estimate}\ \pm\ 1.96\times SE
 \end{eqnarray}
 
-There are three components to this interval: the point estimate, the ``1.96'', and the standard error.  The $1.96\times SE$ value affects the confidence interval width, and the point estimate affects where the confidence interval will be centered. Since we know from a normal distribution's Z-score that approximately 95\% of data that is normally distributed falls within 1.96 standard deviations of the mean, $1.96\times SE$ represents the width required to "capture that 95\%" of the sampling distribution as seen in Figure ~\ref{choosingZForCI}. 
- 
+Recall from Section \label{calculate95confidence} that a confidence interval is defined by its center and width. Changing the confidence level will not change the center of the interval since the point estimate is independent of confidence level. The width, however, of a 95\% confidence interval, $1.96\times SE$, represents the width required to "capture 95\%" of the sampling distribution as seen in Figure ~\ref{choosingZForCI} for data that is approximately normally distributed. Therefore changing the confidence level will not affect the center but will definitely affect the width.
+
+
 \begin{exercise} \label{leadInForMakingA99PercentCIExercise}
-If $X$ is a normally distributed random variable, how often will $X$ be within 2.58 standard deviations of the mean?\footnote{This is equivalent to asking how often the $Z$ score will be larger than -2.58 but less than 2.58. (For a picture, see Figure~\ref{choosingZForCI}.) To determine this probability, look up -2.58 and 2.58 in the normal probability table (0.0049 and 0.9951). Thus, there is a $0.9951-0.0049 \approx 0.99$ probability that the unobserved random variable $X$ will be within 2.58 standard deviations of $\mu$.}
+If $X$ is a normally distributed random variable, how often will $X$ be within 2.58 standard deviations of the mean?\footnote{This is equivalent to asking how often the $Z$ score will be larger than -2.58 but less than 2.58. (For a visualization, see Figure~\ref{choosingZForCI}.) To determine this probability, look up -2.58 and 2.58 in the normal probability table (0.0049 and 0.9951). There is a $0.9951-0.0049 \approx 0.99$ probability that the unobserved random variable $X$ will be within 2.58 standard deviations of $\mu$.}
 \end{exercise}
 
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{ch_inference_foundations_oi_biostat/figures/choosingZForCI/choosingZForCI}
+\caption{If the confidence level is 99\%, choose $z^{\star}$ such that 99\% of the normal curve is between -$z^{\star}$ and $z^{\star}$, which corresponds to 0.5\% in the lower tail and 0.5\% in the upper tail: $z^{\star}=2.58$.}
 \label{choosingZForCI}
-\caption{The area between -$z^{\star}$ and $z^{\star}$ increases as $|z^{\star}|$ becomes larger. If the confidence level is 99\%, we choose $z^{\star}$ such that 99\% of the normal curve is between -$z^{\star}$ and $z^{\star}$, which corresponds to 0.5\% in the lower tail and 0.5\% in the upper tail: $z^{\star}=2.58$.}
 \index{confidence interval!confidence level|)}
 \end{figure}
 
 
-To 99\% confident, change 1.96 in the 95\% confidence interval formula to be $2.58$ for a 99\% confidence interval. Exercise~\ref{leadInForMakingA99PercentCIExercise} highlights that 99\% of the time a normal random variable will be within 2.58 standard deviations of the mean. This approach -- using the Z scores in the normal model to compute confidence levels -- is appropriate when $\bar{x}$ is associated with a normal distribution with mean $\mu$ and standard deviation $SE_{\bar{x}}$. Thus, the formula for a 99\% confidence interval is
+How does the confidence level affect the width then? The standard error, calculated from sample, remains constant regardless of confidence level. The multiplier, the "1.96", instead changes and affects the confidence interval width. To have a 99\% confidence interval, change 1.96 in the 95\% confidence interval formula to be $2.58$ for a 99\% confidence interval. Exercise~\ref{leadInForMakingA99PercentCIExercise} highlights that 99\% of the time a normal random variable will be within 2.58 standard deviations of the mean. This approach -- using the Z scores in the normal model to compute confidence levels -- is appropriate when $\bar{x}$ is associated with a normal distribution with mean $\mu$ and standard deviation $SE_{\bar{x}}$. The formula for a 99\% confidence interval of the mean is
 \begin{eqnarray}
 \bar{x}\ \pm\ 2.58\times SE_{\bar{x}}
 \label{99PercCIForMean}
 \end{eqnarray}
 
-The normal approximation is crucial to the precision of these confidence intervals. Section~\ref{cltSection} provides a more detailed discussion about when the normal model can safely be applied. When the normal model is not a good fit, we will use alternative distributions that better characterize the sampling distribution. Below however is a good checklist to determine whether or not the Central Limit Theorem can be informally applied to the distribution of sampling mean.
+Equation ~\ref{99PercCIForMean} is not population parameter specific. In fact, it can be generalized for any parameter to be \[\text{point estimate} \pm 2.58\times SE\]
+
+The normal approximation is crucial to the precision of these confidence intervals. Section~\ref{cltSection} provides a more detailed discussion about when the normal model can safely be applied based on the Central Limit Theorem. When the normal model is not a good fit, alternative distributions can be used that better characterize the sampling distribution. Below however is a good checklist to determine whether or not the Central Limit Theorem can be informally applied to the distribution of sample mean.
 
 \begin{termBox}{\tBoxTitle{Conditions for $\bar{x}$ being nearly normal and $SE$ being accurate\label{terBoxOfCondForXBarBeingNearlyNormalAndSEBeingAccurate}}
 Important conditions to help ensure the sampling distribution of $\bar{x}$ is nearly normal and the estimate of SE sufficiently accurate:
@@ -508,14 +515,14 @@ Important conditions to help ensure the sampling distribution of $\bar{x}$ is ne
 \setlength{\itemsep}{0mm}
 \item The sample observations are independent.
 \item The sample size is large: $n\geq30$ is a good rule of thumb.
-\item The population distribution is not strongly skewed. (We check this using the sample distribution as an estimate of the population distribution.)
+\item The population distribution is not strongly skewed. (Check this using the sample distribution as an estimate of the population distribution.)
 \end{itemize}
-Additionally, the larger the sample size, the more lenient we can be with the sample's skew.}
+Additionally, the larger the sample size, the more lenient scientists are with the sample's skew.}
 \end{termBox}
 
-These three conditions help ensure that $\bar{x}$ is both distributed normally and representative of the target population. If the distribution of $\bar{x}$ is nearly normal, choosing a precise "1.96" or "2.58" becomes much easier for calculating confidence intervals. More importantly, however, the representativeness of the sample is imperative in our ability to infer about the target population. Randomness, independence and a large sample size safeguard against an extreme observation from skewing the conclusions from our sample. These conditions ensure the ability to accurately infer and generalize about the population of interest.
+These three conditions help ensure that $\bar{x}$ is both distributed normally and representative of the target population. If the distribution of $\bar{x}$ is nearly normal, choosing a precise "1.96" or "2.58" becomes much easier for calculating confidence intervals. More importantly, however, the representativeness of the sample is imperative in the ability to infer about the target population. Randomness, independence and a large sample size safeguard against an extreme observation from skewing the conclusions from a sample. These conditions ensure the ability to accurately infer and generalize to the population of interest.
 
-Verifying independence is often the most difficult of the conditions to check, and the way to check for independence varies from one situation to another. However, we can provide simple rules for the most common scenarios. 
+Verifying independence is often the most difficult of the conditions to check, and the way to check for independence varies from one situation to another. However, randomness is almost always included for independence. 
 
 \begin{tipBox}{\tipBoxTitle{How to verify sample observations are independent}
 Observations in a simple random sample consisting of less than 10\% of the population are independent.}
@@ -527,42 +534,41 @@ Observations in a simple random sample consisting of less than 10\% of the popul
 \end{caution}
 
 \begin{exercise} \label{find99CIForBRFSSWeightExercise}
-Create a 99\% confidence interval for the average weight of men from the \data{brfss.sample} sample. The point estimate is $\bar{w} = 189.4$ and the standard error is $SE_{\bar{y}} = 0.178$. Refer to Figure ~\ref{brfssSampHist} for guidance on skewness.
+Create a 99\% confidence interval for the average weight of men from the \data{BRFSS BMI} sample. The point estimate is $\bar{w_{\mathrm{men}}} = 189.4$ pounds and the standard error is $SE_{\bar{w_{\mathrm{men}}}} = 0.28$ pounds. Refer to Figure ~\ref{brfssMenWeight} for guidance on skewness.\footnote{The observations are independent (simple random sample, $<10\%$ of the population), the sample size is at least 30 ($n=16,843$), and the distribution is only slightly skewed (Figure~\ref{brfssMenWeight}); the normal approximation and estimate of SE should be reasonable.  Apply the 99\% confidence interval formula: $\bar{w_{\mathrm{men}}}\ \pm\ 2.58 \times  SE_{\bar{w_{\mathrm{men}}}} \rightarrow (188.69, 190.12)$. We are 99\% confident that the average weight of all males is between 188.69 and 190.12 pounds.}
+\end{exercise}
+
 \begin{figure}
 \centering
-\includegraphics[width=0.75\textwidth]{ch_inference_foundations_oi_biostat/figures/choosingZForCI/choosingZForCI.pdf}
-\caption{We draw a histogram of the men's weights in the \var{brfss.sample} and note that it is only slightly skewed. With 40,000 observations however, its skewness is more negligible because of its large sample size.}
-\label{brfssSampHist}
+\includegraphics[width=\textwidth]{ch_inference_foundations_oi_biostat/figures/brfssMenWeight/brfssMenWeight.pdf}
+\caption{The histogram of men's weights in the \data{BRFSS BMI} sample. There are 16,843 men in \data{BRFSS BMI}, and the weights are slightly skewed. With such a large sample size, the sample mean can be considered nearly normal.}
+\label{brfssMenWeight}
 \index{confidence interval!confidence level|)}
 \end{figure}
-\footnote{The observations are independent (simple random sample, $<10\%$ of the population), the sample size is at least 30 ($n=100$), and the distribution is only slightly skewed (Figure~\ref{brfssSampHist}); the normal approximation and estimate of SE should be reasonable.  Apply the 99\% confidence interval formula: $\bar{y}\ \pm\ 2.58 \times  SE_{\bar{y}} \rightarrow (188.94, 189.87)$. We are 99\% confident that the average weight of all males is between 188.94 and 189.87 pounds.}
-\end{exercise}
-%library(openintro); data(run10Samp); d <- run10Samp; mean(d$age); sd(d$age)/sqrt(100)
 
-Now that we know how to calculate a 95\% and 99\% confidence interval given a nearly normally distributed $\bar{x}$, we can generalize this setup to any confidence level we choose. Remember while it has become tradition to use the 95\% confidence level, any confidence level is allowed and vary by statistician and by goal. 
+The calculation of a confidence interval for any confidence level can be generalized from the 95\% and 99\% confidence intervals. Remember that while it has become tradition to use the 95\% confidence level, any confidence level is allowed and varies by statistician and by goal. 
 
 \begin{termBox}{\tBoxTitle{Confidence interval for any confidence level (nearly normal model)}
 If the point estimate follows the normal model with standard error $SE$, then a confidence interval for the population parameter is
 \begin{eqnarray*}
 \text{point estimate}\ \pm\ z^{\star} SE
 \end{eqnarray*}
-where $z^{\star}$ corresponds to the confidence level selected. The coefficient on the standard error, $z^{\star}$, is also known as the critical value. Remember that $z^{\star}$ is only used when the point estimate resembles a normal model \footnote{$z^{\star}$ is also used when the population standard deviation is known. However since we previously mentioned that this is rarely ever the case in practice, we have disregarded this situation completely}}
+where the value of $z^{\star}$ corresponds to the confidence level selected. The coefficient on the standard error, $z^{\star}$, is also known as the critical value. $z^{\star}$ is only used when the point estimate resembles a normal model \footnote{$z^{\star}$ is also used when the population standard deviation is known. However this is rarely ever the case in practice as previously mentioned and thus this situation is disregarded completely.}}
 \end{termBox}
 \begin{termBox}{\tBoxTitle{Margin of error}
-\label{marginOfErrorTermBox}In a confidence interval, $z^{\star}\times SE$ is called the \term{margin of error}.}
+\label{marginOfErrorTermBox}In a confidence interval, $z^{\star}\times SE$ is called the \term{margin of error} and is half the width of the confidence interval.}
 \end{termBox}
 
-Figure ~\ref{choosingZForCI} provides a picture of how to identify $z^{\star}$ based on a confidence level. We select $z^{\star}$ so that the area between -$z^{\star}$ and $z^{\star}$ in the normal model corresponds to the confidence level. We note from Figure~\ref{choosingZForCI} that the $z^{\star}$ value comes from a $\mathcal{N}(0,1)$. Therefore we can either use $R$ or a Z-table \footnote{also known as a Normal table} (\textbf{FOUND IN THE BACK OF THE BOOK HERE}) to find the critical value associated with some confidence level. In $R$, we use the \var{qnorm()} function. \var{qnorm()} takes in a probability $p$ and outputs the quantile value $z$ such that $P(Z\leq z)=p$. For a 95\% confidence interval, $p=0.025$ since we are looking for the \emph{middle} 95\%. Therefore in $R$\begin{verbatim}
+Figure ~\ref{choosingZForCI} provides a picture of how to identify $z^{\star}$ based on a confidence level. Select $z^{\star}$ so that the area between -$z^{\star}$ and $z^{\star}$ in the normal model corresponds to the confidence level. Because $z^{\star}$ follows a $\mathcal{N}(0,1)$, scientists either use $R$ or a Z-table \footnote{also known as a Normal table} (\textbf{FOUND IN THE BACK OF THE BOOK HERE}) to find the critical value. The \var{qnorm()} function $R$ takes in a probability $p$ and outputs the quantile value $z$ such that $P(Z\leq z)=p$. For a 95\% confidence interval, $p=0.025$ since the confidence interval is the \emph{middle} 95\% of values. To find $z^{\star}$ in $R$\begin{verbatim}
 > qnorm(0.025)
 [1] -1.959964
 \end{verbatim}
-and we show that $z^{\star}=1.96$ is the critical value for 95\%. 
+$z^{\star}=1.96$ is the critical value for 95\% \footnote{It does not matter if $z^{\star}$ is positive or negative since the half widths are on both sides of the point estimate.}. 
 \begin{exercise} 
-What is the critical value associated with (a) 90\%, (b) 75\% and (c) 50\%? \footnote{Remember we want the \emph{middle} and for any given confidence level $C$, we type into $R$, \var{qnorm($0.5\cdot (1-C)$)}. Therefore (a) \var{qnorm(0.05)= -1.644854} so $z^{\star}=1.65$ for a 90\% confidence level (b) 1.15 (c) 0.67}
+What is the critical value associated with (a) 90\%, (b) 75\% and (c) 50\%? \footnote{Remember to only consider the \emph{middle} values, and for any given confidence level $C$, type \var{qnorm($0.5\cdot (1-C)$)} into $R$.(a) \var{qnorm(0.05)= -1.644854} so $z^{\star}=1.65$ for a 90\% confidence level (b) 1.15 (c) 0.67}
 \end{exercise}
 
 \begin{exercise} \label{find90CIForBRFSSWeightExercise}
-Use the data in Exercise~\ref{find99CIForBRFSSWeightExercise} to create a 90\% confidence interval for the average weight of men in the United States.\footnote{We first find $z^{\star}$ such that 90\% of the distribution falls between -$z^{\star}$ and $z^{\star}$ in the standard normal model, $N(\mu=0, \sigma=1)$. We can look up -$z^{\star}$ in the normal probability table by looking for a lower tail of 5\% (the other 5\% is in the upper tail), thus $z^{\star}=1.65$. The 90\% confidence interval can then be computed as $\bar{y}\ \pm\ 1.65\times SE_{\bar{y}} \to (189.11, 189.69)$. (We had already verified conditions for normality and the standard error in the previous exercise.) That is, we are 90\% confident the average weight of males is between 189.11 and 189.69 pounds. Also note that because we are at a 90\% confidence level, our confidence interval width is smaller than in Exercise ~\ref{find99CIForBRFSSWeightExercise}.}
+Use the data in Exercise~\ref{find99CIForBRFSSWeightExercise} to create a 90\% confidence interval for the average weight of men in the United States.\footnote{First find $z^{\star}$ such that 90\% of the distribution falls between -$z^{\star}$ and $z^{\star}$ in the standard normal model, $N(\mu=0, \sigma=1)$.  Find $z^{\star}$ in the normal probability table by looking for a lower tail of 5\% (the other 5\% is in the upper tail). $z^{\star}=1.65$. The 90\% confidence interval can then be computed as $\bar{w_\mathrm{men}}\ \pm\ 1.65\times SE_{\bar{w_\mathrm{men}}} \to (188.95, 189.86)$.  (We had already verified conditions for normality and the standard error in Exercise ~\ref{find99CIForBRFSSWeightExercise}.) That is, we are 90\% confident the average weight of males is between 188.95 and 189.86 pounds. Also note that because we are at a 90\% confidence level, our confidence interval width is smaller than the confidence interval in Exercise ~\ref{find99CIForBRFSSWeightExercise}.}
 \end{exercise}
 
 \subsection{Interpreting confidence intervals}
@@ -575,13 +581,13 @@ A careful eye might have observed the somewhat awkward language used to describe
 We are XX\% confident that the population parameter is between...
 \end{quote}
 
-Looking back to \textbf{Section 4.2.2}, this means that if we took a random sample from our population 100 times and calculated a confidence interval around our point estimate each time, 95 confidence intervals would contain the true population parameter. 
+Looking back to ~\ref{confidenceIntervalsComputation}, confidence means that if a random sample from the population was drawn 100 times independently and a confidence interval was calculated around the point estimate each time, 95 confidence intervals would contain the true population parameter. 
 
 It is interesting to note, however, that researchers in practice would almost never be able to resample 100 times and generate 100 confidence intervals. The meaning of being "95\% confident" has traditionally been one grounded in theory and less in practice. "Confidence" relates more to the reliability of the process of creating such a range and less so in the probability that the value is within the range. 
 
 \emph{Incorrect} language might try to describe the confidence interval as capturing the population parameter with a certain probability. This is one of the most common errors: while it might be useful to think of it as a probability, the confidence level only quantifies how plausible it is that the parameter is in the interval. 
 
-Another especially important consideration of confidence intervals is that they \emph{only try to capture the population parameter}. Our intervals say nothing about the confidence of capturing individual observations, a proportion of the observations, a percent of all the data or just the sampled data. A confidence interval also says nothing about capturing point estimates since the confidence interval is always centered at the observed point estimate.  Confidence intervals only attempt to capture population parameters as statistical inference's goal is to infer about such population parameters.
+Another especially important consideration of confidence intervals is that confidence intervals \emph{only try to capture the population parameter}. Intervals say nothing about the confidence of capturing individual observations, a proportion of the observations, a percent of all the data or just the sampled data. A confidence interval also says nothing about capturing point estimates since the confidence interval is always centered at the observed point estimate. Confidence intervals only attempt to capture population parameters as statistical inference's goal is to infer on such population parameters.
 
 Some incorrect interpretations of a 95\% confidence interval include: 
 \begin{quote}
@@ -589,8 +595,7 @@ Some incorrect interpretations of a 95\% confidence interval include:
 95\% of the population distribution is contained in the confidence interval.\\
 \end{quote}
 
-Remember, a confidence interval is not a range of plausible values for the sample mean, though it may be understood as an estimate of plausible values for the population parameter.
-A particular confidence interval of 95\% calculated from an experiment does not mean that there is a 95\% probability of a sample mean from a repeat of the experiment falling within this interval.[13]
+Remember, a confidence interval is not a range of plausible values for the sample mean. The sample mean is already known. It is already observed. The confidence interval may be understood as an estimate of plausible values for the population parameter.
 
 While the differences in correct and incorrect interpretations are extremely nuanced, the goal of this book is to provide the tools and mechanisms of calculating and computing a confidence interval from data and less so about the wording which, in practice, has become almost meaningless and obsolete. 
 
@@ -602,31 +607,28 @@ While the differences in correct and incorrect interpretations are extremely nua
 
 \index{Central Limit Theorem!normal data|(}
 
-In rare circumstances we know important characteristics of a population. For instance, we might already know a population is nearly normal and we may also know its parameter values. Even so, we may still like to study characteristics of a random sample from the population. Consider the conditions required for modeling a sample mean using the normal distribution:
+In rare circumstances important characteristics of a population are known. For instance, scientists might already know that a population is nearly normal and they do not need to rely on a rule of thumb of $n\geq 30$. Scientists might also know certain parameter values. Even so, a random sample from a population might still be drawn to study other characteristics of the population. Consider the conditions required for modeling a sample mean using the normal distribution:
 \begin{enumerate}
 \setlength{\itemsep}{0mm}
 \item[(1)] The observations are independent.
 \item[(2)] The sample size $n$ is at least 30.
 \item[(3)] The data distribution is not strongly skewed.
 \end{enumerate}
-These conditions are required so we can adequately estimate the standard deviation of the population from our sample and so we can ensure the distribution of sample means is nearly normal. However, if the population is known to be nearly normal, we know that the sample mean is always nearly normal (this is a special case of the Central Limit Theorem). If the standard deviation for the population is also known, then conditions (2) and (3) are not necessary for those data. 
-
-We would like to heavily emphasize however that while, in practice, the population mean is more likely to be known, the population standard deviation is rarely know. While a known population standard deviation will rarely occur in practice, the Central Limit Theorem allows us to describe the distribution of the sampling distribution more specifically. 
-
-\begin{example}{The heights of male seniors in high school closely follow a normal distribution $N(\mu=70.43, \sigma=2.73)$, where the units are inches.\footnote{These values were computed using the USDA Food Commodity Intake Database.} If we randomly sampled the heights of five male seniors, what distribution should the sample mean follow?}\label{simpleSampleOfFiveMaleSeniors}
+These conditions are required to ensure the distribution of sample means is nearly normal. However, if the population is known to be nearly normal, we know that the sample mean is always nearly normal (this is a special case of the Central Limit Theorem). If the standard deviation for the population is also known, then conditions (2) and (3) are not necessary for those data. 
+\begin{example}{The heights of male seniors in high school closely follow a normal distribution $N(\mu=70.43, \sigma=2.73)$, where the units are inches.\footnote{These values were computed using the USDA Food Commodity Intake Database.} If the heights of five male seniors are randomly sampled, what distribution should the sample mean follow?}\label{simpleSampleOfFiveMaleSeniors}
 The population is nearly normal, the population standard deviation is known, and the heights represent a random sample from a much larger population, satisfying the independence condition. Therefore the sample mean of the heights will follow a nearly normal distribution with mean $\mu=70.43$ inches and standard error $SE=\sigma/\sqrt{n} = 2.73/\sqrt{5}=1.22$ inches.
 \end{example}
 
 \begin{termBox}{\tBoxTitle{Alternative conditions for applying the normal distribution to model the sample mean}
-If the population of cases is known to be nearly normal and the population standard deviation $\sigma$ is known, then the sample mean $\bar{x}$ will follow a nearly normal distribution $N(\mu, \sigma/\sqrt{n})$ if the sampled observations are also independent.}
+If the population of cases is known to be nearly normal and the population standard deviation $\sigma$ is known, then the sample mean $\bar{x}$ will follow a nearly normal distribution $N(\mu, \sigma/\sqrt{n})$ if the sampled observations are also independent. With a known population standard deviation, the confidence interval does not need to include a standard error calculation and just replaces the population standard deviation for the standard deviation estimate from the observed sample.}
 \end{termBox}
 
-Sometimes the mean changes over time but the standard deviation remains the same. In such cases, a sample mean of small but nearly normal observations paired with a known standard deviation can be used to produce a confidence interval for the current population mean using the normal distribution.
-
 \begin{tipBox}{\tipBoxTitle{Relaxing the nearly normal condition}
-As the sample size becomes larger, it is reasonable to \emph{slowly} relax the nearly normal assumption on the data when dealing with small samples. By the time the sample size reaches 30, the data must show strong skew for us to be concerned about the normality of the sampling distribution.}
+As the sample size becomes larger, it is reasonable to \emph{slowly} relax the nearly normal assumption on the data for dealing with small samples. By the time the sample size reaches 30, the data must show strong skew to continue to have concerns about the normality of the sampling distribution.}
 \index{Central Limit Theorem!normal data|)}
 \end{tipBox}
+
+In practice, the population standard deviation is rarely know, but the Central Limit Theorem allows the distribution of the sampling distribution to be described more specifically. 
 
 %__________________
 \section{Hypothesis testing}
@@ -634,35 +636,33 @@ As the sample size becomes larger, it is reasonable to \emph{slowly} relax the n
 
 \index{hypothesis testing|(}
 
-Is the average US adult satisfied with his or her weight? We consider this question in the context of the \data{BRFSS} dataset comparing US adults' current weight and their desired weight (we will call this "weight difference"). While media pressures women to maintain a slim figure, the same media urges men to work out more and become stronger and more fit. These opposing viewpoints and many others all are components that influence satisfaction with weight and the desire to lose or gain weight. 
+The WHO categorizes BMI values as underweight, normal, overweight and obese. Assuming that a BMI of 22 is considered healthy weight, the CDC might be curious to see if the average US BMI is equal to a BMI of 22. A rural college is interested in showing that students at the college sleep longer than 7 hours per night, the national college average, using a sample of its students. 
 
-In addition to considering weight in this section, we consider a topic near and dear to most students: sleep. A recent study found that college students average about 7 hours of sleep per night.\footnote{\urlwofont{http://theloquitur.com/?p=1161}} However, researchers at a rural college are interested in showing that their students sleep longer than seven hours on average. We investigate this topic in Section~\ref{pValue}.
-
-Many questions, given the correct data, can be answered through Hypothesis Testing. \term{Hypothesis testing} is a method in statistics that evaluates whether or not a population parameter has a hypothesized value with an associated probability of error. It is, most obviously, determining the probability that a given hypothesis is true or not.
+Section \textbf{SOME SECTION} will test if the average US BMI is equal to 22. Section \textbf{SOME OTHER SECTION} will investigate the sleeping habits of state college students. Many questions like these, given the correct data, can be answered through Hypothesis Testing. \term{Hypothesis testing} is a method in statistics that evaluates whether or not a population parameter takes on some hypothesized value or not with an associated probability of error. It is, most obviously, determining the probability that a given hypothesis is true or not.
 
 Hypotheses are often simple questions that have a yes or no answer. Consider some hypotheses below: \begin{quote}
-Is the mean body temperature really 98.6F? \\
+Is the mean body temperature really $98.6^\circ$ F? \\
 Has consumption of soda changed across the US overtime? \\
 Do MCAT classes improve MCAT scores? 
 \end{quote}
 
-The hypothesis testing process consists of generally 5 steps. Going through the \term{Hypothesis testing framework} allows for statisticians to answer these yes/no questions with a certain degree of confidence after observing a related sample. We begin by testing a hypothesis about a population mean from observing one sample. Remember, we can do hypothesis testing on any population parameter. It can be the population mean, population standard deviation or even the population IQR if desired. 
+The hypothesis testing process consists of generally 5 steps. Going through the \term{hypothesis testing framework} allows scientists to answer these yes/no questions with a certain degree of confidence after observing a related sample. This section begins by testing a hypothesis about a population mean from observing one sample. Remember, hypothesis testing, just as with confidence intervals can concern any population parameter. It can be the population mean, population standard deviation or even the population IQR if desired. 
 
 \subsection{Hypothesis testing framework}
 \label{hypothesisFramework}
 
-The average weight difference that adults want to experience that we observe from our sample of the \data{brfss.sample} data is 15.01 lbs. We want to determine if this sample provides enough evidence that adults are satisfied with their weight versus the alternative -- that they are not.\footnote{While we could answer this question by examining the entire population data (\data{BRFSS}), we only consider the sample data (\data{brfss.sample}), which is more realistic since statisticians rarely have access to population data.} We use desired weight difference as a proxy for weight satisfaction and simplify this question into two \termsub{hypotheses}: 
+The average BMI of \data{BRFSS BMI} is 26.36. The CDC is interested if this sample provides enough evidence that adults are, on average, healthy versus the alternative that they are not. This question can be simplified into two \termsub{hypotheses}: 
 \begin{itemize}
 \setlength{\itemsep}{0mm}
-\item[$H_0$:] US adults are satisfied with their current weight. The average desired weight difference for US adults is 0 lbs. 
-\item[$H_A$:] The average adult's desired weight difference is not 0 lbs i.e. Average adults are not satisfied with their current weights and would like to change. 
+\item[$H_0$:] US adults are on average healthy with an average BMI of 22. 
+\item[$H_A$:] The average adult's BMI is not 22 lbs i.e. Average adults are on average not healthy.
 \end{itemize}
 
 \subsubsection{Step 1: Formulating Hypotheses}
 
-The first step within the hypothesis testing framework is setting up the hypotheses. As shown above, we generally have two hypotheses, a null and an alternative. 
+The first step within the hypothesis testing framework is setting up the hypotheses. As shown above, there are  generally two hypotheses, a null and an alternative. 
 
-We call $H_0$\marginpar[\raggedright\vspace{6mm}
+$H_0$ is called\marginpar[\raggedright\vspace{6mm}
 
 $H_0$\\\footnotesize null hypothesis\vspace{3mm}\\\normalsize $H_A$\\\footnotesize alternative\\ hypothesis]{\raggedright\vspace{6mm}
 
@@ -672,67 +672,70 @@ $H_0$\\\footnotesize null hypothesis\vspace{3mm}\\\normalsize $H_A$\\\footnotesi
 {\small The \term{null hypothesis ($H_0$)} often represents either a skeptical perspective or a claim to be tested. The \term{alternative hypothesis ($H_A$)} represents an alternative claim under consideration and is often represented by a range of possible parameter values.}}
 \end{termBox}
 
-The null hypothesis often represents a skeptical position. The null hypothesis is generally denoted as "no difference" or what one would observe if there is no change.  The alternative hypothesis often represents a new perspective, such as the possibility that there has been a change. If the null hypothesis is true, any difference between the observed sample is due only to chance variation. 
+The null hypothesis often represents a skeptical position or a common view on something. The null hypothesis is generally denoted as "no difference" or what one would observe if there is no change.  The alternative hypothesis often represents a new perspective, such as the possibility that there has been a change or a new discovery. If the null hypothesis is true, any difference between the observed sample is due only to chance variation. 
 
 \begin{tipBox}{\tipBoxTitle{Hypothesis testing framework}
-The logic of hypothesis testing is that we will not reject the null hypothesis ($H_0$), unless the evidence in favor of the alternative hypothesis ($H_A$) is so strong that we must reject $H_0$ in favor of $H_A$.}
+The logic of hypothesis testing is that the null hypothesis ($H_0$) will not be rejected, unless the evidence in favor of the alternative hypothesis ($H_A$) is so strong that $H_0$ must be rejected in favor of $H_A$.}
 \end{tipBox}
 
-The first step within the hypothesis testing framework is a very general tool, and we often use it without a second thought. If a person makes a somewhat unbelievable claim, we are initially skeptical. We believe our null hypothesis $H_0$. However, if there is sufficient evidence that we observe that supports the claim, we set aside our skepticism and reject the null hypothesis in favor of the alternative. 
+The first step within the hypothesis testing framework is a very general tool, and is often used without a second thought. If a person makes a somewhat unbelievable claim, people are initially skeptical. The nulll hypothesis $H_0$ is generally believed. However, if there is sufficient observed evidence that supports the claim, skepticism is set aside and the null hypothesis is rejected in favor of the alternative. 
 
 \begin{exercise} \label{hypTestStudyExample}
-A new study would like to be published in a scientific journal. The board that determines the validity of the study considers two possible claims about this study: either the study is valid or pseudoscience. If we set these claims up in a hypothesis framework, which would be the null hypothesis and which the alternative? \footnote{The board considers whether the study's evidence, results and reproducibility is so convincing (strong) that there the study must be valid. In this case the board rejects the null hypothesis (the study is pseudoscience) and concludes that the study is valid an should be published (alternative hypothesis).}
+A new study would like to be published in a scientific journal. The board that determines the validity of the study considers two possible claims about this study: either the study is valid or pseudoscience. Set these claims up in a hypothesis framework. Which would be the null hypothesis and which the alternative? \footnote{The board considers whether the study's evidence, results and reproducibility is so convincing (strong) that the study must be valid. In this case, if the study is legitimate, the board rejects the null hypothesis (the study is pseudoscience) and concludes that the study is valid an should be published (alternative hypothesis).}
 \end{exercise}
 
-Those scientists who sit on the board of publication journals look at the study, previous literature and other evidence to see whether it convincingly supports that the science is valid. Even if these scientists leave unconvinced that the study is publishable, this does not mean that these board members believe the study is complete fabrication. This is also the case with hypothesis testing: \emph{even if we fail to reject the null hypothesis, we typically do not accept the null hypothesis as true}. Failing to find strong evidence for the alternative hypothesis is not equivalent to accepting the null hypothesis.
+The scientists who sit on the board of publication journals look at the study and previous literature to see whether the science is convincingly valid. Even if these scientists leave unconvinced that the study is publishable, these board members do not necessarily believe the study is a complete fabrication. This mindset is also consistent with hypothesis testing: \emph{the null hypothesis cannot be accepted as true even if the null hypothesis is not rejected}. Failing to find strong evidence for the alternative hypothesis is not equivalent to accepting the null hypothesis.
 
 \begin{tipBox}{\tipBoxTitle{Double negatives can sometimes be used in statistics}
-In many statistical explanations, we use double negatives. For instance, we might say that the null hypothesis is \emph{not implausible} or we \emph{failed to reject} the null hypothesis. Double negatives are used to communicate that while we are not rejecting a position, we are also not saying it is correct.}
+In many statistical explanations, double negatives can be used. For instance, scientists might say that the null hypothesis is \emph{not implausible} or they \emph{failed to reject} the null hypothesis. Double negatives are used to communicate that while a position is not being rejected, it is also not correct.}
 \end{tipBox}
 
-In the example with the \data{BRFSS} data, the null hypothesis represents no change in desired weight difference. The alternative hypothesis represents something new or more interesting: there was a difference, either a desire to gain or lose weight on average. These hypotheses can be described in mathematical notation using $\mu_{wd}$ as the average weight difference for US adults. 
-\[H_0:\mu_{wd} = 0 \hspace{0.5in} H_A: \mu_{wd} \neq 0\]
+The null hypothesis represents that the average US BMI is equal to 22 in the \data{BRFSS BMI} example. The alternative hypothesis represents something new or more interesting: the average US adult does not have a healthy BMI. These hypotheses can be described in mathematical notation using $\mu_{\mathrm{bmi}}$ as the average BMI for US adults.
+\[H_0:\mu_{\mathrm{bmi}} = 22 \hspace{0.5in} H_A: \mu_{\mathrm{bmi}} \neq 22\]
 
-where 0 represents a desired weight difference of 0 lbs or that these US adults on average do not care to change their weight. Using this mathematical notation, the hypotheses can now be evaluated using statistical tools. We call 0 the \term{null value} since it represents the value of the parameter if the null hypothesis is true. We will use the \data{brfss.sample} data set to evaluate the hypothesis test.
+where 22 represents the BMI of a healthy US adult. Using this mathematical notation, the hypotheses can now be evaluated using statistical tools. In this context, 22 is referred to as the \term{null value} since it represents the value of the parameter if the null hypothesis is true. The \data{BRFSS BMI} sample will be used to evaluate these hypotheses. 
 
-Note it is important to remember that we are not testing whether or not the average weight difference observed from the \data{brfss.sample} is 0 or not. We don't need to test that since we have observed all of \data{brfss.sample} and can simply calculate it. Rather we are testing the \emph{population parameter} or the true average value of all US adults' weight differences is 0 or not. 
+Note it is important to remember that the CDC is not testing whether or not the average BMI observed from \data{BRFFS BMI} is 22 or not. They don't need to test that since the CDC observes all the values within \data{BRFSS BMI} and can simply calculate the average BMI. Rather when asking these hypotheses, they are testing if the \emph{population parameter} of all US adults is 22 or not. 
 
 \begin{tipBox}{\tipBoxTitle{Null and Alternative Hypothesis Setup}
-The null hypothesis is generally written as $H_0: \mu=\mu_0$ where $\mu$ is the population mean and $\mu_0$ is the hypothesized value that we believe to be true.\\ The alternative hypothesis, on the other hand, can be many things.\\ If we have no prior belief to influence our alternative hypothesis and the researchers are interested in showing any difference --an increase or decrease-- then the safest one would be $\mu\neq \mu_0$ or a two-sided alternative. If we have a prior belief of how $\mu$ and $\mu_0$ compare or are interested in only showing an increase or decrease, but not both, we can do a one-sided alternative, $\mu\geq \mu_0$ or $\mu \leq \mu_0$. We will go into more detail on one-side versus two sided in Section ~\ref{pValue}.}
+The null hypothesis is generally written as $H_0: \mu=\mu_0$ where $\mu$ is the population mean and $\mu_0$ is the hypothesized value that is believed to be true.The alternative hypothesis, on the other hand, can be many things.\\ 
+
+If there exists no prior belief to influence the alternative hypothesis and the researchers are interested in showing any difference --an increase or decrease-- then the safest alternative hypothesis choice would be $\mu\neq \mu_0$, a two-sided alternative. If there does exist a prior belief of how $\mu$ and $\mu_0$ compare or researchers are interested in only showing an increase or decrease, not both, a one-sided alternative, $\mu\geq \mu_0$ or $\mu \leq \mu_0$ is available. Section ~\ref{pValue} will go into more detail on one-side versus two sided alternatives.}
 \end{tipBox}
 
 \subsubsection{Step 2: Specifying a Significance Level $\alpha$}
-Once we have completed Step 1 and have a null and alternative hypothesis, we need to specify a \term{significance level}. The significance level $\alpha$ is the acceptable error probability of the test.
-In this case, the error probability is the probability of concluding the alternative hypothesis is true when it is not
-true. This error is called a Type I error, and $\alpha$ is the probability of a Type I error. We will go into more detail on error types in Section \ref{DecisionErrors}. 
+Step 1 is completed when the researchers have stated a null and alternative hypothesis. The researchers then need to specify a \term{significance level}. The significance level $\alpha$ is the acceptable error probability of the test. In hypothesis testing, the error probability is the probability of concluding the alternative hypothesis is true when it is not true. This error is called a Type I error, and $\alpha$ is the probability of a Type I error. Section \ref{DecisionErrors} will go into more detail on error types. 
 
-Typically, $\alpha$ is taken to be 0.05, 0.01, or some other small value. $\alpha$ plays the same role as the error probability in confidence intervals, and is a measure of uncertainty. If $\alpha=0.05$, we are testing at a 95\% confidence level for our hypothesis tests. We will see a clearer connection between hypothesis testing and confidence intervals in Section ~\ref{utilizingOurCI}. 
+Typically, $\alpha$ is taken to be 0.05, 0.01, or some other small value. $\alpha$ plays the same role as the error probability in confidence intervals, and is a measure of uncertainty. If $\alpha=0.05$, the hypothesis test will be at a 95\% confidence level. Section ~\ref{utilizingOurCI} will provide a clearer connection between hypothesis testing and confidence intervals.  
 
 \subsubsection{Step 3: Calculating the Test Statistic}
-The third step is calculating a test statistic from the data we observe. This statistic will be the value that the conclusions will be based on and measures the difference between the observed data and what is expected if the null hypothesis is true. This test statistic answers the question: "How many standard deviations from the hypothesized value is the observed sample value?" Thinking back to \textbf{THIS SECTION} ~\ref{some section} by standardizing a normal, the test statistic follows a similar construction. When testing hypotheses about a mean, the test statistic for the population mean from one sample will always be \[T=\frac{\bar{x}-\mu_0}{s/\sqrt{n}}\] where $\bar{x}$ is the sample mean, $s$ is the sample standard deviation and $n$ is the number of observations in the sample.
-\emph{Note:} In general we see that test statistics follow $\frac{\mathrm{observed-hypothesized}}{\mathrm{standard error}}$ to see how many standard deviations the observed value is from the hypothesized value. 
-This T-statistic follows a t-distribution \footnote{ from \textbf{Chapter 3}} and will have $n-1$ degrees of freedom. 
+The third step is calculating a test statistic from the observed data. The conclusions of the hypothesis test in Step 4 and 5 will be based upon this test statistic. This statistic measures the difference between the observed data and what is expected if the null hypothesis is true. It answers the question: "How many standard deviations from the hypothesized value is the observed sample value?" Thinking back to \textbf{THIS SECTION} ~\ref{some section in chapter 2 or 3} of standardizing a normal, the test statistic follows a similar construction. When testing hypotheses about a mean, the test statistic will always be 
+\begin{eqnarray}T=\frac{\bar{x}-\mu_0}{s/\sqrt{n}}\end{eqnarray} 
+where $\bar{x}$ is the sample mean, $s$ is the sample standard deviation and $n$ is the number of observations in the sample. This equation only applies to testing after observing only one sample. 
+\emph{Note:} In general test statistics follow the form $\frac{\mathrm{observed-hypothesized}}{\mathrm{standard error}}$ to calculate the number of standard deviations the observed value is from the hypothesized value. This T-statistic, $T$, follows a t-distribution \textbf{INCLUDE CHAPTER 3} \footnote{ from \textbf{Chapter 3}} and will have $n-1$ degrees of freedom. 
 
 \begin{termBox}{\tBoxTitle{Test statistic}
-A \emph{test statistic} is a special summary statistic that is particularly useful for evaluating a hypothesis test or identifying the p-value. The test-statistic is a particular data summary that summarizes how many standard deviations from the hypothesized null value is the observed sample value. In general the T-statistic follows a t-distribution with $n-1$ degrees of freedom. \footnote{When a point estimate is nearly normal, we use the Z score of the point estimate as the test statistic. In later chapters we encounter situations where other test statistics are helpful.}}
+A \emph{test statistic} is a special summary statistic that is particularly useful for evaluating a hypothesis test or identifying the p-value. The test-statistic is a particular data summary that summarizes how many standard deviations the hypothesized null value is from the observed sample value. In general the T-statistic follows a t-distribution with $n-1$ degrees of freedom. The t-distribution will be covered in Section ~\ref{SOMETHING} \textbf{SOMETHING} \footnote{When a point estimate is nearly normal, the Z score of the point estimate can be used as the test statistic. Later chapters will encounter situations where other test statistics are helpful.}}
 \index{hypothesis testing!using normal model|)}
 \end{termBox}
 
 \subsubsection{Step 4: Calculating the p-value}
-Once we calculate a test statistic from the observed data, we know how many standard deviations our observation is from the hypothesized value if the null hypothesis were true. Now we need to tie this T-statistic value to a probability of such an observation happening. We do this through the \term{p-value}. Assuming the null hypothesis is true, the p-value is the probability of observing our sample or a more extreme sample. Formally the p-value is a conditional probability.
+Consider a T-statistic of 10. This means that the observed sample mean is 10 standard deviations away from the hypothesized value under the null hypothesis. According to intuition, observing the sample mean is such a rare event since it is so far away from the hypothesized value, but how rare is it? 10\% likely? 1\% likely? 0.001\%?
+
+The \term{p-value} is the probability of observing the sample or a more extreme sample assuming the null hypothesis is true by chance. The p-value is the number that lets researchers make a conclusion about the T-statistic. Formally the p-value is a conditional probability.
 
 \begin{termBox}{\tBoxTitle{p-value}
-The \term{p-value}\index{hypothesis testing!p-value|textbf} is the probability of observing data at least as favorable to the alternative hypothesis as our current data set, if the null hypothesis is true. We typically use a summary statistic of the data, in this chapter the sample mean, to help compute the p-value and evaluate the hypotheses.}
+The \term{p-value}\index{hypothesis testing!p-value|textbf} is the probability of observing data at least as favorable to the alternative hypothesis as the current data set, if the null hypothesis is true. A summary statistic of the data is typically used to help compute the p-value and evaluate the hypotheses.}
 \end{termBox}
 
-How do we get this probability? Section ~\ref{pValue} will go into more detail from using $R$, Z and t- tables. 
+How is this probability calculated? Section ~\ref{pValue} will go into more detail from using $R$, and the Z and t- tables. 
 
 \subsubsection{Step 5: Making your conclusion}
-The final step within the hypothesis testing framework is to make a conclusion from the p-value we calculated in Step 4. Using the definition of p-value, if we observe something extreme, the probability associated with our observation will be small. Thus if our observation is rare, the T-statistic and p-value provide evidence that the hypothesized value is unlikely. Therefore if our p-value is low, we should reject our null hypothesis, and the smaller the p-value, the stronger the evidence we have against the null hypothesis. 
+The final step within the hypothesis testing framework is to make a conclusion from the p-value calculated in Step 4. Using the definition of p-value, if something extreme is observed, the probability associated with this observation will be small. Thus if the observation is rare, the T-statistic will be large and the p-value will provide evidence that the hypothesized value is unlikely. Therefore a low p-value should result in a rejection of the null hypothesis. The smaller the p-value, the stronger the evidence against the null hypothesis. 
 
-How small is small? This is where Step 2 and our significance level comes in. If the p-value is small or smaller than the pre-specified $\alpha$ level (usually 0.01 or 0.05),  we reject the null hypothesis and say the result that we observe is statistically significant at the $\alpha$ level. 
+How small is small? This is where Step 2 and the significance level, $\alpha$, come in. If the p-value is small or smaller than the pre-specified $\alpha$ level (usually 0.01 or 0.05),  the null hypothesis is rejected and conclusion that the result observed from the sample is statistically significant at the $\alpha$ level. 
 
-If the p-value is $\alpha$ or greater, we simply do not have enough evidence to reject the null hypothesis. The subtle but important point is that not rejecting $H_0$ is not equivalent to accepting $H_0$ (refer back to Example \ref{hypTestStudyExample}). In practice, however, not rejecting $H_0$ is equivalent to accepting $H_0$ when making decisions and acting on conclusions. Most importantly, it is key that students state the conclusion in the context of the original problem, using the language and units of that problem. Most students forget this but is absolutely necessary in both theory and practice. 
+If the p-value is $\alpha$ or greater, there is not enough evidence to reject the null hypothesis. The subtle but important point is that not rejecting $H_0$ is not equivalent to accepting $H_0$ (refer back to Example \ref{hypTestStudyExample}). In practice, however, not rejecting $H_0$ is equivalent to accepting $H_0$ when making decisions and acting on these conclusions. Most importantly, it is key that researchers state the conclusion in the context of the original problem, using the language and units of that problem. Most people forget this but is absolutely necessary in both theory and practice. 
 
 
 \subsection{Calculating p-values}
@@ -740,16 +743,16 @@ If the p-value is $\alpha$ or greater, we simply do not have enough evidence to 
 
 \index{hypothesis testing!p-value|(}
 
-Calculating p-values can be the most difficult part of the hypothesis testing framework. The p-value depends on many moving parts, including the sample mean, the sample size and the alternative hypothesis but always remember that the p-value is the probability of observing data as extreme or more if we assume the null hypothesis is true with the data at least as favorable to the alternative hypothesis. If the p-value is small, then our sample indicates that we just observed something rare, so rare that we should probably reject the null hypothesis as true. Figure~\ref{pValueOneSidedSleepStudyExplained} shows the distribution of the sample mean where the p-value is the shaded area for a one sided alternative $\mu > \mu_0$. 
+Calculating p-values can be the most difficult part of the hypothesis testing framework. The p-value depends on many moving parts, including the T-statistic, the sample size and the alternative hypothesis but always remember, if the p-value is small (based on the $\alpha$ threshold), then the sample indicates that something rare just occurred, so rare that the null hypothesis should be rejected as true. Figure~\ref{pValueOneSidedSleepStudyExplained} shows the distribution of the sample mean where the p-value is the shaded area for a one sided alternative $\mu > \mu_0$. 
 
 \begin{figure}[ht]
    \centering
    \includegraphics[width=0.9\textwidth]{ch_inference_foundations_oi_biostat/figures/pValueOneSidedSleepStudyExplained/pValueOneSidedSleepStudyExplained}
-   \caption{To identify the p-value, the distribution of the sample mean is considered as if the null hypothesis was true. Then the p-value is defined and computed as the probability of observing the observed $\bar{x}$ or an $\bar{x}$ even more extreme and thus favorable to follow $H_A$ under this distribution.} 
+   \caption{To identify the p-value, the distribution of the sample mean is considered as if the null hypothesis was true. In this graph, the p-value is defined as the probability of observing the $\bar{x}$ or a sample mean even more extreme. The p-value implies whether or not it is favorable to follow $H_A$ under this distribution.} 
    \label{pValueOneSidedSleepStudyExplained}
 \end{figure}
 
-If the alternative is one sided and has the form $\mu > \mu_0$, then the p-value would be represented by the upper tail (Figure~\ref{pValueOneSidedSleepStudyExplained}). If the alternative is one sided but has the form $\mu < \mu_0$, then the p-value would be the shaded area in the lower tail. In a two-sided test, \emph{we shade two tails} since evidence in either direction is favorable to $H_A$ (Figure ~\ref{2ndSchSleepHTExample}). 
+If the alternative hypothesis is one sided and has the form $\mu > \mu_0$, then the p-value would be represented by the upper tail (Figure~\ref{pValueOneSidedSleepStudyExplained}). If the alternative is one sided but has the form $\mu < \mu_0$, then the p-value would be the shaded area in the lower tail, left of the observed $\bar{x}$. In a two-sided test, \emph{two tails are shaded} since evidence in either direction is favorable to $H_A$ (Figure ~\ref{2ndSchSleepHTExample}). 
 
 \begin{figure}
    \centering
@@ -758,40 +761,48 @@ If the alternative is one sided and has the form $\mu > \mu_0$, then the p-value
    \label{2ndSchSleepHTExample}
 \end{figure}
 
-Now that we know what the p-value represents, how do we actually get this shaded area to be a number? Here is where the T-statistic comes into play. Before we get to the nitty gritty, let's look back to the \data{BRFSS} data. 
+After knowing the intuition behind the p-value, how do scientists turn the shaded area into a probability? Here is where the T-statistic comes into play. First, consider the \data{BRFSS BMI} example once again.
 
-Recall that the researchers for the \data{BRFSS} data are interested if US adults are satisfied with their current weight. They believe that the desired weight difference is a good proxy to measure satisfaction and have the following null and alternative hypotheses where $\mu_{wd}$ denotes the average desired weight difference in the US: 
+Recall that the CDC researchers are interested if US adults are maintaining a healthy weight and have the following null and alternative hypotheses where $\mu_{\mathrm{bmi}}$ denotes the average BMI of a US adult:
 
  \begin{itemize}
 \setlength{\itemsep}{0mm}
-\item[$H_0$:] $\mu_{wd}=0$
-\item[$H_A$:] $\mu_{wd} \neq 0$ 
+\item[$H_0$:] $\mu_{\mathrm{bmi}}=22$
+\item[$H_A$:] $\mu_{\mathrm{bmi}} \neq 22$ 
 \end{itemize}
 
-Instead of 40,000 within our sample, let's say that we observed a sample of 100 people and calculated a sample mean of weight differences of 0.5 pounds and standard deviation of 5 pounds. Given this information we can first calculate a T-statistic\footnote{calculating the T-statistic using actual data is an exercise in the book}. \[t=\frac{0.5-0}{25/\sqrt{100}}= 0.2\] The T-statistic can be thought of as a Z-score (standard score) that indicates how many standard deviations the observed sample mean is from the null value. This standardization becomes a great way to unify all the moving parts in order to calculate the p-value. 
+Instead of 40,000 within the \data{BRFSS BMI} sample, let's consider a sample of 50 people for simplicity with a sample mean of 24. The sample standard deviation is 5. Given this information the T-statistic is calculated as\footnote{calculating the T-statistic using actual data is an exercise in the book}. \[T=\frac{24-22}{5/\sqrt{50}}= 2.83\] The T-statistic can be thought of as a Z-score (standard score) that indicates how many standard deviations the observed sample mean is from the null value. This standardization becomes a great way to unify all the moving parts in order to calculate the p-value. 
 
-With the T-statistic and the alternative hypothesis, we calculate the p-value from either a t-distribution or a normal distribution. The sample size determines which distribution to model our point estimate from, either a t-distribution or a normal distribution. If $n \geq 30$ \textbf{from this part}, the sample mean can be thought of coming from a normal distribution. If $n < 30$, model the sampling distribution from a t-distribution. 
+Within the Hypothesis testing framework, Step 3 resulted in a T-statistic of 2.83. Step 4 begins by first knowing how the T-statistic is distributed. Section ~\ref{hypothesisFramework} stated that in general, the T-statistic follows a t-distribution with $n-1$ degrees of freedom. In fact, the T-statistic can either follow a t-distribution or a normal distribution. The sample size determines which distribution to model. Similarly to confidence intervals, if $n \geq 30$, the T-statistic can be thought of coming from a normal distribution. If $n < 30$, use a t-distribution for the T-statistic instead.
 
-With $\alpha=0.05$, students can either use a table to calculate the p-value or use $R$. First assuming a t-distribution, use the t-table given \textbf{on some page} to find the row with the correct degrees of freedom (in a one sample test, $df=n-1$). Students then should look across that row to find the T-statistic value that they calculated. Note that the table won't have every single value listed but once they find the approximate T-statistic, look at the top of the column to get p-value using either a one sided or two sided (one tail or two tail) alternative. The normal table (Z-table) is very similar but be wary of that the Z-table only lists the areas left of the Z-score. This simply means that these probabilities coincide with a one-sided alternative. However because the normal distribution is symmetric, finding the p-value for a two sided alternative is just those values from the table times two! 
+The p-value also depends on the significance level chosen in Step 2. From this, researchers can either use a Z or t-table to calculate the p-value or in most cases, use $R$. Assuming $\alpha = 0.05$ and the researcher is using a t-table like the one found on \textbf{SOME PAGE}, the researcher first finds the row with the correct degrees of freedom (for a one sample test, $df = n-1$). Then, looking across that same row, the researcher finds the T-statistic value that is closest to the one calculated in Step 3. Note that the table will not have every single T-statistic value listed. Once an approximate T-statistic is found, the p-value from either a one sided or two sided (one tail or two tail) alternative is found at the top of the cell's column.
+ 
+The normal table (Z-table) is very similar but be wary that the Z-table only lists the areas left of the Z-score. This simply means that these probabilities coincide with a one-sided alternative. But because the normal distribution is symmetric, finding the p-value for a two sided alternative is just the values from the table times two! 
 
-If available, $R$ is also a handy tool. Use the \var{pt()} or the \var{pnorm()} function to calculate the area left of the T-statistic. Students then can take the value and subtract from one or multiply by two depending on the alternative hypothesis. If students have the ability to use $R$, the $n\geq 30$ threshold can be loosened since modeling after the t-distribution becomes easier and more accurate compared to the tables. However we note again that once $n\geq 30$, both distributions become almost equal. 
+If available, $R$ is also a handy tool. Use the \var{pt()} or the \var{pnorm()} function to calculate the area left of the T-statistic. However be careful that the area left of the T-statistic is not necessarily always the p-value. Refer to Figure ~\ref{pValueOneSidedSleepStudyExplained} as guidance \footnote{While Figure ~\ref{pValueOneSidedSleepStudyExplained} is the distribution of the sample mean, the T-statistic also has a very similar distribution. Recall that the T-statistic is just the sample mean normalized and thus, the T-statistic distribution is centered at 0 (where the null value was). The observed $\bar{x}$ is instead the T-statistic. Therefore the shaded area remains the same whether researchers use Figure ~\ref{pValueOneSidedSleepStudyExplained} or the distribution of the T-statistic.} for when the complement of the $R$ output needs to be used. If students have the ability to use $R$, the $n\geq 30$ threshold does not need to be enforced since using a t-distribution in $R$ becomes as easy and more accurate than following a normal distribution. The $n\geq 30$ threshold, however, should be used with the Z or t-tables. However once $n\geq 30$, both distributions become almost equal. More evidence to this will appear in Section ~\ref{INTRO TO T} \textbf{INCLUDE LINK LATER}.  
 
-We use a normal table for calculating the p-value for our sample from the \data{BRFSS} data because $n=100$  in our sample. A score of 0.2 corresponds to a shaded area of 0.579 to the left. Therefore in the tail we have 
+Returning back to the example, $n=50$ and so the T-statistic of 2.83 will be modeled after a normal distribution. 
+Using a normal table the calculate the p-value for a T-statistic of 2.83 corresponds to a shaded area of 0.9977. Therefore in the two-sided tail:
 \begin{align*}
-p &=Pr(T\leq -0.2) + Pr(T\geq 0.2)\\
-&= Pr(|T| \geq 0.2)\\
-&= 2Pr(T\geq 0.2)\\
-&= 2 \cdot (1-0.579)\\
-&= 0.842
+p &=Pr(T\leq -2.83) + Pr(T\geq 2.83)\\
+&= Pr(|T| \geq 2.83)\\
+&= 2Pr(T\geq 2.83)\\
+&= 2 \cdot (1-0.9977)\\
+&= 0.0046
 \end{align*}
-Using $R$, we use both \var{pnorm()} and \var{pt()} to check. \begin{verbatim}
-> 2*(1-pnorm(0.2))
-[1] 0.8414806
-> 2*(1-pt(0.2, 99))
-[1] 0.8418908
+Using $R$, \var{pnorm()} and \var{pt()} are both used to check. \begin{verbatim}
+> 2*(1-pnorm(2.83))
+[1] 0.0046548
+> 2*(1-pt(2.83, 49))
+[1] 0.006730122
 \end{verbatim}
 
-We see that both output p-values that are extremely similar and agree with the p-value from the normal table as well. Now that we calculated the p-value we can conclude that this p-value $> \alpha=0.05$ so we cannot reject $H_0$. To put it into context: from observing a sample mean of 0.5 for weight differences, we observed a p-value of 0.84 and cannot conclude that weight difference is nonzero. From our sample it appears that US adults are satisfied with their weight. 
+Both output p-values from $R$ are extremely similar and agree with the p-value from the normal table. Step 4 resulted in a p-value of approximately 0.004. Step 5 is formulating the conclusion with the p-value and a significance level of $\alpha=0.05$. Because this p-value $< \alpha=0.05$, $H_0$ can be rejected. To put it into context: from observing a sample mean of 24 for the average BMI in the US, a p-value of 0.0046 was observed. Therefore the average BMI from the observed sample suggests that the population average BMI is not 22. 
+
+\begin{termBox}{\tBoxTitle{p-value as a tool in hypothesis testing}
+The p-value quantifies how strongly the data favor $H_A$ over $H_0$. A small p-value (usually $<0.05$) corresponds to sufficient evidence to reject $H_0$ in favor of $H_A$.}
+\index{hypothesis testing!p-value|)}
+\end{termBox}
 
 \begin{exercise}
 If the null hypothesis is true, how often should the p-value be less than 0.05?\footnote{About 5\% of the time. If the null hypothesis is true, then the data only has a 5\% chance of being in the 5\% of data most favorable to $H_A$.}
@@ -799,81 +810,95 @@ If the null hypothesis is true, how often should the p-value be less than 0.05?\
 \end{exercise}
 
 \begin{tipBox}{\tipBoxTitle{Concluding on Critical Values}
-Conclusions are made from the p-value but if $\alpha=0.05$ or some other common value, we can take a quick shortcut using the critical value. We learned the critical value as the coefficient on the standard error to calculate the confidence interval. However the critical value is also the point on the test distribution that can be compared to the T-statistic in hypothesis testing. Since we know that the critical value is associated with some confidence level, this critical value is also associated with $\alpha$. If the absolute value of the T-statistic is greater than the critical value (more extreme), the p-value is less than $\alpha$ and you can reject the null hypothesis.}
+Conclusions are made from the p-value and the significance level but if $\alpha=0.05$ or some other common value, the critical value can offer a quick shortcut to the conclusion. Recall that critical value are the coefficient on the standard error to calculate the confidence interval. However the critical value is also the point on the normalized sampling distribution that can be compared to the T-statistic for hypothesis testing. If the absolute value of the T-statistic is greater than the critical value (more extreme), the p-value is less than $\alpha$ and the null hypothesis can be rejected.}
 \end{tipBox}
 
 \begin{caution}{Critical value $\neq$ test statistic}
-{Many times students get confused between the critical value and the test statistic. The critical value is associated with some $\alpha$ and does not change. For a specific $\alpha$ there is only one critical value. The T-statistic can change depending on the sample that you observed. Students are comparing their T-statistic to the critical value using the critical value as a benchmark.} 
+{Many times people get confused between the critical value and the test statistic. The critical value is associated with some $\alpha$ and does not change. For a specific $\alpha$, there is only one critical value. The T-statistic can change depending on the sample that is observed. The T-statistic should be compared to the critical value using the critical value as a benchmark.} 
 \end{caution}
 
+\subsubsection{One sided Sleep Example}
+\label{onesidedSleepExample}
+
+Section ~\ref{pValue} provided an introductory example with a two-sided alternative. This section will walk through all 5 steps in the Hypothesis testing framework for a problem about sleep.
+
 \begin{exercise} \label{skepticalPerspOfRuralSchoolSleepExercise}
-A poll by the National Sleep Foundation found that college students average about 7 hours of sleep per night. Researchers at a rural school are interested in showing that students at their school sleep longer than seven hours on average, and they would like to demonstrate this using a sample of students. What would be an appropriate skeptical position for this research?\footnote{A skeptic would have no reason to believe that sleep patterns at this school are different than the sleep patterns at another school.}
+A poll by the National Sleep Foundation found that college students average about 7 hours of sleep per night. Researchers at a rural school are interested in showing that students at their school sleep longer than seven hours on average, and they would like to demonstrate this using a sample of students. What would be an appropriate skeptical position for this research?\footnote{A skeptic would have no reason to believe that sleep patterns at this school are any different than the sleep patterns at another school.}
 \end{exercise}
 
 \index{data!school sleep|(}
 
-We can set up the null hypothesis for this test as a skeptical perspective: the students at this school average 7 hours of sleep per night. The alternative hypothesis takes a new form reflecting the interests of the research: the students average more than 7 hours of sleep. We can write these hypotheses as
-\[H_0: \mu = 7 \hspace{0.5in} H_A: \mu \geq 7\]
-Using $\mu \geq 7$ as the alternative is an example of a \term{one-sided} hypothesis test mentioned previously. In this investigation, there is no apparent interest in learning whether the mean is less than 7~hours.\footnote{This is entirely based on the interests of the researchers. Had they been only interested in the opposite case -- showing that their students were actually averaging fewer than seven hours of sleep but not interested in showing more than 7 hours -- then our setup would have set the alternative as $\mu \leq 7$.} Earlier we encountered a \term{two-sided} hypothesis where we looked for any clear difference, greater than or less than the null value.
+Hypothesis testing begins with setting up the hypotheses. The null hypothesis for this test becomes a skeptical perspective: the students at this school average 7 hours of sleep per night. The alternative hypothesis takes a new form reflecting the interests of the research: the students average more than 7 hours of sleep. The hypotheses in mathematical terms are \[H_0: \mu = 7 \hspace{0.5in} H_A: \mu \geq 7\]
+Using $\mu \geq 7$ as the alternative is an example of a \term{one-sided} hypothesis test introduced previously. In this investigation, there is no apparent interest in learning whether the average hours of sleep in this rural college is less than 7~hours.\footnote{This is entirely based on the interests of the researchers. Had they been only interested in the opposite case -- showing that their students were actually averaging fewer than seven hours of sleep but not interested in showing more than 7 hours -- then the setup would have set the alternative as $\mu \leq 7$.} A \term{two-sided} hypothesis where any clear difference, greater than or less than the null value would have been interesting is not the scope of this hypothesis test..
 
-Always use a two-sided test unless it was made clear prior to data collection that the test should be one-sided. Switching a two-sided test to a one-sided test after observing the data is dangerous because it can inflate the chance of an incorrect conclusion.
+Note: Always use a two-sided test unless it was made clear prior to data collection that the test should be one-sided. Switching a two-sided test to a one-sided test after observing the data is dangerous because it can inflate the chance of an incorrect conclusion. Section ~\ref{twoSidedTestsWithPValue} explores the consequences of switching between different alternative hypotheses. 
 
 \begin{tipBox}{\tipBoxTitle{One-sided and two-sided tests}
 If the researchers are only interested in showing an increase or a decrease, but not both, use a one-sided test. If the researchers would be interested in any difference from the null value -- an increase or decrease -- then the test should be two-sided.\vspace{0.5mm}}
 \end{tipBox}
 
 \begin{tipBox}{\tipBoxTitle{Always write the null hypothesis as an equality}
-We will find it most useful if we always list the null hypothesis as an equality (e.g. $\mu = 7$) while the alternative always uses an inequality (e.g. $\mu\neq7$, $\mu \geq7$, or $\mu \leq7$).}
+Writing the null hypothesis as an equality (e.g. $\mu = 7$) makes hypothesis testing easier. The alternative then should either be written with an unequal or inequality sign (e.g. $\mu\neq7$, $\mu \geq7$, or $\mu \leq7$).}
 \end{tipBox}
 
 The researchers at the rural school conducted a simple random sample of $n=110$ students on campus. They found that these students averaged 7.42 hours of sleep and the standard deviation of the amount of sleep for the students was 1.75 hours. A histogram of the sample is shown in Figure~\ref{histOfSleepForCollegeThatWasCheckingForMoreThan7Hours}.
 
 \begin{figure}
 \centering
-\includegraphics[height=55mm]{ch_inference_foundations_oi_biostat/figures/histOfSleepForCollegeThatWasCheckingForMoreThan7Hours/histOfSleepForCollegeThatWasCheckingForMoreThan7Hours}
+\includegraphics[width = \textwidth]{ch_inference_foundations_oi_biostat/figures/histOfSleepForCollegeThatWasCheckingForMoreThan7Hours/histOfSleepForCollegeThatWasCheckingForMoreThan7Hours}
 \caption{Distribution of a night of sleep for 110 college students. These data are moderately skewed.\index{skew!example: moderate}}
 \label{histOfSleepForCollegeThatWasCheckingForMoreThan7Hours}
 \end{figure}
 
-Before we can use a normal model for the sample mean or compute the standard error of the sample mean, we must verify conditions. (1)~Because this is a simple random sample from less than 10\% of the student body, the observations are independent. (2)~The sample size in the sleep study is sufficiently large since it is greater than 30. (3)~The data show moderate skew in Figure~\ref{histOfSleepForCollegeThatWasCheckingForMoreThan7Hours} and the presence of a couple of outliers. This skew and the outliers (which are not too extreme) are acceptable for a sample size of $n=110$. With these conditions verified, the normal model can be safely applied to $\bar{x}$ and the estimated standard error will be very accurate.
+Before moving onto Step 2, conditions for normality must be verified. (1)~Because this is a simple random sample from less than 10\% of the student body, the observations can be considered independent. (2)~The sample size in the sleep study is sufficiently large since it is greater than 30. (3)~The data show moderate skew in Figure~\ref{histOfSleepForCollegeThatWasCheckingForMoreThan7Hours} and the presence of a couple of outliers. This skew and the outliers (which are not too extreme) are acceptable for a sample size of $n=110$. With these conditions verified, the normal model can be safely applied to $\bar{\mathrm{sleep}}$ and the estimated standard error will be very accurate.
 
 \begin{exercise} \label{findSEOfFirstSleepStudyCheckingGreaterThan7Hours}
-What is the standard deviation associated with $\bar{x}$? That is, estimate the standard error of $\bar{x}$.\footnote{The standard error can be estimated from the sample standard deviation and the sample size: $SE_{\bar{x}} = \frac{s_x}{\sqrt{n}} = \frac{1.75}{\sqrt{110}} = 0.17$.}
+What is the standard deviation associated with $\bar{\mathrm{sleep}}$? That is, estimate the standard error of $\bar{\mathrm{sleep}}$.\footnote{The standard error can be estimated from the sample standard deviation and the sample size: $SE_{\bar{x}} = \frac{s_\mathrm{sleep}}{\sqrt{n}} = \frac{1.75}{\sqrt{110}} = 0.17$.}
 \end{exercise}
 
-The hypothesis test will be evaluated using a significance level of $\alpha = 0.05$. We want to consider the data under the scenario that the null hypothesis is true. In this case, the sample mean is from a distribution that is nearly normal and has mean 7 and standard deviation of about 0.17. Such a distribution is shown in Figure~\ref{pValueOneSidedSleepStudy}. 
+The hypothesis test will be evaluated using a significance level of $\alpha = 0.05$. The sampling distribution is assuming that the null hypothesis is true. In this case, the sample mean, 7.42 hours, was drawn from a distribution that is nearly normal with mean 7 and standard deviation of about 0.17. Such a distribution is shown in Figure~\ref{pValueOneSidedSleepStudy}. 
 
 \begin{figure}[hht]
    \centering
-   \includegraphics[width=0.73\textwidth]{ch_inference_foundations_oi_biostat/figures/pValueOneSidedSleepStudy/pValueOneSidedSleepStudybrfss}
-   \caption{If the null hypothesis is true, then the sample mean $\bar{x}$ came from this nearly normal distribution. The right tail describes the probability of observing such a large sample mean if the null hypothesis is true.}
+   \includegraphics[width=0.73\textwidth]{ch_inference_foundations_oi_biostat/figures/pValueOneSidedSleepStudy/pValueOneSidedSleepStudy}
+   \caption{If the null hypothesis is true, then the sample mean $\bar{\mathrm{sleep}}$ is from this nearly normal distribution. The right tail describes the probability of observing such a large sample mean if the null hypothesis is true. The p-value is the area that is shaded blue that is more extreme than $\bar{\mathrm{sleep}}$. All means larger than the sample mean are more favorable to the alternative hypothesis than the observed mean.}
    \label{pValueOneSidedSleepStudy}
 \end{figure}
 
-Remember the shaded tail in Figure~\ref{pValueOneSidedSleepStudy} is the p-value and so we shade all means larger than our sample mean, $\bar{x} = 7.42$, because they are more favorable to the alternative hypothesis than the observed mean. We compute the p-value by first computing the T-statistic for the sample mean, $\bar{x} = 7.42$:
-\[ T = \frac{\bar{x} - \text{null value}}{SE_{\bar{x}}} = \frac{7.42 - 7}{0.17} = 2.47\]
+Step 3 is the calculation of the T-statistic for sample mean $\bar{\mathrm{sleep}} = 7.42$. 
+\[ T = \frac{\bar{\mathrm{sleep}} - \text{null value}}{SE_{\bar{\mathrm{sleep}}}} = \frac{7.42 - 7}{0.17} = 2.47\]
 
-Using the normal probability table, the lower unshaded area is found to be 0.993. Thus the shaded area is $1-0.993 = 0.007$. Using $R$ we have
+Step 4 continues with a T-statistic of 2.47. As noted before, $n=110$ so the T-statistic can be considered to be distributed normally. Using the normal probability table, the lower unshaded area is found to be 0.993. Thus the shaded area from Figure ~\ref{pValueOneSidedSleepStudy} is $1-0.993 = 0.007$. Using $R$ to confirm,
  \begin{verbatim} 
  > 1-pnorm(2.47)
 [1] 0.006755653 
 \end{verbatim}
-{\em If the null hypothesis is true, the probability of observing such a large sample mean for a sample of 110 students is only 0.007.}\index{p-value!interpretation example} That is, if the null hypothesis is true, we would not often see such a large mean.
+{\em If the null hypothesis is true, the probability of observing such a large sample mean of 7.42 hours for a sample of 110 students is only 0.007.}\index{p-value!interpretation example} That is, if the null hypothesis is true, such a large mean would not be observed in most instances. 
 
-We evaluate the hypotheses by comparing the p-value to the significance level. Because the p-value is less than the significance level (p-value $=0.007 < 0.05=\alpha$), we reject the null hypothesis.\footnote{Using critical values instead, we know that for $\alpha=0.05$ and a one sided alternative, the critical value is 1.65. Since our T-statistic is greater than 1.65, we know to reject $H_0$ without calculating the actual p-value} What we observed is so unusual with respect to the null hypothesis that it casts serious doubt on $H_0$ and provides strong evidence favoring $H_A$.
-
-\begin{termBox}{\tBoxTitle{p-value as a tool in hypothesis testing}
-The p-value quantifies how strongly the data favor $H_A$ over $H_0$. A small p-value (usually $<0.05$) corresponds to sufficient evidence to reject $H_0$ in favor of $H_A$.}
-\index{hypothesis testing!p-value|)}
-\end{termBox}
+Step 5 compares the p-value to the significance level. Because the p-value is less than the significance level $\alpha$($0.007 < 0.05$), the null hypothesis is rejected.\footnote{Using critical values instead, for $\alpha=0.05$ and a one sided alternative, the critical value is 1.65. Since the T-statistic is greater than 1.65, $H_0$ is rejected without calculating the actual p-value} The researchers observed was so unusual with respect to the null hypothesis that it casts serious doubt on $H_0$ and provides strong evidence favoring $H_A$. Therefore in context, it is most likely that these rural college students do sleep more than 7 hours per night, more than the national average among college students. 
 
 \begin{tipBox}{\tipBoxTitle{It is useful to first draw a picture to find the p-value}
-It is useful to draw a picture of the distribution of $\bar{x}$ as though $H_0$ was true (i.e. $\mu$ equals the null value), and shade the region (or regions) of sample means that are at least as favorable to the alternative hypothesis. These shaded regions represent the p-value.}
+It is useful to draw a picture of the distribution of $\bar{x}$ as though $H_0$ was true (i.e. $\mu$ equals the null value), and shade the region (or regions) of sample means that are at least as favorable to the alternative hypothesis. The sum of the shaded regions represent the p-value.}
 \end{tipBox}
 
 \begin{exercise}
-Suppose we had used a significance level of 0.01 in the sleep study. Would the evidence have been strong enough to reject the null hypothesis? (The p-value was 0.007.) What if the significance level was $\alpha = 0.001$? \footnote{We reject the null hypothesis whenever $p$-$value < \alpha$. Thus, we would still reject the null hypothesis if $\alpha = 0.01$ but not if the significance level had been $\alpha = 0.001$.}
+Suppose the significance level was instead 0.01 in the sleep study. Would the evidence have been strong enough to reject the null hypothesis? (The p-value was 0.007.) What if the significance level was $\alpha = 0.001$? \footnote{The null hypothesis is rejected whenever p-value $< \alpha$. If $\alpha = 0.01$, the null hypothesis would still be rejected. If $\alpha = 0.001$, a p-value of 0.007 would fail to reject the null hypothesis.}
 \end{exercise}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \subsection{Testing hypotheses using confidence intervals}
 \label{utilizingOurCI}
@@ -978,13 +1003,6 @@ Because the normal model is symmetric, the right tail will have the same area as
 This p-value is relatively large (larger than $\alpha=0.05$), so we should not reject $H_0$. That is, if $H_0$ is true, it would not be very unusual to see a sample mean this far from 7 hours simply due to sampling variation. Thus, we do not have sufficient evidence to conclude that the mean is different than 7 hours.
 
 \index{data!school sleep|)}
-
-\begin{figure}
-   \centering
-   \includegraphics[width=0.9\textwidth]{ch_inference_foundations_oi_biostat/figures/2ndSchSleepHTExample/2ndSchSleepHTExample}
-   \caption{$H_A$ is two-sided, so \emph{both} tails must be counted for the p-value.}
-   \label{2ndSchSleepHTExample}
-\end{figure}
 
 \end{example}
 

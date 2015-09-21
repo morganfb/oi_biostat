@@ -20,7 +20,7 @@ bmi<-(brfss.df$weight * 703)/ (height.total^2)
 brfss.df<-cbind(brfss.df,height.total,weight.dif,bmi)
 
 # sample 40k from brfss data to use as our sample
-set.seed(100)
+set.seed(102)
 sample.vec<-sample(1:nrow(brfss.df),size = 40000,replace = FALSE)
 brfss.sample<-brfss.df[sample.vec,]
 
@@ -38,6 +38,7 @@ n <- 100
 k <- 25
 SE <- s/sqrt(n)
 
+set.seed(105)
 means <- c()
 SE    <- c()
 for(i in 1:k){
@@ -54,7 +55,7 @@ plot(xR, yR,
      ylab = '',
      axes = FALSE)
 abline(v = m, lty = 2, col = COL[6])
-axis(1, at = m, expression(mu*' = 26.35'),
+axis(1, at = m, expression(mu*''),
      cex.axis = 1.15)
 for(i in 1:k){
   ci <- means[i] + 2 * c(-1, 1) * SE[i]

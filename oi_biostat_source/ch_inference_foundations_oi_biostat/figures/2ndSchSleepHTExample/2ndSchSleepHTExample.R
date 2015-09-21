@@ -8,12 +8,12 @@ normTail(L = -0.81,
          U = 0.81,
          col = COL[1],
          axes = FALSE)
-labels <- expression(bar(x)*'  =  6.83')
+labels <- expression(bar(x)*'')
 axis(1, at = -0.81, labels = labels, cex.axis = 0.87)
 
 par(mgp = c(3, 0.77, 0))
 at <- c(-15, 0, 5)
-labels <- expression(0, H[0]*': '*mu*'  =  7', 0)
+labels <- expression(0, H[0]*': '*mu*'', 0)
 axis(1, at, labels, cex.axis = 0.87)
 
 yMax <- max(Y)

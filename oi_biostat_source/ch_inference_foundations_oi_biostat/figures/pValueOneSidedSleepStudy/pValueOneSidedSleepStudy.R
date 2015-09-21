@@ -11,11 +11,10 @@ normTail(U = 2.18,
          lwd  =  2)
 at <- c(-5, 0, 0.37 / 0.17, 5)
 labels <- expression(0, H[0]*': '*mu*' = 7  ',
-                     bar(x)*' = 7.42', 0)
+                     bar(sleep)*' = 7.42', 0)
 axis(1, at, labels, cex.axis = 1)
 yMax <- 0.4
 
-text(0, yMax * 0.4, '0.993', cex = 1.2)
 arrows(2.5, yMax / 2,
        2.5, yMax / 10,
        length = 0.1,
