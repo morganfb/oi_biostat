@@ -712,10 +712,10 @@ Typically, $\alpha$ is taken to be 0.05, 0.01, or some other small value. $\alph
 The third step is calculating a test statistic from the observed data. The conclusions of the hypothesis test in Step 4 and 5 will be based upon this test statistic. This statistic measures the difference between the observed data and what is expected if the null hypothesis is true. It answers the question: "How many standard deviations from the hypothesized value is the observed sample value?" Thinking back to \textbf{THIS SECTION} ~\ref{some section in chapter 2 or 3} of standardizing a normal, the test statistic follows a similar construction. When testing hypotheses about a mean, the test statistic will always be 
 \begin{eqnarray}T=\frac{\bar{x}-\mu_0}{s/\sqrt{n}}\end{eqnarray} 
 where $\bar{x}$ is the sample mean, $s$ is the sample standard deviation and $n$ is the number of observations in the sample. This equation only applies to testing after observing only one sample. 
-\emph{Note:} In general test statistics follow the form $\frac{\mathrm{observed-hypothesized}}{\mathrm{standard error}}$ to calculate the number of standard deviations the observed value is from the hypothesized value. This T-statistic, $T$, follows a t-distribution \textbf{INCLUDE CHAPTER 3} \footnote{ from \textbf{Chapter 3}} and will have $n-1$ degrees of freedom. 
+\emph{Note:} In general test statistics follow the form $\frac{\mathrm{observed-hypothesized}}{\mathrm{standard error}}$ to calculate the number of standard deviations the observed value is from the hypothesized value. This T-statistic, $T$, follows a $t$-distribution \textbf{INCLUDE CHAPTER 3} \footnote{ from \textbf{Chapter 3}} and will have $n-1$ degrees of freedom. 
 
 \begin{termBox}{\tBoxTitle{Test statistic}
-A \emph{test statistic} is a special summary statistic that is particularly useful for evaluating a hypothesis test or identifying the p-value. The test-statistic is a particular data summary that summarizes how many standard deviations the hypothesized null value is from the observed sample value. In general the T-statistic follows a t-distribution with $n-1$ degrees of freedom. The t-distribution will be covered in Section ~\ref{SOMETHING} \textbf{SOMETHING} \footnote{When a point estimate is nearly normal, the Z score of the point estimate can be used as the test statistic. Later chapters will encounter situations where other test statistics are helpful.}}
+A \emph{test statistic} is a special summary statistic that is particularly useful for evaluating a hypothesis test or identifying the p-value. The test-statistic is a particular data summary that summarizes how many standard deviations the hypothesized null value is from the observed sample value. In general the T-statistic follows a $t$-distribution with $n-1$ degrees of freedom. The $t$-distribution will be covered in Section ~\ref{SOMETHING} \textbf{SOMETHING} \footnote{When a point estimate is nearly normal, the Z score of the point estimate can be used as the test statistic. Later chapters will encounter situations where other test statistics are helpful.}}
 \index{hypothesis testing!using normal model|)}
 \end{termBox}
 
@@ -773,13 +773,13 @@ Recall that the CDC researchers are interested if US adults are maintaining a he
 
 Instead of 40,000 within the \data{BRFSS BMI} sample, let's consider a sample of 50 people for simplicity with a sample mean of 24. The sample standard deviation is 5. Given this information the T-statistic is calculated as\footnote{calculating the T-statistic using actual data is an exercise in the book}. \[T=\frac{24-22}{5/\sqrt{50}}= 2.83\] The T-statistic can be thought of as a Z-score (standard score) that indicates how many standard deviations the observed sample mean is from the null value. This standardization becomes a great way to unify all the moving parts in order to calculate the p-value. 
 
-Within the Hypothesis testing framework, Step 3 resulted in a T-statistic of 2.83. Step 4 begins by first knowing how the T-statistic is distributed. Section ~\ref{hypothesisFramework} stated that in general, the T-statistic follows a t-distribution with $n-1$ degrees of freedom. In fact, the T-statistic can either follow a t-distribution or a normal distribution. The sample size determines which distribution to model. Similarly to confidence intervals, if $n \geq 30$, the T-statistic can be thought of coming from a normal distribution. If $n < 30$, use a t-distribution for the T-statistic instead.
+Within the Hypothesis testing framework, Step 3 resulted in a T-statistic of 2.83. Step 4 begins by first knowing how the T-statistic is distributed. Section ~\ref{hypothesisFramework} stated that in general, the T-statistic follows a $t$-distribution with $n-1$ degrees of freedom. In fact, the T-statistic can either follow a $t$-distribution or a normal distribution. The sample size determines which distribution to model. Similarly to confidence intervals, if $n \geq 30$, the T-statistic can be thought of coming from a normal distribution. If $n < 30$, use a $t$-distribution for the T-statistic instead.
 
 The p-value also depends on the significance level chosen in Step 2. From this, researchers can either use a Z or t-table to calculate the p-value or in most cases, use $R$. Assuming $\alpha = 0.05$ and the researcher is using a t-table like the one found on \textbf{SOME PAGE}, the researcher first finds the row with the correct degrees of freedom (for a one sample test, $df = n-1$). Then, looking across that same row, the researcher finds the T-statistic value that is closest to the one calculated in Step 3. Note that the table will not have every single T-statistic value listed. Once an approximate T-statistic is found, the p-value from either a one sided or two sided (one tail or two tail) alternative is found at the top of the cell's column.
  
 The normal table (Z-table) is very similar but be wary that the Z-table only lists the areas left of the Z-score. This simply means that these probabilities coincide with a one-sided alternative. But because the normal distribution is symmetric, finding the p-value for a two sided alternative is just the values from the table times two! 
 
-If available, $R$ is also a handy tool. Use the \var{pt()} or the \var{pnorm()} function to calculate the area left of the T-statistic. However be careful that the area left of the T-statistic is not necessarily always the p-value. Refer to Figure ~\ref{pValueOneSidedSleepStudyExplained} as guidance \footnote{While Figure ~\ref{pValueOneSidedSleepStudyExplained} is the distribution of the sample mean, the T-statistic also has a very similar distribution. Recall that the T-statistic is just the sample mean normalized and thus, the T-statistic distribution is centered at 0 (where the null value was). The observed $\bar{x}$ is instead the T-statistic. Therefore the shaded area remains the same whether researchers use Figure ~\ref{pValueOneSidedSleepStudyExplained} or the distribution of the T-statistic.} for when the complement of the $R$ output needs to be used. If students have the ability to use $R$, the $n\geq 30$ threshold does not need to be enforced since using a t-distribution in $R$ becomes as easy and more accurate than following a normal distribution. The $n\geq 30$ threshold, however, should be used with the Z or t-tables. However once $n\geq 30$, both distributions become almost equal. More evidence to this will appear in Section ~\ref{INTRO TO T} \textbf{INCLUDE LINK LATER}.  
+If available, $R$ is also a handy tool. Use the \var{pt()} or the \var{pnorm()} function to calculate the area left of the T-statistic. However be careful that the area left of the T-statistic is not necessarily always the p-value. Refer to Figure ~\ref{pValueOneSidedSleepStudyExplained} as guidance \footnote{While Figure ~\ref{pValueOneSidedSleepStudyExplained} is the distribution of the sample mean, the T-statistic also has a very similar distribution. Recall that the T-statistic is just the sample mean normalized and thus, the T-statistic distribution is centered at 0 (where the null value was). The observed $\bar{x}$ is instead the T-statistic. Therefore the shaded area remains the same whether researchers use Figure ~\ref{pValueOneSidedSleepStudyExplained} or the distribution of the T-statistic.} for when the complement of the $R$ output needs to be used. If students have the ability to use $R$, the $n\geq 30$ threshold does not need to be enforced since using a $t$-distribution in $R$ becomes as easy and more accurate than following a normal distribution. The $n\geq 30$ threshold, however, should be used with the Z or t-tables. However once $n\geq 30$, both distributions become almost equal. More evidence to this will appear in Section ~\ref{INTRO TO T} \textbf{INCLUDE LINK LATER}.  
 
 Returning back to the example, $n=50$ and so the T-statistic of 2.83 will be modeled after a normal distribution. 
 Using a normal table the calculate the p-value for a T-statistic of 2.83 corresponds to a shaded area of 0.9977. Therefore in the two-sided tail:
@@ -885,46 +885,50 @@ It is useful to draw a picture of the distribution of $\bar{x}$ as though $H_0$ 
 Suppose the significance level was instead 0.01 in the sleep study. Would the evidence have been strong enough to reject the null hypothesis? (The p-value was 0.007.) What if the significance level was $\alpha = 0.001$? \footnote{The null hypothesis is rejected whenever p-value $< \alpha$. If $\alpha = 0.01$, the null hypothesis would still be rejected. If $\alpha = 0.001$, a p-value of 0.007 would fail to reject the null hypothesis.}
 \end{exercise}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \subsection{Testing hypotheses using confidence intervals}
 \label{utilizingOurCI}
 
-While confidence intervals may appear separate from hypothesis testing, these two concepts arrive as the same conclusions. Consider a sample of 100 people from the \data{BRFSS} data to test if the average age of adults is 36.8 years \footnote{as calculated by the US Census in 2009}. The hypothesis setup would be $H_0: \mu_{\mathrm{age}}=36.8$ and $H_A: \mu_{\mathrm{age}} \neq 36.8$. We learned in Section~\ref{variabilityInEstimates} that there is fluctuation from one sample to another, and it is very unlikely that the sample mean will be exactly equal to our parameter; we should not expect $\bar{x}_{\mathrm{ages}}$ to exactly equal $\mu_{\mathrm{ages}}$ and the difference could be due to \emph{sampling variation}, i.e. the variability associated with the point estimate when we take a random sample.
+While confidence intervals and hypothesis testing may seem disjointed -- one provides a range of values while the other results in a yes or no conclusion -- these two methods are two sides of the same coin and arrive at the same conclusions. 
+	
+Consider the CDC  samples 100 people from \data{BRFSS} to test if the average age of all US adults is 35.3 years \footnote{The 2000 Census \url{https://www.census.gov/prod/2001pubs/c2kbr01-12.pdf} listed the median age instead of mean age as 35.3 years. The Census also does not suggest age is distributed normally, but the difference in mean and median age will only be slight as the US population is so large.} The sample has an average age of 43.9 years and a sample standard deviation of 17.97 years.
 
-In Section~\ref{confidenceIntervals}, confidence intervals were introduced as a way to find a range of plausible values for the population mean. From \data{BRFSS}, the sample has a mean of 46.48 and a standard deviation of 16.83. Therefore the 95\% confidence interval is \[46.48 \pm 1.96 \cdot \frac{16.83}{\sqrt{100}} = (43.1796, 49.7804)\] Because 36.8 years does not fall in the range of plausible values, we can say the null hypothesis is implausible. That is, we failed to reject the null hypothesis, $H_0$. 
+Beginning with hypothesis testing, the two hypotheses would be $H_0: \mu_{\mathrm{age}}=35.3$ and $H_A: \mu_{\mathrm{age}} \neq 35.3$. The alternative hypothesis is two-sided because the CDC has no prior belief on the sidedness of this question. 
 
-\begin{exercise} \label{htForHousingExpenseForCommunityCollege650}
-An investigator is studying the results of standardized IQ tests in adolescents who suffered from severe asthma during childhood. She claims that those who had childhood asthma perform worse. For the standardized test she will use, the population mean score is 100. What are the null and alternative hypotheses to test whether this claim is accurate? \footnote{$H_0$: The average score is 100, $\mu = 100$. \hspace{3.4mm} $H_A$: The average score is lower, $\mu \leq 100$.}
+Continuing on, the CDC performs the only steps within the Hypothesis testing framework. Let $\alpha = 0.05$ and the average the T-statistic is \[t = \frac{43.9-35.3}{17.97/\sqrt{100}}= \frac{8.6}{1.797} = 4.79\] Because $n=100$ which is larger than 30, the T-statistic can be modeled after a normal distribution. Using $R$, the p-value is \begin{verbatim}
+> 2*(1-pnorm(4.79))
+[1] 1.667813e-06
+\end{verbatim}
+The p-value calculated for a two sided alternative is less than the $\alpha$ level of 0.05. Therefore the sample mean that the CDC observed can be considered a "rare event," and the null hypothesis can be rejected. To put it in context, the CDC calculated a T-statistic of 4.79 and can reject the hypothesis that the average age of all US adults is 35.3 years after observing a sample mean of 43.9 years. In other words, the average age of adults is not 35.3 years. 
+
+Remembering the conclusion of hypothesis testing, the CDC then calculates a confidence interval as well. Because $\alpha=0.05$ under hypothesis testing, the CDC chooses to create a 95\% confidence interval. Using the same sample the confidence interval is
+\begin{align*}
+43.9 &\pm 1.96 * \frac{17.97}{\sqrt{100}}\\
+43.9 &\pm 1.96 * 1.797\\
+(40.38,& 47.42)\
+\end{align*} 
+
+The CDC is 95\% confident that the average age of all the US adults lies between 40.38 and 47.42 years after observing a sample mean of 43.9 years. The CDC can take it a step further and note that 35.3 years is not included in this interval. Therefore it is equivalent to say that the average age of the US is not 35.3 years. 
+
+The connection between confidence intervals and hypothesis testing is this: rejecting a null hypothesis for a two-sided alternative hypothesis corresponds to the null value that does not fall within a confidence interval. The equivalence only is true if assumptions that the alternative hypothesis is two-sided and the significance levels for both are equal are both met. 
+
+\begin{exercise} \label{htForHousingExpenseForCommunityCollege650} 
+An investigator is studying the results of standardized IQ tests in adolescents who suffered from severe asthma during childhood. She claims that those who had childhood asthma perform worse. For the standardized test she will use, the population mean score is 100. What are the null and alternative hypotheses to test whether this claim is accurate? \footnote{$H_0$: The average score is 100, $\mu = 100$. \hspace{3.4mm} $H_A$: The average score is lower than 100, $\mu \leq 100$.}
 \end{exercise}
 
 \begin{example}{In her sample of 100 children, she found a sample mean $\bar{x} = 96.7$ and standard deviation $s = 10$. Construct a 95\% confidence interval for the population mean and evaluate the hypotheses of Exercise~\ref{htForHousingExpenseForCommunityCollege650}.}
 $$ SE = \frac{s}{\sqrt{n}} = \frac{10}{\sqrt{100}} = 1 $$
-The normal model may be applied to the sample mean because the conditions are met: The data are a simple random sample and we assume that there are more than 1,000 adolescents who have suffered from asthma. The observations are independent and the sample size is also sufficiently large (n=100). We don't know about existing outliers but the sample size mitigates potential effects of outliers. This ensures a 95\% confidence interval may be accurately constructed:
+The normal model may be applied to the sample mean because the conditions are met: The data are a simple random sample and we assume that there are more than 1,000 adolescents who have suffered from asthma. The observations are independent and the sample size is also sufficiently large (n=100). The sample size mitigates potential effects of outliers even though the distribution is not provided. This ensures a 95\% confidence interval may be accurately constructed:
 $$\bar{x}\ \pm\ z^{\star} SE \quad\to\quad 96.7\ \pm\ 1.96 \times  1 \quad \to \quad (94.74, 98.66) $$
-Because the null value 100 is not in the confidence interval, a true mean of 100 is implausible and we reject the null hypothesis. The data provide statistically significant evidence that adolescents who suffered from severe asthma during childhood do perform worse on standardized IQ tests. 
+Because the null value 100 does not lie within the confidence interval, a population mean score of 100 from all adolescents who suffered from sever asthma during childhood is implausible, and the null hypothesis is rejected. The data provide statistically significant evidence that adolescents who suffered from severe asthma during childhood do perform worse on standardized IQ tests. 
 \end{example}
 
 \subsection{Decision errors}\label{DecisionErrors}
 
 \index{hypothesis testing!decision errors|(}
 
-Hypothesis tests are not flawless. Just think of the court system: innocent people are sometimes wrongly convicted and the guilty sometimes walk free. Similarly, we can make a wrong decision in statistical hypothesis tests. However, the difference is that we have the tools necessary to quantify how often we make such errors.
+Hypothesis tests are not flawless. Just think of the court system: innocent people are sometimes wrongly convicted and the guilty sometimes walk free. Similarly, scientists can make wrong decisions in statistical hypothesis tests in the presence of sampling variation. With sample means and standard deviations varying sample to sample, confidence intervals and p-values can differ. This variation induces some imprecision and the potential to make the wrong decision. However, the difference is that, unlike the court system, there exists tools necessary to quantify how often such errors are made.
 
-There are two competing hypotheses: the null and the alternative. In a hypothesis test, we make a statement about which one might be true, but we might choose incorrectly. There are four possible scenarios in a hypothesis test, which are summarized in Table~\ref{fourHTScenarios}.
+There are two competing hypotheses: the null and the alternative. Hypothesis testing results in scientists concluding which hypothesis might be true. However, these scientists might choose incorrectly. There are four possible scenarios in a hypothesis test, which are summarized in Table~\ref{fourHTScenarios}.
 
 \begin{table}[ht]
 \centering
@@ -946,73 +950,75 @@ There are two competing hypotheses: the null and the alternative. In a hypothesi
 A \term{Type~1 Error} is rejecting the null hypothesis when $H_0$ is actually true. A \term{Type~2 Error} is failing to reject the null hypothesis when the alternative is actually true.
 
 \begin{exercise} \label{whatAreTheErrorTypesInUSCourts}
-In a US court, the defendant is either innocent ($H_0$) or  guilty ($H_A$). What does a Type~1 Error represent in this context? What does a Type 2 Error represent? Table~\ref{fourHTScenarios} may be useful.\footnote{If the court makes a Type~1 Error, this means the defendant is innocent ($H_0$ true) but wrongly convicted. A Type 2 Error means the court failed to reject $H_0$ (i.e. failed to convict the person) when she was in fact guilty ($H_A$ true).}
+In a US court, the defendant is either innocent ($H_0$) or  guilty ($H_A$). What does a Type~1 Error represent in this context? What does a Type 2 Error represent? Table~\ref{fourHTScenarios} may be useful.\footnote{If the court makes a Type~1 Error, this means the defendant is innocent ($H_0$ true) but wrongly convicted. A Type 2 Error means the court failed to reject $H_0$ (i.e. failed to convict the person) when the defendant was in fact guilty ($H_A$ true).}
 \end{exercise}
 
 \begin{exercise} \label{howToReduceType1ErrorsInUSCourts}
-How could we reduce the Type~1 Error rate in US courts? What influence would this have on the Type 2 Error rate?\footnote{To lower the Type~1 Error rate, we might raise our standard for conviction from ``beyond a reasonable doubt'' to ``beyond a conceivable doubt'' so fewer people would be wrongly convicted. However, this would also make it more difficult to convict the people who are actually guilty, so we would make more Type~2 Errors.}
+How could we reduce the Type~1 Error rate in US courts? What influence would this have on the Type 2 Error rate?\footnote{To lower the Type~1 Error rate (incorrect convictions), the standard conviction could be raised from ``beyond a reasonable doubt'' to ``beyond a conceivable doubt'' so fewer people would be wrongly convicted. However, there exists a tradeoff. By increasing the threshold, it would make it more difficult to convince people who are guilty. By reducing the Type~1 Error rate, the US courts would increase the Type 2 Error rate.}
 \end{exercise}
 
 \begin{exercise} \label{howToReduceType2ErrorsInUSCourts}
-How could we reduce the Type~2 Error rate in US courts? What influence would this have on the Type~1 Error rate?\footnote{To lower the Type~2 Error rate, we want to convict more guilty people. We could lower the standards for conviction from ``beyond a reasonable doubt'' to ``beyond a little doubt''. Lowering the bar for guilt will also result in more wrongful convictions, raising the Type~1 Error rate.}
+How could Type~2 Error rate be reduced in US courts? What influence would this have on the Type~1 Error rate?\footnote{Lowering the Type~2 Error rate means that the US courts will convict more guilty people. Instead of Exercise \label{howToReduceType1ErrorsInUSCourts} and raising the standard of conviction, the standard could be lowered to reduce Type~2 Error. Lowering the bar from ``beyond a reasonable doubt'' to ``beyond a little doubt'' for guilt will also result in more wrongful convictions, raising the Type~1 Error rate.}
 \end{exercise}
 
 \begin{exercise} \label{errorsinHIVTesting}
-Consider a person getting tested for HIV. What does a Type~1 and Type~2 Error represent in this context? \footnote{Type~1 Error is if this person does not have HIV but was tested positive for HIV. Type~2 Error would be failing to detect HIV when the patient actually has HIV. }
+Consider a person getting tested for HIV. What do a Type~1 and Type~2 Error represent in this context? \footnote{Type~1 Error is if this person does not have HIV but was tested positive for HIV. Type~2 Error would be failing to detect HIV when the patient actually has HIV. }
 \end{exercise}
 
 \index{hypothesis testing!decision errors|)}
 
-Exercises~\ref{whatAreTheErrorTypesInUSCourts}-\ref{howToReduceType2ErrorsInUSCourts} provide an important lesson: if we reduce how often we make one type of error, we generally make more of the other type.
+Exercises~\ref{whatAreTheErrorTypesInUSCourts}-\ref{howToReduceType2ErrorsInUSCourts} provide an important lesson: if one type of error is reduced, the other error type is generally increased. 
 
-Hypothesis testing is built around rejecting or failing to reject the null hypothesis. That is, we do not reject $H_0$ unless we have strong evidence. But what precisely does \emph{strong evidence} mean? As a general rule of thumb, for those cases where the null hypothesis is actually true, we do not want to incorrectly reject $H_0$ more than 5\% of the time. This corresponds to a \term{significance level}\index{hypothesis testing!significance level} of 0.05 which is the same significance level from hypothesis testing and confidence intervals. We often write the significance level using $\alpha$\marginpar[\raggedright\vspace{-4mm}
+Hypothesis testing can occur in all industries ranging from manufacturing to medical testing, and the question of which error type to target remains in all industries. The real world application of the hypotheses will determine if reducing Type 1 Error is more desirable than reducing Type 2 Error. 
+
+
+Hypothesis testing is built around rejecting or failing to reject the null hypothesis from strong evidence. But what precisely does \emph{strong evidence} mean? Section ~ref{confidenceLevels} first introduced the relationship between $\alpha$ and Type 1 Error. Scientists, in practice, will use $\alpha = 0.05$ universally. This value for $\alpha$, the \term{significance level}, \index{hypothesis testing!significance level}  \marginpar[\raggedright\vspace{-4mm}
 
 $\alpha$\\\footnotesize significance\\level of a\\hypothesis test]{\raggedright\vspace{-4mm}
 
-$\alpha$\\\footnotesize significance\\level of a\\hypothesis test} where $\alpha = 0.05$. We discuss the appropriateness of different significance levels in Section~\ref{significanceLevel}.
-
-If we use a 95\% confidence interval to test a hypothesis where the null hypothesis is true, we will make an error whenever the point estimate is at least 1.96 standard errors away from the population parameter. This happens about 5\% of the time (2.5\% in each tail). Similarly, using a 99\% confidence interval to evaluate a hypothesis is equivalent to a significance level of $\alpha = 0.01$.
+$\alpha$\\\footnotesize significance\\level of a\\hypothesis test} is interpreted for those cases where the null hypothesis is actually true, scientists do not want to incorrectly reject $H_0$ more than 5\% of the time. Scientists do not want to commit a Type 1 Error more than 5\% of the time. Different significance levels beyond $\alpha = 0.05$ will be discussed in Section~\ref{significanceLevel}. However the significance level chosen depends on the study's threshold for committing a Type 1 Error and allowing a Type 2 Error. 
 
 \subsection{Two-sided versus One-sided hypothesis testing: Dos and Don'ts}
 \label{twoSidedTestsWithPValues}
 
 \index{data!school sleep|(}
 
-Determining an alternative hypothesis can get tricky, and the choice between a one-sided and two sided test can be controversial. In this book, the examples and exercises will be obvious enough to decide a correct alternative hypothesis. In practice with real world data, however, can be less straightforward. If the sidedness is uncertain, many scientists opt to use a two-sided alternative because it is more \emph{conservative}. What does conservative in this context mean? Let's first consider the differences.
+Students and scientists alike have the urge to reject the null hypothesis. Scientists, after spending so much time and resources, aim to be published with a new discovery and make an important contribution to the field. Rejecting the null hypothesis, because it is generally stated as the status quo, achieves this scientific contribution. 
 
-It is never okay to change two-sided tests to one-sided tests after observing the data. In this example we explore the consequences of ignoring this advice. Using $\alpha=0.05$, we show that freely switching from two-sided tests to one-sided tests will cause us to make twice as many Type~1 Errors as intended. \footnote{hence to be conservative and safe, we opt to minimize the Type~1 Errors and use the two sided alternative}\label{swappingHypAfterDataDoublesType1ErrorRate}
-
+However, determining an alternative hypothesis can get tricky, and the choice between a one-sided and two sided test can be controversial. Most importantly, it is never okay to change two-sided tests to one-sided tests after observing the data. The following exercise considers the consequences of switching mid-process.
 
 \begin{exercise} \label{2ndSchSleepHypSetupExercise}
-Earlier we talked about a research group investigating whether the students at their school slept longer than 7 hours each night. Let's consider a second group of researchers who want to evaluate whether the students at their college differ from the norm of 7 hours. Write the null and alternative hypotheses for this investigation.\footnote{Because the researchers are interested in any difference, they should use a two-sided setup: $H_0: \mu = 7$, $H_A: \mu \neq 7$.}
+The exists a second group of researchers who want to evaluate whether the students at their college differ from the norm of 7 hours. Write the null and alternative hypotheses for this investigation.\footnote{Because the researchers are interested in any difference, they should use a two-sided setup: $H_0: \mu = 7$, $H_A: \mu \neq 7$.}
 \end{exercise}
 
-\begin{example}{The second college randomly samples 72 students and finds a mean of $\bar{x} = 6.83$ hours and a standard deviation of $s=1.8$ hours. Does this provide strong evidence against $H_0$ in Exercise~\ref{2ndSchSleepHypSetupExercise}? Use a significance level of $\alpha=0.05$.}
-First, we must verify assumptions. (1) A simple random sample of less than 10\% of the student body means the observations are independent. (2) The sample size is 72, which is greater than 30. (3) Based on the earlier distribution and what we already know about college student sleep habits, the distribution is probably not strongly~skewed.
+\begin{example}{The second college randomly samples 72 students and finds a mean of $\bar{x} = 6.61$ hours and a standard deviation of $s=1.8$ hours. Does this provide strong evidence against $H_0$ in Exercise~\ref{2ndSchSleepHypSetupExercise}? Use a significance level of $\alpha=0.05$.}
+First, assumptions must be verified. (1) A simple random sample of less than 10\% of the student body means the observations are independent. (2) The sample size is 72, which is greater than 30. (3) Based on the earlier distribution and what is already known about college student sleep habits, the distribution is likely not to be strongly~skewed.
 
-Next we can compute the standard error ($SE_{\bar{x}} = \frac{s}{\sqrt{n}} = 0.21$) of the estimate and create a picture to represent the p-value, shown in Figure~\ref{2ndSchSleepHTExample}. Both tails are shaded. An estimate of 7.17 ($6.83 + 1.65 cdot 0.21$) or more provides at least as strong of evidence against the null hypothesis and in favor of the alternative as the observed estimate, $\bar{x} = 6.83$.
+Next compute the standard error ($SE_{\bar{x}} = \frac{s}{\sqrt{n}} = 0.21$) of the estimate and create a picture to represent the p-value, shown in Figure~\ref{2ndSchSleepHTExample}. Both tails are shaded since the alternative hypothesis provided in Exercise \ref{2ndSchSleepHypSetupExercise} is two-sided.
 
-We can calculate the tail areas by first finding the lower tail corresponding to $\bar{x}$:
+Calculate the tail areas by first finding the lower tail corresponding to $\bar{x}$:
 \begin{eqnarray*}
-T = \frac{6.83 - 7.00}{0.21} = -0.81 \quad\stackrel{table}{\rightarrow}\quad \text{left tail}=0.2090
+T = \frac{6.61 - 7.00}{0.21} = -1.86 \quad\stackrel{\text{table or $R$}}{\rightarrow}\quad \text{left tail}=0.03
 \end{eqnarray*}
 Because the normal model is symmetric, the right tail will have the same area as the left tail. The p-value is found as the sum of the two shaded tails:
 \begin{eqnarray*}
-\text{p-value} = \text{left tail} + \text{right tail} = 2\times(\text{left tail}) = 0.4180
+\text{p-value} = \text{left tail} + \text{right tail} = 2\times(\text{left tail}) = 0.06
 \end{eqnarray*}
-This p-value is relatively large (larger than $\alpha=0.05$), so we should not reject $H_0$. That is, if $H_0$ is true, it would not be very unusual to see a sample mean this far from 7 hours simply due to sampling variation. Thus, we do not have sufficient evidence to conclude that the mean is different than 7 hours.
+This p-value is is larger than $\alpha=0.05$, so $H_0$ should not be rejected. That is, if $H_0$ is true, it would not be very unusual to see a sample mean this far from 7 hours simply due to sampling variation. There is not have sufficient evidence to conclude that the mean is different than 7 hours.
 
+However, consider if this second group of researchers switched to a one-sided alternative hypothesis before the T-statistic was calculated. Keeping the sample and all other values the same, the p-value under a one-sided alternative would be 0.03. This new p-value is less than $\alpha = 0.05$ and would result in $H_0$ being rejected, a different conclusion than with the two-sided alternative. 
 \index{data!school sleep|)}
-
 \end{example}
 
-\begin{example}{Let's consider two cases: (1) The sample mean was larger than the null value and (2) the sample mean as smaller than the null value. 
+Exercise ~\ref{2ndSchSleepHypSetupExercise} introduces the dangers of switching alternative hypothesis after observing the data. The next example shows that freely switching from two-sided tests to one-sided tests will cause researchers to make twice as many Type~1 Errors as intended.
 
-Suppose the sample mean was larger than the null value, $\mu_0$ (e.g. $\mu_0$ would represent~7 if $H_0$:~$\mu = 7$). Then if we can flip to a one-sided test instead of a two-sided test, we would use $H_A$: $\mu > \mu_0$. Now if we obtain any observation with a T-statistic greater than 1.65, we would reject $H_0$. If the null hypothesis is true, we incorrectly reject the null hypothesis about 5\% of the time when the sample mean is above the null value, as shown in Figure~\ref{type1ErrorDoublingExampleFigure}.
+\begin{example}{Consider two cases: (1) The sample mean is larger than the null value and (2) the sample mean is smaller than the null value. 
 
-Suppose the sample mean was smaller than the null value. Then if we change to a one-sided test, we would use $H_A$: $\mu < \mu_0$. If $\bar{x}$ had a T-statistic smaller than -1.65, we would reject $H_0$. If the null hypothesis is true, then we would observe such a case about 5\% of the time.}
+(1) Suppose the sample mean was larger than the null value, $\mu_0$ (e.g. $\mu_0$ would represent~7 if $H_0$:~$\mu = 7$). Then the researchers could flipped to a one-sided test instead of a two-sided test, they would use $H_A$: $\mu > \mu_0$ after observing the data\footnote{They opt to minimize the Type~1 Errors}. Any T-statistic greater than 1.65 would result in rejecting $H_0$. If the null hypothesis is true, the large T-statistic would result in incorrectly rejecting the null hypothesis about 5\% of the time when the sample mean is above the null value, as shown in Figure~\ref{type1ErrorDoublingExampleFigure}.
 
-By examining these two scenarios, we can determine that we will make a Type~1 Error $5\%+5\%=10\%$ of the time if we are allowed to swap to the ``best'' one-sided test for the data. This is twice the error rate we prescribed with our significance level: $\alpha=0.05$! 
+(2) Suppose the sample mean was smaller than the null value. The researchers would choose $H_A$: $\mu < \mu_0$ if they could change to a one-sided test. If $\bar{x}$ had a T-statistic smaller than -1.65, $H_0$ would be rejected. If the null hypothesis is true, $H_0$ would be incorrectly rejected about 5\% of the time.}
+
+Putting these two scenarios together, if the researchers were free to switch alternative hypotheses after observing the data, the Type~1 Error rate would be $5\%+5\%=10\%$ of the time instead of the specified $\alpha = 0.05$. This is twice the error rate we prescribed with our significance level of 0.05! 
 
 \begin{figure}
    \centering
@@ -1023,9 +1029,12 @@ By examining these two scenarios, we can determine that we will make a Type~1 Er
 
 \end{example}
 
+This text's examples and exercises will be obvious enough to decide on a correct alternative hypothesis. With real world data, however, it can be less straightforward. If the sidedness is uncertain, many scientists opt to use a two-sided alternative because it is more \emph{conservative}. What does conservative in this context mean? Exercise ~\ref{2ndSchSleepHypSetupExercise} and the previous example showed that the two-sided tests would fail to reject the null hypothesis more often. The p-value for a two-sided alternative is twice as large producing a "safer" and more conservative hypothesis test. 
+
 \begin{caution}{One-sided hypotheses are allowed only \emph{before} seeing data}
 {After observing data, it is tempting to turn a two-sided test into a one-sided test. Avoid this temptation. Remember, the direction of a one-sided test must be made a priori, not after peeking at the data since the results could be statistically significant with a one-sided test, but not significant with a two-sided test. Hypotheses must be set up \emph{before} observing the data. If~they are not, the test must be two-sided.}
 \end{caution}
+
 
 \subsection{Choosing a significance level}
 \label{significanceLevel}
@@ -1033,18 +1042,18 @@ By examining these two scenarios, we can determine that we will make a Type~1 Er
 \index{hypothesis testing!significance level|(}
 \index{significance level|(}
 
-Choosing a significance level for a test is important in many contexts, and the traditional level is $\alpha=0.05$. However, it is often helpful to adjust the significance level based on the application. We may select a level that is smaller or larger than 0.05 depending on the consequences of any conclusions reached from the test.
+Choosing a significance level for a test is important in many contexts, and the traditional level is $\alpha=0.05$. However, it is often helpful to adjust the significance level based on the application and on the consequences of any conclusions reached from the test.
 
-If making a Type~1 Error is dangerous or especially costly, we should choose a small significance level (e.g. smaller than 0.05). Under this scenario we want to be very cautious about rejecting the null hypothesis, so we demand very strong evidence favoring $H_A$ before we would reject $H_0$. Many would use $\alpha=0.01$ in this situation. 
+If making a Type~1 Error is dangerous or especially costly, a small significance level (e.g. smaller than 0.05) should be chosen. The study should demand very strong evidence favoring $H_A$ before $H_0$ is rejected. Many would use $\alpha=0.01$ in this situation. 
 
-If a Type 2 Error is relatively more dangerous or much more costly than a Type~1 Error, then we should choose a higher significance level (e.g. 0.10). Here we want to be cautious about failing to reject $H_0$ when the null is actually false.  We will discuss this particular case in greater detail in Section~\ref{sampleSizeAndPower}.
+If a Type 2 Error is relatively more dangerous or much more costly than a Type~1 Error, a higher significance level (e.g. 0.10) should be chosen. Here hypothesis tests should be cautious about failing to reject $H_0$ when the null is actually false.  Section~\ref{sampleSizeAndPower} will discuss this case in more detail.
 
 \begin{tipBox}{\tipBoxTitle[]{Significance levels should reflect consequences of errors}
 The significance level selected for a test should reflect the consequences associated with Type~1 and Type 2 Errors.}
 \end{tipBox}
 
 \begin{example}{A medical machine manufacturer is considering a higher quality but more expensive supplier for parts in making an MRI. They sample a number of parts from their current supplier and also parts from the new supplier. They decide that if the high quality parts will last more than 12\% longer, it makes financial sense to switch to this more expensive supplier. Is there good reason to modify the significance level in such a hypothesis test?}
-The null hypothesis is that the more expensive parts last no more than 12\% longer while the alternative is that they do last more than 12\% longer. This decision is just one of the many regular factors that have a marginal impact on the MRI and the company financial health. A significance level of 0.05 seems reasonable since neither a Type~1 or Type 2 error should be dangerous or (relatively) much more expensive since the machine's accuracy won't be affected.
+The null hypothesis is that the more expensive parts last no more than 12\% longer while the alternative is that they do last more than 12\% longer. This decision is just one of the many regular factors that have a marginal impact on the MRI and the company financial health. A significance level of 0.05 seems reasonable since neither a Type~1 or Type 2 error should be dangerous or (relatively) much more expensive since the machine's accuracy will be less affected.
 \end{example}
 
 \begin{example}{Now consider that the same MRI manufacturer is considering a slightly more expensive supplier for parts related to safety not longevity. If the durability of the machine's components is shown to be better than the current supplier, they will switch manufacturers. Is there good reason to modify the significance level in such an evaluation?}
@@ -1052,7 +1061,7 @@ The null hypothesis would be that the suppliers' parts are equally reliable and 
 \end{example}
 
 \begin{exercise}
-A part inside of a machine is very expensive to replace. However, the machine usually functions properly even if this part is broken and still detects the most common injuries at the same level with a fixed part. The part is replaced only if we are extremely certain it is broken based on a series of measurements. Identify appropriate hypotheses for this test (in plain language) and suggest an appropriate significance level.\footnote{Here the null hypothesis is that the part is not broken, and the alternative is that it is broken. If we don't have sufficient evidence to reject $H_0$, we would not replace the part. It sounds like failing to fix the part if it is broken ($H_0$ false, $H_A$ true) is not very problematic, and replacing the part is expensive. Thus, we should require very strong evidence against $H_0$ before we replace the part. Choose a small significance level, such as $\alpha=0.01$.}
+A part inside of a machine is very expensive to replace. However, the machine usually functions properly even if this part is broken. The machine still detects the most common injuries at the same level with a broken part. The part is replaced only if the doctors are extremely certain it is broken based on a series of measurements. Identify appropriate hypotheses for this test (in plain language) and suggest an appropriate significance level.\footnote{Here the null hypothesis is that the part is not broken, and the alternative is that it is broken. If there is not sufficient evidence to reject $H_0$, the part will not be replaced. Failing to fix the part if it is broken ($H_0$ false, $H_A$ true) is not very problematic, and replacing the part is expensive. Thus, very strong evidence against $H_0$ should exist before we replace the part. Choose a small significance level, such as $\alpha=0.01$.}
 \end{exercise}
 
 \index{significance level|)}
@@ -1060,6 +1069,237 @@ A part inside of a machine is very expensive to replace. However, the machine us
 \index{hypothesis testing|)}
 
 %__________________
+
+\section{A Primer on the $t$-distribution}
+\label{tdistribution}
+
+Section ~\ref{hypothesisTesting} examined the T-statistic as distributed according to a $t$-distribution. Section ~\ref{pValue} offered a rule of thumb that for $n>30$, the p-value of a $t$-distribution becomes almost indistinguishable from the p-value of a normal distribution. However, throughout the entire section, the characteristics of a $t$-distribution were not explained. The properties of the $t$-distribution are not needed to perform hypothesis testing. However this section will introduce the $t$-distribution at a more theoretical level because the T-statistic follows a $t$-distribution. 
+
+\subsection{Introducing the $t$-distribution}
+\label{introducingTheTDistribution}
+
+\index{t-distribution|(}
+\index{distribution!$t$|(}
+
+In the cases where a small sample is used to calculate the standard error or a T-statistic is calculated, it will be useful to rely on a new distribution for inference calculations: the $t$-distribution. A $t$-distribution, shown as a solid line in Figure~\ref{tDistCompareToNormalDist}, has a bell shape. However, its tails are thicker than the normal model's. This means observations are more likely to fall beyond two standard deviations from the mean than under the normal distribution.\footnote{The standard deviation of the $t$-distribution is actually a little more than 1. However, it is useful to always think of the $t$-distribution as having a standard deviation of 1 in all of this text's applications.} While the estimate of the standard error will be a little less accurate when a small data set is analyzed, these extra thick tails of the $t$-distribution are exactly the correction needed to resolve the problem of a poorly estimated standard error.
+
+\begin{figure}
+\centering
+\includegraphics[width = \textwidth]{ch_inference_foundations_oi_biostat/figures/tDistCompareToNormalDist/tDistCompareToNormalDist}
+\caption{Comparison of a $t$-distribution (solid line) to a normal distribution (dotted line).}
+\label{tDistCompareToNormalDist}
+\end{figure}
+
+The $t$-distribution, always centered at zero, has a single parameter: degrees of freedom. The \termsub{degrees of freedom (df)}{degrees of freedom (df)!$t$-distribution} describe the precise form of the bell-shaped $t$-distribution. Several $t$-distributions are shown in Figure~\ref{tDistConvergeToNormalDist}. When there are more degrees of freedom, the $t$-distribution looks very much like the standard normal distribution. Within hypothesis testing from observing 1 sample, the degrees of freedom is equal to $n-1$ where $n$ is the sample size.
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{ch_inference_foundations_oi_biostat/figures/tDistConvergeToNormalDist/tDistConvergeToNormalDist}
+\caption{The larger the degrees of freedom, the more closely the $t$-distribution resembles the standard normal model.}
+\label{tDistConvergeToNormalDist}
+\end{figure}
+
+\begin{termBox}{\tBoxTitle{Degrees of freedom (df)}
+The degrees of freedom describe the shape of the $t$-distribution. The larger the degrees of freedom, the more closely the distribution approximates the normal model.}
+\end{termBox}
+
+When the degrees of freedom is about 30 or more, the $t$-distribution is nearly indistinguishable from the normal distribution. 
+
+It's very useful to become familiar with the $t$-distribution, because it allows greater flexibility than the normal distribution when analyzing numerical data. The \term{t-table}, partially shown in Table~\ref{tTableSample}, is used in place of the normal probability table. A larger $t$-table is in Appendix~\ref{tDistributionTable} on page~\pageref{tDistributionTable}. In~practice, it's more common to use statistical software like $R$ instead of a table. 
+\begin{table}[hht]
+\centering
+\begin{tabular}{r | rrr rr}
+one tail & \hspace{1.5mm}  0.100 & \hspace{1.5mm} 0.050 & \hspace{1.5mm} 0.025 & \hspace{1.5mm} 0.010 & \hspace{1.5mm} 0.005  \\
+two tails & 0.200 & 0.100 & 0.050 & 0.020 & 0.010 \\
+\hline
+{$df$} \hfill 1  &  {\normalsize  3.08} & {\normalsize  6.31} & {\normalsize 12.71} & {\normalsize 31.82} & {\normalsize 63.66}  \\ 
+2  &  {\normalsize  1.89} & {\normalsize  2.92} & {\normalsize  4.30} & {\normalsize  6.96} & {\normalsize  9.92}  \\ 
+3  &  {\normalsize  1.64} & {\normalsize  2.35} & {\normalsize  3.18} & {\normalsize  4.54} & {\normalsize  5.84}  \\ 
+$\vdots$ & $\vdots$ &$\vdots$ &$\vdots$ &$\vdots$ & \\
+17  &  {\normalsize  1.33} & {\normalsize  1.74} & {\normalsize  2.11} & {\normalsize  2.57} & {\normalsize  2.90}  \\ 
+\highlightO{18}  &  \highlightO{\normalsize  1.33} & \highlightO{\normalsize  1.73} & \highlightO{\normalsize  2.10} & \highlightO{\normalsize  2.55} & \highlightO{\normalsize  2.88}  \\ 
+19  &  {\normalsize  1.33} & {\normalsize  1.73} & {\normalsize  2.09} & {\normalsize  2.54} & {\normalsize  2.86}  \\ 
+20  &  {\normalsize  1.33} & {\normalsize  1.72} & {\normalsize  2.09} & {\normalsize  2.53} & {\normalsize  2.85}  \\ 
+$\vdots$ & $\vdots$ &$\vdots$ &$\vdots$ &$\vdots$ & \\
+400  &  {\normalsize  1.28} & {\normalsize  1.65} & {\normalsize  1.97} & {\normalsize  2.34} & {\normalsize  2.59}  \\ 
+500  &  {\normalsize  1.28} & {\normalsize  1.65} & {\normalsize  1.96} & {\normalsize  2.33} & {\normalsize  2.59}  \\ 
+$\infty$  &  {\normalsize  1.28} & {\normalsize  1.64} & {\normalsize  1.96} & {\normalsize  2.33} & {\normalsize  2.58}  \\ 
+\end{tabular}
+\caption{An abbreviated look at the $t$-table. Each row represents a different $t$-distribution. The columns describe the cutoffs for specific tail areas. The row with $df=18$ has been \highlightO{highlighted}.}
+\label{tTableSample}
+\end{table}
+
+Each row in the $t$-table represents a $t$-distribution with different degrees of freedom. The columns correspond to tail probabilities. For instance, if $df=18$, researchers can examine row 18, which is highlighted in Table~\ref{tTableSample}. If researchers instead want the value in this row that identifies the cutoff for an upper tail of 10\%, they can look in the column where \emph{one tail} is 0.100. This cutoff is 1.33. If they had wanted the cutoff for the lower 10\%, they would use -1.33. Just like the normal distribution, all $t$-distributions are symmetric.
+
+\begin{example}{What proportion of the $t$-distribution with 18 degrees of freedom falls below -2.10?}
+Just like a normal probability problem, Figure~\ref{tDistDF18LeftTail2Point10} provides a picture with the shaded area below -2.10. To find this area, the appropriate row needs to be identified in the $t$-table: \mbox{$df=18$}. 
+Then identify the column containing the absolute value of -2.10; it~is the third column. The shaded area is only one tale, and the top line of the table shows that a one tail area for a value in the third row corresponds to 0.025. About 2.5\% of the distribution falls below -2.10. The next example encounters a case where the exact $t$ value is not listed in the table and a situation where $R$ would provide more use.
+\end{example}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{ch_inference_foundations_oi_biostat/figures/tDistDF18LeftTail2Point10/tDistDF18LeftTail2Point10}
+\caption{The $t$-distribution with 18 degrees of freedom. The area below -2.10 has been shaded.}
+\label{tDistDF18LeftTail2Point10}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+\begin{example}{A $t$-distribution with 20 degrees of freedom is shown in the left panel of Figure~\ref{tDistDF20RightTail1Point65}. Estimate the proportion of the distribution falling above 1.65.}
+We identify the row in the $t$-table using the degrees of freedom: $df=20$. Then we look for 1.65; it is not listed. It falls between the first and second columns. Since these values bound 1.65, their tail areas will bound the tail area corresponding to 1.65. We identify the one tail area of the first and second columns, 0.050 and 0.10, and we conclude that between 5\% and 10\% of the distribution is more than 1.65 standard deviations above the mean. If we like, we can identify the precise area using statistical software: 0.0573.
+\end{example}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.85\textwidth]{ch_inference_foundations_oi_biostat/figures/tDistDF20RightTail1Point65/tDistDF20RightTail1Point65}
+\caption{Left: The $t$-distribution with 20 degrees of freedom, with the area above 1.65 shaded. Right: The $t$-distribution with 2 degrees of freedom, with the area further than 3 units from 0 shaded.}
+\label{tDistDF20RightTail1Point65}
+\end{figure}
+
+\begin{example}{A $t$-distribution with 2 degrees of freedom is shown in the right panel of Figure~\ref{tDistDF20RightTail1Point65}. Estimate the proportion of the distribution falling more than 3 units from the mean (above or below).}
+As before, first identify the appropriate row: $df=2$. Next, find the columns that capture 3; because $2.92 < 3 < 4.30$, we use the second and third columns. Finally, we find bounds for the tail areas by looking at the two tail values: 0.05 and 0.10. We use the two tail values because we are looking for two (symmetric) tails.
+\end{example}
+
+\begin{exercise}
+What proportion of the $t$-distribution with 19 degrees of freedom falls above -1.79 units?\footnote{We find the shaded area \emph{above} -1.79 (we leave the picture to you). The small left tail is between 0.025 and 0.05, so the larger upper region must have an area between 0.95 and 0.975.}
+
+\index{distribution!$t$|)}
+\index{t-distribution|)}
+
+\end{exercise}
+
+
+
+\subsection{Conditions for using the $t$-distribution for inference on a sample mean}
+\label{tDistSolutionToSEProblem}
+
+To proceed with the $t$-distribution for inference about a single mean, we first check two conditions.
+\begin{description}
+\item[Independence of observations.] We verify this condition just as we did before. We collect a simple random sample from less than 10\% of the population, or if the data are from an experiment or random process, we check to the best of our abilities that the observations were independent.
+\item[Observations come from a nearly normal distribution.] This second condition is difficult to verify with small data sets. We often (i) take a look at a plot of the data for obvious departures from the normal model, and (ii) consider whether any previous experiences alert us that the data may not be nearly normal.
+\end{description}
+When examining a sample mean and estimated standard error from a sample of $n$ independent and nearly normal observations, we use a $t$-distribution with $n-1$ degrees of freedom~($df$). For example, if the sample size was 19, then we would use the $t$-distribution with $df=19-1=18$ degrees of freedom and proceed exactly as we did in Chapter~\ref{foundationsForInference}, except that \emph{now we use the $t$-distribution}.
+
+\begin{tipBox}{\tipBoxTitle{When to use the $t$-distribution}
+Use the $t$-distribution for inference of the sample mean when observations are independent and nearly normal. You may relax the nearly normal condition as the sample size increases. For example, the data distribution may be moderately skewed when the sample size is at least~30.}
+\end{tipBox}
+
+\begin{comment}
+
+\subsection{One sample $t$-confidence intervals}
+\label{oneSampleTConfidenceIntervals}
+
+\index{data!dolphins and mercury|(}
+
+Dolphins are at the top of the oceanic food chain, which causes dangerous substances such as mercury to concentrate in their organs and muscles. This is an important problem for both dolphins and other animals, like humans, who occasionally eat them. For instance, this is particularly relevant in Japan where school meals have included dolphin at times.
+\setlength{\captionwidth}{86mm}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{ch_inference_foundations_oi_biostat/figures/rissosDolphin/rissosDolphin.jpg}  \\
+\addvspace{2mm}
+\begin{minipage}{\textwidth}
+   \caption[rissosDolphinPic]{A Risso's dolphin.\vspace{-1mm} \\
+   -----------------------------\vspace{-2mm}\\
+   {\footnotesize Photo by Mike Baird (\oiRedirect{textbook-bairdphotos_com}{www.bairdphotos.com}). \oiRedirect{textbook-CC_BY_2}{CC~BY~2.0~license}.}\vspace{-8mm}}
+   \label{rissosDolphin}
+\end{minipage}
+\vspace{3mm}
+\end{figure}
+\setlength{\captionwidth}{\mycaptionwidth}
+
+Here we identify a confidence interval for the average mercury content in dolphin muscle using a sample of 19 Risso's dolphins from the Taiji area in Japan.\footnote{Taiji was featured in the movie \emph{The Cove}, and it is a significant source of dolphin and whale meat in Japan. Thousands of dolphins pass through the Taiji area annually, and we will assume these 19 dolphins represent a simple random sample from those dolphins. Data reference: Endo T and Haraguchi K. 2009. High mercury levels in hair samples from residents of Taiji, a Japanese whaling town. Marine Pollution Bulletin 60(5):743-747.} The data are summarized in Table~\ref{summaryStatsOfHgInMuscleOfRissosDolphins}. The minimum and maximum observed values can be used to evaluate whether or not there are obvious outliers or skew.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ccc cc}
+\hline
+$n$ & $\bar{x}$ & $s$ & minimum & maximum \\
+19   & 4.4	  & 2.3  & 1.7	       & 9.2 \\
+\hline
+\end{tabular}
+\caption{Summary of mercury content in the muscle of 19 Risso's dolphins from the Taiji area. Measurements are in $\mu$g/wet g (micrograms of mercury per wet gram of muscle).}
+\label{summaryStatsOfHgInMuscleOfRissosDolphins}
+\end{table}
+
+\begin{example}{Are the independence and normality conditions satisfied for this data~set?}
+The observations are a simple random sample and consist of less than 10\% of the population, therefore independence is reasonable. The summary statistics in Table~\ref{summaryStatsOfHgInMuscleOfRissosDolphins} do not suggest any skew or outliers; all observations are within 2.5 standard deviations of the mean. Based on this evidence, the normality assumption seems reasonable.
+\end{example}
+
+In the normal model, we used $z^{\star}$ and the standard error to determine the width of a confidence interval. We revise the confidence interval formula slightly when using the $t$-distribution:
+\begin{eqnarray*}
+\bar{x} \ \pm\  t^{\star}_{df}SE
+\end{eqnarray*}
+\marginpar[\raggedright\vspace{-9mm}
+
+$t^{\star}_{df}$\vspace{1mm}\\\footnotesize Multiplication\\factor for\\$t$ conf. interval]{\raggedright\vspace{-9mm}
+
+$t^{\star}_{df}$\vspace{1mm}\\\footnotesize Multiplication\\factor for\\$t$ conf. interval}The sample mean and estimated standard error are computed just as before ($\bar{x} = 4.4$ and $SE = s/\sqrt{n} = 0.528$). The value $t^{\star}_{df}$ is a cutoff we obtain based on the confidence level and the $t$-distribution with $df$ degrees of freedom. Before determining this cutoff, we will first need the degrees of freedom.
+
+\begin{termBox}{\tBoxTitle{Degrees of freedom for a single sample}
+If the sample has $n$ observations and we are examining a single mean, then we use the $t$-distribution with $df=n-1$ degrees of freedom.}
+\end{termBox}
+
+In our current example, we should use the $t$-distribution with $df=19-1=18$ degrees of freedom. Then identifying $t_{18}^{\star}$ is similar to how we found $z^{\star}$. 
+\begin{itemize}
+\setlength{\itemsep}{0mm}
+\item For a 95\% confidence interval, we want to find the cutoff $t^{\star}_{18}$ such that 95\% of the $t$-distribution is between -$t^{\star}_{18}$ and $t^{\star}_{18}$.
+\item We look in the $t$-table on page~\pageref{tTableSample}, find the column with area totaling 0.05 in the two tails (third column), and then the row with 18 degrees of freedom: $t^{\star}_{18} = 2.10$.
+\end{itemize}
+Generally the value of $t^{\star}_{df}$ is slightly larger than what we would get under the normal model with~$z^{\star}$.
+
+
+
+Finally, we can substitute all our values into the confidence interval equation to create the 95\% confidence interval for the average mercury content in muscles from Risso's dolphins that pass through the Taiji area:
+\begin{eqnarray*}
+\bar{x} \ \pm\  t^{\star}_{18}SE
+	\quad \to \quad
+4.4 \ \pm\  2.10 \times 0.528
+	\quad \to \quad
+(3.29, 5.51)
+\end{eqnarray*}
+We are 95\% confident the average mercury content of muscles in Risso's dolphins is between 3.29 and 5.51 $\mu$g/wet gram, which is considered extremely high.
+
+\index{data!dolphins and mercury|)}
+
+\begin{termBox}{\tBoxTitle{Finding a $t$-confidence interval for the mean}
+Based on a sample of $n$ independent and nearly normal observations, a confidence interval for the population mean is
+\begin{eqnarray*}
+\bar{x} \ \pm\  t^{\star}_{df}SE
+\end{eqnarray*}
+where $\bar{x}$ is the sample mean, $t^{\star}_{df}$ corresponds to the confidence level and degrees of freedom, and $SE$ is the standard error as estimated by the sample.}
+\end{termBox}
+
+\textC{\pagebreak}
+
+\begin{exercise} \label{croakerWhiteFishPacificExerConditions}
+\index{data!white fish and mercury|(}
+The FDA's webpage provides some data on mercury content of fish.\footnote{\oiRedirect{textbook-fda_mercury_in_fish_2010}{www.fda.gov/food/foodborneillnesscontaminants/metals/ucm115644.htm}} Based on a sample of 15 croaker white fish (Pacific), a sample mean and standard deviation were computed as 0.287 and 0.069 ppm (parts per million), respectively. The 15 observations ranged from 0.18 to 0.41 ppm. We will assume these observations are independent. Based on the summary statistics of the data, do you have any objections to the normality condition of the individual observations?\footnote{There are no obvious outliers; all observations are within 2 standard deviations of the mean. If there is skew, it is not evident. There are no red flags for the normal model based on this (limited) information, and we do not have reason to believe the mercury content is not nearly normal in this type of fish.}
+\end{exercise}
+
+\begin{example}{Estimate the standard error of $\bar{x}=0.287$ ppm using the data summaries in Guided Practice~\ref{croakerWhiteFishPacificExerConditions}. If we are to use the $t$-distribution to create a 90\% confidence interval for the actual mean of the mercury content, identify the degrees of freedom we should use and also find $t^{\star}_{df}$.}
+\label{croakerWhiteFishPacificExerSEDFTStar}
+The standard error: $SE = \frac{0.069}{\sqrt{15}} = 0.0178$. Degrees of freedom: $df = n - 1 = 14$.
+
+Looking in the column where two tails is 0.100 (for a 90\% confidence interval) and row $df=14$, we identify $t^{\star}_{14} = 1.76$.
+\end{example}
+
+\begin{exercise}
+Using the results of Guided Practice~\ref{croakerWhiteFishPacificExerConditions} and Example~\ref{croakerWhiteFishPacificExerSEDFTStar}, compute a 90\% confidence interval for the average mercury content of croaker white fish (Pacific).\footnote{$\bar{x} \ \pm\ t^{\star}_{14} SE \ \to\  0.287 \ \pm\  1.76\times 0.0178\ \to\ (0.256, 0.318)$. We are 90\% confident that the average mercury content of croaker white fish (Pacific) is between 0.256 and 0.318 ppm.}
+
+\index{data!white fish and mercury|)}
+
+\end{exercise}
+
+\end{comment} 
+
 \section{Examining the Central Limit Theorem Closer (Special Topic)}
 \label{cltSection}
 
@@ -1330,7 +1570,7 @@ To estimate the necessary sample size for a maximum margin of error $m$, we set 
 m \geq ME = q^{\star}\frac{\sigma}{\sqrt{n}}
 \end{align*}
 where $z^{\star}$ is chosen to correspond to the desired confidence level for a nearly normal point estimate, and $\sigma$ is the standard deviation associated with the population. Solve for the sample size,~$n$.\\
-If we believed the point estimate not to be nearly normal, use $q^{\star}$ from the T-distribution instead. However in practice, a nearly normal point estimate is used more often than not.}
+If we believed the point estimate not to be nearly normal, use $q^{\star}$ from the $t$-distribution instead. However in practice, a nearly normal point estimate is used more often than not.}
 \end{termBox}
 
 Sample size computations are helpful in planning data collection, and they require careful forethought. Next we consider another topic important in planning data collection and setting a sample size: the Type 2 Error rate.
@@ -1413,82 +1653,3 @@ The role of a statistician in conducting a study often includes planning the siz
 %%%%%%%%%%%%%%HERE IS THE COMMENT%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%HERE IS THE COMMENT%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 -----------------------------------------------------------------------------------------------------------------------------------------------------
-\begin{comment}
-Statistical inference is concerned primarily with understanding the quality of parameter estimates. For example, a classic inferential question is, ``How sure are we that the estimated mean, $\bar{x}$, is near the true population mean, $\mu$?'' While the equations and details change depending on the setting, the foundations for inference are the same throughout all of statistics. We introduce these common themes in Sections~\ref{variabilityInEstimates}-\ref{cltSection} by discussing inference about the population mean, $\mu$, and set the stage for other parameters and scenarios in Section~\ref{aFrameworkForInference}. Some advanced considerations are discussed in Section~\ref{sampleSizeAndPower}. Understanding this chapter will make the rest of this book, and indeed the rest of statistics, seem much more familiar.
-
-%%%%%%%%%%%%%%HERE IS THE COMMENT%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\end{comment} %%%%%%%%%%%%%%HERE IS THE COMMENT%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%HERE IS THE COMMENT%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-%%%%%%%%%%%%%%FUTURE POTENTIAL EXAMPLESSS%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{comment}
-
-\begin{exercise} \label{ebayAmazonOneSidedTestExercise}
-\index{data!mario\_kart|(}
-Ebay might be interested in showing that buyers on its site tend to pay less than they would for the corresponding new item on Amazon. We'll research this topic for one particular product: a video game called \emph{Mario Kart} for the Nintendo Wii. During early October 2009, Amazon sold this game for \$46.99. Set up an appropriate (one-sided!) hypothesis test to check the claim that Ebay buyers pay less during auctions at this same time.\footnote{The skeptic would say the average is the same on Ebay, and we are interested in showing the average price is lower.
-\begin{itemize}
-\setlength{\itemsep}{0mm}
-\item[$H_0$:] The average auction price on Ebay is equal to (or more than) the price on Amazon. We write only the equality in the statistical notation: $\mu_{ebay} = 46.99$.
-\item[$H_A$:] The average price on Ebay is less than the price on Amazon, $\mu_{ebay} < 46.99$.
-\end{itemize}}
-\end{exercise}
-
-
-\begin{exercise} \label
-{exerciseFor52EbayAuctionsToExamineMarioKartLessExpensiveThanAmazonConditions}
-During early October, 2009, 52 Ebay auctions were recorded for \emph{Mario Kart}.\footnote{These data were collected by OpenIntro staff.} The total prices for the auctions are presented using a histogram in Figure~\ref{ebayMarioKartAuctionPriceHistogramFor3ConditionsExercise}, and we may like to apply the normal model to the sample mean. Check the three conditions required for applying the normal model: (1)~independence, (2)~at~least 30 observations, and (3)~the data are not strongly skewed.\footnote{(1) The independence condition is unclear. \emph{We will make the assumption that the observations are independent, which we should report with any final results.} (2) The sample size is sufficiently large: $n =52 \geq 30$. (3) The data distribution is not strongly skewed; it is approximately symmetric.}
-\end{exercise}
-
-\begin{figure}
-   \centering
-   \includegraphics[width=0.68\textwidth]{ch_inference_foundations_oi_biostat/figures/ebayMarioKartAuctionPriceHistogramFor3ConditionsExercise/ebayMarioKartAuctionPriceHistogramFor3ConditionsExercise}
-   \caption{A histogram of the total auction prices for 52 Ebay auctions.}
-   \label{ebayMarioKartAuctionPriceHistogramFor3ConditionsExercise}
-\end{figure}
-
-\begin{example}{The average sale price of the 52 Ebay auctions for \emph{Wii Mario Kart} was \$44.17 with a standard deviation of \$4.15. Does this provide sufficient evidence to reject the null hypothesis in Exercise~\ref{ebayAmazonOneSidedTestExercise}? Use a significance level of $\alpha = 0.01$.}
-The hypotheses were set up and the conditions were checked in Exercises~\ref{ebayAmazonOneSidedTestExercise} and~\ref{exerciseFor52EbayAuctionsToExamineMarioKartLessExpensiveThanAmazonConditions}. The next step is to find the standard error of the sample mean and produce a sketch to help find the p-value.
-\begin{eqnarray*}
-SE_{\bar{x}} = s/\sqrt{n} = 4.15/\sqrt{52} = 0.5755
-\end{eqnarray*}
-\begin{center}
-\includegraphics[height=35mm]{ch_inference_foundations_oi_biostat/figures/pVForEbayAmazonComparison/pVForEbayAmazonComparison}
-\end{center}
-Because the alternative hypothesis says we are looking for a smaller mean, we shade the lower tail. We find this shaded area by using the Z score and normal probability table: $Z = \frac{44.17 - 46.99}{0.5755} = -4.90$, which has area less than 0.0002. The area is so small we cannot really see it on the picture. This lower tail area corresponds to the p-value.
-
-Because the p-value is so small -- specifically, smaller than $\alpha = 0.01$ -- this provides sufficiently strong evidence to reject the null hypothesis in favor of the alternative. The data provide statistically significant evidence that the average price on Ebay is lower than Amazon's asking price.
-\index{data!mario\_kart|)}
-\end{example}
-
-\end{comment}
-
-
-%%%%%%%%%%%%%%FUTURE POTENTIAL EXAMPLESSS END%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-%%%%%%%%%%%%%%%
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
