@@ -1133,7 +1133,7 @@ Each row in the $t$-table represents a $t$-distribution with different degrees o
 
 \begin{example}{What proportion of the $t$-distribution with 18 degrees of freedom falls below -2.10?}
 Just like a normal probability problem, Figure~\ref{tDistDF18LeftTail2Point10} provides a picture with the shaded area below -2.10. To find this area, the appropriate row needs to be identified in the $t$-table: \mbox{$df=18$}. 
-Then identify the column containing the absolute value of -2.10; it~is the third column. The shaded area is only one tale, and the top line of the table shows that a one tail area for a value in the third row corresponds to 0.025. About 2.5\% of the distribution falls below -2.10. The next example encounters a case where the exact $t$ value is not listed in the table and a situation where $R$ would provide more use.
+Then identify the column containing the absolute value of -2.10; it~is the third column. The shaded area is only one tale, and the top line of the table shows that a one tail area for a value in the third row corresponds to 0.025. About 2.5\% of the distribution falls below -2.10. The next example encounters a case where the exact $t$ value is not listed in the table where $R$ would provide more use.
 \end{example}
 
 \begin{figure}
@@ -1143,17 +1143,12 @@ Then identify the column containing the absolute value of -2.10; it~is the third
 \label{tDistDF18LeftTail2Point10}
 \end{figure}
 
-
-
-
-
-
-
-
-
-
 \begin{example}{A $t$-distribution with 20 degrees of freedom is shown in the left panel of Figure~\ref{tDistDF20RightTail1Point65}. Estimate the proportion of the distribution falling above 1.65.}
-We identify the row in the $t$-table using the degrees of freedom: $df=20$. Then we look for 1.65; it is not listed. It falls between the first and second columns. Since these values bound 1.65, their tail areas will bound the tail area corresponding to 1.65. We identify the one tail area of the first and second columns, 0.050 and 0.10, and we conclude that between 5\% and 10\% of the distribution is more than 1.65 standard deviations above the mean. If we like, we can identify the precise area using statistical software: 0.0573.
+Looking at the $t$-table again, identify the row using the degrees of freedom: $df=20$. Then look for 1.65; it is not listed. It falls between the first and second columns. Since these values bound 1.65, their tail areas will bound the tail area corresponding to 1.65. One tail area of the first and second columns -- 0.050 and 0.10 --concluded that between 5\% and 10\% of the distribution is more than 1.65 standard deviations above the mean. However this is only an estimation. Statistical software like $R$ can provide more precision. \begin{verbatim}
+> 1-pt(1.65,20)
+[1] 0.05728041
+\end{verbatim}
+The precise area that is shaded is 0.0573. 
 \end{example}
 
 \begin{figure}
@@ -1164,33 +1159,387 @@ We identify the row in the $t$-table using the degrees of freedom: $df=20$. Then
 \end{figure}
 
 \begin{example}{A $t$-distribution with 2 degrees of freedom is shown in the right panel of Figure~\ref{tDistDF20RightTail1Point65}. Estimate the proportion of the distribution falling more than 3 units from the mean (above or below).}
-As before, first identify the appropriate row: $df=2$. Next, find the columns that capture 3; because $2.92 < 3 < 4.30$, we use the second and third columns. Finally, we find bounds for the tail areas by looking at the two tail values: 0.05 and 0.10. We use the two tail values because we are looking for two (symmetric) tails.
+As before, first identify the appropriate row: $df=2$. Next, find the columns that capture 3; because $2.92 < 3 < 4.30$, use the second and third columns. Finally, 0.05 and 0.1 are the bounds for the tail areas under "two tails" since the $t$-distribution is symmetric. For more precision, $R$ outputs 
+\begin{verbatim} > 2*pt(-3, 2)
+[1] 0.09546597
+\end{verbatim}
 \end{example}
 
 \begin{exercise}
-What proportion of the $t$-distribution with 19 degrees of freedom falls above -1.79 units?\footnote{We find the shaded area \emph{above} -1.79 (we leave the picture to you). The small left tail is between 0.025 and 0.05, so the larger upper region must have an area between 0.95 and 0.975.}
+What proportion of the $t$-distribution with 19 degrees of freedom falls above -1.79 units?\footnote{Shade area \emph{above} -1.79 on a symmetric distribution (the picture is left to you). The small left tail is between 0.025 and 0.05, so the larger upper region must have an area between 0.95 and 0.975 (1 - the small left tail area). Using $R$ again, > 1-pt(-1.79, 19) [1] 0.9552978}
 
 \index{distribution!$t$|)}
 \index{t-distribution|)}
 
 \end{exercise}
 
-
-
 \subsection{Conditions for using the $t$-distribution for inference on a sample mean}
 \label{tDistSolutionToSEProblem}
 
-To proceed with the $t$-distribution for inference about a single mean, we first check two conditions.
+To proceed with the $t$-distribution for inference about a single mean, two conditions need to be checked. They will be introduced more formally here.
 \begin{description}
-\item[Independence of observations.] We verify this condition just as we did before. We collect a simple random sample from less than 10\% of the population, or if the data are from an experiment or random process, we check to the best of our abilities that the observations were independent.
-\item[Observations come from a nearly normal distribution.] This second condition is difficult to verify with small data sets. We often (i) take a look at a plot of the data for obvious departures from the normal model, and (ii) consider whether any previous experiences alert us that the data may not be nearly normal.
+\item[Independence of observations.] This condition was verified before in Section ~\ref{changingTheConfidenceLevelSection} as a condition that $\bar{x}$ is nearly normal. The sample should be taken from less than 10\% of the population as a simple random sample. If the data are from an experiment or random process, the observations should be independent. 
+\item[Observations come from a nearly normal distribution.] This second condition is difficult to verify with small data sets. To diagnose (i) take a look at a plot of the data for obvious departures from the normal model, and (ii) consider any previous experiences in which the data may not be nearly normal. \footnote{A large enough sample size can sometimes counteract concerns with skewness and make this assumption more lenient.}
 \end{description}
-When examining a sample mean and estimated standard error from a sample of $n$ independent and nearly normal observations, we use a $t$-distribution with $n-1$ degrees of freedom~($df$). For example, if the sample size was 19, then we would use the $t$-distribution with $df=19-1=18$ degrees of freedom and proceed exactly as we did in Chapter~\ref{foundationsForInference}, except that \emph{now we use the $t$-distribution}.
+When examining a sample mean and estimated standard error from a sample of $n$ independent and nearly normal observations, a $t$-distribution with $n-1$ degrees of freedom~($df$) can be used. For example, if the sample size was 19, then the $t$-distribution would have $df=19-1=18$ degrees of freedom and proceed exactly as in the rest of Chapter~\ref{foundationsForInference}, except that \emph{now the $t$-distribution is being used}.
 
 \begin{tipBox}{\tipBoxTitle{When to use the $t$-distribution}
-Use the $t$-distribution for inference of the sample mean when observations are independent and nearly normal. You may relax the nearly normal condition as the sample size increases. For example, the data distribution may be moderately skewed when the sample size is at least~30.}
+Use the $t$-distribution for inference of the sample mean when observations are independent and nearly normal. The nearly normal condition is relaxed as the sample size increases. For example, the data distribution may be moderately skewed when the sample size is at least~30.}
 \end{tipBox}
 
+\section{Examining the Central Limit Theorem Closer (Special Topic)}
+\label{cltSection}
+
+\index{Central Limit Theorem|(}
+
+Looking back to ~\ref{why30}, the normal model for the sample mean tends to be very good when the sample consists of at least 30 independent observations and the population data are not strongly skewed. The Central Limit Theorem provides the theory that allows this assumption to be made.
+
+\begin{termBox}{\tBoxTitle{Central Limit Theorem, informal definition}
+The distribution of $\bar{x}$ is approximately normal. The approximation can be poor if the sample size is small, but it improves with larger sample sizes. As $n$ increases, the sample mean becomes more and more normally distributed.}
+\end{termBox}
+
+The Central Limit Theorem states that when the sample size is small, the normal approximation may not be very good. However, as the sample size becomes large, the normal approximation improves. Three theoretical cases will be considered to see roughly when the approximation is reasonable.
+
+Consider three data sets: one from a \emph{uniform} distribution, one from an \emph{exponential} distribution, and the other from a \emph{log-normal} distribution. Recall the properties of these distributions from Chapter ~\ref{modeling}. These distributions are shown in the top panels of Figure~\ref{cltSimulations}. The uniform distribution is symmetric, the exponential distribution may be considered as having moderate skew since its right tail is relatively short (few outliers), and the log-normal distribution is strongly skewed and will tend to produce more apparent outliers.\index{skew!example: moderate}\index{skew!example: strong}
+
+\begin{figure}
+   \centering
+   \includegraphics[width=\textwidth]{ch_inference_foundations_oi_biostat/figures/cltSimulations/cltSimulations}
+   \caption{Sampling distributions for the mean at different sample sizes and for three different distributions. The dashed red lines show normal distributions.}
+   \label{cltSimulations}
+\end{figure}
+
+The left panel in the $n=2$ row represents the sampling distribution of $\bar{x}$ if it is the sample mean of two observations from the uniform distribution shown. The dashed line represents the closest approximation of the normal distribution. Similarly, the center and right panels of the $n=2$ row represent the respective distributions of $\bar{x}$ for data from exponential and log-normal distributions.
+
+\begin{exercise}
+Examine the distributions in each row of Figure~\ref{cltSimulations}. What do you notice about the normal approximation for each sampling distribution as the sample size becomes larger?\footnote{The normal approximation becomes better as larger samples are used.}
+\end{exercise}
+
+\begin{example}{Would the normal approximation be good in all applications where the sample size is at least 30?}
+Not necessarily. For example, the normal approximation for the log-normal example is questionable for a sample size of 30. Generally, the more skewed a population distribution or the more common the frequency of outliers, the larger the sample required to guarantee the distribution of the sample mean is nearly normal.
+\end{example}
+
+\begin{tipBox}{\tipBoxTitle{With larger $n$, the sampling distribution of $\bar{x}$ becomes more normal}
+As the sample size increases, the normal model for $\bar{x}$ becomes more reasonable. The condition in skewness can be relaxed when the sample size is very large.}
+\end{tipBox}
+
+Section~\ref{seOfTheMean} proposed that the sample standard deviation, $s$, could be used as a substitute of the population standard deviation, $\sigma$, when computing the standard error. This estimate tends to be reasonable when $n\geq30$. Alternative distributions for smaller sample sizes will be considered in Chapters~\ref{inferenceForNumericalData} and~\ref{inferenceForCategoricalData}.
+
+
+
+%%%%%%%%%%%%%%%%%THINK OF A NEW EXAMPLE. THIS IS A USEFUL TOPIC 
+\begin{example}{Figure~\ref{hospitalCanApplyNormalToSampMean} shows a histogram of 50 observations. These represent the number of patient visits in a hospital for 50 consecutive days relative to the hospital's average rate of 5000 patient visits per day in 2010? Can the normal approximation be applied to the sample mean, 90.69?}
+Conditions first need to be verified. 
+\begin{itemize}
+\setlength{\itemsep}{0mm}
+\item[(1)] These are referred to as \term{time series data}, because the data arrived in a particular sequence. Time series data generally deals with, you guessed it, time! If there are a lot of patients in the hospital one day, it may influence how many patients there are the day after. During the flu season, patient visits might be at an all time high since many people are sick but also the time per visit is also extremely low. To make the assumption of independence we should perform careful checks on such data. While the supporting analysis is not shown, no evidence was found to indicate the observations are not independent on a whole.
+\item[(2)] The sample size is 50, satisfying the sample size condition.
+\item[(3)] There are two outliers, one very extreme, which suggests the data are very strongly skewed or very distant outliers may be common for this type of data. Outliers can play an important role and affect the distribution of the sample mean and the estimate of the standard error.
+\end{itemize}
+A normal distribution should not model the sample mean of these 50 observations because of the independence assumption. The very extreme upper outlier also poses a challenge. If the hospital obtained a much larger sample, perhaps a year's worth of data, then the concerns about skew and outliers could possibly no longer apply. \end{example}
+
+\begin{figure}[ht]
+   \centering
+   \includegraphics[height=58mm]{ch_inference_foundations_oi_biostat/figures/hospitalCanApplyNormalToSampMean/hospitalCanApplyNormalToSampMean}
+   \caption{Sample distribution of total patient visits net of 5,000 visits. These data include some very clear outliers. These are problematic when considering the normality of the sample mean. For example, outliers are often an indicator of very strong skew\index{skew!example: very strong}.}
+   \label{hospitalCanApplyNormalToSampMean}
+\end{figure}
+
+\begin{caution}
+{Examine data structure when considering independence}
+{Some data sets are collected in such a way that they have a natural underlying structure between observations, e.g. when observations occur consecutively. Be especially cautious about independence assumptions regarding such data sets.}
+\end{caution}
+
+\begin{caution}
+{Watch out for strong skew and outliers}
+{Strong skew is often identified by the presence of clear outliers. If a data set has prominent outliers, or such observations are somewhat common for the type of data under study, then it is useful to collect a sample with many more than 30 observations if the normal model will be used for $\bar{x}$. There are no simple guidelines for what sample size is big enough for all situations, so proceed with caution when working in the presence of strong skew or more extreme outliers.}
+\index{skew!strongly skewed guideline}
+\index{Central Limit Theorem|)}
+\end{caution}
+
+
+%__________________
+\section{Inference for other estimators}
+\label{aFrameworkForInference}
+
+The sample mean is not the only point estimate for which the sampling distribution is nearly normal. The procedures introduced in Chapter ~\ref{foundationsForInference} are not limited to just estimating the population mean. For example, the sampling distribution of sample proportions closely resembles the normal distribution when the sample size is sufficiently large. In this section, a number of examples will be introduced where the normal approximation is reasonable for the point estimate. Chapters~\ref{inferenceForNumericalData} and~\ref{inferenceForCategoricalData} will revisit each of the point estimates in this section along with some other new statistics.
+
+These tools can be used for other point estimates. However these point estimates need to obey some characteristics and assumptions. Another important assumption needs to be made about each point estimate encountered in this section: the estimate is unbiased. A point estimate is \term{unbiased} if the sampling distribution of the estimate is centered at the parameter it estimates. A biased point estimate on the other hand consistently is too high or estimates are always always too low. That is, an unbiased estimate does not naturally over or underestimate the parameter. Rather, it tends to provide a ``good'' estimate. The sample mean is an example of an unbiased point estimate, as are each of the examples introduced in this section.
+
+Finally, the general case where a point estimate may follow some distribution other than the normal distribution is discussed. Guidance will be provided about how to handle scenarios where the statistical techniques introduced thus far are insufficient for the problem at hand.
+
+\subsection{Confidence intervals for nearly normal point estimates}
+
+\index{confidence interval!using normal model|(}
+
+In Section~\ref{confidenceIntervals}, the point estimate $\bar{x}$ with a standard error $SE_{\bar{x}}$ was used to create a 95\% confidence interval for the population mean:
+\begin{align}
+\bar{x}\ \pm\ 1.96 \times SE_{\bar{x}}
+\label{95PercCIForMeanInGeneralizingSection}
+\end{align}
+This interval was constructed by noting that the sample mean is within 1.96 standard errors of the actual mean about 95\% of the time. This same logic generalizes to any unbiased point estimate that is nearly normal. This can be generalized for any confidence level by using a place-holder $z^{\star}$.
+
+\begin{termBox}{\tBoxTitle{General confidence interval for the normal sampling distribution case}\label{generalConfidenceIntervalTermBox}%
+For any unbiased point estimate, the confidence interval for a nearly normal point estimate is
+\begin{eqnarray}
+\text{point estimate}\ \pm\ z^{\star}SE
+\label{95PercGeneralCIInGeneralizingSection}
+\end{eqnarray}
+This is of the same form as the generalized confidence interval for the sample mean where $z^{\star}$ is selected to correspond to the confidence level, and $SE$ represents the standard error. Remember from previously that the value $z^{\star}SE$ is called the \emph{margin of error}\index{margin of error}.}
+\end{termBox}
+
+Generally the standard error for a point estimate is estimated from the data and computed using a formula. For example, the standard error for the sample mean is
+\begin{eqnarray*}
+SE_{\bar{x}} = \frac{s}{\sqrt{n}}
+\end{eqnarray*}
+In this section, the computed standard error for each example and exercise is provided without detailing where the values came from. In future chapters, the formulae and other details for each scenario will elaborated upon.
+
+\begin{example}{Using the \data{BRFSS BMI} data, the point estimate for the average difference in weights between men and women is $\bar{x}_\mathrm{{men}}-\bar{x}_\mathrm{{women}}= 36.61$ pounds. This point estimate is associated with a nearly normal distribution with SE = 0.35 pounds. What is a reasonable 95\% confidence interval for the difference in gender weights?}
+\label{confIntervalForDifferenceOfRunTimeBetweenGenders}
+The normal approximation is said to be valid, so apply Equation~\eqref{95PercGeneralCIInGeneralizingSection}:
+\begin{eqnarray*}
+\text{point estimate}\ \pm\ z^{\star} SE
+	\quad\rightarrow\quad 36.61\ \pm\ 1.96\times 0.35
+	\quad\rightarrow\quad (35.91, 37.31)
+\end{eqnarray*}
+Thus, scientists are 95\% confident that the men were, on average, between 35.91 to 37.31 pounds heavier than women. That is, the actual average difference is plausibly between 35.91 and 37.31 pounds with 95\% confidence.
+\end{example}
+
+\begin{example}{Does Example~\ref{confIntervalForDifferenceOfRunTimeBetweenGenders} guarantee that if a husband and wife both weighed themselves, the husband would weigh between 35.91 and 37.31 pounds more than the wife?}
+The confidence interval above says absolutely nothing about individual observations. It \emph{only} makes a statement about a plausible range of values for the \emph{average} difference between all men and all women in the US. 
+\end{example}
+
+\begin{exercise}
+The proportion of men in the \data{BRFSS BMI} sample is $\hat{p}=0.42$. This sample meets certain conditions that ensure $\hat{p}$ will be nearly normal, and the standard error of the estimate is $SE_{\hat{p}}=0.05$. Create a 90\% confidence interval for the proportion of participants in the \data{BRFSS} study that will resemble the proportion of men in the US. \footnote{Use $z^{\star}=1.65$, and apply the general confidence interval formula:
+\begin{eqnarray*}
+\hat{p}\ \pm\ z^{\star}SE_{\hat{p}}
+	\quad\to\quad 0.42\ \pm\ 1.65\times 0.05
+	\quad\to\quad (0.3375, 0.5025)
+\end{eqnarray*}
+Thus, the CDC is 90\% confident that between 34\% and 50\% are men.}
+\index{confidence interval!using normal model|)}
+\end{exercise}
+
+\subsection{Hypothesis testing for nearly normal point estimates}
+\index{hypothesis testing!using normal model|(}
+
+Just as the confidence interval method works with many other point estimates, the obvious connection between confidence intervals and hypothesis testing should apply to these new point estimates that are unbiased. Remember the Hypothesis testing framework from ~\ref{hypothesisFramework}. The following examples will only use the p-value approach introduced in Section ~\ref{pValue} and forgo the critical value shortcut.  
+
+\begin{termBox}{\tBoxTitle[]{Hypothesis testing framework using the normal model}
+\begin{enumerate}
+\setlength{\itemsep}{0mm}
+\item First write the hypotheses in plain language, then set them up in mathematical notation using the appropriate point estimate and parameter of interest. 
+\item State a significance level $\alpha$. Generally use $\alpha=0.05$. 
+\item Compute the test-statistic using the point estimate and standard error estimate. 
+\item Calculate the p-value by drawing a picture of the sampling distribution under $H_0$. Know which area is being shaded to represent the correct p-value. 
+\item Use the p-value to evaluate the hypotheses. Write a conclusion within the context of the problem. 
+\end{enumerate}
+} For point estimates other than the sampling mean, conditions must be verified to ensure that the point estimate is nearly normal and unbiased so that the standard error estimate is also reasonable. This step can be done before computing the test-statistic.  
+\end{termBox}
+
+\begin{exercise} \label{fdaHypSetupForSulph}
+A drug called sulphinpyrazone was under consideration for use in reducing the death rate in heart attack patients. To determine whether the drug was effective, a set of 1,475 patients were recruited into an experiment and randomly split into two groups: a control group that received a placebo and a treatment group that received the new drug. What would be an appropriate null hypothesis? And the alternative?\footnote{The skeptic's perspective is that the drug does not work at reducing deaths in heart attack patients ($H_0$), while the alternative is that the drug does work ($H_A$).}
+\end{exercise}
+
+Formalize the hypotheses from Exercise~\ref{fdaHypSetupForSulph} by letting $p_{control}$ and $p_{treatment}$ represent the proportion of patients who died in the control and treatment groups, respectively. Then the hypotheses can be written as
+\begin{eqnarray*}
+&&H_0: p_{control} = p_{treatment} \quad\text{(the drug doesn't work)} \quad \\
+&&H_A: p_{control} > p_{treatment} \quad\text{(the drug works)}
+\end{eqnarray*}
+or equivalently,
+\begin{eqnarray*}
+&&H_0: p_{control} - p_{treatment} = 0 \quad\text{(the drug doesn't work)} \quad \\
+&&H_A: p_{control} - p_{treatment} > 0 \quad\text{(the drug works)}
+\end{eqnarray*}
+Strong evidence against the null hypothesis and in favor of the alternative would correspond to an observed difference in death rates,
+\begin{eqnarray*}
+\text{point estimate} = \hat{p}_{control} - \hat{p}_{treatment}
+\end{eqnarray*}
+being larger than would expected from chance alone. This difference in sample proportions represents a point estimate that is useful in evaluating the hypotheses. 
+
+\begin{example}{Evaluate the hypothesis setup from Exericse~\ref{fdaHypSetupForSulph} using data from the actual study.\footnote{Anturane Reinfarction Trial Research Group. 1980. Sulfinpyrazone in the prevention of sudden death after myocardial infarction. New England Journal of Medicine 302(5):250-256.} In the control group, 60 of 742 patients died. In the treatment group, 41 of 733 patients died. The sample difference in death rates can be summarized as
+\begin{eqnarray*}
+\text{point estimate} = \hat{p}_{control} - \hat{p}_{treatment} = \frac{60}{742} - \frac{41}{733} = 0.025
+\end{eqnarray*}
+This point estimate is nearly normal and is an unbiased estimate of the actual difference in death rates. The standard error of this sample difference is $SE = 0.013$. Evaluate the hypothesis test at a 5\% significance level: $\alpha=0.05$.}
+Identify the p-value to evaluate the hypotheses. If the null hypothesis is true, then the point estimate would have come from a nearly normal distribution, like the one shown in Figure~\ref{sulphStudyFindPValueUsingNormalApprox}. The distribution is centered at zero since $p_{control}-p_{treatment}=0$ under the null hypothesis. Because a large positive difference provides evidence against the null hypothesis and in favor of the alternative, the upper tail has been shaded to represent the p-value. The lower tail does not need to be shaded since this is a one-sided test: an observation in the lower tail does not support the alternative hypothesis.
+
+\begin{figure}[bt]
+   \centering
+   \includegraphics[height=37mm]{ch_inference_foundations_oi_biostat/figures/sulphStudyFindPValueUsingNormalApprox/sulphStudyFindPValueUsingNormalApprox}
+   \caption{The distribution of the sample difference if the null hypothesis is true.}
+   \label{sulphStudyFindPValueUsingNormalApprox}
+\end{figure}
+
+The p-value can be computed by using the Z score of the point estimate and the normal probability table.
+\begin{eqnarray}
+Z = \frac{\text{point estimate} - \text{null value}}{SE_{\text{point estimate}}}
+	= \frac{0.025 - 0}{0.013} = 1.92
+\label{zScoreOfPointEstimateForSulphinpyrazoneThisIsFirstTestStatReference}
+\end{eqnarray}
+Examining $Z$ in the normal probability table, the lower unshaded tail is about 0.973. Thus, the upper shaded tail representing the p-value is
+\begin{eqnarray*}
+\text{p-value} = 1-0.973 = 0.027
+\end{eqnarray*}
+Because the p-value is less than the significance level ($\alpha=0.05$), the null hypothesis is implausible. That is, the null hypothesis is rejected in favor of the alternative and conclude that the drug is effective at reducing deaths in heart attack patients.
+\end{example}
+
+\subsection{Non-normal point estimates}
+
+The ideas of confidence intervals and hypothesis testing may be applied to cases where the point estimate or test statistic is not necessarily normal. There are many reasons why such a situation may arise:
+\begin{itemize}
+\setlength{\itemsep}{0mm}
+\item the sample size is too small for the normal approximation to be valid;
+\item the standard error estimate may be poor; or
+\item the point estimate tends towards some distribution that is not the normal distribution.
+\end{itemize}
+For each case where the normal approximation is not valid, the first task for any scientist is always to understand and characterize the sampling distribution of the point estimate or test statistic. Next, apply the general frameworks for confidence intervals and hypothesis testing to these alternative distributions.
+
+
+\subsection{When to retreat}
+\label{whenToRetreat}
+
+Statistical tools rely on conditions. When the conditions are not met, these tools are unreliable and drawing conclusions from them is treacherous. The conditions for these tools typically come in two forms.
+\begin{itemize}
+\setlength{\itemsep}{0mm}
+\item \textbf{The individual observations must be independent.} A random sample from less than 10\% of the population ensures the observations are independent. In experiments, subjects are randomized into groups. If independence fails, then advanced techniques must be used, and in some such cases, inference may not be possible.
+\item \textbf{Other conditions focus on sample size and skew.} For example, if the sample size is too small, the skew too strong, or extreme outliers are present, then the normal model for the sample mean will fail.
+\end{itemize}
+Verification of conditions for statistical tools is always necessary. Whenever conditions are not satisfied for a statistical technique, there are three options. The first is to learn new methods that are appropriate for the data. The second route is to consult a statistician.The third route is to ignore the failure of conditions. This last option effectively invalidates any analysis and may discredit novel and interesting findings.
+
+Finally with caution, there may not exist any inference tools helpful when considering data that include unknown biases, such as convenience samples. For this reason, there are books, courses, and researchers devoted to the techniques of sampling and experimental design. See Sections~\ref{overviewOfDataCollectionPrinciples}-\ref{experimentsSection} for basic principles of data collection.
+
+
+%__________________
+\section{Sample size and power (special topic)}
+\label{sampleSizeAndPower}
+
+Before it infers the average population BMI, the CDC needs to establish its methodology on gathering data, how many resources it wants to spend collecting the data and how many people, $n$, to gather data from. Sampling and post-processing the data can be extremely costly. Sample size and a test's power\footnote{$P(\text{rejecting the null hypothesis when it is false})$} go hand in hand.  
+
+The Type 2 Error rate and the magnitude of the error for a point estimate are controlled by the sample size \footnote{Remember the margin of error comes from the confidence interval (point estimate $\pm$ margin of error where the margin of error = $q^{\star} \cdot SE$ for a certain confidence level)}. Real differences from the null value, even large ones, may be difficult to detect with small samples. If a very large sample is taken, there might exist a statistically significant difference but the magnitude of the difference might be so small that it is of no practical value. This section will describe techniques for selecting an appropriate sample size based on these considerations.
+
+\subsection{Finding a sample size for a certain margin of error}
+\label{findingASampleSizeForACertainME}
+
+\index{margin of error|(}
+
+Many companies are concerned about rising healthcare costs. A company may estimate certain health characteristics of its employees, such as blood pressure, to project its future cost obligations. However, it might be too expensive to measure the blood pressure of every employee at a large company. The company may choose to take a sample instead.
+
+\begin{example}{Blood pressure oscillates with the beating of the heart, and the systolic pressure is defined as the peak pressure when a person is at rest. The average systolic blood pressure for people in the U.S. is about 130 mmHg with a standard deviation of about 25 mmHg. How large of a sample is necessary to estimate the average systolic blood pressure with a margin of error of 4 mmHg using a 95\% confidence level?}
+\label{sampleSizeComputationForSystolicBloodPressure}
+First, recall that the margin of error is the part that is added and subtracted from the point estimate when computing a confidence interval. Here since the company is large, it is assumed that the company has more than 30 employees. Because $n>30$,  1.96 can be used as the critical value for this nearly normal point estimate \footnote{Other assumptions should be verified as well: independence etc.} The margin of error for a 95\% confidence interval estimating a mean can be written as
+\begin{align*}
+ME_{95\%} = 1.96\times SE = 1.96\times\frac{\sigma_{employee}}{\sqrt{n}}
+\end{align*}
+The challenge in this case is to find the sample size $n$ so that this margin of error is less than or equal to 4. This problem is written as an inequality:
+\begin{align*}
+1.96\times \frac{\sigma_{employee}}{\sqrt{n}} \leq 4
+\end{align*}
+The company needs to solve for the appropriate value of $n$, but they do not know the value of $\sigma_{employee}$ since they haven't yet collected any data. There is no direct estimate! The company, instead, can use the best estimate available. It considers using the approximate standard deviation for the U.S. population, 25 and proceeds to solve for $n$:
+\begin{align*}
+1.96\times \frac{\sigma_{employee}}{\sqrt{n}} \approx 1.96\times\frac{25}{\sqrt{n}}
+	&\leq 4 \\
+1.96\times\frac{25}{4} &\leq \sqrt{n} \\
+\left(1.96\times\frac{25}{4}\right)^2 &\leq n \\
+150.06 &\leq n
+\end{align*}
+This suggests that the sample size should be of at least 151 employees. The company rounds up because the sample size must be \emph{greater than or equal to 150.06} to ensure a margin of error of 4.
+\end{example}
+
+Potentially controversial in Example~\ref{sampleSizeComputationForSystolicBloodPressure} is the use of the U.S. standard deviation for the employee standard deviation. Usually the standard deviation for the sample is not known since the sample hasn't been taken just yet! In such cases, many practicing statisticians review scientific literature or market research to make an educated guess and a reasonable substitution for the standard deviation to calculate the standard error. \footnote{Substitutions and assumptions like these also induce random chance that the hypotheses will be rejected incorrectly. More on this follows Section ~\ref{powerType2}.}
+
+\begin{termBox}{\tBoxTitle{Identify a sample size for a particular margin of error}
+To estimate the necessary sample size for a maximum margin of error $m$, set up an equation to represent this relationship:
+\begin{align*}
+m \geq ME = q^{\star}\frac{\sigma}{\sqrt{n}}
+\end{align*}
+where $z^{\star}$ is chosen to correspond to the desired confidence level for a nearly normal point estimate, and $\sigma$ is the standard deviation associated with the population. Solve for the sample size,~$n$.\\
+If the point estimate is believed not to be nearly normal, use $q^{\star}$ from the $t$-distribution instead. However in practice, a nearly normal point estimate is used more often than not.}
+\end{termBox}
+
+Sample size computations are helpful in planning data collection, and they require careful forethought. Type 2 Error rate is considered next, an important topic in planning data collection and setting a sample size.
+
+\index{margin of error|)}
+
+
+\subsection{Power and the Type 2 Error rate}
+\label{powerType2}
+
+Consider the following two hypotheses:
+\begin{itemize}
+\setlength{\itemsep}{0.5mm}
+\item[$H_0$:] The average blood pressure of employees is the same as the national average, $\mu = 130$.
+\item[$H_A$:] The average blood pressure of employees is different than the national average, $\mu \neq 130$.
+\end{itemize}
+Suppose the alternative hypothesis is actually true. Then the large company might like to know, what is the chance that they make a Type 2 Error? That is, what is the chance that it fails to reject the null hypothesis even though it should be rejected? The answer is not obvious! If the average blood pressure of the employees is 132 (just 2 mmHg from the null value), it might be very difficult to detect the difference unless a large sample is used. On the other hand, it would be easier to detect a difference if the real average of employees was 140.
+
+\begin{example}{Suppose the actual employee average is 132 and the company takes a sample of 100 individuals. Then the true sampling distribution of $\bar{x}$ is approximately $N(132, 2.5)$ \footnote{under the Central Limit Theorem} (since $SE = \frac{25}{\sqrt{100}} = 2.5$). What is the probability of successfully rejecting the null hypothesis?}
+\label{computePowerIfMuIs132AndMu0Is130}
+This problem can be divided into two normal probability questions. First, identify what values of $\bar{x}$  that would represent sufficiently strong evidence to reject $H_0$. Second, use the hypothetical sampling distribution with center $\mu=132$ to find the probability of observing sample means in the areas found in the first step.
+
+\textbf{Step 1.} The null distribution could be represented by $N(130, 2.5)$, the same standard deviation as the true distribution but with the null value as its center. The two tail areas can be found by identifying the T-statistic corresponding to the 2.5\% tails ($\pm 1.96$), and solving for $x$ in the T-statistic equation:
+\begin{align*}
+-1.96 = T_1 &= \frac{x_1 - 130}{2.5}
+	&+1.96 = T_2 &= \frac{x_2 - 130}{2.5} \\
+x_1 &= 125.1
+	&x_2 &= 134.9
+\end{align*}
+(An equally valid approach is to recognize that $x_1$ is $1.96\times SE$ below the mean and $x_2$ is $1.96\times SE$ above the mean to compute the values.) Figure~\ref{power132And141} shows the null distribution on the left with these two dotted cutoffs.
+
+\textbf{Step 2.} Next,the probability of rejecting $H_0$ is computed if $\bar{x}$ actually came from $N(132, 2.5)$. This is the same as finding the two shaded tails for the second distribution in Figure~\ref{power132And141}. Use the T-statistic method again:
+\begin{align*}
+&T_{left} = \frac{125.1 - 132}{2.5} = -2.76
+	&&T_{right} = \frac{134.9 - 132}{2.5} = 1.16 \\
+&area_{left} =0.003
+	&&area_{right} =0.123
+\end{align*}
+The probability of rejecting the null mean, if the true mean is 132, is the sum of these areas: $0.003 + 0.123 = 0.126$.
+\end{example}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{ch_inference_foundations_oi_biostat/figures/power132And141/power132And141}
+\caption{The sampling distribution of $\bar{x}$ under two scenarios. Left: $N(130, 2.5)$. Right: $N(132, 2.5)$, and the shaded areas in this distribution represent the power of the test.}
+\label{power132And141}
+\end{figure}
+
+The probability of rejecting the null hypothesis is called the \term{power}. The power varies depending on what the supposed the truth might be. In Example~\ref{computePowerIfMuIs132AndMu0Is130}, the difference between the null value and the supposed true mean was relatively small, so the power was also small: only 0.126. However, when the truth is far from the null value, where the standard error is used as a measure of what is far, the power tends to increase.
+
+\begin{exercise}
+Suppose the true sampling distribution of $\bar{x}$ is centered at 140. That is, $\bar{x}$ comes from $N(140, 2.5)$. What would the power be under this scenario? It may be helpful to draw $N(140, 2.5)$ and shade the area representing power on Figure~\ref{power132And141}; use the same cutoff values identified in Example~\ref{computePowerIfMuIs132AndMu0Is130}.\footnote{Draw the distribution $N(140, 2.5)$, then find the area below 125.1 (about zero area) and above 134.9 (about 0.979). If the true mean is 140, the power is about 0.979.}
+\end{exercise}
+
+\begin{exercise}
+If the power of a test is 0.979 for a particular mean, what is the Type 2 Error rate for this mean?\footnote{The Type 2 Error rate represents the probability of failing to reject the null hypothesis. Since the power is the probability that the null hypothesis is rejected, the Type 2 Error rate will be $1-0.979 = 0.021$.}
+\end{exercise}
+
+\begin{exercise}
+Provide an intuitive explanation for why it is more likely to reject $H_0$ when the true mean is further from the null value.\footnote{Answers may vary a little. When the truth is far from the null value, the point estimate also tends to be far from the null value, making it easier to detect the difference and reject $H_0$.}
+\end{exercise}
+
+\subsection{Statistical significance versus practical significance}
+
+When the sample size becomes larger, point estimates become more precise and any real differences in the mean and null value become easier to detect and recognize. Even a very small difference would likely be detected with a large enough sample. Sometimes researchers will decide to take such large samples that even the slightest difference is detected. While we still say that difference is \term{statistically significant}, it might not be \term{practically significant}.
+
+Statistically significant differences are sometimes so minor that they are not practically relevant. This is especially important to research: if a study is conducted, the goal of the study is to find a meaningful result. Researchers don't want to spend lots of money finding results that hold no practical and applicable value.
+
+The role of a statistician in conducting a study often includes planning the size of the study and determining the value of $\alpha$. Statisticians might first consult experts or scientific literature to learn what would be the smallest meaningful difference from the null value. They also would obtain some reasonable estimate for the standard deviation. With these important pieces of information, a sufficiently large sample size would be chosen so that the power for the meaningful difference is perhaps 80\% or 90\%. While larger sample sizes may still be used, statisticians in practice might advise against using them in some cases, especially in sensitive areas of research. While statistical rigor in hypothesis testing is absolutely important, many of these tests must also stand up to practical significance in the real world within applicable and relevance. 
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%HERE IS THE COMMENT%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%HERE IS THE COMMENT%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%HERE IS THE COMMENT%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%HERE IS THE COMMENT%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+%%% Use for an example/exercise
 \begin{comment}
 
 \subsection{One sample $t$-confidence intervals}
@@ -1255,8 +1604,6 @@ In our current example, we should use the $t$-distribution with $df=19-1=18$ deg
 \end{itemize}
 Generally the value of $t^{\star}_{df}$ is slightly larger than what we would get under the normal model with~$z^{\star}$.
 
-
-
 Finally, we can substitute all our values into the confidence interval equation to create the 95\% confidence interval for the average mercury content in muscles from Risso's dolphins that pass through the Taiji area:
 \begin{eqnarray*}
 \bar{x} \ \pm\  t^{\star}_{18}SE
@@ -1299,357 +1646,4 @@ Using the results of Guided Practice~\ref{croakerWhiteFishPacificExerConditions}
 \end{exercise}
 
 \end{comment} 
-
-\section{Examining the Central Limit Theorem Closer (Special Topic)}
-\label{cltSection}
-
-\index{Central Limit Theorem|(}
-
-Looking back to ~\ref{why30}, we discovered that the normal model for the sample mean tends to be very good when the sample consists of at least 30 independent observations and the population data are not strongly skewed. The Central Limit Theorem provides the theory that allows us to make this assumption.
-
-\begin{termBox}{\tBoxTitle{Central Limit Theorem, informal definition}
-The distribution of $\bar{x}$ is approximately normal. The approximation can be poor if the sample size is small, but it improves with larger sample sizes.}
-\end{termBox}
-
-The Central Limit Theorem states that when the sample size is small, the normal approximation may not be very good. However, as the sample size becomes large, the normal approximation improves. We will investigate three theoretical cases to see roughly when the approximation is reasonable.
-
-We consider three data sets: one from a \emph{uniform} distribution, one from an \emph{exponential} distribution, and the other from a \emph{log-normal} distribution. Recall the properties of these distributions from Chapter ~\ref{modeling}. These distributions are shown in the top panels of Figure~\ref{cltSimulations}. The uniform distribution is symmetric, the exponential distribution may be considered as having moderate skew since its right tail is relatively short (few outliers), and the log-normal distribution is strongly skewed and will tend to produce more apparent outliers.\index{skew!example: moderate}\index{skew!example: strong}
-
-\begin{figure}
-   \centering
-   \includegraphics[width=\textwidth]{ch_inference_foundations_oi_biostat/figures/cltSimulations/cltSimulations}
-   \caption{Sampling distributions for the mean at different sample sizes and for three different distributions. The dashed red lines show normal distributions.}
-   \label{cltSimulations}
-\end{figure}
-
-The left panel in the $n=2$ row represents the sampling distribution of $\bar{x}$ if it is the sample mean of two observations from the uniform distribution shown. The dashed line represents the closest approximation of the normal distribution. Similarly, the center and right panels of the $n=2$ row represent the respective distributions of $\bar{x}$ for data from exponential and log-normal distributions.
-
-\begin{exercise}
-Examine the distributions in each row of Figure~\ref{cltSimulations}. What do you notice about the normal approximation for each sampling distribution as the sample size becomes larger?\footnote{The normal approximation becomes better as larger samples are used.}
-\end{exercise}
-
-\begin{example}{Would the normal approximation be good in all applications where the sample size is at least 30?}
-Not necessarily. For example, the normal approximation for the log-normal example is questionable for a sample size of 30. Generally, the more skewed a population distribution or the more common the frequency of outliers, the larger the sample required to guarantee the distribution of the sample mean is nearly normal.
-\end{example}
-
-\begin{tipBox}{\tipBoxTitle{With larger $n$, the sampling distribution of $\bar{x}$ becomes more normal}
-As the sample size increases, the normal model for $\bar{x}$ becomes more reasonable. We can also relax our condition on skew when the sample size is very large.}
-\end{tipBox}
-
-We discussed in Section~\ref{seOfTheMean} that the sample standard deviation, $s$, could be used as a substitute of the population standard deviation, $\sigma$, when computing the standard error. This estimate tends to be reasonable when $n\geq30$. We will encounter alternative distributions for smaller sample sizes in Chapters~\ref{inferenceForNumericalData} and~\ref{inferenceForCategoricalData}.
-
-
-
-%%%%%%%%%%%%%%%%%THINK OF A NEW EXAMPLE. THIS IS A USEFUL TOPIC 
-\begin{example}{Figure~\ref{pokerProfitsCanApplyNormalToSampMean} shows a histogram of 50 observations. These represent the number of patient visits in a hospital for 50 consecutive days relative to their average rate of 5000 patient visits. Can the normal approximation be applied to the sample mean, 90.69?}
-We should consider each of the required conditions.
-\begin{itemize}
-\setlength{\itemsep}{0mm}
-\item[(1)] These are referred to as \term{time series data}, because the data arrived in a particular sequence. Time series data generally deals with, you guessed it, time! If there are a lot of patients in the hospital one day, it may influence how many patients there are the day after. During the flu season, patient visits might be at an all time high since many people are sick but also the time per visit is also extremely low. To make the assumption of independence we should perform careful checks on such data. While the supporting analysis is not shown, no evidence was found to indicate the observations are not independent on a whole.
-\item[(2)] The sample size is 50, satisfying the sample size condition.
-\item[(3)] There are two outliers, one very extreme, which suggests the data are very strongly skewed or very distant outliers may be common for this type of data. Outliers can play an important role and affect the distribution of the sample mean and the estimate of the standard error.
-\end{itemize}
-Since we should be skeptical of the independence of observations and the very extreme upper outlier poses a challenge, we should not use the normal model for the sample mean of these 50 observations. If we can obtain a much larger sample, perhaps several hundred observations over a longer period of time, then the concerns about skew and outliers would no longer apply.
-\end{example}
-
-\begin{figure}[ht]
-   \centering
-   \includegraphics[height=58mm]{ch_inference_foundations_oi_biostat/figures/pokerProfitsCanApplyNormalToSampMean/pokerProfitsCanApplyNormalToSampMean}
-   \caption{Sample distribution of total patient visits net of 5,000 visits. These data include some very clear outliers. These are problematic when considering the normality of the sample mean. For example, outliers are often an indicator of very strong skew\index{skew!example: very strong}.}
-   \label{pokerProfitsCanApplyNormalToSampMean}
-\end{figure}
-
-\begin{caution}
-{Examine data structure when considering independence}
-{Some data sets are collected in such a way that they have a natural underlying structure between observations, e.g. when observations occur consecutively. Be especially cautious about independence assumptions regarding such data sets.}
-\end{caution}
-
-\begin{caution}
-{Watch out for strong skew and outliers}
-{Strong skew is often identified by the presence of clear outliers. If a data set has prominent outliers, or such observations are somewhat common for the type of data under study, then it is useful to collect a sample with many more than 30 observations if the normal model will be used for $\bar{x}$. There are no simple guidelines for what sample size is big enough for all situations, so proceed with caution when working in the presence of strong skew or more extreme outliers.}
-\index{skew!strongly skewed guideline}
-\index{Central Limit Theorem|)}
-\end{caution}
-
-
-%__________________
-\section{Inference for other estimators}
-\label{aFrameworkForInference}
-
-The sample mean is not the only point estimate for which the sampling distribution is nearly normal. For example, the sampling distribution of sample proportions closely resembles the normal distribution when the sample size is sufficiently large. In this section, we introduce a number of examples where the normal approximation is reasonable for the point estimate. Chapters~\ref{inferenceForNumericalData} and~\ref{inferenceForCategoricalData} will revisit each of the point estimates you see in this section along with some other new statistics.
-
-We make another important assumption about each point estimate encountered in this section: the estimate is unbiased. A point estimate is \term{unbiased} if the sampling distribution of the estimate is centered at the parameter it estimates. A biased point estimate on the other hand can always be too high or estimates always too low. That is, an unbiased estimate does not naturally over or underestimate the parameter. Rather, it tends to provide a ``good'' estimate. The sample mean is an example of an unbiased point estimate, as are each of the examples we introduce in this section.
-
-Finally, we will discuss the general case where a point estimate may follow some distribution other than the normal distribution. We also provide guidance about how to handle scenarios where the statistical techniques you are familiar with are insufficient for the problem at hand.
-
-\subsection{Confidence intervals for nearly normal point estimates}
-
-\index{confidence interval!using normal model|(}
-
-In Section~\ref{confidenceIntervals}, we used the point estimate $\bar{x}$ with a standard error $SE_{\bar{x}}$ to create a 95\% confidence interval for the population mean:
-\begin{align}
-\bar{x}\ \pm\ 1.96 \times SE_{\bar{x}}
-\label{95PercCIForMeanInGeneralizingSection}
-\end{align}
-We constructed this interval by noting that the sample mean is within 1.96 standard errors of the actual mean about 95\% of the time. This same logic generalizes to any unbiased point estimate that is nearly normal. We may also generalize the confidence level by using a place-holder $z^{\star}$.
-
-\begin{termBox}{\tBoxTitle{General confidence interval for the normal sampling distribution case}\label{generalConfidenceIntervalTermBox}%
-For any unbiased point estimate, the confidence interval for a nearly normal point estimate is
-\begin{eqnarray}
-\text{point estimate}\ \pm\ z^{\star}SE
-\label{95PercGeneralCIInGeneralizingSection}
-\end{eqnarray}
-We see that it is of the same form as the generalized confidence interval for the sample mean where $z^{\star}$ is selected to correspond to the confidence level, and $SE$ represents the standard error. Remember from previously that the value $z^{\star}SE$ is called the \emph{margin of error}\index{margin of error}.}
-\end{termBox}
-
-Generally the standard error for a point estimate is estimated from the data and computed using a formula. For example, the standard error for the sample mean is
-\begin{eqnarray*}
-SE_{\bar{x}} = \frac{s}{\sqrt{n}}
-\end{eqnarray*}
-In this section, we provide the computed standard error for each example and exercise without detailing where the values came from. In future chapters, you will learn to fill in these and other details for each situation.
-
-\begin{example}{Using the \data{brfss.sample} data, we computed a point estimate for the average difference in weights between me and women: $\bar{x}_\mathrm{{men}}-\bar{x}_\mathrm{{women}}= 36.61162$ pounds. This point estimate is associated with a nearly normal distribution with SE = 0.35 pounds. What is a reasonable 95\% confidence interval for the difference in gender weights?}
-\label{confIntervalForDifferenceOfRunTimeBetweenGenders}
-The normal approximation is said to be valid, so we apply Equation~\eqref{95PercGeneralCIInGeneralizingSection}:
-\begin{eqnarray*}
-\text{point estimate}\ \pm\ z^{\star} SE
-	\quad\rightarrow\quad 36.61\ \pm\ 1.96\times 0.35
-	\quad\rightarrow\quad (35.91, 37.31)
-\end{eqnarray*}
-Thus, we are 95\% confident that the men were, on average, between 35.91 to 37.31 pounds heavier than women. That is, the actual average difference is plausibly between 35.91 and 37.31 pounds with 95\% confidence.
-\end{example}
-%library(openintro); library(xtable); data(run10); data(run10Samp); (x <- by(run10Samp$time, run10Samp$gender, mean)); diff(x); s <- by(run10Samp$time, run10Samp$gender, sd); n <- by(run10Samp$time, run10Samp$gender, length); sqrt(sum(s^2/n))
-
-
-\begin{example}{Does Example~\ref{confIntervalForDifferenceOfRunTimeBetweenGenders} guarantee that if a husband and wife both weighted themselves, the husband would weigh between 35.91 and 37.31 pounds more than the wife?}
-Our confidence interval says absolutely nothing about individual observations. It {only} makes a statement about a plausible range of values for the \emph{average} difference between all men and women in the US. 
-\end{example}
-
-\begin{exercise}
-The proportion of men in the \data{brfss.sample} sample is $\hat{p}=0.42$. This sample meets certain conditions that ensure $\hat{p}$ will be nearly normal, and the standard error of the estimate is $SE_{\hat{p}}=0.05$. Create a 90\% confidence interval for the proportion of participants in the BRFSS study and thus in the US who are men.\footnote{We use $z^{\star}=1.65$, and apply the general confidence interval formula:
-\begin{eqnarray*}
-\hat{p}\ \pm\ z^{\star}SE_{\hat{p}}
-	\quad\to\quad 0.42\ \pm\ 1.65\times 0.05
-	\quad\to\quad (0.3375, 0.5025)
-\end{eqnarray*}
-Thus, we are 90\% confident that between 34\% and 50\% are men.}
-\index{confidence interval!using normal model|)}
-\end{exercise}
-
-
-\subsection{Hypothesis testing for nearly normal point estimates}
-\index{hypothesis testing!using normal model|(}
-
-Just as the confidence interval method works with many other point estimates and we see the obvious connection between confidence intervals and hypothesis testing, it is unsurprising that we can generalize our hypothesis testing methods to new point estimates that are unbiased. Here we only consider the p-value approach, introduced in Section~\ref{pValue}. Remember the Hypothesis testing framework from ~\ref{hypothesisFramework}. 
-
-\begin{termBox}{\tBoxTitle[]{Hypothesis testing framework using the normal model}
-\begin{enumerate}
-\setlength{\itemsep}{0mm}
-\item First write the hypotheses in plain language, then set them up in mathematical notation using the appropriate point estimate and parameter of interest. 
-\item State a significance level $\alpha$. We generally use $\alpha=0.05$. 
-\item Compute the test-statistic using the point estimate and standard error estimate. 
-\item Calculate the p-value by drawing a picture of the sampling distribution under $H_0$. Know which area you are shading to represent the correct p-value. 
-\item Use the p-value to evaluate your hypotheses. Write a conclusion within the context of the problem. 
-\end{enumerate}
-} For point estimates other than the sampling mean which we know to be unbiased and nearly normal for $n>30$, students need to verify conditions to ensure that the point estimate is nearly normal and unbiased so that the standard error estimate is also reasonable. This step can be done before computing the test-statistic.  
-\end{termBox}
-
-\begin{exercise} \label{fdaHypSetupForSulph}
-A drug called sulphinpyrazone was under consideration for use in reducing the death rate in heart attack patients. To determine whether the drug was effective, a set of 1,475 patients were recruited into an experiment and randomly split into two groups: a control group that received a placebo and a treatment group that received the new drug. What would be an appropriate null hypothesis? And the alternative?\footnote{The skeptic's perspective is that the drug does not work at reducing deaths in heart attack patients ($H_0$), while the alternative is that the drug does work ($H_A$).}
-\end{exercise}
-
-We can formalize the hypotheses from Exercise~\ref{fdaHypSetupForSulph} by letting $p_{control}$ and $p_{treatment}$ represent the proportion of patients who died in the control and treatment groups, respectively. Then the hypotheses can be written as
-\begin{eqnarray*}
-&&H_0: p_{control} = p_{treatment} \quad\text{(the drug doesn't work)} \quad \\
-&&H_A: p_{control} > p_{treatment} \quad\text{(the drug works)}
-\end{eqnarray*}
-or equivalently,
-\begin{eqnarray*}
-&&H_0: p_{control} - p_{treatment} = 0 \quad\text{(the drug doesn't work)} \quad \\
-&&H_A: p_{control} - p_{treatment} > 0 \quad\text{(the drug works)}
-\end{eqnarray*}
-Strong evidence against the null hypothesis and in favor of the alternative would correspond to an observed difference in death rates,
-\begin{eqnarray*}
-\text{point estimate} = \hat{p}_{control} - \hat{p}_{treatment}
-\end{eqnarray*}
-being larger than we would expect from chance alone. This difference in sample proportions represents a point estimate that is useful in evaluating the hypotheses. 
-
-\begin{example}{We want to evaluate the hypothesis setup from Exericse~\ref{fdaHypSetupForSulph} using data from the actual study.\footnote{Anturane Reinfarction Trial Research Group. 1980. Sulfinpyrazone in the prevention of sudden death after myocardial infarction. New England Journal of Medicine 302(5):250-256.} In the control group, 60 of 742 patients died. In the treatment group, 41 of 733 patients died. The sample difference in death rates can be summarized as
-\begin{eqnarray*}
-\text{point estimate} = \hat{p}_{control} - \hat{p}_{treatment} = \frac{60}{742} - \frac{41}{733} = 0.025
-\end{eqnarray*}
-This point estimate is nearly normal and is an unbiased estimate of the actual difference in death rates. The standard error of this sample difference is $SE = 0.013$. Evaluate the hypothesis test at a 5\% significance level: $\alpha=0.05$.}
-We would like to identify the p-value to evaluate the hypotheses. If the null hypothesis is true, then the point estimate would have come from a nearly normal distribution, like the one shown in Figure~\ref{sulphStudyFindPValueUsingNormalApprox}. The distribution is centered at zero since $p_{control}-p_{treatment}=0$ under the null hypothesis. Because a large positive difference provides evidence against the null hypothesis and in favor of the alternative, the upper tail has been shaded to represent the p-value. We need not shade the lower tail since this is a one-sided test: an observation in the lower tail does not support the alternative hypothesis.
-
-\begin{figure}[bt]
-   \centering
-   \includegraphics[height=37mm]{ch_inference_foundations_oi_biostat/figures/sulphStudyFindPValueUsingNormalApprox/sulphStudyFindPValueUsingNormalApprox}
-   \caption{The distribution of the sample difference if the null hypothesis is true.}
-   \label{sulphStudyFindPValueUsingNormalApprox}
-\end{figure}
-
-The p-value can be computed by using the Z score of the point estimate and the normal probability table.
-\begin{eqnarray}
-Z = \frac{\text{point estimate} - \text{null value}}{SE_{\text{point estimate}}}
-	= \frac{0.025 - 0}{0.013} = 1.92
-\label{zScoreOfPointEstimateForSulphinpyrazoneThisIsFirstTestStatReference}
-\end{eqnarray}
-Examining $Z$ in the normal probability table, we find that the lower unshaded tail is about 0.973. Thus, the upper shaded tail representing the p-value is
-\begin{eqnarray*}
-\text{p-value} = 1-0.973 = 0.027
-\end{eqnarray*}
-Because the p-value is less than the significance level ($\alpha=0.05$), we say the null hypothesis is implausible. That is, we reject the null hypothesis in favor of the alternative and conclude that the drug is effective at reducing deaths in heart attack patients.
-\end{example}
-
-\subsection{Non-normal point estimates}
-
-We may apply the ideas of confidence intervals and hypothesis testing to cases where the point estimate or test statistic is not necessarily normal. There are many reasons why such a situation may arise:
-\begin{itemize}
-\setlength{\itemsep}{0mm}
-\item the sample size is too small for the normal approximation to be valid;
-\item the standard error estimate may be poor; or
-\item the point estimate tends towards some distribution that is not the normal distribution.
-\end{itemize}
-For each case where the normal approximation is not valid, our first task is always to understand and characterize the sampling distribution of the point estimate or test statistic. Next, we can apply the general frameworks for confidence intervals and hypothesis testing to these alternative distributions.
-
-
-\subsection{When to retreat}
-\label{whenToRetreat}
-
-Statistical tools rely on conditions. When the conditions are not met, these tools are unreliable and drawing conclusions from them is treacherous. The conditions for these tools typically come in two forms.
-\begin{itemize}
-\setlength{\itemsep}{0mm}
-\item \textbf{The individual observations must be independent.} A random sample from less than 10\% of the population ensures the observations are independent. In experiments, we generally require that subjects are randomized into groups. If independence fails, then advanced techniques must be used, and in some such cases, inference may not be possible.
-\item \textbf{Other conditions focus on sample size and skew.} For example, if the sample size is too small, the skew too strong, or extreme outliers are present, then the normal model for the sample mean will fail.
-\end{itemize}
-Verification of conditions for statistical tools is always necessary. Whenever conditions are not satisfied for a statistical technique, there are three options. The first is to learn new methods that are appropriate for the data. The second route is to consult a statistician.\footnote{If you work at a university, then there may be campus consulting services to assist you. Alternatively, there are many private consulting firms that are also available for hire.} The third route is to ignore the failure of conditions. This last option effectively invalidates any analysis and may discredit novel and interesting findings.
-
-Finally, we caution that there may be no inference tools helpful when considering data that include unknown biases, such as convenience samples. For this reason, there are books, courses, and researchers devoted to the techniques of sampling and experimental design. See Sections~\ref{overviewOfDataCollectionPrinciples}-\ref{experimentsSection} for basic principles of data collection.
-
-
-
-%__________________
-\section{Sample size and power (special topic)}
-\label{sampleSizeAndPower}
-
-The Type 2 Error rate and the magnitude of the error for a point estimate are controlled by the sample size \footnote{Remember the margin of error comes from the confidence interval (point estimate $\pm$ margin of error where the margin of error = $q^{\star} \cdot SE$ for a certain confidence level)}. Real differences from the null value, even large ones, may be difficult to detect with small samples. If we take a very large sample, we might find a statistically significant difference but the magnitude might be so small that it is of no practical value. In this section we describe techniques for selecting an appropriate sample size based on these considerations.
-
-\subsection{Finding a sample size for a certain margin of error}
-\label{findingASampleSizeForACertainME}
-
-\index{margin of error|(}
-
-Many companies are concerned about rising healthcare costs. A company may estimate certain health characteristics of its employees, such as blood pressure, to project its future cost obligations. However, it might be too expensive to measure the blood pressure of every employee at a large company, and the company may choose to take a sample instead.
-
-\begin{example}{Blood pressure oscillates with the beating of the heart, and the systolic pressure is defined as the peak pressure when a person is at rest. The average systolic blood pressure for people in the U.S. is about 130 mmHg with a standard deviation of about 25 mmHg. How large of a sample is necessary to estimate the average systolic blood pressure with a margin of error of 4 mmHg using a 95\% confidence level?}
-\label{sampleSizeComputationForSystolicBloodPressure}
-First, we frame the problem carefully. Recall that the margin of error is the part we add and subtract from the point estimate when computing a confidence interval. Here we assume that the company has more than 30 employees and thus we can use 1.96 as the critical value for this nearly normal point estimate \footnote{Students should verify the other assumptions as well: independence etc.} The margin of error for a 95\% confidence interval estimating a mean can be written as
-\begin{align*}
-ME_{95\%} = 1.96\times SE = 1.96\times\frac{\sigma_{employee}}{\sqrt{n}}
-\end{align*}
-The challenge in this case is to find the sample size $n$ so that this margin of error is less than or equal to 4, which we write as an inequality:
-\begin{align*}
-1.96\times \frac{\sigma_{employee}}{\sqrt{n}} \leq 4
-\end{align*}
-In the above equation we wish to solve for the appropriate value of $n$, but we need a value for $\sigma_{employee}$ before we can proceed. However, we haven't yet collected any data, so we have no direct estimate! Instead, we use the best estimate available to~us: the approximate standard deviation for the U.S. population, 25. To proceed and solve for $n$, we substitute 25 for $\sigma_{employee}$:
-\begin{align*}
-1.96\times \frac{\sigma_{employee}}{\sqrt{n}} \approx 1.96\times\frac{25}{\sqrt{n}}
-	&\leq 4 \\
-1.96\times\frac{25}{4} &\leq \sqrt{n} \\
-\left(1.96\times\frac{25}{4}\right)^2 &\leq n \\
-150.06 &\leq n
-\end{align*}
-This suggests we should choose a sample size of at least 151 employees. We round up because the sample size must be \emph{greater than or equal to 150.06} to ensure a margin of error of 4.
-\end{example}
-
-A potentially controversial part of Example~\ref{sampleSizeComputationForSystolicBloodPressure} is the use of the U.S. standard deviation for the employee standard deviation. Usually the standard deviation for the sample is not known since we haven't taken the sample just yet! In such cases, many practicing statisticians review scientific literature or market research to make an educated guess about the standard deviation to calculate the standard error. 
-
-\begin{termBox}{\tBoxTitle{Identify a sample size for a particular margin of error}
-To estimate the necessary sample size for a maximum margin of error $m$, we set up an equation to represent this relationship:
-\begin{align*}
-m \geq ME = q^{\star}\frac{\sigma}{\sqrt{n}}
-\end{align*}
-where $z^{\star}$ is chosen to correspond to the desired confidence level for a nearly normal point estimate, and $\sigma$ is the standard deviation associated with the population. Solve for the sample size,~$n$.\\
-If we believed the point estimate not to be nearly normal, use $q^{\star}$ from the $t$-distribution instead. However in practice, a nearly normal point estimate is used more often than not.}
-\end{termBox}
-
-Sample size computations are helpful in planning data collection, and they require careful forethought. Next we consider another topic important in planning data collection and setting a sample size: the Type 2 Error rate.
-
-\index{margin of error|)}
-
-
-\subsection{Power and the Type 2 Error rate}
-
-Consider the following two hypotheses:
-\begin{itemize}
-\setlength{\itemsep}{0.5mm}
-\item[$H_0$:] The average blood pressure of employees is the same as the national average, $\mu = 130$.
-\item[$H_A$:] The average blood pressure of employees is different than the national average, $\mu \neq 130$.
-\end{itemize}
-Suppose the alternative hypothesis is actually true. Then we might like to know, what is the chance we make a Type 2 Error? That is, what is the chance we will fail to reject the null hypothesis even though we should reject it? The answer is not obvious! If the average blood pressure of the employees is 132 (just 2 mmHg from the null value), it might be very difficult to detect the difference unless we use a large sample size. On the other hand, it would be easier to detect a difference if the real average of employees was 140.
-
-\begin{example}{Suppose the actual employee average is 132 and we take a sample of 100 individuals. Then the true sampling distribution of $\bar{x}$ is approximately $N(132, 2.5)$ (since $SE = \frac{25}{\sqrt{100}} = 2.5$). What is the probability of successfully rejecting the null hypothesis?}
-\label{computePowerIfMuIs132AndMu0Is130}
-This problem can be divided into two normal probability questions. First, we identify what values of $\bar{x}$ would represent sufficiently strong evidence to reject $H_0$. Second, we use the hypothetical sampling distribution with center $\mu=132$ to find the probability of observing sample means in the areas we found in the first step.
-
-\textbf{Step 1.} The null distribution could be represented by $N(130, 2.5)$, the same standard deviation as the true distribution but with the null value as its center. Then we can find the two tail areas by identifying the T-statistic corresponding to the 2.5\% tails ($\pm 1.96$), and solving for $x$ in the T-statistic equation:
-\begin{align*}
--1.96 = T_1 &= \frac{x_1 - 130}{2.5}
-	&+1.96 = T_2 &= \frac{x_2 - 130}{2.5} \\
-x_1 &= 125.1
-	&x_2 &= 134.9
-\end{align*}
-(An equally valid approach is to recognize that $x_1$ is $1.96\times SE$ below the mean and $x_2$ is $1.96\times SE$ above the mean to compute the values.) Figure~\ref{power132And141} shows the null distribution on the left with these two dotted cutoffs.
-
-\textbf{Step 2.} Next, we compute the probability of rejecting $H_0$ if $\bar{x}$ actually came from $N(132, 2.5)$. This is the same as finding the two shaded tails for the second distribution in Figure~\ref{power132And141}. We again use the T-statistic method:
-\begin{align*}
-&T_{left} = \frac{125.1 - 132}{2.5} = -2.76
-	&&T_{right} = \frac{134.9 - 132}{2.5} = 1.16 \\
-&area_{left} =0.003
-	&&area_{right} =0.123
-\end{align*}
-The probability of rejecting the null mean, if the true mean is 132, is the sum of these areas: $0.003 + 0.123 = 0.126$.
-\end{example}
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=\textwidth]{ch_inference_foundations_oi_biostat/figures/power132And141/power132And141}
-\caption{The sampling distribution of $\bar{x}$ under two scenarios. Left: $N(130, 2.5)$. Right: $N(132, 2.5)$, and the shaded areas in this distribution represent the power of the test.}
-\label{power132And141}
-\end{figure}
-
-The probability of rejecting the null hypothesis is called the \term{power}. The power varies depending on what we suppose the truth might be. In Example~\ref{computePowerIfMuIs132AndMu0Is130}, the difference between the null value and the supposed true mean was relatively small, so the power was also small: only 0.126. However, when the truth is far from the null value, where we use the standard error as a measure of what is far, the power tends to increase.
-
-\begin{exercise}
-Suppose the true sampling distribution of $\bar{x}$ is centered at 140. That is, $\bar{x}$ comes from $N(140, 2.5)$. What would the power be under this scenario? It may be helpful to draw $N(140, 2.5)$ and shade the area representing power on Figure~\ref{power132And141}; use the same cutoff values identified in Example~\ref{computePowerIfMuIs132AndMu0Is130}.\footnote{Draw the distribution $N(140, 2.5)$, then find the area below 125.1 (about zero area) and above 134.9 (about 0.979). If the true mean is 140, the power is about 0.979.}
-\end{exercise}
-
-\begin{exercise}
-If the power of a test is 0.979 for a particular mean, what is the Type 2 Error rate for this mean?\footnote{The Type 2 Error rate represents the probability of failing to reject the null hypothesis. Since the power is the probability we do reject, the Type 2 Error rate will be $1-0.979 = 0.021$.}
-\end{exercise}
-
-\begin{exercise}
-Provide an intuitive explanation for why we are more likely to reject $H_0$ when the true mean is further from the null value.\footnote{Answers may vary a little. When the truth is far from the null value, the point estimate also tends to be far from the null value, making it easier to detect the difference and reject $H_0$.}
-\end{exercise}
-
-\subsection{Statistical significance versus practical significance}
-
-When the sample size becomes larger, point estimates become more precise and any real differences in the mean and null value become easier to detect and recognize. Even a very small difference would likely be detected if we took a large enough sample. Sometimes researchers will take such large samples that even the slightest difference is detected. While we still say that difference is \term{statistically significant}, it might not be \term{practically significant}.
-
-Statistically significant differences are sometimes so minor that they are not practically relevant. This is especially important to research: if we conduct a study, we want to focus on finding a meaningful result. We don't want to spend lots of money finding results that hold no practical and applicable value.
-
-The role of a statistician in conducting a study often includes planning the size of the study and determining the value of $\alpha$. Statisticians might first consult experts or scientific literature to learn what would be the smallest meaningful difference from the null value. They also would obtain some reasonable estimate for the standard deviation. With these important pieces of information, a sufficiently large sample size would be chosen so that the power for the meaningful difference is perhaps 80\% or 90\%. While larger sample sizes may still be used, statisticians in practice might advise against using them in some cases, especially in sensitive areas of research. While we note the statistical rigor in our hypothesis testing, we must also note that many of these tests must also stand up to practical significance in the real world.
-
-
-
-
-
-
-
-
-
-%%%%%%%%%%%%%%HERE IS THE COMMENT%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%HERE IS THE COMMENT%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%HERE IS THE COMMENT%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%HERE IS THE COMMENT%%%%%%%%%%%%%%%%%%%%%%%%%%%%
------------------------------------------------------------------------------------------------------------------------------------------------------
+%%%
