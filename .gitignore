@@ -9,3 +9,13 @@
 *.blg
 oi_biostat_source/main.pdf
 oi_biostat_source/main.pdf
+*.aux
+.DS_Store
+*.Rhistory
+oi_biostat_source/ch_inference_for_means
+oi_biostat_source/ch_distributions
+oi_biostat_source/ch_intro_to_data
+data/
+R_code/
+stats_teachr_oi_labs/
+
