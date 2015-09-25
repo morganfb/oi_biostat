@@ -23,4 +23,20 @@ barplot(brthwt.marginal.dist.table)
 
 # plot above is unadorned, but JV will fix that!
 
+library(openintro)
+data(COL)
 
+myPDF("birthwtMarginalDist.pdf",
+      15, 5,
+      mar = c(3.5, 3.5, 0.5, 1),
+      mgp = c(2.4, 0.7, 0))
+
+barplot(brthwt.marginal.dist.table,
+        axes = TRUE,
+        xlab = 'Births',
+        ylab = 'Probability',
+        main = '',
+        ylim = c(0,0.4),
+        col = COL[1])
+
+dev.off()
