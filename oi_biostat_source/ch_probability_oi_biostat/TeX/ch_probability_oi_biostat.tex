@@ -849,10 +849,12 @@ P(Y=\text{\resp{1}}\ |\ X=\text{\resp{1}})
 
 
 \begin{exercise}
-Casinos often rely on gamblers not understanding independence.  Suppose the last five outcomes on a roulette table were \resp{black}.  What is wrong with the reasoning that the next outcome is highly likely to be red?
+Casinos often rely on gamblers not understanding independence.  Suppose the last five outcomes on a roulette table were \resp{black}.  What is wrong with the reasoning that the next outcome is highly likely to be red? \textit{JV: Needs footnote solution.}
 \end{exercise}
 
 There is a subtle but important point behind the last example.  The probability of the next outcome being black is different than the probability that the sixth outcome is black when a gambler has seen the last five outcomes and knows that they are black.  This is an example of an unconditional versus a conditional probability.
+
+\textit{JV: This section definitely needs some re-working -- comes across as rather lifeless right now. Could add an example in which independence is illustrated using the conditional probability formula.}
 
 \subsection{Tree diagrams}
 
@@ -861,7 +863,7 @@ There is a subtle but important point behind the last example.  The probability 
 
 \termsub{Tree diagrams}{tree diagram} are a tool to organize outcomes and probabilities around the structure of the data. They are most useful when two or more processes occur in a sequence and each process is conditioned on its predecessors.
 
-The \data{smallpox} data fit this description. We see the population as split by \var{inoculation}: \resp{yes} and \resp{no}. Following this split, survival rates were observed for each group. This structure is reflected in the \term{tree diagram} shown in Figure~\ref{smallpoxTreeDiagram}. The first branch for \var{inoculation} is said to be the \term{primary} branch while the other branches are \term{secondary}.
+The \data{smallpox} data fit this description. The population is split by \var{inoculation}: \resp{yes} and \resp{no}. Following this split, survival rates were observed for each group. This structure is reflected in the \term{tree diagram} shown in Figure~\ref{smallpoxTreeDiagram}. The first branch for \var{inoculation} is said to be the \term{primary} branch while the other branches are \term{secondary}.
 
 \begin{figure}[ht]
 \centering
@@ -870,7 +872,7 @@ The \data{smallpox} data fit this description. We see the population as split by
 \label{smallpoxTreeDiagram}
 \end{figure}
 
-Tree diagrams are annotated with marginal and conditional probabilities, as shown in Figure~\ref{smallpoxTreeDiagram}. This tree diagram splits the smallpox data by \var{inoculation} into the \resp{yes} and \resp{no} groups with respective marginal probabilities 0.0392 and 0.9608. The secondary branches are conditioned on the first, so we assign conditional probabilities to these branches. For example, the top branch in Figure~\ref{smallpoxTreeDiagram} is the probability that \var{result} = \resp{lived} conditioned on the information that \var{inoculated} = \resp{yes}. We may (and usually do) construct joint probabilities at the end of each branch in our tree by multiplying the numbers we come across as we move from left to right. These joint probabilities are computed using the General Multiplication Rule:
+Tree diagrams are annotated with marginal and conditional probabilities, as shown in Figure~\ref{smallpoxTreeDiagram}. This tree diagram splits the smallpox data by \var{inoculation} into the \resp{yes} and \resp{no} groups with respective marginal probabilities 0.0392 and 0.9608. The secondary branches are conditioned on the first, so we assign conditional probabilities to these branches. For example, the top branch in Figure~\ref{smallpoxTreeDiagram} is the probability that \var{result} = \resp{lived} conditioned on the information that \var{inoculated} = \resp{yes}. Joint probabilities can be constructed at the end of each branch in the tree by multiplying the numbers from left to right. These joint probabilities are computed using the General Multiplication Rule:
 \begin{eqnarray*}
 && P(\text{\var{inoculated} = \resp{yes} and \var{result} = \resp{lived}}) \\
 	&&\quad = P(\text{\var{inoculated} = \resp{yes}})\times P(\text{\var{result} = \resp{lived}}|\text{\var{inoculated} = \resp{yes}}) \\
@@ -884,15 +886,13 @@ In addition to being a graphical representation of how to compute a probability,
 
 In the general population, about 1 in 28 individuals (approximately 3.6\%) is an unaffected carrier of a mutation in the cystic fibrosis gene, \textit{CFTR}, discussed in example~\ref{CFInheritanceExample}.  Most unaffected carriers are unaware that they harbor the mutation.  Suppose that people with cystic fibrosis do not live long enough to reproduce with a partner.  In the absence of any testing information, what is the probability that a child of two parent will have CF?
 	
-	\textit{solution not give for now, since I did not want to take the time to draw the tree.  This will be a good example to also solve algebraically, to show that the tree diagram is a representation of the theorem of total prob. Useful, since it will come up with Bayes Thm. Borrow some of the wording from the solution to the grade problem in OI that I removed here.  Below has a start of the solution}
+	\textit{DH: solution not given for now, since I did not want to take the time to draw the tree.  This will be a good example to also solve algebraically, to show that the tree diagram is a representation of the theorem of total prob. Useful, since it will come up with Bayes Thm. Borrow some of the wording from the solution to the grade problem in OI that I removed here.  Below has a start of the solution}
 	
 	
 \textit{solution}
 The probabilities calculated in example~\ref{CFInheritanceExample} were conditional probabilities given the carrier status of the parents, though that term was not used in the example.  This exercise asks for an unconditional probability about the disease status of the child, with no additional information about the parents.  The solution uses methods already discussed, but combined is a series of steps.  
 
-The main steps are to first enumerate all the possibilities for carrier status of the parents, calculate the probabilities of each of those probabilities, then calculate the conditional probability of an affected child, given each of the possible outcomes of the parents, and finally use a tree to calculate the probability of a child being affected.
-
-Since the problem assumes that affected parents do not reproduce, the pair of parents must satisfy one of the events $A = \text{(neither parent is a carrier)}$, $B = \text{(the mother is a carrier, the father is not)}$, $C = \text{(the father is a carrier, the mother is not)}$, and $D = \text{(both parents are carriers)}$.  Since the carrier status of the mother is independent of that of the father, the probabilities of these events are
+The main steps are to first enumerate all the possibilities for carrier status of the parents, calculate the probabilities of each of those probabilities, then calculate the conditional probability of an affected child, given each of the possible outcomes of the parents, and finally use a tree to calculate the probability of a child being affected. Since the problem assumes that affected parents do not reproduce, the pair of parents must satisfy one of the events $A$ = (neither parent is a carrier), $B$ (the mother is a carrier, the father is not), $C$ = (the father is a carrier, the mother is not), $D$ = (both parents are carriers). Since the carrier status of the mother is independent of that of the father, the probabilities of these events are:
 
 \begin{itemize}
 	\item $P(A) = (1 - 0.036)(1 - 0.036) = 0.929$
@@ -904,7 +904,9 @@ Since the problem assumes that affected parents do not reproduce, the pair of pa
 	
 These probabilities do not sum to one because the events where one or both parents are homozygous for the mutation, that is, are affected.
 
-\textit{solution continues now with the conditional probabilities and the tree.  We should think about whether this example is too big of a step from the others, and perhaps add an intermediate example}
+\textit{DH: solution continues now with the conditional probabilities and the tree.  We should think about whether this example is too big of a step from the others, and perhaps add an intermediate example}
+
+\textit{JV: I agree that this might be too much at once... }
 
 \end{example}
 
@@ -924,8 +926,9 @@ but ask for the reverse conditional probability:
 P(\text{statement about variable 2} | \text{ statement about variable 1})
 \end{align*}
 
-The problem arises so often in medicine, and is so important, that is useful to have several ways to approach the problem -- tree diagrams, a purely algebraic approach using Bayes' Theorem, and the construction of a large, hypothetical population that allows conditional probabilities to be calculated from contingency tables.  The first solution uses tree diagrams and more specific information about mammograms and breast cancer.
+The problem arises so often in medicine, and is so important, that is useful to have several strategies to approach the problem -- 1) constructing tree diagrams, 2) using a purely algebraic approach using Bayes' Theorem, and 3) the construction of a large, hypothetical population that allows conditional probabilities to be calculated from contingency tables.  The first solution uses tree diagrams and more specific information about mammograms and breast cancer.
 
+\textit{JV: What do you think about condensing the tree diagram subsection (mainly the introduction section) and adding that material here?}
 
 \begin{example}{In Canada, about 0.35\% of women over 40 will develop breast cancer in any given year. A common screening test for cancer is the mammogram, but it is not perfect. In about 11\% of patients with breast cancer, the test gives a \term{false negative}: it indicates a woman does not have breast cancer when she does have breast cancer. Similarly, the test gives a \term{false positive} in 7\% of patients who do not have breast cancer: it indicates these patients have breast cancer when they actually do not.\footnote{The probabilities reported here were obtained using studies reported at \oiRedirect{textbook-breastCancerDotOrg_20090831b}{www.breastcancer.org} and \oiRedirect{textbook-ncbi_nih_breast_cancer}{www.ncbi.nlm.nih.gov/pmc/articles/PMC1173421}.} If a random selected woman over 40 is tested for breast cancer using a mammogram and the test is positive -- that is, the test suggests the woman has cancer -- what is the probability she has breast cancer?} 
 
@@ -960,7 +963,7 @@ P(\text{has BC } | \text{ mammogram$^+$})
 	&= \frac{P(\text{has BC and mammogram$^+$})}{P(\text{mammogram$^+$})}\\
 	&= \frac{0.00312}{0.07288} \approx 0.0428
 \end{align*}
-Even with a positive mammogram, there is still only a~4\%~chance of breast cancer.  Most people find this a surprising result.  \textit{return to this to finish why low prevalence leads to low ppv. that is the important concept for pre-meds and others}
+Even with a positive mammogram, there is still only a~4\%~chance of breast cancer.  Most people find this a surprising result.  \textit{DH: return to this to finish why low prevalence leads to low ppv. that is the important concept for pre-meds and others}
 \end{example}
 
 
@@ -1014,6 +1017,8 @@ To apply Bayes' Theorem correctly, there are two preparatory steps:
 \item[(2)] Then identify the probability of the outcome $B$, conditioned on each possible scenario for the first variable: $P(B | A_1)$, $P(B | A_2)$, ..., $P(B | A_k)$.
 \end{enumerate}
 Once each of these probabilities are identified, they can be applied directly within the formula.
+
+\textit{JV: Agree that Bayes' Rule section still needs some work. I am not sure how to make the flow smoother, yet. Table method needs to be added, as well.}
 
 %%%%%
 %
