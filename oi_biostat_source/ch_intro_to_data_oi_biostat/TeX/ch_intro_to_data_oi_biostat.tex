@@ -1,28 +1,13 @@
+%!TEX root=../../main.tex
+
+
 \begin{doublespace}
-
-
-\begin{comment}
-	
-Pending
-
-  -- Section on sampling, using Flanders data.  Check with PB approx 1 Aug to see about summary of Harvard data.
-  
-  -- Add JV plots
-  
-  -- Categorical data
-  
-  -- Clean up deletions from original OI.
-  
-  -- Much better intro to this chapter and its goals
-	
-\end{comment}
 
 \chapter{Introduction to data}
 \label{introductionToData}
 
-\textit{DH: The more I think about it, I am inclined to add material on genomic data. The level is too easy so far. And I think we should add back in the section on survey sampling. We should also add a summary at the end of the chapter to remind students what the goals for the chapter are.}
 
-Scientists seek to answer questions using rigorous methods and careful observations. These observations -- collected from the likes of field notes, surveys, and experiments -- form the backbone of a statistical investigation and are called \term{data}. Statistics is the study of how to best collect, analyze, and draw conclusions from data. It is helpful to place statistics in the context of a general process of investigation:
+Advances in science are almost always the result of a dynamic balance between theory and observation. These observations -- collected from the likes of field notes, surveys, and experiments -- form the backbone empirical research and are called \term{data}. Statistics is the study of how to best collect, analyze, and draw conclusions from data. Statistics is an integral part of the components of the scientific method:  
 \begin{enumerate}
 \setlength{\itemsep}{0mm}
 \item Identify a question or problem.
@@ -32,62 +17,47 @@ Scientists seek to answer questions using rigorous methods and careful observati
 \end{enumerate}
 Statistics as a subject focuses on making stages 2-4 objective, rigorous, and efficient. That~is, statistics has three primary components: How can data best be collected? How should it be analyzed? What can be inferred from the analysis?  
 
-This chapter provides a brief introduction to the basic principles of data collection techniques and analytic tools, and illustrates the important role statistics plays in medicine and biology.
+This chapter provides a brief introduction to the principles of data collection and introduces some simple numerical and graphical summaries of data that will be used in the rest of the text.  The examples are drawn from recent studies in medicine and biology and illustrate the important role statistics plays in medicine and biology.  The chapter also serves as a brief review for readers already familiar with introductory statistics.
 
-\textit{JV: Make reference to how this chapter can be used by either someone new to statistics or someone who has had the material before?}
-
-\textit{JV: Something to address later -- where in the formatting does it specify that the first paragraph in a section does not get indented, but the others do...}
-
-\textit{DH: This is part of the latex default. I think it used to be standard in publishing.}
 
 \section[Case study]{Case study: preventing peanut allergies}
 \label{leapCaseStudy}
 
 \index{data!LEAP|(}
 
-Section~\ref{leapCaseStudy} introduces an important problem in medicine: evaluating the effect of an intervention. \textit{JV: Intervention should be defined, could work in a dependent clause. DH: Agree.} Terms in this section, and indeed much of this chapter, will all be revisited later in more detail.
+Section~\ref{leapCaseStudy} introduces an important problem in medicine: evaluating the effect of a strategy for treating a disease or medical condition. Terms in this section, and indeed much of this chapter, will be revisited later in more detail.
 
 The proportion of young children in Western countries with peanut allergies has doubled in the last 10 years. Previous research suggests that exposing infants to peanut-based foods, rather than excluding such foods from their diets, may be an effective strategy for preventing the development of peanut allergies. This section describes an experiment (a clinical trial, in the terminology of medical research) designed to address the following research question: Does early exposure to peanut products reduce the probability that a child will develop peanut allergies? 
 
-The "Learning Early about Peanut Allergy" (LEAP) study was reported in the New England Journal of Medicine in 2015.\footnote{Du Toit, George, et al. Randomized trial of peanut consumption in infants at risk for peanut allergy. New England Journal of Medicine 372.9 (2015): 803-813.} The study team enrolled children in the United Kingdom between 2006 and 2009, selecting 640 infants with eczema, egg allergy, or both. Each child was randomly assigned to the treatment group (peanut consumption) or the control group (peanut avoidance); children in the treatment group were fed at least 6 grams of peanut protein daily until 5 years of age, while children in the control group were to avoid consuming peanut protein until 5 years of age. \textit{In this study, the control group provides a reference point for estimating the effect of peanut exposure in the treatment group. JV: This last sentence comes off as a bit technical/vague, perhaps due to "estimating the effect" -- could be omitted, I think.}
+The "Learning Early about Peanut Allergy" (LEAP) study was reported in the New England Journal of Medicine in 2015.\footnote{Du Toit, George, et al. Randomized trial of peanut consumption in infants at risk for peanut allergy. New England Journal of Medicine 372.9 (2015): 803-813.} The study team enrolled children in the United Kingdom between 2006 and 2009, selecting 640 infants with eczema, egg allergy, or both. Each child was randomly assigned to the treatment group (peanut consumption) or the control group (peanut avoidance); children in the treatment group were fed at least 6 grams of peanut protein daily until 5 years of age, while children in the control group were to avoid consuming peanut protein until 5 years of age. 
 
-At age 5, each child was tested for peanut allergy using an oral food challenge (OFC): 5 grams of peanut protein in a single dose. Children had been previously been tested for peanut allergy through a skin test, conducted at the time of study entry; the main analysis presented in the paper was based on the 530 children with a negative skin test result. Of these children, 263 were assigned to "Peanut Avoidance" and 267 to "Peanut Consumption." The outcome at 5 years was reported as either "Fail OFC" (allergic reaction) or "Pass OFC" (no allergic reaction). 
+At 5 years of age, each child was tested for peanut allergy using an oral food challenge (OFC): 5 grams of peanut protein in a single dose. Children had been previously been tested for peanut allergy through a skin test, conducted at the time of study entry; the main analysis presented in the paper was based on the 530 children with a negative skin test result. Of these children, 263 were assigned to "Peanut Avoidance" and 267 to "Peanut Consumption." The outcome at 5 years was reported as either "Fail OFC" (allergic reaction) or "Pass OFC" (no allergic reaction). 
 
 Table \ref{leapStudyResultsDF} shows the participant study ID number, treatment assignment, and OFC outcome for 5 children. All five of these children passed the food challenge. 
  
-\textit{JV: The last two row labels should be corrected to 529 and 530; not sure how to fix that in the R code. We should be careful later on to clarify that in the file, the row.names column corresponds to the dataset with all 640 children. Alternatively, that column could be omitted and a separate dataset made with the children with a positive skin test, which could be analyzed in an end-of-chapter exercise.}
-
-\textit{DH: Agree this is confusing; we should leave out the first col. Also possible I did not subset before making this table; needs checking.}
-
-\textit{JV: Just curious...so 267 for the peanut consumption group includes the one child with a positive skin test?}
-
-\textit{DH: I will check about the one child with + skin test.}
-
-\textit{DH: Edits to here, 01 Sept 2015.}
-
 % latex table generated in R 3.1.1 by xtable 1.7-4 package
-% Wed Jul 15 13:59:17 2015
+% Mon Sep 28 09:14:28 2015
+
 \begin{table}[ht]
 \centering
-\begin{tabular}{rlll}
+\begin{tabular}{lll}
   \hline
- & participant.ID & treatment.group & overall.V60.outcome \\ 
+participant.ID & treatment.group & overall.V60.outcome \\ 
   \hline
-1 & LEAP\_100522 & Peanut Consumption & PASS OFC \\ 
-  2 & LEAP\_103358 & Peanut Consumption & PASS OFC \\ 
-  3 & LEAP\_105069 & Peanut Avoidance & PASS OFC \\ 
-& $\vdots$	&	$\vdots$	  &	$\vdots$  \\
-  639 & LEAP\_994047 & Peanut Avoidance & PASS OFC \\ 
-  640 & LEAP\_997608 & Peanut Consumption & PASS OFC \\ 
+LEAP\_100522 & Peanut Consumption & PASS OFC \\ 
+  LEAP\_103358 & Peanut Consumption & PASS OFC \\ 
+  LEAP\_105069 & Peanut Avoidance & PASS OFC \\ 
+  LEAP\_994047 & Peanut Avoidance & PASS OFC \\ 
+  LEAP\_997608 & Peanut Consumption & PASS OFC \\ 
    \hline
 \end{tabular}
 \caption{Results for five children from the peanut study.}
 \label{leapStudyResultsDF}
 \end{table}
 
-% library(xtable); xtable(LEAP[c(1,2,3,529, 530),c( "participant.ID", "treatment.group", "overall.V60.outcome")])
+%print(xtable(LEAP[c(1,2,3,529, 530),c("participant.ID", "treatment.group", "overall.V60.outcome")]),include.rownames=FALSE)
 
-Summary tables are generally more helpful than individual participant listings  when looking for patterns in data. Table~\ref{leapStudyResults} shows outcomes grouped by treatment group and the result of the OFC test. From this table, it is possible to compute some simple summary statistics. 
+When looking for patterns in data, summary tables are generally more helpful than individual participant listings. Table~\ref{leapStudyResults} shows outcomes grouped by treatment group and the result of the OFC test. From this table, it is possible to compute some simple summary statistics. 
 
 % latex table generated in R 3.1.1 by xtable 1.7-4 package
 % Thu Jul 16 07:12:04 2015
@@ -107,17 +77,16 @@ Peanut Avoidance & 36 & 227 & 263 \\
 \end{table}
 %library(xtable); outcome.table = addmargins(table(LEAP$treatment.group, LEAP$overall.V60.outcome)); xtable(outcome.table, digits = 0, caption = "LEAP Study Results", caption  = "leapStudyResults")
 
-A \term{summary statistic} is a single number summarizing a large amount of data.\footnote{Formally, a summary statistic is a value computed from the data. Some summary statistics are more useful than others.} In the Peanut Avoidance group, the proportion of participants failing the food challenge at 5 years of age is 36/263 = 0.137 (13.7\%); in the Peanut Consumption intervention, the proportion failing is 5/267 = 0.019 (1.9\%). The difference between these two proportions, 11.8\%, is a single summary statistic describing the extent to which these two proportions differ. A second summary statistic, the ratio of the two proportions, 0.137/0.019 = 7.31, indicates that the proportion failing in the Avoidance group is more than 7 times that of the Consumption group.   This ratio is called a \term{relative risk}.
-	
-\textit{JV: Interpretation of RR should be more clearly stated here, or else RR should be omitted entirely.}
 
+A \term{summary statistic} is a single number summarizing a large amount of data.\footnote{Formally, a summary statistic is a value computed from the data.} In the Peanut Avoidance group, the proportion of participants failing the food challenge at 5 years of age is 36/263 = 0.137 (13.7\%); in the Peanut Consumption intervention, the proportion failing is 5/267 = 0.019 (1.9\%). The difference between these two proportions, 11.8\%, is a summary statistic describing the extent to which these two proportions differ. A second summary statistic, the ratio of the two proportions, 0.137/0.019 = 7.31, indicates that the proportion failing in the Avoidance group is more than 7 times that of the Consumption group.   
+	
 The summary statistics for the LEAP study highlight an important point -- the results of a study can sometimes be surprising.  A parent of a child already known to be allergic to eggs might be justifiably skeptical about feeding peanut butter to their child.  The LEAP study suggests that, at least for children similar to those enrolled in the study, the benefits of early exposure might be substantial. 
 
-There are important aspects of the study to be cautious about.  This study was conducted in the United Kingdom at a single site of pediatric care; it is not at all clear that results in children from that site can be generalized to other countries or cultures.  Furthermore, the results also raise an important statistical issue: does the study provide definitive evidence that peanut consumption is beneficial? In other words, is the 11.8\% difference between the two groups larger than one would expect by chance variation alone? 
+There are important aspects of the study to be cautious about.  This study was conducted in the United Kingdom at a single site of pediatric care; it is not clear that results in children from that site can be generalized to other countries or cultures. The results also raise an important statistical issue: does the study provide definitive evidence that peanut consumption is beneficial? In other words, is the 11.8\% difference between the two groups larger than one would expect by chance variation alone? 
 
 Suppose a coin is flipped 100 times. While the chance a coin lands heads in any given coin flip is 50\%, observing exactly 50 heads is unlikely; instead, the coin may land heads 43 times, 51 times, 59 times, etc. This type of fluctuation is part of almost any experiment or study. It may well be possible that the 11.8\% difference in the peanut allergy study is only due to this natural variation, and that the two interventions are actually equally effective. However, the larger the difference observed (for a particular study size), the less credible it is that the difference is due to chance alone. If out of 100 flips, a coin landed heads only 5 times, it would be reasonable to doubt that the outcome was due to chance; perhaps the coin is weighted so that tails are more likely to occur.
 
-For the LEAP study, the 11.8\% difference is indeed larger than that expected by chance alone, suggesting that peanut consumption is the more effective intervention for preventing subsequent allergies. The material on hypothesis testing in later chapters will provide the statistical tools to examine this issue.
+For the LEAP study, the 11.8\% difference is indeed larger than that expected by chance alone, suggesting that peanut consumption is the more effective intervention for preventing subsequent allergies. The material on hypothesis testing in later chapters will provide the statistical tools to confirm that the result of the study is unlikely if the two interventions had been equally effective.
 
 \index{data!LEAP|)}
 
@@ -125,7 +94,7 @@ For the LEAP study, the 11.8\% difference is indeed larger than that expected by
 \section{Data basics}
 \label{dataBasics}
 
-Effective presentation and description of data is a first step in most analyses. This section introduces one structure for organizing data as well as some terminology that will be used throughout this book.
+Effective presentation and description of data is a first step in most analyses. This section introduces a structure for organizing data and some terminology that will be used throughout this book.
 
 
 \subsection{Observations, variables, and data matrices}
@@ -155,7 +124,7 @@ This section describes data used in a study published in the \textit{Journal of 
 
 Table~\ref{frogDF} displays rows 1, 2, 3, and 150 of the data from the 431 clutches. The complete set of observations will be referred to as the \data{frog} dataset. Each row in the table corresponds to a single clutch, indicating where the clutch was collected (\var{altitude} and \var{latitude}), \var{egg.size}, \var{clutch.size}, \var{clutch.volume}, and \var{body.size} of the mother when available. "NA" corresponds to a missing value; information on individual females was not collected for that particular site. The columns represent characteristics, called \term{variables}, for each clutch.
 
-For example, the first row represents a clutch collected at altitude 3,462 meters above sea level, latitude 34.82 degrees; the clutch contained an estimated 182 eggs, with individual eggs averaging 1.95 mm in diameter, for a total volume of 177.8 mm$^{3}$. The eggs were laid by a female measuring 3.63 cm long. It is important to understand the definitions of variables, as they are not always obvious. For example, why has \var{clutch.size} not been recorded as whole numbers? This has to do with how the observations were collected. In a given clutch, researchers counted approximately 5 grams' worth of eggs and then estimated the total number of eggs based on the mass of the entire clutch. Definitions of the variables are given in Table~\ref{frogVariables}.\footnote{The data discussed here are in the original scale; in the published paper, values have been log-transformed.}
+For example, the first row represents a clutch collected at altitude 3,462 meters above sea level, latitude 34.82 degrees; the clutch contained an estimated 182 eggs, with individual eggs averaging 1.95 mm in diameter, for a total volume of 177.8 mm$^{3}$. The eggs were laid by a female measuring 3.63 cm long. It is important to understand the definitions of variables, as they are not always obvious. For example, why has \var{clutch.size} not been recorded as whole numbers?  In a given clutch, researchers counted approximately 5 grams' worth of eggs and then estimated the total number of eggs based on the mass of the entire clutch. Definitions of the variables are given in Table~\ref{frogVariables}.\footnote{The data discussed here are in the original scale; in the published paper, some values have been log-transformed.}
 
 \begin{table}[t]
 	\centering\small
@@ -175,11 +144,10 @@ For example, the first row represents a clutch collected at altitude 3,462 meter
 	\label{frogVariables}
 \end{table}
 
-The data in Table~\ref{frogDF} are organized as a \term{data matrix}. Each row of a data matrix corresponds to a unique observational unit, and each column corresponds to a variable. A data matrix for the LEAP study introduced in Section~\ref{leapCaseStudy} is shown in Table~\ref{leapStudyResultsDF} on page~\pageref{leapStudyResultsDF}, in which the cases were patients and three variables were recorded for each patient. Data matrices are a convenient way to record and store data. If the data are collected for another individual, another row can easily be added; similarly, another column can be added for a new variable.
+The data in Table~\ref{frogDF} are organized as a \term{data matrix}. Each row of a data matrix corresponds to a unique observational unit, and each column corresponds to a variable. A data matrix for the LEAP study introduced in Section~\ref{leapCaseStudy} is shown in Table~\ref{leapStudyResultsDF} on page~\pageref{leapStudyResultsDF};  the cases are study participants and three variables are shown for each participant. Data matrices are a convenient way to record and store data. If the data are collected for another individual, another row can easily be added; similarly, another column can be added for a new variable.
 
 \index{data!frog|)}
 
-% revisions to here 17 jul 2015.  Fix error in caption vs label in famuss tables, put labels in R code for xtable
 
 \subsection{Types of variables}
 \label{variableTypes}
@@ -233,12 +201,11 @@ The Functional polymorphisms Associated with Human Muscle Size and Strength stud
 
 \index{data!famuss|)}
 
-The variables \var{age}, \var{height}, \var{weight}, and \var{ndrm.ch} are \term{numerical} variables. They can take on a wide range of numerical values, and it is possible to add, subtract, or take averages with these values. On the other hand, a variable reporting telephone numbers would not be classified as numerical, since  averages, sums, and differences in this context would have no meaning. Age measured in years is said to be \term{discrete}, since it can only take numerical values with jumps. On the other hand, percent change in strength in the non-dominant arm (\var{ndrm.ch}) is said to be \term{continuous}.
+The variables \var{age}, \var{height}, \var{weight}, and \var{ndrm.ch} are \term{numerical} variables. They can take on a wide range of numerical values, and it is possible to add, subtract, or take averages with these values. On the other hand, a variable reporting telephone numbers would not be classified as numerical, since  averages, sums, and differences in this context would have no meaning. Age measured in years is said to be \term{discrete}, since it can only take numerical values with jumps. Percent change in strength in the non-dominant arm (\var{ndrm.ch}) is said to be \term{continuous}.
 
-The variables \var{sex}, \var{race}, and \var{actn3.r577x} are \term{categorical} variables, and the possible values are called the variable's \term{levels}.\footnote{Categorical variables are sometimes called \term{nominal} variables.} For example, the levels of \var{actn3.r577x} are the three possible genotypes at this particular locus: CC, CT, or TT. Categorical variables with levels that have a natural ordering can be more specifically referred to as \term{ordered categorical} variables. There are no ordered categorical variables in the \data{famuss} data, but it would be easy to create one; age of the participants grouped into 5-year intervals (15-20, 21-25, 26-30, etc.) would be an ordered categorical variable.  Statistical software such as \textsf{R} calls categorical variables \term{factors}, and the possible values of factors are called \term{levels}.
+The variables \var{sex}, \var{race}, and \var{actn3.r577x} are \term{categorical} variables, and the possible values are called the variable's \term{levels}.  For example, the levels of \var{actn3.r577x} are the three possible genotypes at this particular locus: CC, CT, or TT.  Categorical variables without a natural ordering, such as \var{sex}, are called \term{nominal categorical} variables. Categorical variables with levels that have a natural ordering are referred to as \term{ordered categorical} variables.  There are no ordered categorical variables in the \data{famuss} data, but it would be easy to create one; age of the participants grouped into 5-year intervals (15-20, 21-25, 26-30, etc.) would be an ordered categorical variable.  Statistical software such as \textsf{R} labels categorical variables \term{factors}, and the possible values of factors are called \term{levels}.
 
-In the \data{frog} data, the variables \var{egg.size}, \var{clutch.size}, \var{clutch.volume}, and \var{body.size} are all continuous variables.  \textit{DH: JV, agree about latitude? JV: I don't think either altitude or latitude qualifies, because they refer to 11 specific locations; both function more like categorical variables in this context.}
-
+In the \data{frog} data, the variables \var{egg.size}, \var{clutch.size}, \var{clutch.volume}, and \var{body.size} are all continuous variables. 
 
 \begin{figure}
 \centering
@@ -247,11 +214,10 @@ In the \data{frog} data, the variables \var{egg.size}, \var{clutch.size}, \var{c
 \label{variableTypes}
 \end{figure}
 
-\begin{example}{Suppose a research assistant collected data on the first 20 individuals to visit one of the new walk-in clinics being offered by major commercial pharmacies.  In addition to other variables, the research assistant collected age (measured as less than 21, 21 - 65, and older than 65 years of age), sex, height, weight, and reason for the visit.  Classify each of the variables as continuous numerical, discrete numerical, or categorical.}
+\begin{example}{Suppose at the beginning of a week a research assistant collected data on the first 20 individuals visiting one of the new walk-in clinics being offered by major commercial pharmacies.  In addition to other variables, the research assistant collected age (measured as less than 21, 21 - 65, and older than 65 years of age), sex, height, weight, and reason for the visit.  Classify each of the variables as continuous numerical, discrete numerical, or categorical.}
 Height and weight are continuous numerical variables. Age as measured by the research assistant is ordered categorical. Sex and the reason for the visit are nominal categorical variables; sex has two categories, while reason for the visit will have many possible values. 
 \end{example}
 
-%% perhaps use the frog study here as well
 
 \begin{exercise} \index{!LEAP}
 Characterize the variables \var{participant.ID}, \var{treatment.group}, and \var{overall.V60.outcome} from the LEAP study (discussed in Section~\ref{leapCaseStudy}). \footnote{These variables measure non-numerical quantities, and thus are categorical variables. The variables  \var{treatment.group} and \var{outcome.V60.overall} have two values or levels, while \var{participant.ID} has many possible values.}
@@ -262,7 +228,7 @@ Characterize the variables \var{participant.ID}, \var{treatment.group}, and \var
 
 Many studies are motivated by a researcher examining a possible relationship between two or more variables. Statistical relationships between two variables occur when they tend to vary in a related way. A \term{response variable} measures an outcome of interest, while an \term{explanatory variable} may be useful in predicting or understanding the response variable. There may be several possible explanatory variables for a single response variable in a given study.
 
-Researchers were interested in using the \data{famuss} data to answer several questions, including: is ACTN3 genotype associated with variation in muscle function? The ACTN3 gene codes for a protein involved in muscle function. A common mutation (polymorphism) at residue 577 in the ACTN3 gene changes C to T; TT individuals are unable to produce any ACTN3 protein in their muscle. Thus, researchers hypothesized that ACTN3 genotype might influence muscle function in humans. The response variable in this study is \var{ndrm.ch}, the change in non-dominant arm strength, with strength gain being used as a way to measure muscle function. The explanatory variable of interest is \var{actn3.r557x}, ACTN3 genotype at residue 577.  
+Researchers were interested in using the \data{famuss} data to answer several questions, including: is ACTN3 genotype associated with variation in muscle function? The ACTN3 gene codes for a protein involved in muscle function. A common mutation (polymorphism) at residue 577 in the ACTN3 gene changes C to T; TT individuals are unable to produce any ACTN3 protein in their muscle. Thus, researchers hypothesized that ACTN3 genotype might influence muscle function in humans. The response variable in this study is \var{ndrm.ch}, the percent change in non-dominant arm strength, with strength gain being used as a way to measure muscle function. The explanatory variable of interest is \var{actn3.r557x}, ACTN3 genotype at residue 577.  
 
 Both numerical and graphical ways to examine possible relationships between two variables will be covered later in the text.
 
@@ -272,8 +238,9 @@ The explanatory variable examined in the study is \var{altitude}. The variables 
 
 \begin{exercise}
 Refer to the variables from the \data{famuss} data set described in Table~\ref{famussVariables} to formulate two questions about the relationships between these variables that differ from the one addressed by the research team.\footnote{Two sample questions: (1)  Do participants appear respond differently to training according to race?  (2)  Do male participants appear to respond differently to training than females?}
-
 \end{exercise}
+
+
 
 \section{Data collection principles}
 \label{dataCollectionPrinciples}
@@ -281,7 +248,7 @@ Refer to the variables from the \data{famuss} data set described in Table~\ref{f
 \index{sample|(}
 \index{population|(}
 
-The first step in conducting research is to identify questions to investigate. A clearly articulated research question is essential for selecting subjects to be studied, identifying relevant variables, and determining how data should be measured. In order to obtain reliable data, it is also important to consider \textit{how} data are collected.
+The first step in research is to identify questions to investigate. A clearly articulated research question is essential for selecting subjects to be studied, identifying relevant variables, and determining how data should be measured. In order to obtain reliable data, it is also important to consider \textit{how} data are collected.
 
 \subsection{Populations and samples}
 \label{populationsAndSamples}
@@ -299,33 +266,34 @@ The first step in conducting research is to identify questions to investigate. A
 
 Each of these questions refers to a target \term{population}. In the first question, the target population is all swordfish in the Atlantic ocean, and each fish represents a case. Almost always, it is either too expensive or logistically impossible to collect data for every case in a population, so nearly all research is based on samples from populations. A \term{sample} represents a subset of the cases and is often a small fraction of the population. For instance, 60 swordfish (or some other number) in the population might be selected, and this sample data may be used (with some assumptions) to provide an estimate of the population average and answer the research question.
 
-\textit{DH: Removed the exercise question on identifying samples for three reasons: the stent example is gone; it refers to the stent example as if it was a drug (it isn't); and I want us to be both realistic and clear about samples.  They are almost never random samples from the ideal target population. If asked, I think almost any student, even at the high school level would say that drawing a random sample from the population of people with a disease is fundamentally impossible.  We can replace the stent example by LEAP, but as in other trials, the validity comes from the randomization among the recruited subjects, not the assumption of it being a RS.}
+
 
 \subsection{Anecdotal evidence}
 \label{anecdotalEvidence}
 
-Anecdotal evidence is typically composed of unusual observations that are easily recalled based on their striking characteristics. Physicians are sometimes more likely to remember the characteristics of a single patient with an unusually good response to a drug as opposed to the many patients who did not respond.  The dangers of drawing general conclusions from anecdotal information are obvious; no single observation can be used to draw conclusions about a population. Often, the anecdotal case may not have been remembered correctly or may have involved errors in measurements.  To learn about the characteristics of a population, it is necessary to examine a sample of many cases drawn randomly from the population.
+Anecdotal evidence is typically composed of unusual observations that are easily recalled based on their striking characteristics. Physicians are sometimes more likely to remember the characteristics of a single patient with an unusually good response to a drug as opposed to the many patients who did not respond.  The dangers of drawing general conclusions from anecdotal information are obvious; no single observation can be used to draw conclusions about a population. Often, the anecdotal case may not have been remembered correctly or may have been measured incorrectly. To learn about the characteristics of a population, it is necessary to examine a sample of many cases drawn randomly from the population.
 
-Thomas Jefferson, the second president of the United States, recognized the pitfall of
-drawing conclusions from a single observation. In a letter to his nephew, he wrote "The patient, treated on the fashionable theory, sometimes gets well in spite of the medicine. The medicine therefore restored him, and the young doctor receives new courage to proceed in his bold experiments on the lives of his fellow creatures." \footnote{Jefferson, T.(1985). Letters, 1760–1826. Ed. Merrill D. Peterson. New York: Viking.}
+While it is incorrect to generalize from individual observations, scientists know that unusual observations can sometimes be valuable.  E.C. Heyde was a general practitioner from Vancouver who noticed that a few of his elderly patients with aortic-valve stenosis (an abnormal narrowing) caused by an accumulation of calcium had suffered massive gastrointestinal bleeding, and in 1958, he published his observation in a letter. \footnote{Heyde EC. Gastrointestinal bleeding in aortic stenosis. N Engl J Med 1958;259:196.}.  Research into the problem led to the identification of the underlying cause of the association \footnote{Greenstein RJ, McElhinney AJ, Reuben D, Greenstein AJ. Co-lonic vascular ectasias and aortic stenosis: coincidence or causal relationship? Am J Surg 1986;151:347-51.}, now called Heyde's Syndrome.
 
-\textit{JV: I find the reference to TJ rather funny, but I suspect the story only appeals to people with a very specific sense of humor...Would it break your heart to omit this? Doing so may also improve the flow here.}
+An anecdotal observation can never be the basis for a conclusion, but it may well lead to the design of a more systematic study that could be definitive.  
 
-While it is incorrect to generalize from individual observations, scientists know that unusual observations can sometimes be valuable; such observations may be a reason to question previously held assumptions or to design a study to examine an unconventional perspective.  Cures for certain diseases have been discovered through research inspired by a patient with a disease thought be be incurable responding to a new drug.  \textit{DH: Insert references sent by D Longo and D. Spriggs here. JV: This last sentence is too vague/unwieldy, adjust once references are included.}  
-
-An anecdotal observation can never be the basis for a conclusion, but it may well lead to the design of a more systematic study that could be definitive.
 
 \subsection{Sampling from a population}
 
-Sampling from a population is a useful tool in population-based research in the health sciences.  When done carefully, it provides reliable information about the health characteristics of a large population without having to directly measure those characteristics for each member, which is often an impossible task.  The US Centers for Disease Control (US CDC) conducts many such surveys, including the Behavioral Risk Factors Surveillance System (BRFSS)\footnote{\url{ http://www.cdc.gov/brfss/}}.  The BRFSS conducts approximately 400,000 telephone interviews annually to ask U.S. residents questions regarding their health-related risk behaviors, chronic health conditions, and use of preventive services.  The CDC conducts similar surveys for diabetes, health care access, and immunization. Likewise, the World Health Organization (WHO) conducts the World Health Survey in partnership  with approximately 70 countries to learn about the health of adult populations and the health systems in those countries.\footnote{\url{http://www.who.int/healthinfo/survey/en/}}  In 2000, the US Department of Justice released the \textit{The Sexual Victimization of College Women}, based on a survey conducted in 1996 of 4,446 undergraduate women.\footnote{\url{https://www.ncjrs.gov/pdffiles1/nij/182369.pdf}}  
+Sampling from a population is a useful tool in population-based research in the health sciences.  When done carefully, it provides reliable information about the  characteristics of a large population without having to directly measure those characteristics for each member, often an impossible task.  The US Centers for Disease Control (US CDC) conducts many such surveys, including the Behavioral Risk Factors Surveillance System (BRFSS)\footnote{\url{ http://www.cdc.gov/brfss/}}.  The BRFSS conducts approximately 400,000 telephone interviews annually to ask U.S. residents questions regarding their health-related risk behaviors, chronic health conditions, and use of preventive services.  Data from a recent BRFSS are used in Chapter 4. The CDC conducts similar surveys for diabetes, health care access, and immunization. Likewise, the World Health Organization (WHO) conducts the World Health Survey in partnership  with approximately 70 countries to learn about the health of adult populations and the health systems in those countries.\footnote{\url{http://www.who.int/healthinfo/survey/en/}}  In 2000, the US Department of Justice released the \textit{The Sexual Victimization of College Women}, based on a survey conducted in 1996 of 4,446 undergraduate women.\footnote{\url{https://www.ncjrs.gov/pdffiles1/nij/182369.pdf}}
 
-\textit{DH: we should check to see if the data are available at DoJ website. JV: The page for the sexual victimization survey only references NCVS data, which is freely available online (scroll down to "Codebooks and Datasets" under Documentation section), but I couldn't find data for questions specific to that survey. Perhaps better to switch to a survey for which data are available online? For example, Gender and Violent Victimization, see http://doi.org/10.3886/ICPSR27082.v1}
+\begin{comment}
+In September 2015, the American Association of Universities released a new study of the same issue\footnote{\url{https://www.aau.edu/uploadedFiles/AAU_Publications/AAU_Reports/Sexual_Assault_Campus_Survey/Report%20on%20the%20AAU%20Campus%20Climate%20Survey%20on%20Sexual%20Assault%20and%20Sexual%20Misconduct.pdf}}.
 
-\textit{DH: placeholder for the Harvard survey, despite its flaws}
+This url is causing latex compile problems.
 
-Sampling from a population is easier when the population is relatively small and members of the population are easy to identify and contact.  For instance, the quality care team at an integrated health care system, such as Kaiser Permanente or Harvard Pilgrim Health Care, might like to learn about how members of the system perceive quality of care.  Since health plans have contact information for each of their members, a selected subset can be contacted (with their consent) for participation in an interview or mailed survey.  More complex methods are required for other surveys, such as the study on sexual victimization of college women. 
+\end{comment}
 
-One common downfall in conducting a sample is to use a \term{convenience sample}\index{sample!convenience sample}, in which individuals who are easily accessible are more likely to be included in the sample. For instance, the quality control team in the healthcare plan might ask interviewers to approach plan members visiting an outpatient clinic during a particular week.  The sample would fail to enroll generally healthy members who typically do not use outpatient services or schedule routine physical examinations. Similarly, the Department of Justice could have only sampled women in colleges or universities in or near the District of Columbia.
+
+Sampling from a population is easier when the population is relatively small and members of the population are easy to identify and contact.  For instance, the quality improvement team at an integrated health care system, such as Kaiser Permanente or Harvard Pilgrim Health Care, might want to learn about the perception of care among members of the health plan.  Since health plans have contact information for each member, a selected subset can be contacted (with their consent) for participation in an interview or mailed survey.  More complex methods are required for other surveys, such as the study on sexual victimization of college women. 
+
+
+One common pitfall in conducting a survey is to use a \term{convenience sample}\index{sample!convenience sample}, in which individuals who are easily accessible are more likely to be included in the sample. For instance, the quality improvement team in the healthcare plan might ask interviewers to approach plan members visiting an outpatient clinic during a particular week.  The sample would fail to enroll generally healthy members who typically do not use outpatient services or schedule routine physical examinations. Similarly, the Department of Justice could have only sampled women in colleges or universities in or near the District of Columbia or major state universities.  
 
 \begin{figure}
 	\centering
@@ -336,9 +304,9 @@ One common downfall in conducting a sample is to use a \term{convenience sample}
 
 \index{sample!random sample|(}
 
-The general principle of sampling is straightforward; a sample from a population is useful for learning about a population only when the sample matches, on average, the characteristics of the population. Random sampling is the best way to ensure that a sample reflects a population, because random samples do not reflect the conscious or unconscious bias of the team gathering the sample.  However, even a well-defined sampling strategy can lead to an unrepresentative sample if there are substantial barriers to subject participation, such as questions that assume participants are fluent in English or calls to potential participants that do not account for working hours or time-zone differences. 
+The general principle of sampling is straightforward: a sample from a population is useful for learning about a population only when the sample matches, on average, the characteristics of the population. Random sampling is the best way to ensure that a sample reflects a population, because random samples are not subject to the conscious or unconscious bias of the team gathering the sample.  However, even a well-defined sampling strategy can lead to an unrepresentative sample if there are substantial barriers to subject participation, such as questions that assume participants are fluent in English or calls to potential participants that do not account for working hours or time-zone differences. 
 
-The easiest random samples to analyze are those in which each member of a population has the same chance of being sampled. In a \term{simple random sample}, each member of the population is directly chosen at random for the sample, with probability the size of the sample divided by the size of the population. Simple random samples are essentially equivalent to how raffles are conducted. For example, if there are 5 prizes available and 100 people each have a single ticket, each person has a 5\% chance (5/100) of being called. In the health plan example, a subset of members might be chosen randomly from the plan membership roster for an interview. \textsl{OpenIntro}, third edition, Section 1.4.2 describes the four most commonly used sampling strategies. 
+The easiest random samples to analyze are those in which each member of a population has the same chance of being sampled. In a \term{simple random sample}, each member of the population is directly chosen at random for the sample, with probability the size of the sample divided by the size of the population. Simple random samples are essentially equivalent to how raffles are conducted. For example, if there are 5 prizes available and 100 people each have a single ticket, each person has a 5\% chance (5/100) of being called. In the health plan example, a subset of members might be chosen randomly from the plan membership roster for an interview. \textsl{OpenIntro}, third edition, Section 1.4.2 describes the four most commonly used sampling strategies. The link to the Department of Justice victimization survey describes in detail the design of the sampling plan for this study.
 
 \begin{figure}[ht]
 	\centering
@@ -347,9 +315,7 @@ The easiest random samples to analyze are those in which each member of a popula
 	\label{sampleRandomHealthPlan}
 \end{figure}
 
-Sometimes a simple random sample is difficult to implement and an alternative method is helpful. One such substitute is a \term{systematic sample}, in which one case is sampled after letting a fixed number of other cases pass by. Since this approach uses a mechanism that is not easily subject to personal biases, it often yields a reasonably representative sample. This book will focus on random samples since the use of systematic samples is uncommon and requires additional considerations of the context. \textit{JV: It may be possible to omit this paragraph. If not, needs an example.}
-
-The act of taking a simple random sample helps minimize bias, but bias can crop up in other ways. Even when people are picked at random, caution must be exercised if the \term{non-response} \index{sample!non-response|textbf} is high. For instance, if only 30\% of the people randomly sampled for a survey actually respond, then it is unclear whether the results are truly \term{representative} of the entire population. Such \term{non-response bias} \index{sample!non-response bias|textbf} can skew results; it is important to minimize barriers that might discourage subject participation in order to collect reliable data.
+The act of taking a simple random sample helps minimize bias, but bias can arise in other ways. Even when people are picked at random, caution must be exercised if the \term{non-response} rate \index{sample!non-response|textbf} is high. For instance, if only 30\% of the people randomly sampled for a survey respond, then it is unclear whether the results are truly \term{representative} of the entire population. Such \term{non-response bias} \index{sample!non-response bias|textbf} can skew results; it is important to minimize barriers that might discourage subject participation in order to collect reliable data.
 
 \begin{figure}[h]
 	\centering
@@ -360,9 +326,7 @@ The act of taking a simple random sample helps minimize bias, but bias can crop 
 
 
 \begin{exercise}
-	
-\textit{DH: replace this with a better example}
-We can easily access ratings for products, sellers, and companies through websites. These ratings are based only on those people who go out of their way to provide a rating. If 50\% of online reviews for a product are negative, do you think this means that 50\% of buyers are dissatisfied with the product?\footnote{Answers will vary. From our own anecdotal experiences, we believe people tend to rant more about products that fell below expectations than rave about those that perform as expected. For this reason, we suspect there is a negative bias in product ratings on sites like Amazon. However, since our experiences may not be representative, we also keep an open mind.}
+It is increasingly common for health care facilities to follow-up a patient visit with an email providing a link to a website where patients can rate their experience.  Typically, less than 50\% of patients visit the web site.  If half of those who respond indicate a negative experience, do you think that this implies that at least 25\% of patient visits are unsatisfactory?	\footnote{Answers will vary. If our experience is any guide, dissatisfied people to respond more frequently to these informal surveys than satisfied patients.}
 \end{exercise}
 
 \index{sample!random sample|)}
@@ -373,9 +337,9 @@ We can easily access ratings for products, sellers, and companies through websit
 
 Experiments and observational studies are the two primary types of study designs used to collect data.
 
-When researchers want to investigate the possibility of a causal connection, they conduct an \term{experiment}. For instance, it might be hypothesized that administering a certain drug will reduce mortality in heart attack patients. To find evidence for a causal connection between the explanatory and response variables, researchers will collect a sample of individuals and randomly assign them into one of two groups. The first group, called a control group, may receive either a \term{placebo} (an inert substance with the appearance of the study drug) or a commonly used drug known to have some effect; the second group (the experimental group) receives the new drug. 
+When researchers want to investigate the possibility of a causal connection, they conduct an \term{experiment}. The LEAP study team hypothesized that early exposure to peanut products would reduce the likelihood of an allergy to peanuts by age 5. To find evidence for a causal connection between the explanatory and response variables, researchers randomly assign a sample of individuals to one of two groups.  One group, called the experimental group, receives the intervention (peanut products in LEAP). In the other group, the control group, participants typically receive either a standard approach (avoiding peanut products in LEAP) or may receive either a \term{placebo}, an inert substance with the appearance of the experimental intervention.  Placebos are used to prevent participants from knowing their assigned treatment, but they are not feasible in all studies.
 
-Researchers perform an \term{observational study} when they collect data in a way that does not directly interfere with how the data arise. For instance, to study why certain diseases develop, researchers may collect information through conducting surveys, reviewing medical or company records, or following a \term{cohort} of many similar individuals. In each of these situations, researchers merely observe the data that arise. Observational studies can provide evidence of an association between variables, but they cannot by themselves show a causal connection. In general, causation can only be inferred from a randomized experiment.
+Scientists conduct an \term{observational study} when they collect data in a way that does not interfere with how the data arise. For instance, to study why certain diseases develop, researchers may collect information through conducting surveys, reviewing medical or company records, or following a \term{cohort} of many similar individuals. In each of these situations, researchers merely observe the data that arise. Observational studies can provide evidence of an association between variables, but they cannot by themselves show a causal connection. In general, causation can only be inferred from a randomized experiment.
 
 \subsection[Experiments]{Experiments}
 \label{experiments}
@@ -386,7 +350,7 @@ Studies in which researchers assign treatments to cases are called \termsub{expe
 
 \begin{description}
 
-	\item[Controlling.] Researchers assign treatments to cases, doing their best to \term{control} for any other differences in the groups. For example, all infants enrolled in the LEAP study were required to be between 4 and 11 months of age, with severe eczema and/or allergies to eggs.
+	\item[Control.] Researchers select participants for the study from a carefullin a way reduces unnecessary variability by that controls forassign treatments to participants, doing their best to \term{control} for variables that other differences in the groups. For example, all infants enrolled in the LEAP study were required to be between 4 and 11 months of age, with severe eczema and/or allergies to eggs.
 
 	\item[Randomization.] Researchers randomize patients into treatment groups to account for variables that cannot be controlled. For example, some infants may have been more susceptible to peanut allergies because of an unmeasured genetic condition. Randomly assigning patients to the treatment or control group helps even out such differences. In situations where researchers suspect that variables other than the treatment may influence the response, they may first group individuals into \term{blocks} and then, within each block, randomize cases to treatment groups; this technique is referred to as \term{blocking} or \term{stratification}.  In the LEAP study, infants were stratified into two cohorts based on whether or not the child developed a red, swollen mark (a wheal) after a skin test at the time of enrollment. The main analysis of the study analyzed data collected for infants without a wheal after the skin test. Figure~\ref{leapBlocking} illustrates the blocking scheme used in the study. General methods for analyzing blocked data are relatively complicated and will not be covered in this book.
 
