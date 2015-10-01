@@ -685,21 +685,74 @@ Taller people naturally tend to be heavier; as a consequence, weight itself is n
 \label{famussHeightBmi}
 \end{figure}
 
+
 If two variables are not associated, then they are said to be \term{independent}. That is, two variables are independent if there is no evident relationship between the two.  Generally, it is not easy to determine definitively whether two variables are independent from looking at a scatterplot, even in Figure~\ref{famussHeightBmi}.
 
 \index{data!famuss|)}
 
-\textit{JV: Need an example here showing a nonlinear relationship (along the lines of the car price vs weight example). Anything in famuss or LEAP? Might even work to quickly introduce caries data.}
+Not all associations are linear.  In fact, some can be highly nonlinear, relationships in which clearly do not scatter about a straight line.  Figure~\ref{incomeLifeExpectancy} shows the relationship between annual per capita income and life expectancy for 248 country in 2012. Income is measured in US dollars (adjusted for purchasing power in a country) and the average expected life for children born in 2012.   The figure shows clearly that small when income is low, small increases in per capita income are associated with relatively large changes in life expectancy.  When per capita income exceeds approximately \$20,000 per year, increases in income are associated with smaller gains in life expectancy.
 
-%%%% revisions to here, 29 sep 2015
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]
+{ch_intro_to_data_oi_biostat/figures/incomeLifeExpectancy/incomeLifeExpectancy.pdf}
+\caption{A scatterplot showing \var{income} (horizontal axis) vs.  \var{life.expectancy} (vertical axis).} 
+\label{incomeLifeExpectancy}
+\end{figure}
+
+\textit{JV: if we keep this example, the plot will have to be formatted and I should add the country to the data set.  I have more information in older stat 100 files}
+
+
 \subsection{Transforming data (special topic)}
 \label{transformingDataSubsection}
 
 \index{data!frog|(}
 
-\textit{DH: We should include a section on transforming data, esp since the frog data has been transformed. JV: Agree. I replaced the MLB histograms with ones for the clutch volume data; left the scatterplots as a placeholder, as I'm not sure the clutch volume vs body size plot is a good candidate for that example. This would be a good place to introduce the empirical rule, since the transformation on frogs makes the data look more normal; empirical rule will be discussed in more detail once normal distribution is introduced, anyways (so seems fine that it would first be mentioned as part of a special topic).}
 
-Scientists may choose to transform strongly skewed data in order to make them easier to model and analyze. A \term{transformation} is a rescaling of the data using a function. Consider the histogram of egg clutch volumes from the \data{frog} data, shown in Figure~\ref{frogHistReg}. In the published paper, researchers used a $\textrm {log}_{10}$ transformation on the data before conducting analyses. Figure~\ref{frogHistLog} shows a plot of the $\textrm {log}_{10}$ of clutch volumes.
+Scientists sometimes transform strongly skewed data for several reasons. A \term{transformation} is a rescaling of the data using a function.  When the values of a variable are clustered near zero (relative to the larger values in the data set) and all observations are positive, a natural log transformation can clarify the features of a variable or the nature of a relationship\footnote{In statistics, the natural logarithm is usually written $\log$. In other settings it is sometimes written as  $\ln$.}. 
+
+Income data are often skewed right, when measured either at the individual level or by country.  Typically, there are large clusters of low to moderate income, and a few large incomes that are outliers. The histogram of per capita incomes used for the horizontal axis in figure~\ref{incomeLifeExpectancy} is shown in Figure~\ref{incomeHistReg}.  Figure~\ref{incomeHistLog} shows a plot of the $\log$ of per capita income.
+
+\begin{figure}[ht]
+\centering
+\subfigure[]{
+\includegraphics[width=0.46\textwidth]
+{ch_intro_to_data_oi_biostat/figures/incomeHistTransformed/incomeHistReg}
+\label{incomeHistReg}
+}
+\subfigure[]{
+\includegraphics[width=0.46\textwidth]
+{ch_intro_to_data_oi_biostat/figures/incomeHistTransformed/incomeHistLog}
+\label{incomeHistLog}
+}
+\caption{\subref{incomeHistReg} Histogram of per capita income. \subref{incomeHistLog} Histogram of the log-transformed per capita income.}
+\label{incomeHistTransform}
+\end{figure}
+
+
+\textit{Empirical rule can go here, as well as a more complete discussion of interpretation and a caution to be careful about interpretations.}
+
+Transformations are sometimes used on one or both variables when exploring a relationship Figure~\ref{logIncomeLifeExpectancy} is a scatterplot of \var{log(income)} vs. \var{log(life.expectancy)}, and shows that after a log transformation for both variables, the relationship is more nearly linear.  Some statistical models are based on the assumption of an approximate linear relationship, and transformations like the log transformation will be used later when examining variables like income and life.expectancy more closely.
+
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]
+{ch_intro_to_data_oi_biostat/figures/logIncomeLifeExpectancy/logIncomeLifeExpectancy.pdf}
+\caption{A scatterplot showing \var{log(income)} (horizontal axis) vs.  \var{log(life.expectancy)} (vertical axis).} 
+\label{logIncomeLifeExpectancy}
+\end{figure}
+
+
+
+
+\begin{comment}
+
+from the JV discussion of the frog data
+
+
+ A \term{transformation} is a rescaling of the data using a function. The histogram of egg clutch volumes from the \data{frog} data, shown in Figure~\ref{frogHistReg}. In the published paper, the authors used a $\textrm {log}_{10}$ transformation on the data before conducting analyses. Figure~\ref{frogHistLog} shows a plot of the $\textrm {log}_{10}$ of clutch volumes.
 
 \begin{figure}[ht]
 \centering
@@ -715,39 +768,21 @@ Scientists may choose to transform strongly skewed data in order to make them ea
 \label{frogHistTransform}
 \end{figure}
 
-\textit{JV: Text after this point (in this section) needs re-writing.}
+\end{comment}
 
-There are some standard transformations that are often applied when much of the data cluster near zero (relative to the larger values in the data set) and all observations are positive. A \term{transformation} is a rescaling of the data using a function. For instance, a plot of the natural logarithm\footnote{Statisticians often write the natural logarithm as $\log$. You might be more familiar with it being written as $\ln$.} of player salaries results in a new histogram in Figure~\ref{histMLBSalariesLog}. Transformed data are sometimes easier to work with when applying statistical models because the transformed data are much less skewed and outliers are usually less extreme.
-
-Transformations can also be applied to one or both variables in a scatterplot. A scatterplot of the \var{line\_\hspace{0.3mm}breaks} and \var{num\_\hspace{0.3mm}char} variables is shown in Figure~\ref{email50LinesCharactersMod}, which was earlier shown in Figure~\ref{email50LinesCharacters}. We can see a positive association between the variables and that many observations are clustered near zero. In Chapter~\ref{linRegrForTwoVar}, we might want to use a straight line to model the data. However, we'll find that the data in their current state cannot be modeled very well. Figure~\ref{email50LinesCharactersModLog} shows a scatterplot where both the \var{line\_\hspace{0.3mm}breaks} and \var{num\_\hspace{0.3mm}char} variables have been transformed using a log (base $e$) transformation. While there is a positive association in each plot, the transformed data show a steadier trend, which is easier to model than the untransformed data.
-
-\begin{figure}
-\centering
-\subfigure[]{
-\includegraphics[width=0.47\textwidth]{ch_intro_to_data_oi_biostat/figures/email50LinesCharactersMod/email50LinesCharactersMod}
-\label{email50LinesCharactersMod}
-}
-\subfigure[]{
-\includegraphics[width=0.47\textwidth]{ch_intro_to_data_oi_biostat/figures/email50LinesCharactersMod/email50LinesCharactersModLog}
-\label{email50LinesCharactersModLog}
-}
-\caption{\subref{email50LinesCharactersMod} Scatterplot of \var{line\_\hspace{0.3mm}breaks} against \var{num\_\hspace{0.3mm}char} for 50 emails. \subref{email50LinesCharactersModLog} A scatterplot of the same data but where each variable has been log-transformed.}
-\label{email50LinesCharactersModMain}
-\end{figure}
-
-Transformations other than the logarithm can be useful, too. For instance, the square root ($\sqrt{\text{original observation}}$) and inverse ($\frac{1}{\text{original observation}}$) are used by statisticians. Common goals in transforming data are to see the data structure differently, reduce skew, assist in modeling, or straighten a nonlinear relationship in a scatterplot.
+Transformations other than the logarithm can be useful, too. For instance, the square root ($\sqrt{\text{original observation}}$) and inverse ($\frac{1}{\text{original observation}}$) are sometimes used. Common goals in transforming data are to see the data structure differently, reduce skew, assist in modeling, or straighten a nonlinear relationship in a scatterplot.
 
 \index{data!frog|)}
 
 \textC{\newpage}
 
 
-\section[Considering categorical data]{Considering categorical data }
+\section[Categorical data]{Categorical data}
 \label{categoricalData}
 
 \index{data!famuss|(}
 
-Like numerical data, categorical data can also be organized and analyzed; however, numerical calculations cannot be done with categorical data. In this section, we will introduce tables and other basic tools for categorical data, using the \data{famuss} dataset introduced in Section~\ref{variableTypes}. 
+Like numerical data, categorical data can also be organized and analyzed; however, numerical calculations cannot be done with categorical data. This section introduces tables and other basic tools for categorical data, using the \data{famuss} dataset introduced in Section~\ref{variableTypes}. 
 
 \subsection{Contingency tables}
 A table for a single variable is called a \term{frequency table}. Table \ref{famussFrequencyTable} is a frequency table for the \var{actn3.r577x} variable. Recall that \var{actn3.r577x} is a categorical variable describing genotype at a location on the ACTN3 gene: CC, CT, or TT. If we replaced the counts with percentages or proportions, the table would be called a \term{relative frequency table}.
@@ -786,7 +821,7 @@ A table for a single variable is called a \term{frequency table}. Table \ref{fam
 %library(openintro); library(xtable); data(email); xtable(table(email[,c("html")]))
 \end{comment}
 
-Table \ref{famussContingencyTable} summarizes two variables: \var{race} and \var{actn3.r577x}. A table that summarizes data for two categorical variables in this way is called a \term{contingency table}.\footnote{Contingency tables are also known as \term{two-way tables}.} Each value in the table represents the number of times a particular combination of variable outcomes occurred. For example, the first row of the table shows that of the African-American individuals, 16 are CC, 6 are CT, and 5 are TT. 
+Table \ref{famussContingencyTable} summarizes two variables: \var{race} and \var{actn3.r577x}. A table summarizing data for two categorical variables is called a \term{contingency table}.\footnote{Contingency tables are also known as \term{two-way tables}.} Each value in the table represents the number of times a particular combination of variable outcomes occurred. For example, the first row of the table shows that of the African-American individuals, 16 are CC, 6 are CT, and 5 are TT. 
 
 Row and column totals, known collectively as \term{marginal totals}, are also included. The \term{row totals} provide the total counts across each row; \term{column totals} are the total counts down each column.
 
@@ -811,7 +846,7 @@ Row and column totals, known collectively as \term{marginal totals}, are also in
 \end{table}
 %library(xtable); data(famuss); genotype.by.race.table = addmargins(table(famuss$race, famuss$actn3.r577x)); xtable(genotype.by.race.table, digits = 0, caption = "A contingency table for race and actn3.r577x.", label = "famussContingencyTable")
 
-\textit{JV: Not sure how they added the variable labels to their table. I have left the OI tables and code in the source.}
+\textit{JV: Not sure how they added the variable labels to their table. I have left the OI tables and code in the source.  DH: look at their source.  The created a table first (called tab) that added the var names, then applied xtable to that.  I can do it later if you like}
 
 \begin{comment}
 \begin{table}[ht]
@@ -880,7 +915,7 @@ Total & $549/3921 = 0.140$ & $2827/3921 = 0.721$ &
 \end{comment}
 
 \begin{example}{What does Table~\ref{famussRowPropTable} highlight about the distribution of genotypes between different populations?} 
-Ggenotype distributions vary between populations. For the Caucasian individuals sampled in the study, CT is the most common genotype at 46.3\%. In contrast, over half (59.3\%) of African Americans sampled are CC. CC is also the most common genotype for Asians, but in this population, genotypes are more evenly distributed: 38.2\% of Asians sampled are CC, 32.7\% are CT, and 29.1\% are TT.
+Genotype distributions vary between populations. For the Caucasian individuals sampled in the study, CT is the most common genotype at 46.3\%. In contrast, over half (59.3\%) of African Americans sampled are CC. CC is also the most common genotype for Asians, but in this population, genotypes are more evenly distributed: 38.2\% of Asians sampled are CC, 32.7\% are CT, and 29.1\% are TT.
 \end{example}
 
 A contingency table of the column proportions is computed in a similar way, in which each \termsub{column proportion}{contingency table!column proportion} is computed as the count divided by the corresponding column total. Table~\ref{famussColPropTable} shows such a table, and here the value 0.092 indicates that 9.2\% of CC individuals in the study are African-American.
@@ -1016,7 +1051,9 @@ Segmented bar plots provide a way to visualize the information in contingency ta
 \label{famussSegBarTestB}
 \end{figure}
 
-\textit{JV: I don't particularly like the mosaic plots, and they may not be the best choice for displaying the \data{famuss} data, anyways. I also think the pie chart section doesn't necessarily need to be included.}
+\textit{JV: I don't particularly like the mosaic plots, and they may not be the best choice for displaying the \data{famuss} data, anyways. I also think the pie chart section doesn't necessarily need to be included. }
+
+\textit{DH: I have not looked at mosaic plots for the famuss data, so cannot comment on that yet. The segmented bar plots with all races shown is difficult to interpret.  I think it will be better if we can find a way to make it standardized.  I am postponing the decision of what to use so I can continue to make progress on other things.  We can return to this. }
 
 \begin{comment}
 \begin{example}{Examine both of the segmented bar plots. Which is more useful?}
