@@ -1225,24 +1225,28 @@ As the sample size increases, the normal model for $\bar{x}$ becomes more reason
 
 Section~\ref{seOfTheMean} proposed that the sample standard deviation, $s$, could be used as a substitute of the population standard deviation, $\sigma$, when computing the standard error. This estimate tends to be reasonable when $n\geq30$. Alternative distributions for smaller sample sizes will be considered in Chapters~\ref{inferenceForNumericalData} and~\ref{inferenceForCategoricalData}.
 
-
-
-%%%%%%%%%%%%%%%%%THINK OF A NEW EXAMPLE. THIS IS A USEFUL TOPIC 
-\begin{example}{Figure~\ref{hospitalCanApplyNormalToSampMean} shows a histogram of 50 observations. These represent the number of patient visits in a hospital for 50 consecutive days relative to the hospital's average rate of 5000 patient visits per day in 2010? Can the normal approximation be applied to the sample mean, 90.69?}
+\begin{example}{Figure~\ref{pertussisTS} displays a histogram of 169 observations from a study\footnote{Magpantay FMG, Domenech de Cellès M, Rohani P, King AA (2015) Pertussis immunity and epidemiology: mode and duration of vaccine-induced immunity. Parasitology, online in advance of print. \url{http://dx.doi.org/10.1017/S0031182015000979}} published in \emph{Parasitology} in 2015 on pertussis immunity \footnote{whooping cough}. This study investigated the nature and duration of vaccine protection in hopes to explain the resurgence of pertussis in countries with high vaccination coverage. The data, provided by the Italian Ministry of Health, is the number of monthly pertussis notification reports from 1996 to 2009 in selected regions in Italy. Figure ~\ref{pertussisTS} and figure ~\ref{pertussisHist} both use data from the Italian region Lombardia. Can the sample distribution of the sample mean, 23.07, be approximated to a normal distribution?}
 Conditions first need to be verified. 
 \begin{itemize}
 \setlength{\itemsep}{0mm}
-\item[(1)] These are referred to as \term{time series data}, because the data arrived in a particular sequence. Time series data generally deals with, you guessed it, time! If there are a lot of patients in the hospital one day, it may influence how many patients there are the day after. During the flu season, patient visits might be at an all time high since many people are sick but also the time per visit is also extremely low. To make the assumption of independence we should perform careful checks on such data. While the supporting analysis is not shown, no evidence was found to indicate the observations are not independent on a whole.
-\item[(2)] The sample size is 50, satisfying the sample size condition.
-\item[(3)] There are two outliers, one very extreme, which suggests the data are very strongly skewed or very distant outliers may be common for this type of data. Outliers can play an important role and affect the distribution of the sample mean and the estimate of the standard error.
+\item[(1)] These are referred to as \term{time series data}, because the data arrived in a particular sequence. Time series data generally deals with, you guessed it, time! If there were many Italians who contracted pertussis in one month, it may influence how many people would get pertussis the next month (and thus the number of monthly reports). Similarly if many Italians were vaccinated one month before, fewer people would be at risk of pertussis the following month. To make the assumption of independence, careful checks should be performed on such data. This condition can be weakly satisfied since the population of Lombardia is large enough for human interactions and non-independence to be influential\footnote{The population of Lombardia is around 9,000,000.}. 
+\item[(2)] The sample size is 169, satisfying the sample size condition.
+\item[(3)] Figure ~\ref{pertussisHist} suggests that the data are very strongly skewed or very distant outliers may be common for this type of data. Outliers can play an important role and affect the distribution of the sample mean and the estimate of the standard error.
 \end{itemize}
-A normal distribution should not model the sample mean of these 50 observations because of the independence assumption. The very extreme upper outlier also poses a challenge. If the hospital obtained a much larger sample, perhaps a year's worth of data, then the concerns about skew and outliers could possibly no longer apply. \end{example}
+A normal distribution should not model the sample mean of these 169 observations because of the independence assumption. The very extreme skewness also poses a challenge. \end{example}
 
 \begin{figure}[ht]
    \centering
-   \includegraphics[height=58mm]{ch_inference_foundations_oi_biostat/figures/hospitalCanApplyNormalToSampMean/hospitalCanApplyNormalToSampMean}
-   \caption{Sample distribution of total patient visits net of 5,000 visits. These data include some very clear outliers. These are problematic when considering the normality of the sample mean. For example, outliers are often an indicator of very strong skew\index{skew!example: very strong}.}
-   \label{hospitalCanApplyNormalToSampMean}
+   \includegraphics[width = \textwidth]{ch_inference_foundations_oi_biostat/figures/pertussisHist/pertussisHist}
+   \caption{Histogram of the number of monthly reports every month from 1996 to 2009. These data include an obvious skewness. These are problematic when considering the normality of the sample mean. \index{skew!example: very strong}.}
+   \label{pertussisHist}
+\end{figure}
+
+\begin{figure}[ht]
+   \centering
+   \includegraphics[width = \textwidth]{ch_inference_foundations_oi_biostat/figures/pertussisTS/pertussisTS}
+   \caption{This is a plot depicting the time series, the number of monthly reports over time. Time series data is generally plotted like this because it becomes easy to see how values change over time.}
+   \label{pertussisTS}
 \end{figure}
 
 \begin{caution}
