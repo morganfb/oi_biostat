@@ -619,6 +619,8 @@ Histograms provide a view of the \term{data density}. Higher bars indicate more 
 
 Histograms are especially convenient for describing the shape of the data distribution\label{shapeFirstDiscussed}. Figure~\ref{frogHist} shows that most clutches have a relatively small volume, while fewer clutches are very large. When data trail off to the right, with a long right \hiddenterm{tail}\index{skew!tail}, the data are said to be \termsub{right skewed}{skew!right skewed}.\footnote{Other ways to describe data that are skewed to the right: \termni{skewed to the right}, \termni{skewed to the high end}, or \termni{skewed to the positive end}.} Data with the reverse characteristic -- a long, thin tail to the left -- are said to be \termsub{left skewed}{skew!left skewed}. Right and left skewing are examples of asymmetry.  The term \term{symmetric} is used to describe data that show roughly equal trailing off in both directions.
 
+The mean and standard deviation have a convenient interpretation in symmetric distributions.  Usually about 70\% of the data are within 1 standard deviation of the mean and 95\% are within 2 standard deviations, so simple numerical summaries provide approximate information on where the majority of the data are located.  This approximation, also known as the \term{empirical rule}, is not accurate for skewed distributions.  The empirical rule is discussed in more detail in Chapter 3, where it arises naturally for bell-shaped distributions.
+
 A \term{mode} is represented by a prominent peak in the distribution.\footnote{Another definition of mode, which is not typically used in statistics, is the value with the most occurrences. It is common to have \emph{no} observations with the same value in a data set, which makes this other definition impractical for many datasets.} Figure~\ref{singleBiMultiModalPlots} shows histograms that have one, two, or three prominent peaks. Such distributions are called \termsub{unimodal}{modality!unimodal}, \termsub{bimodal}{modality!bimodal}, and \termsub{multimodal}{modality!multimodal}, respectively. Any distribution with more than two prominent peaks is called multimodal. Notice that there was one prominent peak in the unimodal distribution with a second less prominent peak that was not counted since it only differs from its neighboring bins by a few observations. Prominent is a subjective term, of course, but it is usually clear in a histogram where the prominent peaks are.  
 
 
@@ -712,7 +714,11 @@ Not all associations are linear.  In fact, some can be highly nonlinear, relatio
 
 Scientists sometimes transform strongly skewed data for several reasons. A \term{transformation} is a rescaling of the data using a function.  When the values of a variable are clustered near zero (relative to the larger values in the data set) and all observations are positive, a natural log transformation can clarify the features of a variable or the nature of a relationship\footnote{In statistics, the natural logarithm is usually written $\log$. In other settings it is sometimes written as  $\ln$.}. 
 
-Income data are often skewed right, when measured either at the individual level or by country.  Typically, there are large clusters of low to moderate income, and a few large incomes that are outliers. The histogram of per capita incomes used for the horizontal axis in figure~\ref{incomeLifeExpectancy} is shown in Figure~\ref{incomeHistReg}.  Figure~\ref{incomeHistLog} shows a plot of the $\log$ of per capita income.
+Income data are often skewed right, when measured either at the individual level or by country.  Typically, there are large clusters of low to moderate income, and a few large incomes that are outliers. The histogram of per capita incomes used for the horizontal axis in figure~\ref{incomeLifeExpectancy} is shown in Figure~\ref{incomeHistReg}.  Figure~\ref{incomeHistLog} shows a plot of the $\log$ of per capita income.  When a transformation has induced approximate symmetry, the empirical rule can be used to make approximate statements about the location of the data.
+
+\textit{expand on this by adding mean, sd of original data and transformed data, show the empirical rule}
+
+
 
 \begin{figure}[ht]
 \centering
@@ -733,7 +739,9 @@ Income data are often skewed right, when measured either at the individual level
 
 \textit{Empirical rule can go here, as well as a more complete discussion of interpretation and a caution to be careful about interpretations.}
 
-Transformations are sometimes used on one or both variables when exploring a relationship Figure~\ref{logIncomeLifeExpectancy} is a scatterplot of \var{log(income)} vs. \var{log(life.expectancy)}, and shows that after a log transformation for both variables, the relationship is more nearly linear.  Some statistical models are based on the assumption of an approximate linear relationship, and transformations like the log transformation will be used later when examining variables like income and life.expectancy more closely.
+
+
+Transformations can also used on one or both variables when exploring a relationship Figure~\ref{logIncomeLifeExpectancy} is a scatterplot of \var{log(income)} vs. \var{log(life.expectancy)}, and shows that after a log transformation for both variables, the relationship is more nearly linear.  Some statistical models are based on the assumption of an approximate linear relationship, and transformations like the log transformation will be used later when examining variables like income and life.expectancy more closely.
 
 
 \begin{figure}
