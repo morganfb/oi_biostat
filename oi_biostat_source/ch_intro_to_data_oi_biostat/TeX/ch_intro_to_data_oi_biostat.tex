@@ -1020,50 +1020,46 @@ Look back to Tables~\ref{rowPropSpamNumber} and~\ref{colPropSpamNumber}. Which w
 \end{comment}
 
 \subsection{Bar plots}
-A bar plot is a common way to display a single categorical variable. The left panel of Figure~\ref{famussBarPlot} shows a \term{bar plot} for the \var{actn3.r577x} variable. In the right panel, the counts are converted into proportions (e.g. $173/595=0.291$ for the \resp{CC} genotype), showing the proportion of observations that are in each level (i.e. in each category).
-
-\begin{figure}[bht]
+\begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.9\textwidth]{ch_intro_to_data_oi_biostat/figures/famussBarPlot/famussBarPlot}
 	\caption{Two bar plots of \var{actn3.r577x}. The left panel shows the counts, and the right panel shows the proportions for each genotype.}
 	\label{famussBarPlot}
 \end{figure}
 
-\textit{JV: After poking around in the R code for the segmented plots, I found out that they are made by overlaying a second graph on top of the other -- a method that only works well for one category mapped onto the total; I tested out this method to make Figure~\ref{famussSegBarPlot}, showing Caucasians as a part of the total, but it's not a particularly interesting/relevant plot.} 
-	
-\textit{JV: With the help of Google, I figured out how to make segmented bar plots using a different method -- plots follow, one using genotype for the bars and one using race for the bars. The following paragraph needs to be re-written based on which plots we ultimately decide to include, and introduce the context for examining race and genotype together (mutant allele known to exist at different frequencies in various human populations). I did not find a way to make the standardized segmented plots.}
+A bar plot is a common way to display a single categorical variable. The left panel of Figure~\ref{famussBarPlot} shows a \term{bar plot} for the \var{actn3.r577x} variable. In the right panel, the counts are converted into proportions (e.g. $173/595=0.291$ for the \resp{CC} genotype), showing the proportion of observations that are in each level (i.e. in each category).
 
-Segmented bar plots provide a way to visualize the information in contingency tables. A \termsub{segmented bar plot}{bar plot!segmented bar plot} is a graphical display of contingency table information. For example, a segmented bar plot using data from Table~\ref{famussContingencyTable} is shown in Figure~\ref{famussSegBarPlot}, where a bar plot was created using the \var{actn3.r577x} variable, with each group divided by the levels of \var{race}. The column proportions of Table~\ref{famussColPropTable} have been translated into a standardized segmented bar plot in Figure~\ref{famussSegBarSta}, which is a helpful visualization of the races represented in each level of \var{actn3.r577x}.
+Segmented bar plots provide a way to visualize the information in contingency tables. A \termsub{segmented bar plot}{bar plot!segmented bar plot} is a graphical display of contingency table information. For example, a segmented bar plot using data from Table~\ref{famussContingencyTable} is shown in Figure~\ref{famussSegBarPlotA}, in which a bar plot was created using the \var{actn3.r577x} variable, with each group divided by the levels of \var{race}. The row proportions shown in Table~\ref{famussRowPropTable} have been translated into a standardized segmented bar plot in Figure~\ref{famussSegBarStaA}, which is a helpful visualization of the races represented in each level of \var{actn3.r577x}.
 
-\begin{figure}[h]
+\begin{figure}[h!]
+	\centering
+	\subfigure[]{
+		\includegraphics[width=0.46\textwidth]{ch_intro_to_data_oi_biostat/figures/famussSegBar/famussSegBarA}
+		\label{famussSegBarA}
+	}
+	\subfigure[]{
+		\includegraphics[width=0.46\textwidth]{ch_intro_to_data_oi_biostat/figures/famussSegBar/famussSegBarStaA} 
+		\label{famussSegBarStaA}		
+	}
+	\caption{\subref{famussSegBarA} Segmented bar plot for individuals by genotype, where the counts have been further broken down by \var{race}. \subref{famussSegBarStaA} Standardized version of Figure~\subref{famussSegBarA}.}
+	\label{famussSegBarPlotA}
+\end{figure}
+
+Alternatively, the data from the contingency table can be organized in a different way, as shown in Figure~\ref{famussSegBarPlotB}, with each bar representing a level of \var{race}. The standardized plot is particularly useful in this case, presenting the distribution of genotypes within each race more clearly than Figure~\ref{famussSegBarB}.
+
+\begin{figure}[h!]
 \centering
 \subfigure[]{
-\includegraphics[width=0.46\textwidth]{ch_intro_to_data_oi_biostat/figures/famussSegBar/famussSegBar}
-\label{famussSegBar}
+\includegraphics[width=0.46\textwidth]{ch_intro_to_data_oi_biostat/figures/famussSegBar/famussSegBarB} 
+\label{famussSegBarB}
 }
 \subfigure[]{
-\includegraphics[width=0.46\textwidth]{ch_intro_to_data_oi_biostat/figures/famussSegBar/famussSegBarSta}
-\label{famussSegBarSta}
+\includegraphics[width=0.46\textwidth]{ch_intro_to_data_oi_biostat/figures/famussSegBar/famussSegBarStaB} 
+\label{famussSegBarStaB}	
 }
-\caption{\subref{famussSegBar} Segmented bar plot for individuals by genotype, in which the counts have been further broken down by Caucasian (blue) and not-Caucasian (yellow). \subref{famussSegBarSta} Standardized version of Figure~\subref{famussSegBar}.}
-\label{famussSegBarPlot}
+\caption{\subref{famussSegBarB} Segmented bar plot for individuals by race, where the counts have been further broken down by genotype. \subref{famussSegBarStaB} Standardized version of Figure~\subref{famussSegBarB}.}
+\label{famussSegBarPlotB}
 \end{figure}
-
-\begin{figure}[h!]
-\includegraphics[width=0.9\textwidth]{ch_intro_to_data_oi_biostat/figures/famussSegBar/famussSegBarTest} 
-\caption{Segmented bar plot for individuals by race, where the counts have been further broken down by genotype.}
-\label{famussSegBarTest}
-\end{figure}
-
-\begin{figure}[h!]
-\includegraphics[width=0.9\textwidth]{ch_intro_to_data_oi_biostat/figures/famussSegBar/famussSegBarTestB}
-\caption{Segmented bar plot for individuals by genotype, where the counts have been further broken down by \var{race}.}
-\label{famussSegBarTestB}
-\end{figure}
-
-\textit{JV: I don't particularly like the mosaic plots, and they may not be the best choice for displaying the \data{famuss} data, anyways. I also think the pie chart section doesn't necessarily need to be included. }
-
-\textit{DH: I have not looked at mosaic plots for the famuss data, so cannot comment on that yet. The segmented bar plots with all races shown is difficult to interpret.  I think it will be better if we can find a way to make it standardized.  I am postponing the decision of what to use so I can continue to make progress on other things.  We can return to this. }
 
 \begin{comment}
 \begin{example}{Examine both of the segmented bar plots. Which is more useful?}
@@ -1073,50 +1069,6 @@ Figure~\ref{emailSpamNumberSegBar} contains more information, but Figure~\ref{em
 Since the proportion of spam changes across the groups in Figure~\ref{emailSpamNumberSegBarSta}, we can conclude the variables are dependent, which is something we were also able to discern using table proportions. Because both the \resp{none} and \resp{big} groups have relatively few observations compared to the \resp{small} group, the association is more difficult to see in Figure~\ref{emailSpamNumberSegBar}.
 
 In some other cases, a segmented bar plot that is not standardized will be more useful in communicating important information. Before settling on a particular segmented bar plot, create standardized and non-standardized forms and decide which is more effective at communicating features of the data.
-\end{comment}
-
-\begin{comment}
-\begin{figure}
-\centering
-\subfigure[]{
-\includegraphics[width=0.3934\textwidth]{ch_intro_to_data_oi_biostat/figures/emailSpamNumberMosaicPlot/emailNumberMosaic}
-\label{emailNumberMosaic}
-}
-\subfigure[]{
-\includegraphics[width=0.46\textwidth]{ch_intro_to_data_oi_biostat/figures/emailSpamNumberMosaicPlot/emailSpamNumberMosaic}
-\label{emailSpamNumberMosaic}
-}
-\caption{The one-variable mosaic plot for \var{number} and the two-variable mosaic plot for both \var{number} and \var{spam}.}
-\label{emailSpamNumberMosaicPlot}
-\end{figure}
-
-A \term{mosaic plot} is a graphical display of contingency table information that is similar to a bar plot for one variable or a segmented bar plot when using two variables. Figure~\ref{emailNumberMosaic} shows a mosaic plot for the \var{number} variable. Each column represents a level of \var{number}, and the column widths correspond to the proportion of emails for each number~type. For~instance, there are fewer emails with no numbers than emails with only small numbers, so the no number email column is slimmer. In general, mosaic plots use box \emph{areas} to represent the number of observations that box represents.
-
-\begin{figure}
-   \centering
-   \includegraphics[width=0.44\textwidth]{ch_intro_to_data_oi_biostat/figures/emailSpamNumberMosaicPlot/emailSpamNumberMosaicRev}
-   \caption{Mosaic plot where emails are grouped by the \var{number} variable after they've been divided into \resp{spam} and \resp{not spam}.}
-   \label{emailSpamNumberMosaicRev}
-\end{figure}
-
-This one-variable mosaic plot is further divided into pieces in Figure~\ref{emailSpamNumberMosaic} using the \var{spam} variable. Each column is split proportionally according to the fraction of emails that were spam in each number category. For example, the second column, representing emails with only small numbers, was divided into emails that were spam (lower) and not spam (upper). 
-As another example, the bottom of the third column represents spam emails that had big numbers, and the upper part of the third column represents regular emails that had big numbers. We can again use this plot to see that the \var{spam} and \var{number} variables are associated since some columns are divided in different vertical locations than others, which was the same technique used for checking an association in the standardized version of the segmented bar plot.
-
-In a similar way, a mosaic plot representing row proportions of Table~\ref{emailSpamNumberTableTotals} could be constructed, as shown in Figure~\ref{emailSpamNumberMosaicRev}. However, because it is more insightful for this application to consider the fraction of spam in each category of the \var{number} variable, we prefer Figure~\ref{emailSpamNumberMosaic}.
-\end{comment}
-
-\begin{comment}
-\subsection{The only pie chart you will see in this book}
-
-While pie charts are well known, they are not typically as useful as other charts in a data analysis. A \term{pie chart} is shown in Figure~\vref{emailNumberPieChart} alongside a bar plot. It is generally more difficult to compare group sizes in a pie chart than in a bar plot, especially when categories have nearly identical counts or proportions. In the case of the \resp{none} and \resp{big} categories, the difference is so slight you may be unable to distinguish any difference in group sizes for either~plot!
-
-\begin{figure}[h]
-   \centering
-   \includegraphics[width=\textwidth]{ch_intro_to_data_oi_biostat/figures/emailNumberPieChart/emailNumberPieChart}
-   \caption{A pie chart and bar plot of \var{number} for the \data{email} data set.}
-   \label{emailNumberPieChart}
-\end{figure}
-
 \end{comment}
 
 \newpage

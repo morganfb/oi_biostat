@@ -2,48 +2,36 @@ library(openintro)
 #data(famuss)
 data(COL)
 
-###OI method
-tab <- table(famuss$race, famuss$actn3.r577x)
-tab <- t(tab)
+## genotypes as columns
 
-rp <- prop.table(tab, 1)
-cp <- prop.table(tab, 2)
+table(famuss$actn3.r577x, famuss$race)
+genotype.race = matrix(table(famuss$actn3.r577x, famuss$race), ncol=3, byrow=T)
+colnames(genotype.race)=c("CC", "CT", "TT")
+rownames(genotype.race)=c("African Am", "Asian", "Caucasian", "Hispanic", "Other")
 
-myPDF("famussSegBar.pdf",
-      4.5,
+prop.genotype.race <- prop.table(genotype.race, 2)
+
+#seg bar
+myPDF("famussSegBarA.pdf",
+      6,
       3.5,
-      mar = c(2, 3, 0.5, 0.5),
+      mar = c(2, 5, 0.5, 0.5),
       mgp = c(2.2, 0.6, 0))
-barplot(apply(tab, 1, sum),
-        col = COL[3])
-tabA <- tab[,3]    ##this defines what column to plot in blue (3 = African Am)
-names(tabA) <- NULL
-barplot(tabA,
-        col = COL[1],
-        add = TRUE,
-        axes = FALSE)
-abline(h = 0)
-#legend("topright",
-       #fill = COL[c(1, 3)],
-       #legend = c("Caucasian", "Non-Caucasian"))
+barplot(genotype.race, col=COL[c(7, 4, 1, 2, 3)], ylim=c(0,300), width=2)
+legend("topright", inset=c(.05, 0), fill=COL[c(7, 4, 1, 2, 3)], legend=rownames(genotype.race))
 dev.off()
 
-myPDF("famussSegBarSta.pdf",
-      4.5,
-      3.5,
-      mar = c(2, 2.5, 0.5, 0.5),
-      mgp = c(2.2, 0.6, 0))
-barplot(apply(tab, 1, sum) / apply(tab, 1, sum), col = COL[3])
-tabA <- rp[, 3]
-names(tabA) <- NULL
-barplot(tabA,
-        col = COL[1],
-        add = TRUE,
-        axes = FALSE)
-abline(h = 0)
+#sta seg bar
+myPDF("famussSegBarStaA.pdf",
+      6,
+      3.5)
+par(mar=c(2.5, 2.5, 0.5, 7), xpd=TRUE)
+barplot(prop.genotype.race, col=COL[c(7, 4, 1, 2, 3)], ylim=c(0, 1), width=2)
+legend("topright", inset=c(-.32, 0),fill=COL[c(7, 4, 1, 2, 3)], legend=rownames(genotype.race))
 dev.off()
 
-###New method
+
+## races as columns
 
 table(famuss$race, famuss$actn3.r577x)
 race.genotype = matrix(table(famuss$race, famuss$actn3.r577x), ncol=5, byrow=T)
@@ -52,51 +40,21 @@ rownames(race.genotype)=c("CC", "CT", "TT")
 
 prop.race.genotype <- prop.table(race.genotype, 2)
 
-myPDF("famussSegBarTest.pdf",
+#seg bar
+myPDF("famussSegBarB.pdf",
       6,
       3.5,
       mar = c(2, 5, 0.5, 0.5),
       mgp = c(2.2, 0.6, 0))
-#par(mar=c(5.1, 4.1, 4.1, 7.1), xpd=TRUE)
 barplot(race.genotype, col=COL[c(1, 2, 3)], ylim=c(0,500), width=2)
-legend("topright", fill=COL[c(1, 2, 3)], legend=rownames(race.genotype))
+legend("topright", inset=c(.1, 0), fill=COL[c(1, 2, 3)], legend=rownames(race.genotype))
 dev.off()
 
-#standardized seg bar
-myPDF("famussSegBarStaTest.pdf",
+#sta seg bar
+myPDF("famussSegBarStaB.pdf",
       6,
       3.5)
 par(mar=c(2.5, 2.5, 0.5, 5), xpd=TRUE)
 barplot(prop.race.genotype, col=COL[c(1,2,3)], ylim=c(0, 1), width=2)
-legend("topright", inset=c(-.15, 0),fill=COL[c(1,2,3)], legend=rownames(race.genotype))
-dev.off()
-
-##alternative barplot
-
-table(famuss$actn3.r577x, famuss$race)
-genotype.race = matrix(table(famuss$actn3.r577x, famuss$race), ncol=3, byrow=T)
-colnames(genotype.race)=c("CC", "CT", "TT")
-rownames(genotype.race)=c("African Am", "Asian", "Caucasian", "Hispanic", "Other")
-
-prop.genotype.race <- prop.table(genotype.race, 2)
-prop.genotype.race
-
-#alternative segmented barplot
-myPDF("famussSegBarTestB.pdf",
-      6,
-      3.5,
-      mar = c(2, 5, 0.5, 0.5),
-      mgp = c(2.2, 0.6, 0))
-#par(mar=c(5.1, 4.1, 4.1, 7.1), xpd=TRUE)
-barplot(genotype.race, col=COL[c(7, 4, 1, 2, 3)], ylim=c(0,300), width=2)
-legend("topright", fill=COL[c(7, 4, 1, 2, 3)], legend=rownames(genotype.race))
-dev.off()
-
-#alternative standardized seg bar
-myPDF("famussSegBarStaTestB.pdf",
-      6,
-      3.5)
-par(mar=c(2.5, 2.5, 0.5, 7), xpd=TRUE)
-barplot(prop.genotype.race, col=COL[c(7, 4, 1, 2, 3)], ylim=c(0, 1), width=2)
-legend("topright", inset=c(-.32, 0),fill=COL[c(7, 4, 1, 2, 3)], legend=rownames(genotype.race))
+legend("topright", inset=c(-.15, 0), fill=COL[c(1,2,3)], legend=rownames(race.genotype))
 dev.off()
