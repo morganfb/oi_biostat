@@ -714,9 +714,11 @@ Not all associations are linear.  In fact, some can be highly nonlinear, relatio
 
 Scientists sometimes transform strongly skewed data for several reasons. A \term{transformation} is a rescaling of the data using a function.  When the values of a variable are clustered near zero (relative to the larger values in the data set) and all observations are positive, a natural log transformation can clarify the features of a variable or the nature of a relationship\footnote{In statistics, the natural logarithm is usually written $\log$. In other settings it is sometimes written as  $\ln$.}. 
 
-Income data are often skewed right, when measured either at the individual level or by country.  Typically, there are large clusters of low to moderate income, and a few large incomes that are outliers. The histogram of per capita incomes used for the horizontal axis in figure~\ref{incomeLifeExpectancy} is shown in Figure~\ref{incomeHistReg}.  Figure~\ref{incomeHistLog} shows a plot of the $\log$ of per capita income.  When a transformation has induced approximate symmetry, the empirical rule can be used to make approximate statements about the location of the data.
+Income data are often skewed right, when measured either at the individual level or by country.  Typically, there are large clusters of low to moderate income, and a few large incomes that are outliers. The histogram of per capita incomes used for the horizontal axis in figure~\ref{incomeLifeExpectancy} is shown in Figure~\ref{incomeHistReg}. In the original scale, mean \var{income} is 14,428 (\$14,428 in US dollars) and with standard deviation \$16,391.  The empirical rule could not be used with the data on this scale, because even 1 standard deviation below the mean drops below 0. Figure~\ref{incomeHistLog} shows a plot of the $\log$ of per capita income. The $\log$ transformed data is more nearly symmetric. When a transformation has induced approximate symmetry, the empirical rule can be used to make approximate statements about the location of the transformed data, which can then be transformed back to the original scale.  On the $\log$ transformed scale, the mean $\log(income)$ is 8.86, with standard deviation 1.33.
 
-\textit{expand on this by adding mean, sd of original data and transformed data, show the empirical rule}
+\textit{expand on this by showing empirical rule in a plot (possibly), and calculating the middle 95\% of the log income, then transforming back to original scale.  I have added the empirical rule earlier in the chapter, but without a figure}
+
+\textit{add discussion about value of the two scales}
 
 
 
@@ -737,7 +739,7 @@ Income data are often skewed right, when measured either at the individual level
 \end{figure}
 
 
-\textit{Empirical rule can go here, as well as a more complete discussion of interpretation and a caution to be careful about interpretations.}
+
 
 
 
