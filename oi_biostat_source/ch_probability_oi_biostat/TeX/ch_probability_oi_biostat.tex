@@ -1033,6 +1033,27 @@ Once each of these probabilities are identified, they can be applied directly wi
 \index{probability|)}
 
 
+\textC{\newpage}
+
+
+
+%_________________
+\section{Random variables (special topic)}
+\label{randomVariablesSection}
+
+\index{random variable|(}
+
+Some forms of cancer, such as advanced lung cancer, unfortunately have treatments which are effective in a small percentage of patients, typically 5\% or less. In planning studies in clinical research, investigators try to anticipate the results they might see, at least under certain hypotheses. In planning a study of a new drug in advanced cancer, it is useful to ask what the expected outcome might be if, for instance, only 5\% of patients in a study would have a good response (another unsuccessful treatment), or if, perhaps, 20\% of patients would have a good response (a potentially useful drug). In a study with 100 participants, one would expect 5 of the 100 participants to have a good response if the drug does not look promising, and 20 if the drug was promising. Other numbers of good responses would be expected for treatments that were either more or less successful than the ones in this example.
+
+The anticipated outcome in this hypothetical study is an example of a \term{random variable}, something that measures the outcome numerically, but is not observed before the study is conducted and so appears random. Random variables provide mathematical models for data before it has been observed, and are useful in many applications of statistics in addition to study planning. Random variables can be used to model more than just the expected outcome of a study. Under the working assumption that 5\% of patients would respond to a treatment is true, investigators would expect 5 responses, but would not be surprised to see 4 or 6. But they might be described to see 15 or more responses; random variables provide a tool for calculating precisely how surprising that might be.
+
+This section outlines some general concepts used with random variables; chapter 3 explores specific and particularly useful types of random variables.
+
+\subsection{Distributions of Random Variables}
+
+Formally, a random variable assigns numerical values to the outcome of a random phenomenon, and is usually written with a capital letter such as $X$, $Y$, or $Z$.  Rolling dice or tossing coins provide simple examples of random variables.  If a coin is tossed three times, the outcome is the sequence of observed heads and tails, one of which is (TTH), tails on the first two tosses, heads on the third.  If the random variable $X$ is the number of heads on the three tosses, $X = 1$. If $Y$ is the number of tails, $Y = 2$.  For the sequence of outcomes (THT), $X$ and $Y$ have the same values 1 and 2. But for the sequence (HHH), $X = 3$ and $Y = 0$.  Even in this simple setting, it is possible to define other random variables.  If $Z$ is the toss when the first heads occurs, then $Z=3$ for the first set of 3 tosses and 1 for the second set.
+
+
 
 
 
