@@ -1043,19 +1043,84 @@ Once each of these probabilities are identified, they can be applied directly wi
 
 \index{random variable|(}
 
-Some forms of cancer, such as advanced lung cancer, unfortunately have treatments which are effective in a small percentage of patients, typically 5\% or less. In planning studies in clinical research, investigators try to anticipate the results they might see, at least under certain hypotheses. In planning a study of a new drug in advanced cancer, it is useful to ask what the expected outcome might be if, for instance, only 5\% of patients in a study would have a good response (another unsuccessful treatment), or if, perhaps, 20\% of patients would have a good response (a potentially useful drug). In a study with 100 participants, one would expect 5 of the 100 participants to have a good response if the drug does not look promising, and 20 if the drug was promising. Other numbers of good responses would be expected for treatments that were either more or less successful than the ones in this example.
+Some forms of cancer, such as advanced lung cancer, unfortunately have treatments which are effective in a small percentage of patients, typically 20\% or less. In planning studies in clinical research, investigators try to anticipate the results they might see, at least under certain hypotheses. In planning a study of a new drug in advanced cancer, it is useful to ask what the expected outcome might be if, for instance, only 20\% of patients would have a good response (another unsuccessful treatment), or if, perhaps, 50\% of patients would have a good response (a potentially useful drug). In a study with 20 participants, one would expect 4 of the 20 participants to have a good response if the drug does not look promising, and 10 if the drug was promising. Other numbers of good responses would be expected for treatments that were either more or less successful than the ones in this example.
 
-The anticipated outcome in this hypothetical study is an example of a \term{random variable}, something that measures the outcome numerically, but is not observed before the study is conducted and so appears random. Random variables provide mathematical models for data before it has been observed, and are useful in many applications of statistics in addition to study planning. Random variables can be used to model more than just the expected outcome of a study. Under the working assumption that 5\% of patients would respond to a treatment is true, investigators would expect 5 responses, but would not be surprised to see 4 or 6. But they might be described to see 15 or more responses; random variables provide a tool for calculating precisely how surprising that might be.
+The anticipated outcome in this hypothetical study is an example of a \term{random variable}, something that measures the outcome numerically, but is not observed before the study is conducted and so appears random. Random variables provide mathematical models for data before it has been observed, and are useful in many applications of statistics in addition to study planning. Random variables can be used to model more than just the expected outcome of a study. Under the working assumption that 20\% of patients would respond to a treatment is true, investigators would expect 4 responses, but would not be surprised to see 3 or 5. But they might be surprised to see 12 or more responses; random variables provide a tool for calculating precisely how surprising that might be.
 
 This section outlines some general concepts used with random variables; chapter 3 explores specific and particularly useful types of random variables.
 
 \subsection{Distributions of Random Variables}
 
-Formally, a random variable assigns numerical values to the outcome of a random phenomenon, and is usually written with a capital letter such as $X$, $Y$, or $Z$.  Rolling dice or tossing coins provide simple examples of random variables.  If a coin is tossed three times, the outcome is the sequence of observed heads and tails, one of which is (TTH), tails on the first two tosses, heads on the third.  If the random variable $X$ is the number of heads on the three tosses, $X = 1$. If $Y$ is the number of tails, $Y = 2$.  For the sequence of outcomes (THT), $X$ and $Y$ have the same values 1 and 2. But for the sequence (HHH), $X = 3$ and $Y = 0$.  Even in this simple setting, it is possible to define other random variables.  If $Z$ is the toss when the first heads occurs, then $Z=3$ for the first set of 3 tosses and 1 for the second set.
+Formally, a random variable assigns numerical values to the outcome of a random phenomenon, and is usually written with a capital letter such as $X$, $Y$, or $Z$.  Rolling dice or tossing coins provide simple but instructive examples of random variables.  If a coin is tossed three times, the outcome is the sequence of observed heads and tails, and might be (TTH), tails on the first two tosses, heads on the third.  If the random variable $X$ is the number of heads on the three tosses, $X = 1$. If $Y$ is the number of tails, $Y = 2$.  For the sequence of outcomes (THT), $X$ and $Y$ have the same values 1 and 2. But for the sequence (HHH), $X = 3$ and $Y = 0$.  Even in this simple setting, it is possible to define other random variables.  If $Z$ is the toss when the first heads occurs, then $Z=3$ for the first set of 3 tosses and 1 for the second set.
+
+If probabilities can be assigned to the outcomes in a random phenomenon or study, those can be used to assign probabilities to values of a random variable.  Using independence, $P(\text{HHH}) = (1/2)^3 = 1/8$.  Since $X$ in the above example can only be three if the three tosses are all heads, $P(X=3) = 1/8$.  The distribution of a random variable is the collection of probabilities for all of the variables unique values.  When a coin is tossed 3 times, the 8 possible outcomes are (TTT, HTT, THT, TTH, HHT, HTH, THH, HHH). The variable $X = 0$ for the first of these tosses, $X = 1$ for the next 3 sequences, $X = 2$ for next 3, and $X = 3$ for the last sequence (HHH).  Using independence again, each of the 8 outcomes have probability 1/8, so $P(X = 0) = P(X = 3) = 1/8$ and $P(X = 1) = P(X = 2) = 3/8$. For random variables with a small number of outcomes, it is often easier and more instructive to display its distribution in a table. Table~\ref{distCoinTossing} shows the probability distribution for $X$.  Probability distributions for random variables follow the rules for probability, so, for instance, the sum of the probabilities must be 1.00.  The possible outcomes of $X$ are labeled with a corresponding lower case letter $x$ and subscripts.  The values of X are $x_1=0$, $x_2=1$,  $x_3 = 2$, and $x_4 = 3$; these occur with probabilities $1/8$, $3/8$, $3/8$ and $1/8$.
+
+\begin{table}[h]
+\centering 
+\begin{tabular}{l rrrr l}
+	\hline 
+	$i$ & 1 & 2 & 3 & 4 & Total\\
+	\hline
+	$x_i$ & 0 & 1 & 2 & 3 & --\\
+	 $P(X = x_i)$ & 1/8 & 3/8 & 3/8 & 1/8 & 8/8 = 1.00\\
+\end{tabular}
+\caption{Tabular form of the distribution of the number of Heads in 3 coin tosses}
+\label{distCoinTossing}
+\end{table}
+
+Bar graphs can be used to show the distribution of a random variable, just as histograms or bar graphs provide a visual summary of the distribution of a dataset. Instead of showing the frequency of observations in a dataset, the heights of the bars in the graph of a probability distribution show the probabilities of possible values of a random variable.  Figure~\ref{barPlotCoinTossing} is a bar graph of the distribution of $X$ in the coin tossing example.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.60\textwidth]
+{ch_probability_oi_biostat/figures/barPlotCoinTossing/barPlotCoinTossing.pdf}
+\caption{Bar plot of the distribution of the number of heads in 3 coin tosses }
+\label{barPlotCoinTossing}
+\end{figure}
+
+$X$ is an example of a \term{discrete random variable} since it takes on a finite number of values\footnote{Some discrete random variables have an infinite number of possible values, such as all the non-negative integers.}  Because $X$ arises in a simple experiment (3 tosses of a coin) where probabilities are easy to calculate, calculating the probability distribution of $X$ is straightforward and the bar plot is not particularly informative.  
+
+The hypothetical clinical study at the beginning of this section raised the question of how surprising it would it be to observe 12 or more responses in a setting where approximately 20\% of patients respond to a treatment.  Suppose $X$ is a random variable that will denote the number of responding participants in a clinical study being designed.  $X$ will have the same probability distribution as the number of heads in 20 tosses of a weighted coin, where the probability of landing heads is 0.2 instead of $1/2 = 0.5$.  The graph of the probability distribution for $X$ in figure~\ref{distRespClinStudy} can be used to approximate this probability\footnote{This and other useful distribution will be examined in detail  in Chapter 3}. The nine values (12, 13,\ldots, 20) make up the event 12 or more, and the graph shows that each of these probabilities is smaller than 0.005, so the chance of 12 or more responses is less than 0.01, or clearly less than 1\%.  Formulas in Chapter 3 can be used to show that the exact probability is slightly larger than 0.0001.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.60\textwidth]
+{ch_probability_oi_biostat/figures/distRespClinStudy/distRespClinStudy.pdf}
+\caption{Bar plot of the distribution of the number of responses in a study with 20 participants and response probability 0.20}
+\label{disRespClinStudy}
+\end{figure}
+
+ \textit{this example can be improved, and the graph could be improved as well.}
 
 
+\subsection{Expectation}
 
+\index{expectation|(}
 
+Just like distributions of data, distributions of random variables have means, variances, standard deviations, medians, etc., but these characteristics of random variables are computed differently.  To calculate the mean of a random variable, add each multiply each possible value by its corresponding probability and add these products.  The mean of a random variable is called its \term{expected value} and written $E(X)$. the term is well-chosen -- it is the value one would expect to see if the variable were to be observed. For the variable $X$ in the last section,
+
+\begin{align*}
+E(X) &= (0)(P(X=0)) + (1)(P(X=137)) + (2)(P(X=2)) + (3)(P(X = 3)) \\
+	&= (0))(1/8) + (1)(3/8) + (2)(3/8) + (3)(1/8) = 12/8 = 1.5
+\end{align*}
+
+\begin{termBox}{\tBoxTitle{Expected value of a Discrete Random Variable}
+If $X$ takes outcomes $x_1$, ..., $x_k$ with probabilities $P(X=x_1)$, ..., $P(X=x_k)$, the expected value of $X$ is the sum of each outcome multiplied by its corresponding probability:
+\begin{align}
+E(X) 	&= x_1\times P(X=x_1) + \cdots + x_k\times P(X=x_k) \notag \\
+	&= \sum_{i=1}^{k}x_iP(X=x_i)
+\end{align}
+The Greek letter $\mu$\index{Greek!mu ($\mu$)} may be used in place of the notation $E(X)$.}
+\end{termBox}
+The expected value for a random variable represents the average outcome. For example, $E(X)=1.5$ represents the average number of heads in three tosses of a coin, if the three tosses were repeated many times; this is also written $\mu=1.5$.
+
+The expected value of a random variable has the same interpretation as a mean in a dataset.  The distribution can be represented by a series of weights at each outcome, and the mean represents the balancing point.
+
+\textit{I have omitted the material on continuous distribuions and may re-insert it later. }
+
+\index{expectation|)}
+
+\subsection{Variability in random variables}
 
 
 
