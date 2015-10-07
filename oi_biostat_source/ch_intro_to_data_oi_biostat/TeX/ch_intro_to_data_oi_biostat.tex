@@ -7,17 +7,22 @@
 \label{introductionToData}
 
 
-Advances in science are almost always the result of a dynamic balance between theory and observation. These observations -- collected from the likes of field notes, surveys, and experiments -- form the backbone empirical research and are called \term{data}. Statistics is the study of how to best collect, analyze, and draw conclusions from data. Statistics is an integral part of the components of the scientific method:  
-\begin{enumerate}
-\setlength{\itemsep}{0mm}
-\item Identify a question or problem.
-\item Collect relevant data on the topic.
-\item Analyze the data.
-\item Form a conclusion.
-\end{enumerate}
-Statistics as a subject focuses on making stages 2-4 objective, rigorous, and efficient. That~is, statistics has three primary components: How can data best be collected? How should it be analyzed? What can be inferred from the analysis?  
+Advances in science are almost always the result of a dynamic balance between theory and observation. Observations -- collected from the likes of field notes, surveys, and experiments -- form the backbone of empirical research and are called \term{data}. Statistics has three primary components: How can data best be collected? How should data be analyzed? What can be inferred from the analysis? As a discipline, statistics focuses on addressing these questions in an objective, rigorous, and efficient way.
 
-This chapter provides a brief introduction to the principles of data collection and introduces some simple numerical and graphical summaries of data that will be used in the rest of the text.  The examples are drawn from recent studies in medicine and biology and illustrate the important role statistics plays in medicine and biology.  The chapter also serves as a brief review for readers already familiar with introductory statistics.
+\begin{comment}
+	Statistics is an integral part of the components of the scientific method:  
+	\begin{enumerate}
+	\setlength{\itemsep}{0mm}
+	\item Identify a question or problem.
+	\item Collect relevant data on the topic.
+	\item Analyze the data.
+	\item Form a conclusion.
+	\end{enumerate}
+	Statistics as a subject focuses on making stages 2-4 objective, rigorous, and efficient.
+ That~is, statistics has three primary components: How can data best be collected? How should it be analyzed? What can be inferred from the analysis?  
+\end{comment}
+
+This chapter provides a brief introduction to the principles of data collection and introduces some simple numerical and graphical summaries of data that will be used in the rest of the text. The examples, drawn from recent studies in medicine and biology, illustrate the important role that statistics plays in these fields. The chapter also serves as a brief review for readers already familiar with introductory concepts in statistics.
 
 
 \section[Case study]{Case study: preventing peanut allergies}
@@ -29,7 +34,7 @@ Section~\ref{leapCaseStudy} introduces an important problem in medicine: evaluat
 
 The proportion of young children in Western countries with peanut allergies has doubled in the last 10 years. Previous research suggests that exposing infants to peanut-based foods, rather than excluding such foods from their diets, may be an effective strategy for preventing the development of peanut allergies. This section describes an experiment (a clinical trial, in the terminology of medical research) designed to address the following research question: Does early exposure to peanut products reduce the probability that a child will develop peanut allergies? 
 
-The "Learning Early about Peanut Allergy" (LEAP) study was reported in the New England Journal of Medicine in 2015.\footnote{Du Toit, George, et al. Randomized trial of peanut consumption in infants at risk for peanut allergy. New England Journal of Medicine 372.9 (2015): 803-813.} The study team enrolled children in the United Kingdom between 2006 and 2009, selecting 640 infants with eczema, egg allergy, or both. Each child was randomly assigned to the treatment group (peanut consumption) or the control group (peanut avoidance); children in the treatment group were fed at least 6 grams of peanut protein daily until 5 years of age, while children in the control group were to avoid consuming peanut protein until 5 years of age. 
+The "Learning Early about Peanut Allergy" (LEAP) study was reported in the \textit{New England Journal of Medicine} in 2015.\footnote{Du Toit, George, et al. Randomized trial of peanut consumption in infants at risk for peanut allergy. New England Journal of Medicine 372.9 (2015): 803-813.} The study team enrolled children in the United Kingdom between 2006 and 2009, selecting 640 infants with eczema, egg allergy, or both. Each child was randomly assigned to the treatment group (peanut consumption) or the control group (peanut avoidance); children in the treatment group were fed at least 6 grams of peanut protein daily until 5 years of age, while children in the control group were to avoid consuming peanut protein until 5 years of age. 
 
 At 5 years of age, each child was tested for peanut allergy using an oral food challenge (OFC): 5 grams of peanut protein in a single dose. Children had been previously been tested for peanut allergy through a skin test, conducted at the time of study entry; the main analysis presented in the paper was based on the 530 children with a negative skin test result. Of these children, 263 were assigned to "Peanut Avoidance" and 267 to "Peanut Consumption." The outcome at 5 years was reported as either "Fail OFC" (allergic reaction) or "Pass OFC" (no allergic reaction). 
 
@@ -86,7 +91,7 @@ There are important aspects of the study to be cautious about.  This study was c
 
 Suppose a coin is flipped 100 times. While the chance a coin lands heads in any given coin flip is 50\%, observing exactly 50 heads is unlikely; instead, the coin may land heads 43 times, 51 times, 59 times, etc. This type of fluctuation is part of almost any experiment or study. It may well be possible that the 11.8\% difference in the peanut allergy study is only due to this natural variation, and that the two interventions are actually equally effective. However, the larger the difference observed (for a particular study size), the less credible it is that the difference is due to chance alone. If out of 100 flips, a coin landed heads only 5 times, it would be reasonable to doubt that the outcome was due to chance; perhaps the coin is weighted so that tails are more likely to occur.
 
-For the LEAP study, the 11.8\% difference is indeed larger than that expected by chance alone, suggesting that peanut consumption is the more effective intervention for preventing subsequent allergies. The material on hypothesis testing in later chapters will provide the statistical tools to confirm that the result of the study is unlikely if the two interventions had been equally effective.
+For the LEAP study, the 11.8\% difference is indeed larger than that expected by chance alone, suggesting that peanut consumption is the more effective intervention for preventing subsequent allergies. The material on hypothesis testing in later chapters will provide the statistical tools to confirm that the observed results were unlikely if the two interventions had been equally effective.
 
 \index{data!LEAP|)}
 
@@ -124,7 +129,7 @@ This section describes data used in a study published in the \textit{Journal of 
 
 Table~\ref{frogDF} displays rows 1, 2, 3, and 150 of the data from the 431 clutches. The complete set of observations will be referred to as the \data{frog} dataset. Each row in the table corresponds to a single clutch, indicating where the clutch was collected (\var{altitude} and \var{latitude}), \var{egg.size}, \var{clutch.size}, \var{clutch.volume}, and \var{body.size} of the mother when available. "NA" corresponds to a missing value; information on individual females was not collected for that particular site. The columns represent characteristics, called \term{variables}, for each clutch.
 
-For example, the first row represents a clutch collected at altitude 3,462 meters above sea level, latitude 34.82 degrees; the clutch contained an estimated 182 eggs, with individual eggs averaging 1.95 mm in diameter, for a total volume of 177.8 mm$^{3}$. The eggs were laid by a female measuring 3.63 cm long. It is important to understand the definitions of variables, as they are not always obvious. For example, why has \var{clutch.size} not been recorded as whole numbers?  In a given clutch, researchers counted approximately 5 grams' worth of eggs and then estimated the total number of eggs based on the mass of the entire clutch. Definitions of the variables are given in Table~\ref{frogVariables}.\footnote{The data discussed here are in the original scale; in the published paper, some values have been log-transformed.}
+For example, the first row represents a clutch collected at altitude 3,462 meters above sea level, latitude 34.82 degrees; the clutch contained an estimated 182 eggs, with individual eggs averaging 1.95 mm in diameter, for a total volume of 177.8 mm$^{3}$. The eggs were laid by a female measuring 3.63 cm long. It is important to understand the definitions of variables, as they are not always obvious. For example, why has \var{clutch.size} not been recorded as whole numbers? For a given clutch, researchers counted approximately 5 grams' worth of eggs and then estimated the total number of eggs based on the mass of the entire clutch. Definitions of the variables are given in Table~\ref{frogVariables}.\footnote{The data discussed here are in the original scale; in the published paper, some values have been log-transformed.}
 
 \begin{table}[t]
 	\centering\small
@@ -220,7 +225,7 @@ Height and weight are continuous numerical variables. Age as measured by the res
 
 
 \begin{exercise} \index{!LEAP}
-Characterize the variables \var{participant.ID}, \var{treatment.group}, and \var{overall.V60.outcome} from the LEAP study (discussed in Section~\ref{leapCaseStudy}). \footnote{These variables measure non-numerical quantities, and thus are categorical variables. The variables  \var{treatment.group} and \var{outcome.V60.overall} have two values or levels, while \var{participant.ID} has many possible values.}
+Characterize the variables \var{participant.ID}, \var{treatment.group}, and \var{overall.V60.outcome} from the LEAP study (discussed in Section~\ref{leapCaseStudy}).\footnote{These variables measure non-numerical quantities, and thus are categorical variables. The variables  \var{treatment.group} and \var{outcome.V60.overall} have two values or levels, while \var{participant.ID} has many possible values.}
 \end{exercise}
 
 \subsection{Relationships between variables}
@@ -271,16 +276,20 @@ Each of these questions refers to a target \term{population}. In the first quest
 \subsection{Anecdotal evidence}
 \label{anecdotalEvidence}
 
-Anecdotal evidence is typically composed of unusual observations that are easily recalled based on their striking characteristics. Physicians are sometimes more likely to remember the characteristics of a single patient with an unusually good response to a drug as opposed to the many patients who did not respond.  The dangers of drawing general conclusions from anecdotal information are obvious; no single observation can be used to draw conclusions about a population. Often, the anecdotal case may not have been remembered correctly or may have been measured incorrectly. To learn about the characteristics of a population, it is necessary to examine a sample of many cases drawn randomly from the population.
+Anecdotal evidence is typically composed of unusual observations that are easily recalled based on their striking characteristics. Physicians may be more likely to remember the characteristics of a single patient with an unusually good response to a drug as opposed to the many patients who did not respond.  The dangers of drawing general conclusions from anecdotal information are obvious; no single observation can be used to draw conclusions about a population. To learn about the characteristics of a population, it is necessary to examine a sample of many cases drawn randomly from the population.
 
-While it is incorrect to generalize from individual observations, scientists know that unusual observations can sometimes be valuable.  E.C. Heyde was a general practitioner from Vancouver who noticed that a few of his elderly patients with aortic-valve stenosis (an abnormal narrowing) caused by an accumulation of calcium had suffered massive gastrointestinal bleeding, and in 1958, he published his observation in a letter. \footnote{Heyde EC. Gastrointestinal bleeding in aortic stenosis. N Engl J Med 1958;259:196.}.  Research into the problem led to the identification of the underlying cause of the association \footnote{Greenstein RJ, McElhinney AJ, Reuben D, Greenstein AJ. Co-lonic vascular ectasias and aortic stenosis: coincidence or causal relationship? Am J Surg 1986;151:347-51.}, now called Heyde's Syndrome.
+While it is incorrect to generalize from individual observations, unusual observations can sometimes be valuable.  E.C. Heyde was a general practitioner from Vancouver who noticed that a few of his elderly patients with aortic-valve stenosis (an abnormal narrowing) caused by an accumulation of calcium had suffered massive gastrointestinal bleeding, and in 1958, he published his observation in a letter.\footnote{Heyde EC. Gastrointestinal bleeding in aortic stenosis. N Engl J Med 1958;259:196.} Research into the problem led to the identification of the underlying cause of the association, now called Heyde's Syndrome.\footnote{Greenstein RJ, McElhinney AJ, Reuben D, Greenstein AJ. Co-lonic vascular ectasias and aortic stenosis: coincidence or causal relationship? Am J Surg 1986;151:347-51.}
 
 An anecdotal observation can never be the basis for a conclusion, but it may well lead to the design of a more systematic study that could be definitive.  
 
 
 \subsection{Sampling from a population}
 
-Sampling from a population is a useful tool in population-based research in the health sciences.  When done carefully, it provides reliable information about the  characteristics of a large population without having to directly measure those characteristics for each member, often an impossible task.  The US Centers for Disease Control (US CDC) conducts many such surveys, including the Behavioral Risk Factors Surveillance System (BRFSS)\footnote{\url{ http://www.cdc.gov/brfss/}}.  The BRFSS conducts approximately 400,000 telephone interviews annually to ask U.S. residents questions regarding their health-related risk behaviors, chronic health conditions, and use of preventive services.  Data from a recent BRFSS are used in Chapter 4. The CDC conducts similar surveys for diabetes, health care access, and immunization. Likewise, the World Health Organization (WHO) conducts the World Health Survey in partnership  with approximately 70 countries to learn about the health of adult populations and the health systems in those countries.\footnote{\url{http://www.who.int/healthinfo/survey/en/}}  In 2000, the US Department of Justice released the \textit{The Sexual Victimization of College Women}, based on a survey conducted in 1996 of 4,446 undergraduate women.\footnote{\url{https://www.ncjrs.gov/pdffiles1/nij/182369.pdf}}
+Sampling from a population is a useful tool in population-based research in the health sciences.  When done carefully, it provides reliable information about the  characteristics of a large population without having to directly measure those characteristics for each member.  The US Centers for Disease Control (US CDC) conducts many such surveys, including the Behavioral Risk Factors Surveillance System (BRFSS).\footnote{\url{ http://www.cdc.gov/brfss/}} The BRFSS conducts approximately 400,000 telephone interviews annually to ask U.S. residents questions regarding their health-related risk behaviors, chronic health conditions, and use of preventive services.  Data from a recent BRFSS survey are used in Chapter 4. The CDC conducts similar surveys for diabetes, health care access, and immunization. Likewise, the World Health Organization (WHO) conducts the World Health Survey in partnership  with approximately 70 countries to learn about the health of adult populations and the health systems in those countries.\footnote{\url{http://www.who.int/healthinfo/survey/en/}}  
+
+%commenting out the DoJ survey because transition does not work well here...if actually needed, introduce the study later on.
+
+%In 2000, the US Department of Justice released the \textit{The Sexual Victimization of College Women}, based on a survey conducted in 1996 of 4,446 undergraduate women.\footnote{\url{https://www.ncjrs.gov/pdffiles1/nij/182369.pdf}}
 
 \begin{comment}
 In September 2015, the American Association of Universities released a new study of the same issue\footnote{\url{https://www.aau.edu/uploadedFiles/AAU_Publications/AAU_Reports/Sexual_Assault_Campus_Survey/Report%20on%20the%20AAU%20Campus%20Climate%20Survey%20on%20Sexual%20Assault%20and%20Sexual%20Misconduct.pdf}}.
@@ -290,14 +299,17 @@ This url is causing latex compile problems.
 \end{comment}
 
 
-Sampling from a population is easier when the population is relatively small and members of the population are easy to identify and contact.  For instance, the quality improvement team at an integrated health care system, such as Kaiser Permanente or Harvard Pilgrim Health Care, might want to learn about the perception of care among members of the health plan.  Since health plans have contact information for each member, a selected subset can be contacted (with their consent) for participation in an interview or mailed survey.  More complex methods are required for other surveys, such as the study on sexual victimization of college women. 
+Sampling from a population is easier when the population is relatively small and members of the population are easy to identify and contact.  For instance, the quality improvement team at an integrated health care system, such as Kaiser Permanente or Harvard Pilgrim Health Care, might want to learn about the perception of care among members of the health plan.  Since health plans have contact information for each member, a selected subset can be contacted (with their consent) for participation in an interview or mailed survey.  More complex methods are required for other surveys.
 
+%, such as the study on sexual victimization of college women. 
 
-One common pitfall in conducting a survey is to use a \term{convenience sample}\index{sample!convenience sample}, in which individuals who are easily accessible are more likely to be included in the sample. For instance, the quality improvement team in the healthcare plan might ask interviewers to approach plan members visiting an outpatient clinic during a particular week.  The sample would fail to enroll generally healthy members who typically do not use outpatient services or schedule routine physical examinations. Similarly, the Department of Justice could have only sampled women in colleges or universities in or near the District of Columbia or major state universities.  
+One common pitfall in conducting a survey is to use a \term{convenience sample}\index{sample!convenience sample}, in which individuals who are easily accessible are more likely to be included in the sample. For instance, the quality improvement team in the healthcare plan might ask interviewers to approach plan members visiting an outpatient clinic during a particular week.  The sample would fail to enroll generally healthy members who typically do not use outpatient services or schedule routine physical examinations. 
+
+%Similarly, the Department of Justice could have only sampled women in colleges or universities in or near the District of Columbia or major state universities.  
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.70\textwidth]{ch_intro_to_data_oi_biostat/figures/sampleHealthPlan/sampleConvenienceHealthPlan.png}
+	\includegraphics[width=0.60\textwidth]{ch_intro_to_data_oi_biostat/figures/sampleHealthPlan/sampleConvenienceHealthPlan.png}
 	\caption{Instead of sampling from all members equally, approaching members visiting a clinic during a particular week would disproportionately select members who typically use outpatient services.}
 	\label{sampleConvenienceHealthPlan}
 \end{figure}
@@ -306,11 +318,13 @@ One common pitfall in conducting a survey is to use a \term{convenience sample}\
 
 The general principle of sampling is straightforward: a sample from a population is useful for learning about a population only when the sample matches, on average, the characteristics of the population. Random sampling is the best way to ensure that a sample reflects a population, because random samples are not subject to the conscious or unconscious bias of the team gathering the sample.  However, even a well-defined sampling strategy can lead to an unrepresentative sample if there are substantial barriers to subject participation, such as questions that assume participants are fluent in English or calls to potential participants that do not account for working hours or time-zone differences. 
 
-The easiest random samples to analyze are those in which each member of a population has the same chance of being sampled. In a \term{simple random sample}, each member of the population is directly chosen at random for the sample, with probability the size of the sample divided by the size of the population. Simple random samples are essentially equivalent to how raffles are conducted. For example, if there are 5 prizes available and 100 people each have a single ticket, each person has a 5\% chance (5/100) of being called. In the health plan example, a subset of members might be chosen randomly from the plan membership roster for an interview. \textsl{OpenIntro}, third edition, Section 1.4.2 describes the four most commonly used sampling strategies. The link to the Department of Justice victimization survey describes in detail the design of the sampling plan for this study.
+The easiest random samples to analyze are those in which each member of a population has the same chance of being sampled. In a \term{simple random sample}, each member of the population is directly chosen at random for the sample, with probability the size of the sample divided by the size of the population. Simple random samples are essentially equivalent to how raffles are conducted. For example, if there are 5 prizes available and 100 people each have a single ticket, each person has a 5\% chance (5/100) of being called. In the health plan example, a subset of members might be chosen randomly from the plan membership roster for an interview. \textsl{OpenIntro}, third edition, Section 1.4.2 describes the four most commonly used sampling strategies. 
+
+%The link to the Department of Justice victimization survey describes in detail the design of the sampling plan for this study.
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.70\textwidth]{ch_intro_to_data_oi_biostat/figures/sampleHealthPlan/sampleRandomHealthPlan.png}
+	\includegraphics[width=0.60\textwidth]{ch_intro_to_data_oi_biostat/figures/sampleHealthPlan/sampleRandomHealthPlan.png}
 	\caption{In this graphic, five members are randomly selected from the population to be interviewed.}
 	\label{sampleRandomHealthPlan}
 \end{figure}
@@ -319,14 +333,14 @@ The act of taking a simple random sample helps minimize bias, but bias can arise
 
 \begin{figure}[h]
 	\centering
-	{\includegraphics[width=0.70\textwidth]{ch_intro_to_data_oi_biostat/figures/sampleHealthPlan/sampleNonResponseHealthPlan.png}
+	{\includegraphics[width=0.60\textwidth]{ch_intro_to_data_oi_biostat/figures/sampleHealthPlan/sampleNonResponseHealthPlan.png}
 	\caption{Due to the possibility of non-response, surveys studies may only reach a certain group within the population. For example, a survey written in English may only result in responses from health plan members fluent in English.}}
 	\label{sampleNonResponseHealthPlan}
 \end{figure}
 
 
 \begin{exercise}
-It is increasingly common for health care facilities to follow-up a patient visit with an email providing a link to a website where patients can rate their experience.  Typically, less than 50\% of patients visit the web site.  If half of those who respond indicate a negative experience, do you think that this implies that at least 25\% of patient visits are unsatisfactory?	\footnote{Answers will vary. If our experience is any guide, dissatisfied people to respond more frequently to these informal surveys than satisfied patients.}
+It is increasingly common for health care facilities to follow-up a patient visit with an email providing a link to a website where patients can rate their experience.  Typically, less than 50\% of patients visit the website.  If half of those who respond indicate a negative experience, do you think that this implies that at least 25\% of patient visits are unsatisfactory?\footnote{Answers will vary. If our experience is any guide, dissatisfied people respond more frequently to these informal surveys than satisfied patients.}
 \end{exercise}
 
 \index{sample!random sample|)}
@@ -337,14 +351,14 @@ It is increasingly common for health care facilities to follow-up a patient visi
 
 Experiments and observational studies are the two primary types of study designs used to collect data.
 
-When researchers want to investigate the possibility of a causal connection, they conduct an \term{experiment}. The LEAP study team hypothesized that early exposure to peanut products would reduce the likelihood of an allergy to peanuts by age 5. To find evidence for a causal connection between the explanatory and response variables, researchers randomly assign a sample of individuals to one of two groups.  One group, called the experimental group, receives the intervention (peanut products in LEAP). In the other group, the control group, participants typically receive either a standard approach (avoiding peanut products in LEAP) or may receive either a \term{placebo}, an inert substance with the appearance of the experimental intervention.  Placebos are used to prevent participants from knowing their assigned treatment, but they are not feasible in all studies.
+When researchers want to investigate the possibility of a causal connection, they conduct an \term{experiment}. The LEAP study team hypothesized that early exposure to peanut products would reduce the likelihood of an allergy to peanuts by age 5. To find evidence for a causal connection between the explanatory and response variables, researchers randomly assign a sample of individuals to one of two groups.  One group, called the experimental group, receives the intervention (peanut products in LEAP). In the other group, which is known as the control group), participants typically receive either a standard approach (avoiding peanut products in LEAP) or a \term{placebo}, an inert substance with the appearance of the experimental intervention.  Placebos are used to prevent participants from knowing their assigned treatment, but they are not feasible in all studies.
 
 Scientists conduct an \term{observational study} when they collect data in a way that does not interfere with how the data arise. For instance, to study why certain diseases develop, researchers may collect information through conducting surveys, reviewing medical or company records, or following a \term{cohort} of many similar individuals. In each of these situations, researchers merely observe the data that arise. Observational studies can provide evidence of an association between variables, but they cannot by themselves show a causal connection. In general, causation can only be inferred from a randomized experiment.
 
 \subsection[Experiments]{Experiments}
 \label{experiments}
 
-Studies in which researchers assign treatments to cases are called \termsub{experiments}{experiment}. Randomized experiments, called randomized clinical trials in medicine and the social and behavioral sciences, are an essential tool in research and public policy.  For all but a few exceptional settings,  The US Food and Drug Administration requires that two independently conducted randomized trials confirm that a new drug is safe and effective before it can be marketed,  and the European Medicines Agency has a similar policy.  
+Studies in which researchers assign treatments to cases are called \termsub{experiments}{experiment}. Randomized experiments are an essential tool in research and public policy.\footnote{In medicine, randomized experiments are known as randomized clinical trials.}  For all but a few exceptional settings,  The US Food and Drug Administration requires that two independently conducted randomized trials confirm that a new drug is safe and effective before it can be marketed,  and the European Medicines Agency has a similar policy.  
 
 Randomized experiments are generally built on three principles.
 
@@ -352,9 +366,9 @@ Randomized experiments are generally built on three principles.
 
 \begin{description}
 
-	\item[Control.] Researchers select participants for the study in a way reduces unnecessary variability, doing their best to \term{control} for variables that might make the results difficult to interpret. For instance, participants are selected from individuals who have aspects of a disease or condition that suggests they may benefit from the intervention being studied. All infants enrolled in the LEAP study were required to be between 4 and 11 months of age, with severe eczema and/or allergies to eggs.
+	\item[Control.] Researchers select participants for the study in a way that reduces unnecessary variability, doing their best to \term{control} for variables that might make the results difficult to interpret. For instance, participants are selected from individuals who have aspects of a disease or condition that suggests they may benefit from the intervention being studied. All infants enrolled in the LEAP study were required to be between 4 and 11 months of age, with severe eczema and/or allergies to eggs.
 
-	\item[Randomization.] Researchers randomize patients into treatment groups to account for variables that cannot be controlled. For example, some infants may have been more susceptible to peanut allergies because of an unmeasured genetic condition. Randomly assigning patients to the treatment or control group helps even out such differences between the two groups. In situations where researchers suspect that variables other than the treatment may influence the response, they may first group individuals into \term{blocks} and then, within each block, randomize cases to treatment groups; this technique is referred to as \term{blocking} or \term{stratification}.  In the LEAP study, infants were stratified into two cohorts based on whether or not the child developed a red, swollen mark (a wheal) after a skin test at the time of enrollment. The main analysis of the study analyzed data collected for infants without a wheal after the skin test. Figure~\ref{leapBlocking} illustrates the blocking scheme used in the study. General methods for analyzing blocked data are relatively complicated and will not be covered in this book.
+	\item[Randomization.] Researchers randomize patients into treatment groups to account for variables that cannot be controlled. For example, some infants may have been more susceptible to peanut allergies because of an unmeasured genetic condition. Randomly assigning patients to the treatment or control group helps even out such differences between the two groups. In situations where researchers suspect that variables other than the treatment may influence the response, they may first group individuals into \term{blocks} and then, within each block, randomize cases to treatment groups; this technique is referred to as \term{blocking} or \term{stratification}.  In the LEAP study, infants were stratified into two cohorts based on whether or not the child developed a red, swollen mark (a wheal) after a skin test at the time of enrollment. The main analysis of the study analyzed data collected for infants without a wheal after the skin test. Figure~\ref{leapBlocking} illustrates the blocking scheme used in the study. 
 
 	\item[Replication.] The more cases researchers observe, the more accurately they can estimate the effect of the explanatory variable on the response. In a single study, \term{replication} is accomplished by collecting a sufficiently large sample. The LEAP study randomized a total of 640 infants; 542 infants were in the block without the wheal response. 
 
@@ -378,7 +392,7 @@ Randomized experiments are the gold standard for data collection, but they do no
 
 In 1980, researchers reported the results of a study assessing the efficacy of a new drug used to treat heart attack patients.\footnote{Anturane Reinfarction Trial Research Group. 1980. Sulfinpyrazone in the prevention of sudden death after myocardial infarction. New England Journal of Medicine 302(5):250-256.} Researchers wanted to know whether the drug reduced deaths in patients; in order to draw causal conclusions about the effect of the drug, they designed a randomized experiment in which study volunteers were randomly assigned to one of two study groups.\footnote{Human subjects are often called \term{volunteers}, or \term{study participants}.} The \term{treatment group} received the drug; the \term{control group} did not receive any drug treatment.
 
-Typically, researchers do not want patients to know which group they are in. The emotional response of a patient who knows they are either receiving or not receiving a potentially helpful new drug may cause different behavior between the two groups. In order to eliminate this source of bias from the study, researchers conduct a \term{blinded} study in which patients are kept uninformed about their treatment. Patients in the control group, instead of being given a drug, are given an inert substance called a \term{placebo}. An effective placebo is the key to making a study truly blind. A placebo may often result in a slight but real improvement in patients; this effect is referred to as the \term{placebo~effect}.\footnote{Kaptchuk, TJ and Miller, FG. 2015.Placebo effects in medicine, New England Journal of Medicine, 373(1):8-9.}
+Typically, researchers do not want patients to know which group they are in. The emotional response of a patient who knows they are either receiving or not receiving a potentially helpful new drug may cause different behavior between the two groups. In order to eliminate this source of bias from the study, researchers conduct a \term{blinded} study in which patients are kept uninformed about their treatment. Patients in the control group, instead of being given a drug, are given an inert substance called a \term{placebo}. An effective placebo is the key to making a study truly blind. A placebo may often result in a slight but real improvement in patients; this effect is referred to as the \term{placebo~effect}.\footnote{Kaptchuk, TJ and FG Miller. Placebo effects in medicine. \textit{New England Journal of Medicine} 2015, 373(1):8-9.}
 
 The patients are not the only ones who should be blinded: doctors and researchers can accidentally bias a study. For example, out of concern for potential side effects of a new drug, a doctor might inadvertently give a patient in the treatment group more attention and care than they would to a patient known to be taking a placebo. To guard against this bias, which has also been found to have a measurable effect, many modern studies use a \term{double-blind} design in which doctors who interact with patients are, just like the patients, unaware of who is or is not receiving the experimental treatment.\footnote{There are always some researchers involved in the study who do know which patients are receiving which treatment. However, they do not directly interact with patients and do not tell the blinded health care professionals who is receiving which treatment.}
 
@@ -388,7 +402,7 @@ The patients are not the only ones who should be blinded: doctors and researcher
 
 \subsection{Observational studies}
 
-While experiments require researchers to assign the primary explanatory variable (i.e., the intervention) to each subject, in observational studies researchers simply observe selected potential explanatory and response variables. Participants who differ in important explanatory variables may also differ in other ways that influence response.  Observational studies of obesity have shown that obese individuals tend to die sooner that individuals with normal weight, but obese individuals usually have other health behaviors that influence life expectancy, such as reduced exercise. Making causal conclusions based on experiments is often reasonable; however, making the same causal conclusions solely based on observational data should be avoided. 
+Experiments require researchers to assign the primary explanatory variable (i.e., the intervention) to each subject; for observational studies, researchers simply observe selected potential explanatory and response variables. Participants who differ in important explanatory variables may also differ in other ways that influence response.  Observational studies of obesity have shown that obese individuals tend to die sooner that individuals with normal weight, but obese individuals usually have other health behaviors that influence life expectancy, such as reduced exercise. Making causal conclusions based on experiments is often reasonable; however, making the same causal conclusions solely based on observational data should be avoided. 
 
 Suppose an observational study tracked sunscreen use and skin cancer, finding that the more sunscreen a person uses, the more likely they are to have skin cancer. However, this does not mean that sunscreen \emph{causes} skin cancer. One important piece of missing information is sun exposure -- if someone is out in the sun all day, they are both more likely to use sunscreen and to get skin cancer. Sun exposure is a  \term{confounding variable}: a variable correlated with both the explanatory and response variables.\footnote{Also called a \term{lurking variable}, \term{confounding factor}, or a \term{confounder}.} There is no guarantee that all confounding variables can be examined or measured; as a result, it is difficult to justify making causal conclusions from observational studies. 
 % Some studies:
@@ -401,12 +415,12 @@ Suppose an observational study tracked sunscreen use and skin cancer, finding th
 	\includegraphics[height=1.25in]{ch_intro_to_data_oi_biostat/figures/variables/confoundingVariable.png}
 \end{center}
 
-Observational studies can reveal interesting patterns or important associations useful for designing follow-up experiments. Several observational studies based on dietary data from different countries showed a strong association between dietary fat and breast cancer in women.  These observations were the basis for The Women's Health Initiative (WHI), a large randomized trial sponsored by the US NIH.  In the WHI, women were randomized to standard vs low fat diets, and the previously observed association was not confirmed.  \textit{If we keep this example, we need references.}
+Observational studies can reveal interesting patterns or important associations useful for designing follow-up experiments. Several observational studies based on dietary data from different countries showed a strong association between dietary fat and breast cancer in women.  These observations were the basis for The Women's Health Initiative (WHI), a large randomized trial sponsored by the US NIH.  In the WHI, women were randomized to standard vs low fat diets, and the previously observed association was not confirmed.  \textit{DH: If we keep this example, we need references.}
 
-Observational studies can be either prospective or retrospective. A \term{prospective study} identifies participants and collects information at scheduled times or as events unfold. For instance, medical researchers may identify and follow a group of similar individuals over many years to assess the possible influences of behavior on cancer risk. One example of such a study is The Nurses' Health Study, started in 1976 and expanded in 1989.\footnote{\texttt{\oiRedirect{textbook-channing_nurse_study}{www.channing.harvard.edu/nhs}}} This prospective study recruits registered nurses and then collects data using questionnaires. \termsub{Retrospective studies}{retrospective studies} collect data after events have taken place, e.g. researchers may review past events in medical records. Some datasets may contain both prospectively- and retrospectively-collected variables. The Cancer Care Outcomes Research and Surveillance Consortium (CanCORS)\footnote{Ayanian, John Z., et al. "Understanding cancer treatment and outcomes: the cancer care outcomes research and surveillance consortium." Journal of Clinical Oncology 22.15 (2004): 2992-2996} enrolled participants with lung or colorectal cancer, collected information about diagnosis, treatment and previous health behavior, but also maintained contact with participants to gather data about long term outcomes.  
+Observational studies can be either prospective or retrospective. A \term{prospective study} identifies participants and collects information at scheduled times or as events unfold. For instance, medical researchers may identify and follow a group of similar individuals over many years to assess the possible influences of behavior on cancer risk. One example of such a study is The Nurses' Health Study, started in 1976 and expanded in 1989.\footnote{\texttt{\oiRedirect{textbook-channing_nurse_study}{www.channing.harvard.edu/nhs}}} This prospective study recruits registered nurses and then collects data using questionnaires. \termsub{Retrospective studies}{retrospective studies} collect data after events have taken place, e.g. researchers may review past events in medical records. Some datasets may contain both prospectively- and retrospectively-collected variables. The Cancer Care Outcomes Research and Surveillance Consortium (CanCORS) enrolled participants with lung or colorectal cancer, collected information about diagnosis, treatment and previous health behavior, but also maintained contact with participants to gather data about long term outcomes.\footnote{Ayanian, John Z., et al. "Understanding cancer treatment and outcomes: the cancer care outcomes research and surveillance consortium." Journal of Clinical Oncology 22.15 (2004): 2992-2996}  
 
 
-\subsection{Four sampling methods (special topic)}
+\subsection{Sampling methods}
 
 \textit{To be inserted in a subsequent draft.}
 
@@ -452,7 +466,7 @@ A simple random sample would likely draw individuals from all 30 villages, which
 
 \end{comment}
 
-\section[Examining numerical data]{Examining numerical data}
+\section[Numerical data]{Numerical data}
 \label{numericalData}
 
 \index{data!frog|(}
@@ -462,7 +476,7 @@ This section introduces techniques for exploring and summarizing numerical varia
 \subsection{Measures of center: mean and median}
 \label{measuresOfCenter}
 
-The \term{mean}, sometimes called the \indexthis{average}{mean!average}, is a common way to measure the center of a \term{distribution} of data. To find the average clutch volume for the observed egg clutches, we add up all the clutch volumes and divide by the total number of clutches. For computational convenience, the volumes are rounded to the first~decimal.
+The \term{mean}, sometimes called the \indexthis{average}{mean!average}, is a common way to measure the center of a \term{distribution} of data. To find the average clutch volume for the observed egg clutches, we add all the clutch volumes and divide by the total number of clutches. For computational convenience, the volumes are rounded to the first~decimal.
 \begin{eqnarray}
 \overline{x} = \frac{177.8 + 257.0 + \cdots + 933.3}{431} = 882.5\ \textrm{mm}^{3}
 \label{sampleMeanEquation}
@@ -487,12 +501,8 @@ $n$\\\footnotesize sample size}\vspace{-2mm}
 
 The \term{median} is another measure of center; it is the middle number in a distribution after the values have been ordered from smallest to largest. If the distribution contains an even number of observations, the median is the average of the middle two observations. There are 431 clutches in the dataset, so the median is the clutch volume of the $216^{th}$ observation in the sorted values of \var{clutch.volume}: $831.8\ \textrm{mm}^{3}$.
 
-
-
-
 \subsection{Measures of spread: standard deviation and interquartile range}
 \label{measuresOfSpread}
-
 
 The standard deviation measures (approximately) the distance between a typical observation and the mean. The distance of an observation from its mean its \term{deviation}. Below are the deviations for the $1^{st}$, $2^{nd}$, $3^{rd}$, and $431^{th}$ observations in the \var{clutch.volume} variable. For computational convenience, clutch volume is rounded to the first decimal.
 
@@ -617,11 +627,11 @@ Dot plots show the exact value of each observation; while this is useful for sma
 
 Histograms provide a view of the \term{data density}. Higher bars indicate more frequent observations, while lower bars represent relatively rare observations. For instance, there are many more egg clutches with volumes smaller than 1,500 $\textrm{mm}^{3}$ than clutches with larger volumes. The bars make it easy to see how the density of the data changes with clutch volume.
 
-Histograms are especially convenient for describing the shape of the data distribution\label{shapeFirstDiscussed}. Figure~\ref{frogHist} shows that most clutches have a relatively small volume, while fewer clutches are very large. When data trail off to the right, with a long right \hiddenterm{tail}\index{skew!tail}, the data are said to be \termsub{right skewed}{skew!right skewed}.\footnote{Other ways to describe data that are skewed to the right: \termni{skewed to the right}, \termni{skewed to the high end}, or \termni{skewed to the positive end}.} Data with the reverse characteristic -- a long, thin tail to the left -- are said to be \termsub{left skewed}{skew!left skewed}. Right and left skewing are examples of asymmetry.  The term \term{symmetric} is used to describe data that show roughly equal trailing off in both directions.
+Histograms are especially convenient for describing the shape of the data distribution\label{shapeFirstDiscussed}. Figure~\ref{frogHist} shows that most clutches have a relatively small volume, while few clutches are very large. When data trail off to the right, with a long right \hiddenterm{tail}\index{skew!tail}, the data are said to be \termsub{right skewed}{skew!right skewed}.\footnote{Other ways to describe data that are skewed to the right: \termni{skewed to the right}, \termni{skewed to the high end}, or \termni{skewed to the positive end}.} Data with the reverse characteristic -- a long, thin tail to the left -- are said to be \termsub{left skewed}{skew!left skewed}. Right and left skewing are examples of asymmetry.  The term \term{symmetric} is used to describe data that show roughly equal trailing off in both directions.
 
 The mean and standard deviation have a convenient interpretation in symmetric distributions.  Usually about 70\% of the data are within 1 standard deviation of the mean and 95\% are within 2 standard deviations, so simple numerical summaries provide approximate information on where the majority of the data are located.  This approximation, also known as the \term{empirical rule}, is not accurate for skewed distributions.  The empirical rule is discussed in more detail in Chapter 3, where it arises naturally for bell-shaped distributions.
 
-A \term{mode} is represented by a prominent peak in the distribution.\footnote{Another definition of mode, which is not typically used in statistics, is the value with the most occurrences. It is common to have \emph{no} observations with the same value in a data set, which makes this other definition impractical for many datasets.} Figure~\ref{singleBiMultiModalPlots} shows histograms that have one, two, or three prominent peaks. Such distributions are called \termsub{unimodal}{modality!unimodal}, \termsub{bimodal}{modality!bimodal}, and \termsub{multimodal}{modality!multimodal}, respectively. Any distribution with more than two prominent peaks is called multimodal. Notice that there was one prominent peak in the unimodal distribution with a second less prominent peak that was not counted since it only differs from its neighboring bins by a few observations. Prominent is a subjective term, of course, but it is usually clear in a histogram where the prominent peaks are.  
+A \term{mode} is represented by a prominent peak in the distribution.\footnote{Another definition of mode, which is not typically used in statistics, is the value with the most occurrences. It is common to have \emph{no} observations with the same value in a data set, which makes this other definition impractical for many datasets.} Figure~\ref{singleBiMultiModalPlots} shows histograms that have one, two, or three major peaks. Such distributions are called \termsub{unimodal}{modality!unimodal}, \termsub{bimodal}{modality!bimodal}, and \termsub{multimodal}{modality!multimodal}, respectively. Any distribution with more than two prominent peaks is called multimodal. Note that the less prominent peak in the unimodal distribution was not counted since it only differs from its neighboring bins by a few observations. Prominent is a subjective term, of course, but it is usually clear in a histogram where the major peaks are.  
 
 
 \begin{figure}[h]
@@ -667,9 +677,7 @@ The variables \var{clutch.volume} and \var{body.size} are said to be \term{assoc
 \index{data!frog|)}
 \index{data!famuss|(}
 
-Figure~\ref{famussHeightWeight} shows the relationship between \var{height} and \var{weight} for participants in the FAMuSS study.  Each point on the plot represents a participant. As expected, taller participants tend to be heavier, so the variables \var{height} and \var{weight} are positively associated.  
-
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
 \includegraphics[width=0.8\textwidth]
 {ch_intro_to_data_oi_biostat/figures/famussHeightWeight/famussHeightWeight}
@@ -677,9 +685,11 @@ Figure~\ref{famussHeightWeight} shows the relationship between \var{height} and 
 \label{famussHeightWeight}
 \end{figure}
 
+Figure~\ref{famussHeightWeight} shows the relationship between \var{height} and \var{weight} for participants in the FAMuSS study.  Each point on the plot represents a participant. As expected, taller participants tend to be heavier, so the variables \var{height} and \var{weight} are positively associated.  
+
 Taller people naturally tend to be heavier; as a consequence, weight itself is not a good measure of whether someone is overweight. Body mass index (BMI) is a measure of weight that is less affected by a person's height. A BMI of 30 or above is considered overweight.\footnote{\url{http://www.nhlbi.nih.gov/health/educational/lose_wt/risk.htm}} In the metric system, BMI is calculated as weight in kilograms (kg) divided by height squared ($\textrm {m}^{2}$). If height and weight are measured in inches and pounds, as in the \data{famuss} data, then BMI is weight in pounds (lb) divided by height squared ($\textrm {in}^{2}$), then multiplied by 703. The \data{famuss} data includes the variable \var{bmi} for each participant, and Figure~\ref{famussHeightBmi} shows the relationship between \var{height} and \var{bmi}. The strong upward trend in Figure~\ref{famussHeightWeight} is no longer evident, indicating that \var{height} and \var{bmi} have a much weaker association. For this reason, health agencies such as the US NIH and the World Health Organization (WHO) use BMI as a measure of obesity. 
 
-\begin{figure}
+\begin{figure}[h!]
 \centering
 \includegraphics[width=0.8\textwidth]
 {ch_intro_to_data_oi_biostat/figures/famussHeightBmi/famussHeightBmi.pdf}
@@ -692,10 +702,9 @@ If two variables are not associated, then they are said to be \term{independent}
 
 \index{data!famuss|)}
 
-Not all associations are linear.  In fact, some can be highly nonlinear, relationships in which clearly do not scatter about a straight line.  Figure~\ref{incomeLifeExpectancy} shows the relationship between annual per capita income and life expectancy for 248 country in 2012. Income is measured in US dollars (adjusted for purchasing power in a country) and the average expected life for children born in 2012.   The figure shows clearly that small when income is low, small increases in per capita income are associated with relatively large changes in life expectancy.  When per capita income exceeds approximately \$20,000 per year, increases in income are associated with smaller gains in life expectancy.
+Not all associations are linear. In fact, some can be highly nonlinear, in which data clearly do not scatter about a straight line. Figure~\ref{incomeLifeExpectancy} shows the relationship between annual per capita income and life expectancy for 248 countries in 2012. Income, as measured in US dollars (and adjusted for purchasing power in a country) is plotted on the x-axis; the average expected lifespan for children born in 2012 is shown in years on the y-axis. When income is low, small increases in per capita income are associated with relatively large changes in life expectancy. However, once per capita income exceeds approximately \$20,000 per year, increases in income are associated with smaller gains in life expectancy.
 
-
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.8\textwidth]
 {ch_intro_to_data_oi_biostat/figures/incomeLifeExpectancy/incomeLifeExpectancy.pdf}
@@ -703,24 +712,22 @@ Not all associations are linear.  In fact, some can be highly nonlinear, relatio
 \label{incomeLifeExpectancy}
 \end{figure}
 
-\textit{JV: if we keep this example, the plot will have to be formatted and I should add the country to the data set.  I have more information in older stat 100 files}
+\textit{DH: If we keep this example, the plot will have to be formatted and I should add the country to the data set.  I have more information in older stat 100 files. JV: We should also remember to index the data.}
 
 
-\subsection{Transforming data (special topic)}
+\subsection{Transforming data}
 \label{transformingDataSubsection}
 
 \index{data!frog|(}
 
 
-Scientists sometimes transform strongly skewed data for several reasons. A \term{transformation} is a rescaling of the data using a function.  When the values of a variable are clustered near zero (relative to the larger values in the data set) and all observations are positive, a natural log transformation can clarify the features of a variable or the nature of a relationship\footnote{In statistics, the natural logarithm is usually written $\log$. In other settings it is sometimes written as  $\ln$.}. 
+A \term{transformation} is a rescaling of data using a function. Transforming data can be a useful tool, particularly when working with strongly skewed data. If the values of a variable are clustered near zero (relative to the larger values in the dataset) and all observations are positive, a natural log transformation can clarify the features of a variable or the nature of a relationship.\footnote{In statistics, the natural logarithm is usually written $\log$. In other settings it is sometimes written as  $\ln$.}
 
-Income data are often skewed right, when measured either at the individual level or by country.  Typically, there are large clusters of low to moderate income, and a few large incomes that are outliers. The histogram of per capita incomes used for the horizontal axis in figure~\ref{incomeLifeExpectancy} is shown in Figure~\ref{incomeHistReg}. In the original scale, mean \var{income} is 14,428 (\$14,428 in US dollars) and with standard deviation \$16,391.  The empirical rule could not be used with the data on this scale, because even 1 standard deviation below the mean drops below 0. Figure~\ref{incomeHistLog} shows a plot of the $\log$ of per capita income. The $\log$ transformed data is more nearly symmetric. When a transformation has induced approximate symmetry, the empirical rule can be used to make approximate statements about the location of the transformed data, which can then be transformed back to the original scale.  On the $\log$ transformed scale, the mean $\log(income)$ is 8.86, with standard deviation 1.33.
+For example, income data are often skewed right, when measured either at the individual level or by country. Typically, there are large clusters of low to moderate income, with a few large incomes that are outliers. The histogram of per capita incomes used for the horizontal axis in figure~\ref{incomeLifeExpectancy} is shown in Figure~\ref{incomeHistReg}. On the original scale, mean \var{income} is 14,428 (\$14,428 in US dollars), with standard deviation \$16,391.  The empirical rule could not be used with the data on this scale, because even one standard deviation below the mean drops below 0. Figure~\ref{incomeHistLog} shows a plot of the $\log$ of per capita income. The $\log$ transformed data is more nearly symmetric. When a transformation has induced approximate symmetry, the empirical rule can be used to make approximate statements about the location of the transformed data, which can then be transformed back to the original scale.  On the $\log$ transformed scale, the mean $\log$(income) is 8.86, with standard deviation 1.33.
 
-\textit{expand on this by showing empirical rule in a plot (possibly), and calculating the middle 95\% of the log income, then transforming back to original scale.  I have added the empirical rule earlier in the chapter, but without a figure}
+\textit{DH: expand on this by showing empirical rule in a plot (possibly), and calculating the middle 95\% of the log income, then transforming back to original scale.  I have added the empirical rule earlier in the chapter, but without a figure}
 
-\textit{add discussion about value of the two scales}
-
-
+\textit{DH: add discussion about value of the two scales}
 
 \begin{figure}[ht]
 \centering
@@ -738,23 +745,15 @@ Income data are often skewed right, when measured either at the individual level
 \label{incomeHistTransform}
 \end{figure}
 
-
-
-
-
-
-Transformations can also used on one or both variables when exploring a relationship Figure~\ref{logIncomeLifeExpectancy} is a scatterplot of \var{log(income)} vs. \var{log(life.expectancy)}, and shows that after a log transformation for both variables, the relationship is more nearly linear.  Some statistical models are based on the assumption of an approximate linear relationship, and transformations like the log transformation will be used later when examining variables like income and life.expectancy more closely.
-
+Transformations can also be used on both variables when exploring a relationship. Figure~\ref{incomeLifeExpectancyLog} shows that after a log transformation for both \var{income} and \var{life.expectancy}, the relationship is more nearly linear.  Some statistical models are based on the assumption of an approximate linear relationship, and transformations like the log transformation will be used later when examining variables like income and life expectancy more closely.
 
 \begin{figure}
 \centering
 \includegraphics[width=0.8\textwidth]
-{ch_intro_to_data_oi_biostat/figures/logIncomeLifeExpectancy/logIncomeLifeExpectancy.pdf}
+{ch_intro_to_data_oi_biostat/figures/incomeLifeExpectancyLog/incomeLifeExpectancyLog.pdf}
 \caption{A scatterplot showing \var{log(income)} (horizontal axis) vs.  \var{log(life.expectancy)} (vertical axis).} 
-\label{logIncomeLifeExpectancy}
+\label{incomeLifeExpectancyLog}
 \end{figure}
-
-
 
 
 \begin{comment}
@@ -780,9 +779,9 @@ from the JV discussion of the frog data
 
 \end{comment}
 
-Transformations other than the logarithm can be useful, too. For instance, the square root ($\sqrt{\text{original observation}}$) and inverse ($\frac{1}{\text{original observation}}$) are sometimes used. Common goals in transforming data are to see the data structure differently, reduce skew, assist in modeling, or straighten a nonlinear relationship in a scatterplot.
+Transformations other than the logarithm can be useful as well. For instance, the square root ($\sqrt{\text{original observation}}$) and inverse ($\frac{1}{\text{original observation}}$) are sometimes used. Common goals in transforming data are to see the data structure differently, reduce skew, assist in modeling, or straighten a nonlinear relationship in a scatterplot.
 
-\index{data!frog|)}
+%\index{data!frog|)}
 
 \textC{\newpage}
 
@@ -856,7 +855,7 @@ Row and column totals, known collectively as \term{marginal totals}, are also in
 \end{table}
 %library(xtable); data(famuss); genotype.by.race.table = addmargins(table(famuss$race, famuss$actn3.r577x)); xtable(genotype.by.race.table, digits = 0, caption = "A contingency table for race and actn3.r577x.", label = "famussContingencyTable")
 
-\textit{JV: Not sure how they added the variable labels to their table. I have left the OI tables and code in the source.  DH: look at their source.  The created a table first (called tab) that added the var names, then applied xtable to that.  I can do it later if you like}
+\textit{JV: Not sure how they added the variable labels to their table. I have left the OI tables and code in the source.  DH: look at their source.  The created a table first (called tab) that added the var names, then applied xtable to that.  I can do it later if you like. JV: I must not be doing something right, I get a "subscript out of bounds" error.}
 
 \begin{comment}
 \begin{table}[ht]
