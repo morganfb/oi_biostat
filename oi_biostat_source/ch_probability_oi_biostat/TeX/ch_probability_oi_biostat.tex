@@ -1038,7 +1038,7 @@ Once each of these probabilities are identified, they can be applied directly wi
 
 
 %_________________
-\section{Random variables (special topic)}
+\section{Random variables}
 \label{randomVariablesSection}
 
 \index{random variable|(}
@@ -1100,7 +1100,7 @@ The hypothetical clinical study at the beginning of this section raised the ques
 Just like distributions of data, distributions of random variables have means, variances, standard deviations, medians, etc., but these characteristics of random variables are computed differently.  To calculate the mean of a random variable, add each multiply each possible value by its corresponding probability and add these products.  The mean of a random variable is called its \term{expected value} and written $E(X)$. the term is well-chosen -- it is the value one would expect to see if the variable were to be observed. For the variable $X$ in the last section,
 
 \begin{align*}
-E(X) &= (0)(P(X=0)) + (1)(P(X=137)) + (2)(P(X=2)) + (3)(P(X = 3)) \\
+E(X) &= (0)(P(X=0)) + (1)(P(X=1)) + (2)(P(X=2)) + (3)(P(X = 3)) \\
 	&= (0))(1/8) + (1)(3/8) + (2)(3/8) + (3)(1/8) = 12/8 = 1.5
 \end{align*}
 
@@ -1112,7 +1112,7 @@ E(X) 	&= x_1\times P(X=x_1) + \cdots + x_k\times P(X=x_k) \notag \\
 \end{align}
 The Greek letter $\mu$\index{Greek!mu ($\mu$)} may be used in place of the notation $E(X)$.}
 \end{termBox}
-The expected value for a random variable represents the average outcome. For example, $E(X)=1.5$ represents the average number of heads in three tosses of a coin, if the three tosses were repeated many times; this is also written $\mu=1.5$.
+The expected value for a random variable represents the average outcome. For example, $E(X)=1.5$ represents the average number of heads in three tosses of a coin, if the three tosses were repeated many times; this is also written $\mu=1.5$.  It often happens with discrete random variables that the expected value is not one of possible outcomes of the variable.
 
 The expected value of a random variable has the same interpretation as a mean in a dataset.  The distribution can be represented by a series of weights at each outcome, and the mean represents the balancing point.
 
@@ -1122,6 +1122,58 @@ The expected value of a random variable has the same interpretation as a mean in
 
 \subsection{Variability in random variables}
 
+How variable will the outcomes be when tossing a coin three times?  The \indexthis{variance}{variance} and \indexthis{standard deviation}{standard deviation} can be used to describe the variability of a random variable. Section~\ref{variability}
+introduced a method for finding the variance and standard deviation for a data set. We first computed deviations from the mean ($x_i - \mu$), squared those deviations, and took an average to get the variance. In the case of a random variable, we again compute squared deviations. However, we take their sum weighted by their corresponding probabilities, just like we did for the expectation. This weighted sum of squared deviations equals the variance, and we calculate the standard deviation by taking the square root of the variance, just as we did in Section~\ref{variability}.
 
+\begin{termBox}{\tBoxTitle{General variance formula}
+If $X$ takes outcomes $x_1$, ..., $x_k$ with probabilities $P(X=x_1)$, ..., $P(X=x_k)$ and expected value $\mu=E(X)$, then the variance of $X$, denoted by $\text{Var}(X)$ or the symbol $\sigma^2$, is
+\begin{align}
+\sigma^2 &= (x_1-\mu)^2\times P(X=x_1) + \cdots \notag \\
+	& \qquad\quad\cdots+ (x_k-\mu)^2\times P(X=x_k) \notag \\
+	&= \sum_{j=1}^{k} (x_j - \mu)^2 P(X=x_j)
+\end{align}
+The standard deviation of $X$, labeled $\sigma$\index{Greek!sigma ($\sigma$)}, is the square root of the variance.}
+\end{termBox}
+\marginpar[\raggedright\vspace{-47mm}
+
+$\text{Var}(X)$\vspace{1mm}\\\footnotesize Variance\\of $X$]{\raggedright\vspace{-47mm}
+
+$\text{Var}(X)$\vspace{1mm}\\\footnotesize Variance\\of $X$}
+
+
+%%%%%% ended here, 8 Oct 2015, 17:00
+
+\begin{example}{Compute the variance and standard deviation of $X$, the number of heads in three tosses of a coin.}
+%% do this directly, skipping the table.  After this example, do a more difficult one, perhaps profitability of health care or grades in Stat 102 last year.  Hospital CEO may construct a building.	
+	
+It is helpful to construct a table that holds computations for each outcome separately, then add up the results.  Since $E(X)$ is used the calculation of the variance, that calculation is added to the table, using decimals instead of fractions
+\begin{center}
+\begin{tabular}{l rrrr r}
+\hline
+$i$ & 1 & 2 & 3 & 4 & Total \\
+\hline
+$x_i$ & \$0 & 1 & 2 & 3 &  \\
+$P(X=x_i)$ & 0.20 & 0.55 & 0.25 &  \\
+$x_i \times  P(X=x_i)$ & 0 & 75.35 & 42.50 & 117.85 \\
+\hline
+\end{tabular}
+\end{center}
+Thus, the expected value is $\mu=117.85$, which we computed earlier. The variance can be constructed by extending this table:
+\begin{center}
+\begin{tabular}{l rrr r}
+\hline
+$i$ & 1 & 2 & 3 & Total \\
+\hline
+$x_i$ & \$0 & \$137 & \$170 &  \\
+$P(X=x_i)$ & 0.20 & 0.55 & 0.25 &  \\
+$x_i \times  P(X=x_i)$ & 0 & 75.35 & 42.50 & 117.85 \\
+$x_i - \mu$ & -117.85 & 19.15 & 52.15 &  \\
+$(x_i-\mu)^2$ & 13888.62 &  366.72 & 2719.62 &  \\
+$(x_i-\mu)^2\times P(X=x_i)$ & 2777.7 & 201.7 & 679.9 & 3659.3 \\
+\hline
+\end{tabular}
+\end{center}
+The variance of $X$ is $\sigma^2 = 3659.3$, which means the standard deviation is $\sigma = \sqrt{3659.3} = \$60.49$.
+\end{example}
 
 \end{doublespace}
