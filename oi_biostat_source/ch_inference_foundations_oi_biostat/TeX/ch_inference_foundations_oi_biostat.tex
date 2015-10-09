@@ -1,9 +1,9 @@
 \chapter{Foundations for inference} 
 \label{foundationsForInference}
 
-Imagine the United States Center for Disease Control and Prevention (CDC) influencing policy makers in curbing the national obesity problem. The members of the CDC's Division of Nutrition, Physical Activity, and Obesity (DNPAO) "focus on policy and environmental strategies to make healthy eating and active living accessible and affordable for everyone." \footnote{\url{http://www.cdc.gov/obesity/}} Before they give policy suggestions, however, the DNPAO must first diagnose this problem of obesity in the United States. One metric that these scientists would consider could be a person's Body Mass Index, also known as BMI. A person's BMI has been a helpful tool to capture both a person's height and weight within one measurement. BMI can also be used as a measure of body fat with a high BMI as an indicator for high body fat. In medicine, BMI is used to categorize a person as "underweight," "overweight" or "obese." 
+The United States Center for Disease Control and Prevention (CDC) focuses "on policy and environmental strategies to make healthy eating and active living accessible and affordable for everyone." \footnote{\url{http://www.cdc.gov/obesity/}}. One of the CDC's main priorities is understanding national obesity. A person's Body Mass Index, also known as BMI, captures both a person's height and weight within one measurement --a high BMI is an indicator for high body fate. In medicine, BMI categorizes a person as "underweight," "overweight" or "obese." 
 
-These policy makers are interested in a couple of questions. What is the average population BMI for all adults in the United States? Instead of providing a single number, what is a plausible range values for the average BMI in the United States? Finally using the categorization of BMI values and ranges that the World Health Organization (WHO) provides, noting that it disregards muscularity, is the average BMI in the United States considered an average healthy BMI? Below is a categorization of BMI values and ranges
+These policy makers are interested in a couple of questions. What is the average population BMI for all adults in the United States? Instead of providing a single number, can the CDC provide a reasonable range for the average adult BMI in the United States? Finally using the range of BMI values that the World Health Organization (WHO) provides, is the average adult BMI in the United States considered healthy? Below is a categorization of BMI values and ranges
 \footnote{\url{http://apps.who.int/bmi/index.jsp?introPage=intro_3.html}}
 
 \begin{center}
@@ -23,15 +23,17 @@ Obese & $\geq30$\tabularnewline
 \end{tabular}
 \end{center}
 
-These questions encompass the broader idea of statistical inference covered in Chapter \ref{foundationsForInference}. Inference is a set of tools used to estimate properties or parameters about a population after observing a sample from the population. Inference also allows for different levels of quality or confidence of these parameter estimates. Once the parameter estimate is calculated, the average BMI in the United States for example, scientists can ask how confident they are that this estimate is representative of the greater population of the US. For example, a classic inferential question is, ``How likely is it that the estimated mean, $\bar{x}$, is near the population mean, $\mu$?'' Statistical inference includes asking these questions but also determining which estimates to use.
+These questions encompass the broader idea of statistical inference covered in Chapter \ref{foundationsForInference}. Inference is a set of tools used to estimate properties about a population after observing a sample. Inference allows for different levels of confidence for these property estimates. Once the estimate for the average adult BMI in the United States is calculated, scientists can ask how confident are they that this estimate is representative of the greater population of the US. For example, a classic inferential question is, ``How likely is it that the estimated mean, $\bar{x}$, is near the population mean, $\mu$?'' Statistical inference includes asking these questions but also determining which estimates to use.
 
-Chapter \ref {foundationsForInference} provides the groundwork for inference on a larger population from observing one sample, and later chapters will cover inference comparing two or more distinct populations. While the equations and details change depending on the setting, the foundations and general procedures for inference are the same throughout statistics. Understanding the foundation with point estimates in this chapter will provide familiarity for upcoming chapters. 
+Chapter \ref {foundationsForInference} provides the groundwork for inference on a larger population from observing one sample. Later chapters will cover inference comparing two or more distinct populations. While the equations and details change depending on the setting, the foundations and general procedures for inference are the same throughout statistics. Understanding the foundation using one sample in this chapter will provide familiarity for upcoming chapters. 
 
-After looking at the data in Section \ref{brfssData} that the CDC could use in making these inferences, section \ref{variabilityInEstimates} will provide an introduction to point estimates, the sampling distribution that these estimates are drawn from, and the variability of these estimates. Section \ref{confidenceIntervals} will present tools to incorporate this variability. Rather than a single value, these policy makers can provide, instead, a range of values that they believe are likely estimates. Researchers could also want to compare the values they observe to some benchmark they believe in. Hypothesis testing in Section \ref{hypothesisTesting} allows the researchers use point estimates for comparisons while still encompassing the variability that confidence intervals provide. The hypothesis testing framework gives us structure to do so and uses the same moving parts as a confidence interval. 
+Section \ref{brfssData} introduces a potential dataset that the CDC would use to answer the above questions. Section \ref{variabilityInEstimates} provides an introduction to point estimates, the distribution that these estimates are drawn from, and the variability within these estimates. Section \ref{confidenceIntervals} presents the concept of a confidence interval -- a range of values that incorporate variability. Finally Section \ref{hypothesisTesting} introduces hypothesis testing, allowing researchers to compare an observed point estimate to a benchmark. The hypothesis testing framework provides structure to encompass variability and uses the same moving parts as the calculation for a confidence interval. The subsequent sections provide additional insight into general inference tools.
 
 \section{BRFSS Data}
 \label{brfssData}
-The Behavioral Risk Factor Surveillance System (BRFSS), organized by the CDC, was started in 1984 and is the world's largest on-going telephone health survey system. This survey is nationwide and aims to "monitor state-level prevalence of major behavioral risks among adults associated with premature morbidity and mortality." \footnote{\url{http://www.cdc.gov/brfss/about/about_brfss.htm}} Topics like smoking, alcohol use, diet and exercise are included in this questionnaire. The annual survey data from 2000, \data{BRFSS}, includes records on 289 variables and could be used to estimate the average BMI of the US population. The variables that we are particularly interested in with calculating BMI are listed in Table  ~\ref{brfssBMIVariables}. 
+The Behavioral Risk Factor Surveillance System (BRFSS), organized by the CDC, was started in 1984 and is the world's largest on-going telephone health survey system. This survey is nationwide and aims to "monitor state-level prevalence of major behavioral risks among adults associated with premature morbidity and mortality." \footnote{\url{http://www.cdc.gov/brfss/about/about_brfss.htm}} Topics like smoking, alcohol use, diet and exercise are included in this questionnaire. The annual survey data from 2000, \data{BRFSS}, could be used to estimate the average adult BMI of the US population. The four variables\footnote{There are a total of 289 variables in the dataset.} that the CDC is particularly interested in when calculating BMI are listed in Table  ~\ref{brfssBMIVariables}. 
+
+
 \begin{comment} http://www.cdc.gov/brfss/annual_data/annual_2000.htm#information\end{comment}
 \begin{table}[h]
 \centering\small
@@ -48,15 +50,15 @@ The Behavioral Risk Factor Surveillance System (BRFSS), organized by the CDC, wa
 \label{brfssBMIVariables}
 \end{table}
 
-The calculation of a BMI index from weight and height using both Metric and Imperial is \[BMI=\frac{\mathrm{weight_{kg}}}{\mathrm{height_{m}}^2}=\frac{\mathrm{weight_{lb}}}{\mathrm{height_{in}}^2}\cdot 703\]
+BMI is not one of the listed variables. However BMI is calculated from a person's height and weight. The calculation of a BMI index using both Metric and Imperial is \[BMI=\frac{\mathrm{weight_{kg}}}{\mathrm{height_{m}}^2}=\frac{\mathrm{weight_{lb}}}{\mathrm{height_{in}}^2}\cdot 703\]
 where $\mathrm{weight_{kg}}$ and $\mathrm{height_{m}}$ is the weight and height measured in kilograms and meters respectively while $\mathrm{weight_{lb}}$ and $\mathrm{height_{in}}$ is the weight and height in pounds and inches respectively. 
 
-The heights and weights from the \data{BRFSS} data can be used to calculate BMI values for each person in the sample. Thus, each person's BMI value will be considered a single observation. The \data{BRFSS} data comprises of 170,000 observations, and the CDC is hoping to infer the characteristics of adults in the United States, the target population. A target population is the group that the statistician is interested in and wants to draw conclusions about. 
+The CDC is hoping to infer the average BMI of adults in the United States, the target population. A target population is the group that the statistician is interested in and wants to draw conclusions about. The CDC has access to the \data{BRFSS} dataset, comprising of 170,000 observations.  
 
-A simple random sample of 40,000 adults from the \data{BRFSS} data is taken to be used as the observed sample. \footnote{The \data{BRFSS} data without including weights was not a simple random sample. Rather the CDC,after collecting the data, edited, processed and weighted the data to make the values act like a simple random sample from the US population. Thus noncoverage and nonresponse become equal among all groupings of the population. The edited and weighted data is the \data{BRFSS} data that the CDC provides. The weighting formulae can be found \url{http://www.cdc.gov/brfss/annual_data/2010/pdf/overview_10.pdf} under the Data Processing section.} This random sample of 40,000 adults will be referred to as \data{BRFSS BMI} from now on. Part of this dataset with the BMI calculation is shown in Table ~\ref{brfssBMIData}. 
+A simple random sample of 40 adults from the \data{BRFSS} data is taken to be used as the observed sample. \footnote{The \data{BRFSS} data without including weights was not a simple random sample. Rather the CDC,after collecting the data, edited, processed and weighted the data to make the values act like a simple random sample from the US population. Thus noncoverage and nonresponse become equal among all groupings of the population. The edited and weighted data is the \data{BRFSS} data that the CDC provides. The weighting formulae can be found \url{http://www.cdc.gov/brfss/annual_data/2010/pdf/overview_10.pdf} under the Data Processing section.} This random sample of 40 adults will be referred to as \data{BRFSS BMI} from now on. Part of this dataset with the BMI calculation is shown in Table ~\ref{brfssBMIData}. 
 
 % latex table generated in R 3.1.1 by xtable 1.7-4 package
-% Sun Jul 19 13:57:10 2015
+% Fri Oct  9 05:04:04 2015
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrrr}
@@ -75,16 +77,17 @@ A simple random sample of 40,000 adults from the \data{BRFSS} data is taken to b
 \label{brfssBMIData}
 \end{table}
 
-This simple random sample from \data{BRFSS}, \data{BRFSS BMI}, will be used to draw conclusions about the target population of US adults. This is the practice of statistical inference in the broadest sense. Before estimating the average BMI in the US, Figure ~\ref{exploreBMI} provides a graphical exploration using the tools from Chapter \ref{introductionToData}. The histogram and box plot both show that the BMI values are skewed right suggesting the median of these BMIs is lower than the mean. 
+This simple random sample of 40 from \data{BRFSS}, \data{BRFSS BMI}, will be used to draw conclusions about the target population of US adults. In practice, however, the CDC would simply use all 170,000 in its sample. US adults are not strictly the target population of the \data{BRFSS BMI} sample of 40 since they were not directly sampled from the US adult population but from \data{BRFSS}. However if one believes that the \data{BRFSS} dataset is a good surrogate for the US population \footnote{We do.}, then drawing samples from the 170,000 observations within \data{BRFSS} should be analogous to drawing samples from the entire US adult population. Going forward, drawing from the \data{BRFSS} dataset corresponds to drawing from the US population of adults directly. 
+
+Observing a random sample and drawing conclusions about the target population is the practice of statistical inference in the broadest sense. Before estimating the average adult BMI in the US, Figure ~\ref{exploreBMI} provides a graphical exploration using the tools from Chapter \ref{introductionToData}. The histogram and box plot both show that the BMI values from the sample are skewed right suggesting the median of these BMIs is lower than the mean. The foundations of statistical inference follow naturally after the data has been examined and explored. 
 
 \begin{figure}
 \centering
 \includegraphics[width =  \textwidth]{ch_inference_foundations_oi_biostat/figures/brfssBMIsampHistograms/brfssBMIsampHistograms}
-\caption{Histogram and boxplot of BMI for the \data{BRFSS BMI} data. The data is skewed right by both the histogram and the box plot.}
+\caption{Histogram and boxplot of BMI for the \data{BRFSS BMI} data. The data is skewed right.}
 \label{exploreBMI}
 \end{figure}
 
-The data from \data{BRFSS BMI} is special because in order to do statistical inference, the dataset needs to be representative of the population of interest. In this case, because the size of \data{BRFSS BMI} is so large and drawn randomly from \data{BRFSS}, the data can be assumed to be representative and that the estimates will be close to the population parameters. \footnote{In 2000, the US population was 282.2 million, \footnote{\url{http://www.census.gov/prod/2002pubs/c2kprof00-us.pdf}} 7,000 times the sample size of 40,000.} The foundations of statistical inference follows naturally after the data has been examined and explored, 
 
 \section{Variability in estimates}
 \label{variabilityInEstimates}
@@ -96,30 +99,30 @@ If members at the CDC, after observing the sample of 40,000 BMI values, were ask
 \subsection{Point estimates}
 \label{pointEstimates}
 
-A likely choice to estimate the \term{population mean} from the \data{BRFSS BMI} sample is to simply take the \term{sample mean}. That is, use the average BMI of all 40,000 survey respondents in the sample as the estimate for the average BMI among US adults. 
+A likely choice to estimate the \term{population mean} from the \data{BRFSS BMI} sample is to simply take the \term{sample mean}. That is, use the average BMI of all 40 survey respondents in the sample as the estimate for the average BMI among US adults. 
 
-For notation, use $\mathrm{bmi}_1, \mathrm{bmi}_2, \ldots, \mathrm{bmi}_{40,000}$  to represent the BMI for each survey respondent in the \data{BRFSS BMI} sample. The sample mean for BMI using the 40,000 observations is 
+For notation, use $\mathrm{bmi}_1, \mathrm{bmi}_2, \ldots, \mathrm{bmi}_{40}$  to represent the BMI for each survey respondent in the \data{BRFSS BMI} sample. The sample mean for BMI using the 40 observations is 
 \begin{eqnarray*}
-\bar{\mathrm{bmi}} = \frac{30.41 + 23.40 + 25.10 + \dots}{40,000} = 26.356
+\bar{\mathrm{bmi}} = \frac{30.41 + 23.40 + 25.10 + \dots}{40} = 26.53
 \end{eqnarray*}
 \index{point estimate!single mean|(}
-and is the \term{point estimate} of the population mean\footnote{If \var{weight} is the variable of interest, instead, the sample mean of observations denoted $w_1,\ldots w_{40,000}$ would be $\bar{w}$}. 
+and is the \term{point estimate} of the population mean\footnote{If \var{weight} is the variable of interest, instead, the sample mean of observations denoted $w_1,\ldots w_{40}$ would be $\bar{w}$}. 
 
-Suppose from the original respondents in \data{BRFSS}, a new sample of 40,000 people is taken and the mean calculated; the answer would likely not be the same as the sample mean from the  \data{BRFSS BMI} data set. Estimates generally vary from one sample to another even with samples of the same sample size. Low \term{sampling variation} can suggest that the estimate may be close, but not exactly equal to the parameter. A larger sample size can ensure a closer estimate to the population parameter than an estimate taken from a smaller sized sample. 
+Suppose from the original respondents in \data{BRFSS}, a different sample of 40 people is observed and the mean calculated; the answer would likely not be the same as the sample mean from the  \data{BRFSS BMI} data set. Estimates generally vary from one sample to another even with samples of the same sample size. Low \term{sampling variation} can suggest that the estimate may be close, but not exactly equal to the parameter. A larger sample size can ensure a closer estimate to the population parameter than an estimate taken from a smaller sized sample. 
 
 What about generating point estimates of other \term{population parameters}, such as the population median or population standard deviation? Sample statistics can help estimate these parameters as well. For example, the population standard deviation for BMI can be estimated using the sample standard deviation, and the population median using the sample median. Table ~\ref{BMIEstimates} provides the point estimates from \data{BRFSS BMI} to other population parameters relating to BMI.
 
 % latex table generated in R 3.1.1 by xtable 1.7-4 package
-% Sun Jul 19 20:25:13 2015
+% Fri Oct  9 05:32:46 2015
 \begin{table}[ht]
 \centering
 \begin{tabular}{lr}
   \hline
 BMI & estimates \\ 
   \hline
-mean & 26.356 \\ 
-  median & 25.620 \\ 
-  std. dev. & 5.288 \\ 
+mean & 26.53 \\ 
+  median & 25.93 \\ 
+  std. dev. & 5.84 \\ 
    \hline
 \end{tabular}
 \caption{Point estimates for the \var{bmi} variable} 
@@ -127,7 +130,7 @@ mean & 26.356 \\
 \end{table}
 
 \begin{exercise} \label{pointEstimateOfDesiredWeights}
-Suppose the CDC was interested in an estimate for the average age for men and women in the US as well as the difference in ages. If $\bar{\mathrm{age}}_{\mathrm{women}} = 47.35 $ years and $\bar{\mathrm{age}} _ {\mathrm{men}} = 45.67 $ years, what would be a good point estimate for the population age difference? \footnote{Take the difference of the two sample means: $\bar{\mathrm{age}}_{\mathrm{women}} - \bar{\mathrm{age}} _ {\mathrm{men}} = 47.35 - 45.67 =  1.69$. Women are on average older than men by 1.69 years.}
+Suppose the CDC was interested in an estimate for the average age for men and women in the US as well as the difference in ages. If $\bar{\mathrm{age}}_{\mathrm{women}} = 50.22 $ years and $\bar{\mathrm{age}} _ {\mathrm{men}} = 47 $ years, what would be a good point estimate for the population age difference? \footnote{Take the difference of the two sample means: $\bar{\mathrm{age}}_{\mathrm{women}} - \bar{\mathrm{age}} _ {\mathrm{men}} = 50.22 - 47 =  3.22$. Women are on average older than men by 3.22 years.}
 \end{exercise}
 %men = brfss.sample[which(brfss.sample$sex == 1),]
 %women = brfss.sample[which(brfss.sample$sex == 2),]
@@ -140,35 +143,39 @@ Provide a point estimate of the population IQR for the BMI of participants using
 
 \end{exercise}
 
-The sample mean calculated from this \data{BRFSS BMI} sample of 40,000 will likely be different from the sample mean of a different set of 40,000 respondents from \data{BRFSS} data. Using $R$, take another random sample from the \data{BRFSS} data of 40,000 and note that that the new sample mean for the BMI is 26.344. Estimates will differ across samples through sampling variation but the accuracy of the point estimate will improve once more data becomes available and sample sizes increase.
+The sample mean calculated from this \data{BRFSS BMI} sample of 40 will likely be different from the sample mean of a different set of 40 respondents from \data{BRFSS} data. Using $R$, take another random sample from the \data{BRFSS} data of 40 and note that that the new sample mean for the BMI is 28.17. Estimates will differ across samples through sampling variation but the accuracy of the point estimate will improve once more data becomes available and sample sizes increase. In practice, it is extremely rare to have the opportunity to observe more than one sample from a population.
 
-Consider a running mean from the \data{BRFSS BMI} data to explore increases in sample size and increase in accuracy. A \term{running mean} is a sequence of means, where each mean uses one more observation in its calculation than the mean directly before it in the sequence. In this case, the second mean is the average of the first two observations, $\mathrm{bmi}_1, \mathrm{bmi}_2$. The third number in the running mean sequence is the average of $\mathrm{bmi}_1, \mathrm{bmi}_2,$ and $\mathrm{bmi}_3$. 
+A \term{running mean} - a sequence of means where each mean uses one more observation in its calculation than the mean directly before it in the sequence - is used to explore an increase in accuracy for \data{BRFSS BMI}. The second mean is the average of the first two observations, $\mathrm{bmi}_1, \mathrm{bmi}_2$. The third number in the running mean sequence is the average of $\mathrm{bmi}_1, \mathrm{bmi}_2,$ and $\mathrm{bmi}_3$. 
 
-The running mean for \data{BMI} in the \data{BRFSS BMI} dataset is shown in Figure~\ref{BMIRunningMean} for 300 and 5,000 observations. As more values get included, the running mean converges closer to the sample mean of 26.36. Similarly if the sample size increases from 40,000 to 100,000, the sample mean from 100,000 observations will be closer to the average US population BMI than the sample mean of 40,000 observations. 
+The running mean for \data{BMI} in the \data{BRFSS BMI} dataset is shown in Figure~\ref{BMIRunningMean} for 40 observations. As more values get included, the running mean converges closer to the sample mean of 26.53. Similarly if the sample size of \data{BRFSS BMI} increases from 40 to 100 observations, the sample mean from 100 should be closer to the average US adult BMI than the sample mean from 40 observations. 
 
 \begin{figure}
    \centering
    \includegraphics[width=\textwidth]{ch_inference_foundations_oi_biostat/figures/brfssBMIRunningMean/brfssBMIRunningMean}
-   \caption{The running means from the \var{BRFSS BMI} sample of 40,000 observations. The mean stabilizes and approaches the mean of the entire sample $\bar{\mathrm{bmi}} = 26.36$ as the number of observations increases}
+   \caption{The running mean from the \var{BRFSS BMI} sample of 40 observations. The mean stabilizes and approaches the mean of the entire sample $\bar{\mathrm{bmi}} = 26.53$ as the number of observations increases to 40.}
       \label{BMIRunningMean}
 \end{figure}
 
-Sampling variation, however, is across samples of the same size. Figure ~\ref{runningSamplingVariation} displays the running means of two samples from \data{BRFSS}. With a small sample size, the path of the running means are not the same. There exists some sample variation. But as the number of observations increase, the running means for these two samples converge to the same value. The variation across the different running means decreases as the number of observations increases. Figure ~\ref{runningSamplingVariation20} illustrates this more clearly by calculating the running means of 20 independent samples of 40,000 observations. At sample sizes of less than 150, the sample variation is extremely large, but as the number of observations get larger, the sampling variation decreases. We will explore this concept more in Section ~\ref{accuracyAndPrecision}. 
+Sampling variation is across samples of the same size. Figure ~\ref{runningSamplingVariation} displays the running means of two samples of size 40 from \data{BRFSS}. With a small sample size, the path of the running means are not the same. There exists a substantial amount of sampling variation. The variation across the different running means decreases as the number of observations increases. 
+
+Figure ~\ref{runningSamplingVariation20} illustrates this more clearly by calculating the running means of 20 independent samples of 40 observations. The sample variation is extremely large, but as the number of observations get larger, the sampling variation decreases. This concept will be explored more in Section ~\ref{accuracyAndPrecision}. 
 
 Figure ~\ref{runningSamplingVariation20} 
 \begin{figure}
    \centering
    \includegraphics[width=\textwidth]{ch_inference_foundations_oi_biostat/figures/brfssBMISampVar/brfssBMISampVar}
-   \caption{The running mean of two samples drawn from \data{BRFSS}. The exists high sampling variation at the beginning but as the sample sizes increase, the running mean values converge.}
+   \caption{The running mean of two samples drawn from \data{BRFSS}. The exists high sampling variation at the beginning but as the sample sizes increase, the running mean values being to converge.}
 	\label{runningSamplingVariation}
 \end{figure}
 
 \begin{figure}
    \centering
    \includegraphics[width=\textwidth]{ch_inference_foundations_oi_biostat/figures/brfssBMISampVar/brfssBMISampVar20}
-   \caption{Many running means from different samples of 40,000 observations from \data{BRFSS}. The sampling variation decreases as the number of observations gets larger.}
+   \caption{Many running means from different samples of 40 observations from \data{BRFSS}. The sampling variation decreases as the number of observations gets larger.}
 	\label{runningSamplingVariation20}
 \end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \subsection{Accuracy and Precision of Point Estimates}
