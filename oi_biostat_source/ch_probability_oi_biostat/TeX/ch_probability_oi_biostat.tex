@@ -1141,10 +1141,34 @@ $\text{Var}(X)$\vspace{1mm}\\\footnotesize Variance\\of $X$]{\raggedright\vspace
 $\text{Var}(X)$\vspace{1mm}\\\footnotesize Variance\\of $X$}
 
 
-%%%%%% ended here, 8 Oct 2015, 17:00
 
 \begin{example}{Compute the variance and standard deviation of $X$, the number of heads in three tosses of a coin.}
-%% do this directly, skipping the table.  After this example, do a more difficult one, perhaps profitability of health care or grades in Stat 102 last year.  Hospital CEO may construct a building.	
+    
+    In the formula for the variance, $k = 4$ and $\mu_X = E(X) = 1.5$, the variance will be 
+    \begin{align}
+    \sigma_X^2 &= (x_i-\mu_X)^2P(X=x_1) + \cdots \notag \\
+    	& \qquad\quad\cdots+ (x_4-\mu)^2 P(X=x_4) \notag \\
+    	&= (0- 1.5)^2(1/8) + (1 - 1.5)^2 (3/8) + 
+        (2 -1.5)^2 (3/8) + (3-1.5)^2 (1/8) \notag \\
+        &= 3/4 = 0.75.
+    \end{align}
+    
+The standard deviation is $sqrt(3/4) = \sqrt(3)/2 = 0.866$.  Tossing a coing provides a simple illustration of the mean and variance of a random variable, but it is  artificial.  Here is a more realistic example.
+
+\end{example}
+
+\textit{Insert example of the expected cost of a health plan for an individual.  Need data for co-pay, deductible, etc.  Use the table below to set up the calculation}
+
+\begin{Example}{Expected health care costs under a health insurance plan}
+In most typical health insurance plans in the United States, members of the plan pay annually in 3 categories:  a monthly premium; a deductible amount that the member is responsible for before the insurer begins to cover services; and `out-of-pocket costs' consisting of co-payments at each physician visit and for each prescription. Members also pay for care and supplies that are not covered by insurance.  Picking a new health plan involves estimating costs for the next year based on a person's best guess at the kind and number of services that will be needed.
+
+
+
+
+
+\end{example}
+
+\begin{comment}
 	
 It is helpful to construct a table that holds computations for each outcome separately, then add up the results.  Since $E(X)$ is used the calculation of the variance, that calculation is added to the table, using decimals instead of fractions
 \begin{center}
@@ -1174,6 +1198,8 @@ $(x_i-\mu)^2\times P(X=x_i)$ & 2777.7 & 201.7 & 679.9 & 3659.3 \\
 \end{tabular}
 \end{center}
 The variance of $X$ is $\sigma^2 = 3659.3$, which means the standard deviation is $\sigma = \sqrt{3659.3} = \$60.49$.
-\end{example}
+
+\end{comment}
+
 
 \end{doublespace}

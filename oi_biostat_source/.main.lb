@@ -23,7 +23,7 @@ aVmakeidx
 p11
 aVifthen
 p12
-aVkpfonts
+aVparalist
 p13
 aVmulticol
 p14
@@ -37,7 +37,7 @@ aVcolor
 p18
 aVfootmisc
 p19
-aVparalist
+aVkpfonts
 p20
 aVcalc
 p21
@@ -77,7 +77,7 @@ g4
 ((lp39
 V/Users/dph/oi_biostat/oi_biostat_source/./ch_probability_oi_biostat/TeX/ch_probability_oi_biostat.tex
 p40
-aS'main.tex'
+aV/Users/dph/oi_biostat/oi_biostat_source/./main.tex
 p41
 aV/Users/dph/oi_biostat/oi_biostat_source/ch_intro_to_data_oi_biostat/TeX/ch_intro_to_data_oi_biostat.tex
 p42
@@ -87,7 +87,7 @@ aV/Users/dph/oi_biostat/oi_biostat_source/ch_probability_oi_biostat/TeX/ch_proba
 p44
 aV/Users/dph/oi_biostat/oi_biostat_source/./ch_intro_to_data_oi_biostat/TeX/ch_intro_to_data_oi_biostat.tex
 p45
-aV/Users/dph/oi_biostat/oi_biostat_source/./main.tex
+aS'main.tex'
 p46
 aV/Users/dph/oi_biostat/oi_biostat_source/extraTeX/preamble/preface_oi_biostat.tex
 p47
