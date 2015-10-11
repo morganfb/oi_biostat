@@ -21,43 +21,28 @@ brfss.df<-cbind(brfss.df,height.total,weight.dif,bmi)
 
 # sample 40k from brfss data to use as our sample
 set.seed(102)
-sample.vec<-sample(1:nrow(brfss.df),size = 40000,replace = FALSE)
+sample.vec<-sample(1:nrow(brfss.df),size = 40,replace = FALSE)
 brfss.sample<-brfss.df[sample.vec,]
 
 ######################################################
 library(openintro)
 data(COL)
-source("~/figures/brfssBMIsampHistograms.R", chdir = TRUE)
 setwd('~/OI_Biostat/oi_biostat_source/ch_inference_foundations_oi_biostat/figures/brfssBMIrunningMean')
 
 xBars <- cumsum(brfss.sample$bmi)/ (1:length(brfss.sample$bmi))
 
-myPDF('brfssBMIrunningMean.pdf', 7,4,
-      mfrow = 2:1,
+myPDF('brfssBMIrunningMean.pdf', 7,2.5,
       mar=c(3.3, 4, 1, 1))
 
-plot(xBars[1:300],
+plot(xBars[1:40],
      type = "l",
      axes = FALSE,
      xlab = "",
      ylab = "Running mean ",
      col = COL[1],
      lwd = 2)
-axis(1, at = seq(0, 300, 25))
-axis(2, at = seq(20, 35, 1))
-mtext("Sample size", 1, 2)
-
-par(mar = c(3.5, 4.5, 0.5, 0.5))
-
-plot(xBars[1:5000],
-     type = "l",
-     axes = FALSE,
-     xlab = "",
-     ylab = "Running mean",
-     col = COL[1],
-     lwd = 2)
-axis(1, at = seq(0, 5000, 200))
-axis(2, at = seq(20, 35, 1))
+axis(1, at = seq(0, 40, 2))
+axis(2, at = seq(20, 50, 1))
 mtext("Sample size", 1, 2)
 
 dev.off()

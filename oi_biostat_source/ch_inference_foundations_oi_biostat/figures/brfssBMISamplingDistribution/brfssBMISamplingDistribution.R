@@ -21,7 +21,7 @@ brfss.df<-cbind(brfss.df,height.total,weight.dif,bmi)
 
 # sample 40k from brfss data to use as our sample
 set.seed(102)
-sample.vec<-sample(1:nrow(brfss.df),size = 40000,replace = FALSE)
+sample.vec<-sample(1:nrow(brfss.df),size = 40,replace = FALSE)
 brfss.sample<-brfss.df[sample.vec,]
 
 ######################################################
@@ -33,7 +33,7 @@ N <- 100000
 means <- rep(0, N)
 pb <- txtProgressBar(0, N, style = 3)
 for (i in 1:N) {
-  temp <- sample(nrow(brfss.df), 40000)
+  temp <- sample(nrow(brfss.df), 40)
   means[i] <- mean(brfss.df$bmi[temp], na.rm = TRUE)
   setTxtProgressBar(pb, i)
 }
@@ -44,18 +44,18 @@ myPDF('brfssBMISamplingDistribution.pdf', 8, 3.15,
 
 plot(0, 0,
      type = 'n',
-     xlim = c(26.25, 26.45),
-     ylim = c(0, 1350 * N / 15000),
+     xlim = c(23, 30),
+     ylim = c(0, 1350 * N / 14000),
      xlab = '',
      ylab = '',
      axes = FALSE)
-mtext("Sample mean for n = 40,000", 1, 2)
+mtext("Sample mean for n = 40", 1, 2)
 mtext("Frequency", 2, line = 3, las = 0)
 m <- mean(brfss.df$bmi, na.rm = TRUE)
 s <- sd(brfss.df$bmi, na.rm = TRUE) / 10
 histPlot(means, col = COL[1], breaks = 50, add = TRUE)
 abline(h = 0)
-axis(1, at = seq(26.25, 26.45, 0.05))
+axis(1, at = seq(23, 30, 1))
 axis(2, at = seq(0, 10000, 1000))
 
 dev.off()

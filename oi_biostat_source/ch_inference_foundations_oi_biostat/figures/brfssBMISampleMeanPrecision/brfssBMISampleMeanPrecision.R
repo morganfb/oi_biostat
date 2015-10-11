@@ -21,7 +21,7 @@ brfss.df<-cbind(brfss.df,height.total,weight.dif,bmi)
 
 # sample 40k from brfss data to use as our sample
 set.seed(102)
-sample.vec<-sample(1:nrow(brfss.df),size = 40000,replace = FALSE)
+sample.vec<-sample(1:nrow(brfss.df),size = 40,replace = FALSE)
 brfss.sample<-brfss.df[sample.vec,]
 
 ######################################################
@@ -38,12 +38,12 @@ for (i in 1:N) {
   setTxtProgressBar(pb5, i)
 }
 
-means50 <- rep(0, N)
-pb50 <- txtProgressBar(0, N, style = 3)
+means40 <- rep(0, N)
+pb40 <- txtProgressBar(0, N, style = 3)
 for (i in 1:N) {
-  temp <- sample(nrow(brfss.df), 50)
-  means50[i] <- mean(brfss.df$bmi[temp], na.rm = TRUE)
-  setTxtProgressBar(pb, i)
+  temp <- sample(nrow(brfss.df), 40)
+  means40[i] <- mean(brfss.df$bmi[temp], na.rm = TRUE)
+  setTxtProgressBar(pb40, i)
 }
 
 myPDF('brfssBMISampleMeanPrecision.pdf', 8, 3.15,
@@ -70,18 +70,18 @@ axis(2, at = seq(0, 10000, 1000))
 plot(0, 0,
      type = 'n',
      xlim = c(23, 30),
-     ylim = c(0, 1350 * N / 25000),
+     ylim = c(0, 1350 * N / 13000),
      xlab = '',
      ylab = '',
      axes = FALSE)
-mtext("Sample mean for n = 50", 1, 2)
+mtext("Sample mean for n = 40", 1, 2)
 mtext("Frequency", 2, line = 3, las = 0)
 m <- mean(brfss.df$bmi, na.rm = TRUE)
 s <- sd(brfss.df$bmi, na.rm = TRUE) / 10
-histPlot(means50, col = COL[1], breaks = 50, add = TRUE)
+histPlot(means40, col = COL[1], breaks = 50, add = TRUE)
 abline(h = 0)
 axis(1, at = seq(23, 30, 1))
-axis(2, at = seq(0, 7000, 1000))
+axis(2, at = seq(0, 10000, 1000 ))
 
 dev.off()
 
