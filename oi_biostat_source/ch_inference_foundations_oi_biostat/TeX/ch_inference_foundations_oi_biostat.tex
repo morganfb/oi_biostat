@@ -314,18 +314,17 @@ This section achieved three goals. First, point estimates from a sample are used
 
 \index{confidence interval|(}
 
-A point estimate from Section~\ref{pointEstimates} provides a single plausible value for a parameter. However, a point estimate is rarely perfect and exact; usually there is some error in the estimate. Section~\ref{pointEstimates} shows there exists sampling variation but a single point estimate does not convey how large this sampling variation is without including the point estimate's standard error as well. Instead of supplying a point estimate and standard error separately, the next logical step would be to provide a plausible \emph{range of values} to estimate the true value of the parameter.
+A point estimate provides a single plausible value for a parameter and is rarely perfect and exact; usually there is some error in the estimate. The standard error conveys how large this sampling variation is but a single point estimate alone does not. Is there a single measurement that conveys a point estimate and the sampling variation in one? 
 
-This section and Section~\ref{hypothesisTesting} will emphasize the special case where the point estimate is a sample mean and the parameter of interest is the population mean. Section~\ref{aFrameworkForInference} generalizes these methods for a variety of point estimates and population parameters that will be encounter in Chapter~\ref{inferenceForNumericalData} and beyond.
+This section and Section~\ref{hypothesisTesting} focuses on the sample mean as the point estimate and the population mean as the parameter. Section~\ref{aFrameworkForInference} generalizes these methods for a variety of point estimates and population parameters that will be encounter in Chapter~\ref{inferenceForNumericalData} and beyond.
 
 \subsection{Capturing the population parameter}
 
-A plausible range of values for the population parameter is called a \term{confidence interval}. The width of an interval provides a gauge of how large the sampling variation is. For the same confidence level, the larger the interval indicates the larger sampling variation and standard error.
+Using only a point estimate is like fishing in a murky lake with a spear. Using a confidence interval is like fishing in the same lake with a net. Fishermen who fish with spears will probably miss. On the other hand, if fishermen use nets in that area, they are more likely to catch a fish. 
 
-Using only a point estimate is like fishing in a murky lake with a spear, and using a confidence interval is like fishing in the same lake with a net. Throwing a spear where fishermen see fish, they will probably miss. On the other hand, if fishermen toss a net in that area, they have a good chance of catching the fish.
-
-Similarly if a point estimate is reported, the exact population parameter will probably not be hit. There is likely to be error associated with this estimate. On the other hand, if a range of plausible values is reported -- a confidence interval -- it becomes more likely that the parameter is captured within the range. As with fishing, the goal of the confidence interval is to include the population parameter within it. 
-
+Similarly a point estimate is likely to not equal the exact population parameter. The single point estimate lacks information about the standard error. If a range of plausible values is reported -- \term{a confidence interval} -- it becomes more likely that the parameter is captured. The range encompasses sampling variation. The width of the interval is a metric of how large the sampling variation is. The larger the interval generally indicates the large the sampling variation and standard error \footnote{It could also indicate the higher confidence level. This will be introduced later}. As with fishing, the goal of the confidence interval is to include the population parameter within it. 
+ 
+%%%% change wording
 \begin{exercise}
 If we want to be very certain we capture the population parameter, should we use a wider interval or a smaller interval?\footnote{If we want to be more certain when capturing a fish, we might use a wider net. Likewise, we use a wider confidence interval if we want to be more certain that we capture the parameter. The more values included in the range, the more likely it is that this range contains the true value. The interval contains simply \emph{more} values. However capturing the parameter is not always the only goal when constructing a confidence interval. The parameter will always be captured with the widest interval going from $-\infty$ to $+\infty$ but this range does not increase understanding of the population parameter. } 
 \end{exercise}
