@@ -1159,47 +1159,64 @@ The standard deviation is $sqrt(3/4) = \sqrt(3)/2 = 0.866$.  Tossing a coing pro
 
 \textit{Insert example of the expected cost of a health plan for an individual.  Need data for co-pay, deductible, etc.  Use the table below to set up the calculation}
 
-\begin{Example}{Expected health care costs under a health insurance plan}
-In most typical health insurance plans in the United States, members of the plan pay annually in 3 categories:  a monthly premium; a deductible amount that the member is responsible for before the insurer begins to cover services; and `out-of-pocket costs' consisting of co-payments at each physician visit and for each prescription. Members also pay for care and supplies that are not covered by insurance.  Picking a new health plan involves estimating costs for the next year based on a person's best guess at the kind and number of services that will be needed.
+\begin{example}{Expected health care costs in a health insurance plan}
+In most typical health insurance plans in the United States, members of the plan pay annually in 3 categories:  a monthly premium; and `out-of-pocket costs' consisting of co-payments at each physician visit and for each prescription. Members also pay a deductible amount each year before the insurance covers services and for care and supplies that are not covered by insurance.  Picking a new health plan involves estimating costs for the next year based on a person's best guess at the kind and number of services that will be needed.
 
+In 2015, Harvard University offered several alternative plans to its employees.   In the Health Maintenance Organization (HMO) plan for employees earning less than \$70,000 per year, the monthly premium was \$79, and the co-payment for each office visit or physical therapy session was \$20. A new employee examined her health records for the last 10 years, and noticed that in three of the 10 years her only office visit was one annual physical.  In 4 of the 10 years she visited her physician three times, once for a physical, and twice for a cases of the flu. In 2 years, she had four visits.  In one of the 10 years, she experienced a knee injury that required 3 office visits and 5 physical therapy sessions.
 
+Ignoring the cost of prescription drugs, over the counter medications and the annual deductible amount, what is the expected annual health care cost for this employee under the Harvard plan.  
 
-
-
-\end{example}
-
-\begin{comment}
-	
-It is helpful to construct a table that holds computations for each outcome separately, then add up the results.  Since $E(X)$ is used the calculation of the variance, that calculation is added to the table, using decimals instead of fractions
+Let the random variable $X$ denote annual health care costs.  It is best to summarize the information in the problem in a table that can also be used for computing the mean and variance of $X$.  If the  last 10 years are an accurate picture of annual costs for this employee, $X$ will have 4 possible values that correspond to the annual cost of the monthly premium plus the visit costs for the 4 patterns of visits.  The cost of the premium is (12)(\$79) = \$948. The cost of the visits is \$20 times the number of visits.  The values of $X$ are ordered according to increasing numbers of visits. 
 \begin{center}
 \begin{tabular}{l rrrr r}
 \hline
 $i$ & 1 & 2 & 3 & 4 & Total \\
 \hline
-$x_i$ & \$0 & 1 & 2 & 3 &  \\
-$P(X=x_i)$ & 0.20 & 0.55 & 0.25 &  \\
-$x_i \times  P(X=x_i)$ & 0 & 75.35 & 42.50 & 117.85 \\
+Number of visits & 1 & 3 & 4 & 8 &\\
+$x_i$ & 968 & 1008 & 1028 & 1108 &  \\
+$P(X=x_i)$ & 0.30 & 0.40 & 0.20 & 0.10 & 1.0 \\
+$x_i \times  P(X=x_i)$ & 290.40 & 403.20 & 205.60 & 110.80 & 1010.00 \\
 \hline
 \end{tabular}
 \end{center}
-Thus, the expected value is $\mu=117.85$, which we computed earlier. The variance can be constructed by extending this table:
+The expected cost of health care for a year is $\mu=\$1010.00$. The variance can be calculated by extending the table:
 \begin{center}
-\begin{tabular}{l rrr r}
+\begin{tabular}{l rrrr r}
 \hline
-$i$ & 1 & 2 & 3 & Total \\
+$i$ & 1 & 2 & 3 & 4 & Total \\
 \hline
-$x_i$ & \$0 & \$137 & \$170 &  \\
-$P(X=x_i)$ & 0.20 & 0.55 & 0.25 &  \\
-$x_i \times  P(X=x_i)$ & 0 & 75.35 & 42.50 & 117.85 \\
-$x_i - \mu$ & -117.85 & 19.15 & 52.15 &  \\
-$(x_i-\mu)^2$ & 13888.62 &  366.72 & 2719.62 &  \\
-$(x_i-\mu)^2\times P(X=x_i)$ & 2777.7 & 201.7 & 679.9 & 3659.3 \\
+Number of visits & 1 & 3 & 4 & 8 &\\
+$x_i$ & 968 & 1008 & 1028 & 1108 &  \\
+$P(X=x_i)$ & 0.30 & 0.40 & 0.20 & 0.10 & 1.0 \\
+$(x_i)P(X=x_i)$ & 290.40 & 403.20 & 205.60 & 110.80 & 1010.00 \\
+$x_i - \mu$ & -42.00  & -2.00  & 18.00  & 98.00 & \\
+$(x_i - \mu)^2$ &  1764.00 & 4.00  & 324.00  & 9604 & \\
+$(x_i - \mu)^2 P(X=x_i)$ & 529.20  & 1.60  & 64.80  & 960.40 & 1556.00\\
 \hline
 \end{tabular}
 \end{center}
-The variance of $X$ is $\sigma^2 = 3659.3$, which means the standard deviation is $\sigma = \sqrt{3659.3} = \$60.49$.
+The variance of $X$ is $\sigma^2 1556.00$, and the standard deviation is $\sigma = \$39.45$.  The standard deviation always has the same units as the original measurements. 
+\end{example}
 
-\end{comment}
+\textit{This problem has potential for the exercises, either by making it more complicated (considering deductibles, etc, or by comparing the mean and standard deviation of two health plans)}
 
+\subsection{Linear combinations of random variables}
+
+Sums of random variables arise naturally in many problems.  In the example of the cost of  health care under an insurance plan, the amount spent by the employee during her next five years of employment can be represented as $X_1 + X_2 + X_3 + X_4 + X_5$, where $X_1$ is the cost of the first year, $X_2$ the second year, etc. If the employee decides to add change to a family plan and add her 23 year old daughter to the plan, the total cost of the new plan would be the sum of the costs for the employee ($X$) and her daughter ($Y$), which might be written $X + Y$.  In each of these examples, it is intuitively clear that the average cost would be the sum of the average of each term.
+
+Sums of random variables are special cases of linear combinations of variables.  
+
+\begin{termBox}{\tBoxTitle{Linear combinations of random variables and the average result}
+If $X$ and $Y$ are random variables, then a linear combination of the random variables is given by
+\begin{align}\label{linComboOfRandomVariablesXAndY}
+aX + bY
+\end{align}
+where $a$ and $b$ are constants.  The mean of a linear combination of random variables is 
+\begin{align*}
+ E(aX + bY) = aE(X) + bE(Y) = a\mu_X + b\mu_Y
+\end{align*}}
+\end{termBox}
+
+%%% revisions to here, 12 oct 2015
 
 \end{doublespace}
