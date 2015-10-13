@@ -1202,11 +1202,11 @@ The variance of $X$ is $\sigma^2 1556.00$, and the standard deviation is $\sigma
 
 \subsection{Linear combinations of random variables}
 
-Sums of random variables arise naturally in many problems.  In the example of the cost of  health care under an insurance plan, the amount spent by the employee during her next five years of employment can be represented as $X_1 + X_2 + X_3 + X_4 + X_5$, where $X_1$ is the cost of the first year, $X_2$ the second year, etc. If the employee decides to add change to a family plan and add her 23 year old daughter to the plan, the total cost of the new plan would be the sum of the costs for the employee ($X$) and her daughter ($Y$), which might be written $X + Y$.  In each of these examples, it is intuitively clear that the average cost would be the sum of the average of each term.
+Sums of random variables arise naturally in many problems.  In the example of the cost of  health care under an insurance plan, the amount spent by the employee during her next five years of employment can be represented as $X_1 + X_2 + X_3 + X_4 + X_5$, where $X_1$ is the cost of the first year, $X_2$ the second year, etc. If the employee's domestic partner also has health insurance with another employer, If the employee decides to add change to a family plan and add her 23 year old daughter to the plan, the total annual cost to the couple would be the sum of the costs for the employee ($X$) and her partner ($Y$), or $X + Y$.  In each of these examples, it is intuitively clear that the average cost would be the sum of the average of each term.
 
 Sums of random variables are special cases of linear combinations of variables.  
 
-\begin{termBox}{\tBoxTitle{Linear combinations of random variables and the average result}
+\begin{termBox}{\tBoxTitle{Linear combinations of random variables and their expectation}
 If $X$ and $Y$ are random variables, then a linear combination of the random variables is given by
 \begin{align}\label{linComboOfRandomVariablesXAndY}
 aX + bY
@@ -1217,6 +1217,133 @@ where $a$ and $b$ are constants.  The mean of a linear combination of random var
 \end{align*}}
 \end{termBox}
 
-%%% revisions to here, 12 oct 2015
+There are a few special cases of this formula which are especially useful.  The formula implies that $E(a + Y) = a + E(Y)$.  This could have been used when calculating the average health costs for the employee by letting $ = \$948$m the fixed cost of the premium, and taking $Y$ to be the cost of the physician or physical therapy visits. The formula easily generalizes to a sum of any number of random variables, the average health care cost for 5 years would be 
+
+\begin{align*}
+	E(X_1 + X_2 + X_3 + X_4 + X_5) &= E(X_1) + E(X_2) + E(X_3) + E(X_4) + E(X_5) \\
+	         &= 5E(X_1),
+\end{align*}
+as long as the cost for sevices under the plan does not change for 5 years.
+
+\begin{exercise}
+	Suppose the employee is considering adding her 23 year old daughter to her health plan.  She will have to switch to a family plan, with a monthly premium of \$213, and has agreed to cover the costs of the premium and physician visits for her daughter.  The last 10 years of health care use for the daughter includes the period 13 - 18 years of age, when she was a high school field hockey player and injury prone, so she reviews only the last five years.  During that period, her daughter visited a physician  only once for three years, and twice in the other two years.  Assuming that the cost of physician visits under the family plan is the same as under the individual plan, calculate the expected cost to the employee in the next year.
+\end{exercise}
+
+The employee might like to know how variable her health care costs would be for the next five years under the individual plan. Calculating the variance and standard deviation of a linear combination of random variables requires more care.  The formula given here requires that the random variables in the linear combination be independent, so that an observation on one of the variables provides no information about the value of the other variable.  With that assumption, the following formula can be used:
+
+\begin{termBox}{\tBoxTitle{Variability of linear combinations of random variables}
+The variance of a linear combination of random variables may be computed by squaring the constants, substituting in the variances for the random variables, and computing the result:
+\begin{align*}
+\text{Var}(aX + bY) = a^2\times \text{Var}(X) + b^2\text{Var}(Y)
+\end{align*}
+This equation is valid as long as the random variables are independent of each other. The standard deviation of the linear combination may be found by taking the square root of the variance.}
+\end{termBox}
+
+To calculate the variance and standard deviation for 5 years of health care costs.
+
+\begin{align*}
+	\text{Var}(X_1 + X_2 + X_3 + X_4 + X_5) &= \text{Var}(X_1) + \text{Var}(X_2) +\text{Var}(X_3) +\text{Var}(X_4) +\text{Var}(X_5) \\
+	&= 5\text{Var}(X_1) \\
+	& = (5)(39.45) = 197.25	
+\end{align*}
+
+The standard deviation is $\sqrt{(5)(39.45)} = (\sqrt{5})(\sqrt{39.45}) = \$14.45$.  So the standard deviation of the sum of the five terms is $(\sqrt{5})\sigma_{X_1}$.
+
+The example of health insurance cost has been simplified to make the calculations clear.  It ignores the fact that may plans have a deductible amount, and that plan members pay for services a different rates before and after the deductible has been reached. Often, insured individuals do not pay for services at all once a maximum amount has been reached in a year.  The exercises contain more realistic examples. 
+
+
+\textit{The health care example is getting tired, so I will go back and add an example from bio, perhaps variability of the sum of two or more lab measurement}
+
+
+\index{random variable|)}
+
+\section{Continuous distributions}
+\label{contDist}
+
+\index{data!FCID|(}
+\index{hollow histogram|(}
+\begin{example}{Figure~\ref{fdicHistograms} shows a few different hollow histograms of the variable \var{height} for 3 million US adults from the mid-90's.\footnote{This sample can be considered a simple random sample from the US population. It relies on the USDA Food Commodity Intake Database.} How does changing the number of bins allow you to make different interpretations of the data?}\label{usHeights}
+Adding more bins provides greater detail. This sample is extremely large, which is why much smaller bins still work well.  So many bins are generally not used with smaller sample sizes since small counts per bin make the bin heights are volatile.
+\end{example}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.9\textwidth]{ch_probability_oi_biostat/figures/fdicHistograms/fdicHistograms}
+\caption{Four hollow histograms of US adults heights with varying bin widths.}
+\label{fdicHistograms}
+\end{figure}
+
+\begin{example}{What proportion of the sample is between \resp{180} cm and \resp{185} cm tall (about 5'11" to 6'1")?}\label{contDistProb}
+First add the heights of the bins in the range \resp{180} cm and \resp{185} and divide by the sample size. For instance, this can be done with the two shaded bins shown in Figure~\ref{usHeightsHist180185}. The two bins in this region have counts of 195,307 and 156,239 people, resulting in the following estimate of the probability:
+\begin{eqnarray*}
+\frac{195307+156239}{\text{3,000,000}} = 0.1172
+\end{eqnarray*}
+This fraction is the same as the proportion of the histogram's area that falls in the range \resp{180} to \resp{185} cm.
+\end{example}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth]{ch_probability_oi_biostat/figures/usHeightsHist180185/usHeightsHist180185}
+\caption{A histogram with bin sizes of 2.5 cm. The shaded region represents individuals with heights between \resp{180} and \resp{185} cm. }
+\label{usHeightsHist180185}
+\end{figure}
+
+\subsection{From histograms to continuous distributions}
+
+Examine the transition from a boxy hollow histogram in the top-left of Figure~\ref{fdicHistograms} to the much smoother plot in the lower-right. In this last plot, the bins are so narrow that the hollow histogram begins to resemble a smooth curve. This suggests the population height as a \emph{continuous} numerical variable might best be explained by a curve that represents the outline of extremely slim bins.
+
+This smooth curve represents a \term{probability density function} (also called a \term{density} or \term{distribution}), and such a curve is shown in Figure~\ref{fdicHeightContDist} overlaid on a histogram of the sample. A density has a special property: the total area under the density's curve is 1. The distribution of a continuous distribution is specified by a density function instead of a table like the one in table~\ref{distCoinTossing}
+
+\begin{figure}[tbh]
+\centering
+\includegraphics[width=0.9\textwidth]{ch_probability_oi_biostat/figures/fdicHeightContDist/fdicHeightContDist}
+\caption{The continuous probability distribution of heights for US adults.}
+\label{fdicHeightContDist}
+\end{figure}
+
+\index{hollow histogram|)}
+
+\subsection{Probabilities from continuous distributions}
+
+We computed the proportion of individuals with heights \resp{180} to \resp{185} cm in Example~\ref{contDistProb} as a fraction:
+\begin{eqnarray*}
+\frac{\text{number of people between \resp{180} and \resp{185}}}{\text{total sample size}}
+\end{eqnarray*}
+We found the number of people with heights between \resp{180} and \resp{185} cm by determining the fraction of the histogram's area in this region. Similarly, we can use the area in the shaded region under the curve to find a probability (with the help of a computer):
+\begin{eqnarray*}
+P(\text{\var{height} between \resp{180} and \resp{185}})
+	= \text{area between \resp{180} and \resp{185}}
+	= 0.1157
+\end{eqnarray*}
+The probability that a randomly selected person is between \resp{180} and \resp{185} cm is 0.1157. This is very close to the estimate from Example~\ref{contDistProb}: 0.1172. 
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\textwidth]{ch_probability_oi_biostat/figures/fdicHeightContDistFilled/fdicHeightContDistFilled}
+\caption{Density for heights in the US adult population with the area between 180 and 185 cm shaded. Compare this plot with Figure~\ref{usHeightsHist180185}.}
+\label{fdicHeightContDistFilled}
+\end{figure}
+
+\begin{exercise}
+Three US adults are randomly selected. The probability a single adult is between \resp{180} and \resp{185} cm is 0.1157.\footnote{Brief answers: (a) $0.1157 \times 0.1157 \times 0.1157 = 0.0015$. (b) $(1-0.1157)^3 = 0.692$} \vspace{-1.5mm}
+\begin{enumerate}
+\setlength{\itemsep}{0mm}
+\item[(a)] What is the probability that all three are between \resp{180} and \resp{185} cm tall?
+\item[(b)] What is the probability that none are between \resp{180} and \resp{185} cm?
+\end{enumerate}
+\end{exercise}
+
+\begin{example}{What is the probability that a randomly selected person is \textbf{exactly} \resp{180}~cm? Assume you can measure perfectly.}
+\label{probabilityOfExactly180cm}
+This probability is zero. A person might be close to \resp{180} cm, but not exactly \resp{180} cm tall. This also makes sense with the definition of probability as area; there is no area captured between \resp{180}~cm and \resp{180}~cm.
+\end{example}
+
+\begin{exercise}
+Suppose a person's height is rounded to the nearest centimeter. Is there a chance that a random person's \textbf{measured} height will be \resp{180} cm?\footnote{This has positive probability. Anyone between \resp{179.5} cm and \resp{180.5} cm will have a \emph{measured} height of \resp{180} cm. This is probably a more realistic scenario to encounter in practice versus Example~\ref{probabilityOfExactly180cm}.}
+\end{exercise}
+
+\index{data!FCID|)}
+
+
 
 \end{doublespace}
