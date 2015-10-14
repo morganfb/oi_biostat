@@ -1123,7 +1123,7 @@ The expected value of a random variable has the same interpretation as a mean in
 \subsection{Variability in random variables}
 
 How variable will the outcomes be when tossing a coin three times?  The \indexthis{variance}{variance} and \indexthis{standard deviation}{standard deviation} can be used to describe the variability of a random variable. Section~\ref{variability}
-introduced a method for finding the variance and standard deviation for a data set. We first computed deviations from the mean ($x_i - \mu$), squared those deviations, and took an average to get the variance. In the case of a random variable, we again compute squared deviations. However, we take their sum weighted by their corresponding probabilities, just like we did for the expectation. This weighted sum of squared deviations equals the variance, and we calculate the standard deviation by taking the square root of the variance, just as we did in Section~\ref{variability}.
+introduced a method for finding the variance and standard deviation for a data set.  Deviations from the mean ($x_i - \mu$) were squared, then averaged to compute the variance. In the case of a random variable, squared deviations are again used, this time deviations from the mean of the random variable, and their sum is weighted by the corresponding probabilities. This weighted sum of squared deviations equals the variance, and the standard deviation is again the square root of the variance, just as in Section~\ref{variability}.
 
 \begin{termBox}{\tBoxTitle{General variance formula}
 If $X$ takes outcomes $x_1$, ..., $x_k$ with probabilities $P(X=x_1)$, ..., $P(X=x_k)$ and expected value $\mu=E(X)$, then the variance of $X$, denoted by $\text{Var}(X)$ or the symbol $\sigma^2$, is
@@ -1140,7 +1140,12 @@ $\text{Var}(X)$\vspace{1mm}\\\footnotesize Variance\\of $X$]{\raggedright\vspace
 
 $\text{Var}(X)$\vspace{1mm}\\\footnotesize Variance\\of $X$}
 
+The weighted sum in variance of a random variable can be interpreted as the expectation of the terms $(x_i - \mu)^2$ (instead of just $x_i$), so a compact form for the formula is 
+\begin{align*}
+	 \sigma_X^2 = E(X - \mu)^2.
+\end{align*}
 
+This compact form is not useful for direct computation, but it useful when understanding the general concept. 
 
 \begin{example}{Compute the variance and standard deviation of $X$, the number of heads in three tosses of a coin.}
     
@@ -1157,7 +1162,6 @@ The standard deviation is $sqrt(3/4) = \sqrt(3)/2 = 0.866$.  Tossing a coing pro
 
 \end{example}
 
-\textit{Insert example of the expected cost of a health plan for an individual.  Need data for co-pay, deductible, etc.  Use the table below to set up the calculation}
 
 \begin{example}{Expected health care costs in a health insurance plan}
 In most typical health insurance plans in the United States, members of the plan pay annually in 3 categories:  a monthly premium; and `out-of-pocket costs' consisting of co-payments at each physician visit and for each prescription. Members also pay a deductible amount each year before the insurance covers services and for care and supplies that are not covered by insurance.  Picking a new health plan involves estimating costs for the next year based on a person's best guess at the kind and number of services that will be needed.
@@ -1251,9 +1255,29 @@ The standard deviation is $\sqrt{(5)(39.45)} = (\sqrt{5})(\sqrt{39.45}) = \$14.4
 
 The example of health insurance cost has been simplified to make the calculations clear.  It ignores the fact that may plans have a deductible amount, and that plan members pay for services a different rates before and after the deductible has been reached. Often, insured individuals do not pay for services at all once a maximum amount has been reached in a year.  The exercises contain more realistic examples. 
 
+\begin{exercise}  The Association of American Medical Colleges (AAMC) introduced a new version of the Medical College Admission Test (MCAT) in the spring of 2015 and data from the scores were recently relased by AAMC\footnote{https://www.aamc.org/students/download/434504/data/percentilenewmcat.pdf}.  The test consists of 4 components: chemical and physical foundations of biological system; critical analysis and reasoning skills; biological and biochemical foundations of living systems; and psychological, social and biological foundations of behavior. The overall score is the sum of the individual component scores. The grading for each of the 4 components is scaled so that the mean score is 125.  The means and standard deviations for the 4 components and the total score for the population taking the exam in May 2015 exam are shown in table~\ref{mcatScoreDistribution}.
+	\begin{table}[h]
+		\caption{Means and Standard Deviations for MCAT Scores}
+		\label{table:mcatScoreDistribution}
+		\centering
+		\begin{tabular}{lrr}
+			\hline
+			\textbf{Component} & \textbf{Mean} & \textbf{Standard Deviation}\\
+			\hline
+			             Chem. Phys. Found. &   125 &   3.0\\
+			             Crit. Analysis &   125 &    3.0 \\
+			             Living  Systems &  125 &     3.0\\
+			             Found. Behavior&   125 &     3.1\\
+			             \textbf{Total} &    500 &     10.6\\
+			\hline
+		\end{tabular}
+	\end{table}	
+Show that the standard deviation in the table for the total score does not agree with that obtained using the formula for the standard deviation of the sum of random variables.  Why do you think that is the case?
+\end{exercise}
 
-\textit{The health care example is getting tired, so I will go back and add an example from bio, perhaps variability of the sum of two or more lab measurement}
+\textit{The second part of this will be difficult for students, esp without the notion of correlation of random variables. The simple answer is that the component scores are not independent.  More precisely,  the component scores will be positively correlated, increasing the variance of the sum.  Students who score high (low) on one component tend to score high (low) on all. It is an important concept, but difficult to cover with just intuition.  It may be a reason to introduce general correlation. }
 
+\textit{Because of this example, I think we should reconsider adding correlation to chapter 1, so that we can introduce joint distributions in chapter 2.  We have plenty of examples in chapter 1 where correlation is releveant}
 
 \index{random variable|)}
 
