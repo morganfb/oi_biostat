@@ -659,7 +659,7 @@ In a boxplot, a rectangle extending from the first quartile to the third quartil
 
 Any observation that lies beyond the whiskers is shown with a dot; these observations are called outliers. An \term{outlier} is a value that appears extreme relative to the rest of the data. For the \var{clutch.volume} variable, there are several large outliers and no small outliers, indicating the presence of some unusually large egg clutches. Outliers can provide insight into interesting features of the data. 
 
-\subsection{Scatterplots}
+\subsection{Scatterplots and Correlation}
 \label{scatterPlots}
 
 A \term{scatterplot} provides a case-by-case view of data for two numerical variables. In the \data{frog} data, \var{clutch.volume} and \var{body.size} are two numerical variables of interest; previous research has reported that larger body size allows females to produce larger egg clutches. The relationship between clutch volume and female body size is examined via scatterplot in Figure~\ref{frogClutchVolBodySize}. In any scatterplot, each point represents a single case. Since body size was measured for 129 frogs, there are 129 points in Figure~\ref{frogClutchVolBodySize}.
@@ -713,6 +713,64 @@ Not all associations are linear. In fact, some can be highly nonlinear, in which
 \end{figure}
 
 \textit{DH: If we keep this example, the plot will have to be formatted and I should add the country to the data set.  I have more information in older stat 100 files. JV: We should also remember to index the data.}
+
+Scatterplots provide a visual display of the relationship between two variables. It is usually denoted by $r$ and takes on values between -1 and 1. The term \term{correlation coefficient} is often used for $r$. If, in a scatterplot, the paired values of two variables tend to lie on a line, then
+
+\begin{itemize}
+
+ \item If $r > 0$, the slope will be positive and variables are positively associated
+
+ \item If $r < 0$, the line will have negative slope and the variables are negatively associate
+
+ \item If $r = 0$, or approximately 0, the line will be horizontal and there is no apparent trend or association.
+
+ \item If $r \pm 1$}, the points will lie exactly on a line, with positive slope if $r = 1$ and negative slope if $r = -1$.
+
+ \end{itemize}
+
+The formula for correlation uses the pairing of the two variables, just as the scatterplot does in a graph, so the data used in calculating correlation is a set of $n$ ordered pairs $(x_1,y_1), (x_2,y_2), \ldots, (x_n, y_n) $.
+
+\begin{termBox}{\tBoxTitle{Correlation}%
+		The correlation between two variables $x$ and $y$ is given by:
+		\begin{align*}
+          r & =  \frac{1}{n-1}\sum^{n}_{i=1}
+          \left(\frac{x_{i}-\overline{x}}
+          {s_{x}}\right)\left(\frac{y_{i}-\overline{y}}{s_{y}}\right)}\\ 
+          & =  \frac{\sum^{n}_{i=1}(x_{{\color{black} i}}
+          -\overline{x}) (y_{i}-\overline{y})}
+         {\sqrt{\sum^{n}_{i=1}(x_{i}-\overline{x})^{2}\sum^{n}_{i=1}(y_{i}-
+         \overline{y})^{2}}}}
+ 		\label{correlationEquation}
+ 		\end{align*},
+        where $(x_1,y_1), (x_2,y_2), \ldots, (x_n, y_n)$ are the $n$ paired values of $x$ and $y$, and $s_x$ and $s_y$ are the sample standard deviations of $x$ and $y$
+        variables, respectively.
+\end{termBox}
+
+The first version of the equation shows that $r$ is an average of products of terms, where the components are differences between values of$x$ or $y$ and their respective means, but re-scaled by standard deviations. 
+
+Example~\ref{simpleCorExample} shows the calculation of correlation in a simple (albeit, artificial) example in a table similar to the one used for a calculating a standard deviation.
+
+\begin{example}  Suppose the paired values of $x$ and $y$ are $(1,3), (2,4), and (3,0)$.  It is easy to show that $\overline{x} = 2$, $overline{y} = 3$, $sd(x) = 1$, and $sd(y) = 2.66$. 
+    
+    \begin{table}[h]
+        \caption{Caption}
+        \label{table:label}
+        \centering
+        \begin{tabular}{lllllllll}
+            \toprule
+            $x$ & $y$ & $\overline{x}$ & \overline{y} & \textbf{Header 5} & \textbf{Header 6} & \textbf{Header 7} & \textbf{Header 8} & \textbf{Header 9}\\
+            \midrule
+                         r2c1 &              r2c2 &              r2c3 &              r2c4 &              r2c5 &              r2c6 &              r2c7 &              r2c8 &              r2c9\\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+    
+    
+    
+\end{example}
+
+
+
 
 
 \subsection{Transforming data}
