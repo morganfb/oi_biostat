@@ -27,8 +27,6 @@ These questions encompass the broader idea of statistical inference covered in C
 
 Chapter \ref {foundationsForInference} provides the groundwork for inference on a larger population from observing one sample. Later chapters will cover inference comparing two or more distinct populations. While the equations and details change depending on the setting, the foundations and general procedures for inference are the same throughout statistics. Understanding how to make inferences using one sample in this chapter will provide familiarity for upcoming chapters. 
 
-Section \ref{brfssData} introduces a potential dataset that the CDC would use to answer the above questions. Section \ref{variabilityInEstimates} provides an introduction to point estimates, the distribution that these estimates are drawn from, and the variability within these estimates. Section \ref{confidenceIntervals} presents the concept of a confidence interval -- a range of values that incorporate variability. Finally Section \ref{hypothesisTesting} introduces hypothesis testing, allowing researchers to compare an observed point estimate to a benchmark. The hypothesis testing framework provides structure to encompass variability and uses the same moving parts as the calculation for a confidence interval. The subsequent sections \ref{tdistribution} - \ref{sampleSizeAndPower} provide additional insight into general inference tools.
-
 \section{BRFSS Data}
 \label{brfssData}
 The Behavioral Risk Factor Surveillance System (BRFSS), organized by the CDC, was started in 1984 and is the world's largest on-going telephone health survey system. This survey is nationwide and aims to "monitor state-level prevalence of major behavioral risks among adults associated with premature morbidity and mortality." \footnote{\url{http://www.cdc.gov/brfss/about/about_brfss.htm}} Topics like smoking, alcohol use, diet and exercise are included in this questionnaire. The annual survey data from 2000, \data{BRFSS}, could be used to estimate the average adult BMI of the US population. The four variables\footnote{There are a total of 289 variables in the dataset.} that the CDC is particularly interested in when calculating BMI are listed in Table  ~\ref{brfssBMIVariables}. 
@@ -88,6 +86,25 @@ Observing a random sample and drawing conclusions about the target population is
 \label{exploreBMI}
 \end{figure}
 
+\section{Mechanics of Inference}
+\label{mechanicsofInference}
+
+Chapter ~\ref{foundationsForInference} introduces two forms of an estimate: point estimate and confidence interval. For estimating the average adult BMI in the United States, the point estimate is a single number that best estimates such average. The CDC uses the sample mean of \data{BRFSS BMI}, $\bar{\mathrm{bmi}}$, to be the point estimate, the sample mean, for the average adult BMI in the US. 
+
+The CDC also creates a confidence interval to capture the average adult BMI. The range of values is calculated with the aim that the average population BMI is within this range. However, the interval does not always  guaranteed to include the population average. With 95\% confidence, the CDC calculates the following interval to do so: 
+\begin{eqnarray}
+\text{point estimate}\ \pm\ 2 \times SE \\
+\bar{\mathrm{bmi}}\ \pm\ 2 \times \frac{s}{\sqrt{n}}
+\label{95PercentConfidenceIntervalFormula}
+\end{eqnarray}
+
+where $s$ is the sample standard deviation, $n$ is the number of observations within the sample and $\bar{\mathrm{bmi}}$ is the point estimate. 
+
+The calculation of these estimates is straightforward and mechanical. The steps involved in hypothesis testing are equivalently formulaic. Understanding what these estimates represent, why they are calculated as they are and how they relate to one another is more involved. 
+
+Section ~\ref{variabilityInEstimates} introduces the point estimate and its particular flaw: ignoring point estimate variability. Sampling variability is difficult to observe from one observation, but Section ~\ref{pointEstimates} and Section ~\ref{sampDist} illustrate through $R$ that sampling variation exists. 
+
+Section ~\ref{confidenceIntervals} proposes the confidence interval to incorporate variability and dissects the formula \[\text{point estimate}\ \pm\ 2 \times SE\] to understand its component parts. These opening sections will explore the theory and motivation of both single point estimates and confidence intervals empirically through $R$ that serve as a foundation for hypothesis testing in Section \ref{hypothesisTesting}.
 
 \section{Variability in estimates}
 \label{variabilityInEstimates}
@@ -99,7 +116,7 @@ If the CDC, after observing the sample of 40 BMI values, were asked to give its 
 \subsection{Point estimates}
 \label{pointEstimates}
 
-A likely choice to estimate the \term{population mean} from the \data{BRFSS BMI} sample is to take the \term{sample mean}. That is, use the average BMI of all 40 survey respondents in the sample as the estimate for the average BMI among US adults. 
+A likely choice to estimate the \term{population mean} is to take the \term{sample mean} from the \data{BRFSS BMI} sample. That is, use the average BMI of all 40 survey respondents in the sample as the estimate for the average BMI among US adults. 
 
 For notation, use $\mathrm{bmi}_1, \mathrm{bmi}_2, \ldots, \mathrm{bmi}_{40}$  to represent the BMI for each survey respondent in the \data{BRFSS BMI} sample. The sample mean for BMI using the 40 observations is 
 \begin{eqnarray*}
@@ -141,11 +158,11 @@ Provide a point estimate of the population IQR for the BMI of participants using
 
 \end{exercise}
 
-Suppose from the original respondents in \data{BRFSS}, a different sample of 40 people is observed and the mean calculated; the answer would likely not be the same as $26.53$, the sample mean from \data{BRFSS BMI}. Estimates generally vary from one sample to another even with samples of the same size. Low \term{sampling variation} can suggest that the estimate may be close, but not exactly equal to the parameter. A larger sample size can ensure a closer estimate to the population parameter than an estimate taken from a smaller sized sample. 
+Suppose from the original respondents in \data{BRFSS}, a different sample of 40 people is observed and the mean calculated; the answer would likely not be the same as $26.53$, the sample mean from \data{BRFSS BMI}. There exists \term{sampling variation} within a point estimate. Estimates generally vary from one sample to another even with samples of the same size. The sample mean is the best guess for the population average, but it is most likely not equal to the population average. Low sampling variation can suggest that the estimate may be close, and a larger sample size can ensure a closer estimate to the population parameter than one taken from a smaller sized sample. 
 
-Using $R$, take another simple random sample from the \data{BRFSS} data of 40. The new sample mean for the BMI is 28.17. Doing this again, the average BMI is 24.89. Estimates differ across samples through sampling variation but the accuracy of the point estimate will improve once sample sizes increase. In practice, it is extremely rare to observe more than one sample from a population.
+$R$ can be used to demonstrate sampling variation. Another simple random sample from the \data{BRFSS} data of 40 is taken. The new sample mean for the BMI is 28.17. Doing this again, the average BMI is 24.89. Estimates differ across samples through sampling variation, but in practice, it is extremely rare to observe more than one sample from a population.
 
-A \term{running mean} - a sequence of means where each mean uses one more observation in its calculation than the mean directly before it in the sequence - demonstrates sampling variation and increasing accuracy for larger sample sizes. For \data{BRFSS BMI}, the second mean is the average of the first two observations, $\mathrm{bmi}_1, \mathrm{bmi}_2$. The third number in the running mean sequence is the average of $\mathrm{bmi}_1, \mathrm{bmi}_2,$ and $\mathrm{bmi}_3$. 
+A \term{running mean} - a sequence of means where each mean uses one more observation in its calculation than the mean directly before it in the sequence - demonstrates sampling variation and increasing precision for larger sample sizes. For \data{BRFSS BMI}, the second mean is the average of the first two observations, $\mathrm{bmi}_1, \mathrm{bmi}_2$. The third number in the running mean sequence is the average of $\mathrm{bmi}_1, \mathrm{bmi}_2,$ and $\mathrm{bmi}_3$. 
 
 The running mean for \data{BMI} in the \data{BRFSS BMI} dataset is shown in Figure~\ref{BMIRunningMean} for 40 observations. As more values get included, the running mean converges closer to the sample mean of 26.53. Similarly if the sample size of \data{BRFSS BMI} increases from 40 to 100 observations, the sample mean from 100 should be closer to the average US adult BMI than the sample mean from 40 observations. 
 
@@ -156,9 +173,9 @@ The running mean for \data{BMI} in the \data{BRFSS BMI} dataset is shown in Figu
       \label{BMIRunningMean}
 \end{figure}
 
-Sampling variation is across samples of the same size. Figure ~\ref{runningSamplingVariation} displays the running means of two samples of size 40 from \data{BRFSS}. With a small sample size, the path of the running means are not the same. There exists a substantial amount of sampling variation. The variation across the different running means decreases as the number of observations increases. 
+Sampling variation is across samples of the same size. Figure ~\ref{runningSamplingVariation} displays the running means of two samples of size 40 from \data{BRFSS}. With a small sample size, the path of the running means are not the same. There exists a substantial amount of sampling variation. 
 
-Figure ~\ref{runningSamplingVariation20} illustrates this more clearly by calculating the running means of 20 independent samples of 40 observations. The sampling variation is large with small sample sizes $n$, but as the number of observations get larger, the sampling variation decreases. This concept will be explored more in Section ~\ref{accuracyAndPrecision}. 
+Sampling variation decreases as the number of observations increases. Figure ~\ref{runningSamplingVariation20} illustrates this more clearly by calculating the running means of 20 independent samples of 40 observations. The sampling variation is large with small sample sizes $n$, but as the number of observations get larger toward 40, the spread of the running mean -- the sampling variation --  decreases. This concept will be explored more in Section ~\ref{accuracyAndPrecision}. 
 
 Figure ~\ref{runningSamplingVariation20} 
 \begin{figure}
@@ -171,7 +188,7 @@ Figure ~\ref{runningSamplingVariation20}
 \begin{figure}
    \centering
    \includegraphics[width=\textwidth]{ch_inference_foundations_oi_biostat/figures/brfssBMISampVar/brfssBMISampVar20}
-   \caption{Many running means from different samples of 40 observations from \data{BRFSS}. The sampling variation decreases as the number of observations gets larger.}
+   \caption{Many running means from different samples of 40 observations from \data{BRFSS}. The sampling variation among the running means decreases as the number of observations gets larger.}
 	\label{runningSamplingVariation20}
 \end{figure}
 
@@ -191,25 +208,27 @@ Although the sample mean is consistently accurate, it may not always be precise.
    \label{sampleMeanPrecision}
 \end{figure}
  
-\subsection{Sampling Distribution and the Standard Error of the Mean}
-\label{seOfTheMean}
+\subsection{Sampling Variability and Sampling Distribution}
+\label{sampDist}
 
 \data{BRFSS BMI} represents one random sample from \data{BRFSS} with one sample mean, $26.53$. Another random sample of 40 was taken in Section ~\ref{pointEstimates} and its mean calculated, $28.17$. This happens again (24.89) and again (26.34), and continue to do this many many times. Repeated sampling is only possible because the larger \data{BRFSS} dataset is available. This procedure generates a \term{sampling distribution} for the sample mean from samples of size 40, shown in Figure~\ref{brfssBMISamplingDistribution}.\footnote{The sampling distribution is constructed by repeated sampling from the target population. While \data{BRFSS} is not quite the target population of all US adults, the 170,000 observations is a large enough example to be a representative substitute of the target population and illustrate the concept of a sampling distribution.} 
 
 \begin{termBox}{\tBoxTitle{Sampling distribution}
-The \term{sampling distribution} of a point estimate represents the distribution of the point estimate based on samples of a fixed size from a certain population. There is a unique sampling distribution that exists that is inherent to the point estimator that is being measured. Every time that the point estimate is calculated from a particular sample of said size, the point estimate is one sample from the sampling distribution. Understanding the concept of a sampling distribution is central to understanding statistical inference.}
+The \term{sampling distribution} of a point estimate represents the distribution of the point estimate based on samples of a fixed size from a certain population. There is a unique sampling distribution that exists that is inherent to the point estimator that is being measured. Every time that a point estimate is calculated from a particular sample of said size, the point estimate is one observation in the sampling distribution. Understanding the concept of a sampling distribution is central to understanding variability and statistical inference.}
 \end{termBox}
 
 \begin{figure}
    \centering
    \includegraphics[width=\textwidth]{ch_inference_foundations_oi_biostat/figures/brfssBMISamplingDistribution/brfssBMISamplingDistribution}
-   \caption{A histogram of 100,000 sample means for BMI, where the samples are of size $n=40$. }
+   \caption{A histogram of an approximation to the sampling distribution. Here 100,000 sample means for BMI were calculated, where the samples are of size $n=40$. }
       \label{brfssBMISamplingDistribution}
 \end{figure}
 
-Figure~\ref{brfssBMISamplingDistribution} is an approximation of the sampling distribution. The approximation resembles the exact sampling distribution as more and more samples are drawn. To get the exact sampling distribution, the CDC would need to sample every possible unique combination of 40 respondents from the entire US adult population (and not from the \data{BRFSS} dataset).  The CDC would never create a sampling distribution and instead use all 170,000 observations to calculate one sample mean.\footnote{In practice, researchers are almost never capable of taking more than one sample from the target population.} However it is extremely important for the CDC to know that the single sample they observe is one observation out of the many possible sample means within the sampling distribution. 
-
-With access to the \data{BRFSS}dataset, an approximation of the sampling distribution of the sampling mean can be created with the following pseudocode \footnote{Refer to the appendix for R code}: 
+Figure~\ref{brfssBMISamplingDistribution} is an approximation of the sampling distribution. The sampling distribution is a fundamental concept, but researchers will never observe a sampling distribution. \footnote{To get the exact sampling distribution, the CDC would need to sample every possible unique combination of 40 respondents from the entire US adult population (and not from the \data{BRFSS} dataset).}
+  
+ The CDC would never create a sampling distribution from resampling, and instead they would use all 170,000 observations to calculate one sample mean.\footnote{In practice, researchers are almost never capable of taking more than one sample from the target population.} However it is extremely important for the CDC to know that sampling distribution demonstrates that sampling variation exists. The single sample they observe is one observation out of the many possible sample means within the sampling distribution. 
+ 
+With access to the \data{BRFSS}dataset, an approximation of the sampling distribution of the sampling mean can be created and sampling variation illustrated with the following pseudocode \footnote{Refer to the appendix for R code}: 
 
 \begin{verbatim}
 (1) Create a vector to store the sample mean values once calculated
@@ -219,24 +238,27 @@ With access to the \data{BRFSS}dataset, an approximation of the sampling distrib
 (5) Plot the vector of sample means as a histogram
 \end{verbatim}
   
-The sampling distribution for the sample mean is unimodal and symmetric, centered at the target population's mean. Intuitively, this makes sense. The sample means should tend to ``fall around'' the mean of the target population. From the sampling distribution, it's easy to understand why the sample mean is the best guess for the population mean.
+The sampling distribution for the sample mean is unimodal and symmetric, centered at the target population's mean. Intuitively, this makes sense for why the sample mean is the best guess for the population mean. The sample means should tend to ``fall around'' the mean of the target population.
 
-A point estimator will have some variability. Figure ~\ref{brfssBMISamplingDistribution} demonstrates that the estimator for the average adult BMI can range from 24 to 29. This range is specific to sample of size 40. Section ~\ref{accuracyAndPrecision} introduced that variability will decrease as the sample size gets larger. There must exist some metric to quantify the variability of the point estimate around the parameter that is sample size specific. 
+\subsection{Standard Error of the Mean}
+\label{seOfTheMean}
+
+There exists variability for a point estimator. For a sample of size 40, the average adult BMI ranged from 24 to 29 in Figure ~\ref{brfssBMISamplingDistribution}. For samples of larger sizes, variability decreases. Section ~\ref{accuracyAndPrecision} suggests that there should exist some metric to quantify the variability of a point estimate that is sample size dependent. 
 
 \begin{tipBox}{\tipBoxTitle{More data means less variability}
 In sampling, the larger the sample size the better. The precision of the sample mean increases as more data is observed within a sample.}
 \end{tipBox}
 
-Standard deviation is the most obvious method to quantify variability. The standard deviation of the sampling distribution denoted  $\sigma_{\bar{x}}$ or $s$ measures the sampling variation of the sample mean. \footnote{Caution: The standard deviation of the sample mean is not equivalent to the estimate for the standard deviation of the population. Those are measuring two separate quantities.}
-
-The standard deviation of the sample mean indicates how far the typical estimate is away from the population mean. It is a very good metric to size the typical \term{error} of the point estimate, and for this reason, an estimate's standard deviation is called the \term{standard error (SE)} \index{SE}\marginpar[\raggedright\vspace{-4mm} $SE$\\\footnotesize standard\\error]{\raggedright\vspace{-4mm} $SE$\\\footnotesize standard\\error} of the estimate. 
+Standard deviation is an obvious method to quantify variability. The standard deviation of the sample mean indicates how far the typical estimate is away from the population mean. It is a very good metric to size the typical \term{error} of the point estimate, and for this reason, an estimate's standard deviation is called the \term{standard error (SE)} \index{SE}\marginpar[\raggedright\vspace{-4mm} $SE$\\\footnotesize standard\\error]{\raggedright\vspace{-4mm} $SE$\\\footnotesize standard\\error} of the estimate. 
 
 \begin{termBox}{\tBoxTitle{Standard error of an estimate}
 The standard deviation associated with an estimate is called the \emph{standard error}. It describes the typical error or uncertainty associated with the estimate.}
 \end{termBox}
 
+Standard error of the estimate is a measure of spread among all the possible estimates, represented by the sampling distribution. The standard deviation of the sampling distribution, denoted  $\sigma_{\bar{x}}$, serves as an acceptable measure of a point estimate's variability.
+
 \begin{tipBox}{\tipBoxTitle{"Standard Deviation" $\neq$ "Standard Error"}
-Remember, the term "standard error" is not interchangeable with "standard deviation". Standard deviation describes the spread of values within one sample. The standard error of the sample mean describes how accurate the sample mean is to the population mean. It represents the spread among all sample means.}
+Caution: The standard deviation of the sample mean is not equivalent to the estimate for the standard deviation of the population. The term "standard error" is not interchangeable with "standard deviation." Standard deviation describes the spread of values within one sample. The standard error of the sample mean describes how accurate the sample mean is to the population mean. It represents the spread among all sample means. These two terms are measuring two separate quantities.}
 \end{tipBox}
 
 \begin{exercise}
@@ -245,7 +267,7 @@ Remember, the term "standard error" is not interchangeable with "standard deviat
 \footnote{(a) Prefer a large sample. Consider two random samples: one of size 10 and one of size 1000. Individual observations in the small sample are highly influential on the estimate while in larger samples these individual observations would more often "average each other out". The larger sample would tend to provide a more precise estimate of the parameter. (b) A "better" estimate typically means it has less error. Based on (a), intuition suggests that a larger sample size corresponds to a smaller standard error. In general the standard error, or variability, for an estimate gets smaller as the samples get larger.}
 \end{exercise}
 
-The definition of standard error suggests that it is the measure of spread among all the sample means -- the standard deviation of the sampling distribution. Calculating the exact sampling distribution is very uncommon. With the ability to repeatedly sampling, the standard deviation of the approximation of the sampling distribution can be used as a substitute. Using pseudocode from earlier in the section, an standard error estimate is the standard deviation of all the sample means. The algorithm can be implemented in $R$:\footnote{This computing experience samples without replacement to simulate experimenting in the real world (researchers would never ask the same person twice). Theory states however that individual BMI values need to be independent. A reliable method to ensure independence is to use the 10\% rule of thumb: simple random sample with a size less than 10\% of the population. Sampling without replacement within a finite population results in a reasonable estimate for the standard error}
+The standard deviation of the sampling distribution is difficult to calculate since calculating the exact sampling distribution is very uncommon. Through repeated sampling, the the approximation of the sampling distribution serves as a substitute. Using Section ~\ref{sampDist} pseudocode, the standard deviation of the calculated sample means serves as the estimate for the standard error. The algorithm in $R$ is below:\footnote{This computing experience samples without replacement to simulate experimenting in the real world (researchers would never ask the same person twice). Theory states however that individual BMI values need to be independent. A reliable method to ensure independence is to use the 10\% rule of thumb: simple random sample with a size less than 10\% of the population. Sampling without replacement within a finite population results in a reasonable estimate for the standard error}
 
 \begin{verbatim}
 N <-10000 #the number of iterations to do
@@ -258,10 +280,13 @@ for(i in 1:N){
   #calculate the mean of the sample and store it 
   sample.means[i]<-mean(sample)
 }
-sd(sample.means)
+
+#standard deviation of the approximation to the sampling distribution
+#serves as the estimate of the standard error
+sd(sample.means) 
 \end{verbatim}
 
-After 10,000 iterations the estimated standard error \data{sd(sample.means)} is $0.83$. This method, however, has one problem: most often, scientists only observe one sample $\bar{x}$. They don't have the chance to repeatedly sample and there is no obvious way to estimate the standard error from a single sample. What do they do? Instead the standard error of the sample mean can be calculated through the following equation: 
+The estimated standard error \data{sd(sample.means)} of 10,000 sample means is $0.83$. This method, however, has one problem: most often, scientists only observe one sample $\bar{x}$. They do not have the chance to repeatedly sample. What do they do? The standard error of the sample mean can be calculated through the following equation using only one sample: 
 
 \begin{termBox}{\tBoxTitle{Calculating SE for the sample mean}
 Given $n$ independent observations from a population with standard deviation $\sigma$, the standard error of the sample mean is equal to \vspace{-1mm}
@@ -274,14 +299,14 @@ A reliable method to ensure sample observations are independent is to guarantee 
 }
 \end{termBox}
 
-There is one subtle issue of Equation~(\ref{seOfXBar}): the population standard deviation is typically unknown. Section \ref{pointEstimates} suggests that the "best guess" for the population standard deviation can be used as a substitute. This estimate tends to be sufficiently good when the sample size is at least 30 and the population distribution is not strongly skewed, so practitioners then replace $s$ for $\sigma$ in Equation ~\ref{seOfXBar}. When the sample size is smaller than 30 or the skew condition is not met, a larger sample or other methods need to be used. These topics are further discussed in Section~\ref{cltSection}. 
+There is one subtle issue of Equation~(\ref{seOfXBar}): the population standard deviation is typically unknown. Section \ref{pointEstimates} suggests that the "best guess" for the population standard deviation can be used as a substitute. This estimate tends to be sufficiently good when the sample size is at least 30 and the population distribution is not strongly skewed. Practitioners then replace $s$ for $\sigma$ in Equation ~\ref{seOfXBar}. When the sample size is smaller than 30 or the skew condition is not met, a larger sample or other methods need to be used. These topics are further discussed in Section~\ref{cltSection}. 
 
 The standard error of the sample mean calculated from observing \data{BRFSS BMI} is 
 
 \begin{eqnarray*}
 SE_{\bar{x}} = \frac{s}{\sqrt{n}} = \frac{5.84}{\sqrt{40}} =  0.92
 \end{eqnarray*}
-where $s$ is the standard deviation of the sample and $n$ is the number of observations in the sample. We see that the standard error calculated $(0.92)$ is similar to the empirical standard deviation of the sampling distribution that was calculated above $(0.83)$ \footnote{For context, the sample taken in Section ~\ref{pointEstimates} with mean 28.17 results in a standard error of $8.85/\sqrt{40} =1.40$}. 
+where $s$ is the standard deviation of the sample and $n$ is the number of observations in the sample. The standard error calculated $(0.92)$ is similar to the empirical standard deviation of the sampling distribution that was calculated above $(0.83)$ \footnote{For context, the sample taken in Section ~\ref{pointEstimates} with mean 28.17 results in a standard error of $8.85/\sqrt{40} =1.40$. There also exists variability within sample standard deviations.}. 
 
 \begin{exercise}
 In another sample of 40 US adults, the standard deviation of BMI is $s_\mathrm{bmi} = 4.81$. The sample is a simple random sample of less than 10\% of the United States population. The observations are independent. (a)~What is the standard error of the sample mean, $\bar{bmi}=24.89$? (b)~Is it surprising if the CDC published a report with the average BMI of all US adults as 30? How about 25?
@@ -298,15 +323,10 @@ A BMI of 25 is less than one standard deviation away from the estimated populati
 
 \subsection{Basic properties of point estimates}
 
-This section achieved three goals. First, point estimates from a sample are used to estimate population parameters. Furthermore, these point estimates are not exact, and there exists some sampling variation. The sample mean is an example of a point estimate that is always accurate but not necessarily always precise. The precision of a point estimate can be represented through sampling variation and visualized through many running means or a sampling distribution. The sampling distribution, a theoretical and fundamental concept, represents all the possible sample estimates. A point estimate from an observed sample is only a single value within the estimate's sampling distribution. Lastly, sampling variation is measured during the standard error. This uncertainty of the sample mean can be mathematically calculated from Equation~\eqref{seOfXBar} or approximately computed in $R$. The standard error and estimates can be quantified for other parameters  -- the median, standard deviation, or any other number of statistics . These extensions will be postponed until later chapters and courses.
+This section achieved three goals. First, point estimates from a sample are single numbers used to estimate population parameters. Furthermore, there exists sampling variation for point estimates. Researchers only have the capacity to sample once making it difficult to notice that sampling from a population contains variability. The sample mean is an example of a point estimate that is always accurate but not necessarily always precise (due to sampling variation). The sampling distribution, a theoretical and fundamental concept, justifies the existence of sampling variation through all its possible sample estimates. 
+Lastly, standard error quantifies this sampling variation. This uncertainty of the sample mean can be mathematically calculated from Equation~\eqref{seOfXBar} or approximately computed in $R$.  Point estimates and their standard errors can be quantified for other parameters  -- the median, standard deviation, or any other number of statistics . These extensions will be postponed until later chapters and courses.
 
 \index{point estimate)}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
 
 %__________________
 \section{Confidence intervals}
@@ -314,17 +334,14 @@ This section achieved three goals. First, point estimates from a sample are used
 
 \index{confidence interval|(}
 
-A point estimate provides a single plausible value for a parameter and is rarely perfect and exact; usually there is some error in the estimate. The standard error conveys how large this sampling variation is but a single point estimate alone does not. Is there a single measurement that conveys a point estimate and the sampling variation in one? 
-
-This section and Section~\ref{hypothesisTesting} focuses on the sample mean as the point estimate and the population mean as the parameter. Section~\ref{aFrameworkForInference} generalizes these methods for a variety of point estimates and population parameters that will be encounter in Chapter~\ref{inferenceForNumericalData} and beyond.
-
 \subsection{Capturing the population parameter}
 
-Using only a point estimate is like fishing in a murky lake with a spear. Using a confidence interval is like fishing in the same lake with a net. Fishermen who fish with spears will probably miss. On the other hand, if fishermen use nets in that area, they are more likely to catch a fish. 
+Using only a point estimate is like fishing in a murky lake with a spear. Fishermen who fish with spears will probably miss. Using a confidence interval is like fishing in the same lake with a net. If fishermen use nets in that area, they are more likely to catch a fish. 
 
-Similarly a point estimate is likely to not equal the exact population parameter. The single point estimate lacks information about the standard error. If a range of plausible values is reported -- \term{a confidence interval} -- it becomes more likely that the parameter is captured. The range encompasses sampling variation. The width of the interval is a metric of how large the sampling variation is. The larger the interval generally indicates the large the sampling variation and standard error \footnote{It could also indicate the higher confidence level. This will be introduced later}. As with fishing, the goal of the confidence interval is to include the population parameter within it. 
- 
-%%%% change wording
+Similarly, a point estimate provides a single value as the "best guess" for a parameter. It is rarely perfect and exact; usually there is error in the estimate. The standard error conveys how large this sampling variation is but a single point estimate alone does not. It lacks information about the standard error. Is there a measurement that conveys a point estimate's value and its sampling variation simultaneously? 
+
+If a range of plausible values is reported -- \term{a confidence interval} -- it becomes more likely that the parameter is captured or contained within such range. The range incorporates sampling variation through the width of the interval. The larger the interval generally indicates the large the sampling variation and standard error \footnote{It could also indicate the higher confidence level. This will be introduced later}. As with fishing, the goal of the confidence interval is for the population parameter to be within the range.
+
 \begin{exercise}
 If we want to be very certain we capture the population parameter, should we use a wider interval or a smaller interval?\footnote{If we want to be more certain when capturing a fish, we might use a wider net. Likewise, we use a wider confidence interval if we want to be more certain that we capture the parameter. The more values included in the range, the more likely it is that this range contains the true value. The interval contains simply \emph{more} values. However capturing the parameter is not always the only goal when constructing a confidence interval. The parameter will always be captured with the widest interval going from $-\infty$ to $+\infty$ but this range does not increase understanding of the population parameter. } 
 \end{exercise}
@@ -332,6 +349,10 @@ If we want to be very certain we capture the population parameter, should we use
 Suppose a confidence interval is 10 units wide and we are 50\% confident that the range encompasses the population parameter. If another interval was instead 5 units wide centered at the same value as the original interval, are we now more or less confident than 50\% that the range will include the population parameter? \footnote{We are less than 50\% confident that the smaller interval includes the population parameter. Using a smaller net with fewer values, we are less confident that the population parameter is captured.}
 \end{exercise}
 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Confidence levels}
 \label{confidenceLevels}
 
@@ -356,34 +377,23 @@ Figure~\ref{95PercentConfidenceInterval} shows this process with 25 samples rand
    \label{95PercentConfidenceInterval}
 \end{figure}
 
-\subsection{Confidence intervals through computation}
-\label{confidenceIntervalsComputation}
 
-Figure~\ref{95PercentConfidenceInterval} should give inspiration on how to achieve an estimate of a 95\% confidence interval through computation. The goal, again, is to find a range of values that hopefully contains the population parameter. The natural method to estimate a confidence interval is through the sampling distribution from Figure~\ref{brfssBMISamplingDistribution} if independently resampling from the population is feasible. The mean of the sampling distribution was shown to be extremely close to the mean of the population, and thus a reasonable estimation for a 95\% confidence interval would be to take the middle 95\% of the sampling distribution. Below is pseudocode that implements this procedure using samples of size 40,000 \footnote{This highly resembles the pseudocode for approximating a sampling distribution from Section ~\ref{seOfTheMean}}
-\begin{verbatim}
-(1) Have a place to store all the sample means that we will calculate
-(2) Take a sample from the BRFSS dataset of 40,000
-(3) Calculate the sample mean from this specific sample and store it in (1)
-(4) Repeat (2) and (3) many many times 
-(5) Use the middle 95% of values as the 95% confidence interval. 
-\end{verbatim}
 
-Instead of plotting the values of the sample means (stored as \var{sample.means} within the $R$ code) to create the sampling distribution, the 95\% confidence interval is just the middle 95\% of all sample means calculated. 
 
-The confidence interval itself is the BMI value  $c_1$ such that 2.5\% of the \var{sample.mean} values is below $c_1$ and another BMI value $c_2$ such that 2.5\% of the distribution values is greater than $c_2$. In order to find these values, recall from the distributions unit ~\ref{distributions} that we need to use the \var{quantile()} function in $R$. Particularly use the \var{quantil()} function on \var{sample.means}, the vector that that stores the sample means. 
-\begin{verbatim}
-confidence.interval<-quantile(x=sample.means,c(0.025,0.975))
-> confidence.interval
-    2.5%    97.5% 
-26.30493 26.39697 
-\end{verbatim}
-The interval (26.30,26.40) is an estimation for a 95\% confidence interval using the sampling distribution of sample means. Scientists at the CDC can say that they are 95\% confident that the population mean BMI is between 26.30 and 26.40. Similarly after calculating many confidence intervals from many different observed samples, 95\% of all the confidence intervals that were calculated will contain the population mean. 
+\subsection{An approximate 95\% confidence interval}
+\label{95confidence}
 
-\begin{exercise}
-Say the CDC was interested in creating a 90\% confidence interval and a 50\% confidence interval. (a) how do the widths of the confidence intervals would compare? (b) How would the \var{quantile()} function be used to find the 90\% and 50\% confidence intervals from using the array \var{sample.means}?
- \footnote{(a) The 50\% confidence interval would be expected to have the smaller width. In general the more confident people are, the larger the confidence interval width will be.(b) Remember to grab the middle percent of observed sample means. Therefore using \var{sample.means}, the $R$ code for calculating a 90\% confidence interval  would be \var{quantile(x=sample.means,c(0.05,0.95))}. For a 50\% confidence interval, the code would be \var{quantile(x=sample.means,c(0.25,0.75))}}
-\end{exercise}
+A confidence interval contains information about a point estimate and the sampling variation. How are confidence intervals calculated from only observing one sample mean? 
 
+A confidence interval can be completely defined by two attributes: its center and its width. The interval should be centered at the best guess for where the population parameter is -- the point estimate -- and its width depends on how confident researchers are and the sampling variation of the point estimate. 
+
+Roughly 95\% of the time, the estimate that is observed from resampling will be within approximately 2 standard errors of the population parameter. Equation ~\ref{95PercentConfidenceIntervalFormula} allows scientists to be roughly \term{95\% confident} that the confidence interval has captured the population parameter from the sample observed:
+\begin{eqnarray}
+\text{point estimate}\ \pm\ 2 \times SE 
+\label{95PercentConfidenceIntervalFormula}
+\end{eqnarray}
+
+This equation can be understood in two ways: mathematically and through computation. The mathematical approach in Section ~\ref{calculate95confidence} will break up Equation ~\ref{95PercentConfidenceIntervalFormula} into three parts. The computational approach will elaborate on why variability is important to consider when estimating a range of values. 
 \subsection{Calculating an approximate 95\% confidence interval}
 \label{calculate95confidence}
 
@@ -398,10 +408,10 @@ Roughly 95\% of the time, the estimate that is observed from resampling will be 
 \text{point estimate}\ \pm\ 2 \times SE \footnote{95\% confidence corresponds closer to 1.96 standard errors away} 
 \label{95PercentConfidenceIntervalFormula}
 \end{eqnarray}
-Using the BMI sample from ~\ref{seOfTheMean} with an observed sample mean of 26.36 and sample standard deviation of 5.29, the 95\% confidence interval is calculated. 
+The \data{BRFSS BMI} sample with an observed sample mean of 26.36 and sample standard deviation of 5.29, the 95\% confidence interval is calculated. 
 \begin{align*}
 \text{point estimate}\ &\pm\ 2 \times SE\\
-26.36 &\pm 2\times \frac{5.29}{\sqrt{40000}}\\
+26.36 &\pm 2\times \frac{5.29}{\sqrt{40}}\\
 26.36 &\pm  0.053\\
 (26.31 &, 26.41)
 \end{align*}
@@ -412,6 +422,7 @@ In Figure~\ref{95PercentConfidenceInterval}, one interval does not contain a BMI
 
 The statement "about 95\% of observations are within 2 standard deviations of the mean" is only approximately true. This rule of thumb holds very well for the normal distribution. As Section ~\ref{cltSection} soon shows, the sample mean tends to be normally distributed when the sample size is sufficiently large. 
 
+\begin{comment}
 \begin{example}{The CDC is also curious about how the average heights of men and women differ and create 95\% confidence intervals for the average male height and the average female height. The \data{BRFSS BMI} data can be divided using the \var{sex} variable. Among the 40,000 individuals within the \data{BRFSS BMI}, there are 16,843 men and 23,157 women. The average male height is 70.22 inches and the average female height is 64.38. The sample standard deviations for males and females  are 3.00 and 2.80 respectively. What are the 95\% confidence intervals for the average male and female height in the US? }\label{CIforGenderHeight}
 Both 95\% confidence intervals are calculated using the formula \[\text{point estimate}\ \pm\ 2 \times SE\] and the information given above: 
 \begin{align*}
@@ -428,6 +439,8 @@ Both 95\% confidence intervals are calculated using the formula \[\text{point es
 \end{align*}
 With different centers and different widths, the confidence intervals for average height by gender are different.  
 \end{example}
+\end{comment}
+
 
 The creation of the 95\% confidence interval depends on the center and the standard error. In Section ~\ref{changingTheConfidenceLevelSection}, we will see how the multiplier changes beyond 2 standard errors as confidence levels change. 
 
@@ -435,15 +448,45 @@ The creation of the 95\% confidence interval depends on the center and the stand
 The sample data \data{BRFSS BMI} suggests the average adult's age is about 46.64 years with a standard error of 0.09 years (estimated using the sample standard deviation, 17.35). What is an approximate 95\% confidence interval for the average age of US adults?\footnote{Again apply Equation~(\ref{95PercentConfidenceIntervalFormula}): $46.64 \ \pm \ 2\times 0.09 \rightarrow (46.46, 46.82)$. The interpretation of the interval is, "We are about 95\% confident the average age of US adults is between 46.46 and 46.82 years." Looking at the entire \data{BRFSS} dataset that the \data{BRFSS BMI} sample is drawn from (normally we do not have this luxury!), the average age is 46.72 which is indeed within the confidence interval just calculated.}
 \end{exercise}
 
+\subsection{Confidence intervals through computation}
+\label{confidenceIntervalsComputation}
+
+Figure~\ref{95PercentConfidenceInterval} should give inspiration on how to achieve an estimate of a 95\% confidence interval through computation. The goal, again, is to find a range of values that hopefully contains the population parameter. The natural method to estimate a confidence interval is through the sampling distribution from Figure~\ref{brfssBMISamplingDistribution} if independently resampling from the population is feasible. The mean of the sampling distribution was shown to be extremely close to the mean of the population, and thus a reasonable estimation for a 95\% confidence interval would be to take the middle 95\% of the sampling distribution. Below is pseudocode that implements this procedure using samples of size 40 \footnote{This highly resembles the pseudocode for approximating a sampling distribution from Section ~\ref{sampDist}}
+\begin{verbatim}
+(1) Have a place to store all the sample means that we will calculate
+(2) Take a sample from the BRFSS dataset of 40
+(3) Calculate the sample mean from this specific sample and store it in (1)
+(4) Repeat (2) and (3) many many times 
+(5) Use the middle 95% of values as the 95% confidence interval. 
+\end{verbatim}
+
+Instead of plotting the values of the sample means (stored as \var{sample.means} within the $R$ code) to create the sampling distribution, the 95\% confidence interval is just the middle 95\% of all sample means calculated. 
+
+The confidence interval itself is the BMI value  $c_1$ such that 2.5\% of the \var{sample.mean} values is below $c_1$ and another BMI value $c_2$ such that 2.5\% of the distribution values is greater than $c_2$. In order to find these values, recall from the distributions unit ~\ref{distributions} that we need to use the \var{quantile()} function in $R$. Particularly use the \var{quantil()} function on \var{sample.means}, the vector that that stores the sample means. 
+\begin{verbatim}
+confidence.interval<-quantile(x=sample.means,c(0.025,0.975))
+> confidence.interval
+    2.5%    97.5% 
+25.30 26.39
+\end{verbatim}
+The interval (25.30,26.39) is an estimation for a 95\% confidence interval using the sampling distribution of sample means. Scientists at the CDC can say that they are 95\% confident that the population mean BMI is between 25.30 and 26.39. Similarly after calculating many confidence intervals from many different observed samples, 95\% of all the confidence intervals that were calculated will contain the population mean. 
+
+\begin{exercise}
+Say the CDC was interested in creating a 90\% confidence interval and a 50\% confidence interval. (a) how do the widths of the confidence intervals would compare? (b) How would the \var{quantile()} function be used to find the 90\% and 50\% confidence intervals from using the array \var{sample.means}?
+ \footnote{(a) The 50\% confidence interval would be expected to have the smaller width. In general the more confident people are, the larger the confidence interval width will be.(b) Remember to grab the middle percent of observed sample means. Therefore using \var{sample.means}, the $R$ code for calculating a 90\% confidence interval  would be \var{quantile(x=sample.means,c(0.05,0.95))}. For a 50\% confidence interval, the code would be \var{quantile(x=sample.means,c(0.25,0.75))}}
+\end{exercise}
+
+
+
 \subsection{The sample size for a sampling distribution}
 \label{sampdistmean}
 
-In Section~\ref{seOfTheMean}, a sampling distribution for $\bar{\mathrm{bmi}}$, the average BMI value for samples of size 5 and 50, was introduced in Figure~\ref{brfssBMISamplingDistribution}. With larger sample sizes like $n=40,000$, the sampling variation decreases significantly than with $n=5$ or $n=50$. In Figure ~\ref{sampleMeanPrecision}, the sampling distribution for $n=5$ was slightly skewed but the sampling distribution for $n=50$ looks more symmetric. Figure \~ref{sampDistNormal} is a histogram of the sample means for 100,000 different random samples of size $n=50$ with a normal probability plot of those sample means. 
+In Section~\ref{sampDist}, a sampling distribution for $\bar{\mathrm{bmi}}$, the average BMI value for samples of size 5 and 40, was introduced in Figure~\ref{brfssBMISamplingDistribution}. With larger sample sizes like $n=40$, the sampling variation decreases significantly than with $n=5$ or $4=50$. In Figure ~\ref{sampleMeanPrecision}, the sampling distribution for $n=5$ was slightly skewed but the sampling distribution for $n=40$ looks more symmetric. Figure \~ref{sampDistNormal} is a histogram of the sample means for 100,000 different random samples of size $4=50$ with a normal probability plot of those sample means. 
 
 \begin{figure}[hht]
    \centering
    \includegraphics[width=\textwidth]{ch_inference_foundations_oi_biostat/figures/sampDistNormal/sampDistNormal}
-   \caption{The left panel shows a histogram of the sample means for 100,000 different random samples of size $n=100$. The right panel shows a normal probability plot of those sample means.}
+   \caption{The left panel shows a histogram of the sample means for 100,000 different random samples of size $n=40$. The right panel shows a normal probability plot of those sample means.}
    \label{sampDistNormal}
 \end{figure}
 
@@ -781,7 +824,7 @@ Recall that the CDC researchers are interested if US adults are maintaining a he
 \item[$H_A$:] $\mu_{\mathrm{bmi}} \neq 22$ 
 \end{itemize}
 
-Instead of 40,000 within the \data{BRFSS BMI} sample, let's consider a sample of 50 people for simplicity with a sample mean of 24. The sample standard deviation is 5. Given this information the T-statistic is calculated as\footnote{calculating the T-statistic using actual data is an exercise in the book}. \[T=\frac{24-22}{5/\sqrt{50}}= 2.83\] The T-statistic can be thought of as a Z-score (standard score) that indicates how many standard deviations the observed sample mean is from the null value. This standardization becomes a great way to unify all the moving parts in order to calculate the p-value. 
+Let's consider a sample of 50 people for simplicity with a sample mean of 24. The sample standard deviation is 5. Given this information the T-statistic is calculated as\footnote{calculating the T-statistic using actual data is an exercise in the book}. \[T=\frac{24-22}{5/\sqrt{50}}= 2.83\] The T-statistic can be thought of as a Z-score (standard score) that indicates how many standard deviations the observed sample mean is from the null value. This standardization becomes a great way to unify all the moving parts in order to calculate the p-value. 
 
 Within the Hypothesis testing framework, Step 3 resulted in a T-statistic of 2.83. Step 4 begins by first knowing how the T-statistic is distributed. Section ~\ref{hypothesisFramework} stated that in general, the T-statistic follows a $t$-distribution with $n-1$ degrees of freedom. In fact, the T-statistic can either follow a $t$-distribution or a normal distribution. The sample size determines which distribution to model. Similarly to confidence intervals, if $n \geq 30$, the T-statistic can be thought of coming from a normal distribution. If $n < 30$, use a $t$-distribution for the T-statistic instead.
 
