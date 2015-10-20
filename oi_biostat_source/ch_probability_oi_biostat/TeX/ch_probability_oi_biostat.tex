@@ -1,6 +1,6 @@
 %!TEX root=../../main.tex
 
-\begin{doublespace}
+%\begin{doublespace}
 
 \chapter{Probability}
 \label{probability}
@@ -46,7 +46,7 @@ Not rolling a \resp{2} is the same as getting a \resp{1}, \resp{3}, \resp{4}, \r
 \end{example}
 
 \begin{example} {Consider rolling two dice. If $1/6^{th}$ of the time the first die is a \resp{1} and $1/6^{th}$ of those times the second die is a \resp{1}, what is the chance of getting two \resp{1}s?}\label{probOf2Ones}
-If $16.\bar{6}$\% of the time the first die is a \resp{1} and $1/6^{th}$ of \emph{those} times the second die is also a \resp{1}, then the chance that both dice are \resp{1} is $(1/6)\times (1/6)$ or $1/36$.
+If $16.\bar{6}$\% of the time the first die is a \resp{1} and $1/6^{th}$ of \emph{those} times the second die is also a \resp{1}, then the chance that both dice are \resp{1} is $(1/6) (1/6)$ or $1/36$.
 \end{example}
 
 Probability also appears in more realistic contexts, such as in predicting the inheritance of genetic disease. Cystic fibrosis (CF) is a life-threatening genetic disorder caused by mutations in the \textit{CFTR} gene located on chromosome 7. Defective copies of \textit{CFTR} can result in the reduced quantity and function of the CFTR protein, which leads to the buildup of thick mucus in the lungs and pancreas.\footnote{The CFTR protein is responsible for transporting sodium and chloride ions across cell membranes,.} CF is an autosomal recessive disorder; an individual only develops CF if they have inherited two affected copies of \textit{CFTR}. Individuals with one normal (wild-type) copy and one defective (mutated) copy are known as carriers; they do not develop CF, but may pass the disease-causing mutation onto their offspring.
@@ -59,7 +59,7 @@ Although it seems more complicated to calculate probabilities for disease inheri
 
 \textit{JV: Perhaps it is not obvious that the outcomes are equally likely if someone is new to both genetics and probability (without calculating that each is indeed 1/4)? Solution 1 requires immediately identifying that each outcome occurs with equal likelihood.}
 
-\textit{Solution 2:  Calculate the proportion of outcomes that produce an affected child, as in Example~\ref{probOf2Ones}.}  During reproduction, one parent will pass along an affected copy half of the time.  When the child receives an affected gene from one parent, half of the those times, they will also receive an affected gene from the other parent.	So the proportion of times the child will be have two affected copies is $(1/2) \times (1/2) = 1/4$.
+\textit{Solution 2:  Calculate the proportion of outcomes that produce an affected child, as in Example~\ref{probOf2Ones}.}  During reproduction, one parent will pass along an affected copy half of the time.  When the child receives an affected gene from one parent, half of the those times, they will also receive an affected gene from the other parent.	So the proportion of times the child will be have two affected copies is $(1/2) (1/2) = 1/4$.
 \end{example}
 
 \begin{figure}
@@ -424,7 +424,7 @@ Just as variables and observations can be independent, random phenomena can also
 
 Independence was used implicitly on page~\pageref{CFInheritanceExample} in the second solution to the probability that two carriers will have an affected child with cystic fibrosis. Genes are typically passed along from the mother and father independently, allowing for the assumption that, on average, half of the offspring who receive a mutated gene copy from the mother will also receive a mutated copy from the father.
 
-Example~\ref{probOf2Ones} provides a basic example of two independent processes: rolling two dice. What is the probability that both will be \resp{1}? Suppose one of the dice is blue and the other green. If the outcome of the blue die is a \resp{1}, it provides no information about the outcome of the green die. This question was first encountered in Example~\ref{probOf2Ones} (page~\pageref{probOf2Ones}), with the solution using the following logic: $1/6^{th}$ of the time the blue die is a \resp{1}, and $1/6^{th}$ of \emph{those} times the green die will also be \resp{1}. This is illustrated in Figure~\ref{fig:indepForRollingTwo1s}. Because the rolls are independent, the probabilities of the corresponding outcomes can be multiplied to obtain the final answer: $(1/6)\times(1/6)=1/36$. This can be generalized to many independent processes. 
+Example~\ref{probOf2Ones} provides a basic example of two independent processes: rolling two dice. What is the probability that both will be \resp{1}? Suppose one of the dice is blue and the other green. If the outcome of the blue die is a \resp{1}, it provides no information about the outcome of the green die. This question was first encountered in Example~\ref{probOf2Ones} (page~\pageref{probOf2Ones}), with the solution using the following logic: $1/6^{th}$ of the time the blue die is a \resp{1}, and $1/6^{th}$ of \emph{those} times the green die will also be \resp{1}. This is illustrated in Figure~\ref{fig:indepForRollingTwo1s}. Because the rolls are independent, the probabilities of the corresponding outcomes can be multiplied to obtain the final answer: $(1/6)(1/6)=1/36$. This can be generalized to many independent processes. 
 
 \begin{figure}[hht]
 \centering
@@ -437,8 +437,8 @@ Example~\ref{probOf2Ones} provides a basic example of two independent processes:
 \footnote{The same logic applies from Example~\ref{probOf2Ones}. If $1/36^{th}$ of the time the blue and green dice are both \resp{1}, then $1/6^{th}$ of \emph{those} times the red die will also be \resp{1}, so multiply:
 {\begin{align*}
 P(blue=\text{\small\resp{1} and } green=\text{\small\resp{1} and } red=\text{\small\resp{1}})
-	&= P(blue=\text{\small\resp{1}})\times P(green=\text{\small\resp{1}})\times P(red=\text{\small\resp{1}}) \\
-	&= (1/6)\times (1/6)\times (1/6)
+	&= P(blue=\text{\small\resp{1}}) P(green=\text{\small\resp{1}}) P(red=\text{\small\resp{1}}) \\
+	&= (1/6) (1/6) (1/6)
 	= 1/216
 \end{align*}} \vspace{-7mm}
 }
@@ -449,11 +449,11 @@ Guided Practice~\ref{threeDice} illustrates the Multiplication Rule for independ
 \begin{termBox}{\tBoxTitle{\term{Multiplication Rule} for independent processes}
 If $A$ and $B$ represent events from two different and independent processes, then the probability that both $A$ and $B$ occur can be calculated as the product of their separate probabilities: \vspace{-1.5mm}
 \begin{eqnarray}\label{eqForIndependentEvents}
-P(A \text{ and }B) = P(A) \times  P(B)
+P(A \text{ and }B) = P(A)  P(B)
 \end{eqnarray}
 Similarly, if there are $k$ events $A_1$, ..., $A_k$ from $k$ independent processes, then the probability they all occur is\vspace{-1.5mm}
 \begin{eqnarray*}
-P(A_1) \times  P(A_2)\times  \cdots \times  P(A_k)
+P(A_1) \times  P(A_2) \cdots   P(A_k)
 \end{eqnarray*}\vspace{-6mm}}
 \end{termBox}
 
@@ -461,9 +461,9 @@ In applications to biology or medicine, complicated probability problems are oft
 
 \begin{comment}
 \begin{exercise} \label{ex2Handedness}
-About 9\% of people are left-handed. Suppose 2 people are selected at random from the U.S. population. Because the sample size of 2 is very small relative to the population, it is reasonable to assume these two people are independent. (a)~What is the probability that both are left-handed? (b)~What is the probability that both are right-handed?\footnote{(a) The probability the first person is left-handed is $0.09$, which is the same for the second person. We apply the Multiplication Rule for independent processes to determine the probability that both will be left-handed: $0.09\times 0.09 = 0.0081$.
+About 9\% of people are left-handed. Suppose 2 people are selected at random from the U.S. population. Because the sample size of 2 is very small relative to the population, it is reasonable to assume these two people are independent. (a)~What is the probability that both are left-handed? (b)~What is the probability that both are right-handed?\footnote{(a) The probability the first person is left-handed is $0.09$, which is the same for the second person. We apply the Multiplication Rule for independent processes to determine the probability that both will be left-handed: $(0.09) (0.09) = 0.0081$.
 
-(b) It is reasonable to assume the proportion of people who are ambidextrous (both right and left handed) is nearly 0, which results in $P($right-handed$)=1-0.09=0.91$. Using the same reasoning as in part~(a), the probability that both will be right-handed is $0.91\times 0.91 = 0.8281$.}
+(b) It is reasonable to assume the proportion of people who are ambidextrous (both right and left handed) is nearly 0, which results in $P($right-handed$)=1-0.09=0.91$. Using the same reasoning as in part~(a), the probability that both will be right-handed is $(0.91) (0.91) = 0.8281$.}
 \end{exercise}
 
 \begin{exercise} \label{ex5Handedness}
@@ -472,10 +472,10 @@ Suppose 5 people are selected at random.\footnote{(a)~The abbreviations \resp{RH
 P(\text{all five are \resp{RH}})
 &= P(\text{first = \resp{RH}, second = \resp{RH}, ..., fifth = \resp{RH}}) \\
 &= P(\text{first = \resp{RH}})\times P(\text{second = \resp{RH}})\times  \dots \times P(\text{fifth = \resp{RH}}) \\
-&= 0.91\times 0.91\times 0.91\times 0.91\times 0.91 = 0.624
+&= (0.91) (0.91) (0.91) (0.91)(0.91) = 0.624
 \end{align*}
 
-(b)~Using the same reasoning as in~(a), $0.09\times 0.09\times 0.09\times 0.09\times 0.09 = 0.0000059$
+(b)~Using the same reasoning as in~(a), $(0.09) (0.09)(0.09)(0.09)(0.09) = 0.0000059$
 
 (c)~Use the complement, $P($all five are \resp{RH}$)$, to answer this question:
 \begin{align*}
@@ -493,8 +493,8 @@ P(\text{not all \resp{RH}})
 
 Suppose the variables \var{handedness} and \var{gender} are independent, i.e. knowing someone's \var{gender} provides no useful information about their \var{handedness} and vice-versa. Then we can compute whether a randomly selected person is right-handed and female\footnote{The actual proportion of the U.S. population that is \resp{female} is about 50\%, and so we use 0.5 for the probability of sampling a woman. However, this probability does differ in other countries.} using the Multiplication Rule:
 \begin{eqnarray*}
-P(\text{right-handed and female}) &=& P(\text{right-handed}) \times  P(\text{female}) \\
-&=& 0.91 \times  0.50 = 0.455
+P(\text{right-handed and female}) &=& P(\text{right-handed}) P(\text{female}) \\
+&=& (0.91) (0.50) = 0.455
 \end{eqnarray*}
 
 
@@ -565,7 +565,7 @@ The previous examples in this section have used independence to solve probabilit
 The probability the card is a heart is $1/4$ ($13/52=1/4$) and the probability that it is an ace is $1/13$ ($4/52=1/13$). The probability that the card is the ace of hearts is $1/52$. Check whether Equation~\ref{eqForIndependentEvents} is satisfied:
 
 \begin{align*}
-P({\color{redcards}\heartsuit})\times P(\text{ace}) = \frac{1}{4}\times \frac{1}{13} = \frac{1}{52} 
+P({\color{redcards}\heartsuit}) P(\text{ace}) = (\frac{1}{4}) (\frac{1}{13}) = \frac{1}{52} 
 = P({\color{redcards}\heartsuit}\text{ and ace})
 \end{align*}
 Because the equation holds, the event that the card is a heart and the event that the card is an ace are independent events.
@@ -771,7 +771,7 @@ Section~\ref{probabilityIndependence} introduced the Multiplication Rule for ind
 \begin{termBox}{\tBoxTitle{General Multiplication Rule}
 If $A$ and $B$ represent two outcomes or events, then \vspace{-1.5mm}
 \begin{eqnarray*}
-P(A\text{ and }B) = P(A | B)\times P(B)
+P(A\text{ and }B) = P(A | B) P(B)
 \end{eqnarray*} \vspace{-6.5mm} \par
 It is useful to think of $A$ as the outcome of interest and $B$ as the condition.}
 \end{termBox}
@@ -789,7 +789,7 @@ P(\text{\var{inoculated} = \resp{no}})=0.9608
 \end{eqnarray*}
 Among the 96.08\% of people who were not inoculated, 85.88\% survived:
 \begin{eqnarray*}
-P(\text{\var{result} = \resp{lived} and \var{inoculated} = \resp{no}}) = 0.8588\times 0.9608 = 0.8251
+P(\text{\var{result} = \resp{lived} and \var{inoculated} = \resp{no}}) = (0.8588) (0.9608) = 0.8251
 \end{eqnarray*}
 This is equivalent to the General Multiplication Rule. We can confirm this probability in Table~\ref{smallpoxProbabilityTable} at the intersection of \resp{no} and \resp{lived} (with a small rounding error).
 \end{example}
@@ -838,7 +838,7 @@ It is not difficult to show in Guided Practice~\ref{condProbOfRollingA1AfterOne1
 \begin{eqnarray*}
 P(Y=\text{\resp{1}}\ |\ X=\text{\resp{1}})
 	&=& \frac{P(Y=\text{\resp{1} and }X=\text{\resp{1}})}{P(X=\text{\resp{1}})} \\
-	&=& \frac{P(Y=\text{\resp{1}})\times \color{oiGB}P(X=\text{\resp{1}})}{\color{oiGB}P(X=\text{\resp{1}})} \\
+	&=& \frac{P(Y=\text{\resp{1}}) \color{oiGB}P(X=\text{\resp{1}})}{\color{oiGB}P(X=\text{\resp{1}})} \\
 	&=& P(Y=\text{\resp{1}}) \\
 \end{eqnarray*}
 
@@ -872,8 +872,8 @@ The \data{smallpox} data fit this description. The population is split by \var{i
 Tree diagrams are annotated with marginal and conditional probabilities, as shown in Figure~\ref{smallpoxTreeDiagram}. This tree diagram splits the smallpox data by \var{inoculation} into the \resp{yes} and \resp{no} groups with respective marginal probabilities 0.0392 and 0.9608. The secondary branches are conditioned on the first, so we assign conditional probabilities to these branches. For example, the top branch in Figure~\ref{smallpoxTreeDiagram} is the probability that \var{result} = \resp{lived} conditioned on the information that \var{inoculated} = \resp{yes}. Joint probabilities can be constructed at the end of each branch in the tree by multiplying the numbers from left to right. These joint probabilities are computed using the General Multiplication Rule:
 \begin{eqnarray*}
 && P(\text{\var{inoculated} = \resp{yes} and \var{result} = \resp{lived}}) \\
-	&&\quad = P(\text{\var{inoculated} = \resp{yes}})\times P(\text{\var{result} = \resp{lived}}|\text{\var{inoculated} = \resp{yes}}) \\
-	&&\quad = 0.0392\times 0.9754=0.0382
+	&&\quad = P(\text{\var{inoculated} = \resp{yes}}) P(\text{\var{result} = \resp{lived}}|\text{\var{inoculated} = \resp{yes}}) \\
+	&&\quad = (0.0392) (0.9754) =0.0382
 \end{eqnarray*}
 
 
@@ -939,8 +939,8 @@ The secondary branches are conditioned on the primary branch and show conditiona
 Joint probabilities can be constructed at the end of each branch by multiplying the numbers from left to right, such as the probability that a woman tests positive given that she has breast cancer (abbreviated as BC):
 
 \begin{align*}
-P(\text{BC and mammogram$^+$}) &= P(\text{mammogram$^+$ } |\ \text{BC}) \times P(\text{BC}) \\
-	&= 0.89\times 0.0035 = 0.00312
+P(\text{BC and mammogram$^+$}) &= P(\text{mammogram$^+$ } |\ \text{BC})  P(\text{BC}) \\
+	&= (0.89) (0.0035) = 0.00312
 \end{align*}
 
 Using the tree diagram allows for the information in the problem to be mapped out in a way that makes it easier to see how the desired conditional probability can be calculated. In this case, the diagram makes it clear that there are two scenarios in which someone can test positive: either testing positive when having breast cancer or by testing positive in the absence of breast cancer. To find the probability that someone has breast cancer given that they test positive, apply the conditional probability formula: divide the probability of testing positive when having breast cancer by the probability of testing positive.
@@ -950,7 +950,7 @@ The probability of a positive test result is the sum of the two corresponding sc
 P(\text{\underline{\color{black}mammogram$^+$}}) &= P(\text{\underline{\color{black}mammogram$^+$} and has BC}) + P(\text{\underline{\color{black}mammogram$^+$} and no BC}) \\
 	&= P(\text{has BC})P(\text{mammogram$^+$ } | \text{ has BC}) \\
 	&\qquad\qquad	+ P(\text{no BC})P(\text{mammogram$^+$ } | \text{ no BC}) \\
-	&= 0.0035\times 0.89 + 0.9965\times 0.07 = 0.07288
+	&= (0.0035)(0.89) + (0.9965)(0.07) = 0.07288
 \end{align*}
 
 Thus, if the mammogram screening is positive for a patient, the probability that the patient has breast cancer is given by: 
@@ -969,8 +969,8 @@ The process used to solve the problem via the tree diagram can be condensed into
 \begin{align*}
 P(\text{has BC } | \text{ mammogram$^+$})
 &= \frac{P(\text{has BC and mammogram$^+$})}{P(\text{mammogram$^+$})} \\
-&= \frac{P(\text{mammogram$^+$ } | \text{ has BC}) \times P(\text{has BC})}
-{[P(\text{mammogram$^+$ } | \text{ no BC}) \times P(\text{no BC})] + [P(\text{mammogram$^+$ } | \text{ has BC}) \times P(\text{has BC})]}
+&= \frac{P(\text{mammogram$^+$ } | \text{ has BC})  P(\text{has BC})}
+{[P(\text{mammogram$^+$ } | \text{ no BC}) P(\text{no BC})] + [P(\text{mammogram$^+$ } | \text{ has BC}) P(\text{has BC})]}
 \end{align*}
 
 The generalization of this formula is known as Bayes' Theorem or Bayes' Rule.
@@ -1103,7 +1103,7 @@ E(X) &= (0)(P(X=0)) + (1)(P(X=1)) + (2)(P(X=2)) + (3)(P(X = 3)) \\
 \begin{termBox}{\tBoxTitle{Expected value of a discrete random variable}
 If $X$ takes outcomes $x_1$, ..., $x_k$ with probabilities $P(X=x_1)$, ..., $P(X=x_k)$, the expected value of $X$ is the sum of each outcome multiplied by its corresponding probability:
 \begin{align}
-E(X) 	&= x_1\times P(X=x_1) + \cdots + x_k\times P(X=x_k) \notag \\
+E(X) 	&= x_1 P(X=x_1) + \cdots + x_k P(X=x_k) \notag \\
 	&= \sum_{i=1}^{k}x_iP(X=x_i)
 \end{align}
 The Greek letter $\mu$\index{Greek!mu ($\mu$)} may be used in place of the notation $E(X)$.}
@@ -1128,8 +1128,8 @@ introduced a method for finding the variance and standard deviation for a datase
 \begin{termBox}{\tBoxTitle{General variance formula}
 If $X$ takes outcomes $x_1$, ..., $x_k$ with probabilities $P(X=x_1)$, ..., $P(X=x_k)$ and expected value $\mu=E(X)$, then the variance of $X$, denoted by $\text{Var}(X)$ or the symbol $\sigma^2$, is
 \begin{align}
-\sigma^2 &= (x_1-\mu)^2\times P(X=x_1) + \cdots \notag \\
-	& \qquad\quad\cdots+ (x_k-\mu)^2\times P(X=x_k) \notag \\
+\sigma^2 &= (x_1-\mu)^2 P(X=x_1) + \cdots \notag \\
+	& \qquad\quad\cdots+ (x_k-\mu)^2 P(X=x_k) \notag \\
 	&= \sum_{j=1}^{k} (x_j - \mu)^2 P(X=x_j)
 \end{align}
 The standard deviation of $X$, labeled $\sigma$\index{Greek!sigma ($\sigma$)}, is the square root of the variance.}
@@ -1183,7 +1183,7 @@ $i$ & 1 & 2 & 3 & 4 & Total \\
 Number of visits & 1 & 3 & 4 & 8 &\\
 $x_i$ & 968 & 1008 & 1028 & 1108 &  \\
 $P(X=x_i)$ & 0.30 & 0.40 & 0.20 & 0.10 & 1.0 \\
-$x_i \times  P(X=x_i)$ & 290.40 & 403.20 & 205.60 & 110.80 & 1010.00 \\
+$x_i P(X=x_i)$ & 290.40 & 403.20 & 205.60 & 110.80 & 1010.00 \\
 \hline
 \end{tabular}
 \end{center}
@@ -1246,7 +1246,7 @@ The employee might like to know how variable her health care costs would be for 
 \begin{termBox}{\tBoxTitle{Variability of linear combinations of random variables}
 The variance of a linear combination of random variables may be computed by squaring the constants, substituting in the variances for the random variables, and computing the result:
 \begin{align*}
-\text{Var}(aX + bY) = a^2\times \text{Var}(X) + b^2\text{Var}(Y)
+\text{Var}(aX + bY) = a^2 \text{Var}(X) + b^2\text{Var}(Y)
 \end{align*}
 This equation is valid as long as the random variables are independent of each other. The standard deviation of the linear combination can be found by taking the square root of the variance.}
 \end{termBox}
@@ -1285,9 +1285,11 @@ Show that the standard deviation in the table for the total score does not agree
 	\end{table}	
 \end{exercise}
 
-\textit{The second part of this will be difficult for students, esp without the notion of correlation of random variables. The simple answer is that the component scores are not independent.  More precisely,  the component scores will be positively correlated, increasing the variance of the sum.  Students who score high (low) on one component tend to score high (low) on all. It is an important concept, but difficult to cover with just intuition.  It may be a reason to introduce general correlation. }
+\textit{solution here, but only as far as noting that independence is not likely to be true.  Begin by applying the formula that assumes independence.}
 
-\textit{Because of this example, I think we should reconsider adding correlation to chapter 1, so that we can introduce joint distributions in chapter 2.  We have plenty of examples in chapter 1 where correlation is releveant}
+\section{Distributions for pairs of random variables}
+
+\textit{Coming \ldots}
 
 \index{random variable|)}
 
@@ -1352,7 +1354,7 @@ P(\text{\var{height} between \resp{180} and \resp{185}})
 The probability that a randomly selected person is between \resp{180} and \resp{185} cm is 0.1157. This is very close to the estimate from Example~\ref{contDistProb}: 0.1172. 
 
 \begin{exercise}
-Three US adults are randomly selected. The probability a single adult is between \resp{180} and \resp{185} cm is 0.1157.\footnote{(a) Assume independence. $0.1157 \times 0.1157 \times 0.1157 = 0.0015$. (b) $(1-0.1157)^3 = 0.692$} \vspace{-1.5mm}
+Three US adults are randomly selected. The probability a single adult is between \resp{180} and \resp{185} cm is 0.1157.\footnote{(a) Assume independence. $(0.1157)  (0.1157) (0.1157) = 0.0015$. (b) $(1-0.1157)^3 = 0.692$} \vspace{-1.5mm}
 \begin{enumerate}
 \setlength{\itemsep}{0mm}
 \item[(a)] What is the probability that all three are between \resp{180} and \resp{185} cm tall?
@@ -1371,4 +1373,4 @@ Suppose a person's height is rounded to the nearest centimeter. Is there a chanc
 
 \index{data!FCID|)}
 
-\end{doublespace}
+%\end{doublespace}
