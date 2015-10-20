@@ -718,7 +718,7 @@ Not all associations are linear. In fact, some can be highly nonlinear, in which
 
 \textit{DH: If we keep this example, the plot will have to be formatted and I should add the country to the data set.  I have more information in older stat 100 files. JV: We should also remember to index the data.}
 
-Scatterplots provide a visual display of the relationship between two variables. It is usually denoted by $r$ and takes on values between -1 and 1. The term \term{correlation coefficient} is often used for $r$. If, in a scatterplot, the paired values of two variables tend to lie on a line, then if $r > 0$, the slope of the line will be positive and the variables are positively associated.
+Scatterplots provide a visual display of the relationship between two variables, which is usually denoted by $r$ and takes on values between -1 and 1. \marginpar[\raggedright$r$\\\footnotesize correlation coefficient]{\raggedright$r$\\\footnotesize correlation coefficient} The term \term{correlation coefficient} is often used for $r$. If, in a scatterplot, the paired values of two variables tend to lie on a line, then $r > 0$, the slope of the line will be positive, and the variables are positively associated.
 If $r < 0$, the line will have negative slope and the variables are negatively associated.
 If $r = 0$, or approximately 0, the line will be horizontal and there is no apparent trend or association.
 If $r \pm 1$, the points will lie exactly on a line, with positive slope if $r = 1$ and negative slope if $r = -1$.
@@ -735,27 +735,20 @@ The formula for correlation uses the pairing of the two variables, just as the s
           {s_{x}}\right)\left(\frac{y_{i}-\overline{y}}{s_{y}}\right)
  		\label{correlationEquation}
  		\end{align*}
-        where $(x_1,y_1), (x_2,y_2), \ldots, (x_n, y_n)$ are the $n$ paired values of $x$ and $y$, and $s_x$ and $s_y$ are the sample standard deviations of $x$ and $y$
+        where $(x_1,y_1), (x_2,y_2), \ldots, (x_n, y_n)$ are the $n$ paired values of $x$ and $y$, and $s_x$ and $s_y$ are the sample standard deviations of the $x$ and $y$
         variables, respectively.}
 \end{termBox}
 
-\textit{add a margin box for r}
+The equation shows that $r$ is an average of products of terms, where the components are differences between values of $x$ or $y$ and their respective means, re-scaled by standard deviations. 
 
-The equation shows that $r$ is an average of products of terms, where the components are differences between values of$x$ or $y$ and their respective means, but re-scaled by standard deviations. 
-
-Example~\ref{simpleCorExample} shows the calculation of correlation in a simple (albeit, artificial) dataset.
-
-
-\begin{example}  Suppose the paired values of $x$ and $y$ are $(1,3), (2,4), and (3,0)$.  It is easy to show that $\overline{x} = 2$, $overline{y} = 3$, $sd(x) = 1$, and $sd(y) = 2.65$. 
+\begin{example}{Suppose the paired values of $x$ and $y$ are $(1,5)$, $(2,4)$, and $(3,0)$ Calculate the correlation coefficient.} It is easy to show that $\overline{x} = 2$, $\overline{y} = 3$, $sd(x) = 1$, and $sd(y) = 2.65$. 
     
     \begin{table}[h]
-        \caption{Calculating a correlation coefficient $r$}
-        \label{table:corCalcSimple}
         \centering
         \begin{tabular}{crrrrrrcc}
             \hline
-        $i$ &   $x_i$ & $y_i$ & $\overline{x}$ & $\overline{y}$ & $\text{sd}(x)$ & $\text{sd}(y)$  & $\left(\frac{x_i - \overline{x}}{\text{sd}(x)}\right)
-	\left(\frac{y_i - \overline{y}}{\text{sd}(y)}\right)$ & $r$\\
+        $i$ &   $x_i$ & $y_i$ & $\overline{x}$ & $\overline{y}$ & $\text{sd}(x)$ & $\text{sd}(y)$  & $\left(\dfrac{x_i - \overline{x}}{\text{sd}(x)}\right)
+	\left(\dfrac{y_i - \overline{y}}{\text{sd}(y)}\right)$ & $r$\\
             \hline
              1 &  1 & 5 &  1 & 3 &  1 &  2.65 &  -0.76 &    \\
 			  2 &  2 & 4 &  1 & 3 &  1 &  2.65 &  0.00 &        \\
@@ -763,11 +756,23 @@ Example~\ref{simpleCorExample} shows the calculation of correlation in a simple 
 			   &  &  &  &  &   &   &   &    -0.94  \\
             \hline
         \end{tabular}
+        \caption{Calculating a correlation coefficient $r$}
+        \label{table:corCalcSimple}
     \end{table}
-A simple plot shows that these points have a negative association.  The correlation $r$ is negative because when $x$ lies at or below its mean ($x - \overline{x}$ is negative), $y$ lies above its mean ($y - \overline{y}$ is positive), so the product in each term in the calculation of $r$ is negative or zero.    
+    
+A simple plot shows that these points have a negative association.  The correlation $r$ is negative because when $x$ lies at or below its mean ($x - \overline{x}$ is negative), $y$ lies above its mean ($y - \overline{y}$ is positive), so the product in each term in the calculation of $r$ is negative or zero. 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]
+	{ch_intro_to_data_oi_biostat/figures/corCalcSimple/corCalcSimple.pdf}
+	\caption{A scatterplot showing the three points (1, 5), (2, 4), and (3, 0).} 
+	\label{fig:corCalcSimple}
+\end{figure}
+ 
 \end{example}
 
-Correlation can be calculated, even when the data in a scatterplot do not tend to lie on a line.  The correlation of the data in figure~\ref{incomeLifeExpectancy} is $0.63$.
+Correlation can be calculated even when the data in a scatterplot do not tend to lie on a line. The correlation of the data in Figure~\ref{incomeLifeExpectancy} is $0.63$.
 
 \index{data!life.expectancy|)}
 
