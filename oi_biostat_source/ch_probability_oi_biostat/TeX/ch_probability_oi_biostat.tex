@@ -1162,9 +1162,9 @@ The standard deviation is $\sqrt{3/4} = \sqrt{3}/2 = 0.866$.
 
 \end{example}
 
-The coin tossing scenario provides a simple illustration of the mean and variance of a random variable, but it is artificial.  A more realistic example follows.
+The coin tossing scenario provides a simple illustration of the mean and variance of a random variable, but it is artificial. 
 
-\begin{example}
+\begin{example} \label{healthCareCostsEmployee}
 {In most typical health insurance plans in the United States, members of the plan pay annually in three categories: a monthly premium, "out-of-pocket" costs which include co-payments for each physician visit or prescription, and a deductible amount that members pay each year before the insurance covers service.\footnote{The deductible also includes care and supplies that are not covered by insurance.} Picking a new health plan involves estimating costs for the next year based on a person's best guess at the type and number of services that will be needed.
 	
 In 2015, Harvard University offered several alternative plans to its employees.   In the Health Maintenance Organization (HMO) plan for employees earning less than \$70,000 per year, the monthly premium was \$79, and the co-payment for each office visit or physical therapy session was \$20. A new employee examined her health records for the last 10 years, and noticed that in three of the 10 years her only office visit was one annual physical.  In four of the 10 years she visited her physician three times, once for a physical, and twice for a cases of the flu. In two years, she had four visits.  In one of the 10 years, she experienced a knee injury that required 3 office visits and 5 physical therapy sessions.
@@ -1226,22 +1226,25 @@ where $a$ and $b$ are constants.  The mean of a linear combination of random var
 \end{align*}}
 \end{termBox}
 
-There are a few special cases of this formula which are especially useful. The formula implies that $E(a + Y = a + E(Y)$.  This could have been used when calculating the average health costs for the employee by defining $a$ as the fixed cost of the premium ($a=\$948$), and taking $Y$ to be the cost of the physician visits. Thus, the total annual cost for a year in which there were two physician visits could be calculated as: $E(a + Y = a + E(Y) = \$948 + E(2) = \$948 + \$40 = \$988$. 
+There are a few special cases of this formula which are especially useful. The formula implies that $E(a + Y) = a + E(Y)$.  This could have been used when calculating the average health costs for the employee by defining $a$ as the fixed cost of the premium ($a=\$948$), and taking $Y$ to be just the cost of the physician visits. Thus, the total annual cost for a year in which there were two physician visits could be calculated as: $E(a + Y) = a + E(Y) = \$948 + E(Y) = \$948 + xxx = xxx$. 
+
+\textit{The above solution is not right.  If 2 visits are specified, we know the exact cost. The term after the \$948 should be the the expected costs of physician visits, calculated from the probabilities but not including the fixed cost. For clarity, the calculation should be expanded, but a table is not necessary}
 
 The formula easily generalizes to a sum of any number of random variables. For example, the average health care cost for 5 years (given that the cost for services remains the same) would be: 
 
 \begin{align*}
 	E(X_1 + X_2 + X_3 + X_4 + X_5) &= E(X_1) + E(X_2) + E(X_3) + E(X_4) + E(X_5) \\
-	         &= 5E(X_1),
+	         &= 5E(X_1) \\
+			 &=(5)(1010) = \$5050
 \end{align*}
 
-\textit{JV: For the following exercise, are you asking for expected cost taking only her daughter's visits into account? Or incorporating the previously given information about the employee's visits?}
+\textit{JV: For the following exercise, are you asking for expected cost taking only her daughter's visits into account? Or incorporating the previously given information about the employee's visits?  DH: See clarification.}
 
-\begin{exercise}
-	Suppose the employee is considering adding her 23-year-old daughter to her health plan. She will have to switch to a family plan, with a monthly premium of \$213, and has agreed to cover the costs of the premium and physician visits for her daughter.  In the last five years, her daughter visited a physician only once for three years, and twice in the other two years.  Assuming that the cost of physician visits under the family plan is the same as under the individual plan, calculate the expected cost to the employee in the next year.\footnote{Solution needs to be added.}
+\begin{exercise} \label{healthCareCostsPartner}
+	Suppose the employee will begin a domestic partnership in the next year, and while she and her companion will begin living together and sharing expenses, she and her partner will keep their existing health insurance plans; both, in fact have the same plan from the same employer.  In the last five years, her new partner visited a physician only once in two of the five years, and twice in the other three years.   Calculate the expected total cost of health insurance to the couple in the next year. \footnote{Solution needs to be added.}
 \end{exercise}
 
-The employee might like to know how variable her health care costs would be for the next five years under the individual plan. Calculating the variance and standard deviation of a linear combination of random variables requires more care.  The formula given here requires that the random variables in the linear combination be independent, so that an observation on one of the variables provides no information about the value of the other variable.  With that assumption, the following formula can be used:
+The employee and her partner would also like to know how variable their health care costs would be for the next year.  Calculating the variance and standard deviation of a linear combination of random variables requires more care.  The formula given here requires that the random variables in the linear combination be independent, so that an observation on one of the variables provides no information about the value of the other variable.  With that assumption, the following formula can be used:
 
 \begin{termBox}{\tBoxTitle{Variability of linear combinations of random variables}
 The variance of a linear combination of random variables may be computed by squaring the constants, substituting in the variances for the random variables, and computing the result:
@@ -1251,17 +1254,11 @@ The variance of a linear combination of random variables may be computed by squa
 This equation is valid as long as the random variables are independent of each other. The standard deviation of the linear combination can be found by taking the square root of the variance.}
 \end{termBox}
 
-To calculate the variance and standard deviation for five years of health care costs (under the individual plan):
+To calculate the variance and standard deviation for the next year health care costs for the two partners:
 
-\begin{align*}
-	\text{Var}(X_1 + X_2 + X_3 + X_4 + X_5) &= \text{Var}(X_1) + \text{Var}(X_2) +\text{Var}(X_3) + \text{Var}(X_4) +\text{Var}(X_5) \\
-	&= (5^{2})\text{Var}(X_1) \\
-	& = (25)(\$1556) = \$38,900	
-\end{align*}
+\textit{solution to be added.  start with X = costs for employee and Y the costs for partner, use formula for Var(X + Y). Add the question about whether independence assumption is reasonable}
 
-The standard deviation is $\sqrt{(25)(\$1556)} = \$197.23$.
-
-The example of health insurance cost has been simplified to make the calculations clearer.  It ignores the fact that many plans have a deductible amount, and that plan members pay for services at different rates before and after the deductible has been reached. Often, insured individuals do not pay for services at all once a maximum amount has been reached in a year.  The exercises contain more realistic examples. 
+The example of health insurance cost has been simplified to make the calculations clearer.  It ignores the fact that many plans have a deductible amount, and that plan members pay for services at different rates before and after the deductible has been reached. Often, insured individuals do not pay for services at all once a maximum amount has been reached in a year. The example also assumes that the proportions of number of physician visits per year, estimated from the last 5 years, can be treated as probabilities measured without error.  Had a different time-span been chosen, the proportions might well have been different.  
 
 \begin{exercise}  The Association of American Medical Colleges (AAMC) introduced a new version of the Medical College Admission Test (MCAT) in the spring of 2015. Data from the scores were recently released by AAMC.\footnote{https://www.aamc.org/students/download/434504/data/percentilenewmcat.pdf}  The test consists of 4 components: chemical and physical foundations of biological systems; critical analysis and reasoning skills; biological and biochemical foundations of living systems; psychological, social and biological foundations of behavior. The overall score is the sum of the individual component scores. The grading for each of the four components is scaled so that the mean score is 125.  The means and standard deviations for the four components and the total scores for the population taking the exam in May 2015 exam are shown in table~\ref{table:mcatScoreDistribution}.
 	
