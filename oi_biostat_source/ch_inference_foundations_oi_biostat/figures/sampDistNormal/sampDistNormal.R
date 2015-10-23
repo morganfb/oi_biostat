@@ -33,7 +33,7 @@ N     <- 100000
 means <- rep(0, N)
 pb <- txtProgressBar(0, N, style = 3)
 for (i in 1:N) {
-  temp <- sample(nrow(brfss.df), 100)
+  temp <- sample(nrow(brfss.df), 40)
   means[i] <- mean(brfss.df$bmi[temp], na.rm = TRUE)
   setTxtProgressBar(pb, i)
 }
@@ -46,7 +46,7 @@ layout(matrix(1:2, 1),
 plot(0, 0,
      type = 'n',
      xlim = c(24, 29),
-     ylim = c(0, 1350 * N / 17000),
+     ylim = c(0, 1350 * N / 14000),
      xlab = '',
      ylab = '',
      axes = FALSE)
