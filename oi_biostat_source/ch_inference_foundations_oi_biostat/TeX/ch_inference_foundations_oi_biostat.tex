@@ -453,31 +453,20 @@ In Figure~\ref{95PercentConfidenceInterval}, one interval does not contain a BMI
 
 The statement "about 95\% of observations are within two standard deviations of the mean" is only approximately true. This rule of thumb holds very well if the sample means are distributed normally. As Section ~\ref{cltSection} soon shows, the sample mean tends to be normally distributed when the sample size is sufficiently large. 
 
-
-
-
-
-
-
-
-
-
-
-\begin{example}{The CDC is interesting in how the average heights of men and women differ. The scientists create 95\% confidence intervals for the average male height and the average female height using the \data{BRFSS BMI} data.
-Among the 40 individuals within the \data{BRFSS BMI}, there are 17 men and 23 women. The average male height is 69.88 inches and the average female height is 64.48 inches. The sample standard deviations for males and females  are 2.96 and 4.56 respectively. What are the 95\% confidence intervals for the average male and female height in the US? }
+\begin{example}{The CDC is interesting in how the average heights of men and women differ. The scientists create 95\% confidence intervals for the average male height and the average female height from samples taken from the \data{BRFSS} dataset. With 40 men and 40 women, the average male height is 67.05 inches and the average female height is 66.50 inches. The sample standard deviations for males and females  are 3.82 and 4.14 respectively. What are the 95\% confidence intervals for the average male and female height in the US? }
 \label{CIforGenderHeight}
 Both 95\% confidence intervals are calculated using the formula \[\text{point estimate}\ \pm\ 2 \times SE\] and the information given above: 
 \begin{align*}
 \text{men: }\overline{\mathrm{age}_\mathrm{men}} &\pm\ 2 \times SE\\
-69.88 &\pm 2\times \frac{2.96}{\sqrt{17}}\\
-(68.45 &, 71.32)
+67.05 &\pm 2\times \frac{3.82}{\sqrt{40}}\\
+(65.84 &, 68.26)
 \end{align*}
 \begin{align*}
 \text{women: }\overline{\mathrm{age}_\mathrm{men}}\ &\pm\ 2 \times SE\\
-64.48 &\pm 2\times \frac{4.56}{\sqrt{23}}\\
-(62.58 &, 66.38)
+66.50 &\pm 2\times \frac{4.14}{\sqrt{40}}\\
+(65.19 &, 67.81)
 \end{align*}
-The confidence intervals for average height by gender are different. With no overlapping values, it appears that the average heights are different by gender but the CDC cannot formally conclude this. Chapter ~\ref{inferenceForNumericalData} will introduce how to compare the average heights of men and female directly. 
+The confidence intervals for average height by gender are different. It appears that the average heights are slightly different by gender but the CDC cannot formally conclude this. Chapter ~\ref{inferenceForNumericalData} will introduce how to compare the average heights of men and female directly. 
 \end{example}
 
 The 95\% confidence interval depends largely on the center and the standard error. Section ~\ref{changingTheConfidenceLevelSection} will explore how the multiplier changes beyond two standard errors as confidence levels change. 
@@ -508,7 +497,7 @@ If a sample consists of at least 30 independent observations and the data are no
 \subsubsection{Why 30?}
 \label{why30}
 
-This text offers a cutoff at 30 for the Central Limit Theorem but this rule of thumb can very from book to book. As a quick exercise in statistical exploration and algorithmic thinking, how could this rule of thumb be tested using the \data{BRFSS} data? Is 30 independent observations a sufficient number to approximate the sampling distribution to a normal model? 
+This text offers a cutoff at 30 for the sample size under the Central Limit Theorem but this rule of thumb varies from book to book. Using $R$, how could this rule of thumb be tested with the \data{BRFSS} data? Is 30 independent observations for the sample size a sufficient number to approximate the sampling distribution of the sample mean to a normal model? 
 
 To test this, values below 30 should be considered as alternative sample sizes. The sampling distribution should be compared to a normal distribution for fit, and overlaying a normal approximation onto the sampling distribution histogram in $R$ is an effective way to make such a comparison.  \footnote{Use the same code for creating a sampling distribution but vary the sample size. Then use the code: 
 \var{hist(sample.means, freq=FALSE ) \\
@@ -524,39 +513,25 @@ Figure ~\ref{cltThirty} displays the sampling distributions of the sample mean f
 \end{figure}
 \footnote{Ask Dave: is n=30 obviously better i.e. look at the curves and how they intersect the corners}
 
-Using two standard errors in Equation~(\ref{95PercentConfidenceIntervalFormula}) indicates that roughly 95\% of the time, observations are within two standard deviations of the mean. Under the normal model, with a sufficient number of samples ($n\geq 30$), the equation is more precise by using 1.96 in place of 2.
+Using two standard errors in Equation~(\ref{95PercentConfidenceIntervalFormula}) indicates that roughly 95\% of the time, observations are within two standard deviations of the mean. Under the normal model, with a sufficient number of samples ($n\geq 30$), the equation is more precise using 1.96 in place of 2.
 \begin{eqnarray}
 \text{point estimate}\ \pm\ 1.96\times SE
 \label{95PercentCIWhenUsingNormalModel}
 \end{eqnarray}
-Use Equation ~\ref{95PercentCIWhenUsingNormalModel} to create a 95\% confidence interval if a point estimate, such as $\overline{x}$, is associated with a normal model with standard error $SE$.
-
-
-
-
-
-
-
-
-
-
-
+If the distribution of the point estimate, such as $\overline{x}$, follows a normal model with standard error $SE$, Equation ~\ref{95PercentCIWhenUsingNormalModel} is used to create a 95\% confidence interval 
 
 \subsection{Changing the confidence level}
 \label{changingTheConfidenceLevelSection}
 
 \index{confidence interval!confidence level|(}
-Section ~\ref{confidenceLevels} foreshadowed confidence intervals using confidence levels beyond 95\% confident. Just as fishermen can fish with many different sizes of nets, scientists can create many different confidence intervals from the same sample by simply changing the confidence level. The CDC measuring the average BMI for US adults is a fairly low risk problem if the population parameter were measured incorrectly. Imagine instead the US Food and Drug Administration (FDA) was studying a drug's effects on children. The FDA might require evidence at the 99\% confidence level instead of simply the 95\% confidence level. Parameters that have life threatening implications or problems that are higher risk \footnote{In many cases generally, these are not the only factors that determine a confidence level. Factors like funding, logistics, the number of observations all are considered when choosing a confidence level} call for an increase in confidence level for both calculating confidence intervals and performing hypothesis tests. 
 
-Think back to the analogy about trying to catch a fish: if fishermen want to be more sure that they will catch the fish, they should use a wider net. To create a 99\% confidence level, scientists must also widen the 95\% interval. On the other hand, if they want an interval with lower confidence, such as 90\%, they could make the original 95\% interval slightly slimmer.
+Scientists generally build confidence intervals at 95\% confidence but depending on the application, the level may differ. Measuring the average BMI for US adults is a fairly low risk problem if the population parameter were measured incorrectly so the CDC might opt for a lower confidence. Instead consider the US Food and Drug Administration (FDA) studying a drug's effect on children. In this context, evidence at the 99\% confidence level may be more preferred as making a Type I Error is more costly.   
 
-The 95\% confidence interval structure provides guidance on creating intervals with confidence levels beyond 95\%. Below is a general 95\% confidence interval for a point estimate where the point estimate follows a nearly normal distribution.
-\begin{eqnarray}
-\text{point estimate}\ \pm\ 1.96\times SE
-\end{eqnarray}
+Parameters of more critical problems can call for a higher confidence levels in calculating confidence intervals and performing hypothesis tests \footnote{In many cases, these are not the only factors that determine a confidence level. Funding, logistics, and the number of observations that will be taken are all considered when choosing a confidence level}.
 
-Recall from Section \label{calculate95confidence} that a confidence interval is defined by its center and width. Changing the confidence level will not change the center of the interval since the point estimate is independent of confidence level. The width, however, of a 95\% confidence interval, $1.96\times SE$, represents the width required to "capture 95\%" of the sampling distribution as seen in Figure ~\ref{choosingZForCI} for data that is approximately normally distributed. Therefore changing the confidence level will not affect the center but will definitely affect the width.
+Think back to the analogy of catching a fish: if fishermen want to be more sure of catching fish, they use a wider net. To be more than 95\% confidence the population parameter is within the confidence interval, the interval must have larger widths. If they want an interval with lower confidence, such as 90\%, they would make the 95\% confidence interval slimmer.
 
+The structure of the 95\% confidence interval in Equation ~\ref{95PercentCIWhenUsingNormalModel} resembles the equation to create intervals of different confidence levels. Recall from Section \label{calculate95confidence} that a confidence interval is defined by its center and width. The width, not center, changes with different confidence levels. Within a normal distribution, 95\% of the area underneath a normal curve lies within 1.96 standard deviations from the center as seen in Figure ~\ref{choosingZForCI}. 
 
 \begin{exercise} \label{leadInForMakingA99PercentCIExercise}
 If $X$ is a normally distributed random variable, how often will $X$ be within 2.58 standard deviations of the mean?\footnote{This is equivalent to asking how often the $Z$ score will be larger than -2.58 but less than 2.58. (For a visualization, see Figure~\ref{choosingZForCI}.) To determine this probability, look up -2.58 and 2.58 in the normal probability table (0.0049 and 0.9951). There is a $0.9951-0.0049 \approx 0.99$ probability that the unobserved random variable $X$ will be within 2.58 standard deviations of $\mu$.}
@@ -570,16 +545,19 @@ If $X$ is a normally distributed random variable, how often will $X$ be within 2
 \index{confidence interval!confidence level|)}
 \end{figure}
 
+The width of a 95\% confidence interval, $1.96\times SE$, and the computation example  in Section ~\ref{95confidence} reflect this relationship. The bounds of the 95\% confidence interval coincide with 1.96 times the standard deviation of the sampling distribution in the computation example given in Section ~\ref{95confidence}. 
 
-How does the confidence level affect the width then? The standard error, calculated from sample, remains constant regardless of confidence level. The multiplier, the "1.96", instead changes and affects the confidence interval width. To have a 99\% confidence interval, change 1.96 in the 95\% confidence interval formula to be $2.58$ for a 99\% confidence interval. Exercise~\ref{leadInForMakingA99PercentCIExercise} highlights that 99\% of the time a normal random variable will be within 2.58 standard deviations of the mean. This approach -- using the Z scores in the normal model to compute confidence levels -- is appropriate when $\overline{x}$ is associated with a normal distribution with mean $\mu$ and standard deviation $SE_{\overline{x}}$. The formula for a 99\% confidence interval of the mean is
+The confidence level does not affect the standard error of the sampling distribution and cannot change the sample observed. It can only affect the multiplier, the "1.96," in calculating the width of the confidence interval. To calculate a 99\% confidence interval, the multiplier should instead be $2.58$, corresponding to the Z score of a normal distribution from Exercise~\ref{leadInForMakingA99PercentCIExercise}. 
+
+This approach -- using the Z scores in the normal model to compute the multiplier for confidence levels -- is appropriate when $\overline{x}$ is distributed normally with mean $\mu$ and standard deviation $SE_{\overline{x}}$. The formula for a 99\% confidence interval of the population mean is 
 \begin{eqnarray}
 \overline{x}\ \pm\ 2.58\times SE_{\overline{x}}
 \label{99PercCIForMean}
 \end{eqnarray}
 
-Equation ~\ref{99PercCIForMean} is not population parameter specific. In fact, it can be generalized for any parameter to be \[\text{point estimate} \pm 2.58\times SE\]
+Equation ~\ref{99PercCIForMean} is not population mean specific. In fact, it can be generalized for any population parameter as \[\text{point estimate} \pm 2.58\times SE\]
 
-The normal approximation is crucial to the precision of these confidence intervals. Section~\ref{cltSection} provides a more detailed discussion about when the normal model can safely be applied based on the Central Limit Theorem. When the normal model is not a good fit, alternative distributions can be used that better characterize the sampling distribution. Below however is a good checklist to determine whether or not the Central Limit Theorem can be informally applied to the distribution of sample mean.
+The normal approximation is crucial for the precision of these confidence intervals. Section~\ref{cltSection} provides a more detailed discussion for when the normal model can safely be applied under the Central Limit Theorem. When the normal model is not a good fit, alternative distributions can be used that better characterize the sampling distribution. Below however is a good checklist to determine whether or not the Central Limit Theorem can be informally applied to the distribution of sample mean, and the Z score used as a multiplier for confidence interval.
 
 \begin{termBox}{\tBoxTitle{Conditions for $\overline{x}$ being nearly normal and $SE$ being accurate\label{terBoxOfCondForXBarBeingNearlyNormalAndSEBeingAccurate}}
 Important conditions to help ensure the sampling distribution of $\overline{x}$ is nearly normal and the estimate of SE sufficiently accurate:
@@ -592,9 +570,9 @@ Important conditions to help ensure the sampling distribution of $\overline{x}$ 
 Additionally, the larger the sample size, the more lenient scientists are with the sample's skew.}
 \end{termBox}
 
-These three conditions help ensure that $\overline{x}$ is both distributed normally and representative of the target population. If the distribution of $\overline{x}$ is nearly normal, choosing a precise "1.96" or "2.58" becomes much easier for calculating confidence intervals. More importantly, however, the representativeness of the sample is imperative in the ability to infer about the target population. Randomness, independence and a large sample size safeguard against an extreme observation from skewing the conclusions from a sample. These conditions ensure the ability to accurately infer and generalize to the population of interest.
+These three conditions help ensure that $\overline{x}$ is both distributed normally and representative of the target population. If the distribution of $\overline{x}$ is nearly normal, choosing a precise "1.96" or "2.58" becomes much easier for calculating confidence intervals. More importantly, however, the representativeness of the sample is imperative in the ability to infer about the target population. Randomness, independence and a large sample size safeguard against extreme observations skewing the sample. These conditions ensure the ability to accurately infer and generalize to the population of interest.
 
-Verifying independence is often the most difficult of the conditions to check, and the way to check for independence varies from one situation to another. However, randomness is almost always included for independence. 
+Verifying independence is often the most difficult of the conditions to check, and the way to check for independence varies from one situation to another. However, randomness is almost always necessary for independence. 
 
 \begin{tipBox}{\tipBoxTitle{How to verify sample observations are independent}
 Observations in a simple random sample consisting of less than 10\% of the population are independent.}
@@ -606,31 +584,31 @@ Observations in a simple random sample consisting of less than 10\% of the popul
 \end{caution}
 
 \begin{exercise} \label{find99CIForBRFSSWeightExercise}
-Create a 99\% confidence interval for the average weight of men from the \data{BRFSS BMI} sample. The point estimate is $\overline{w_{\mathrm{men}}} = 189.4$ pounds and the standard error is $SE_{\overline{w_{\mathrm{men}}}} = 0.28$ pounds. Refer to Figure ~\ref{brfssMenWeight} for guidance on skewness.\footnote{The observations are independent (simple random sample, $<10\%$ of the population), the sample size is at least 30 ($n=16,843$), and the distribution is only slightly skewed (Figure~\ref{brfssMenWeight}); the normal approximation and estimate of SE should be reasonable.  Apply the 99\% confidence interval formula: $\overline{w_{\mathrm{men}}}\ \pm\ 2.58 \times  SE_{\overline{w_{\mathrm{men}}}} \rightarrow (188.69, 190.12)$. We are 99\% confident that the average weight of all males is between 188.69 and 190.12 pounds.}
+Create a 99\% confidence interval for the average male adult weight using the sample from Example ~\ref{CIforGenderHeight} The point estimate is $\overline{w_{\mathrm{men}}} = 172.65$ pounds and the standard error is $SE_{\overline{w_{\mathrm{men}}}} = 6.50$ pounds. Refer to Figure ~\ref{brfssMenWeight} for guidance on skewness.\footnote{The observations are independent (simple random sample, $<10\%$ of the population), the sample size is at least 30 ($n=403$), and the distribution is slightly skewed (Figure~\ref{brfssMenWeight}); the normal approximation and estimate of SE should be reasonable as only the skewness assumption is weakly not satisfied.  Apply the 99\% confidence interval formula: $\overline{w_{\mathrm{men}}}\ \pm\ 2.58 \times  SE_{\overline{w_{\mathrm{men}}}} \rightarrow (155.87, 189.43)$. There is 99\% confidence that the average weight of all US adult males is between 155.87 and 189.43 pounds.}
 \end{exercise}
 
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{ch_inference_foundations_oi_biostat/figures/brfssMenWeight/brfssMenWeight.pdf}
-\caption{The histogram of men's weights in the \data{BRFSS BMI} sample. There are 16,843 men in \data{BRFSS BMI}, and the weights are slightly skewed. With such a large sample size, the sample mean can be considered nearly normal.}
+\caption{The histogram of men's weights in the \data{BRFSS BMI} sample. There are 40 men in \data{BRFSS BMI}, and the weights are slightly skewed. With a sufficiently large sample size taken from a random sample, the sample mean can be considered nearly normal.}
 \label{brfssMenWeight}
 \index{confidence interval!confidence level|)}
 \end{figure}
 
-The calculation of a confidence interval for any confidence level can be generalized from the 95\% and 99\% confidence intervals. Remember that while it has become tradition to use the 95\% confidence level, any confidence level is allowed and varies by statistician and by goal. 
+The calculation of a confidence interval for any confidence level can be generalized from the 95\% and 99\% confidence intervals. While it has become tradition to use the 95\% confidence level, confidence levels can vary by statistician, context and inference goal. 
 
 \begin{termBox}{\tBoxTitle{Confidence interval for any confidence level (nearly normal model)}
 If the point estimate follows the normal model with standard error $SE$, then a confidence interval for the population parameter is
 \begin{eqnarray*}
 \text{point estimate}\ \pm\ z^{\star} SE
 \end{eqnarray*}
-where the value of $z^{\star}$ corresponds to the confidence level selected. The coefficient on the standard error, $z^{\star}$, is also known as the critical value. $z^{\star}$ is only used when the point estimate resembles a normal model \footnote{$z^{\star}$ is also used when the population standard deviation is known. However this is rarely ever the case in practice as previously mentioned and thus this situation is disregarded completely.}}
+where the value of $z^{\star}$ corresponds to the confidence level selected. The coefficient on the standard error, $z^{\star}$, is also known as the critical value. $z^{\star}$ is only used when the point estimate resembles a normal model \footnote{$z^{\star}$ is also used when the population standard deviation is known. However this is rarely ever the case in practice as previously mentioned. This texts disregards this situation completely.}}
 \end{termBox}
 \begin{termBox}{\tBoxTitle{Margin of error}
 \label{marginOfErrorTermBox}In a confidence interval, $z^{\star}\times SE$ is called the \term{margin of error} and is half the width of the confidence interval.}
 \end{termBox}
 
-Figure ~\ref{choosingZForCI} provides a picture of how to identify $z^{\star}$ based on a confidence level. Select $z^{\star}$ so that the area between -$z^{\star}$ and $z^{\star}$ in the normal model corresponds to the confidence level. Because $z^{\star}$ follows a $\mathcal{N}(0,1)$, scientists either use $R$ or a Z-table \footnote{also known as a Normal table} (\textbf{FOUND IN THE BACK OF THE BOOK HERE}) to find the critical value. The \var{qnorm()} function $R$ takes in a probability $p$ and outputs the quantile value $z$ such that $P(Z\leq z)=p$. For a 95\% confidence interval, $p=0.025$ since the confidence interval is the \emph{middle} 95\% of values. To find $z^{\star}$ in $R$\begin{verbatim}
+Figure ~\ref{choosingZForCI} provides a picture of how to identify $z^{\star}$ based on a confidence level. Select $z^{\star}$ so that the area between -$z^{\star}$ and $z^{\star}$ in the normal model corresponds to the confidence level. Because $z^{\star}$ follows a standard normal distribution, $\mathcal{N}(0,1)$, scientists either use $R$ software or a Z-table \footnote{also known as a Normal table} to find the critical value. The \var{qnorm()} function in $R$ has probability $p$ as an input and outputs the quantile value $z$ such that $P(Z\leq z)=p$. For a 95\% confidence interval, $p=0.025$ as the confidence interval grabs the \emph{middle} 95\% of values. To find $z^{\star}$ in $R$\begin{verbatim}
 > qnorm(0.025)
 [1] -1.959964
 \end{verbatim}
@@ -640,7 +618,7 @@ What is the critical value associated with (a) 90\%, (b) 75\% and (c) 50\%? \foo
 \end{exercise}
 
 \begin{exercise} \label{find90CIForBRFSSWeightExercise}
-Use the data in Exercise~\ref{find99CIForBRFSSWeightExercise} to create a 90\% confidence interval for the average weight of men in the United States.\footnote{First find $z^{\star}$ such that 90\% of the distribution falls between -$z^{\star}$ and $z^{\star}$ in the standard normal model, $N(\mu=0, \sigma=1)$.  Find $z^{\star}$ in the normal probability table by looking for a lower tail of 5\% (the other 5\% is in the upper tail). $z^{\star}=1.65$. The 90\% confidence interval can then be computed as $\overline{w_\mathrm{men}}\ \pm\ 1.65\times SE_{\overline{w_\mathrm{men}}} \to (188.95, 189.86)$.  (We had already verified conditions for normality and the standard error in Exercise ~\ref{find99CIForBRFSSWeightExercise}.) That is, we are 90\% confident the average weight of males is between 188.95 and 189.86 pounds. Also note that because we are at a 90\% confidence level, our confidence interval width is smaller than the confidence interval in Exercise ~\ref{find99CIForBRFSSWeightExercise}.}
+Use the data in Exercise~\ref{find99CIForBRFSSWeightExercise} to create a 90\% confidence interval for the average weight of men in the United States.\footnote{First find $z^{\star}$ such that 90\% of the distribution falls between -$z^{\star}$ and $z^{\star}$ in the standard normal model, $N(\mu=0, \sigma=1)$: $z^{\star}=1.65$. The 90\% confidence interval can then be computed as $\overline{w_\mathrm{men}}\ \pm\ 1.65\times SE_{\overline{w_\mathrm{men}}} \to (178.32, 199.78)$.  (The conditions for normality and the standard error have already been verified in in Exercise ~\ref{find99CIForBRFSSWeightExercise}.) That is, we are 90\% confident the average weight of males is between 178.32 and 199.78 pounds. Also note that because this confidence interval is at the 90\% confidence level, the confidence interval width is smaller than the confidence interval in Exercise ~\ref{find99CIForBRFSSWeightExercise}.}
 \end{exercise}
 
 

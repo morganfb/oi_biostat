@@ -21,22 +21,26 @@ brfss.df<-cbind(brfss.df,height.total,weight.dif,bmi)
 
 # sample 40k from brfss data to use as our sample
 set.seed(102)
-sample.vec<-sample(1:nrow(brfss.df),size = 40000,replace = FALSE)
+sample.vec<-sample(1:nrow(brfss.df),size = 40,replace = FALSE)
 brfss.sample<-brfss.df[sample.vec,]
 ######################################################
 library(openintro)
 data(COL)
 setwd('~/OI_Biostat/oi_biostat_source/ch_inference_foundations_oi_biostat/figures/brfssMenWeight')
 
-myPDF('brfssMenWeight.pdf', 8, 3.15,
+set.seed(102)
+men <- brfss.df[which(brfss.df$sex == 1),]
+
+men.sample.vec<-sample(1:nrow(men),size = 40,replace = FALSE)
+men.brfss.sample<-brfss.df[men.sample.vec,]
+
+myPDF('brfssMenWeight.pdf', 5, 3,
       mar = c(4, 4, 1, 1),
       mgp = c(2.7,0.55,0))
 
-men <- brfss.sample[which(brfss.sample$sex == 1),]
-mean(men$weight)
-sd(men$weight)/ sqrt(length(men$weight))
-hist(men$weight, xlim = c(0, 400), main = "", xlab = "Weight", col = COL[1], breaks = 50)
+hist(men.brfss.sample$weight, main = "", xlab = "Male Weight", col = COL[1])
 
 dev.off()
 
-ci <- c(mean(men$weight) - 2.58* sd(men$weight)/sqrt(length(men$weight)),mean(men$weight) + 2.58* sd(men$weight)/sqrt(length(men$weight)))
+ci <- c(mean(men.brfss.sample$weight) - 2.58* sd(men.brfss.sample$weight)/sqrt(length(men.brfss.sample$weight)),
+        mean(men.brfss.sample$weight) + 2.58* sd(men.brfss.sample$weight)/sqrt(length(men.brfss.sample$weight)))
