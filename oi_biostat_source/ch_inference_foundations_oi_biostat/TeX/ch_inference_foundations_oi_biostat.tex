@@ -700,26 +700,12 @@ Remember, hypothesis testing, as with confidence intervals, can concern any popu
 \subsection{Hypothesis testing framework}
 \label{hypothesisFramework}
 
-The average BMI of \data{BRFSS BMI} is 26.53. The CDC wants to know if this sample provides enough evidence that adults are, on average, are healthy as they were 20 years ago versus the alternative, that they are not. This question can be simplified into two\termsub{hypotheses}: 
+The average BMI of \data{BRFSS BMI} is 26.53. The CDC wants to know if this sample provides enough evidence that adults are, on average, are healthy as they were 20 years ago versus the alternative, that they are not. This question can be simplified into two \termsub{hypotheses}: 
 \begin{itemize}
 \setlength{\itemsep}{0mm}
 \item[$H_0$:] US adults in 2000 are on average as healthy as they were in 1980 with an average BMI of 25.3. 
-\item[$H_A$:] The average US adult's BMI in 2000 is not the same in 1980. 
+\item[$H_A$:] The average US adult BMI in 2000 is not the same the average US adult BMI in 1980. 
 \end{itemize}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 \subsubsection{Step 1: Formulating hypotheses}
 
@@ -741,64 +727,87 @@ The null hypothesis often represents a skeptical position or a common view on so
 The logic of hypothesis testing is that the null hypothesis ($H_0$) will not be rejected, unless the evidence in favor of the alternative hypothesis ($H_A$) is so strong that $H_0$ must be rejected in favor of $H_A$.}
 \end{tipBox}
 
-The first step within the hypothesis testing framework is a very general tool, and is often used without a second thought. If a person makes a somewhat unbelievable claim, people are initially skeptical. The nulll hypothesis $H_0$ is generally believed. However, if there is sufficient observed evidence that supports the claim, skepticism is set aside and the null hypothesis is rejected in favor of the alternative. 
+The framework's first step is used often beyond scientific research but describes the very nature of the scientific method. If a person makes a somewhat unbelievable claim, people are initially skeptical. The nulll hypothesis $H_0$ is generally believed unless there is sufficient observed evidence that does not support the claim. Then the null hypothesis is rejected in favor of the alternative. 
 
 \begin{exercise} \label{hypTestStudyExample}
-A new study would like to be published in a scientific journal. The board that determines the validity of the study considers two possible claims about this study: either the study is valid or pseudoscience. Set these claims up in a hypothesis framework. Which would be the null hypothesis and which the alternative? \footnote{The board considers whether the study's evidence, results and reproducibility is so convincing (strong) that the study must be valid. In this case, if the study is legitimate, the board rejects the null hypothesis (the study is pseudoscience) and concludes that the study is valid an should be published (alternative hypothesis).}
+A new study would like to be published in a scientific journal. The board that determines the validity of the study considers two possible claims about this study: either the study is valid or it is pseudoscience. Using the hypothesis framework, which of these claims would be the null hypothesis and which the alternative? \footnote{The board begins as somewhat skeptical of the discovery. It considers whether the study's methodology, results and reproducibility is convincing enough for the study to be valid. If the study is legitimate, the board rejects the null hypothesis (The study is pseudoscience. There is no change.) and concludes the study is valid and should be published (the alternative hypothesis).}
 \end{exercise}
 
-The scientists who sit on the board of publication journals look at the study and previous literature to see whether the science is convincingly valid. Even if these scientists leave unconvinced that the study is publishable, these board members do not necessarily believe the study is a complete fabrication. This mindset is also consistent with hypothesis testing: \emph{the null hypothesis cannot be accepted as true even if the null hypothesis is not rejected}. Failing to find strong evidence for the alternative hypothesis is not equivalent to accepting the null hypothesis.
+Even if the board of the journal leave unconvinced that the study is publishable, these board members do not necessarily believe the study is a complete fabrication. Hypothesis testing is the same: \emph{even if the null hypothesis is not rejected, it cannot be accepted}. Failing to find strong evidence for the alternative hypothesis is not equivalent to accepting the null hypothesis. 
 
 \begin{tipBox}{\tipBoxTitle{Double negatives can sometimes be used in statistics}
-In many statistical explanations, double negatives can be used. For instance, scientists might say that the null hypothesis is \emph{not implausible} or they \emph{failed to reject} the null hypothesis. Double negatives are used to communicate that while a position is not being rejected, it is also not correct.}
+Many times in statistics, double negatives can be used. For instance, scientists might say that the null hypothesis is \emph{not implausible} or they \emph{failed to reject} the null hypothesis. Double negatives are used to communicate that while a position is not being rejected, it is also not accepted as truth.}
 \end{tipBox}
 
-The null hypothesis represents that the average US BMI is equal to 22 in the \data{BRFSS BMI} example. The alternative hypothesis represents something new or more interesting: the average US adult does not have a healthy BMI. These hypotheses can be described in mathematical notation using $\mu_{\mathrm{bmi}}$ as the average BMI for US adults.
-\[H_0:\mu_{\mathrm{bmi}} = 22 \hspace{0.5in} H_A: \mu_{\mathrm{bmi}} \neq 22\]
+The null hypothesis is, using the \data{BRFSS BMI} sample, the average US adult BMI in 2000 equals 25.3, the average in 1980. 
 
-where 22 represents the BMI of a healthy US adult. Using this mathematical notation, the hypotheses can now be evaluated using statistical tools. In this context, 22 is referred to as the \term{null value} since it represents the value of the parameter if the null hypothesis is true. The \data{BRFSS BMI} sample will be used to evaluate these hypotheses. 
+The alternative hypothesis represents something new or more interesting: the average US adult BMI has changed since 1980. These hypotheses can be described in mathematical notation using $\mu_{\mathrm{bmi}}$ as the average BMI for US adults in 2000.
+\[H_0:\mu_{\mathrm{bmi}} = 25.3 \hspace{0.5in} H_A: \mu_{\mathrm{bmi}} \neq 25.3\]
 
-Note it is important to remember that the CDC is not testing whether or not the average BMI observed from \data{BRFFS BMI} is 22 or not. They don't need to test that since the CDC observes all the values within \data{BRFSS BMI} and can simply calculate the average BMI. Rather when asking these hypotheses, they are testing if the \emph{population parameter} of all US adults is 22 or not. 
+Using this mathematical notation, the hypotheses can now be evaluated using statistical tools. In this context, 25.32 is referred to as the \term{null value} since it represents the value of the parameter if the null hypothesis is true. The \data{BRFSS BMI} sample will be used to evaluate these hypotheses. 
+
+Note it is important to remember that the CDC is not testing whether or not the average BMI from \data{BRFFS BMI} is 25.3 or not. The CDC already observes all the values within \data{BRFSS BMI} and can simply calculate the average BMI. Rather these hypotheses are testing if the \emph{population parameter} of all US adults is 25.3 or not. 
 
 \begin{tipBox}{\tipBoxTitle{Null and Alternative Hypothesis Setup}
-The null hypothesis is generally written as $H_0: \mu=\mu_0$ where $\mu$ is the population mean and $\mu_0$ is the hypothesized value that is believed to be true.The alternative hypothesis, on the other hand, can be many things.\\ 
-
-If there exists no prior belief to influence the alternative hypothesis and the researchers are interested in showing any difference --an increase or decrease-- then the safest alternative hypothesis choice would be $\mu\neq \mu_0$, a two-sided alternative. If there does exist a prior belief of how $\mu$ and $\mu_0$ compare or researchers are interested in only showing an increase or decrease, not both, a one-sided alternative, $\mu\geq \mu_0$ or $\mu \leq \mu_0$ is available. Section ~\ref{pValue} will go into more detail on one-side versus two sided alternatives.}
+The null hypothesis is generally written as $H_0: \mu=\mu_0$ where $\mu$ is the population mean and $\mu_0$ is the hypothesized value that is believed to be true.The alternative hypothesis, on the other hand, can have the population parameter take on many values. \\ 
+The alternative hypothesis can take on many forms. If the researchers are interested in showing any difference --an increase or decrease-- then the safest alternative hypothesis choice would be $\mu\neq \mu_0$, a two-sided alternative. If there exist a prior belief of how $\mu$ and $\mu_0$ compare or researchers are interested in only showing an increase or decrease, not both, a one-sided alternative, $\mu\geq \mu_0$ or $\mu \leq \mu_0$ should be used. Section ~\ref{pValue} will go into more detail on one-side versus two sided alternative hypotheses.}
 \end{tipBox}
 
 \subsubsection{Step 2: Specifying a significance level $\alpha$}
-Step 1 is completed when the researchers have stated a null and alternative hypothesis. The researchers then need to specify a \term{significance level}. The significance level $\alpha$ is the acceptable error probability of the test. In hypothesis testing, the error probability is the probability of concluding the alternative hypothesis is true when it is not true. This error is called a Type I error, and $\alpha$ is the probability of a Type I error. Section \ref{DecisionErrors} will go into more detail on error types. 
+After researchers stated a null and alternative hypothesis, they then need to specify a \term{significance level}. The significance level $\alpha$ is the acceptable error probability of the test. In hypothesis testing, the error probability is the probability of incorrectly concluding the alternative hypothesis is true when it is, in fact, not true. This error is called a Type I error, and $\alpha$ is the probability of making a Type I error. Section \ref{DecisionErrors} goes into more detail on error types. 
 
-Typically, $\alpha$ is taken to be 0.05, 0.01, or some other small value. $\alpha$ plays the same role as the error probability in confidence intervals, and is a measure of uncertainty. If $\alpha=0.05$, the hypothesis test will be at a 95\% confidence level. Section ~\ref{utilizingOurCI} will provide a clearer connection between hypothesis testing and confidence intervals.  
+Typically, $\alpha$ is taken to be 0.05, 0.01, or some other small value. $\alpha$ plays the same role as the error probability in confidence intervals, and is a measure of uncertainty. If $\alpha=0.05$, the hypothesis test will be performed at a 95\% confidence level. Section ~\ref{utilizingOurCI} provides a clearer connection between hypothesis testing and confidence intervals.  
 
 \subsubsection{Step 3: Calculating the test statistic}
-The third step is calculating a test statistic from the observed data. The conclusions of the hypothesis test in Step 4 and 5 will be based upon this test statistic. This statistic measures the difference between the observed data and what is expected if the null hypothesis is true. It answers the question: "How many standard deviations from the hypothesized value is the observed sample value?" Thinking back to \textbf{THIS SECTION} ~\ref{some section in chapter 2 or 3} of standardizing a normal, the test statistic follows a similar construction. When testing hypotheses about a mean, the test statistic will always be 
+The third step is calculating a test statistic from the observed data. The test statistic measures the difference between the observed point estimate and what is expected if the null hypothesis is true. It answers the question: "How many standard deviations from the null value is the observed sample value?" The test statistic is used in Step 4 and 5 to arrive at a conclusion. 
+
+Thinking back to Section ~\ref{normalDist}, the test statistic follows a similar construction as standardizing a normal distribution. For hypothesis tests inferring on a population mean where the population standard deviation is unknown, the test statistic will always be 
 \begin{eqnarray}T=\frac{\overline{x}-\mu_0}{s/\sqrt{n}}\end{eqnarray} 
-where $\overline{x}$ is the sample mean, $s$ is the sample standard deviation and $n$ is the number of observations in the sample. This equation only applies to testing after observing only one sample. 
-\emph{Note:} In general test statistics follow the form $\frac{\mathrm{observed-hypothesized}}{\mathrm{standard error}}$ to calculate the number of standard deviations the observed value is from the hypothesized value. This T-statistic, $T$, follows a $t$-distribution \textbf{INCLUDE CHAPTER 3} \footnote{ from \textbf{Chapter 3}} and will have $n-1$ degrees of freedom. 
+where $\overline{x}$ is the sample mean, $s$ is the sample standard deviation and $n$ is the number of observations in the sample. 
+
+\emph{Note:} In general, test statistics follow the form $\frac{\mathrm{observed-hypothesized}}{\text{standard error}}$ to calculate the number of standard deviations the observed value is from the hypothesized value. This T-statistic, $T$, follows a $t$-distribution and will have $n-1$ degrees of freedom. The $t$- distribution is covered more extensively in Section ~\ref{tdistribution}
 
 \begin{termBox}{\tBoxTitle{Test statistic}
-A \emph{test statistic} is a special summary statistic that is particularly useful for evaluating a hypothesis test or identifying the p-value. The test-statistic is a particular data summary that summarizes how many standard deviations the hypothesized null value is from the observed sample value. In general the T-statistic follows a $t$-distribution with $n-1$ degrees of freedom. The $t$-distribution will be covered in Section ~\ref{SOMETHING} \textbf{SOMETHING} \footnote{When a point estimate is nearly normal, the Z score of the point estimate can be used as the test statistic. Later chapters will encounter situations where other test statistics are helpful.}}
+A \emph{test statistic} is a special summary statistic that is particularly useful for evaluating a hypothesis test. The test-statistic summarizes how many standard deviations the observed sample value is from the hypothesized null value and follows a $t$-distribution with $n-1$ degrees of freedom. The $t$-distribution will be covered in Section ~\ref{tdistribution} \footnote{When a point estimate is nearly normal, the Z score of the point estimate can be used as the test statistic. Later chapters will encounter situations where other test statistics are helpful.}}
 \index{hypothesis testing!using normal model|)}
 \end{termBox}
 
 \subsubsection{Step 4: Calculating the p-value}
-Consider a T-statistic of 10. This means that the observed sample mean is 10 standard deviations away from the hypothesized value under the null hypothesis. According to intuition, observing the sample mean is such a rare event since it is so far away from the hypothesized value, but how rare is it? 10\% likely? 1\% likely? 0.001\%?
+Consider a T-statistic of 10. This means that the observed sample mean is 10 standard deviations away from the hypothesized value under the null hypothesis. Observing the sample mean is such a rare event since it is so far away from the hypothesized value, but how rare is observing a value 10 standard deviations away from the mean? 10\% likely? 1\% likely? 0.001\%?
 
-The \term{p-value} is the probability of observing the sample or a more extreme sample assuming the null hypothesis is true by chance. The p-value is the number that lets researchers make a conclusion about the T-statistic. Formally the p-value is a conditional probability.
+The \term{p-value} is the probability of observing a point estimate or a more extreme point estimate assuming the null hypothesis is true. The p-value allows the researchers to make conclusions from the T-statistic. Formally the p-value is a conditional probability.
 
 \begin{termBox}{\tBoxTitle{p-value}
-The \term{p-value}\index{hypothesis testing!p-value|textbf} is the probability of observing data at least as favorable to the alternative hypothesis as the current data set, if the null hypothesis is true. A summary statistic of the data is typically used to help compute the p-value and evaluate the hypotheses.}
+The \term{p-value}\index{hypothesis testing!p-value|textbf} is the probability of observing data at least as favorable as the current sample to the alternative hypothesis, if the null hypothesis is true. A summary statistic of the data is typically used to help compute the p-value and evaluate the hypotheses.}
 \end{termBox}
 
-How is this probability calculated? Section ~\ref{pValue} will go into more detail from using $R$, and the Z and t- tables. 
+How is this probability calculated? Section ~\ref{pValue} will go into more detail from using $R$, and the Z and $t$-tables. 
 
-\subsubsection{Step 5: Making your conclusion}
-The final step within the hypothesis testing framework is to make a conclusion from the p-value calculated in Step 4. Using the definition of p-value, if something extreme is observed, the probability associated with this observation will be small. Thus if the observation is rare, the T-statistic will be large and the p-value will provide evidence that the hypothesized value is unlikely. Therefore a low p-value should result in a rejection of the null hypothesis. The smaller the p-value, the stronger the evidence against the null hypothesis. 
+\subsubsection{Step 5: Making the conclusion}
+The final step within the hypothesis testing framework is to make a conclusion.
 
-How small is small? This is where Step 2 and the significance level, $\alpha$, come in. If the p-value is small or smaller than the pre-specified $\alpha$ level (usually 0.01 or 0.05),  the null hypothesis is rejected and conclusion that the result observed from the sample is statistically significant at the $\alpha$ level. 
+A large T-statistic indicates an extreme observation, and the probability associated with observing an extreme point estimate will be small. A low p-value from Step 4 provides evidence that the null value is unlikely and results in a rejection of the null hypothesis. The smaller the p-value, the strong the evidence to against the null hypothesis. 
 
-If the p-value is $\alpha$ or greater, there is not enough evidence to reject the null hypothesis. The subtle but important point is that not rejecting $H_0$ is not equivalent to accepting $H_0$ (refer back to Example \ref{hypTestStudyExample}). In practice, however, not rejecting $H_0$ is equivalent to accepting $H_0$ when making decisions and acting on these conclusions. Most importantly, it is key that researchers state the conclusion in the context of the original problem, using the language and units of that problem. Most people forget this but is absolutely necessary in both theory and practice. 
+How small is small? The significance level, $\alpha$ from Step 2 determined whether or not scientists reject the null hypothesis. If the p-value is smaller than $\alpha$ (usually 0.01 or 0.05), the null hypothesis is rejected. The scientists conclude that the T-statistic and conclusion are statistically significant at the $\alpha$ level. 
+
+If the p-value is $\alpha$ or greater, there is not enough evidence to reject the null hypothesis. Failure to reject $H_0$ is not equivalent to acceptance of $H_0$ (refer to Example \ref{hypTestStudyExample} for clarity). 
+
+In practice, however, failure to reject $H_0$ is equivalent to accepting $H_0$, and rejecting $H_0$ is equivalent to accepting $H_A$. Most importantly, it is key that researchers state the conclusion in the context of the original problem, using the language and units of the inference question. Many times this is forgotten, but it is absolutely necessary in both theory and practice. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \subsection{Calculating p-values}
