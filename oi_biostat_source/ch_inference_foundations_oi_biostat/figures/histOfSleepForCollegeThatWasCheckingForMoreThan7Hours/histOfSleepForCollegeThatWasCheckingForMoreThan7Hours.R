@@ -1,3 +1,16 @@
+coal<-read.csv("~/OI_Biostat/data/coal_workers/coal_workers.csv")
+
+dust.convert <-function(age, exposure){
+  factor <- (age-18) * 1740/1000
+  dust <- exposure/factor
+  return(dust)
+}
+dust <- dust.convert(coal$AGE, coal$exp)
+#get rid of infinites
+dust[is.infinite(dust)]<-NA
+dust<-dust[!is.na(dust)] #remove all the NAs
+#############################################################################
+
 library(openintro)
 data(COL)
 set.seed(2)
