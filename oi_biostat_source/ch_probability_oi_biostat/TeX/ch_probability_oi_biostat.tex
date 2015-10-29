@@ -1164,12 +1164,12 @@ The standard deviation is $\sqrt{3/4} = \sqrt{3}/2 = 0.866$.
 
 The coin tossing scenario provides a simple illustration of the mean and variance of a random variable, but it is artificial. 
 
-\begin{example} \label{healthCareCostsEmployee}
-{In most typical health insurance plans in the United States, members of the plan pay annually in three categories: a monthly premium, "out-of-pocket" costs which include co-payments for each physician visit or prescription, and a deductible amount that members pay each year before the insurance covers service.\footnote{The deductible also includes care and supplies that are not covered by insurance.} Picking a new health plan involves estimating costs for the next year based on a person's best guess at the type and number of services that will be needed.
+ %\label{healthCareCostsEmployee}
+In most typical health insurance plans in the United States, members of the plan pay annually in three categories: a monthly premium, ``out-of-pocket'' costs which include co-payments for each physician visit or prescription, and a deductible amount that members pay each year before the insurance covers service.\footnote{The deductible also includes care and supplies that are not covered by insurance.} Picking a new health plan involves estimating costs for the next year based on a person's best guess at the type and number of services that will be needed.
 	
 In 2015, Harvard University offered several alternative plans to its employees.   In the Health Maintenance Organization (HMO) plan for employees earning less than \$70,000 per year, the monthly premium was \$79, and the co-payment for each office visit or physical therapy session was \$20. A new employee examined her health records for the last 10 years, and noticed that in three of the 10 years her only office visit was one annual physical.  In four of the 10 years she visited her physician three times, once for a physical, and twice for a cases of the flu. In two years, she had four visits.  In one of the 10 years, she experienced a knee injury that required 3 office visits and 5 physical therapy sessions.
 
-Ignoring the cost of prescription drugs, over-the-counter medications and the annual deductible amount, what is the expected annual healthcare cost for this employee under the Harvard plan?}  
+\begin{example} {Ignoring the cost of prescription drugs, over-the-counter medications and the annual deductible amount, what is the expected annual healthcare cost for this employee under the Harvard plan?}  
 
 Let the random variable $X$ denote annual healthcare costs.  It is best to summarize the information in the problem in a table that can also be used for computing the mean and variance of $X$.  If the  last ten years are an accurate picture of annual costs for this employee, $X$ will have four possible values that correspond to the annual cost of the monthly premium plus the visit costs for the four patterns of visits.  The cost of the premium is (12)(\$79) = \$948. The cost of the visits is \$20 times the number of visits.  The values of $X$ are ordered according to increasing numbers of visits. 
 
@@ -1284,10 +1284,136 @@ Show that the standard deviation in the table for the total score does not agree
 
 \textit{solution here, but only as far as noting that independence is not likely to be true.  Begin by applying the formula that assumes independence.}
 
-\section{Distributions for pairs of random variables}
 
-\textit{Coming \ldots}
+\section{Distributions for pairs of random variables (special topic)}
 
+\index{joint distribution for random variables|(}
+\index{marginal distribution for random variables|(}
+
+The summary MCAT score is more variable than implied by the formula for computing the standard deviation for sums of random variables because the component scores are not independent, but correlated. Individuals scoring well on one component of the exam are likely to score well on other parts.  When two random variables tend to vary together, they are called \term{correlated random variables}.  There are many examples of correlated random variables, including height and weight in a population of individuals, the scores of verbal and quantitative SAT exams, and gestational age and birth weight of newborns.  When two random variables $X$ and $Y$ are correlated,
+\begin{equation*} 
+	\text{Variance}(X + Y) = \text{Variance}(X) + \text{Variance}(Y) + 
+	2 \sigma_X \sigma_Y\text{Correlation}(X,Y) 
+	\label{eq:generalVarianceSumRVs}
+\end{equation*}
+and
+\begin{equation*}
+	\text{Variance}(X - Y) = \text{Variance}(X) + \text{Variance}(Y) - 
+	2 \sigma_X \sigma_Y\text{Correlation}(X,Y) 
+	\label{eq:generalVarianceDiffRVs}
+\end{equation*}
+The standard deviation for the sum or difference will be the square root of the variance.
+
+Correlation between random variables is similar to correlation between pairs of observations in a dataset, with some important differences.  Calculating a correlation $r$ in a dataset was introduced in Section~\ref{scatterPlots} and uses the formula 
+\begin{align*}
+      r &=  \frac{1}{n-1}\sum^{n}_{i=1}
+      \left(\frac{x_{i}-\overline{x}}
+      {s_{x}}\right)\left(\frac{y_{i}-\overline{y}}{s_{y}}\right)
+\end{align*} 
+The correlation coefficient $r$ is an average of products, with each term in the product measuring the distance between $x$ and its mean $\overline{x}$ or $y$ and its mean $\overline{y}$, after the distances have been scaled by respective standard deviations.
+
+The compact formula for the correlation between two random variables $X$ and $Y$  uses the same idea; it is given by
+\begin{equation*}
+	\rho_{X,Y} = E\left(\frac{X - \mu_x}{\sigma_X}\right)\left(\frac{Y - \mu_Y}{\sigma_Y} \right),
+	\label{eq:generalFormulaCorrelation}
+\end{equation*}
+where $\rho_{X,Y}$ is the correlation between the two variables, and $\mu_X, \mu_Y$, $\sigma_X, \sigma_Y$ are the respective means and standard deviations for $X$ and $Y$. Just as with the mean of a random variable, the expectation in the formula for correlation is a weighted sum of products, with with each term weighted by the probability of values for the pair $(X,Y)$.  Equation~\ref{generalFormulaCorrelation} is useful for understanding analogy between correlation of random variables and observations in a dataset, but it cannot be used to calculate $\rho_{X,Y}$ without the probability weights.  The weights come from the \term{joint distribution} of the pair of variables $(X,Y)$.  Joint probabilities were discussed in section~\ref{marginalAndJointProbabilities}.
+
+\textit{termbox here}  \textit{termbox title here}
+
+The \term{joint distribution} for a pair of random variables is the collection of probabilities
+
+\begin{align*}
+	  p(x_i,y_j) = P(X=x_i \text{ and } Y = y_j) = P(X=x_i, Y=y_j)
+\end{align*}
+for all pairs of values $(x_i,y_j)$ for the pair of random variables $(X,Y)$.
+
+\textit{end termbox  here}.
+
+Joint distributions quickly become complicated.  If $X$ and $Y$ have $k_1$ and $k_2$ possible values respectively, there will be $(k_1)(k_2)$ possible $(x,y)$ pairs. This is unlike pairs of values $(x,y)$ observed in a data set, where each observed value of $x$ is usually paired with only one value of $y$. 
+
+A joint distribution is often best displayed as a table of probabilities, with $(k_1)(k_2)$ entries.  Table~\ref{generalJointDistribution} shows the general form of the table; the example following the table provides a numerical example. 
+
+\begin{table}[h]
+	\caption{Table for a joint distribution. Entries are probabilities for pairs ($x_i, y_j$)}
+	\label{table:generalJointDistribution}
+	\centering
+	\begin{tabular}{ccccc}
+		\hline
+		& \multicolumn{4}{c}{\textbf{Values of $Y$}} \\
+		\hline
+		\textbf{Values of $X$} & $y_1$ & $y_2$ & $\cdots$ & $y_{k_2}$ \\
+		             $x_1$ &   $p(x_1, y_1)$ &   $p(x_1, y_2)$  & $\cdots$  & $p(x_1, y_{k_2})$  \\
+		              $x_2$ &  $p(x_2, y_1)$   &  $p(x_2, y_2)$  & $\cdots$ &   $p(x_2, y_{k_2})$ \\
+		             $\vdots$ &   $\cdots$  &  $\cdots$  &  $\cdots$ &   $\cdots$ \\
+		              $x_{k_1}$ & $p(x_{k_1}, y_1)$ &  $p(x_{k_1}, y_2)$  &  $\cdots$ & $p(x_{k_1}, y_{k_2})$ \\
+		             
+	\end{tabular}
+\end{table}
+
+\begin{example} (Health care costs, again!) Might the health care costs for the employee and her domestic partner be correlated? The calculation of the variability of health care costs for the employee and her partner relied on the assumption that the number of health episodes of the two are independent random variables.  The two are not related and have not been living together, so it might be reasonable to assume that the health status of one member of the partnership has no information about the health of the other member.  But correlation between random variables can be subtle.   Couples are often attracted to each other because of common interests or life-styles.  The employee and her new partner realize that they cannot determine whether their health care costs are correlated without examining the joint distribution of costs, so they decide to look more closely at the data, and make a table of all possible combination of costs for the last 15 years,(table~\ref{healthExpensesJointDistribution}), when they were not living together. The health care costs for the employee and her new partner were calculated in example \ref{healthCareCostsEmployee} and Guided Practice \ref{healthCareCostsPartner}.   The entry 0.25 in the second row and second column of table~\ref{healthExpensesJointDistribution} means that in approximately 25\% of the last 15 years, the employee and paid \$1008 and in costs and her partner paid \$988.
+\begin{table}[h]
+\centering
+\begin{tabular}{crr}
+  \hline \\
+  &   \multicolumn{2}{c}{\textbf{Partner Costs}} \\
+\textbf{Employee costs} & \textbf{\$968} & \textbf{\$988} \\ 
+  \hline
+\textbf{\$968} & 0.18 & 0.12 \\ 
+ \textbf{\$1,008} & 0.15 & 0.25 \\ 
+ \textbf{\$1,028}  & 0.04 & 0.16 \\ 
+ \textbf{\$1,108}  & 0.03 & 0.07 \\ 
+   \hline
+\end{tabular}
+\caption{Joint Distribution of Health Care Costs. Entries in the table are probabilities of pairs of annual costs.} 
+\label{healthExpensesJointDistribution}
+\end{table}
+% R code for the table is in the chap 2 rcode file, but does not quite produce this table.  Could not get the rownames, colnames to appear
+\end{example}
+
+When two variables $X$ and $Y$ have a joint distribution, the marginal distribution of $X$ is the collection of probabilities for $X$ when $Y$ is ignored.  If $X$ represents employee costs and $Y$ partner costs in the health insurance example, the event $(X = 968)$ consists of the two  disjoint events $(X = 968, Y = 968)$ and $(X = 968, Y = 988)$, so 
+\[
+    P(X = 968) = 0.18 + 0.12 = 0.30,
+\]
+the sum of the first row of the table. The row sums in table~\ref{healthExpensesJointDistribution} are the values of the \term{marginal distribution} of $X$.  Similarly, the column sums will be the values of the marginal distribution of $Y$.  Table ~\ref{healthExpensesJointMarginalDistribution} adds these marginal distribution to table~\ref{healthExpensesJointDistribution}.
+\newpage
+
+\begin{table}[h]
+\centering
+\begin{tabular}{crrr}
+  \hline \\
+  &   \multicolumn{2}{c}{\textbf{Partner Costs}} & \textbf{Marg. Dist.}\\
+\textbf{Employee costs} & \textbf{\$968} & \textbf{\$988} & \textbf{Employee Costs} \\ 
+  \hline
+\textbf{\$968} & 0.18 & 0.12 & 0.30\\ 
+ \textbf{\$1,008} & 0.15 & 0.25 & 0.40 \\ 
+ \textbf{\$1,028}  & 0.04 & 0.16 & 0.20\\ 
+ \textbf{\$1,108}  & 0.03 & 0.07  & 0.10\\ 
+   \hline
+ \textbf{Marg. Dist.} & 0.40 & 0.60 & 1.00 \\
+ \textbf{Partner Costs} &  &  & \\
+ \hline \\
+\end{tabular}
+\caption{Joint and Marginal Distributions of Health Care Costs.} 
+\label{healthExpensesJointMarginalDistribution}
+\end{table}
+
+\textit{formatting of table has to be  improved}
+
+
+\begin{example}Calculate the correlation between employee costs and the standard deviation of the sum of the costs for the couple.
+	
+	\textit{Not filling in the details now. Proceeds by showing that the marginal distributions are the same as those used earlier, then calculating $\sigma_X, \sigma_Y$ etc.  Variance using equation~\ref{generalVarianceSumRVs}}
+	\end{example}
+
+\textit{Outline for the remainder of this section}
+
+\textit{general form of table for joint, marginal dist \\
+		Conditional distributions\\ Example}
+
+
+\index{joint distribution for random variables|)}
+\index{marginal distribution for random variables|)}
 \index{random variable|)}
 
 \section{Continuous distributions}
