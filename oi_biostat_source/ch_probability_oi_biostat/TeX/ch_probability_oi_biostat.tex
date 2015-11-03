@@ -57,8 +57,6 @@ Although it seems more complicated to calculate probabilities for disease inheri
 
 \textit{Solution 1: Enumerate all of the possible outcomes and exploit the fact that the outcomes are equally likely, as in Example~\ref{probOf1}.}  Figure~\ref{fig:cfInheritance} shows the four possible genotypes for a child of these parents. The paternal chromosome is in blue and the maternal chromosome in green, while chromosomes with the wild-type and mutated versions of \textit{CFTR} are marked with $+$ and $-$, respectively. The child is only affected if they have genotype ($-$/$-$), with two mutated copies of \textit{CFTR}. Each of the four outcomes occurs with equal likelihood, so the child will be affected with probability 1-in-4, or $1/4$.  It is important to recognize that the child being an unaffected carrier ($+$/$-$) consists of two distinct outcomes, not one. 
 
-\textit{JV: Perhaps it is not obvious that the outcomes are equally likely if someone is new to both genetics and probability (without calculating that each is indeed 1/4)? Solution 1 requires immediately identifying that each outcome occurs with equal likelihood.}
-
 \textit{Solution 2:  Calculate the proportion of outcomes that produce an affected child, as in Example~\ref{probOf2Ones}.}  During reproduction, one parent will pass along an affected copy half of the time.  When the child receives an affected gene from one parent, half of the those times, they will also receive an affected gene from the other parent.	So the proportion of times the child will be have two affected copies is $(1/2) (1/2) = 1/4$.
 \end{example}
 
@@ -183,9 +181,9 @@ P(A\text{ or }B) = P(A) + P(B) = 1/3 + 1/3 = 2/3
 In Guided Practice~\ref{exerExaminingDisjointSetsABD}, you confirmed $B$ and $D$ from Figure~\ref{fig:disjointEvents} are disjoint. Compute the probability that event $B$ or event $D$~occurs.\footnote{Since $B$ and $D$ are disjoint events, use the Addition Rule: $P(B$ or $D) = P(B) + P(D) = \frac{1}{3} + \frac{1}{3} = \frac{2}{3}$.}
 \end{exercise}
 
-\textit{DH: Should we add more genetics problems here?  I have removed the email example because of the possible confusion between events involving sampling from a population vs a study sample.  If we think we can make that clear, we can use examples from famuss, perhaps by posing a problem of sampling members from the study participants.  Note also that this is moving more slowly than the Stat 102 notes, but we did show some of this material on the blackboard. If we use this chapter in 102, perhaps we can move quickly to more complicated examples.}
+%DH: \textit{DH: Should we add more genetics problems here?  I have removed the email example because of the possible confusion between events involving sampling from a population vs a study sample.  If we think we can make that clear, we can use examples from famuss, perhaps by posing a problem of sampling members from the study participants.  Note also that this is moving more slowly than the Stat 102 notes, but we did show some of this material on the blackboard. If we use this chapter in 102, perhaps we can move quickly to more complicated examples.}
 
-\textit{JV: Perhaps famuss examples could be added later in a more complicated context, to keep the chapter from moving too slowly at this point.}
+%JV: \textit{JV: Perhaps famuss examples could be added later in a more complicated context, to keep the chapter from moving too slowly at this point.}
 
 \index{event|)}
 \index{disjoint|)}
@@ -260,7 +258,7 @@ Note that in the language of statistics, "or" is in inclusive such that $A$ or $
 \end{exercise}
 
 \begin{exercise}
-Human immunodeficiency virus (HIV) and tuberculosis (TB) affect substantial proportions of the population in certain areas of the developing world. Individuals sometimes have both diseases (are co-infected); children of HIV-infected mothers may have HIV (be HIV$^+$) and TB can spread from one family member to another.  In a mother child pair, let $A = \{\text{ the mother has HIV } \}$,  $B = \{\textrm{ the mother has TB } \}$, $C = \{\text{ the child has HIV } \}$,  $D = \{\text{ the child has TB } \}$.  Write out the definitions of the events $A \text{ or } B$, $A \text{ and } B$, $A \text{ and } C$, $A \text{ or } D$. \textit{Needs solution in footnote.}
+{Human immunodeficiency virus (HIV) and tuberculosis (TB) affect substantial proportions of the population in certain areas of the developing world. Individuals sometimes have both diseases (are co-infected); children of HIV-infected mothers may have HIV (be HIV$^+$) and TB can spread from one family member to another.  In a mother child pair, let $A = \{\text{ the mother has HIV } \}$,  $B = \{\textrm{ the mother has TB } \}$, $C = \{\text{ the child has HIV } \}$,  $D = \{\text{ the child has TB } \}$.  Write out the definitions of the events $A \text{ or } B$, $A \text{ and } B$, $A \text{ and } C$, $A \text{ or } D$.}\footnote{Events $A$ or $B$: the mother has HIV, the mother has TB, or the mother has both HIV and TB. Events $A$ and $B$: the mother has both HIV and TB. Events $A$ and $C$: The mother has HIV and the child has HIV. $A$ or $D$: The mother has HIV, the child has TB, or the mother has HIV and the child has TB.}
 
 \end{exercise}
 
@@ -302,7 +300,9 @@ Chapter~\ref{introductionToData} emphasized the importance of plotting data to p
 
 In this bar plot, the bar heights represent the probabilities of outcomes. If the outcomes are numerical and discrete, it can be visually convenient to make a bar plot that resembles a histogram, such as in the case of the sum of two dice.  
 
-A graph of probability distribution can quickly convey important information about a distribution quickly. For example, the distribution of birth weights for 3,999,386 live births in the United States in 2010 is shown in figure \ref{fig:birthwtMarginalDist}.  The data are available as part of the US CDC National Vital Statistics System.\footnote{\url{http://205.207.175.93/vitalstats/ReportFolders/reportFolders.aspx}} The graph of the distribution shows that while most babies born weighed between 2000 and 5000 grams (2 to 5 kg), there were both small (less than 1000 grams) and large (greater than 5000 grams) babies. Pediatricians consider birth weights between 2.5 and 5 kg as normal. \textit{JV: Citation?}
+A graph of probability distribution can quickly convey important information about a distribution quickly. For example, the distribution of birth weights for 3,999,386 live births in the United States in 2010 is shown in Figure \ref{fig:birthwtMarginalDist}.  The data are available as part of the US CDC National Vital Statistics System.\footnote{\url{http://205.207.175.93/vitalstats/ReportFolders/reportFolders.aspx}} The graph of the distribution shows that while most babies born weighed between 2000 and 5000 grams (2 to 5 kg), there were both small (less than 1000 grams) and large (greater than 5000 grams) babies. Pediatricians consider birth weights between 2.5 and 5 kg as normal. 
+
+%JV: \textit{JV: Citation for normal birthwt?}
 
 \begin{figure}[h]
 	\includegraphics[width=\textwidth]{ch_probability_oi_biostat/figures/birthwtMarginalDist/birthwtMarginalDist.pdf}
@@ -310,9 +310,8 @@ A graph of probability distribution can quickly convey important information abo
 	\label{fig:birthwtMarginalDist}
 \end{figure}
 
-\textit{JV: Text in the birthweight plot is very small, in order to accommodate the number of bars... If you agree that bars can be reduced, adjust the marginal dist table and I can re-size the plot.}
+%JV: \textit{JV: Text in the birthweight plot is very small, in order to accommodate the number of bars... If you agree that bars can be reduced, adjust the marginal dist table and I can re-size the plot.}
 
-\newpage
 \subsection{Complement of an event}
 
 Rolling a die produces a value in the set $\{$\resp{1}, \resp{2}, \resp{3}, \resp{4}, \resp{5}, \resp{6}$\}$. This set of all possible outcomes is called the \term{sample space} ($S$)\marginpar[\raggedright\vspace{-5mm}
@@ -374,6 +373,8 @@ Let $A$ represent the event in which two dice are rolled and their total is less
 (c)~As before, finding the complement is the more direct way to determine $P(D)$. First find $P(D^c) = P($\resp{11} or \resp{12}$)=2/36 + 1/36=1/12$. Then calculate $P(D) = 1 - P(D^c) = 11/12$.}
 \end{exercise}
 
+\begin{comment}
+
 \textit{JV: I agree that this example requires too much explanation for what should be a relatively short point... Will leave as-is for now.}
 
 Sometimes, information from a graph can be combined with using the complement of an event to calculate approximate probabilities. The gestational age of a newborn is the time between conception and birth. Because of the obvious difficulty of determining the exact date of conception, gestational ages are typically recorded in weeks. Figure \ref{fig:gestageMarginalDist} is the graphical representation of the distribution of gestational ages for the  3,999,386 babies born in 2010.  Babies born between 38 and 42 weeks of gestational age are considered normal, but the term `full term' is used for births between 39 and 40 weeks gestational age.  The graph shows that approximately 30\% of births occur at 39 weeks, and slightly less than 30\% occur at 40 weeks, so approximately 50\% of babies are considered full term.  Instead of adding up the heights of the bars for gestational ages outside the full term range, using the complement of the event of a full term birth, it is clear that approximately 50\% of births not considered full term.
@@ -417,10 +418,14 @@ Under.wk.20 & 0.00 \\
 
 \textit{DH: not satisfied with the way this example worked out; it should be improved or changed}
 
+\end{comment}
+
 \subsection{Independence}
 \label{probabilityIndependence}
 
-Just as variables and observations can be independent, random phenomena can also be independent. Two processes are \term{independent} if knowing the outcome of one provides no information about the outcome of the other. For instance, flipping a coin and rolling a die are two independent processes -- knowing that the coin lands heads up does not help determine the outcome of a die roll. On the other hand, stock prices usually move up or down together, so they are not independent. \textit{JV: Perhaps these examples could be replaced... Ex. dependence of height and weight? independence of other two traits, maybe height and eye color?}
+Just as variables and observations can be independent, random phenomena can also be independent. Two processes are \term{independent} if knowing the outcome of one provides no information about the outcome of the other. For instance, flipping a coin and rolling a die are two independent processes -- knowing that the coin lands heads up does not help determine the outcome of a die roll. On the other hand, stock prices usually move up or down together, so they are not independent. 
+
+%JV: \textit{JV: Perhaps these examples could be replaced... Ex. dependence of height and weight? independence of other two traits, maybe height and eye color?}
 
 Independence was used implicitly on page~\pageref{CFInheritanceExample} in the second solution to the probability that two carriers will have an affected child with cystic fibrosis. Genes are typically passed along from the mother and father independently, allowing for the assumption that, on average, half of the offspring who receive a mutated gene copy from the mother will also receive a mutated copy from the father.
 
@@ -457,7 +462,9 @@ P(A_1) \times  P(A_2) \cdots   P(A_k)
 \end{eqnarray*}\vspace{-6mm}}
 \end{termBox}
 
-In applications to biology or medicine, complicated probability problems are often solved with the simple ideas used in the dice examples. \textit{JV: I think the handedness problems can be put in end-of-chapter exercises. Given this kind of lead-in, we should focus on demonstrating some realistic problems.}
+In applications to biology or medicine, complicated probability problems are often solved with the simple ideas used in the dice examples. 
+
+%JV: \textit{JV: I think the handedness problems can be put in end-of-chapter exercises. Given this kind of lead-in, we should focus on demonstrating some realistic problems.}
 
 \begin{comment}
 \begin{exercise} \label{ex2Handedness}
@@ -524,16 +531,14 @@ The solution first defines the event $P(\text{At least 1 "+"})$ in terms of its 
     \end{align*}
    So $P(\text{At least 1 is "+"})  = 1 - P(\text{150 are "-"}) = 0.84.$
  
-   \textit{DH: should we be more formal here in defining events? Also, this is the example that we also solved in R, two different ways.  Those solutions are candidates for the R supplement JV: No, I think it may actually be more intuitive to see events written this way.}
+  %DH: \textit{DH: should we be more formal here in defining events? Also, this is the example that we also solved in R, two different ways.  Those solutions are candidates for the R supplement JV: No, I think it may actually be more intuitive to see events written this way.}
 
 Even when using a test with a small probability of a false positive, the company is more than 80\% likely to incorrectly claim at least one employee is an illegal drug user!
 
 \end{example}
 
 \begin{exercise}
-Because of the high likelihood of at least one false positive in company wide drug screening programs, an individual with a positive test is almost always re-tested with a different screening test, one that is more expensive than the first but with a lower false positive probability.  Suppose the second test has a false positive rate of 0.8\%.  What is the probability that an employee who is not using illegal drugs will test positive on both tests?
-
-\textit{DH: solution to be added if we keep the problem JV: I like this one.}
+Because of the high likelihood of at least one false positive in company wide drug screening programs, an individual with a positive test is almost always re-tested with a different screening test, one that is more expensive than the first but with a lower false positive probability.  Suppose the second test has a false positive rate of 0.8\%.  What is the probability that an employee who is not using illegal drugs will test positive on both tests?\footnote{The outcomes of the two tests are independent of one another; $P (A\text{ and } B) = P(A) \times P(B)$, where events $A$ and $B$ are the results of the two tests. The probability of a false positive with the first test is 0.012 and 0.008 with the second. Thus, the probability of an employee who is not using illegal drugs testing positive on both tests is $0.012 \times 0.008 = 9.6 \times 10^{-5}$}
 
 \end{exercise}
 
@@ -554,19 +559,23 @@ Suppose that both members of a couple have Group AB blood.
 	\item What is the probability that they have two children with Group A blood?
 \end{enumerate}	}
 
-\end{example}
+\begin{enumerate}[a)]
+	\item An individual with Group AB blood is genotype ${I}^{A}$${I}^{B}$. Two ${I}^{A}$${I}^{B}$ parents can produce children with genotypes ${I}^{A}$${I}^{B}$, ${I}^{A}$${I}^{A}$, or ${I}^{B}$${I}^{B}$. Of these possibilities, only children with genotype ${I}^{A}$${I}^{A}$ have Group A blood. Each parent has 0.5 probability of passing down their ${I}^{A}$ allele. Thus, the probability that a child of this couple will have Group A blood is P(parent 1 passes down ${I}^{A}$ allele) $\times$ P(parent 2 passes down ${I}^{A}$ allele) = $0.5 \times 0.5 = 0.25$.
+	
+	\item Inheritance of alleles is independent between children. Thus, the probability of two children having Group A blood equals P(child 1 has Group A blood) $\times$ P(child 2 has group A blood). The probability of a child of this couple having Group A blood was previously calculated as 0.25. The answer is given by $0.25 \times 0.25 = 0.0625$.
+\end{enumerate}
 
-\textit{DH: solutions to be added if we keep the exercise. JV: Changed this to an example, could add an exercise w/some of the numbers from the donor data? }
+\end{example}
 
 The previous examples in this section have used independence to solve probability problems. The definition of independence can also be used to check whether two events are independent -- two events $A$ and $B$ are independent if they satisfy Equation~\eqref{eqForIndependentEvents}.
 
 \begin{example}{Is the event of drawing a heart from a deck of cards independent of drawing an ace?}
 
-The probability the card is a heart is $1/4$ ($13/52=1/4$) and the probability that it is an ace is $1/13$ ($4/52=1/13$). The probability that the card is the ace of hearts is $1/52$. Check whether Equation~\ref{eqForIndependentEvents} is satisfied:
+The probability the card is a heart is $1/4$ ($13/52=1/4$) and the probability that it is an ace is $1/13$ ($4/52=1/13$). The probability that the card is the ace of hearts (\resp{A}${\color{redcards}\heartsuit}$) is $1/52$. Check whether Equation~\ref{eqForIndependentEvents} is satisfied:
 
 \begin{align*}
-P({\color{redcards}\heartsuit}) P(\text{ace}) = (\frac{1}{4}) (\frac{1}{13}) = \frac{1}{52} 
-= P({\color{redcards}\heartsuit}\text{ and ace})
+P({\color{redcards}\heartsuit}) P(\text{\resp{A}}) = \left(\frac{1}{4} \right) \left( \frac{1}{13} \right) = \frac{1}{52} 
+= P({\color{redcards}\heartsuit}\text{ and \resp{A}})
 \end{align*}
 Because the equation holds, the event that the card is a heart and the event that the card is an ace are independent events.
 	
@@ -575,7 +584,13 @@ Because the equation holds, the event that the card is a heart and the event tha
 \begin{example}
  {In the general population, about 15\% of adults between 25 and 40  years of age are hypertensive.  Suppose that among males of this age, hypertension occurs about 18\% of the time.  Is hypertension independent of sex?} 
 
- \textit{DH: solution to be filled in if we keep it.  Emphasize in the solution how the wording here is more realistic than the playing card/dice examples.}
+Assume that the population is 50\% male, 50\% female; it is given in the problem that hypertension occurs about 15\% of the time in adults between ages 25 and 40. 
+
+\[P(\text{hypertension}) \times P(\text{male}) = (0.15)(0.50) = 0.075 \neq 0.18\] 
+
+Equation~\ref{eqForIndependentEvents} is not satisfied, therefore hypertension is not independent of sex.
+
+ %DH: \textit Emphasize in the solution how the wording here is more realistic than the playing card/dice examples.}
 \end{example}
 
 %_________________
@@ -627,7 +642,7 @@ The distinction between the two statements is small but important. The first pro
 
 \begin{exercise} \label{DiabetesAge20to44}
 
-What fraction of the US population are 45 to 64 years of age and have diabetes?  What fraction of the population age 45 to 64 have diabetes?\footnote{Needs solution.}
+What fraction of the US population are 45 to 64 years of age and have diabetes?  What fraction of the population age 45 to 64 have diabetes?\footnote{The first value is given by the intersection of "45 - 64 years of age" and "diabetes", divided by the total population number: $13,400,000/313,320,000 = 0.043$. The second value is given by dividing 13,400,000 by 81,926,000, the number of individuals in that age group: $13,400,000/81,926,000 = 0.164$.}
 
 \end{exercise}
 
@@ -665,7 +680,7 @@ If a probability is based on a single variable, it is a \emph{\hiddenterm{margin
 \end{termBox}
 
 \begin{exercise} 
-  {What is the interpretation of the value 0.907 in the last row of the table?  Of the value 1.000 in the bottom right corner?\footnote{Needs solution.}}
+  {What is the interpretation of the value 0.907 in the last row of the table?  Of the value 1.000 in the bottom right corner?\footnote{The value 0.907 in the last row indicates the total proportion of individuals in the population who do not have diabetes. 1.000 is calculated from 313,320,000/313,320,000 -- this is the proportion representing the entire US population in 2012.}}
 \label{MarginalJointProbDiabetes}
 \end{exercise}
 
@@ -700,9 +715,9 @@ P(A | B) = \frac{P(A\text{ and }B)}{P(B)}
 \end{termBox}
 
 \begin{exercise}\label{familyCollegeProbOfParentsEqualNotGivenTeen}
-(a) Write out the following statement in conditional probability notation: ``\emph{The probability a randomly selected person has diabetes, given that his or her age is between 45 and 64 }''. \\[1mm]
+(a) Write out the following statement in conditional probability notation: "The probability a randomly selected person has diabetes, given that his or her age is between 45 and 64." \\[1mm]
 (b) Calculate the conditional probability in part (a). \\[1mm]
-(c) Write out the following statement in conditional probability notation: ``\emph{The probability a randomly selected person is between 45 and 64 years old, given that the person has diabetes}''. Note that the condition is now based on the {diabetes}, not the {age}. \\[1mm]
+(c) Write out the following statement in conditional probability notation: "The probability a randomly selected person is between 45 and 64 years old, given that the person has diabetes" Note that the condition is now based on diabetes, not age group. \\[1mm]
 (d) Calculate the probability in part (c).
 \end{exercise}
 
@@ -710,7 +725,7 @@ P(A | B) = \frac{P(A\text{ and }B)}{P(B)}
 
 \index{data!smallpox|(}
 
-\textit{DH: I am not fond of small pox example, since it is a biased sample, but leaving it for now. JV: If another example is added, it should become part of 2.2.2 instead of having its own subsection. Flow may actually be improved by sticking to the diabetes example and leaving smallpox out.}
+%DH: \textit{DH: I am not fond of small pox example, since it is a biased sample, but leaving it for now. JV: If another example is added, it should become part of 2.2.2 instead of having its own subsection. Flow may actually be improved by sticking to the diabetes example and leaving smallpox out.}
 
 \begin{comment}
 The \data{smallpox} data set provides a sample of 6,224 individuals from the year 1721 who were exposed to smallpox in Boston.\footnote{Fenner F. 1988. \emph{Smallpox and Its Eradication (History of International Public Health, No. 6)}. Geneva: World Health Organization. ISBN 92-4-156110-6.} Doctors at the time believed that inoculation, which involves exposing a person to the disease in a controlled form, could reduce the likelihood of death.
@@ -764,6 +779,7 @@ The people of Boston self-selected whether or not to be inoculated. (a) Is this 
 \end{exercise}
 \end{comment}
 
+\newpage
 \subsection{General multiplication rule}
 
 Section~\ref{probabilityIndependence} introduced the Multiplication Rule for independent processes. Here, the \term{General Multiplication Rule} is introduced for events that might not be independent.
@@ -777,7 +793,7 @@ It is useful to think of $A$ as the outcome of interest and $B$ as the condition
 \end{termBox}
 This General Multiplication Rule is simply a rearrangement of the definition for conditional probability in Equation~(\ref{condProbEq}) on page~\pageref{condProbEq}.
 
-\begin{example}{Consider the \data{smallpox} dataset. Suppose we are given only two pieces of information: 96.08\% of residents were not inoculated, and 85.88\% of the residents who were not inoculated ended up surviving. How could we compute the probability that a resident was not inoculated and lived? \textit{JV: This will also need to change if smallpox example is eliminated.}}
+\begin{example}{Consider the \data{smallpox} dataset. Suppose we are given only two pieces of information: 96.08\% of residents were not inoculated, and 85.88\% of the residents who were not inoculated ended up surviving. How could we compute the probability that a resident was not inoculated and lived? \textit{JV: Placeholder example, needs to be replaced.}}
 We will compute our answer using the General Multiplication Rule and then verify it using Table~\ref{smallpoxProbabilityTable}. We want to determine
 \begin{eqnarray*}
 P(\text{\var{result} = \resp{lived} and \var{inoculated} = \resp{no}})
@@ -802,7 +818,7 @@ Use $P($\var{inoculated} = \resp{yes}$) = 0.0392$ and $P($\var{result} = \resp{l
 If 97.45\% of the people who were inoculated lived, what proportion of inoculated people must have died?\footnote{There were only two possible outcomes: \resp{lived} or \resp{died}. This means that 100\% - 97.45\% = 2.55\% of the people who were inoculated died.}
 \end{exercise}
 
-\textit{JV: I am not clear on why this tipbox appears in this subsection. Would it be better at the end of the previous subsection?}
+%JV: \textit{JV: I am not clear on why this tipbox appears in this subsection. Would it be better at the end of the previous subsection?}
 
 \begin{termBox}{\tBoxTitle{Sum of conditional probabilities}
 Let $A_1$, ..., $A_k$ represent all the disjoint outcomes for a variable or process. Then if $B$ is an event, possibly for another variable or process, we have: \vspace{-1mm}
@@ -845,12 +861,12 @@ P(Y=\text{\resp{1}}\ |\ X=\text{\resp{1}})
 
 
 \begin{exercise}
-Casinos often rely on gamblers not understanding independence.  Suppose the last five outcomes on a roulette table were \resp{black}.  What is wrong with the reasoning that the next outcome is highly likely to be red? \textit{JV: Needs footnote solution.}
+Casinos often rely on gamblers not understanding independence.  Suppose the last five outcomes on a roulette table were \resp{black}.  What is wrong with the reasoning that the next outcome is highly likely to be red?\footnote{Each outcome is independent of the other, with the likelihood of red or black being equal from spin to spin.}
 \end{exercise}
 
 There is a subtle but important point behind the last example.  The probability of the next outcome being black is different than the probability that the sixth outcome is black when a gambler has seen the last five outcomes and knows that they are black.  This is an example of an unconditional versus a conditional probability.
 
-\textit{JV: This section comes across as rather lifeless right now. Could add an example in which independence is illustrated using the conditional probability formula.}
+%JV: \textit{JV: This section comes across as rather lifeless right now. Could add an example in which independence is illustrated using the conditional probability formula.}
 
 \begin{comment}
 \subsection{Tree diagrams}
@@ -915,9 +931,9 @@ These probabilities do not sum to one because the events where one or both paren
 
 This chapter began with a straightforward question -- what are the chances that a woman with an abnormal (i.e., positive) mammogram has breast cancer?  For a clinician, this question can be rephrased as the conditional probability  that a woman has breast cancer, given that her mammogram is abnormal. This conditional probability is called the \term{positive predictive value} of a mammogram.  
 
-The characteristics of a mammogram (and diagnostic tests in general) are given with the reverse conditional probabilities --  the probability that if a woman fact has breast cancer, a mammogram will detect it.  More concisely, if $A = \text{(a mammogram is  positive)}$ and $B = \text{(a woman has breast cancer)}$, the first question is answered by finding $P(A|B)$, while the the known characteristics of a mammogram specify $P(B|A)$.
+The characteristics of a mammogram (and diagnostic tests in general) are given with the reverse conditional probabilities --  the probability that if a woman in fact has breast cancer, a mammogram will detect it.  More concisely, if $A = \text{\{a mammogram is  positive\}}$ and $B = \text{\{a woman has breast cancer\}}$, the first question is answered by finding $P(A|B)$, while the the known characteristics of a mammogram specify $P(B|A)$.
 
-This type of problem arises so often in medicine that is useful to have several strategies to approach the problem -- 1) constructing tree diagrams, 2) using a purely algebraic approach using Bayes' Theorem, and 3) the construction of a large, hypothetical population that allows conditional probabilities to be calculated from contingency tables.
+This type of problem arises so often in medicine that is useful to have several strategies to approach the problem -- 1) constructing tree diagrams, 2) using a purely algebraic approach using Bayes' Theorem, and 3) creating contingency tables based on calculating conditional probabilities from a large, hypothetical population.
 
 \begin{example}{In Canada, about 0.35\% of women over 40 will develop breast cancer in any given year. A common screening test for cancer is the mammogram, but it is not perfect. In about 11\% of patients with breast cancer, the test gives a \term{false negative}: it indicates a woman does not have breast cancer when she does have breast cancer. Similarly, the test gives a \term{false positive} in 7\% of patients who do not have breast cancer: it indicates these patients have breast cancer when they actually do not.\footnote{The probabilities reported here were obtained using studies reported at \oiRedirect{textbook-breastCancerDotOrg_20090831b}{www.breastcancer.org} and \oiRedirect{textbook-ncbi_nih_breast_cancer}{www.ncbi.nlm.nih.gov/pmc/articles/PMC1173421}.} If a random selected woman over 40 is tested for breast cancer using a mammogram and the test is positive -- that is, the test suggests the woman has cancer -- what is the probability she has breast cancer?}
 \label{probabilityOfBreastCancerGivenPositiveTestExample}
@@ -947,10 +963,9 @@ Using the tree diagram allows for the information in the problem to be mapped ou
 
 The probability of a positive test result is the sum of the two corresponding scenarios:
 \begin{align*}
-P(\text{\underline{\color{black}mammogram$^+$}}) &= P(\text{\underline{\color{black}mammogram$^+$} and has BC}) + P(\text{\underline{\color{black}mammogram$^+$} and no BC}) \\
-	&= P(\text{has BC})P(\text{mammogram$^+$ } | \text{ has BC}) \\
-	&\qquad\qquad	+ P(\text{no BC})P(\text{mammogram$^+$ } | \text{ no BC}) \\
-	&= (0.0035)(0.89) + (0.9965)(0.07) = 0.07288
+P(\text{mammogram$^+$}) =&  P(\text{mammogram$^+$ and has BC}) + P(\text{mammogram$^+$ and no BC}) \\
+=&P(\text{mammogram$^+$ } | \text{ has BC}) P(\text{has BC}) + P(\text{mammogram$^+$ } | \text{ no BC}) P(\text{no BC}) \\
+=& (0.0035)(0.89) + (0.9965)(0.07) = 0.07288
 \end{align*}
 
 Thus, if the mammogram screening is positive for a patient, the probability that the patient has breast cancer is given by: 
@@ -960,18 +975,22 @@ P(\text{has BC } | \text{ mammogram$^+$})
 	&= \frac{0.00312}{0.07288} \approx 0.0428
 \end{align*}
 
-Even with a positive mammogram, there is still only a~4\%~chance of breast cancer!   \textit{DH: return to this to finish why low prevalence leads to low ppv. that is the important concept for pre-meds and others}
+Even with a positive mammogram, there is still only a~4\%~chance of breast cancer!   
+
+%DH: \textit{DH: return to this to finish why low prevalence leads to low ppv. that is the important concept for pre-meds and others}
 
 \subsubsection{Solution 2. Bayes' Rule.}
 
 The process used to solve the problem via the tree diagram can be condensed into a single algebraic expression by substituting the original probability expressions into the numerator and denominator:
 
+\begin{small}
 \begin{align*}
 P(\text{has BC } | \text{ mammogram$^+$})
 &= \frac{P(\text{has BC and mammogram$^+$})}{P(\text{mammogram$^+$})} \\
 &= \frac{P(\text{mammogram$^+$ } | \text{ has BC})  P(\text{has BC})}
 {[P(\text{mammogram$^+$ } | \text{ no BC}) P(\text{no BC})] + [P(\text{mammogram$^+$ } | \text{ has BC}) P(\text{has BC})]}
 \end{align*}
+\end{small}
 
 The generalization of this formula is known as Bayes' Theorem or Bayes' Rule.
 
@@ -1086,7 +1105,7 @@ The hypothetical clinical study at the beginning of this section raised the ques
 \label{distRespClinStudy}
 \end{figure}
 
- \textit{DH: this example can be improved, and the graph could be improved as well.}
+%DH:  \textit{DH: this example can be improved, and the graph could be improved as well.}
 
 
 \subsection{Expectation}
@@ -1114,9 +1133,9 @@ The expected value for a random variable represents the average outcome. For exa
 The expected value of a random variable has the same interpretation as a mean in a dataset. The distribution can be represented by a series of weights at each outcome, and the mean represents the balancing point.
 \end{comment}
 
-\textit{DH: I have omitted the material on continuous distributions and may re-insert it later. I also did not include figure 2.22 from OI, which I like.  Maybe we should put that back as well.} 
+%DH: \textit{DH: I have omitted the material on continuous distributions and may re-insert it later. I also did not include figure 2.22 from OI, which I like.  Maybe we should put that back as well.} 
 
-\textit{JV: I'm not as much a fan of that figure. I think the physical interpretation worked better for the initial introduction of a mean, but then here, the idea of an "expected value" is already a clear interpretation.}
+%JV: \textit{JV: I'm not as much a fan of that figure. I think the physical interpretation worked better for the initial introduction of a mean, but then here, the idea of an "expected value" is already a clear interpretation.}
 
 \index{expectation|)}
 
@@ -1164,7 +1183,7 @@ The standard deviation is $\sqrt{3/4} = \sqrt{3}/2 = 0.866$.
 
 The coin tossing scenario provides a simple illustration of the mean and variance of a random variable, but it is artificial. 
 
- %\label{healthCareCostsEmployee}
+ \label{healthCareCostsEmployee}
 In most typical health insurance plans in the United States, members of the plan pay annually in three categories: a monthly premium, ``out-of-pocket'' costs which include co-payments for each physician visit or prescription, and a deductible amount that members pay each year before the insurance covers service.\footnote{The deductible also includes care and supplies that are not covered by insurance.} Picking a new health plan involves estimating costs for the next year based on a person's best guess at the type and number of services that will be needed.
 	
 In 2015, Harvard University offered several alternative plans to its employees.   In the Health Maintenance Organization (HMO) plan for employees earning less than \$70,000 per year, the monthly premium was \$79, and the co-payment for each office visit or physical therapy session was \$20. A new employee examined her health records for the last 10 years, and noticed that in three of the 10 years her only office visit was one annual physical.  In four of the 10 years she visited her physician three times, once for a physical, and twice for a cases of the flu. In two years, she had four visits.  In one of the 10 years, she experienced a knee injury that required 3 office visits and 5 physical therapy sessions.
@@ -1207,7 +1226,7 @@ The variance of $X$ is $\sigma^2 = \$1556.00$, and the standard deviation is $\s
 
 \end{example}
 
-\textit{DH: This problem has potential for the exercises, either by making it more complicated (considering deductibles, etc, or by comparing the mean and standard deviation of two health plans). JV: I like this example.}
+%DH: \textit{DH: This problem has potential for the exercises, either by making it more complicated (considering deductibles, etc, or by comparing the mean and standard deviation of two health plans). JV: I like this example.}
 
 \subsection{Linear combinations of random variables}
 
@@ -1226,22 +1245,18 @@ where $a$ and $b$ are constants.  The mean of a linear combination of random var
 \end{align*}}
 \end{termBox}
 
-There are a few special cases of this formula which are especially useful. The formula implies that $E(a + Y) = a + E(Y)$.  This could have been used when calculating the average health costs for the employee by defining $a$ as the fixed cost of the premium ($a=\$948$), and taking $Y$ to be just the cost of the physician visits. Thus, the total annual cost for a year in which there were two physician visits could be calculated as: $E(a + Y) = a + E(Y) = \$948 + E(Y) = \$948 + xxx = xxx$. 
-
-\textit{The above solution is not right.  If 2 visits are specified, we know the exact cost. The term after the \$948 should be the the expected costs of physician visits, calculated from the probabilities but not including the fixed cost. For clarity, the calculation should be expanded, but a table is not necessary}
+There are a few special cases of this formula which are especially useful. The formula implies that $E(a + Y) = a + E(Y)$.  This could have been used when calculating the average health costs for the employee by defining $a$ as the fixed cost of the premium ($a=\$948$), and taking $Y$ to be just the cost of the physician visits. Thus, the total annual cost for a year could be calculated as: $E(a + Y) = a + E(Y) = \$948 + E(Y) = \$948 + .30(1 \times \$20) + .40(3 \times \$20) + .20(4 \times \$20) + .10(8 \times \$20)= \$1,010.00$. 
 
 The formula easily generalizes to a sum of any number of random variables. For example, the average health care cost for 5 years (given that the cost for services remains the same) would be: 
 
 \begin{align*}
 	E(X_1 + X_2 + X_3 + X_4 + X_5) &= E(X_1) + E(X_2) + E(X_3) + E(X_4) + E(X_5) \\
 	         &= 5E(X_1) \\
-			 &=(5)(1010) = \$5050
+			 &=(5)(1010) = \$5,050
 \end{align*}
 
-\textit{JV: For the following exercise, are you asking for expected cost taking only her daughter's visits into account? Or incorporating the previously given information about the employee's visits?  DH: See clarification.}
-
 \begin{exercise} \label{healthCareCostsPartner}
-	Suppose the employee will begin a domestic partnership in the next year, and while she and her companion will begin living together and sharing expenses, she and her partner will keep their existing health insurance plans; both, in fact have the same plan from the same employer.  In the last five years, her new partner visited a physician only once in two of the five years, and twice in the other three years.   Calculate the expected total cost of health insurance to the couple in the next year. \footnote{Solution needs to be added.}
+	Suppose the employee will begin a domestic partnership in the next year, and while she and her companion will begin living together and sharing expenses, she and her partner will keep their existing health insurance plans; both, in fact have the same plan from the same employer.  In the last five years, her new partner visited a physician only once in four of the ten years, and twice in the other six years.   Calculate the expected total cost of health insurance to the couple in the next year.\footnote{Let $X$ represent the costs for the employee and $Y$ represent the costs for her partner. $E(X) = \$1,010.00$, as previously calculated. $E(Y) = 948 + .4(1 \times \$20) + .6(2 \times \$20) = \$980.00$. Thus, $E(X + Y) = E(X) + E(Y) = \$1,010.00 + \$980.00 = \$1,990.00$.}
 \end{exercise}
 
 The employee and her partner would also like to know how variable their health care costs would be for the next year.  Calculating the variance and standard deviation of a linear combination of random variables requires more care.  The formula given here requires that the random variables in the linear combination be independent, so that an observation on one of the variables provides no information about the value of the other variable.  With that assumption, the following formula can be used:
@@ -1256,9 +1271,9 @@ This equation is valid as long as the random variables are independent of each o
 
 To calculate the variance and standard deviation for the next year health care costs for the two partners:
 
-\textit{solution to be added.  start with X = costs for employee and Y the costs for partner, use formula for Var(X + Y). Add the question about whether independence assumption is reasonable}
+\textit{Solution to be added. Start with X = costs for employee and Y the costs for partner, use formula for Var(X + Y). Add the question about whether independence assumption is reasonable.}
 
-The example of health insurance cost has been simplified to make the calculations clearer.  It ignores the fact that many plans have a deductible amount, and that plan members pay for services at different rates before and after the deductible has been reached. Often, insured individuals do not pay for services at all once a maximum amount has been reached in a year. The example also assumes that the proportions of number of physician visits per year, estimated from the last 5 years, can be treated as probabilities measured without error.  Had a different time-span been chosen, the proportions might well have been different.  
+The example of health insurance costs has been simplified to make the calculations clearer.  It ignores the fact that many plans have a deductible amount, and that plan members pay for services at different rates before and after the deductible has been reached. Often, insured individuals do not pay for services at all once a maximum amount has been reached in a year. The example also assumes that the proportions of number of physician visits per year, estimated from the last 10 years, can be treated as probabilities measured without error.  Had a different time-span been chosen, the proportions might well have been different.  
 
 \begin{exercise}  The Association of American Medical Colleges (AAMC) introduced a new version of the Medical College Admission Test (MCAT) in the spring of 2015. Data from the scores were recently released by AAMC.\footnote{https://www.aamc.org/students/download/434504/data/percentilenewmcat.pdf}  The test consists of 4 components: chemical and physical foundations of biological systems; critical analysis and reasoning skills; biological and biochemical foundations of living systems; psychological, social and biological foundations of behavior. The overall score is the sum of the individual component scores. The grading for each of the four components is scaled so that the mean score is 125.  The means and standard deviations for the four components and the total scores for the population taking the exam in May 2015 exam are shown in table~\ref{table:mcatScoreDistribution}.
 	
@@ -1282,7 +1297,7 @@ Show that the standard deviation in the table for the total score does not agree
 	\end{table}	
 \end{exercise}
 
-\textit{solution here, but only as far as noting that independence is not likely to be true.  Begin by applying the formula that assumes independence.}
+\textit{Solution to be added, but only as far as noting that independence is not likely to be true. Begin by applying the formula that assumes independence.}
 
 
 \section{Distributions for pairs of random variables (special topic)}
@@ -1317,22 +1332,18 @@ The compact formula for the correlation between two random variables $X$ and $Y$
 	\rho_{X,Y} = E\left(\frac{X - \mu_x}{\sigma_X}\right)\left(\frac{Y - \mu_Y}{\sigma_Y} \right),
 	\label{eq:generalFormulaCorrelation}
 \end{equation*}
-where $\rho_{X,Y}$ is the correlation between the two variables, and $\mu_X, \mu_Y$, $\sigma_X, \sigma_Y$ are the respective means and standard deviations for $X$ and $Y$. Just as with the mean of a random variable, the expectation in the formula for correlation is a weighted sum of products, with with each term weighted by the probability of values for the pair $(X,Y)$.  Equation~\ref{generalFormulaCorrelation} is useful for understanding analogy between correlation of random variables and observations in a dataset, but it cannot be used to calculate $\rho_{X,Y}$ without the probability weights.  The weights come from the \term{joint distribution} of the pair of variables $(X,Y)$.  Joint probabilities were discussed in section~\ref{marginalAndJointProbabilities}.
+where $\rho_{X,Y}$ is the correlation between the two variables, and $\mu_X, \mu_Y$, $\sigma_X, \sigma_Y$ are the respective means and standard deviations for $X$ and $Y$. Just as with the mean of a random variable, the expectation in the formula for correlation is a weighted sum of products, with with each term weighted by the probability of values for the pair $(X,Y)$.  Equation~\ref{eq:generalFormulaCorrelation} is useful for understanding analogy between correlation of random variables and observations in a dataset, but it cannot be used to calculate $\rho_{X,Y}$ without the probability weights.  The weights come from the \term{joint distribution} of the pair of variables $(X,Y)$.  Joint probabilities were discussed in section~\ref{marginalAndJointProbabilities}.
 
-\textit{termbox here}  \textit{termbox title here}
-
+\begin{termBox}{\tBoxTitle{Joint distribution}
 The \term{joint distribution} for a pair of random variables is the collection of probabilities
 
 \begin{align*}
 	  p(x_i,y_j) = P(X=x_i \text{ and } Y = y_j) = P(X=x_i, Y=y_j)
 \end{align*}
-for all pairs of values $(x_i,y_j)$ for the pair of random variables $(X,Y)$.
+for all pairs of values $(x_i,y_j)$ for the pair of random variables $(X,Y)$.}
+\end{termBox}
 
-\textit{end termbox  here}.
-
-Joint distributions quickly become complicated.  If $X$ and $Y$ have $k_1$ and $k_2$ possible values respectively, there will be $(k_1)(k_2)$ possible $(x,y)$ pairs. This is unlike pairs of values $(x,y)$ observed in a data set, where each observed value of $x$ is usually paired with only one value of $y$. 
-
-A joint distribution is often best displayed as a table of probabilities, with $(k_1)(k_2)$ entries.  Table~\ref{generalJointDistribution} shows the general form of the table; the example following the table provides a numerical example. 
+Joint distributions quickly become complicated.  If $X$ and $Y$ have $k_1$ and $k_2$ possible values respectively, there will be $(k_1)(k_2)$ possible $(x,y)$ pairs. This is unlike pairs of values $(x,y)$ observed in a dataset, where each observed value of $x$ is usually paired with only one value of $y$. A joint distribution is often best displayed as a table of probabilities, with $(k_1)(k_2)$ entries.  Table~\ref{table:generalJointDistribution} shows the general form of the table. 
 
 \begin{table}[h]
 	\caption{Table for a joint distribution. Entries are probabilities for pairs ($x_i, y_j$)}
@@ -1351,12 +1362,16 @@ A joint distribution is often best displayed as a table of probabilities, with $
 	\end{tabular}
 \end{table}
 
-\begin{example} (Health care costs, again!) Might the health care costs for the employee and her domestic partner be correlated? The calculation of the variability of health care costs for the employee and her partner relied on the assumption that the number of health episodes of the two are independent random variables.  The two are not related and have not been living together, so it might be reasonable to assume that the health status of one member of the partnership has no information about the health of the other member.  But correlation between random variables can be subtle.   Couples are often attracted to each other because of common interests or life-styles.  The employee and her new partner realize that they cannot determine whether their health care costs are correlated without examining the joint distribution of costs, so they decide to look more closely at the data, and make a table of all possible combination of costs for the last 15 years,(table~\ref{healthExpensesJointDistribution}), when they were not living together. The health care costs for the employee and her new partner were calculated in example \ref{healthCareCostsEmployee} and Guided Practice \ref{healthCareCostsPartner}.   The entry 0.25 in the second row and second column of table~\ref{healthExpensesJointDistribution} means that in approximately 25\% of the last 15 years, the employee and paid \$1008 and in costs and her partner paid \$988.
+\newpage
+Previously, the calculation of variability in health care costs for an employee and her partner relied on the assumption that the number of health episodes between the two are independent random variables. It might be reasonable to assume that the health status of one person gives no information about the other's health, given that the two are not related and were not previously living together. However, correlation between random variables can be subtle. For example, couples are often attracted to each other because of common interests or lifestyles, which suggests that health status may not actually be independent.
+
+Might the health care costs for the employee and her domestic partner be correlated? To start, examine the joint distribution of costs by making a table of all possible combinations of costs for the last 10 years (these costs were previously calculated in Example~\ref{healthCareCostsEmployee} and Guided Practice~\ref{healthCareCostsPartner}). Entries in the table are probabilities of pairs of annual costs. For example, the entry 0.25 in the second row and second column of Table~\ref{healthExpensesJointDistribution} indicates that in approximately \%25 of the last 10 years, the employee paid \$1,008 in costs and her partner paid \$988.
+
 \begin{table}[h]
 \centering
 \begin{tabular}{crr}
   \hline \\
-  &   \multicolumn{2}{c}{\textbf{Partner Costs}} \\
+  &   \multicolumn{2}{c}{\textbf{Partner costs}} \\
 \textbf{Employee costs} & \textbf{\$968} & \textbf{\$988} \\ 
   \hline
 \textbf{\$968} & 0.18 & 0.12 \\ 
@@ -1365,17 +1380,14 @@ A joint distribution is often best displayed as a table of probabilities, with $
  \textbf{\$1,108}  & 0.03 & 0.07 \\ 
    \hline
 \end{tabular}
-\caption{Joint Distribution of Health Care Costs. Entries in the table are probabilities of pairs of annual costs.} 
+\caption{Joint distribution of health care costs.} 
 \label{healthExpensesJointDistribution}
 \end{table}
 % R code for the table is in the chap 2 rcode file, but does not quite produce this table.  Could not get the rownames, colnames to appear
-\end{example}
 
-When two variables $X$ and $Y$ have a joint distribution, the marginal distribution of $X$ is the collection of probabilities for $X$ when $Y$ is ignored.  If $X$ represents employee costs and $Y$ partner costs in the health insurance example, the event $(X = 968)$ consists of the two  disjoint events $(X = 968, Y = 968)$ and $(X = 968, Y = 988)$, so 
-\[
-    P(X = 968) = 0.18 + 0.12 = 0.30,
-\]
-the sum of the first row of the table. The row sums in table~\ref{healthExpensesJointDistribution} are the values of the \term{marginal distribution} of $X$.  Similarly, the column sums will be the values of the marginal distribution of $Y$.  Table ~\ref{healthExpensesJointMarginalDistribution} adds these marginal distribution to table~\ref{healthExpensesJointDistribution}.
+When two variables $X$ and $Y$ have a joint distribution, the marginal distribution of $X$ is the collection of probabilities for $X$ when $Y$ is ignored.  If $X$ represents employee costs and $Y$ represents partner costs, the event $(X = \$968)$ consists of the two  disjoint events $(X = \$968, Y = \$968)$ and $(X = \$968, Y = \$988)$, so $P(X = \$968) = 0.18 + 0.12 = 0.30$, the sum of the first row of the table. 
+
+The row sums in Table~\ref{healthExpensesJointDistribution} are the values of the \term{marginal distribution} of $X$. Similarly, the column sums will be the values of the marginal distribution of $Y$.  The marginal distributions of $X$ and $Y$ are shown in Table ~\ref{healthExpensesJointMarginalDistribution}, along with the joint distribution of $X$ and $Y$.
 \newpage
 
 \begin{table}[h]
@@ -1398,19 +1410,20 @@ the sum of the first row of the table. The row sums in table~\ref{healthExpenses
 \label{healthExpensesJointMarginalDistribution}
 \end{table}
 
-\textit{formatting of table has to be  improved}
+\textit{DH: Formatting of table has to be improved}
 
 
-\begin{example}Calculate the correlation between employee costs and the standard deviation of the sum of the costs for the couple.
+\begin{example}{Calculate the correlation between employee costs and the standard deviation of the sum of the costs for the couple.}
 	
-	\textit{Not filling in the details now. Proceeds by showing that the marginal distributions are the same as those used earlier, then calculating $\sigma_X, \sigma_Y$ etc.  Variance using equation~\ref{generalVarianceSumRVs}}
+	\textit{Not filling in the details now. Proceeds by showing that the marginal distributions are the same as those used earlier, then calculating $\sigma_X, \sigma_Y$ etc.  Variance using equation~\ref{eq:generalVarianceSumRVs}}
 	\end{example}
 
-\textit{Outline for the remainder of this section}
-
-\textit{general form of table for joint, marginal dist \\
-		Conditional distributions\\ Example}
-
+\textit{Outline for the remainder of this section
+	\begin{itemize}[--]
+		\item general form of table for joint, marginal distributions
+		\item conditional distributions
+		\item example
+	\end{itemize}}
 
 \index{joint distribution for random variables|)}
 \index{marginal distribution for random variables|)}

@@ -415,7 +415,9 @@ Suppose an observational study tracked sunscreen use and skin cancer, finding th
 	\includegraphics[height=1.25in]{ch_intro_to_data_oi_biostat/figures/variables/confoundingVariable.png}
 \end{center}
 
-Observational studies can reveal interesting patterns or important associations useful for designing follow-up experiments. Several observational studies based on dietary data from different countries showed a strong association between dietary fat and breast cancer in women.  These observations were the basis for The Women's Health Initiative (WHI), a large randomized trial sponsored by the US NIH.  In the WHI, women were randomized to standard vs low fat diets, and the previously observed association was not confirmed.  \textit{DH: If we keep this example, we need references.}
+Observational studies can reveal interesting patterns or important associations useful for designing follow-up experiments. Several observational studies based on dietary data from different countries showed a strong association between dietary fat and breast cancer in women.  These observations were the basis for The Women's Health Initiative (WHI), a large randomized trial sponsored by the US NIH.  In the WHI, women were randomized to standard vs low fat diets, and the previously observed association was not confirmed.  
+
+%DH: \textit{DH: If we keep this example, we need references.}
 
 Observational studies can be either prospective or retrospective. A \term{prospective study} identifies participants and collects information at scheduled times or as events unfold. For instance, medical researchers may identify and follow a group of similar individuals over many years to assess the possible influences of behavior on cancer risk. One example of such a study is The Nurses' Health Study, started in 1976 and expanded in 1989.\footnote{\texttt{\oiRedirect{textbook-channing_nurse_study}{www.channing.harvard.edu/nhs}}} This prospective study recruits registered nurses and then collects data using questionnaires. \termsub{Retrospective studies}{retrospective studies} collect data after events have taken place, e.g. researchers may review past events in medical records. Some datasets may contain both prospectively- and retrospectively-collected variables. The Cancer Care Outcomes Research and Surveillance Consortium (CanCORS) enrolled participants with lung or colorectal cancer, collected information about diagnosis, treatment and previous health behavior, but also maintained contact with participants to gather data about long term outcomes.\footnote{Ayanian, John Z., et al. "Understanding cancer treatment and outcomes: the cancer care outcomes research and surveillance consortium." Journal of Clinical Oncology 22.15 (2004): 2992-2996}  
 
@@ -716,7 +718,7 @@ Not all associations are linear. In fact, some can be highly nonlinear, in which
 \label{incomeLifeExpectancy}
 \end{figure}
 
-\textit{DH: If we keep this example, the plot will have to be formatted and I should add the country to the data set.  I have more information in older stat 100 files. JV: We should also remember to index the data.}
+%DH: \textit{DH: If we keep this example, the plot will have to be formatted and I should add the country to the data set.  I have more information in older stat 100 files. JV: We should also remember to index the data.}
 
 Scatterplots provide a visual display of the relationship between two variables, which is usually denoted by $r$ and takes on values between -1 and 1. \marginpar[\raggedright$r$\\\footnotesize correlation coefficient]{\raggedright$r$\\\footnotesize correlation coefficient} The term \term{correlation coefficient} is often used for $r$. If, in a scatterplot, the paired values of two variables tend to lie on a line, then $r > 0$, the slope of the line will be positive, and the variables are positively associated.
 If $r < 0$, the line will have negative slope and the variables are negatively associated.
@@ -786,9 +788,9 @@ A \term{transformation} is a rescaling of data using a function. Transforming da
 
 For example, income data are often skewed right, when measured either at the individual level or by country. Typically, there are large clusters of low to moderate income, with a few large incomes that are outliers. The histogram of per capita incomes used for the horizontal axis in figure~\ref{incomeLifeExpectancy} is shown in Figure~\ref{incomeHistReg}. On the original scale, mean \var{income} is 14,428 (\$14,428 in US dollars), with standard deviation \$16,391.  The empirical rule could not be used with the data on this scale, because even one standard deviation below the mean drops below 0. Figure~\ref{incomeHistLog} shows a plot of the $\log$ of per capita income. The $\log$ transformed data is more nearly symmetric. When a transformation has induced approximate symmetry, the empirical rule can be used to make approximate statements about the location of the transformed data, which can then be transformed back to the original scale.  On the $\log$ transformed scale, the mean $\log$(income) is 8.86, with standard deviation 1.33.
 
-\textit{DH: expand on this by showing empirical rule in a plot (possibly), and calculating the middle 95\% of the log income, then transforming back to original scale.  I have added the empirical rule earlier in the chapter, but without a figure}
+%DH: \textit{DH: expand on this by showing empirical rule in a plot (possibly), and calculating the middle 95\% of the log income, then transforming back to original scale.  I have added the empirical rule earlier in the chapter, but without a figure}
 
-\textit{DH: add discussion about value of the two scales}
+%DH: \textit{DH: add discussion about value of the two scales}
 
 \begin{figure}[ht]
 \centering
@@ -916,7 +918,7 @@ Row and column totals, known collectively as \term{marginal totals}, are also in
 \end{table}
 %library(xtable); data(famuss); genotype.by.race.table = addmargins(table(famuss$race, famuss$actn3.r577x)); xtable(genotype.by.race.table, digits = 0, caption = "A contingency table for race and actn3.r577x.", label = "famussContingencyTable")
 
-\textit{JV: Not sure how they added the variable labels to their table. I have left the OI tables and code in the source.  DH: look at their source.  The created a table first (called tab) that added the var names, then applied xtable to that.  I can do it later if you like. JV: I must not be doing something right, I get a "subscript out of bounds" error.}
+%JV: \textit{JV: Not sure how they added the variable labels to their table. I have left the OI tables and code in the source.  DH: look at their source.  The created a table first (called tab) that added the var names, then applied xtable to that.  I can do it later if you like. JV: I must not be doing something right, I get a "subscript out of bounds" error.}
 
 \begin{comment}
 \begin{table}[ht]
@@ -1011,7 +1013,7 @@ A contingency table of the column proportions is computed in a similar way, in w
 \end{table}
 %library(xtable); data(famuss); col.prop.table = table(famuss$race, famuss$actn3.r577x)[1:5,]; col.prop.table / rep(colSums(col.prop.table), 3); colSums(col.prop.table); xtable(genotype.by.race.table, digits = 0, caption = "A contingency table with column proportions for the race and actn3.r577x variables.", label = "famussColPropTable"); 27/595; 55/595; 467/595; 23/595; 23/595
 
-\textit{JV: Not sure if the following exercise is very clear, but there should be something here to warn against misinterpretation of the column proportions in this context. Important to point out that one limitation of the data is uneven representation between groups.}
+%JV: \textit{JV: Not sure if the following exercise is very clear, but there should be something here to warn against misinterpretation of the column proportions in this context. Important to point out that one limitation of the data is uneven representation between groups.}
 
 \begin{exercise}
 As computed in Table~\ref{famussColPropTable}, 77.6\% of CC individuals in the study are Caucasian. Does this data suggest that in the general population, people of CC genotype are highly likely to be Caucasian?\footnote{No, this is not a reasonable conclusion to draw from the data. The high proportion of Caucasians among CC individuals primarily reflects the large number of Caucasians sampled in the study -- 78.5\% of the people sampled are Caucasian. The uneven representation of different races is one limitation of the \data{famuss} data.}
@@ -1170,8 +1172,8 @@ What components of each plot in Figure~\ref{countyIncomeSplitByPopGain} do you f
 \end{exercise}
 \end{comment}
 
-
-\section{Data from Molecular Biology}
+\newpage
+\section[Data from molecular biology]{Data from molecular biology}
 
 \textit{Coming \ldots}
 
