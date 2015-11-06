@@ -1,7 +1,7 @@
 library(openintro)
 data(COL)
 set.seed(2)
-
+setwd('~/OI_Biostat/oi_biostat_source/ch_inference_foundations_oi_biostat/figures/pertussisHist')
 plotdata <- function(regions = c("Lazio", "Lombardia","Sardegna",
                                  "Sicilia", "Toscana","Umbria"),
                      save_plot = T) {
@@ -30,13 +30,13 @@ plotdata <- function(regions = c("Lazio", "Lombardia","Sardegna",
     
     if (save_plot) {
       #setwd(file.path(RDir,saveDir))
-      pdf("pertussisHist.pdf",width=6,height=4)
+      pdf("pertussisHist.pdf",width=8,height=4)
     }
     
     par(mar = c(4,4,1,4),mgp=c(3,1,0),bty="l")
     par(cex=0.8,font.main=1)
 
-    hist(data[,region],xlab="Monthly Vaccine Reports",col=COL[1], main = "")
+    hist(data[,region],xlab="Monthly Vaccine Reports",col=COL[1], main = "", breaks = 20)
     
     par(new=TRUE)
     

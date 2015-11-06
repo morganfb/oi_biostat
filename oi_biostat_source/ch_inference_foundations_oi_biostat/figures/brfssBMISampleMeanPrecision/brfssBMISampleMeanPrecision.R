@@ -54,7 +54,7 @@ myPDF('brfssBMISampleMeanPrecision.pdf', 8, 3.15,
 plot(0, 0,
      type = 'n',
      xlim = c(18, 38),
-     ylim = c(0, 1350 * N / 15000),
+     ylim = c(0, 1350 * N / 13000),
      xlab = '',
      ylab = '',
      axes = FALSE)
@@ -69,7 +69,7 @@ axis(2, at = seq(0, 10000, 1000))
 
 plot(0, 0,
      type = 'n',
-     xlim = c(23, 30),
+     xlim = c(18, 38),
      ylim = c(0, 1350 * N / 13000),
      xlab = '',
      ylab = '',
@@ -80,7 +80,7 @@ m <- mean(brfss.df$bmi, na.rm = TRUE)
 s <- sd(brfss.df$bmi, na.rm = TRUE) / 10
 histPlot(means40, col = COL[1], breaks = 50, add = TRUE)
 abline(h = 0)
-axis(1, at = seq(23, 30, 1))
+axis(1, at = seq(18, 38, 3))
 axis(2, at = seq(0, 10000, 1000 ))
 
 dev.off()
