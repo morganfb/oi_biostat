@@ -2,7 +2,7 @@
 \label{eoceSolutions}
 
 
-
+\begin{comment}
 %_______________
 \eocesolch{Introduction to data}
 
@@ -755,7 +755,7 @@ Using the normal approximation: 0.0582. With a 0.5 correction: 0.0559.}
 
 
 
-
+\end{comment}
 
 
 %_______________
@@ -768,65 +768,47 @@ Using the normal approximation: 0.0582. With a 0.5 correction: 0.0559.}
 
 % 1
 
-\eocesol{(a)~Mean. Each student reports a numerical value: a number of hours.
-(b)~Mean. Each student reports a number, which is a percentage, and we can 
-average over these percentages.
-(c)~Proportion. Each student reports Yes or No, so this is a categorical 
-variable and we use a proportion.
-(d)~Mean. Each student reports a number, which is a percentage like in part~(b).
-(e)~Proportion. Each student reports whether or not s/he expects to get a job, 
-so this is a categorical variable and we use a proportion.}
+\eocesol{(a)~Mean. Each individual reports a numerical value: a number of days where physical health was not good.
+(b)~Proportion. Each respondent responds Yes or No, so this is a categorical 
+variable and a proportion is used.
+(c)~Proportion. Individuals respond Yes or No if they had exercised, so this is a categorical 
+variable and a proportion is used.
+(d)~Mean. The response is a numerical number, a distance. 
+(e)~Mean. The respondents reported the number of cigarettes smoked a day. It is important to note that this is a conditional average, conditioned on if the person had smoked during the past 30 days.}
 
 % 3
 
-\eocesol{(a)~Mean: 13.65. Median:~14.
-(b)~SD: 1.91. IQR: $15-13=2$.
-(c)~$Z_{16} = 1.23$, which is not unusual since it is within 2~SD of the mean. 
-$Z_{18} = 2.23$, which is generally considered unusual.
-(d)~No. Point estimates that are based on samples only approximate the 
-population parameter, and they vary from one sample to another.
-(e)~We use the SE, which is $1.91/\sqrt{100} = 0.191$ for this sample's mean.}
+\eocesol{(a)~Mean: 0.7. Median:0.72.
+(b)~SD: 0.06. IQR: $0.75-0.67=0.08$.
+(c)~$Z_{0.86} = \frac{0.86-0.7}{0.06} = 2.67$. A body size of 0.86 cm is considered unusual since it is beyond 2 SD of the mean. 
+$Z_{0.6} =\frac{0.7-0.6}{0.06}= 1.67$, which is not considered unusual. A body size of 0.6cm is within 2 SD of the mean. 
+(d)~No. There exists sampling variation among sample means. The sample that the original researchers observed is likely to be different than the sample of 129 frogs. These point estimates both approximate the population parameter, but values vary from one sample to another.  
+(e)~The standard error measures variability in point estimates like the sample mean. The equation for standard error is $\frac{s}{\sqrt{n}}$.  $0.06/\sqrt{129} =0.005$ is the standard error for this sample mean.}
 
 % 5
 
-\eocesol{(a)~We are building a distribution of sample statistics, in this case the sample 
-mean. Such a distribution is called a sampling distribution.
-(b)~Because we are dealing with the distribution of sample means, we need to 
-check to see if the Central Limit Theorem applies. Our sample size is greater 
-than 30, and we are told that random sampling is employed. With these conditions 
-met, we expect that the distribution of the sample mean will be nearly normal 
-and therefore symmetric.
+\eocesol{(a)The number of observations in a sample is needed to calculate the standard error. The equation for standard error is $\frac{s}{\sqrt{n}}%. 
+(b) $\frac{s}{\sqrt{n}} = \frac{5.81}{\sqrt{595}} = 0.24$. 
 (c)~Because we are dealing with a sampling distribution, we measure its 
-variability with the standard error. $SE = 18.2 / \sqrt{45} = 2.713$.
-(d)~The sample means will be more variable with the smaller sample size.}
+variability with the standard error. $SE = 18.2 / \sqrt{45} = 2.71$.
+(d)Even though the distribution of ages in the sample is skewed to the right, the number of observations in the sample is significantly larger than 30. Assumptions of independence have not yet been verified, but the sampling distribution can still be approximated to a normal distribution regardless of skew. 
+(e)Yes, $Z=\frac{24.41-24.34}{2.71}=0.03. The FAMuSS sample mean is extremely close to the average age reported by the Census.}
 
 % 7
 
-\eocesol{Recall that the general formula is
-\begin{align*}
-\text{point estimate} \pm Z^{\star} \times SE
-\end{align*}
-First, identify the three different values. The point estimate is 45\%, 
-$Z^{\star} = 1.96$ for a 95\% confidence level, and $SE = 1.2\%$. Then, plug the 
-values into the formula:
-\begin{align*}
-45\% \pm 1.96 \times 1.2\% \quad\to\quad (42.6\%, 47.4\%)
-\end{align*}
-We are 95\% confident that the proportion of US adults who live with one or more 
-chronic conditions is between 42.6\% and 47.4\%.}
+\eocesol{(a) We are 95\% confidence that the number of hours that U.S. residents have to relax or pursue activities that they enjoy is between 3.53 and 3.83 hours. 
+(b) 95\% of confidence intervals calculated from independent random samples would contain the true average number of hours that U.S. results have to relax or pursue activities after an average work day. 
+(c) They will be less confidence than 95\% that the confidence interval contains the population parameter. Less confidence leads to a narrower confidence interval. 
+(d) To guarantee that the population parameter is captured, the interval needs to be $(0, 24)$. This does not provide any insight to the actual number of hours that U.S. residents have to enjoy. \emph{Note:} An answer of $(-\infty, \infty)$ is nonsensical. Always remember the context of the question when preforming inference.
+}
 
 % 9
 
-\eocesol{(a)~False. Confidence intervals provide a range of plausible values, and 
-sometimes the truth is missed. A 95\% confidence interval ``misses'' about 5\% 
-of the time.
-(b)~True. Notice that the description focuses on the true population value.
-(c)~True. If we examine the 95\% confidence interval computed in Exercise~\ref{chronic_illness_tf}, we can see that 50\% is not included in this interval. This 
-means that in a hypothesis test, we would reject the null hypothesis that the 
-proportion is~0.5.
-(d)~False. The standard error describes the uncertainty in the overall estimate 
-from natural fluctuations due to randomness, not the uncertainty corresponding 
-to individuals' responses.}
+\eocesol{(a) Notice that the confidence interval has shifted left by 3 units. Assuming that the confidence level and the standard error has stayed the same, the point estimate is 3 units smaller than the one observed from \data{BRFSS BMI}. 
+(b) The center is wholly determined by the point estimate. The width of the confidence interval is determined by the standard error (standard deviation and number of observations in the sample) and the confidence level. 
+(c) The sample is already observed so the standard error cannot change. To have a larger width, the confidence level must increase. 
+(d) Without changing the confidence level, the width can be modified though its standard error (standard deviation and number of observations). The number of observations can increase so that the standard error is smaller resulting in a smaller confidence interval width.
+}
 
 % 11
 
