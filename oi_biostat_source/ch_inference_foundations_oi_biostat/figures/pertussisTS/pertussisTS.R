@@ -1,7 +1,7 @@
 library(openintro)
 data(COL)
 set.seed(2)
-
+setwd('~/OI_Biostat/oi_biostat_source/ch_inference_foundations_oi_biostat/figures/pertussisTS')
 plotdata <- function(regions = c("Lazio", "Lombardia","Sardegna",
                                  "Sicilia", "Toscana","Umbria"),
                      save_plot = T) {
@@ -30,7 +30,7 @@ plotdata <- function(regions = c("Lazio", "Lombardia","Sardegna",
     
     if (save_plot) {
       #setwd(file.path(RDir,saveDir))
-      pdf("pertussisTS.pdf",width=6,height=4)
+      pdf("pertussisTS.pdf",width=8,height=4)
     }
     
     par(mar = c(4,4,1,4),mgp=c(3,1,0),bty="l")
@@ -38,7 +38,7 @@ plotdata <- function(regions = c("Lazio", "Lombardia","Sardegna",
     plot(data[,"Time"],data[,region],type="l",xlab="Time",yaxt="n",ylab="",
          col=COL[1],
          ylim=c(0,ceiling(max(data[,region],na.rm=T)/10)*10+10),
-         xlim=c(1996,2010))
+         xlim=c(1996,2010),lwd=2)
     axis(2,col=col_array[1],col.axis=col_array[1],las=2)
     mtext("Monthly Reports",side=2,line=2.3,cex=0.9,col=col_array[1])
     

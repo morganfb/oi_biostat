@@ -2,7 +2,7 @@
 \label{eoceSolutions}
 
 
-
+\begin{comment}
 %_______________
 \eocesolch{Introduction to data}
 
@@ -755,8 +755,9 @@ Using the normal approximation: 0.0582. With a 0.5 correction: 0.0559.}
 
 
 
+\end{comment}
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %_______________
 \eocesolch{Foundations for inference}
@@ -768,82 +769,50 @@ Using the normal approximation: 0.0582. With a 0.5 correction: 0.0559.}
 
 % 1
 
-\eocesol{(a)~Mean. Each student reports a numerical value: a number of hours.
-(b)~Mean. Each student reports a number, which is a percentage, and we can 
-average over these percentages.
-(c)~Proportion. Each student reports Yes or No, so this is a categorical 
-variable and we use a proportion.
-(d)~Mean. Each student reports a number, which is a percentage like in part~(b).
-(e)~Proportion. Each student reports whether or not s/he expects to get a job, 
-so this is a categorical variable and we use a proportion.}
+\eocesol{(a)~Mean. Each individual reports a numerical value: a number of days where physical health was not good.
+(b)~Proportion. Each respondent responds Yes or No, so this is a categorical variable and a proportion is used.
+(c)~Proportion. Individuals respond Yes or No if they had exercised, so this is a categorical 
+variable and a proportion is used.
+(d)~Mean. The response is a numerical number, a distance. 
+(e)~Mean. The respondents reported the number of cigarettes smoked a day. It is important to note that this is a conditional average, conditioned on if the person had smoked during the past 30 days.}
 
 % 3
 
-\eocesol{(a)~Mean: 13.65. Median:~14.
-(b)~SD: 1.91. IQR: $15-13=2$.
-(c)~$Z_{16} = 1.23$, which is not unusual since it is within 2~SD of the mean. 
-$Z_{18} = 2.23$, which is generally considered unusual.
-(d)~No. Point estimates that are based on samples only approximate the 
-population parameter, and they vary from one sample to another.
-(e)~We use the SE, which is $1.91/\sqrt{100} = 0.191$ for this sample's mean.}
+\eocesol{(a)~Mean: 0.7. Median:0.72.
+(b)~SD: 0.06. IQR: $0.75-0.67=0.08$.
+(c)~$Z_{0.86} = \frac{0.86-0.7}{0.06} = 2.67$. A body size of 0.86 cm is considered unusual since it is beyond 2 SD of the mean. 
+$Z_{0.6} =\frac{0.7-0.6}{0.06}= 1.67$, which is not considered unusual. A body size of 0.6cm is within 2 SD of the mean. 
+(d)~No the study is not invalidated. There simply exists sampling variation among sample means. The sample that the original researchers observed is likely to be different than the new sample of 129 frogs. These point estimates both approximate the population parameter, but values vary from one sample to another.  
+(e)~The standard error measures variability in point estimates like the sample mean. The equation for standard error is $\frac{s}{\sqrt{n}}$.  $0.06/\sqrt{129} =0.005$ is the standard error for this sample mean.}
 
 % 5
 
-\eocesol{(a)~We are building a distribution of sample statistics, in this case the sample 
-mean. Such a distribution is called a sampling distribution.
-(b)~Because we are dealing with the distribution of sample means, we need to 
-check to see if the Central Limit Theorem applies. Our sample size is greater 
-than 30, and we are told that random sampling is employed. With these conditions 
-met, we expect that the distribution of the sample mean will be nearly normal 
-and therefore symmetric.
-(c)~Because we are dealing with a sampling distribution, we measure its 
-variability with the standard error. $SE = 18.2 / \sqrt{45} = 2.713$.
-(d)~The sample means will be more variable with the smaller sample size.}
+\eocesol{(a)The number of observations in a sample is needed to calculate the standard error. The equation for standard error is $\frac{s}{\sqrt{n}}$. 
+(b) $\frac{s}{\sqrt{n}} = \frac{5.81}{\sqrt{595}} = 0.24$. 
+(c) Yes. The distribution of ages in the sample is skewed right. However, the normality of the sampling distribution of the sample mean depends on the number of observations in the sample size. Because the sample is significantly larger than 30 observations, the sampling distribution is likely to be normal. Assumptions of independence have not yet been verified, but the sampling distribution can be approximated to a normal distribution regardless of skew. 
+(e)Yes, $Z=\frac{24.41-24.34}{2.71}=0.03$. The FAMuSS sample mean is extremely close to the average age reported by the Census.}
 
 % 7
 
-\eocesol{Recall that the general formula is
-\begin{align*}
-\text{point estimate} \pm Z^{\star} \times SE
-\end{align*}
-First, identify the three different values. The point estimate is 45\%, 
-$Z^{\star} = 1.96$ for a 95\% confidence level, and $SE = 1.2\%$. Then, plug the 
-values into the formula:
-\begin{align*}
-45\% \pm 1.96 \times 1.2\% \quad\to\quad (42.6\%, 47.4\%)
-\end{align*}
-We are 95\% confident that the proportion of US adults who live with one or more 
-chronic conditions is between 42.6\% and 47.4\%.}
+\eocesol{(a) No the researchers do not. Imagine remeasuring the 507 individuals in inches and then taking the mean. This process is equivalent to simply converting the mean itself from centimeters to inches. 
+(b) The mean in inches is 67.36. The median is 67.05 inches. 
+(c) The equation for standard error is $\frac{s}{\sqrt{n}}$. If the number of observation decreases, the standard error will get larger. More data means less variability, and vice versa. 
+}
 
-% 9
-
-\eocesol{(a)~False. Confidence intervals provide a range of plausible values, and 
-sometimes the truth is missed. A 95\% confidence interval ``misses'' about 5\% 
-of the time.
-(b)~True. Notice that the description focuses on the true population value.
-(c)~True. If we examine the 95\% confidence interval computed in Exercise~\ref{chronic_illness_tf}, we can see that 50\% is not included in this interval. This 
-means that in a hypothesis test, we would reject the null hypothesis that the 
-proportion is~0.5.
-(d)~False. The standard error describes the uncertainty in the overall estimate 
-from natural fluctuations due to randomness, not the uncertainty corresponding 
-to individuals' responses.}
+%9
+\eocesol{(a) We are 95\% confidence that the number of hours that U.S. residents have to relax or pursue activities that they enjoy is between 3.53 and 3.83 hours. 
+(b) 95\% of confidence intervals calculated from independent random samples would contain the true average number of hours that U.S. results have to relax or pursue activities after an average work day. 
+(c) They will be less confidence than 95\% that the confidence interval contains the population parameter. Less confidence leads to a narrower confidence interval. 
+(d) To guarantee that the population parameter is captured, the interval needs to be $(0, 24)$. This does not provide any insight to the actual number of hours that U.S. residents have to enjoy. \emph{Note:} An answer of $(-\infty, \infty)$ is nonsensical. There can't be $-\infty$ or $\infty$ hours per day. Always remember the context of the question when preforming inference.
+}
 
 % 11
 
-\eocesol{(a)~We are 95\% confident that Americans spend an average of 1.38 to 1.92 hours 
-per day relaxing or pursuing activities they enjoy.
-(b)~Their confidence level must be higher as the width of the confidence 
-interval increases as the confidence level increases.
-(c)~The new margin of error will be smaller since as the sample size increases 
-the standard error decreases, which will decrease the margin of error.}
-
-
-\textC{
-\end{multicols}
-\newpage
-\begin{multicols}{2}
+\eocesol{(a) Notice that the confidence interval has shifted left by 3 units. Assuming that the confidence level and the standard error has stayed the same, the point estimate is 3 units smaller than the one observed from \data{BRFSS BMI}. 
+(b) The center is wholly determined by the point estimate. The width of the confidence interval is determined by the standard error (standard deviation and number of observations in the sample) and the confidence level. 
+(c) The sample is already observed so the standard error cannot change. To have a larger width, the confidence level must increase. 
+(d) Without changing the confidence level, the width can be modified though its standard error (standard deviation and number of observations). The number of observations can increase so that the standard error is smaller. A confidence interval with a smaller standard error will have a narrower width.
 }
-
 
 % 13
 
@@ -865,43 +834,53 @@ deviation by the square root of the sample size. To cut the SE (or margin of
 error) in half, we would need to sample $2^2 = 4$ times the number of people in 
 the initial sample.}
 
+
+
 % 15
 
-\eocesol{Independence: sample from $<10\%$ of population, and it is a random sample. We 
-can assume that the students in this sample are independent of each other with 
-respect to number of exclusive relationships they have been in. Notice that 
-there are no students who have had no exclusive relationships in the 
-sample, which suggests some student responses are likely missing (perhaps only 
-positive values were reported). The sample size is at least 30. The skew is 
-strong, but the sample is very large so this is not a concern. 90\% CI: (2.97, 3.43).
-We are 90\% confident that undergraduate students have been in 2.97 to 3.43 exclusive relationships, on average.}
+\eocesol{Independence: We do not know that the sample is less than 10\% of the population or that is independent. Size: the sample size is greater than 30. Skew: The data is skewed if students investigate the data itself. However the sample size is so larger than the skewness will have little effect on the normality of the sample mean. The independence assumption is fairly suspect but a confidence interval is calculated. 95\% CI: $(26.7 \pm 1.96 \times \frac{25.93}{222}) \rightarrow (23.29, 30.11)$. We are 95\% confident that the infant morality rate of the world lies between 23.29 and 30.11. Assuming that we have a null hypothesis: $\mu = 32$, evidence from the confidence interval rejects it. An infant morality rate of 32 is not included in the confidence interval. The evidence from the CIA disagrees with the WHO estimate. }
+
+
+
 
 % 17
+\eocesol{The sample mean is the center of the confidence interval. The margin of error is the half-width of the confidence interval. The sample standard deviation is calculated from the margin of error: $\textrm{margin} = 1.65 * \frac{s}{\sqrt{n}}$. $\bar{x} = 71$, $\mathrm{margin of error} = 6$, and $s = 36$. }
 
-\eocesol{(a)~$H_0: \mu = 8$ (On average, New Yorkers sleep 8 hours a night.) \\
-$H_A: \mu < 8$ (On average, New Yorkers sleep less than 8 hours a night.) \\
-(b)~$H_0: \mu = 15$ (The average amount of company time each employee spends not 
-working is 15 minutes for March Madness.) \\
-$H_A: \mu > 15$ (The average amount of 
-company time each employee spends not working is greater than 15 minutes for 
-March Madness.)}
 
 % 19
 
-\eocesol{The hypotheses should be about the population mean ($\mu$), not the sample mean. 
-The null hypothesis should have an equal sign and the alternative hypothesis 
-should be about the null hypothesized value, not the observed sample mean. 
-Correction:
-\begin{align*}
-H_0&: \mu = 10~hours \\
-H_A&: \mu > 10~hours
-\end{align*}
-The one-sided test indicates that we are only interested in showing that 10 is an 
-underestimate. Here the interest is in only one direction, so a one-sided test 
-seems most appropriate. If we would also be interested if the data showed strong 
-evidence that 10 was an overestimate, then the test should be two-sided.}
+\eocesol{(a) True. A 95\% confidence interval lies within a 99\% confidence interval. The 99\% confidence interval is wider. 
+(b) False. A 95\% does not completely contain a 90\% confidence interval. Consider the boundary values of a 95\% confidence interval. These are not within a 90\% confidence interval. 
+(c) False. $\alpha$ is also the probability of making a Type 1 Error. Decreasing $\alpha$ decreases the probability of making a Type 1 Error. 
+(d) False. The population parameter is 5 at a certain confidence interval, or a Type 2 Error could have been committed.
+(e) False. Rejecting the null hypothesis gives evidence that the alternative is true, $\mu > 5$. 
+(f) False. Rejecting the null hypothesis gives evidence that the alternative is true but not for a specific value like 7. 
+(g) False. $\alpha = 0.05$ is a value that is traditionally chosen, but $\alpha$ can be ideal depending on the varying contexts and implications of the hypothesis test. 
+}
 
 % 21
+
+\eocesol{(a) $H_0:$ There is no difference between the IQ levels of mothers and fathers of gifted children ($\mu_\mathrm{mothers} = \mu_\mathrm{fathers}$). $H_A$: There exists a difference between the IQ levels of mothers and fathers of gifted children ($\mu_\mathrm{mothers} \neq \mu_\mathrm{fathers}$). 
+(b) $H_0$: The average infant morality rate in the world is 32 ($\mu = 32$). $H_A$: The average infant morality rate in the world is not 32 ($\mu \neq 32$). 
+(c) $H_0$: There is no noticeable difference between the MCAT scores of 2014 and in 2004 ($\mu_{2014} = \mu_{2004}$. $H_A$: There is a difference between the average 2014 MCAT score and the average 2004 MCAT score ($\mu_{2014} \neq \mu_{2004}$). 
+}
+
+%23
+
+\eocesol{(a) The hypotheses are listed in Section~\ref{hypothesisFramework}. Let $\alpha = 0.05$. The T-statistic is $\frac{26.53-25.3}{5.84/\sqrt{40}} = 1.33$. Use \textsf{R} to find the p-value (\textsf{2*(1-pnorm(1.33))}=0.18). The p-value is greater than $\alpha$. We do not have sufficient evidence to reject the null hypothesis. We are 95\% confident that the average adult population in the U.S. has an equivalent BMI to U.S. adults 20 years ago.
+(b) The confidence interval created in Section~\ref{calculate95confidence} included 25.3. The conclusions from the confidence interval and the hypothesis testing both agree with each other.}
+
+
+
+%25
+\eocesol{The hypotheses should be about the population mean ($\mu$), not the sample mean($\overline{x}$). The sample mean is already known, and no hypothesis test is needed for information about the sample mean.
+Correction: 
+\begin{align*}
+H_0&: \mu = 100\\
+H_A&: \mu > 100
+\end{align*}}
+
+% 27
 
 \eocesol{(a)~This claim does is not supported since 3 hours (180 minutes) is not in 
 the interval.
@@ -913,41 +892,33 @@ meaning it would enclose this smaller interval. This means 132 minutes would be
 in the wider interval, and we would not reject her claim based on a 99\% 
 confidence level.}
 
-% 23
 
-\eocesol{$H_0: \mu = 130$. $H_A: \mu \ne 130$. $Z=1.39$ $\to$ p-value $= 0.1646$, which 
-is larger than $\alpha=0.05$. The data do not provide convincing evidence that 
-the true average calorie content in bags of potato chips is different than 130 
-calories.}
-
-% 25
+% 29
 
 \eocesol{(a)~Independence: The sample is random and 64 patients would almost certainly 
 make up less than 10\% of the ER residents. The sample size is at least 30. No 
 information is provided about the skew. In practice, we would ask to see the 
 data to check this condition, but here we will make the assumption that the skew 
 is not very strong.
-(b)~$H_0: \mu = 127$. $H_A: \mu \ne 127$. $Z=2.15$ $\to$ p-value $= 0.0316$. 
+(b)~$H_0: \mu = 127$. $H_A: \mu \neq 127$. $Z=2.15$ $\to$ p-value $= 0.0316$. 
 Since the p-value is less than $\alpha=0.05$, we reject $H_0$. The data provide 
-convincing evidence that the average ER wait time has increased over the 
-last year.
+convincing evidence that the average ER wait time is different from last year and perhaps has increased over the last year.
 (c)~Yes, it would change. The p-value is greater than 0.01, meaning we would 
 fail to reject $H_0$ at $\alpha = 0.01$.}
 
-% 27
 
-\eocesol{$Z = 1.65 = \frac{\bar{x} - 30}{10 / \sqrt{70}} \to \bar{x} = 31.97$.}
+% 31
+
+\eocesol{$H_0: \mu = 130$. $H_A: \mu \ne 130$. $Z=1.39$ $\to$ p-value $= 0.1646$, which 
+is larger than $\alpha=0.05$. The data do not provide convincing evidence that 
+the true average calorie content in bags of potato chips is different than 130 
+calories.}
+
+%33
+\eocesol{The alternative hypothesis is one sided so the T-statistic is 1.65. $T = \frac{\bar{x}-34}{10/\sqrt{65}}\rightarrow \bar{x} = 36.04$}
 
 
-\textC{
-\end{multicols}
-\newpage
-\begin{multicols}{2}
-}
-
-
-% 29
-
+%35
 \eocesol{(a)~$H_0$: Anti-depressants do not help symptoms of Fibromyalgia. $H_A$: Anti-
 depressants do treat symptoms of Fibromyalgia. Remark: Diana might also have 
 taken special note if her symptoms got much worse, so a more scientific approach 
@@ -956,9 +927,78 @@ approach, your answers in~(b) and~(c) will be different.
 (b)~Concluding that anti-depressants work for the treatment of Fibromyalgia 
 symptoms when they actually do not.
 (c)~Concluding that anti-depressants do not work for the treatment of 
-Fibromyalgia symptoms when they actually do.}
+Fibromyalgia symptoms when they actually do.
+(d) If she makes a Type 1 error, she will continue taking medication that does not actually read her disorder. If she makes a Type 2 error, she will stop taking medication that could treat her disorder.}
 
-% 31
+% 37
+\eocesol{(a) If the null hypothesis is rejected incorrectly, the regulators concluded that the adverse effect was higher in those taking the drug than those who did not take the drug when in fact, the rates were the same for the two groups. 
+(b) If the null hypothesis is not rejected but should have been, the regulators failed to identify that the adverse effect was higher in those taking the drug. 
+(c) Answers may vary slightly. If all 403 drugs last year are alright, then about $403 \times 0.05 \approx 20$ drugs would have a Type 1 error. Of the 42 suspect drugs, we would expect about $20/42$ of the drugs to represent an error and $22/42\approx 52\%$ to represent drugs with adverse effects. 
+(d) There is not enough information to tell. 
+}
+
+% 39
+\eocesol{Because the sample size is 20, use the $t$-distribution instead. The sample mean is still the midpoint of the confidence interval. The margin of error is still the half-width of the confidence interval. The sample standard deviation is calculated form the margin of error and the standard error. The sample standard deviation is the only answer different from Exercise~\ref{backwardspt1}. It is $s=\mathrm{margin of error}/1.729 \times \sqrt{20} = 15.52$.The sample standard deviation is must smaller than in Exercise~\ref{backwardspt1}. 
+}
+
+% 41
+\eocesol{(a) $df = 6-1 = 5, t_5^{\star}=2.02$ (column with two tails of 0.10, row with $df = 5$).
+(b) $df = 21-1 = 20, t_{20}^{\star}=2.53$ (column with two tails of 0.02, row with $df = 20$)  
+(c) $df = 29-1 = 28, t_{28}^{\star}=2.05$
+(d) $df = 11, t_{11}^{\star}=3.11$}
+
+% 43
+\eocesol{The alternative hypothesis is two-sided so the T-statistic must equal 2.09 because the sample size is less than 30 \textsf{qt(1.975, 19)}. $T = \frac{\bar{x}-60}{8/\sqrt{20}}\rightarrow \bar{x} = 63.74$. }
+
+
+% 45
+\eocesol{(b) The distribution is unimodal and extremely right skewed. . The mean is 1.17\%, and the median is 0.5\%, confirming the skewness. The standard deviation is 2.51\% and has apparent outliers toward the higher percent values. 
+(c) The sampling distribution for size 5 is extremely skewed still but as the sample size gets larger, the sampling distribution becomes more normal. As the sample size increases, the sampling distribution gets more unimodal, symmetric with variability decreasing. At sample size $n=100$, the sampling distribution appears extremely normal. This is consist with the Central Limit Theorem. Sharp students will question why the sampling distribution for $n=5$ appears to be the opposite skew, left skewed, of the population distribution. These students should have a closer look into the data and observe that the skewness of the population distribution causes the extreme drop. The skewness causes the sampling distribution to appear left skewed.}
+
+% 47
+\eocesol{The standard deviation is 2.51. For all 3 sampling distributions, the mean is the population mean, 1.16\%. The standard deviation for each sampling distribution is $\frac{2.51}{\sqrt{n}}$. $SE_5 = 1.12$, $SE_{30} = 0.46$, and $SE_{100} = 0.25$. The distributions in Exercise~\ref{countiespt1} agree with the values. As the sample size increases, the standard errors decrease. The sampling variation in the graphs also decreases.}
+
+% 49
+\eocesol{The centers are the same in each plot, and each data set is from a nearly normal 
+distribution, though the histograms may not look very normal since each 
+represents only 100 data points. The only way to tell which plot corresponds to 
+which scenario is to examine the variability of each distribution. Plot B is the 
+most variable, followed by Plot A, then Plot C. This means Plot B will 
+correspond to the original data, Plot A to the sample means with size 5, and 
+Plot C to the sample means with size 25.}
+
+% 51
+\eocesol{(a) The distribution is left skewed. 
+(b) Most counties would have more than 82.89\% of their population to be White.
+(c) Sheboygan County is an individual observation. We cannot estimate a probability for a single county.
+(d) Even through the population distribution is not normal, the conditions for inference are reasonably satisfied, with the possible exception of skew. If the skew isn't very strong (check the data to see), the Central Limit Theorem can be used to estimate this probability. Use $\mathcal{N}(82.89, 16.85/\sqrt{30}: Z = \frac{99-82.89}{16.85/\sqrt{30}} = 5.24 \rightarrow$ p-value $\approx 0$. 
+(e) The standard error of the mean would decrease by a factor of $\sqrt{2}$. 
+(f) With the same reasoning as (d): Use $\mathcal{N}(82.89, 16.85/\sqrt{60}: Z = \frac{99-82.89}{16.85/\sqrt{60}} = 7.41 \rightarrow$ p-value $\approx 0$. 
+(g) Answers may vary but the the theorem applies to this problem in general, with one main caveat. A normal distribution has support from $(-\infty,\infty)$. With most applications, this is not an issue. However, with a mean of 82.89\% and such a large standard deviation, values within the first standard deviation are almost larger than 100\%. In this exercise, these values are nonsensical. 
+ }
+
+
+% 53
+
+\eocesol{(a) $H_0: \overline{\mathrm{weight}_{\mathrm{smoke}}} =\overline{\mathrm{weight}_{\mathrm{nonsmoker}}}$ and $H_A: \overline{\mathrm{weight}_{\mathrm{smoke}}} \neq\overline{\mathrm{weight}_{\mathrm{nonsmoker}}}$. The point estimate is the difference in means of the 50 babies who had a mother who smoked and the mean of the 50 babies who had a mother who did not smoke. In \textsf{R}, the point estimate is  $\overline{\mathrm{weight}_{\mathrm{smoke}}} -\overline{\mathrm{weight}_{\mathrm{nonsmoker}}} = 6.78 - 7.18 = -0.4$. 
+(b) North Carolina observed a p-value that is less than their $\alpha$ value. Therefore they cannot reject the null hypothesis and conclude that the weight of babies is not different between mothers who smoke and those who do not smoke. 
+(c) Yes. A confidence interval of differences should contain 0 if North Carolina concluded that there was no statistically significant difference in the mean weights between these two populations.}
+
+
+% 55
+
+\eocesol{(a) $H_0: p_{\mathrm{smoke}} =p_{\mathrm{nonsmoker}}$ and $H_A: p_{\mathrm{smoke}} > p_{\mathrm{nonsmoker}}$. 
+(b) North Carolina observed a p-value that is greater than their $\alpha$ value. Therefore they can reject the null hypothesis and conclude that there was a higher percent of babies who were born prematurely from mothers who smoked than from mothers who did not smoke. 
+(c) No. A hypothesis test concluding that there is an observed difference should not include 0, which indicates that there is no observed difference. Because the alternative hypothesis is one-sided, the difference between the two population means if the difference were defined as smoker - nonsmoker would be positive.}
+
+% 57
+\eocesol{(a) $H_0: \overline{x}_\mathrm{female} = \overline{x}_\mathrm{male}$. $H_A: \overline{x}_\mathrm{female} \neq \overline{x}_\mathrm{male}$.
+(b) Define the point estimate as $\bar{x}_\mathrm{female} - \bar{x}_\mathrm{male} = 1.40$ cm. $H_0: \bar{x} = 0$. $H_A: \bar{x} \neq 0$ if $\bar{x} = \bar{x}_\mathrm{female}-\bar{x}_\mathrm{male}$. 
+(c) $T = \frac{1.4-0}{0.85} = 1.65$
+(d) This is a two sided alternative test so the p-value is, in \textsf{R}, \textsf{2*(1-pnorm(1.65))} = 0.1. We also know that 1.65 is the critical value for 90\% in a normal distribution. 
+(e) Because the p-value is larger than $\alpha = 0.05$, we cannot reject the null hypothesis. We conclude that there is no statistically significant difference in total body length at the 95\% confidence level between male and female possums.}
+
+%59
 
 \eocesol{(a)~Scenario I is higher. Recall that a sample mean based on less data tends to 
 be less accurate and have larger standard errors.
@@ -970,131 +1010,32 @@ value for a given Z-score.
 (lower $\alpha$), then we are more likely to make a Type~2 Error when the 
 alternative hypothesis is true.}
 
-% 33
+% 61
 
-\eocesol{(a)~The distribution is unimodal and strongly right skewed with a median between 
-5 and 10 years old. Ages range from 0 to slightly over 50 years old, and the 
-middle 50\% of the distribution is roughly between 5 and 15 years old. There are 
-potential outliers on the higher end.
-(b)~When the sample size is small, the sampling distribution is right skewed, 
-just like the population distribution. As the sample size increases, the 
-sampling distribution gets more unimodal, symmetric, and approaches normality. 
-The variability also decreases. This is consistent with the Central Limit 
-Theorem.
-(c)~n = 5: $\mu_{\bar{x}} = 10.44, \quad \sigma_{\bar{x}} = 4.11$;
-n = 30: $\mu_{\bar{x}} = 10.44, \quad \sigma_{\bar{x}} = 1.68$;
-n = 100: $\mu_{\bar{x}} = 10.44, \quad \sigma_{\bar{x}} = 0.92$.
-The centers of the sampling distributions shown in part~(b) appear to be 
-around 10. It is difficult to estimate the standard deviation for 
-the sampling distribution when $n = 5$ from the histogram (since the 
-distribution is somewhat skewed). If 1.68 is a plausible estimate for the 
-standard deviation of the sampling distribution when $n = 30$, then using 
-the 68-95-99.7\% Rule, we would expect the values to range roughly between 
-$10.44 \pm 3* 1.68 = (5.4, 15.48)$, which seems to be the case. Similarly, when 
-$n = 100$, we would expect the values to range roughly between 
-$10.44 \pm 3* 0.92 = (7.68, 13.2)$, which also seems to be the case.}
-
-% 35
-
-\eocesol{(a)~Right skewed. There is a long tail on the higher end of the distribution but 
-a much shorter tail on the lower end.
-(b)~Less than, as the median would be less than the mean in a right skewed 
-distribution.
-(c)~We should not.
-(d)~Even though the population distribution is not normal, the conditions for 
-inference are reasonably satisfied, with the possible exception of skew. If the 
-skew isn't very strong (we should ask to see the data), then we can use the 
-Central Limit Theorem to estimate this probability. For now, we'll assume the 
-skew isn't very strong, though the description suggests it is at least moderate 
-to strong. Use $N(1.3, SD_{\bar{x}} = 0.3/\sqrt{60})$: $Z=2.58$ $\to$ 0.0049.
-(e)~It would decrease it by a factor of $1/\sqrt{2}$.}
-
-% 37
-
-\eocesol{The centers are the same in each plot, and each data set is from a nearly normal 
-distribution, though the histograms may not look very normal since each 
-represents only 100 data points. The only way to tell which plot corresponds to 
-which scenario is to examine the variability of each distribution. Plot B is the 
-most variable, followed by Plot A, then Plot C. This means Plot B will 
-correspond to the original data, Plot A to the sample means with size 5, and 
-Plot C to the sample means with size 25.}
-
-% 39
-
-\eocesol{(a)~$Z=-3.33$ $\to$ 0.0004.
-(b)~The population SD is known and the data are nearly normal, so the sample mean will be nearly normal with distribution $N(\mu, \sigma/\sqrt{n})$, i.e. $N(2.5, 0.0095)$.
-(c)~$Z=-10.54$ $\to$ $\approx0$.
-(d)~See below:
-\begin{center}
-\includegraphics[width=0.48\textwidth]{ch_inference_foundations/figures/eoce/penny_weights/penny_weights_sketch.pdf}
-\end{center}
-(e)~We could not estimate (a) without a nearly normal population distribution. We also could not estimate (c) since the sample size is not sufficient to yield a nearly normal sampling distribution if the population distribution is not nearly normal.}
-
-
-\textC{
-\end{multicols}
-\newpage
-\begin{multicols}{2}
+\eocesol{(a) The researchers assume that the standard deviation of the previous sample serves as an estimate for the population standard deviation.  $0.5\geq 1.96 \times SE \rightarrow 0.5\geq 1.96 \times \frac{2.57}{\sqrt{n}} \rightarrow \sqrt{n} \geq 10.07 \rightarrow n\geq 101.49$. The sample should be 102 possums. 
+(b) Similarly $0.5\geq 2.58 \times SE \rightarrow 0.5\geq 2.58 \times \frac{2.57}{\sqrt{n}} \rightarrow \sqrt{n} \geq 13.26 \rightarrow n\geq 175.86$. The sample should be 176 possums. The number of possums is much higher than in part(a). This should confirm students intuitions. 
 }
 
+% 61
 
-% 41
+\eocesol{(a) The null hypothesis would be that the mean this year is also 128 minutes. The alternative hypothesis would be that the mean is different from 128 minutes. 
+(b) First calculate the SE: $\frac{39}{\sqrt{64}} = 4.875$. Next, identify the Z scores that would reject in rejecting $H_0: Z_\mathrm{lower} = -1.96, Z_\mathrm{upper} = 1.96$. In each case, calculate the corresponding sample mean cutoff: $\bar{x}_\mathrm{lower} = 118.445$ and $\bar{x}_\mathrm{upper} = 137.555$. 
+(c) Construct Z scores for the values from part (b) but using the supposed true distribution (i.e. $\mu = 135$), i.e. not using the null value ($\mu = 128$). The probability of correctly rejecting the null hypothesis would be $0.003 + 0.3015 = 0.3018$ using these two cutoffs, and the probably of a Type 2 error would then be $1-0.3018 = 0.6982$. }
 
-\eocesol{(a)~We cannot use the normal model for this calculation, but we can use the 
-histogram. About 500 songs are shown to be longer than 5 minutes, so the 
-probability is about $500/3000 = 0.167$.
-(b)~Two different answers are reasonable. $^{Option~1}$Since the population 
-distribution is only slightly skewed to the right, even a small sample size will 
-yield a nearly normal sampling distribution. We also know that the songs are 
-sampled randomly and the sample size is less than 10\% of the population, so the 
-length of one song in the sample is independent of another.  We are looking for 
-the probability that the total length of 15 songs is more than 60 minutes, which 
-means that the average song should last at least $60/15 = 4$ minutes. Using 
-$SD_{\bar{x}}=1.63/\sqrt{15}$, $Z=1.31$ $\to$ 0.0951. $^{Option~2}$Since the 
-population distribution is not normal, a small sample size may not be sufficient 
-to yield a nearly normal sampling distribution. Therefore, we cannot estimate 
-the probability using the tools we have learned so far.
-(c)~We can now be confident that the conditions are satisfied. 
-$Z = 0.92$ $\to$ 0.1788.}
-
-% 43
-
-\eocesol{(a)~$H_0: \mu_{2009} = \mu_{2004}$. $H_A: \mu_{2009} \ne \mu_{2004}$.
-(b)~$\bar{x}_{2009} - \bar{x}_{2004} = -3.6$ spam emails per day.
-(c)~The null hypothesis was not rejected, and the data do not provide convincing 
-evidence that the true average number of spam emails per day in years 2004 and 
-2009 are different. The observed difference is about what we might expect from 
-sampling variability alone.
-(d)~Yes, since the hypothesis of no difference was not rejected in part~(c).}
-
-% 45
-
-\eocesol{(a)~$H_0: p_{2009} = p_{2004}$.  $H_A: p_{2009} \ne p_{2004}$.
-(b)~-7\%.
-(c)~The null hypothesis was rejected. The data provide strong evidence that the 
-true proportion of those who once a month or less frequently delete their spam 
-email was higher in 2004 than in 2009. The difference is so large that it cannot 
-easily be explained as being due to chance.
-(d)~No, since the null difference, 0, was rejected in part (c).}
-
-% 47
-
-\eocesol{True. If the sample size is large, then the standard error will be small, 
-meaning even relatively small differences between the null value and point 
-estimate can be statistically significant.}
 
 
 \end{multicols}
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
 
 
 
 
 \eocesolch{Inference for numerical data}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{multicols}{2}
 
@@ -1699,4 +1640,6 @@ predictors, not just optimizing predictions.}
 $\log\left( \frac{\hat{p}_i}{1 - \hat{p}_i} \right) = 33.5095 - 1.4207\times sex\_male_i - 0.2787 \times skull\_width_i + 0.5687 \times total\_length_i - 1.8057 \times tail\_length_i$. Only \var{total\_\hspace{0.3mm}length} has a positive association with a possum being from Victoria.
 (b)~$\hat{p} = 0.0062$. While the probability is very near zero, we have not run diagnostics on the model. We might also be a little skeptical that the model will remain accurate for a possum found in a US zoo. For example, perhaps the zoo selected a possum with specific characteristics but only looked in one region. On the other hand, it is encouraging that the possum was caught in the wild. (Answers regarding the reliability of the model probability will vary.)}
 
+
 \end{multicols}
+\end{comment}

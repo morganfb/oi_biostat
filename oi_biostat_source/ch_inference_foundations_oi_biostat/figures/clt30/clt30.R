@@ -29,14 +29,14 @@ library(openintro)
 data(COL)
 setwd('~/OI_Biostat/oi_biostat_source/ch_inference_foundations_oi_biostat/figures/clt30')
 
-myPDF('clt30.pdf', 8, 6,
-      mfrow = c(2,2),
+myPDF('clt30.pdf', 15, 6,
+      mfrow = c(1,3),
       mar = c(3.3, 4, 1.4, 1),
       mgp = c(2.7,0.55,0))
  
-ns = c(5, 10, 20, 30)
+ns = c(5, 15, 30)
 N     <- 100000
-
+#N     <- 100
 #for n = 5
 means <- rep(0, N)
 pb <- txtProgressBar(0, N, style = 3)
@@ -48,7 +48,7 @@ for (i in 1:N) {
 plot(0, 0,
      type = 'n',
      xlim = c(18, 36),
-     ylim = c(0, 0.18),
+     ylim = c(0, 0.45),
      xlab = '',
      ylab = '',
      axes = FALSE)
@@ -57,12 +57,15 @@ mtext("Density", 2, line = 3, las = 0)
 m <- mean(brfss.df$bmi, na.rm = TRUE)
 s <- sd(brfss.df$bmi, na.rm = TRUE) / 10
 histPlot(means, col = COL[1], breaks = 50, probability = TRUE, add = TRUE)
-curve(dnorm(x,mean=mean(means), sd=sqrt(var(means))),col="darkblue", lwd=2, add = TRUE)
+shift <- (max(means)-min(means))/(50*2)
+curve(dnorm(x+shift,mean=mean(means), sd=sqrt(var(means))),col="darkblue", lwd=2, add = TRUE)
 abline(h = 0)
-axis(1)
-axis(2, at = seq(0, 0.18, 0.05))
+axis(side = 1)
+axis(2, at = seq(0, 0.45, 0.05))
+
+
 #new graph
-#n=10
+#n=15
 par(las = 1, mar = c(4, 4, 1.4, 1))
 
 means <- rep(0, N)
@@ -74,25 +77,26 @@ for (i in 1:N) {
 
 plot(0, 0,
      type = 'n',
-     xlim = c(20, 33),
-     ylim = c(0, 0.25),
+     xlim = c(22, 33),
+     ylim = c(0, 0.45),
      xlab = '',
      ylab = '',
      axes = FALSE)
-mtext("Sample mean for n=10", 1, 2)
-mtext("Density", 2, line = 3, las = 0)
+mtext("Sample mean for n=15", 1, 2)
+mtext("", 2, line = 3, las = 0)
 m <- mean(brfss.df$bmi, na.rm = TRUE)
 s <- sd(brfss.df$bmi, na.rm = TRUE) / 10
 histPlot(means, col = COL[1], breaks = 50, probability = TRUE, add = TRUE)
-curve(dnorm(x,mean=mean(means), sd=sqrt(var(means))),col="darkblue", lwd=2, add = TRUE)
+shift <- (max(means)-min(means))/(50*2)
+curve(dnorm(x+shift,mean=mean(means), sd=sqrt(var(means))),col="darkblue", lwd=2, add = TRUE)
 abline(h = 0)
 axis(1)
-axis(2, at = seq(0, 0.25, 0.05))
+axis(2, at = seq(0, 0.45, 0.05))
 
 par(las = 1, mar = c(4, 4, 1.4, 1))
 
 #new graph
-#n=20
+#n=30
 means <- rep(0, N)
 pb <- txtProgressBar(0, N, style = 3)
 for (i in 1:N) {
@@ -103,47 +107,20 @@ for (i in 1:N) {
 plot(0, 0,
      type = 'n',
      xlim = c(22, 31),
-     ylim = c(0, 0.35),
-     xlab = '',
-     ylab = '',
-     axes = FALSE)
-mtext("Sample mean for n=20", 1, 2)
-mtext("Density", 2, line = 3, las = 0)
-m <- mean(brfss.df$bmi, na.rm = TRUE)
-s <- sd(brfss.df$bmi, na.rm = TRUE) / 10
-histPlot(means, col = COL[1], breaks = 50,probability = TRUE, add = TRUE)
-curve(dnorm(x,mean=mean(means), sd=sd(means)),col="darkblue", lwd=2, add = TRUE)
-abline(h = 0)
-axis(1)
-axis(2, at = seq(0, 0.35, 0.05))
-
-par(las = 1, mar = c(4, 4, 1.4, 1))
-#new graph
-#n=30
-means <- rep(0, N)
-pb <- txtProgressBar(0, N, style = 3)
-for (i in 1:N) {
-  temp <- sample(nrow(brfss.df), ns[4])
-  means[i] <- mean(brfss.df$bmi[temp], na.rm = TRUE)
-  setTxtProgressBar(pb, i)}
-
-plot(0, 0,
-     type = 'n',
-     xlim = c(22, 30),
-     ylim = c(0, 0.42),
+     ylim = c(0, 0.45),
      xlab = '',
      ylab = '',
      axes = FALSE)
 mtext("Sample mean for n=30", 1, 2)
-mtext("Density", 2, line = 3, las = 0)
+mtext("", 2, line = 3, las = 0)
 m <- mean(brfss.df$bmi, na.rm = TRUE)
 s <- sd(brfss.df$bmi, na.rm = TRUE) / 10
-
 histPlot(means, col = COL[1], breaks = 50,probability = TRUE, add = TRUE)
-curve(dnorm(x,mean=mean(means), sd=sd(means)),col="darkblue", lwd=2, add = TRUE)
+shift <- (max(means)-min(means))/(50*2)
+curve(dnorm(x+shift,mean=mean(means), sd=sqrt(var(means))),col="darkblue", lwd=2, add = TRUE)
 abline(h = 0)
 axis(1)
-axis(2, at = seq(0, 0.42, 0.05))
+axis(2, at = seq(0, 0.45, 0.05))
 
 dev.off()
 

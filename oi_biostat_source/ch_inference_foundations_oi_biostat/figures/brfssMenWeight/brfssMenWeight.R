@@ -34,7 +34,7 @@ men <- brfss.df[which(brfss.df$sex == 1),]
 men.sample.vec<-sample(1:nrow(men),size = 40,replace = FALSE)
 men.brfss.sample<-brfss.df[men.sample.vec,]
 
-myPDF('brfssMenWeight.pdf', 5, 3,
+myPDF('brfssMenWeight.pdf', 5, 2.5,
       mar = c(4, 4, 1, 1),
       mgp = c(2.7,0.55,0))
 

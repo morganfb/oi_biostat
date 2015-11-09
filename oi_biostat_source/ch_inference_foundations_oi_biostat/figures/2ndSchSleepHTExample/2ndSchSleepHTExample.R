@@ -1,6 +1,7 @@
 library(openintro)
 data(COL)
 
+setwd('~/OI_Biostat/oi_biostat_source/ch_inference_foundations_oi_biostat/figures/2ndSchSleepHTExample')
 myPDF('2ndSchSleepHTExample.pdf', 6, 2.4,
       mar = c(2, 0, 0.5, 0),
       mgp = c(3, 0.65, 0))
@@ -13,7 +14,8 @@ axis(1, at = -0.81, labels = labels, cex.axis = 0.87)
 
 par(mgp = c(3, 0.77, 0))
 at <- c(-15, 0, 5)
-labels <- expression(0, H[0]*': '*mu*'', 0)
+labels <- expression(0, H[0]*': '*mu*' = '*mu[0]*'', 0)
+
 axis(1, at, labels, cex.axis = 0.87)
 
 yMax <- max(Y)
