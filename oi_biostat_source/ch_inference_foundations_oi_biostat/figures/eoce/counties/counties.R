@@ -20,7 +20,7 @@ pdf("countyasian.pdf", height = 3, width = 5.8)
 
 par(mar=c(3.7,2,1,0.5), las=1, mgp=c(2.5,0.7,0), mfrow = c(1,1), cex.lab = 1.25, cex.axis = 1.25)
 
-histPlot(asian, col = COL[1], xlab = "Percent asian", ylab = "", axes = FALSE)
+histPlot(asian, col = COL[1], xlab = "Percent asian", ylab = "", axes = FALSE, breaks=20)
 axis(1)
 
 dev.off()
@@ -28,6 +28,7 @@ dev.off()
 # sample n = 5
 
 set.seed(123)
+set.seed(1)
 xbar = c()
 for(i in 1:5000){
   sub = sample(asian, size = 5, replace = TRUE)
@@ -180,5 +181,35 @@ white <- white[!is.na(white)]
 two_plus_races <- countyComplete$two_plus_races
 two_plus_races <- two_plus_races[!is.na(two_plus_races)]
 
+####sketch
+pdf("countyWhite_sketch.pdf", height = 3, width = 6)
 
+par(mar=c(2,0,0,0), las=1, mgp=c(3,1,0), mfrow = c(1,1))
+
+####sketch
+# population
+
+m = 82.89
+s = 16.85
+
+X <- seq((m - 3 * s),(m + 3 * s),0.001)
+Y <- dnorm(X, m, s)
+
+plot(X, Y, type='l', axes=FALSE, xlim=c(min(X), max(X)), ylab = "", lwd=2.5)
+lines(X, rep(0,length(X)), lwd=1.5)
+axis(1, at = seq((m - 3 * s),(m + 3 * s),s), cex.axis = 1.25)
+axis(2)
+# sampling
+
+m = 2.5
+s = 0.03 / sqrt(30)
+
+X <- seq((m - 5 * s),(m + 5 * s),0.001)
+Y <- dnorm(X, m, s)
+
+lines(X, Y, type='l', lty = 2, lwd=2.5, col = oiB)
+
+legend("topright", c("Population","Sampling (n = 10)"), lty = c(1,2), col = c("black",oiB), inset = 0.03, cex = 1.25, lwd=c(2.5,2.5))
+
+dev.off()
 
