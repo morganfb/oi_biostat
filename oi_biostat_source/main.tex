@@ -27,8 +27,11 @@
 \makeindex 
 \include{extraTeX/style/style}
 %\include{extraTeX/style/tablet}
-\include{extraTeX/preamble/title_derivative_oi_biostat}%_derivative}
-%\include{extraTeX/preambleAlice/title_derivative_oi_biostat}%_derivative}
+%\include{extraTeX/preamble/title_derivative_oi_biostat}%_derivative}
+\include{extraTeX/preambleAlice/title_derivative_oi_biostat}%_derivative}
+
+%\include{extraTeX/preamble/title_derivative_oi_biostat}%_derivative}
+\include{extraTeX/preambleAlice/title_derivative_oi_biostat}%_derivative}
 \date{}
 \setcounter{tocdepth}{1}
 
@@ -36,14 +39,27 @@
 
 \renewcommand{\thepage}{}
 \maketitle
+
 \include{extraTeX/preamble/copyright}%_derivative}
 \renewcommand{\thepage}{\arabic{page}}
 \tableofcontents
 %\include{extraTex/preambleAlice/abstract}
 \include{extraTeX/preamble/preface_oi_biostat}
 
-\begin{spacing}{1}
+
 %\include{extraTeX/preambleAlice/preface_oi_biostat}
+
+
+
+\include{extraTeX/preamble/copyright}%_derivative}
+\renewcommand{\thepage}{\arabic{page}}
+\tableofcontents
+
+
+\begin{spacing}{1.5}
+%\begin{spacing}{1}
+%\include{extraTeX/preambleAlice/preface_oi_biostat}
+
 \normalsize
 
 \includechapter{1}{ch_intro_to_data_oi_biostat}
@@ -58,9 +74,9 @@
 
 %\appendix
 \include{extraTeX/eoceSolutions/eoceSolutions}
-%\include{extraTeX/appendix/TeX/zTable}
-%\include{extraTeX/appendix/TeX/tTable}
-%\include{extraTeX/appendix/TeX/chiSquareTable}
+\include{extraTeX/appendix/TeX/zTable}
+\include{extraTeX/appendix/TeX/tTable}
+\include{extraTeX/appendix/TeX/chiSquareTable}
 
 \end{spacing}
 \include{extraTeX/index/index}
