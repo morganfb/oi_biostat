@@ -6,14 +6,13 @@
 \chapter{Foundations for inference}
 \label{foundationsForInference}
 
-How many days a week are high school students physically?    How much sleep do they get, on average?  These questions about the youth population in the United States could be answered either by gathering information from all 21.2 million high school aged youth (age 15 - 19) or by studying behavior in a well chosen sample. The first strategy is simply not possible.  The second is a primary goal of statistics -- drawing inference about the characteristics of a population from a sample.  In statistical terms, a characteristic of a population, for instance average amount of sleep per night for high school aged students, is called a \term{population parameter}.  When done correctly and interpreted carefully, sampling from a population is an efficient way to estimate a population parameter.  This chapter introduces the important ideas in drawing inference from samples in Sections~\ref{variabilityInEstimates}-\ref{cltSection} by discussing inference about a population mean, $\mu$.  
+On average, how many days a week are high school students physically active? How many hours of sleep per night do they get? These questions about the youth population in the United States could be answered either by collecting information from all 21.2 million high school aged youth (ages 15-19) or by formulating an estimate based on a well-chosen sample of students. The first strategy is simply impossible, while the second represents a primary goal of statistics -- drawing inferences about the characteristics of a population from a sample. In statistical terms, a characteristic of a population, such as the average amount of sleep per night for high school aged students, is called a \term{population parameter}. When carried out correctly, sampling from a population is an efficient way to estimate a population parameter. This chapter introduces the important ideas in drawing from samples by discussing methods of inference for a population mean, $\mu$ (Sections~\ref{variabilityInEstimates}-\ref{cltSection}). 
 
-This chapter discusses three widely used tools in statistics: point estimates (single number estimates) for the population mean; interval estimates that add a margin of error to point estimates; and a method for testing scientific hypotheses about $\mu$. The concepts used in this chapter will appear throughout later in the book.  Particular equations or formulas may change to reflect the details of a problem at hand, but the fundamental ideas will not.  
+This chapter also discusses three widely used tools in statistics: point estimates (single number estimates) for a population mean, interval estimates that include a margin of error for point estimates, and a method for testing scientific hypotheses about $\mu$. The concepts used in this chapter will appear throughout later in the book. While particular equations or formulas may change to reflect the details of a problem at hand, the fundamental ideas will not. 
 
 \index{data!yrbss|(}
 
-On its web site,\footnote{http://www.cdc.gov/about/organization/mission.htm } the United States Centers for Disease Control and Prevention (CDC) lists one of its roles as ``promoting healthy and safe behaviors, communities and environment''.  The first step in health promotion is understanding health behaviors, and the CDC periodically conducts several sample surveys, including the Youth Risk Behavior Surveillance System (YRBSS)\footnote{http://www.cdc.gov/healthyyouth/data/yrbs/index.htm}.  Between 1991 and 2013, 2.6 million high school students have participated in more than 1,100 separate surveys. The next few sections discuss the data set \data{yrbss}, which contains the responses of the 13,583 high school students participating in the YRBSS in 2013.\footnote{\oiRedirect{textbook-yrbss}{www.cdc.gov/healthyyouth/data/yrbs/data.htm}} Part of this data set is shown in Table~\ref{yrbssDF}, and the variables are described in Table~\ref{yrbssVariables}.
-
+One of the roles of the United States Centers for Disease Control and Prevention (CDC), as listed on their website, is "promoting healthy and safe behaviors, communities, and environment."\footnote{\url{http://www.cdc.gov/about/organization/mission.htm}} The first step in health promotion is to understand health behaviors; the CDC periodically conducts several surveys, including the Youth Risk Behavior Surveillance System (YRBSS).\footnote{\url{http://www.cdc.gov/healthyyouth/data/yrbs/index.htm}} Between 1991 and 2013, 2.6 million high school students have participated in more than 1,100 separate surveys. The next few sections discuss the \data{yrbss} dataset, which contains the responses of the 13,583 high school students who participated in the 2013 YRBSS.\footnote{\oiRedirect{textbook-yrbss}{www.cdc.gov/healthyyouth/data/yrbs/data.htm}} Part of this dataset is shown in Table~\ref{yrbssDF}, and the variables are described in Table~\ref{yrbssVariables}.
 
 \begin{table}[h]
 \centering
@@ -29,7 +28,7 @@ ID & age & gender & grade & height & weight & helmet & active & lifting \\
   13583 &  17 & female & 12 & 1.57 & 52.16 & did not ride &   5 &  \\ 
   \hline
 \end{tabular}
-\caption{Five cases from the \data{yrbss} data set. Some observations are blank since there are missing data. For example, the height and weight of students 1 and 2 are missing.\textC{\vspace{-2mm}}}
+\caption{Five cases from the \data{yrbss} data set. Blank observations represent missing data. For example, the height and weight of students 1 and 2 are missing\textC{\vspace{-2mm}}}
 \label{yrbssDF}
 \end{table}
 % library(openintro); library(xtable); data(yrbss); xtable(rbind(head(yrbss, 4), tail(yrbss, 2))[, c("age", "gender", "grade", "height", "weight", "helmet_12m", "physically_active_7d", "strength_training_7d")])
@@ -41,9 +40,9 @@ ID & age & gender & grade & height & weight & helmet & active & lifting \\
 {\bf age} & {\bf Age of the student.} \\
 \hline
 \var{gender} & {Sex of the student.} \\
-\var{grade} & Grade in high school \\
-\var{height} & Height, in meters. There are 3.28 feet in a meter. \\
-\var{weight} & Weight, in kilograms (2.2 pounds per kilogram). \\
+\var{grade} & Grade in high school (9-12) \\
+\var{height} & Height, in meters. (1 m = ~3.28 ft) \\
+\var{weight} & Weight, in kilograms (1 kg = ~2.2 lbs) \\
 \var{helmet} & Frequency that the student wore a helmet while biking in the last 12~months. \\
 \var{active} & Number of days physically active for 60+ minutes in the last 7 days. \\
 \var{lifting} & Number of days of strength training (e.g. lifting weights) in the last 7 days. \\
@@ -55,10 +54,13 @@ ID & age & gender & grade & height & weight & helmet & active & lifting \\
 
 \index{data!yrbss.samp|(}
 
+CDC public health officials used the responses of 13,572 students to estimate the health behaviors of the \term{target population}: the approximately 21.2 million high school aged students in the US population. 
 
-The CDC surveyed 13,582 high school students in 2013 to learn about health behavior of all US high school aged students, and some of the variables collected from the 13,582 participants is contained in the dataset \data{yrbss}.  CDC public health professionals used \data{yrbss} to estimate the health behavior of the approximately 21.2 million youth in the US population.  The sample data \data{yrbss} was used to draw inference about the \term{target population} of 21.2 million youth.  This chapter illustrates inference about a population by using a random sample (\data{yrbss.samp})from \data{yrbss} to estimate behavior of the 13,572 respondents in the `target population' \data{yrbss}. The illustration used here is artificial (the individuals represented in \data{yrbss} are not really a target population), but it has an important advantage -- the behavior of methods of inference can be checked and illustrated by comparing estimates from \data{yrbss.samp} with `population parameters' in \data{yrbss}.
+This chapter illustrates inference for a population mean by treating the CDC sample of 13,582 students as an artificial target population. A random sample of 100 participants (\data{yrbss.samp}) can then be used to estimate health behaviors for the "target population" of 13,572 respondents. In other words, this chapter will demonstrate how, with only the information from 100 students, it is possible to estimate the behaviors for 13,572 students (and by extension, show how the CDC used information from 13,572 students to estimate health behaviors for 21.2 million students).  
 
-The dataset \data{yrbss.samp} contains the data 100 sampled responses from the larger dataset; it is described in Table~\ref{yrbssSampDF}.\footnote{About 10\% of high schoolers for each variable chose not to answer the question, we used multiple regression (see Chapter~\ref{multipleAndLogisticRegression}) to predict what those responses would have been. For simplicity, we will assume that these predicted values are the unknown responses.}. Histograms summarizing the \var{height}, \var{weight}, \var{active}, and \var{lifting} variables from \data{yrbss.samp} are shown in Figure~\ref{yrbssSampHistograms}.
+While the individuals in \data{yrbss} are not truly a target population, treating them as such allows for the estimates obtained by inference (using \data{yrbss.samp}) to be checked against the "population parameters" of \data{yrbss} -- not possible in a realistic setting, since population parameters (such as the average hours of sleep per night across 21.2 million students) are typically unknown.\footnote{Hence, the need for inference!}
+
+The dataset \data{yrbss.samp} contains the data for 100 student responses randomly sampled from the larger \data{yrbss} dataset, and is described in Table~\ref{yrbssSampDF}.\footnote{About 10\% of high schoolers for each variable chose not to answer the question. Multiple regression (see Chapter~\ref{multipleAndLogisticRegression}) was used to predict what those responses would have been. For simplicity, we will assume that these predicted values are the unknown responses.} Histograms summarizing the \var{height}, \var{weight}, \var{active}, and \var{lifting} variables from \data{yrbss.samp} are shown in Figure~\ref{yrbssSampHistograms}.
 
 \begin{table}
 \centering
@@ -85,7 +87,7 @@ ID & age & gender & grade & height & weight & helmet & active & lifting \\
 \centering
 \includegraphics[width=0.8\textwidth]
 {ch_inference_foundations_oi_biostat/figures/yrbssSampHistograms/yrbssSampHistograms} 
-\caption{Histograms of \var{height}, \var{weight}, \var{activity}, and \var{lifting} for the sample YRBSS data. The \var{height} distribution is approximately symmetric, \var{weight} is moderately skewed to the right, \var{activity} is bimodal or multimodal (with unclear skew), and \var{lifting} is strongly right skewed.\index{skew!example: moderate}\index{skew!example: strong}}
+\caption{Histograms of \var{height}, \var{weight}, \var{activity}, and \var{lifting} for the sample data (\data{yrbss.samp}). The \var{height} distribution is approximately symmetric, \var{weight} is moderately skewed to the right, \var{activity} is bimodal or multimodal (with unclear skew), and \var{lifting} is strongly right skewed.\index{skew!example: moderate}\index{skew!example: strong}}
 \label{yrbssSampHistograms}
 \end{figure}
 
@@ -95,38 +97,34 @@ ID & age & gender & grade & height & weight & helmet & active & lifting \\
 
 \index{point estimate|(}
 
-The data \data{yrbss.samp} can be used to estimate 4 features of the 13,582 high schoolers in YRBSS.
-\begin{itemize}
-\setlength{\itemsep}{0mm}
-\item[(1)] Average height
-\item[(2)] Average weight
-\item[(3)] Average number of days per week the  YRBSS high schoolers are physically active.
-\item[(4)] Average body mass index (BMI). Body mass index is a measure of body fat based on height and weight.
-\end{itemize}
+The \data{yrbss.samp} data can be used to estimate four features of the 13,582 high school students in \data{yrbss}: 1) average height, 2) average weight, 3) average number of days per week physically active (for more than 60 minutes at a time), 4) average body mass index (BMI).
 
-Sample means are the natural summary statistic to use to estimate a population mean when the dataset is a random sample from the population.  The average height of the students in \data{yrbss.samp} is 
-\begin{eqnarray*}
+Sample means are the natural choice of summary statistic for estimating a population mean. The average height of the students in \data{yrbss.samp} is:
+
+\begin{align*}
 \overline{x}_{height} = \frac{1.50 + 1.78 + \dots + 1.70}{100} = 1.697
-\end{eqnarray*}
+\end{align*}
 %library(openintro); data(yrbss.samp); mean(yrbss.samp$height); yrbss.samp$height
-The sample mean $\overline{x} = 1.697$ meters (5 feet, 6.8 inches) is a \term{point estimate} of the population mean.  If a second random sample of 100 were taken, the sample mean would likely be different because of \term{sampling variation}.  Estimates generally vary from one sample to another, so the distinction between sample and population mean is important.  The sample means of \var{weight} and \var{active} provide estimates of the average weight and number of days active per week of YRBSS respondents:
+
+The sample mean $\overline{x} = 1.697$ meters (5 feet, 6.8 inches) is a \term{point estimate} of the population mean. If a second random sample of 100 were taken, the new sample mean would likely be different as a result of \term{sampling variation}.  Estimates generally vary from one sample to another, whereas the population mean is a fixed value; thus, the distinction between a sample mean versus a population mean is important. 
+
+The sample means of \var{weight} and \var{active} provide estimates of the average weight and number of days active per week of YRBSS respondents. On average, students weigh 68.89 kilograms (about 151.6 pounds) and are active 3.75 days per week:
 \begin{align*}
 \overline{x}_{weight} &= \frac{52.6 + 74.8 + \dots + 55.8}{100} = 68.89
 &\overline{x}_{active} &= \frac{0 + 7 + \dots + 1}{100} = 3.75.
 \end{align*}
 %library(openintro); data(yrbss.samp); d <- yrbss.samp$weight; mean(d); d
 %library(openintro); data(yrbss.samp); d <- yrbss.samp$physically_active_7d; mean(d); d
-The average weight is 68.89 kilograms, or about 151.6 pounds.  Students are active 3.75 days per week, on average.
 
-BMI is used by health professionals to gage whether an individual's weight is consistent with his or her height. BMI is not one of the variables in the dataset, but can be calculated from height and weight measured in metric units with the formula 
-\begin{align*}
-	bmi = \frac{weight}{height{^2}}.
-\end{align*}	
-Large values of BMI indicate higher levels of body fat.	 Average BMI in \data{yrbss.samp} is found by calculating BMI for each respondent, then computing the average of the computed BMI values. For instance, the respondent with ID 5553 has BMI $52.62/1.5^2 = 23.39$  and average BMI in \data{yrbss.samp} is 23.92. Because adolescents size and body type can change with age, there are no population norms for BMI in the age range of respondents in \data{yrbss}, as there are for adults.
+BMI is used by health professionals to gauge whether an individual's weight is consistent with their height. While BMI is not one of the variables in the dataset, it can be calculated from height and weight (measured in metric units) with the formula:
+
+\[bmi = \frac{weight}{height{^2}}\]
+
+For example, the respondent with ID 5553 has BMI of 23.39 ($52.62/1.5^{2}$). Larger values of BMI indicate higher levels of body fat. Average BMI in \data{yrbss.samp} is found by calculating BMI values for each respondent, then computing the average of the BMI values. Average BMI in \data{yrbss.samp} is 23.92. Since adolescent size and body type can change with age, there are no population norms for BMI in the age range of YRBSS respondents as there are for adultss.
 
 %%%  note that bmi cutpoints for children and teens are not the same as for adults. The CDC does not seem to recommend levels for health bmi for teens
 
-Other population parameters, such as the population median or population standard deviation, are generally estimated using sample versions. Table~\ref{ptEstimatesYrbssActive}  shows estimates of the population mean, median and standard deviation for respondents in \data{yrbss}, using \data{yrbss.samp}.  Since \data{yrbss} contains all 13,582 responses to the survey, it is possible in calculate the population parameters as well, by simply calculating the mean, median and standard deviation using the full data set. The sample estimates of the variable \var{active} from \data{yrbss.samp} and the population parameters from \data{yrbss} are shown in Table~\ref{ptEstimatesYrbssActive}.  The estimates differ from the population parameters, but not my much.  In fact, the estimated median is equal to the population median in this case. 
+Other population parameters, such as population median or population standard deviation, are also generally estimated using sample version. Table~\ref{ptEstimatesYrbssActive} shows estimates of the population mean, median, and standard deviation for respondents in \data{yrbss}, using \data{yrbss.samp}, as well as the "population parameters" calculated by using the full \data{yrbss} dataset. The estimates differ slightly from the population parameters, but not by much -- in fact, the estimate for median is equal to the population median. Note that the estimates will vary based on the sample taken; these estimates are specific to the data in \data{yrbss.samp}.
 
 \begin{table}[h]
 \centering
@@ -139,44 +137,38 @@ median		& 4.00 & 4.00 \\
 st. dev.		& 2.556 & 2.564 \\
 \hline
 \end{tabular}
-\caption{Point estimates and parameter values for the \var{active} variable. The parameters were obtained by computing the mean, median, and SD for all YRBSS respondents.}
+\caption{Point estimates and parameter values for the \var{active} variable. The parameters were obtained by computing the mean, median, and SD for all respondents (i.e. the complete set of responses in \data{yrbss}).}
 \label{ptEstimatesYrbssActive}
 \end{table}
 
-
-
 \begin{exercise} \label{peOfDiffActiveBetweenGender}
-How would one estimate the difference in days active for men and women? If $\overline{x}_{men} = 4.3$ and $\overline{x}_{women} = 3.2$, then a good point estimate for the population difference?\footnote{If $\overline{x}_{men} = 4.3$ and $\overline{x}_{women} = 3.2$, the difference of the two sample means $4.3 - 3.2 = 1.1$. would be an estimate of the difference. Men are physically active about 1.1 days per week more than women on average in YRBSS.}
+How would one estimate the difference in days active for men and women? If $\overline{x}_{men} = 4.3$ and $\overline{x}_{women} = 3.2$, then what is a good point estimate for the population difference?\footnote{If $\overline{x}_{men} = 4.3$ and $\overline{x}_{women} = 3.2$, the difference of the two sample means, $4.3 - 3.2 = 1.1$, would be an estimate of the difference. In other words, it can be concluded from the sample that on average, the male respondents are physically active about 1.1 days per week more than the female respondents.}
 \end{exercise}
 %library(openintro); library(xtable); data(yrbss); data(yrbss.samp); (x <- by(yrbss.samp$physically_active_7d, yrbss.samp$gender, mean)); diff(x)
 
-Point estimates rarely equal population parameters (the median in Table~\ref{ptEstimatesYrbssActive} is one of those rare examples), but they do become more accurate as more data become available. This is illustrated by the running mean from for the variable \var{active} in \data{yrbss.samp}, shown in Figure~\ref{yrbssActiveRunningMean}. A \term{running mean} is a sequence of sample means in which each mean is calculated using one more observation than the mean preceding it in the sequence. For example, the second mean in the sequence is the average of the first two observations and the third in the sequence is the average of the first three. The running mean for the \var{active} variable approaches the true population mean, 3.90~days, as more data become available.  Running means from a different random sample from \data{yrbss} would show the same behavior.
-
-\textit{We should add the idea that AZ used in her draft: showing a different sequence of running means would show the same behavior.  Since we have only one sample here, not clear whether it is worth the added complexity.}
+While point estimates rarely equal population parameters (the median in Table~\ref{ptEstimatesYrbssActive} is one of those rare examples), they do become more accurate as more data become available. The running mean from the variable \var{active} in \data{yrbss.samp}, shown in Figure~\ref{yrbssActiveRunningMean}, demonstrates this principle. A \term{running mean} is a sequence of sample means in which each mean is calculated using one more observation than the mean preceding it in the sequence; in other words, sample size increases by 1 for each mean that is calculated. For example, the second mean in the sequence is the average of the first two observations, and the third mean in the sequence is the average of the first three observations. 
 
 \begin{figure}[h]
    \centering
    \includegraphics[width=0.72\textwidth]{ch_inference_foundations_oi_biostat/figures/yrbssActiveRunningMean/yrbssActiveRunningMean}
-   \caption{The mean computed after adding each individual to the sample. The mean tends to approach the true population average as more data become available.}
+   \caption{The mean computed after gradually adding each individual to the sample (data from \data{yrbss.samp}). The mean tends to approach the true population average as more data become available. Running means calculated from a different random sample from \data{yrbss} would also show the same behavior.}
    \label{yrbssActiveRunningMean}
 \end{figure}
 
+\textit{DH: We should add the idea that AZ used in her draft: showing a different sequence of running means would show the same behavior.  Since we have only one sample here, not clear whether it is worth the added complexity.}
 
-The population parameters are not known by someone analyzing a dataset, but it is possible to calculate how accurate sample estimates are likely to be using formulas in the Section~\ref{seOfTheMean}.
+\textit{JV: I added that to the caption of the running mean figure. It may or may not be worth it to have a different random sample of 100 to prove the point -- both earlier, when pointing out that estimates are sample-specific, and then now, to illustrate how a different set of running means behaves the same way. If we did add it, it would be easy enough to partition Fig. 4.6 to show two graphs.}
 
+As the sample size increases, the running mean approaches the true population mean of 3.90 days. Thus, the CDC officials can be reasonably confident that means calculated using data from 13,582 students can provide a good estimate of the true population mean across 21.2 million students. By using the formulas in the following section, Section~\ref{seOfTheMean}, it is possible to calculate how accurate sample estimates are likely to be.
 
 \subsection{Standard error of the mean}
 \label{seOfTheMean}
 
-The point estimate $\overline{x} = 3.75$ days is an estimate of the population mean $\mu$ based on the random sample \data{yrbss.samp}.  Another random sample of 100 participants would produce a different value of $\overline{x}$, perhaps  3.22~days. Repeated random sampling would result in additional values, perhaps 3.67~days, 4.10~days, and so on. When calculated from a single random sample, $\overline{x}$ has a specific value (say 3.75 days).  Each sample mean can be thought of as an observation from a random variable $\overline{X}$.  It is easy to overlook the distinction between the two symbols $\overline{x}$ and $\overline{X}$. The latter is a random variable with the same kind of properties as the those discussed in Chapter 3. Most importantly, $\overline{X}$ will have a distribution of values, called the \term{sampling distribution of the sample mean}, and that distribution will itself have a mean and standard deviation.
+The point estimate $\overline{x} = 3.75$ days is an estimate of the population mean $\mu$ based on the random sample \data{yrbss.samp}. Another random sample of 100 participants might produce a different value of $\overline{x}$, such as 3.22 days; repeated random sampling would result in additional different values, perhaps 3.67 days, 4.10 days, and so on. Each sample mean can be thought of as a single observation from a random variable $\overline{X}$, that has the same kind of properties as discussed in Chapter 3. $\overline{X}$ will have a distribution of values, referred to as the \term{sampling distribution of the sample mean}; this distribution also has a mean and standard deviation.
 
-In almost any study, such as the the studies that produced the \data{LEAP} or \data{frog} data sets, conclusions about a population parameter must be based on a single sample -- the data gathered in the study.  In those instances, the sampling distribution of $\overline{X}$ is a theoretical concept, not something that can be calculated -- repeated samples are simply not available.  But the concept can be illustrated here by taking repeated random samples from \data{yrbss}; the large dataset \data{yrbss} is playing the role of a population distribution. Figure~\ref{yrbssActive1000SampDist} shows a histogram of values for $\overline{X}$ from 1,000 random samples of size 100 from \data{yrbss}. One thousand samples is enough for the histogram to give an accurate picture of the theoretical sampling distribution of $\overline{X}$ when the sample size is 100. 
+In almost any study, such as those that produced the \data{LEAP} or \data{frog} datasets, conclusions about a population parameter must be drawn from the data collected, which represent a single sample. In those instances, the sampling distribution of $\overline{X}$ is a theoretical concept, not something that can be calculated -- obtaining repeated samples by conducting the studies again is simply not feasible or practical.
 
-
-\begin{comment}
- The center of this histogram is (approximately) the mean of the random variable $\overline{X}$. The standard deviation of the histogram is called the \term{standard error} of the sample mean.  The standard error measures the the sample-to-sample variability of $\overline{X}$.
-
-\end{comment}
+However, the concept can be illustrated here by taking repeated random samples from \data{yrbss}, the artificial population. Figure~\ref{yrbssActive1000SampDist} shows a histogram of sample means from 1,000 random samples of size 100 from \data{yrbss}. The histogram gives a picture of the theoretical sampling distribution of $\overline{X}$ when the sample size is 100. 
 
 \begin{figure}[h]
    \centering
@@ -190,38 +182,15 @@ In almost any study, such as the the studies that produced the \data{LEAP} or \d
 The sampling distribution is the distribution of the point estimates based on samples of a fixed size from a certain population. It is useful to think of a particular point estimate as being drawn from such a distribution.}
 \end{termBox}
 
-The sampling distribution shown in Figure~\ref{yrbssActive1000SampDist} is unimodal and approximately symmetric.  The center of this histogram is (approximately) the mean of the random variable $\overline{X}$.  Statistical theory can be used to show that the mean of the sampling distribution for $\overline{X}$ is exactly the population mean of the population under study. The standard deviation of the distribution of $\overline{X}$ is called the \term{standard error} of the sample mean; it measures the sample-to-sample variability of $\overline{X}$, the extent to which repeated values of $\overline{X}$ bounce around the population mean.
+The sampling distribution shown in Figure~\ref{yrbssActive1000SampDist} is unimodal and symmetric. The center of the histogram is approximately the mean of the random variable $\overline{X}$. Statistical theory can be used to show that the mean of the sampling distribution for $\overline{X}$ is exactly equal to the population mean. 
 
-The terminology for point estimates can be confusing and is worth restating.  
+The \term{standard error} of the sample mean measures the sample-to-sample variability of $\overline{X}$, or in other words, the extent to which values of the repeated sample means oscillate around the population. The standard deviation of the 1,000 values of $\overline{X}$ is 0.26, approximately the standard error of $\overline{X}$. However, this method of estimating the standard error is not possible when there is only a single sample. Since the sample represents only one observation from $\overline{X}$, it cannot provide any information about the variability of the entire distribution.
 
-\begin{itemize}
-	
-  \item The population parameters $\mu$ and $\sigma$ are characteristics of the target population from which a sample will be drawn.  
-  
-  \item In a single sample, the arithmetic average of the values in the sample (the sample mean) will be a number, denoted by $\overline{x}$.  
-  
-  \item If repeated samples could be taken, the random variable $\overline{X}$ is the collection of these sample means, one for each sample.  The distribution of $\overline{X}$ is called its sampling distribution, and this sampling distribution will itself have a mean and standard deviation. 
-  
-  \item With random sampling, the mean of the random variable $\overline{X}$ is always the population mean $\mu$.  In the notation of Chapter 3, 
-\begin{align*}
-	 \mu_{\overline{X}} &= E\overline{X} \\
-	 &= \mu.
-\end{align*}
-  
-  \item  The standard deviation of $\overline{X}$, written $\sigma_{\overline{X}}$ is called its standard error (SE), and is usually written
- %\index{SE}\marginpar[\raggedright\vspace{-4mm} 
-  \begin{align*}
-  	 \text{s.d.}\overline{X} &=\sigma_{\overline{X}} \\
- \end{align*}
+The more realistic way to calculate standard error of the sample mean, when repeated random samples are not available, is to divide the population standard deviation ($\sigma_{x}$) by the square root of the sample size:
 
-\end{itemize}
+\[SE_{\overline{x}} = \sigma_{\overline{x}} = \dfrac{\sigma_{x}}{\sqrt{n}} = \dfrac{2.6}{\sqrt{100}} = 0.26\]
 
-The standard deviation of the 1,000 values of $\overline{X}$ from repeated random samples shown in Figure~\ref{yrbssActive1000SampDist} is 0.26 and is approximately the standard error of $\overline{X}$; it measures 
-how far a typical estimate is away from the population mean, 3.90~days. In the sample of 100 students, the standard error of the sample mean is equal to the population standard deviation divided by the square root of the sample size:
-\begin{eqnarray*}
-SE_{\overline{x}} = \sigma_{\overline{x}} = \frac{\sigma_{x}}{\sqrt{n}} = \frac{2.6}{\sqrt{100}} = 0.26
-\end{eqnarray*}
-where $\sigma_{x}$ is the standard deviation of the individual observations. This is no coincidence. The probability tools of Section~\ref{randomVariablesSection} can be used to show that $\sigma_{\overline{X}} = \sigma/\sqrt{n}$.  Conceptually, larger sample sizes lead  to sampling distributions for that have decreasing variability. In other words, larger sample sizes cause $\overline{X}$ to be clustered evermore tightly about the population mean $\mu$ and so lead to more accurate estimates of $\mu$.
+The probability tools of Section~\ref{randomVariablesSection} can be used to show that $\sigma_{\overline{X}} = \sigma/\sqrt{n}$. Conceptually, larger sample sizes result in sampling distributions that have decreasing variability; increasing $n$ for a given distribution with $\sigma_{x}$ will lower the standard error of the sample mean. In other words, increasing sample size causes $\overline{X}$ to be clustered more tightly around the population mean $\mu$, allowing for more accurate estimates of $\mu$ from a single sample.
 
 % \term{standard error (SE)}\index{SE}\marginpar[\raggedright\vspace{-4mm}
 
@@ -229,15 +198,39 @@ where $\sigma_{x}$ is the standard deviation of the individual observations. Thi
 
 % $SE$\\\footnotesize standard\\error} of the estimate.
 
-\begin{termBox}{\tBoxTitle{The SE for the sample mean}
+\begin{termBox}{\tBoxTitle{The SE of the sample mean}
 Given $n$ independent observations from a population with standard deviation $\sigma$, the standard error of the sample mean is equal to \vspace{-1mm}
-\begin{eqnarray}
+\begin{align*}
 SE = \frac{\sigma}{\sqrt{n}}
 \label{seOfXBar}
-\end{eqnarray}\vspace{-3mm}%
+\end{align*}\vspace{-3mm}%
 }
 \end{termBox}
-The statistic $\overline{X}$ can easily be calculated but the SE of $\overline{X}$ can not be estimated from a single sample -- the sample yields only one observation for $\overline{X}$ and thus provides no information about its variability.  Since the sample standard deviation $s$ from a sample is a reasonably good estimate of $\sigma$, it is natural to use $s/\sqrt{n}$ to estimate the SE of the sample mean.  This estimate tends to be sufficiently good when the sample size is at least 30 and the population distribution is not strongly skewed.  If the skew condition is not met, a larger sample is needed to compensate for the extra skew. These topics are further discussed in Section~\ref{cltSection}
+
+However, the population standard deviation $\sigma$ is typically unknown. Instead, the sample standard deviation $s$ can be used as a reasonably good estimate of $\sigma$, and $s / \sqrt{n}$ as an estimate for the standard error of the sample mean. For example, the estimate of SE using \data{yrbss.samp} is 0.2556 ($2.556 / \sqrt{100}$), which is very close to 0.26.
+
+This estimate tends to be sufficiently good when the sample size is at least 30 and the population distribution is not strongly skewed. In the case of skewed distributions, a larger sample size is necessary. These topics are further discussed in Section~\ref{cltSection}.
+
+%\begin{comment}
+The terminology for point estimates can be confusing, and is worth restating:  
+
+\begin{itemize}
+	
+	\item The population parameters $\mu$ and $\sigma$ are characteristics of the target population from which a sample is drawn. 
+	
+	\item In a single sample, the arithmetic average of the values in the sample (the sample mean) is denoted by $\overline{x}$. The sample standard deviation is denoted by $s$. 
+	
+	\item If repeated samples could be taken, the random variable $\overline{X}$ represents the collection of sample means (one for each sample). The distribution of $\overline{X}$ is called its sampling distribution, which itself has a mean and standard deviation. 
+	
+	\item With random sampling, the mean of the random variable $\overline{X}$ is always equal to the population mean $\mu$.  In the notation of Chapter 3, $\mu_{\overline{X}} = E(\overline{X}) = \mu$.
+	
+	\item  The standard deviation of $\overline{X}$, written $\sigma_{\overline{X}}$, is called its standard error (SE). 
+	
+	\item The standard error of the sample mean, as calculated from a single sample of size $n$, is equal to $\dfrac{\sigma}{\sqrt{n}}$. SE can be estimated by using $s$, such that $SE = \dfrac{s}{\sqrt{n}}$.
+	
+\end{itemize}
+
+%\end{comment}
 
 \index{point estimate|)}
 
@@ -245,23 +238,23 @@ The statistic $\overline{X}$ can easily be calculated but the SE of $\overline{X
 \label{confidenceIntervals}
 \subsection{Interval estimates for a population parameter}
 
-A \term{confidence interval} provides an estimate for a population parameter along with a margin of error and gives a plausible range of values for the population parameter. When estimating a population mean $\mu$, a confidence interval for $\mu$ has the general form
+A \term{confidence interval} provides an estimate for a population parameter along with a margin of error, giving a plausible range of values for the parameter instead of a single value. When estimating a population mean $\mu$, a confidence interval for $\mu$ has the general form
 
-\[
-     (\overline{x} -m, \overline{x} + m) = \overline{x} \pm m 
-\],
-where $m$ is the margin of error. 
-The standard error, which is a measure of the uncertainty associated with the point estimate, is used in the calculation of the margin of error.  
+\[(\overline{x} -m, \ \overline{x} + m) = \overline{x} \pm m \],
+where $m$ is the margin of error. The standard error, a measure of the uncertainty associated with the point estimate, is used in the calculation of the margin of error.
 
-%\subsection{An approximate 95\% confidence interval}
+\subsection{An approximate 95\% confidence interval}
 
-The standard error of the sample mean is its the standard deviation, so approximately 95\% of the time the sample mean will be within 2 standard errors of the population  mean $\mu$. If an interval estimate spreads out 2 standard errors from the point estimate in either direction, a data analyst can be 95\% \term{confident} that the population mean is somewhere within the interval:
-\begin{eqnarray}
+The standard error of the sample mean is its standard deviation; thus, by the empirical rule discussed in Section~(\ref{}) of Chapter 3, the sample mean will be within 2 standard errors of the population mean $\mu$ approximately 95\% of the time. If an interval is constructed that spans 2 standard errors from the point estimate in either direction, a data analyst can be 95\% \term{confident} that the population mean is somewhere within the interval:
+
+\begin{align}
 \text{point estimate}\ \pm\ 2\times SE
 \label{95PercentConfidenceIntervalFormula}
-\end{eqnarray}
-The phrase  ``95\% confident'' has a subtle but important interpretation. If many samples were drawn from a population, each one used to calculate a confidence interval using Equation~(\ref{95PercentConfidenceIntervalFormula}), about 95\% of those intervals would contain the population mean $\mu$. 
-Figure~\ref{95PercentConfidenceInterval} shows this process with 25 samples, where 24 of the resulting confidence intervals contain the average number of days per week that YRBSS students are physically active, $\mu=3.90$~days, and one interval does not.  A data analyst does not know if the population mean lies within a single calculated interval, but the idea behind the calculation implies that approximately 95 of 100 intervals will be correct.  
+\end{align}
+
+The phrase "95\% confident" has a subtle interpretation: if many samples were drawn from a population, with each one used to calculate a confidence interval using Equation~\ref{95PercentConfidenceIntervalFormula}, about 95\% of those intervals would contain the population mean $\mu$. Figure~\ref{95PercentConfidenceInterval} illustrates this process with 25 samples taken from \data{yrbss}. 24 of the resulting confidence intervals contain the average number of days per week that respondents are physically active, $\mu$ = 3.90 days, while one interval does not. 
+
+Just as with the sampling distribution of the sample mean, the interpretation of a confidence interval relies on the abstract construct of repeated sampling. A data analyst, who can only observe one sample, does not know whether the population mean lies within the single interval calculated. However, the concept behind the calculation implies that approximately 95 intervals out of 100 will contain the population mean. The value 95\% is an approximation, accurate when the sampling distribution for the sample mean is close to that of a normal distribution. This assumption holds when the sample size is sufficiently large, as will be shown later.
 
 \begin{figure}[hht]
    \centering
@@ -275,33 +268,27 @@ Figure~\ref{95PercentConfidenceInterval} shows this process with 25 samples, whe
 In Figure~\ref{95PercentConfidenceInterval}, one interval does not contain 3.90 minutes. Does this imply that the mean cannot be 3.90?\footnote{Just as some observations occur more than 2 standard deviations from the mean, some point estimates will be more than 2 standard errors from the parameter. A confidence interval only provides a plausible range of values for a parameter. While we might say other values are implausible based on the data, this does not mean they are impossible.}
 \end{exercise}
 
-Just as with the sampling distribution of the sample mean, the interpretation of a confidence interval relies on the abstract construct of repeated sampling. A data analyst studying youth behavior with one sample of 100 observations from a population would see only one interval like those in Figure~\ref{95PercentConfidenceInterval}.  By calculating a 95\% confidence interval, the analyst is using a method that captures the population mean approximately 95\% of the time.  The value 95\% is only approximately true, but it is accurate when the sampling distribution for the sample mean is close to that of a normal distribution.  That is the case when the sample size is sufficiently large, as will be shown later.
-
-
-\begin{example}{The sample mean of days active per week from \data{yrbss.samp} is 3.75~days. The standard error, as estimated using the sample standard deviation, is $SE=\frac{2.564}{\sqrt{100}} = 0.2564$~days. (The population SD is unknown in most applications, so we use the sample SD here.) Calculate an approximate 95\% confidence interval for the average days active per week for all YRBSS students.}
-We apply Equation~(\ref{95PercentConfidenceIntervalFormula}):
-\begin{eqnarray*}
-3.75\ \pm\ 2 \times  0.26 \quad \rightarrow \quad (3.23, 4.27)
-\end{eqnarray*}
+\begin{example}{The sample mean of days active per week from \data{yrbss.samp} is 3.75~days. The standard error, as estimated using the sample standard deviation, is $SE=\frac{2.564}{\sqrt{100}} = 0.2564$~days. Calculate a 95\% confidence interval for the average days active per week for all YRBSS students.}
+We apply Equation~\ref{95PercentConfidenceIntervalFormula}:
+\[3.75\ \pm\ 2 \times  0.26 \quad \rightarrow \quad (3.23, 4.27)\]
 Based on these data, we can be about 95\% confident that the average days active per week for all YRBSS students was larger than 3.23 but less than 4.27~days. The interval extends out 2 standard errors from the point estimate, $\overline{x}_{active}$.
 \end{example}
 % library(openintro); library(xtable); d <- yrbss.samp; mean(d$physically_active_7d); sd(d$physically_active_7d); sd(yrbss$physically_active_7d, na.rm=TRUE)
 
 \begin{exercise} \label{95CIExerciseForAgeOfYrbssSamp1}
-The sample data suggest the average YRBSS student height is $\overline{x}_{height} = 1.697$ meters with a standard error of 0.0088 meters (estimated using the sample standard deviation, 0.088 meters). What is an approximate 95\% confidence interval for the average height of all of the YRBSS students?\footnote{Apply Equation~(\ref{95PercentConfidenceIntervalFormula}): $1.697 \ \pm \ 2\times 0.0088 \rightarrow (1.6794, 1.7146)$.  We are about 95\% confident the average height of all YRBSS students was between 1.6794 and 1.7146 meters (5.51~to 5.62~feet).}
+The sample data suggest that the average YRBSS student height is $\overline{x}_{height} = 1.697$ meters with a standard error of 0.0088 meters (estimated using the sample standard deviation, 0.088 meters). What is an approximate 95\% confidence interval for the average height of all of the YRBSS students?\footnote{Apply Equation~\ref{95PercentConfidenceIntervalFormula}: $1.697 \ \pm \ 2\times 0.0088 \rightarrow (1.6794, 1.7146)$.  We are about 95\% confident the average height of all YRBSS students was between 1.6794 and 1.7146 meters (5.51~to 5.62~feet).}
 \end{exercise}
 % library(openintro); d <- yrbss.samp; mean(d$height); sd(d$height)
 
-%\subsection{The sampling distribution for the mean}
+\subsection{The sampling distribution for the mean}
 
-Section~\ref{seOfTheMean} introduced the notion of the sampling distribution for $\overline{X}$, the average days physically active per week for samples of size 100, and the distribution was examined earlier in Figure~\ref{yrbssActive1000SampDist}. The figure showed the distribution of sample means calculated from 1,000 random samples. The complete sampling distribution would contain all sample means from samples of size 100, so a much larger number of samples than 1,000 would give a more accurate view  of the sampling distribution.  The left panel of Figure~\ref{yrbssActiveBigSampDist} shows the sampling distribution of 100,000 sample means
-
+Section~\ref{seOfTheMean} introduced the notion of the sampling distribution for $\overline{X}$, the average number of days physically active per week for samples of size 100. Figure~\ref{yrbssActive1000SampDist} showed the distribution of sample means calculated from 1,000 random samples. Since the complete sampling distribution consists of means for all possible samples of size 100, drawing a much larger number of samples would provide a more accurate view of the distribution; the left panel of Figure~\ref{yrbssActiveBigSampDist} shows the distribution calculated from 100,000 sample means. 
 
 \begin{figure}[hht]
    \centering
    \includegraphics[width=\textwidth]
 {ch_inference_foundations_oi_biostat/figures/yrbssActiveBigSampDist/yrbssActiveBigSampDist}
-   \caption{The left panel shows a histogram of the sample means for 100,000 different random samples. The right panel shows a normal probability plot of those sample means.}
+   \caption{The left panel shows a histogram of the sample means for 100,000 random samples. The right panel shows a normal probability plot of those sample means.}
    \label{yrbssActiveBigSampDist}
 \end{figure}
 
