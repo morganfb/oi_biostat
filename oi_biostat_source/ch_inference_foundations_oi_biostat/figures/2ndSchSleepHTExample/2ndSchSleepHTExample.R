@@ -8,7 +8,7 @@ normTail(L = -1.06,
          U = 1.06,
          col = COL[1],
          axes = FALSE)
-labels <- expression(bar(x)*' = 6.83')
+labels <- expression(bar(x)*' = -6.83')
 axis(1, at = -1.06, labels = labels, cex.axis = 0.87)
 
 par(mgp = c(3, 0.77, 0))
@@ -32,12 +32,12 @@ arrows(1.7, yMax / 2,
        length = 0.1,
        col = COL[1],
        lwd = 1.5)
-text(1.35, yMax * 0.75, expression('observations just as'),
+text(1.35, yMax * 0.75, expression('observations as or more'),
      pos = 4,
      cex = 1,
      col = COL[1])
 text(1.35, yMax * 0.62,
-     expression('unusual as '*bar(x)*' under '*H[0]),
+     expression('unusual than '*bar(x)*' under '*H[0]),
      pos = 4,
      cex = 1,
      col = COL[1])

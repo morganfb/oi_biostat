@@ -6,7 +6,7 @@
 \chapter{Foundations for inference}
 \label{foundationsForInference}
 
-On average, how many days a week are high school students physically active? How many hours of sleep per night do they get? These questions about the youth population in the United States could be answered either by collecting information from all 21.2 million high school aged youth (ages 15-19) or by formulating an estimate based on a well-chosen sample of students. The first strategy is simply impossible, while the second represents a primary goal of statistics -- drawing inferences about the characteristics of a population from a sample. In statistical terms, a characteristic of a population, such as the average amount of sleep per night for high school aged students, is called a \term{population parameter}. When carried out correctly, sampling from a population is an efficient way to estimate a population parameter. This chapter introduces the important ideas in drawing from samples by discussing methods of inference for a population mean, $\mu$ (Sections~\ref{variabilityInEstimates}-\ref{cltSection}). 
+On average, how many days a week are high school students physically active? How many hours of sleep per night do they get? These questions about the youth population in the United States could be answered either by collecting information from all 21.2 million high school aged youth (ages 15-19) or by formulating an estimate based on a well-chosen sample of students. The first strategy is simply impossible, while the second represents a primary goal of statistics -- drawing inferences about the characteristics of a population from a sample. In statistical terms, a characteristic of a population, such as the average amount of sleep per night for high school aged students, is called a \term{population parameter}. When carried out correctly, sampling from a population is an efficient way to estimate a population parameter. This chapter introduces the important ideas in drawing from samples by discussing methods of inference for a population mean, $\mu$. 
 
 This chapter also discusses three widely used tools in statistics: point estimates (single number estimates) for a population mean, interval estimates that include a margin of error for point estimates, and a method for testing scientific hypotheses about $\mu$. The concepts used in this chapter will appear throughout later in the book. While particular equations or formulas may change to reflect the details of a problem at hand, the fundamental ideas will not. 
 
@@ -28,7 +28,7 @@ ID & age & gender & grade & height & weight & helmet & active & lifting \\
   13583 &  17 & female & 12 & 1.57 & 52.16 & did not ride &   5 &  \\ 
   \hline
 \end{tabular}
-\caption{Five cases from the \data{yrbss} data set. Blank observations represent missing data. For example, the height and weight of students 1 and 2 are missing\textC{\vspace{-2mm}}}
+\caption{Five cases from the \data{yrbss} dataset. Blank observations represent missing data. For example, the height and weight of students 1 and 2 are missing\textC{\vspace{-2mm}}}
 \label{yrbssDF}
 \end{table}
 % library(openintro); library(xtable); data(yrbss); xtable(rbind(head(yrbss, 4), tail(yrbss, 2))[, c("age", "gender", "grade", "height", "weight", "helmet_12m", "physically_active_7d", "strength_training_7d")])
@@ -243,7 +243,7 @@ A \term{confidence interval} provides an estimate for a population parameter alo
 \[(\overline{x} -m, \ \overline{x} + m) = \overline{x} \pm m \],
 where $m$ is the margin of error. The standard error, a measure of the uncertainty associated with the point estimate, is used in the calculation of the margin of error.
 
-\subsection{An approximate 95\% confidence interval}
+%\subsection{An approximate 95\% confidence interval}
 
 The standard error of the sample mean is its standard deviation; thus, by the empirical rule discussed in Section~(\ref{}) of Chapter 3, the sample mean will be within 2 standard errors of the population mean $\mu$ approximately 95\% of the time. If an interval is constructed that spans 2 standard errors from the point estimate in either direction, a data analyst can be 95\% \term{confident} that the population mean is somewhere within the interval:
 
@@ -268,7 +268,7 @@ Just as with the sampling distribution of the sample mean, the interpretation of
 In Figure~\ref{95PercentConfidenceInterval}, one interval does not contain 3.90 minutes. Does this imply that the mean cannot be 3.90?\footnote{Just as some observations occur more than 2 standard deviations from the mean, some point estimates will be more than 2 standard errors from the parameter. A confidence interval only provides a plausible range of values for a parameter. While we might say other values are implausible based on the data, this does not mean they are impossible.}
 \end{exercise}
 
-\begin{example}{The sample mean of days active per week from \data{yrbss.samp} is 3.75~days. The standard error, as estimated using the sample standard deviation, is $SE=\frac{2.564}{\sqrt{100}} = 0.2564$~days. Calculate a 95\% confidence interval for the average days active per week for all YRBSS students.}
+\begin{example}{The sample mean of days active per week from \data{yrbss.samp} is 3.75~days. The standard error, as estimated using the sample standard deviation, is $SE=\frac{2.564}{\sqrt{100}} = 0.2564$~days. Calculate an approximate 95\% confidence interval for the average days active per week for all YRBSS students.}
 We apply Equation~\ref{95PercentConfidenceIntervalFormula}:
 \[3.75\ \pm\ 2 \times  0.26 \quad \rightarrow \quad (3.23, 4.27)\]
 Based on these data, we can be about 95\% confident that the average days active per week for all YRBSS students was larger than 3.23 but less than 4.27~days. The interval extends out 2 standard errors from the point estimate, $\overline{x}_{active}$.
@@ -294,7 +294,9 @@ Section~\ref{seOfTheMean} introduced the notion of the sampling distribution for
 
 %\textit{Normal probability plots are covered in Chap 3}
 
-The distribution of sample means closely resembles the normal distribution (see Section~\ref{normalDist}). A normal probability plot of these sample means is shown in the right panel of Figure~\ref{yrbssActiveBigSampDist}. All of the points closely fall around a straight line, implying that  the distribution of sample means is nearly normal. This result can be explained by the Central Limit Theorem.
+The distribution of sample means closely resembles the normal distribution (see Section~\ref{normalDist}). A normal probability plot of these sample means is shown in the right panel of Figure~\ref{yrbssActiveBigSampDist}. All of the points closely fall around a straight line, implying that the distribution of sample means is nearly normal. This result can be explained by the Central Limit Theorem.
+
+\textit{JV: I think it would be worth expanding the discussion of the CLT here, otherwise it seems like an unimportant footnote. Especially useful for students to know that distribution of $\overline{X}$ is normally distributed, even if the population not normally distributed. Not necessary to take the expanded CLT material from OI, but use explanation from lecture.}
 
 \begin{termBox}{\tBoxTitle{Central Limit Theorem, informal description}
 If a sample consists of at least 30 independent observations and the data are not strongly skewed, then the distribution of the sample mean is well approximated by a~normal model.\index{Central Limit Theorem}}
@@ -302,11 +304,13 @@ If a sample consists of at least 30 independent observations and the data are no
 
 % We will apply this informal version of the Central Limit Theorem for now, and discuss its details further in Section~\ref{cltSection}.
 
-The choice 2 standard errors in Equation~(\ref{95PercentConfidenceIntervalFormula}) was based on the general guideline that roughly 95\% of the time, observations are within two standard deviations of the mean. Under the normal model, this can be made more accurate by using 1.96 in place~of~2.
-\begin{eqnarray}
+\textit{JV: Conceptually, it may be smoother to just start out specifying $1.96 \times SE$ captures 95\%. Since the probability tables are already covered in Unit 3, students would have been exposed to the idea that 2 is an estimate for 1.96. Right now, the transition to 1.96 here reads somewhat awkwardly.}
+
+The choice of 2 standard errors in Equation~\ref{95PercentConfidenceIntervalFormula} was based on the general guideline that roughly 95\% of the time, observations are within two standard deviations of the mean. Under the normal model, this can be made more accurate by using 1.96 in place~of~2.
+\begin{align}
 \text{point estimate}\ \pm\ 1.96\times SE
 \label{95PercentCIWhenUsingNormalModel}
-\end{eqnarray}
+\end{align}
 % If a point estimate, such as $\overline{x}$, is associated with a normal model and standard error $SE$, then we use this more precise 95\% confidence interval.
 
 %%%% revisions to  here, 24 nov 2015
@@ -316,10 +320,54 @@ The choice 2 standard errors in Equation~(\ref{95PercentConfidenceIntervalFormul
 
 \index{confidence interval!confidence level|(}
 
+%JV: THIS SUBSECTION IS VERY MESSY!
+
+%might actually be improved by discussing the CLT more thoroughly in earlier section??
+
+%segue from 95% CI's, give conditions for using general formula, explain general formula with 99% as an example...
+
+Ninety-five percent confidence intervals are the most commonly used interval estimates, but intervals with confidence levels other than 95\% can also be constructed.
+
+The general formula for a confidence interval (for the population mean $\mu$) is given by 
+
+\begin{align}
+	\overline{x} \pm \ z^{\star} \times SE
+\end{align}
+
+, where $z^{\star}$ corresponds to the confidence level. When calculating a 95\% confidence level, $z^{\star}$ is 1.96, the quantile point on a normal distribution with 0.025 area to the right of that point. In other words, 2.5\% of the normal curve is to the right of 1.96, and 2.5\% is to the left of -1.96; thus, the area within 1.96 standard deviations of the mean captures 95\% of the distribution.
+
+To construct a 99\% confidence interval, $z^{\star}$ must be chosen such that 99\% of the normal curve is captured between -$z^{\star}$ and $z^{\star}$.
+
+\begin{example}{Let $Y$ be a normally distributed random variable. 99\% of the time, $Y$ will be within how many standard deviations of the mean?}
+	This is equivalent to asking for the $z$-score with .005 area to the right, or in other words, .5\% of the curve the right of $z$ and .5\% to the left of $-z$. To determine this value, refer to the normal probability table -- find the positive $z$-value that has .005 area to the right and .995 area to the left. The closest two values are 2.57 and 2.58; for convenience, round up to 2.58. Thus, the unobserved random variable $Y$ will be within 2.58 standard deviations of $\mu$ 99\% of the time.
+\end{example}
+
+Thus, use 2.58 for $z^{\star}$ to construct a 99\% confidence interval. A data analyst can be 99\% confident that this wider interval captures the population mean. 2.58 is larger than 1.96, resulting in a larger \term{margin of error} (the quantity $z^{\star} \times SE$) and a wider confidence interval, as illustrated in Figure~\ref{choosingZForCI}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]
+	{ch_inference_foundations_oi_biostat/figures/choosingZForCI/choosingZForCI}
+	\caption{The area between -$z^{\star}$ and $z^{\star}$ increases as $|z^{\star}|$ becomes larger. If the confidence level is 99\%, $z^{\star}$ is chosen such that 99\% of the normal curve is between -$z^{\star}$ and $z^{\star}$, which corresponds to 0.5\% in the lower tail and 0.5\% in the upper tail: $z^{\star}=2.58$.}
+	\label{choosingZForCI}
+	\index{confidence interval!confidence level|)}
+\end{figure}
+ 
+The normal approximation is crucial to the precision of these confidence intervals. When the data are reasonably symmetric, the sample size is large ($n \geq 30$), and the observations are independent, it is reasonable to use the normal approximation. Observations are considered independent if they are from a simple random sample and consists of fewer than 10\% of the population. Section~\ref{cltSection} provides a more detailed discussion about when the normal model can safely be applied. 
+
+% WARNING !!!!
+% EOCE 4.9 (as of 2nd Edition) references the results of this exercise
+\begin{exercise} \label{find99CIForYrbssAgeExercise}
+	Create a 99\% confidence interval for the average days active per week of all YRBSS students using \data{yrbss.samp}. The point estimate is $\overline{x}_{active} = 3.75$ and the standard error is $SE_{\overline{x}} = 0.26$.\footnote{The observations are independent (simple random sample, $<10\%$ of the population), the sample size is at least 30 ($n = 100$), and the distribution doesn't have a clear skew (Figure~\ref{yrbssSampHistograms} on page~\pageref{yrbssSampHistograms}); the normal approximation and estimate of SE should be reasonable. Apply the 99\% confidence interval formula: $\overline{x}_{active}\ \pm\ 2.58 \times  SE_{\overline{x}} \rightarrow (3.08, 4.42)$. We are 99\% confident that the average days active per week of all YRBSS students is between 3.08 and 4.42~days.}
+\end{exercise}
+%library(openintro); data(yrbss.samp); d <- yrbss.samp; mean(d$age); sd(d$age)/sqrt(100)
+
+\begin{comment}
+
 Ninety-five percent confidence intervals are the most commonly used interval estimates, but confidence intervals with confidence levels different from 95\% are straightforward to construct.  A general 95\% confidence interval for a point estimate that comes from a nearly normal distribution is 
-\begin{eqnarray}
+\begin{align}
 \text{point estimate}\ \pm\ 1.96\times SE
-\end{eqnarray}
+\end{align}
 There are three components to this interval: the point estimate; ``1.96''; and the standard error. The choice of $1.96\times SE$ was based on capturing 95\% of the distribution of the sample mean,  since the estimate is within 1.96 standard deviations of the parameter about 95\% of the time. 
 
 \begin{exercise} \label{leadInForMakingA99PercentCIExercise}
@@ -327,13 +375,12 @@ If $Y$ is a normally distributed random variable, how often will $Y$ be within 2
 \end{exercise}
 
 To create a 99\% confidence interval, change 1.96 in the 95\% confidence interval formula to  $2.58$. Guided Practice~\ref{leadInForMakingA99PercentCIExercise} highlights that 99\% of the time a normal random variable will be within 2.58 standard deviations of the mean. This approach -- using the $Z$-scores in the normal model to compute confidence levels -- is appropriate when $\overline{x}$ is associated with a normal distribution with mean $\mu$ and standard deviation $SE_{\overline{x}}$. Thus, the formula for a 99\% confidence interval is
-\begin{eqnarray}
+\begin{align}
 \overline{x}\ \pm\ 2.58\times SE_{\overline{x}}
 \label{99PercCIForMean}
-\end{eqnarray}
+\end{align}
 
 A data analyst can be 99\% confident that this wider interval contains the population mean.
-
 
 \begin{figure}[h]
 \centering
@@ -379,9 +426,9 @@ Create a 99\% confidence interval for the average days active per week of all YR
 
 \begin{termBox}{\tBoxTitle{Confidence interval for any confidence level}
 If the point estimate follows the normal model with standard error $SE$, then a confidence interval for the population parameter is
-\begin{eqnarray*}
+\begin{align*}
 \text{point estimate}\ \pm\ z^{\star} SE
-\end{eqnarray*}
+\end{align*}
 where $z^{\star}$ corresponds to the confidence level selected.}
 \end{termBox}
 
@@ -399,30 +446,46 @@ We are 90\% confident the average days active per week is between 3.32 and 4.18~
 
 \end{exercise}
 
+\end{comment}
 
 \subsection{Interpreting confidence intervals}
 \label{interpretingCIs}
 
 \index{confidence interval!interpretation|(}
 
-National Health and Nutrition Examination Survey (NHANES) consists of a set of surveys and measurements conducted by the US CDC to assess the health and nutritional status of adults and children in the United States. NHANES is unique in that it combines interviews and physical examinations.  The dataset \data{nhanes.samp} contains 76 variables and is a random sample 200 individuals from the measurements in 2009-2010 and 2012-2013 sample years.  The sample was drawn from a large sample of 20,293 participants available in the package \textbf{NHANES} available from The Comprehensive R Archive Network~\footnote{http://cran.us.r-project.org} (CRAN).  The CDC uses a complex sampling design that samples some demographic subgroups with larger probabilities, but \data{nhanes.samp} has been adjusted so that it can be viewed as a random sample of the US population.  
+The National Health and Nutrition Examination Survey (NHANES) consists of a set of surveys and measurements conducted by the US CDC to assess the health and nutritional status of adults and children in the United States. NHANES is unique in that it combines interviews and physical examinations.  The dataset \data{nhanes.samp} contains 76 variables and is a random sample of 200 individuals from the measurements collected in the years 2009-2010 and 2012-2013. The sample was drawn from a larger sample of 20,293 participants in the \textbf{NHANES} package, available from The Comprehensive R Archive Network (CRAN).\footnote{\url{http://cran.us.r-project.org}} \footnote{The CDC uses a complex sampling design that samples some demographic subgroups with larger probabilities, but \data{nhanes.samp} has been adjusted so that it can be viewed as a random sample of the US population.}  
 
-As noted earlier, there are no population norms for bmi for adolescents, but by adulthood, an  individual's height and weight should be stable, so body mass index for people age 21 and older is often used as a measure body fat that can be compared to population norms or between gender. Both age and body mass index (bmi) are available on the dataset and can be used to estimate mean bmi in the US population for the years represented by \data{nhanes.samp}
+By adulthood, an individual's height and weight generally stabilize. For people ages 21 and over, body mass index (BMI) is often used as a measure of body fat that can be compared to population norms. Age and BMI information are available in the dataset and can be used to estimate mean BMI in the US population for the years represented by \data{nhanes.samp}.
 
-\textit{should we list sample variables as in ch 1, or just plunge in?  I think we should just plunge in.  We should make the data available, though}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]
+	{ch_inference_foundations_oi_biostat/figures/nhanesAdultBmiHist/nhanesAdultBmiHist}
+	\caption{The distribution of the variable \var{BMI} for adult participants in NHANES.}
+	\label{nhanesAdultBmiHist}
+\end{figure}
 
-\begin{example}{Use \data{nhanes.samp} to calculate a 95\% confidence interval for adult bmi in the US population. \label{exNhanesBmi}}
-	In the random sample of 200 participants, 152 are age 21 years or older and bmi is available for 151 of these 152 participants.  The distribution of bmi is shown in the histogram for the variable \var{BMI} shown in Figure~\ref{nhanesAdultBmiHist}.  The histogram shows some right-skewness in the data, and one large outlier.  The outlier has value 81.3 and corresponds to an individual with weight 230.7kg (508.6 lbs) and height 168.5cm (66.3in). In an initial analysis of a dataset like this one, a value of bmi this large would be checked for accuracy. It could correspond to an unexpectedly large adult or an error in recording data.  Since accuracy cannot be checked in the data available on CRAN, the analysis here assumes that that weight there is an error in the weight recorded for this individual and the data point has been dropped, producing a sample size of 150. 
+\textit{DH: should we list sample variables as in ch 1, or just plunge in?  I think we should just plunge in.  We should make the data available, though. JV: Agreed.}
+
+\begin{example}{Use \data{nhanes.samp} to calculate a 95\% confidence interval for adult BMI in the US population. \label{exNhanesBmi}}
+	In the random sample of 200 participants, BMI is available for 151 of the 152 participants that are 21 years of age or older. As shown in the histogram (Figure~\ref{nhanesAdultBmiHist}), the data are right-skewed, with one larger outlier. The outlier has value 81.3 and corresponds to an individual with height 168.5 cm (66.3 in) and 230.7 kg (508.6 lbs). In the initial analysis of a dataset like this one, such an extreme value of BMI would be checked for accuracy; while it might correspond to an unexpectedly obese individual, it could also represent an error when the data was recorded. Since the accuracy cannot be verified with the data available on CRAN, the following analysis excludes the data point, using a sample size of 150.
 	
 	The mean and standard deviation in this sample of 150 are 29.7 and 7.7 $\text{kg}/\text{meter}{^2}$, respectively.  The sample size is large enough to justify using the normal approximation when computing the confidence interval.  The standard error of the mean is $\text{SE} = 7.7/\sqrt{150} = 0.63$, so the 95\% confidence interval is given by 
 \begin{align*}
-	\overline{\text{bmi}} \pm (1.96)(\text{SE}) &= 29.7 \pm (1.96)(0.63) \\
+	\overline{BMI} \pm (1.96)(\text{SE}) &= 29.7 \pm (1.96)(0.63) \\
 	&= (28.5, 30.9)
 \end{align*}	
 	
-	Based on this sample, a data analyst can be 95\% confident that the average BMI of US adults is between 28.5 and 30.9.  Since weight and height are measured in the metric scale, the units are $\text{kg}/\text{meter}{^2}$.
+	Based on this sample, a data analyst can be 95\% confident that the average BMI of US adults is between 28.5 and 30.9 $\text{kg}/\text{meter}{^2}$.
 \end{example}
 
+The correct interpretation of a confidence interval is, "We are XX\% confident that the population parameter is between \dots" While it is tempting to say that a confidence interval captures the population parameter with a certain probability, this is a common error. The confidence level only quantifies how plausible it is that the parameter is within the interval; there is no probability associated with whether a parameter is contained in a specific confidence interval. The confidence coefficient reflects the nature of a procedure that is correct XX\% of the time, given that the assumptions in making the calculations are true.
+
+The conditions about the validity of the normal approximation can be checked using the numerical and graphical summaries discussed in Chapter 1. However, the condition that data should be from a random sample is sometimes overlooked. If the data are not from a random sample, then the confidence interval no longer has interpretive value, since there is no population mean to which the confidence interval applies. For example, while only simple arithmetic is needed to calculate a confidence interval for BMI from the \data{famuss} dataset in Chapter 1, the participants in the study are almost certainly not a random sample from some population. 
+
+\textit{JV: Should we also discuss other common interpretive errors here, perhaps via a guided practice? e.g. $\mu$ equally likely to be anywhere in a given CI}
+
+\begin{comment}
 
 The somewhat awkward language used to describe confidence intervals can obscure an important point that was touched upon earlier.  The correct interpretation of a confidence interval is 
 \begin{quote}
@@ -433,20 +496,21 @@ It is tempting to say that a confidence interval as captures the population para
 
 The assumptions about the validity of the normal approximation can be checked using some of the graphical displays discussed in Chapter 1, and students rarely neglect to check those assumptions. The assumption about the data being a random sample from a well-defined cannot be checked, however, but examining the data, and is sometimes overlooked. If that assumption is not true, the confidence interval loses its meaning because there is no population mean to which the confidence interval applies. Fussing over whether to use the term probability vs confidence in an interpretation becomes moot.  There are many instances in statistics where a calculation is easy but has no value.  In the \data{famuss} data, for instance, only simple arithmetic is needed to calculate the mean and standard deviation of the bmi for study participants, and to use those values to calculate a confidence interval.  But the participants in the FAMuSS study are almost certainly not a random sample from some population. 
 
+\end{comment}
 
 \index{confidence interval!interpretation|)}
 \index{confidence interval|)}
 
+\section[Hypothesis testing]{Hypothesis testing} %\sectionvideohref{youtube-NVbPE1_Cbx8&list=PLkIselvEzpM7Pjo94m1e7J5jkIZkbQAl4}}
+\label{hypothesisTesting}
 
+\index{hypothesis testing|(}
 
- \section[Hypothesis testing]{Hypothesis testing} %\sectionvideohref{youtube-NVbPE1_Cbx8&list=PLkIselvEzpM7Pjo94m1e7J5jkIZkbQAl4}}
- \label{hypothesisTesting}
+Do Americans tend to be overweight? This question is easy to pose, but more difficult to answer. The "obesity epidemic" in the United States is often discussed in the popular press, and many people feel they have anecdotal evidence that suggests body weights are generally increasing. A more scientific answer to this question should be based on a representative sample of US adults and account for the fact that weight generally increases with height. Body mass index (BMI), discussed in Section~\ref{interpretingCIs}, is one simple measure of body fat that adjusts for height. The World Health Organization (WHO) and other agencies use BMI to set standard guidelines for weight status. The current guidelines are shown in Table~\ref{whoBmiGuidelines}. 
 
- \index{hypothesis testing|(}
+%\footnote{\url{http://apps.who.int/bmi/index.jsp?introPage=intro_3.html}}. 
 
-Do Americans tend to be overweight?  This is an easy question to pose, but more difficult to answer.  The `obesity epidemic' in the United States is often discussed in the popular press, and many people feel they have anecdotal evidence that supports that body weights are generally increasing.  A more scientific answer to the question must account for the fact that weight generally increases with height,  that the term `overweight' implies there is an ideal or at least healthy weight, and should be based on a representative sample of US adults.  Body mass index, discussed in Section~\ref{interpretingCIs}, is one simple measure of body fat that adjusts for height.  It is not perfect, but has been used by the World Health Organization (WHO) and other agencies to set guidelines for a healthy weight. %\footnote{\url{http://apps.who.int/bmi/index.jsp?introPage=intro_3.html}}.
-The current guidelines are shown in Table~\ref{whoBmiGuidelines}.
-
+\begin{table}[h!]
 \begin{center}
 \begin{tabular}{|c|c|}
 \hline 
@@ -460,122 +524,272 @@ Normal (healthy weight) & 18.5-24.99\tabularnewline
 Overweight & $\geq 25$\tabularnewline
 \hline 
 Obese & $\geq30$\tabularnewline
-\hline 
+\hline
 \end{tabular}
+\caption{Standard weight categories defined by health agencies.} 
 \label{whoBmiGuidelines}
 \end{center}
+\end{table}
 
-The overweight question might be more precisely formulated as `Is the average BMI of US adults larger than 21.7, the middle of the normal range'.  The average BMI of the sample of 150 adults used in Example~\ref{exNhanesBmi} was 29.7 $\text{kg}/\text{meter}{^2}$, with 95\% confidence interval (28.5, 30.9), so that, with 95\% confidence, one can say that the population average BMI is somewhere in the interval 28.5 to 30.9.  This interval certainly suggests that average BMI is higher than 21.7.  In fact, it even suggests that average BMI is larger than 24.99, the upper limit of normal.  It is important to remember, though, that values outside the interval, while inconsistent with the data in the sample, are not impossible.  The play of chance could have led to a sample with a sample mean larger than the population mean.  One measure of the strength of the evidence against a working hypothesis that average US BMI is no larger than the upper limit of normal would be the likelihood of observing a sample mean as large as 29.7 if the working hypothesis is true.
+The question can be more precisely formulated as, "Is the average BMI of US adults larger than 21.7 (the middle of the range for normal BMI's)?" The average BMI from the 150 adults in \data{nhanes.samp} was 29.7 $\text{kg}/\text{meter}{^2}$, with a 95\% confidence interval of (28.5, 30.9). This interval certainly suggests that the average BMI in the US population is higher than 21.7, and even higher than 24.99, the upper limit of the normal weight category. 
 
-Hypothesis testing is a method for calculating the likelihood of observing the value of a parameter estimate under a working hypothesis about the value of the corresponding population parameter.  Hypothesis testing has a formal structure that can be specified in a set of steps (useful in making sure that data support conclusions) as well as with an informal approach that is based on what is known about a sample mean and its variability.  Both approaches reach the essentially the same conclusions, but have distinct advantages.  The formal method provides a direct estimate of the strength of evidence against the working hypothesis, while the less formal approach sometimes leads to a better understanding of the basic ideas. We examine the informal approach first.
+However, it is important to remember that it is not impossible for the population average to be outside the interval estimate, even if that would be inconsistent with the data in the sample. Perhaps by random chance, a sample was selected in which individuals of high BMI are overrepresented, causing the sample mean to be higher than the population mean. One measure of the strength of evidence against a working hypothesis is be the likelihood of observing a sample mean as extreme as the one observed if the working hypothesis is true; what is the likelihood of observing a sample mean as large as 29.7 if the population average BMI in the US is actually 21.7?
 
-The working hypothesis is that the US population BMI matches the midpoint of the normal range, 21.7. Under this assumption, the mean of the sampling distribution for the sample average of BMI will be 21.7, since the population mean and the sample mean of BMI should agree.  The standard error of the sample mean is its standard deviation and is an approximate measure of how far the sample mean $\overline{\text{bmi}}$ is from the center of its distribution.  In this example, the observed sample mean 29.7 is $(29.7 - 21.7)/0.63 = 12.7$.  In other words, the observed sample mean is 12.7 standard deviations to the right of 21.7.  Since the sampling distribution of $\overline{x}_{\text{bmi}}$ is well approximated by a normal distribution, the likelihood of a value as larger or larger than 12.7 standard deviation units to to the right of the population is vanishingly small, less than 0.001.  One can conclude either that something very unusual has happened through chance alone (a large value of average BMI), or that the working hypothesis of the population average $\mu_{\text{BMI}}$ is wrong.  The only reasonable conclusion is that the working hypothesis is wrong and that population average BMI is larger than 21.7
+This question can be addressed by hypothesis testing, a method for calculating the likelihood of observing the value of a parameter estimate under a working hypothesis about the value of the corresponding population parameter. Hypothesis testing can be approached either informally or formally; while both methods essentially reach the same conclusions, each has distinct advantages. The formal method provides a direct estimate of the strength of evidence against the working hypothesis, while the less formal approach can sometimes lead to a better understanding of the logic behind hypothesis testing.
 
-The formal approach a gives name to the working hypothesis, the null hypothesis, and an alternative claim (alternative hypothesis) that might be true if the null hypothesis is wrong. The null hypothesis is a claim to be tested against the alternative.  In nearly all scientific investigations, the investigator believes or suspects the null hypothesis is not true; perhaps it never was true but was part of `conventional wisdom' (e.g., Americans have always been heavier than WHO guidelines for BMI), or something has changed (e.g., body weight has changed since).  The terminology reflects the historical roots of hypothesis testing in agricultural and other experiments and can be confusing but it is in widespread use in the scientific literature.
+The informal approach is based on what is known about a sample mean and its variability. Hypothesis testing starts with a working hypothesis; in this case, the working hypothesis is that the US population BMI matches the midpoint of the normal range, 21.7. Under this assumption, the mean of the hypothetical sampling distribution for the sample average of BMI will also be 21.7, since the population mean and sample mean should agree. The standard error of the sample mean is an approximate measure of how far the sample mean $\overline{\text{BMI}}$ is from the center of its distribution. In this example, the observed sample mean 29.7 is $(\overline{BMI} - \mu_{BMI})/s =  (29.7 - 21.7)/0.63 = 12.7$. In other words, the observed sample mean is 12.7 standard deviations to the right of 21.7. The sampling distribution of $\overline{x}_{BMI}$ is well approximated by a normal distribution. For a normally distributed random variable, the area to the right of 12.7 standard deviation units from the mean is less than 0.001; the likelihood of a sample with such an extreme mean, if the population is actually centered at 21.7, is vanishingly small. The event is so unusual that it is reasonable to conclude that the working hypothesis is wrong -- the data suggests that population average BMI is larger than 21.7.
+
+The formal approach refers to the working hypothesis as the null hypothesis. In addition to the null hypothesis, the formal approach also starts with an alternative claim that might be true if the null hypothesis is wrong. In nearly all scientific investigations, the investigator believes or suspects that the null hypothesis is not true. 
 
 \begin{termBox}{\tBoxTitle{Null and alternative hypotheses}
-{\small The \term{null hypothesis ($H_0$)} often represents either a skeptical perspective or a claim to be tested. The \term{alternative hypothesis ($H_A$)} represents an alternative claim under consideration and is often represented by a range of possible parameter values.}}
+{The \term{null hypothesis ($H_0$)} often represents either a skeptical perspective or a claim to be tested. The \term{alternative hypothesis ($H_A$)} represents an alternative claim under consideration and is often represented by a range of possible parameter values.}}
 \end{termBox}
 
-In the formal approach,  the null hypothesis ($H_0$) is not rejected  unless the evidence in favor of the alternative hypothesis ($H_A$) is so strong that the only reasonable conclusion is to reject $H_0$ in favor of $H_A$.  The approach is similar to what happens in criminal trails in a US court -- a jury must decide whether a defendant is innocent or guilty and a verdict of guilty is returned if the jury believes that the evidence in the case establishes beyond a reasonable doubt that the the defendant is guilty. The null hypothesis is innocence of the defendant, and the alternative is guilt.  In rare cases, a jury can be `hung' and unable to reach a decision based on the evidence.  Something similar can happen in  hypothesis testing and will be discussed later.
+In the formal approach, the null hypothesis ($H_0$) is not rejected unless the evidence in favor of the alternative hypothesis ($H_A$) is so strong that the only reasonable conclusion is to reject $H_0$ in favor of $H_A$. The logic is similar to the principle of presumption of innocence. In the criminal trials of many nations, including the US, a defendant is assumed innocent until proven guilty; a verdict of guilty is only returned if it has been established beyond a reasonable doubt that the defendant is guilty. Likewise, the null hypothesis is assumed to be true until sufficient evidence suggests otherwise. 
+
+The next section presents the basic principles of formal hypothesis testing.
 
 \subsection{The Formal Approach to Hypothesis Testing}
 \label{formalHypothesisTesting}
 
-The formal approach to hypothesis testing may look a bit like a recipe, but it actually reflects the steps in the scientific method.  This section and the next present the basic principles of hypothesis testing.  The section following these two provides two extended examples
 
-\textbf{Step 1: Forumlating null and alternative hypotheses}
+\subsubsection{Step 1: Formulating null and alternative hypotheses}
 
-The null and alternative hypotheses are labeled $H_0$ and $H_A$, respectively.  In the BMI example, the two hypotheses are
+The null and alternative hypotheses are labeled $H_0$ and $H_A$, respectively.  In the BMI example, the two hypotheses are:
 
 \begin{itemize}
-	\item $H_0$: The US population average BMI is 21.7.  In mathematical notation, this is written
-	\begin{equation*}
-		H_0: \mu_{\text{bmi}} = 21.7.
-	\end{equation*}
+	\item $H_0: \mu_{\text{bmi}} = 21.7$. The population average BMI is 21.7\footnote{The null hypothesis can also be written as $H_0: \mu_{\text{bmi}} \leq 21.7$, since the alternative hypothesis is a one-sided alternative.}
 	
-	\item $H_A$: the population average BMI is larger than 21.7, and is written
-	\begin{equation*}
-		H_A: \mu_{\text{bmi}} > 21.7.
-	\end{equation*}
+	\item $H_A: \mu_{\text{bmi}} > 21.7$. the population average BMI is larger than 21.7.
 	
 \end{itemize}	
 	
-The alternative hypothesis $ H_A: \mu_{\text{bmi}} > 21.7$	is called a \term{one-sided alternative}.  Because of the substantial literature about obesity in the United States, it is reasonable to assume that if $H_0$ is not true, the population average BMI would be larger than 21.7.  An investigator studying a similar problem in another setting, perhaps in the developing world where diets are changing but drought has led to food shortages, would likely use formulate the alternative as $ H_A:\mu_{\text{bmi}} \ne 21.7$.
+The alternative hypothesis $H_A: \mu_{\text{bmi}} > 21.7$ is called a \term{one-sided alternative}. Since substantial literature exists about the rising prevalence of obesity in America, it is reasonable to assume that if $H_0$ is not true, the population average BMI would be larger than 21.7, rather than smaller. An investigator studying BMI change in an area experiencing food shortages would likely formulate the alternative hypothesis as $H_A: \mu_{\text{bmi}} < 21.7$. 
 
-More generally, when testing a hypothesis about a population mean $\mu$, the null and alternative hypotheses are written
+ Because of the substantial literature about obesity in the United States, it is reasonable to assume that if $H_0$ is not true, the population average BMI would be larger than 21.7.  An investigator studying a similar problem in another setting, perhaps in the developing world where diets are changing but drought has led to food shortages, would likely use formulate the alternative as $ H_A:\mu_{\text{bmi}} \ne 21.7$. In other settings, it might be more appropriate to use a \term{two-sided alternative}, $\mu_{\text{bmi}} \neq 21.7$; \textit{JV: clear example in line with others needed here}.
+
+More generally, when testing a hypothesis about a population mean $\mu$, the null and alternative hypotheses are written as:
 
 \begin{itemize}
-	\item One-sided alternative:
-	\begin{equation*}
-		H_0: \mu = \mu_0.
-	\end{equation*}
-	\item Two-sided alternative:
-	\begin{equation*}
-		H_A: \mu > \mu_0,
-	\end{equation*}
-	or
-	\begin{equation*}
-		H_A: \mu < \mu_0,
-	\end{equation*}		
+	\item One-sided alternative: \[H_0: \mu \geq \mu_0, \ H_A: \mu < \mu_0\] or \[H_0: \mu \leq \mu_0, \  H_A: \mu > \mu_0\]
+	
+	\item Two-sided alternative: \[H_0: \mu = \mu_0, \ H_A: \mu \neq \mu_0\]
 \end{itemize}
-In this general form, $\mu$ denotes a population mean and $\mu_0$ is the value specified by the investigator for the null hypothesis.  In the BMI example, $\mu_0 = 21.7$.  As in other settings, it is important to be mindful of the distinction between a population mean $\mu$, its specific numerical value $\mu_0$ under $H_0$,  and the observed sample mean $\overline{x}$.  Null and alternative hypotheses are about the underlying population and never about the observed value of a summary statistic.
 
+\textit{JV: Use this notation for $H_0$ with one-sided alternatives, or stick to $H_0: \mu = \mu_{0}$?}
 
-This first step applies more generally than to testing a statistical hypothesis.  Most good research begins with a working scientific hypothesis.
+In this general form, $\mu$ denotes a population mean and $\mu_0$ is the numeric value specified by the investigator for the null hypothesis. In the BMI example, $\mu_0 = 21.7$.  As in other settings, it is important to be mindful of the distinction between a population mean $\mu$, its specific numerical value $\mu_0$ under $H_0$,  and the observed sample mean $\overline{x}$.  Null and alternative hypotheses are statements about the underlying population, never about observed values from a sample.
 
-\textbf{Step 2: Specifying a significance level, $\alpha$}
+\subsubsection{Step 2: Specifying a significance level, $\alpha$}
 
-In the informal approach to the BMI data, the observed sample mean was more than 12 standard deviations to the right of the population mean specified in $H_0$, an event that anyone would judge as extraordinarily rare.  If the sample mean had only been, say, 2 standard deviations to the right of 21.7, there may some disagreement about whether a sample mean 2 or  more standard deviations larger than 21.7 was rare enough to conclude that a population average BMI of 21.7 was untenable.  In good science, it is important to specify in advance how rare an event must be to dislodge opinion away from $H_0$.  The \term{significance level} $\alpha$ is that specification. In testing a statistical hypothesis, and investigator specifies a value $\alpha$ in advance  that is the definition of `rare', and is prepared to report that specification in a publication or presentation.  Typically, $\alpha = 0.05$, though it may be smaller or larger, depending on context.  The value of $\alpha$ is compared with a probability about the sample mean calculated under the null hypothesis.
+For the \data{nhanes.samp} BMI data, the observed sample mean was more than 12 standard deviations to the right of the population mean specified in $H_0$ -- an undeniably extreme observation. In contrast, if the sample mean had only been 2 standard deviations to the right of 21.7, it would have been less obvious whether observing a sample mean 2 or more standard deviations larger than 21.7 qualified as a rare enough event to reject the null hypothesis. 
 
+Thus, it is important to specify in advance how rare an event must be in order to represent sufficient evidence against $H_0$. When testing a statistical hypothesis, an investigator specifies a \term{significance level}, $\alpha$, that defines "rare". Typically, $\alpha = 0.05$, though it may be larger or smaller, depending on context; this is discussed in more detail in Section~\ref{significanceLevel}. The value of $\alpha$ will be compared with the probability of the sample mean being observed under the null hypothesis.
+
+\begin{comment}
 When testing a null hypothesis $H_0:\mu = \mu_0$ versus the one-sided alternative $H_A:\mu > \mu_0$, $H_0$ is rejected in favor of $H_A$ if, for the observed value $\overline{x}$,
-\begin{equation*}
-	 P(\overline{X} > \overline{x}) < \alpha,
-\end{equation*}
+\[P(\overline{X} > \overline{x}) < \alpha\]
+
 where the probability is calculated using the sampling distribution for $\overline{X}$ under $H_0$.  The distinction between $\overline{X}$ and its observed value $\overline{x}$ is an important one. The random variable $\overline{X}$ takes different values in different samples; its observed value $\overline{x}$
 is its specific value in the dataset at  hand.  The seemingly small distinction between upper and lower case $X$ and $x$ denotes an important conceptual difference.
 
 When testing $H_0: \mu = \mu_0$ versus  $H_A:\mu < \mu_0$, $H_0$ is rejected in favor of $H_A$ if, 
-\begin{equation*}
-	 P(\overline{X} < \overline{x}) < \alpha.
-\end{equation*}
+\[P(\overline{X} < \overline{x}) < \alpha\]
 
 With two-sided alternative  hypotheses, rare events are those in which the sample mean is either unexpectedly large or small.   When testing $H_0: \mu = \mu_0$ versus  $H_A:\mu \ne \mu_0$, $H_0$ is rejected in favor of $H_A$ if, 
-\begin{equation*}
-	 P(\overline{X} < \overline{x} \text{ or } \overline{X} > \overline{x}) < \alpha.
-\end{equation*}
-Because the two events in the probability statment are disjoint, the is equivalent to rejecting $H_0$ if 
-\begin{equation*}
-	 P(\overline{X} < \overline{x}) + P(\overline{X} > \overline{x}) < \alpha.
-\end{equation*}
+\[P(\overline{X} < \overline{x} \text{ or } \overline{X} > \overline{x}) < \alpha\] 
 
-\textbf{Step 3: Calculating the test statistic}
+Because the two events in the probability statement are disjoint, the is equivalent to rejecting $H_0$ if 
+\[P(\overline{X} < \overline{x}) + P(\overline{X} > \overline{x}) < \alpha\]
 
-This chapter discusses inference for a population mean, so the test statistic is either $\overline{x}$ or is based on $\overline{x}$.  Probabilities for sample means are easily calculated using the normal approximation and a transformation to an approximate standard normal variable, so the test statistic most often chosen is 
-\begin{eqnarray}
-	t=\frac{\overline{x}-\mu_0}{s/\sqrt{n}}
-	\end{eqnarray} 
-where $\overline{x}$ is the sample mean, $s$ is the sample standard deviation and $n$ is the number of observations in the sample. The sample standard deviation $s$ is used since the population standard deviation $\sigma$ is almost never known, and the notation $T$ for the test statistic reflects that.
+\end{comment}
 
-\textbf{Step 4: Calculating the p-value}
+\subsubsection{Step 3: Calculating the test statistic}
 
-The \term{$p$-value} is the probability of observing a sample mean more extreme than the observed value assuming the null hypothesis is true. Unless there is strong skewing or are extreme outliers in the data, in samples of size 40 or more, $T$ will have a standard normal distribution, so the $p$-value will be one of:
+Probabilities for sample means are easily calculated using the normal approximation and a transformation to an approximate standard normal variable, so the test statistic most often chosen is 
+
+\begin{align}
+t=\frac{\overline{x}-\mu_0}{s/\sqrt{n}}
+\end{align}
+
+where $\overline{x}$ is the sample mean, $s$ is the sample standard deviation and $n$ is the number of observations in the sample. The test statistic quantifies the number of standard deviations between the sample mean $\overline{x}$ and the population mean $\mu$.
+
+\subsubsection{Step 4: Calculating the $p$-value}
+
+The \term{$p$-value} is the probability of observing a sample mean as or more extreme than the observed value, under the assumption that the null hypothesis is true. In samples of size 40 or more, $T$ will have a standard normal distribution, unless the data are strongly skewed or extreme outliers are present. Thus, the $p$-value is given by
 
 \begin{itemize}
-	\item $P(Z > t)$ for $H_A: \mu > mu_0$,
+	\item $P(Z \geq t)$ for $H_A: \mu > \mu_0$,
 	
-	\item $P(Z < t)$ for $H_A: \mu < mu_0$,
+	\item $P(Z \leq t)$ for $H_A: \mu < \mu_0$,
 	
-	\item $P(Z < -t) + P(Z > t) $ for $H_A: \mu \ne \mu_0.$
-\end{itemize} 
+	\item $P(Z \leq -t) + P(Z \geq t) = P(Z \geq |t| )$ for $H_A: \mu \neq \mu_0.$
+\end{itemize}
 
-\textbf{Step 5: Draing a conclusion, in the context of the original problem}
+\subsubsection{Step 5: Drawing a conclusion}
 
-This is a step never overlooked by investigators but sometimes overlooked by students.  A conclusion that is phrased ``Reject $H_0$'' is not informative.  For the BMI example, it is much more informative to conclude ``The data support the conclusion that population BMI is not the midpoint of the normal range (21.7) but is larger.''  The phrasing of the conclusion will (and must) reflect the problem at hand.
+Once the $p$-value is calculated, $p$ and $\alpha$ can be directly compared. If $p > \alpha$, the observed sample mean is not extreme enough to warrant rejecting $H_0$; more formally stated, there is insufficient evidence to reject $H_0$. If $p < \alpha$, there is sufficient evidence to reject $H_0$ and accept $H_A$. 
+
+For a conclusion to be informative, however, it must be stated in the context of the problem; it is not useful to simply state whether $H_0$ is rejected or not. In the \data{nhanes.samp} BMI data, the $p$-value is extremely small, with the $t$-statistic lying far to the right of the population mean. Thus, the data support the conclusion that the average BMI in the United States is larger than 21.7. 
+
+%JV: Suggested revision -- directly follow w/ Examples of Hypothesis Testing, then Decisions Errors. Expand Decision Errors to have the example that was originally in the Examples section. Main focus of next section should be to clearly illustrate the steps of formal hypothesis. Examples should also include how to choose between one-sided and two-sided tests... After Decision Errors, Choosing Significance Levels, and CI for the last section. 
+
+\subsection{Two examples of hypothesis testing}
+\label{hypothesisTestingExamples}
+
+\index{data!school sleep|(}
+
+\subsubsection{One-sided test}
+
+A poll by the National Sleep Foundation found that college students, on average, sleep about 7 hours per night. Researchers at a rural school are interested in showing that students at their school sleep longer than seven hours a night on average. They plan to conduct a study using a sample of students.
+
+The null hypothesis for this test is that the students at this school sleep an average of 7 hours per night, as the national poll results suggest. The alternative hypothesis reflects the stated interest of the researchers -- that students at this school average more than 7 hours of sleep per night. Formally, these hypotheses are: $H_0: \mu = 7$, $H_A: \mu > 7$. Using a one-sided alternative leads to a \term{one-sided} hypothesis test. They intend to conduct a test at a significance level of $\alpha = 0.05$.
+
+The researchers collected a sample random sample of $n = 110$ students on campus. Figure~\ref{histOfSleepForCollegeThatWasCheckingForMoreThan7Hours} shows a histogram of the sleep measurements. Students averaged 7.42 hours of sleep, with standard deviation 1.75 hours. 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{ch_inference_foundations_oi_biostat/figures/histOfSleepForCollegeThatWasCheckingForMoreThan7Hours/histOfSleepForCollegeThatWasCheckingForMoreThan7Hours}
+	\caption{Distribution of a nightly sleep for 110 college students. These data are strongly right skewed.\index{skew!example: strong}}
+	\label{histOfSleepForCollegeThatWasCheckingForMoreThan7Hours}
+\end{figure}
+
+Although the data are skewed, with some outliers, the normal approximation can still be used to estimate the standard error because the sample size is sufficiently large. 
+
+\begin{example}{In the study, the sample size is $n = 110$. Students in the sample slept an average of 7.42 per night, with standard deviation 1.75 hours. Calculate the $t$-statistic.}
+		
+Use the formula for calculating a $t$-statistic. The value $\mu_{0}$ is given by the null hypothesis: $\mu_{0} = 7$. 
+
+\[t=\frac{\overline{x}-\mu_0}{s/\sqrt{n}} = \frac{7.42 - 7}{1.75 / \sqrt{110}} = 2.52\]
+
+\end{example}
+
+Standardizing $\overline{x}$ by converting it to a $t$-statistic allows for a $p$-value to be easily calculated from a standardized normal distribution. The probability $P(Z \geq 2.52)$ equals 0.006; this value is represented by the shaded tail in Figure~\ref{pValueOneSidedSleepStudy}. The $p$-value of 0.006 indicates that if the null hypothesis is true, then the probability of observing a sample mean at least as large as 7.42 hours is only 0.006. The observed sample mean is so extreme with respect to the null hypothesis that it represents evidence against the null hypothesis.
+
+The $p$-value is less than the significance level $\alpha = 0.05$; thus, there is sufficient evidence to reject $H_0$ in favor of accepting $H_A$. The data suggest that the true average hours of sleep per night for students at the rural school is larger than 7 hours. 
+
+\begin{figure}[hht]
+	\centering
+	\includegraphics[width=0.83\textwidth]{ch_inference_foundations_oi_biostat/figures/pValueOneSidedSleepStudy/pValueOneSidedSleepStudy}
+	\caption{If the null hypothesis is true, then the population can be modeled by a normal distribution centered at $\mu = 7$. The shaded area in the right tail represents the probability of observing a sample mean as or more extreme than $\overline{x} = 7.42$.} 
+	\label{pValueOneSidedSleepStudy}
+\end{figure}
+
+\begin{exercise}
+The $p$-value for the data was 0.006. Suppose the investigators had used a significance level of 0.01 in the study. Would the evidence have been strong enough to reject the null hypothesis? What if the significance level were $\alpha = 0.001$?\footnote{There is sufficient evidence to reject $H_{0}$ when $p < \alpha$. Thus, the evidence would still have been strong enough for $\alpha = 0.01$, but not $\alpha = 0.001$.}
+\end{exercise}
+
+\subsubsection{Two-sided test}
+
+In the earlier example, researchers investigated whether the students at a rural school slept longer than 7 hours each night. Suppose that a group of researchers at a different college want to evaluate whether the students at their school differ from the norm of 7 hours. 
+
+For this scenario, while the null hypothesis ($H_0: \mu = 7 \text{ hours}$) remains the same as before, the alternative hypothesis is a two-sided one, $H_A: \mu \neq 7\text{ hours}$. The researchers are looking for evidence against the null in either direction; in other words, whether there is evidence that students are either sleeping less than 7 hours per night or more than 7 hours. 
+
+\begin{example}{At the second college, the researchers randomly sampled 122 students. The data have mean $\overline{x} = 6.83 \text{ hours}$ and standard deviation $s = 1.8 \text{ hours}$. Let $\alpha$ = 0.05. Do the data provide sufficient evidence against $H_0$?} 
+	
+	First, calculate the $t$-statistic. 
+	
+	\[t=\frac{\overline{x}-\mu_0}{s/\sqrt{n}} = \frac{6.83 - 7}{1.8 / \sqrt{122}} = -1.04\]
+	
+	When calculating the $p$-value, note that the area from both the right and left tails must be accounted for, since this is a two-sided hypothesis test. Since the normal model is symmetric, one tail has the same area as the other, and the $p$-value is the sum of the two (Figure~\ref{2ndSchSleepHTExample}). Thus, the $p$-value is given by:
+	
+	\begin{align*}
+	p = P(Z \leq -t) + P(Z \geq t) &= P(Z \geq |t|) \\
+		&= 2 \times P(Z \leq -t) \\
+		&= 2 \times 0.149 \\
+		&= 0.298
+	\end{align*}
+
+	Since the $p$-value is larger than $\alpha$, there is insufficient evidence to reject $H_0$. If $H_0$ is true, and the population mean is 7 hours of sleep per night, then it would not be unusual to observe a sample mean as or more extreme than 1.04 standard deviations away from the mean -- this would occur 29.8\% of the time. Thus, the data do not provide evidence that the true average hours of sleep per night for students at this school is different from 7 hours.
+\end{example}
+	
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\textwidth]
+	{ch_inference_foundations_oi_biostat/figures/2ndSchSleepHTExample/2ndSchSleepHTExample}
+	\caption{$H_A$ is two-sided, so both tails must be counted for the $p$-value.}
+	\label{2ndSchSleepHTExample}
+\end{figure}	
+	
+\index{data!school sleep|)}
+
+\subsubsection{Choosing between one-sided and two-sided tests}
+
+\textit{JV: Provide more examples of contexts where a one-sided test is more appropriate and contexts when a two-sided test is recommended. Not sure that the OI example of one-sided vs. two-sided explained in relation to error is very effective. Show an example of why two-sided tests are more conservative, e.g. when a two-sided test rejects and a one-sided accepts (probably need a figure to illustrate)}
 
 \subsection{Decision errors}
 
-\textit{this original OI section needs revision, and may rely on concepts not well explained in the text above}
+Hypothesis tests can potentially result in incorrect decisions, such as rejecting the null hypothesis when the null is actually true. There are four possible ways that the conclusion of a test can be either right or wrong, as shown in Table~\ref{fourHTScenarios}. 
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{l l c c}
+		& & \multicolumn{2}{c}{\textbf{Test conclusion}} \\
+		\cline{3-4}
+		\vspace{-3.7mm} \\
+		& & do not reject $H_0$ &  reject $H_0$ in favor of $H_A$ \\
+		\cline{2-4}
+		\vspace{-3.7mm} \\
+		& $H_0$ true & Correct Decision &  Type~1 Error \\
+		\raisebox{1.5ex}{\textbf{Truth}} & $H_A$ true & Type~2 Error & Correct Decision\\
+		\cline{2-4}
+	\end{tabular}
+	\caption{Four different scenarios for hypothesis tests.}
+	\label{fourHTScenarios}
+\end{table}
+
+Rejecting the null hypothesis when the null is true is referred to as a \term{Type 1 error}, while a \term{Type 2 error} refers to failing to reject the null hypothesis when the alternative is true. 
+
+The probability of making a Type 1 error is equivalent to the significance level $\alpha$, since $\alpha$ determines the cutoff point for rejecting the null hypothesis. For example, if $\alpha$ is set to 0.05, then there is a 5\% chance of incorrectly rejecting $H_0$. 
+
+Section~\ref{hypothesisTesting} introduced the logic of formal hypothesis testing by comparing it to the principle of presumption of innocence; a defendant is assumed innocent until proven guilty beyond a reasonable doubt. The following exercises extend the analogy to illustrate the relationship between Type 1 and Type 2 errors.
+
+\begin{exercise} \label{whatAreTheErrorTypesInUSCourts}
+	In a trial, the defendant is either innocent ($H_0$) or guilty ($H_A$). After hearing evidence from both the prosecution and the defense, the court must reach a verdict. What does a Type~1 Error represent in this context? What does a Type~2 Error represent? \footnote{If the court makes a Type~1 error, this means the defendant is innocent, but wrongly convicted (rejecting $H_0$ when $H_0$ is true). A Type~2 error means the court failed to convict a defendant that was guilty (failing to reject $H_0$ when $H_0$ is false).}
+\end{exercise}
+
+\begin{example}{How might the rate of Type 1 errors be reduced? What effect would this have on the rate of Type 2 errors?}
+	
+	To lower the rate of Type 1 error, the court could raise the standards for conviction such that fewer people are wrongly convicted. In a test, this is equivalent to lowering $\alpha$ (e.g. to 0.01 instead of 0.05); in other words, requiring an observation to be more extreme to qualify as sufficient evidence against $H_0$. However, this would also inevitably mean that fewer people who are actually guilty are convicted, raising the rate of Type 2 errors.
+\end{example}
+
+\begin{exercise} \label{howToReduceType2ErrorsInUSCourts}
+	How might the rate of Type 2 errors be reduced? What effect would this have on the rate of Type 1 errors?\footnote{To lower the rate of Type 2 error, the court could lower the standards for conviction, or in other words, lower the bar for what constitutes sufficient evidence of guilt (increase $\alpha$, e.g. to 0.10 instead of 0.05). This will result in more guilty people being convicted, but also increase the rate of wrongful convictions, increasing the Type 1 error.}
+\end{exercise}
+
+\index{hypothesis testing!decision errors|)}
+
+\subsubsection{Choosing a significance level}
+
+As demonstrated by the exercises, reducing the error rate of one type of error results in making more of the other type. Due to this relationship between Type 1 and Type 2 error, it is helpful to adjust the significance level of a hypothesis test based on the consequences of any conclusions reached.
+
+%\subsection{Choosing a significance level}
+\label{significanceLevel}
+
+\index{hypothesis testing!significance level|(}
+\index{significance level|(}
+
+If making a Type 1 error is especially dangerous or costly, a small significance level (e.g. 0.01) is advisable. Under this scenario, it is best to err on the side of caution about rejecting the null hypothesis, so very strong evidence favoring $H_A$ is required in order to reject $H_0$. Conversely, if a Type 2 error is relatively more dangerous, then a higher significance level (e.g. 0.10) is used. 
+
+For example, consider the decision making process involved in drug research. In the early testing of a relatively benign drug, it may be important to continue further testing even if there is not strong initial evidence for any beneficial effect. If the scientists conducting the research know that any initial positive results will eventually require confirmation in a larger study, they might choose to use $\alpha = 0.10$ to reduce the chances of making a Type 2 error: prematurely ending research into what may turn out to be a promising drug. 
+
+A government agency responsible for approving drugs to be marketed to the general population, however, would likely be biased towards minimizing the chances of making a Type 1 error -- approving a drug that turns out to be unsafe or ineffective. As a result, they might conduct tests at significance level 0.01 in order to reduce the chances of concluding that a drug works when it is in fact ineffective. 
+
+\index{significance level|)}
+\index{hypothesis testing!significance level|)}
+\index{hypothesis testing|)}
+
+\subsection{Hypothesis testing and confidence intervals}
+
+\textit{JV: The OI section "Hypothesis testing using confidence intervals" doesn't seem very useful. Recommend putting in this section what we generally cover in 102 -- comparison of the information a CI gives vs. a hypothesis test at same $\alpha$.}
+
+\vspace{3cm}
+
+\begin{comment}
+
+\subsection{Decision errors}
+
+\textit{DH: this original OI section needs revision, and may rely on concepts not well explained in the text above}
 \index{hypothesis testing!decision errors|(}
 
 A confidence interval may be incorrect and not contain the population parameter, though the study investigator will not know of the error because the population parameter is unknown.  Similarly, hypothesis tests can also lead to incorrect decisions.  By thinking of hypothesis testing as a decision problem, it is possible to quantify how often such errors are likely to  happen.
@@ -619,16 +833,14 @@ Exercises~\ref{whatAreTheErrorTypesInUSCourts}-\ref{howToReduceType2ErrorsInUSCo
 
 Hypothesis testing is built around rejecting or failing to reject the null hypothesis. The null hypothesis $H_0$ is not rejected unless there is strong evidence against it. But what precisely does \emph{strong evidence} mean? As a general rule of thumb, for those cases where the null hypothesis is true,  $H_0$ is not incorrectly rejected more than 5\% of the time. This corresponds to a $\alpha$ of 0.05. The significance level is not always chosen to be 0.05; the appropriateness of different significance levels in Section~\ref{significanceLevel}.
 
-
 \subsection{Two examples of hypothesis testing}
-
+\label{hypothesisTestingExamples}
 
 % \index{hypothesis testing!p-value|(}
 
 The $p$-value is a way of quantifying the strength of the evidence against the null hypothesis and in favor of the alternative. 
 
 \index{data!school sleep|(}
-
 
 \begin{exercise} \label{skepticalPerspOfRuralSchoolSleepExercise}
 A poll by the National Sleep Foundation found that college students average about 7 hours of sleep per night. Researchers at a rural school are interested in showing that students at their school sleep longer than seven hours on average, and they would like to demonstrate this using a sample of students. What would be an appropriate skeptical position for this research?\footnote{A skeptic would have no reason to believe that sleep patterns at this school are different than the sleep patterns at another school.}
@@ -640,6 +852,7 @@ The null hypothesis for this test is that students at this school average 7 hour
 \item[$H_0$:] $\mu = 7$.
 \item[$H_A$:] $\mu > 7$.
 \end{itemize}
+
 Using $\mu > 7$ as the alternative is leads to a \term{one-sided} hypothesis test. In this investigation, there is no apparent interest in learning whether the mean is less than 7~hours.\footnote{This is entirely based on the interests of the researchers. Had they been only interested in the opposite case -- showing that their students were actually averaging fewer than seven hours of sleep but not interested in showing more than 7 hours -- then set the alternative would have been $\mu < 7$.} 
 
 In general, a two-sided test should be used unless it was made clear prior to data collection that the test should be one-sided. Switching a two-sided test to a one-sided test after observing the data is dangerous because it can inflate the Type~1 Error rate. \textit{explanation comes later but should be move here.  Also, it may be better to do a two-sided test with this example.  We can do that in a revision.}
@@ -656,6 +869,8 @@ The researchers at the rural school conducted a simple random sample of $n=110$ 
 \caption{Distribution of a night of sleep for 110 college students. These data are strongly skewed.\index{skew!example: strong}}
 \label{histOfSleepForCollegeThatWasCheckingForMoreThan7Hours}
 \end{figure}
+
+%JV: The actual size of the student body wasn't stated before, so it is not a given that the sample represents less than 10\% of the population.
 
 The normal model for the sample mean can be used here because: (1) this is a simple random sample from less than 10\% of the student body, the observations are independent; (2)~the sample size in the sleep study is sufficiently large since it is greater than 30; (3)~The data show strong skew in Figure~\ref{histOfSleepForCollegeThatWasCheckingForMoreThan7Hours} and the presence of a couple of outliers. This skew and the outliers are acceptable for a sample size of $n=110$. 
 
@@ -731,18 +946,9 @@ Because the normal model is symmetric, the right tail will have the same area as
 \text{p-value} = \text{left tail} + \text{right tail} = 2\times(\text{left tail}) = 0.2892
 \end{eqnarray*}
 This p-value is relatively large (larger than $\alpha=0.05$), so  $H_0$ is not rejected. That is, if $H_0$ is true, it would not be very unusual to see a sample mean this far from 7 hours simply due to sampling variation. 
+\end{example}
 
 \index{data!school sleep|)}
-
-\begin{figure}
-   \centering
-   \includegraphics[width=0.9\textwidth]
-   {ch_inference_foundations_oi_biostat/figures/2ndSchSleepHTExample/2ndSchSleepHTExample}
-   \caption{$H_A$ is two-sided, so \emph{both} tails must be counted for the p-value.}
-   \label{2ndSchSleepHTExample}
-\end{figure}
-
-\end{example}
 
 \begin{example}{It not correct to change two-sided tests to one-sided tests after observing the data.  This example explores the consequences of making that error. Using $\alpha=0.05$, freely switching from two-sided tests to one-sided tests cause twice as many Type~1 Errors as intended.} \label{swappingHypAfterDataDoublesType1ErrorRate}
 Suppose the sample mean was larger than the null value, $\mu_0$ (e.g. $\mu_0$ would represent~7 if $H_0$:~$\mu = 7$). Flipping to a one-sided test $H_A$: $\mu > \mu_0$, any observation with a Z-score greater than 1.65, would lead to  rejecting  $H_0$. If the null hypothesis is true, the null hypothesis is incorrectly rejected about 5\% of the time when the sample mean is above the null value, as shown in Figure~\ref{type1ErrorDoublingExampleFigure}.
@@ -812,7 +1018,7 @@ The significance level selected for a test should reflect the consequences assoc
 \index{hypothesis testing!significance level|)}
 \index{hypothesis testing|)}
 
-
+\end{comment}
 
 \end{spacing}
  

@@ -15,13 +15,13 @@ labels <- expression(0, H[0]*': '*mu*' = 7  ',
 axis(1, at, labels, cex.axis = 1)
 yMax <- 0.4
 
-text(0, yMax * 0.4, '0.993', cex = 1.2)
+text(0, yMax * 0.4, '0.994', cex = 1.2)
 arrows(2.5, yMax / 2,
        2.5, yMax / 10,
        length = 0.1,
        col = COL[1],
        lwd = 1.5)
-text(2.5, yMax / 2, 'p-value\n 0.007',
+text(2.5, yMax / 2, 'p-value\n 0.006',
      pos = 3,
      cex = 1.2,
      col = COL[1])
