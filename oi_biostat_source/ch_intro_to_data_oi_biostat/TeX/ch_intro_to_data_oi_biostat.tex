@@ -36,7 +36,7 @@ The proportion of young children in Western countries with peanut allergies has 
 
 The "Learning Early about Peanut Allergy" (LEAP) study was reported in the \textit{New England Journal of Medicine} in 2015.\footnote{Du Toit, George, et al. Randomized trial of peanut consumption in infants at risk for peanut allergy. New England Journal of Medicine 372.9 (2015): 803-813.} The study team enrolled children in the United Kingdom between 2006 and 2009, selecting 640 infants with eczema, egg allergy, or both. Each child was randomly assigned to the treatment group (peanut consumption) or the control group (peanut avoidance); children in the treatment group were fed at least 6 grams of peanut protein daily until 5 years of age, while children in the control group were to avoid consuming peanut protein until 5 years of age. 
 
-At 5 years of age, each child was tested for peanut allergy using an oral food challenge (OFC): 5 grams of peanut protein in a single dose. Children had been previously been tested for peanut allergy through a skin test, conducted at the time of study entry; the main analysis presented in the paper was based on the 530 children with a negative skin test result. Of these children, 263 were assigned to "Peanut Avoidance" and 267 to "Peanut Consumption." The outcome at 5 years was reported as either "Fail OFC" (allergic reaction) or "Pass OFC" (no allergic reaction). 
+At 5 years of age, each child was tested for peanut allergy using an oral food challenge (OFC): 5 grams of peanut protein in a single dose. Children had previously been tested for peanut allergy through a skin test, conducted at the time of study entry; the main analysis presented in the paper was based on the 530 children with a negative skin test result. Of these children, 263 were assigned to "Peanut Avoidance" and 267 to "Peanut Consumption." The outcome at 5 years was reported as either "Fail OFC" (allergic reaction) or "Pass OFC" (no allergic reaction). 
 
 Table \ref{leapStudyResultsDF} shows the participant study ID number, treatment assignment, and OFC outcome for 5 children. All five of these children passed the food challenge. 
  
@@ -106,7 +106,7 @@ Effective presentation and description of data is a first step in most analyses.
 \label{frogDataExample}
 
 \index{data!frog|(}
-This section describes data used in a study published in the \textit{Journal of Evolutionary Biology} about maternal investment at differing altitudes, conducted in a frog species endemic to the Tibetan Plateau (\textit{Rana kukunoris}).\footnote{ Chen, W., et al. Maternal investment increases with altitude in a frog on the Tibetan Plateau. Journal of evolutionary biology 26.12 (2013): 2710-2715.} Reproduction is a costly process for females, necessitating a trade-off between individual egg size and total number of eggs produced. Researchers collected measurements on egg clutches found at breeding ponds across 11 study sites; for 5 sites, they also collected data on individual female frogs.
+This section describes data used in a study published in the \textit{Journal of Evolutionary Biology} about maternal investment at differing altitudes, conducted in a frog species endemic to the Tibetan Plateau (\textit{Rana kukunoris}).\footnote{Chen, W., et al. Maternal investment increases with altitude in a frog on the Tibetan Plateau. Journal of evolutionary biology 26.12 (2013): 2710-2715.} Reproduction is a costly process for females, necessitating a trade-off between individual egg size and total number of eggs produced. Researchers collected measurements on egg clutches found at breeding ponds across 11 study sites; for 5 sites, they also collected data on individual female frogs.
 
 % latex table generated in R 3.1.1 by xtable 1.7-4 package
 % Fri Jul 17 09:47:19 2015
@@ -231,7 +231,7 @@ Characterize the variables \var{participant.ID}, \var{treatment.group}, and \var
 \subsection{Relationships between variables}
 \label{variableRelations}
 
-Many studies are motivated by a researcher examining a possible relationship between two or more variables. Statistical relationships between two variables occur when they tend to vary in a related way. A \term{response variable} measures an outcome of interest, while an \term{explanatory variable} may be useful in predicting or understanding the response variable. There may be several possible explanatory variables for a single response variable in a given study.
+Many studies are motivated by a researcher examining a possible relationship between two or more variables. Statistical relationships between two variables occur when they tend to vary in a related way. A \term{response variable} measures an outcome of interest, while an \term{explanatory variable} may be useful in predicting or understanding the response variable. There may be several possible explanatory variables for a single response variable in a given study.  Response variables are sometimes called dependent variables and explanatory variables are often called independent variables or predictors.  
 
 Researchers were interested in using the \data{famuss} data to answer several questions, including: is ACTN3 genotype associated with variation in muscle function? The ACTN3 gene codes for a protein involved in muscle function. A common mutation (polymorphism) at residue 577 in the ACTN3 gene changes C to T; TT individuals are unable to produce any ACTN3 protein in their muscle. Thus, researchers hypothesized that ACTN3 genotype might influence muscle function in humans. The response variable in this study is \var{ndrm.ch}, the percent change in non-dominant arm strength, with strength gain being used as a way to measure muscle function. The explanatory variable of interest is \var{actn3.r557x}, ACTN3 genotype at residue 577.  
 
@@ -285,7 +285,8 @@ An anecdotal observation can never be the basis for a conclusion, but it may wel
 
 \subsection{Sampling from a population}
 
-Sampling from a population is a useful tool in population-based research in the health sciences.  When done carefully, it provides reliable information about the  characteristics of a large population without having to directly measure those characteristics for each member.  The US Centers for Disease Control (US CDC) conducts many such surveys, including the Behavioral Risk Factors Surveillance System (BRFSS).\footnote{\url{ http://www.cdc.gov/brfss/}} The BRFSS conducts approximately 400,000 telephone interviews annually to ask U.S. residents questions regarding their health-related risk behaviors, chronic health conditions, and use of preventive services.  Data from a recent BRFSS survey are used in Chapter 4. The CDC conducts similar surveys for diabetes, health care access, and immunization. Likewise, the World Health Organization (WHO) conducts the World Health Survey in partnership  with approximately 70 countries to learn about the health of adult populations and the health systems in those countries.\footnote{\url{http://www.who.int/healthinfo/survey/en/}}  
+Sampling from a population is a useful tool in population-based research in the health sciences.  When done carefully, it provides reliable information about the  characteristics of a large population without having to directly measure those characteristics for each member.  The US Centers for Disease Control (US CDC) conducts many such surveys, including including the Youth Risk Behavior Surveillance System (YRBSS)\footnote{http://www.cdc.gov/healthyyouth/data/yrbs/index.htm}.  Between 1991 and 2013, 2.6 million high school students have participated in more than 1,100 separate surveys
+Data from a recent YRBSS survey are used in Chapter 4. The CDC conducts similar surveys for diabetes, health care access, and immunization. Likewise, the World Health Organization (WHO) conducts the World Health Survey in partnership  with approximately 70 countries to learn about the health of adult populations and the health systems in those countries.\footnote{\url{http://www.who.int/healthinfo/survey/en/}}  
 
 %commenting out the DoJ survey because transition does not work well here...if actually needed, introduce the study later on.
 
@@ -353,7 +354,7 @@ Experiments and observational studies are the two primary types of study designs
 
 When researchers want to investigate the possibility of a causal connection, they conduct an \term{experiment}. The LEAP study team hypothesized that early exposure to peanut products would reduce the likelihood of an allergy to peanuts by age 5. To find evidence for a causal connection between the explanatory and response variables, researchers randomly assign a sample of individuals to one of two groups.  One group, called the experimental group, receives the intervention (peanut products in LEAP). In the other group, which is known as the control group), participants typically receive either a standard approach (avoiding peanut products in LEAP) or a \term{placebo}, an inert substance with the appearance of the experimental intervention.  Placebos are used to prevent participants from knowing their assigned treatment, but they are not feasible in all studies.
 
-Scientists conduct an \term{observational study} when they collect data in a way that does not interfere with how the data arise. For instance, to study why certain diseases develop, researchers may collect information through conducting surveys, reviewing medical or company records, or following a \term{cohort} of many similar individuals. In each of these situations, researchers merely observe the data that arise. Observational studies can provide evidence of an association between variables, but they cannot by themselves show a causal connection. In general, causation can only be inferred from a randomized experiment.
+Scientists conduct an \term{observational study} when they collect data in a way that does not interfere with how the data arise. For instance, to study why certain diseases develop, researchers may collect information through conducting surveys, reviewing medical or company records, or following a \term{cohort} of many similar individuals. In each of these situations, researchers merely observe the data that arise. Observational studies can provide evidence of an association between variables, but they cannot by themselves show a causal connection. In general, causation can only be inferred from a randomized experiment.  There are, however, many instances where randomized experiments are either not feasible or unethical, such as studies of the possible association of the cognitive effects of lead exposure in young children.  While falling short of definitive proof of a causal relationship, observational studies are scientifically valuable in those situations, especially when several carefully done observational studies reach the same conclusion.
 
 \subsection[Experiments]{Experiments}
 \label{experiments}
@@ -366,7 +367,7 @@ Randomized experiments are generally built on three principles.
 
 \begin{description}
 
-	\item[Control.] Researchers select participants for the study in a way that reduces unnecessary variability, doing their best to \term{control} for variables that might make the results difficult to interpret. For instance, participants are selected from individuals who have aspects of a disease or condition that suggests they may benefit from the intervention being studied. All infants enrolled in the LEAP study were required to be between 4 and 11 months of age, with severe eczema and/or allergies to eggs.
+	\item[Control.] Researchers select participants for the study in a way that reduces unnecessary variability, doing their best to \term{control} for variables in the selection process that might make the results difficult to interpret. For instance, participants are selected from individuals who have aspects of a disease or condition that suggests they may benefit from the intervention being studied. All infants enrolled in the LEAP study were required to be between 4 and 11 months of age, with severe eczema and/or allergies to eggs.
 
 	\item[Randomization.] Researchers randomize patients into treatment groups to account for variables that cannot be controlled. For example, some infants may have been more susceptible to peanut allergies because of an unmeasured genetic condition. Randomly assigning patients to the treatment or control group helps even out such differences between the two groups. In situations where researchers suspect that variables other than the treatment may influence the response, they may first group individuals into \term{blocks} and then, within each block, randomize cases to treatment groups; this technique is referred to as \term{blocking} or \term{stratification}.  In the LEAP study, infants were stratified into two cohorts based on whether or not the child developed a red, swollen mark (a wheal) after a skin test at the time of enrollment. The main analysis of the study analyzed data collected for infants without a wheal after the skin test. Figure~\ref{leapBlocking} illustrates the blocking scheme used in the study. 
 
@@ -379,7 +380,7 @@ It is important to incorporate the three experimental design principles into any
 	\begin{figure}
 		\centering
 		\includegraphics[width=0.78\textwidth]{ch_intro_to_data_oi_biostat/figures/leapBlocking/leapBlocking.png}
-		\caption{A simplified schematic of the blocking scheme used in the LEAP study, depicting 54 patients that underwent randomization. Patients are first divided into groups based on response to the initial skin test, then each block is evenly separated into the treatment groups using randomization. This strategy ensures an even representation of patients in each treatment group from both the skin test positive and skin test negative groups.}
+		\caption{A simplified schematic of the blocking scheme used in the LEAP study, depicting 542 patients that underwent randomization. Patients are first divided into groups based on response to the initial skin test, then each block is evenly separated into the treatment groups using randomization. This strategy ensures an even representation of patients in each treatment group from both the skin test positive and skin test negative groups.}
 		\label{leapBlocking}
 	\end{figure}
 
@@ -483,7 +484,7 @@ The \term{mean}, sometimes called the \indexthis{average}{mean!average}, is a co
 \overline{x} = \frac{177.8 + 257.0 + \cdots + 933.3}{431} = 882.5\ \textrm{mm}^{3}
 \label{sampleMeanEquation}
 \end{eqnarray}
-The sample mean is often labeled $\overline{x}$\marginpar[\raggedright$\overline{x}$\\\footnotesize sample\\ mean]{\raggedright$\overline{x}$\\\footnotesize sample\\ mean}. The letter $x$ is being used as a generic placeholder for the variable of interest, \var{clutch.volume}, and the bar over the $x$ communicates that the average volume of the 431 clutches is $882.5\textrm{mm}^{3}$. 
+The sample mean is often labeled $\overline{x}$\marginpar[\raggedright$\overline{x}$\\\footnotesize sample\\ mean]{\raggedright$\overline{x}$\\\footnotesize sample\\ mean}. The letter $x$ is being used as a generic placeholder for the variable of interest, \var{clutch.volume}, and the bar over the $x$ communicates that the average volume of the 431 clutches is $882.5\textrm{mm}^{3}$. The symbol $\mu$ is used for the mean of the entire population from which the sample is drawn.
 
 
 \begin{termBox}{\tBoxTitle{Mean}%
@@ -506,7 +507,7 @@ The \term{median} is another measure of center; it is the middle number in a dis
 \subsection{Measures of spread: standard deviation and interquartile range}
 \label{measuresOfSpread}
 
-The standard deviation measures (approximately) the distance between a typical observation and the mean. The distance of an observation from its mean its \term{deviation}. Below are the deviations for the $1^{st}$, $2^{nd}$, $3^{rd}$, and $431^{th}$ observations in the \var{clutch.volume} variable. For computational convenience, clutch volume is rounded to the first decimal.
+The standard deviation measures (approximately) the distance between a typical observation and the mean. The distance of an observation from its mean is its \term{deviation}. Below are the deviations for the $1^{st}$, $2^{nd}$, $3^{rd}$, and $431^{th}$ observations in the \var{clutch.volume} variable. For computational convenience, clutch volume is rounded to the first decimal.
 
 \begin{align*}
 x_1-\overline{x} &= 177.8 - 882.5 = -704.7 \hspace{5mm}\text{ } \\
@@ -517,7 +518,7 @@ x_{431}-\overline{x} &= 933.2 - 882.5 = 50.7
 \end{align*}
 % library(openintro); d <- frog.altitude$clutch.volume; round(mean(d),1); d[c(1,2,3,431)]; d[c(1,2,3,431)] - round(mean(d),1); (d[c(1,2,3,431)] - round(mean(d)))^2; sum((d - round(mean(d)))^2)/49; sqrt(sum((d - round(mean(d)))^2)/49); var(d); sd(d)
 
-The sample \term{variance}\label{varianceFirstDiscussed}, is the average of the square of these deviations, and is  denoted by $s^2$\marginpar[\raggedright$s^2$\\\footnotesize sample variance]{\raggedright$s^2$\\\footnotesize sample variance}:
+The sample \term{variance}\label{varianceFirstDiscussed}, is the average of the squares of these deviations, and is  denoted by $s^2$\marginpar[\raggedright$s^2$\\\footnotesize sample variance]{\raggedright$s^2$\\\footnotesize sample variance}:
 \begin{align*}
 s^2 &= \frac{(-704.7)^2 + (-625.5)^2 + (-731.1)^2 + \cdots + (50.7)^2}{431-1} \\
 &= \frac{496,602.09 + 391,250.25 + 534,507.21 + \cdots + 2570.49}{430} \\
@@ -952,7 +953,7 @@ Table~\ref{famussRowPropTable} shows the row proportions for Table~\ref{famussCo
 		& CC & CT & TT & Sum \\ 
 		\hline
 		African Am & $16/27=0.593$ & $6/27=0.222$ & $5/27=0.185$ & $27/27=1.00$ \\ 
-		Asian & $21/55=0.382$ & $18/55=0.327$ & $16/55=0.291$ & $55/44=1.00$ \\ 
+		Asian & $21/55=0.382$ & $18/55=0.327$ & $16/55=0.291$ & $55/55=1.00$ \\ 
 		Caucasian & $125/467=0.267$ & $216/467=0.463$ & $126/467=0.270$ & $467/467=1.00$ \\ 
 		Hispanic & $4/23=0.174$ & $10/23=0.435$ & $9/23=0.391$ & $23/23=1.00$ \\ 
 		Other & $7/23=0.304$ & $11/23=0.478$ & $5/23=0.217$ & $23/23=1.00$ \\ 
@@ -1232,7 +1233,7 @@ Table~\ref{golubVariables} gives the definitions and coding for the patient desc
 	\label{golubVariables}
 \end{table}
 
-The expression data for the genes examined in the study is shown in the last 7.129 columns of the dataset. Each of these columns is a variable with a name corresponding to the name of the probe on the microarray used to measure the expression of a particular gene. The text will later include information about how to translate the probe names into gene names and functions.
+The expression data for the genes examined in the study is shown in the last 7,129 columns of the dataset. Each of these columns is a variable with a name corresponding to the name of the probe on the microarray used to measure the expression of a particular gene. The text will later include information about how to translate the probe names into gene names and functions.
 
 Table~\ref{sampleGolubData} shows five rows and six columns from the experimental dataset. Each row corresponds to a patient, with the first column specifying sample ID (given by the \texttt{Samples} variable). The second and third columns specify the sex of the patient (\texttt{Gender}, coded M for male or F for female) and cancer type (\texttt{cancer}, B-cell ALL for these five patients). The last three columns show normalized gene expression levels for the three genes corresponding to these probes. The second row of the data shows that in the patient with sample ID 40, the expression level detected at probe \var{AFFX-BioB-3\_at} was higher than at \var{AFFX-BioB-5\_at}. The values are useful in the context of a comparison between two or more genes; individual values do not have biological significance. 
  
