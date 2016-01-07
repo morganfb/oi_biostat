@@ -258,6 +258,8 @@ The first step in research is to identify questions to investigate. A clearly ar
 \subsection{Populations and samples}
 \label{populationsAndSamples}
 
+For example, consider the following research questions:
+
 \begin{enumerate}
 \setlength{\itemsep}{0mm}
 
@@ -369,7 +371,7 @@ Randomized experiments are generally built on three principles.
 
 	\item[Control.] Researchers select participants for the study in a way that reduces unnecessary variability, doing their best to \term{control} for variables in the selection process that might make the results difficult to interpret. For instance, participants are selected from individuals who have aspects of a disease or condition that suggests they may benefit from the intervention being studied. All infants enrolled in the LEAP study were required to be between 4 and 11 months of age, with severe eczema and/or allergies to eggs.
 
-	\item[Randomization.] Researchers randomize patients into treatment groups to account for variables that cannot be controlled. For example, some infants may have been more susceptible to peanut allergies because of an unmeasured genetic condition. Randomly assigning patients to the treatment or control group helps even out such differences between the two groups. In situations where researchers suspect that variables other than the treatment may influence the response, they may first group individuals into \term{blocks} and then, within each block, randomize cases to treatment groups; this technique is referred to as \term{blocking} or \term{stratification}.  In the LEAP study, infants were stratified into two cohorts based on whether or not the child developed a red, swollen mark (a wheal) after a skin test at the time of enrollment. The main analysis of the study analyzed data collected for infants without a wheal after the skin test. Figure~\ref{leapBlocking} illustrates the blocking scheme used in the study. 
+	\item[Randomization.] Researchers randomize patients into treatment groups to account for variables that cannot be controlled. For example, some infants may have been more susceptible to peanut allergies because of an unmeasured genetic condition. Randomly assigning patients to the treatment or control group helps even out such differences between the two groups. In situations where researchers suspect that variables other than the treatment may influence the response, they may first group individuals into \term{blocks} according to a certain attribute, and then, within each block, randomize cases to treatment groups; this technique is referred to as \term{blocking} or \term{stratification}.  In the LEAP study, infants were stratified into two cohorts based on whether or not the child developed a red, swollen mark (a wheal) after a skin test at the time of enrollment; afterwards, infants were randomized between treatment and control groups. The main analysis of the study analyzed data collected for infants without a wheal after the skin test. Figure~\ref{leapBlocking} illustrates the blocking scheme used in the study. 
 
 	\item[Replication.] The more cases researchers observe, the more accurately they can estimate the effect of the explanatory variable on the response. In a single study, \term{replication} is accomplished by collecting a sufficiently large sample. The LEAP study randomized a total of 640 infants; 542 infants were in the block without the wheal response. 
 
@@ -380,7 +382,7 @@ It is important to incorporate the three experimental design principles into any
 	\begin{figure}
 		\centering
 		\includegraphics[width=0.78\textwidth]{ch_intro_to_data_oi_biostat/figures/leapBlocking/leapBlocking.png}
-		\caption{A simplified schematic of the blocking scheme used in the LEAP study, depicting 542 patients that underwent randomization. Patients are first divided into groups based on response to the initial skin test, then each block is evenly separated into the treatment groups using randomization. This strategy ensures an even representation of patients in each treatment group from both the skin test positive and skin test negative groups.}
+		\caption{A simplified schematic of the blocking scheme used in the LEAP study, depicting 640 patients that underwent randomization. Patients are first divided into groups based on response to the initial skin test, then each block is evenly separated into the treatment groups using randomization. This strategy ensures an even representation of patients in each treatment group from both the skin test positive and skin test negative groups.}
 		\label{leapBlocking}
 	\end{figure}
 
@@ -389,7 +391,7 @@ It is important to incorporate the three experimental design principles into any
 \subsection{Reducing bias in human experiments}
 \label{biasInHumanExperiments}
 
-Randomized experiments are the gold standard for data collection, but they do not automatically ensure an unbiased perspective in all cases. Human studies are perfect examples where bias can arise unintentionally. 
+Randomized experiments are the gold standard for data collection, but they do not automatically ensure an unbiased perspective in all cases. Since bias can arise unintentionally, it is important to design studies in a way that minimizes sources of bias.
 
 In 1980, researchers reported the results of a study assessing the efficacy of a new drug used to treat heart attack patients.\footnote{Anturane Reinfarction Trial Research Group. 1980. Sulfinpyrazone in the prevention of sudden death after myocardial infarction. New England Journal of Medicine 302(5):250-256.} Researchers wanted to know whether the drug reduced deaths in patients; in order to draw causal conclusions about the effect of the drug, they designed a randomized experiment in which study volunteers were randomly assigned to one of two study groups.\footnote{Human subjects are often called \term{volunteers}, or \term{study participants}.} The \term{treatment group} received the drug; the \term{control group} did not receive any drug treatment.
 
