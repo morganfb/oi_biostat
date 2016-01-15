@@ -49,7 +49,7 @@ Not rolling a \resp{2} is the same as getting a \resp{1}, \resp{3}, \resp{4}, \r
 If $16.\bar{6}$\% of the time the first die is a \resp{1} and $1/6^{th}$ of \emph{those} times the second die is also a \resp{1}, then the chance that both dice are \resp{1} is $(1/6) (1/6)$ or $1/36$.
 \end{example}
 
-Probability also appears in more realistic contexts, such as in predicting the inheritance of genetic disease. Cystic fibrosis (CF) is a life-threatening genetic disorder caused by mutations in the \textit{CFTR} gene located on chromosome 7. Defective copies of \textit{CFTR} can result in the reduced quantity and function of the CFTR protein, which leads to the buildup of thick mucus in the lungs and pancreas.\footnote{The CFTR protein is responsible for transporting sodium and chloride ions across cell membranes,.} CF is an autosomal recessive disorder; an individual only develops CF if they have inherited two affected copies of \textit{CFTR}. Individuals with one normal (wild-type) copy and one defective (mutated) copy are known as carriers; they do not develop CF, but may pass the disease-causing mutation onto their offspring.
+Probability also appears in more realistic contexts, such as in predicting the inheritance of genetic disease. Cystic fibrosis (CF) is a life-threatening genetic disorder caused by mutations in the \textit{CFTR} gene located on chromosome 7. Defective copies of \textit{CFTR} can result in the reduced quantity and function of the CFTR protein, which leads to the buildup of thick mucus in the lungs and pancreas.\footnote{The CFTR protein is responsible for transporting sodium and chloride ions across cell membranes.} CF is an autosomal recessive disorder; an individual only develops CF if they have inherited two affected copies of \textit{CFTR}. Individuals with one normal (wild-type) copy and one defective (mutated) copy are known as carriers; they do not develop CF, but may pass the disease-causing mutation onto their offspring.
 
 Although it seems more complicated to calculate probabilities for disease inheritance than for the outcome of flipping a coin or rolling a die, the previously illustrated methods still apply.
 
@@ -57,7 +57,7 @@ Although it seems more complicated to calculate probabilities for disease inheri
 
 \textit{Solution 1: Enumerate all of the possible outcomes and exploit the fact that the outcomes are equally likely, as in Example~\ref{probOf1}.}  Figure~\ref{fig:cfInheritance} shows the four possible genotypes for a child of these parents. The paternal chromosome is in blue and the maternal chromosome in green, while chromosomes with the wild-type and mutated versions of \textit{CFTR} are marked with $+$ and $-$, respectively. The child is only affected if they have genotype ($-$/$-$), with two mutated copies of \textit{CFTR}. Each of the four outcomes occurs with equal likelihood, so the child will be affected with probability 1-in-4, or $1/4$.  It is important to recognize that the child being an unaffected carrier ($+$/$-$) consists of two distinct outcomes, not one. 
 
-\textit{Solution 2:  Calculate the proportion of outcomes that produce an affected child, as in Example~\ref{probOf2Ones}.}  During reproduction, one parent will pass along an affected copy half of the time.  When the child receives an affected gene from one parent, half of the those times, they will also receive an affected gene from the other parent.	So the proportion of times the child will be have two affected copies is $(1/2) (1/2) = 1/4$.
+\textit{Solution 2:  Calculate the proportion of outcomes that produce an affected child, as in Example~\ref{probOf2Ones}.}  During reproduction, one parent will pass along an affected copy half of the time.  When the child receives an affected gene from one parent, half of the those times, they will also receive an affected gene from the other parent.	So the proportion of times the child will be have two affected copies is $(1/4) + (1/4) = 1/2$.
 \end{example}
 
 \begin{figure}
@@ -97,7 +97,7 @@ The \term{probability} of an outcome is the proportion of times the outcome woul
 
 This definition of probability can be illustrated by rolling a die many times. Let $\hat{p}_n$ be the proportion of outcomes that are \resp{1} after the first $n$ rolls. As the number of rolls increases, $\hat{p}_n$ will converge to the probability of rolling a \resp{1}, $p = 1/6$. Figure~\ref{fig:dieProp} shows this convergence for 100,000 die rolls. The tendency of $\hat{p}_n$ to stabilize around $p$ is described by the \term{Law of Large Numbers}. The behavior shown in Figure~\ref{fig:dieProp} matches most people's intuition about probability, but proving mathematically that the behavior is always true is surprisingly difficult and beyond the level of this text.
 
-Occasionally the proportion will veer off from the probability and appear to defy the Law of Large Numbers, as $\hat{p}_n$ does many times in Figure~\ref{fig:dieProp}. However, these deviations become smaller as the number of rolls increases.
+Occasionally the proportion will veer off from the probability and appear to defy the Law of Large Numbers, as $\hat{p}_n$ does many times in Figure~\ref{fig:dieProp}. However, the likelihood of these large deviations becomes smaller as the number of rolls increases.
 
 \begin{termBox}{\tBoxTitle{Law of Large Numbers}
 As more observations are collected, the proportion $\hat{p}_n$ of occurrences with a particular outcome converges to the probability $p$ of that outcome.}
@@ -250,7 +250,7 @@ where $P(A$ and $B)$ is the probability that both events occur.}
 
 
 \begin{tipBox}{\tipBoxTitle{``or'' is inclusive}
-Note that in the language of statistics, "or" is in inclusive such that $A$ or $B$ occurs means $A$, $B$, or both $A$ and $B$ occur.}
+Note that in the language of statistics, "or" is inclusive such that $A$ or $B$ occurs means $A$, $B$, or both $A$ and $B$ occur.}
 \end{tipBox}
 
 \begin{exercise}
@@ -864,7 +864,6 @@ P(Y=\text{\resp{1}}\ |\ X=\text{\resp{1}})
 Casinos often rely on gamblers not understanding independence.  Suppose the last five outcomes on a roulette table were \resp{black}.  What is wrong with the reasoning that the next outcome is highly likely to be red?\footnote{Each outcome is independent of the other, with the likelihood of red or black being equal from spin to spin.}
 \end{exercise}
 
-There is a subtle but important point behind the last example.  The probability of the next outcome being black is different than the probability that the sixth outcome is black when a gambler has seen the last five outcomes and knows that they are black.  This is an example of an unconditional versus a conditional probability.
 
 %JV: \textit{JV: This section comes across as rather lifeless right now. Could add an example in which independence is illustrated using the conditional probability formula.}
 
@@ -935,7 +934,7 @@ The characteristics of a mammogram (and diagnostic tests in general) are given w
 
 This type of problem arises so often in medicine that is useful to have several strategies to approach the problem -- 1) constructing tree diagrams, 2) using a purely algebraic approach using Bayes' Theorem, and 3) creating contingency tables based on calculating conditional probabilities from a large, hypothetical population.
 
-\begin{example}{In Canada, about 0.35\% of women over 40 will develop breast cancer in any given year. A common screening test for cancer is the mammogram, but it is not perfect. In about 11\% of patients with breast cancer, the test gives a \term{false negative}: it indicates a woman does not have breast cancer when she does have breast cancer. Similarly, the test gives a \term{false positive} in 7\% of patients who do not have breast cancer: it indicates these patients have breast cancer when they actually do not.\footnote{The probabilities reported here were obtained using studies reported at \oiRedirect{textbook-breastCancerDotOrg_20090831b}{www.breastcancer.org} and \oiRedirect{textbook-ncbi_nih_breast_cancer}{www.ncbi.nlm.nih.gov/pmc/articles/PMC1173421}.} If a random selected woman over 40 is tested for breast cancer using a mammogram and the test is positive -- that is, the test suggests the woman has cancer -- what is the probability she has breast cancer?}
+\begin{example}{In Canada, about 0.35\% of women over 40 will develop breast cancer in any given year. A common screening test for cancer is the mammogram, but it is not perfect. In about 11\% of patients with breast cancer, the test gives a \term{false negative}: it indicates a woman does not have breast cancer when she does have breast cancer. Similarly, the test gives a \term{false positive} in 7\% of patients who do not have breast cancer: it indicates these patients have breast cancer when they actually do not.\footnote{The probabilities reported here were obtained using studies reported at \oiRedirect{textbook-breastCancerDotOrg_20090831b}{www.breastcancer.org} and \oiRedirect{textbook-ncbi_nih_breast_cancer}{www.ncbi.nlm.nih.gov/pmc/articles/PMC1173421}.} If a randomly selected woman over 40 is tested for breast cancer using a mammogram and the test is positive -- that is, the test suggests the woman has cancer -- what is the probability she has breast cancer?}
 \label{probabilityOfBreastCancerGivenPositiveTestExample}
 \end{example}
 
@@ -948,7 +947,7 @@ This type of problem arises so often in medicine that is useful to have several 
 	\label{BreastCancerTreeDiagram}
 \end{figure}
 
-A \term{tree diagram} is a tool to organize outcomes and probabilities around the structure of data, and is especially useful when two or more processes occur in a sequence, with each process is conditioned on its predecessors. For this problem, the population can first be split by cancer status: \texttt{cancer} or \texttt{no cancer}. Following this split, mammogram results can be either \texttt{positive} or \texttt{negative}. As shown in Figure~\ref{BreastCancerTreeDiagram}, the primary branch shows the marginal probabilities 0.0035 and 0.9965. 
+A \term{tree diagram} is a tool to organize outcomes and probabilities around the structure of data, and is especially useful when two or more processes occur in a sequence, with each process  conditioned on its predecessors. For this problem, the population can first be split by cancer status: \texttt{cancer} or \texttt{no cancer}. Following this split, mammogram results can be either \texttt{positive} or \texttt{negative}. As shown in Figure~\ref{BreastCancerTreeDiagram}, the primary branch shows the marginal probabilities 0.0035 and 0.9965. 
 
 The secondary branches are conditioned on the primary branch and show conditional probabilities; for example, the top branch is the probability that a mammogram is positive given that an individual has cancer. The problem provides enough information to compute the probability of testing positive if breast cancer is present ($1.00 - 0.11=0.89$). 
 
@@ -1062,7 +1061,7 @@ If a coin is tossed three times, the outcome is the sequence of observed heads a
 	\centering
 	\includegraphics[width=0.70\textwidth]
 	{ch_probability_oi_biostat/figures/coinToss/coinToss.png}
-	\caption{Possible outcomes for tossing a coin three times}
+	\caption{Possible outcomes for number of heads in three tosses of a coin}
 	\label{coinToss}
 \end{figure}
 
@@ -1181,7 +1180,7 @@ The standard deviation is $\sqrt{3/4} = \sqrt{3}/2 = 0.866$.
 
 \end{example}
 
-The coin tossing scenario provides a simple illustration of the mean and variance of a random variable, but it is artificial. 
+The coin tossing scenario provides a simple illustration of the mean and variance of a random variable.  Calculating expected health care costs is a more realistic example. 
 
  \label{healthCareCostsEmployee}
 In most typical health insurance plans in the United States, members of the plan pay annually in three categories: a monthly premium, ``out-of-pocket'' costs which include co-payments for each physician visit or prescription, and a deductible amount that members pay each year before the insurance covers service.\footnote{The deductible also includes care and supplies that are not covered by insurance.} Picking a new health plan involves estimating costs for the next year based on a person's best guess at the type and number of services that will be needed.
@@ -1328,10 +1327,10 @@ Correlation between random variables is similar to correlation between pairs of 
 The correlation coefficient $r$ is an average of products, with each term in the product measuring the distance between $x$ and its mean $\overline{x}$ or $y$ and its mean $\overline{y}$, after the distances have been scaled by respective standard deviations.
 
 The compact formula for the correlation between two random variables $X$ and $Y$  uses the same idea; it is given by
-\begin{equation*}
+\begin{equation}
 	\rho_{X,Y} = E\left(\frac{X - \mu_x}{\sigma_X}\right)\left(\frac{Y - \mu_Y}{\sigma_Y} \right),
 	\label{eq:generalFormulaCorrelation}
-\end{equation*}
+\end{equation}
 where $\rho_{X,Y}$ is the correlation between the two variables, and $\mu_X, \mu_Y$, $\sigma_X, \sigma_Y$ are the respective means and standard deviations for $X$ and $Y$. Just as with the mean of a random variable, the expectation in the formula for correlation is a weighted sum of products, with with each term weighted by the probability of values for the pair $(X,Y)$.  Equation~\ref{eq:generalFormulaCorrelation} is useful for understanding analogy between correlation of random variables and observations in a dataset, but it cannot be used to calculate $\rho_{X,Y}$ without the probability weights.  The weights come from the \term{joint distribution} of the pair of variables $(X,Y)$.  Joint probabilities were discussed in section~\ref{marginalAndJointProbabilities}.
 
 \begin{termBox}{\tBoxTitle{Joint distribution}
@@ -1365,7 +1364,7 @@ Joint distributions quickly become complicated.  If $X$ and $Y$ have $k_1$ and $
 \newpage
 Previously, the calculation of variability in health care costs for an employee and her partner relied on the assumption that the number of health episodes between the two are independent random variables. It might be reasonable to assume that the health status of one person gives no information about the other's health, given that the two are not related and were not previously living together. However, correlation between random variables can be subtle. For example, couples are often attracted to each other because of common interests or lifestyles, which suggests that health status may not actually be independent.
 
-Might the health care costs for the employee and her domestic partner be correlated? To start, examine the joint distribution of costs by making a table of all possible combinations of costs for the last 10 years (these costs were previously calculated in Example~\ref{healthCareCostsEmployee} and Guided Practice~\ref{healthCareCostsPartner}). Entries in the table are probabilities of pairs of annual costs. For example, the entry 0.25 in the second row and second column of Table~\ref{healthExpensesJointDistribution} indicates that in approximately \%25 of the last 10 years, the employee paid \$1,008 in costs and her partner paid \$988.
+Might the health care costs for the employee and her domestic partner be correlated? To start, examine the joint distribution of costs by making a table of all possible combinations of costs for the last 10 years (these costs were previously calculated in Example~\ref{healthCareCostsEmployee} and Guided Practice~\ref{healthCareCostsPartner}). Entries in the table are probabilities of pairs of annual costs. For example, the entry 0.25 in the second row and second column of Table~\ref{healthExpensesJointDistribution} indicates that in approximately 25\% of the last 10 years, the employee paid \$1,008 in costs and her partner paid \$988.
 
 \begin{table}[h]
 \centering
