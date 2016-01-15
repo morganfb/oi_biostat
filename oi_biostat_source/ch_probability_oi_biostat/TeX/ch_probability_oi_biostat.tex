@@ -1017,14 +1017,54 @@ To apply Bayes' Theorem correctly, there are two preparatory steps:
 \end{enumerate}
 Once each of these probabilities are identified, they can be applied directly within the formula.
 
-\subsubsection{Solution 3. Contingency Table.}
+\subsubsection{Solution 3. Using a Contingency Table.}
 
-\textit{JV: Leaving this empty for now...}
+The positive predictive value (PPV) of a diagnostic test can also be calculated by constructing a $2 \times 2$ contingency table for a large, hypothetical population then calculating conditional probabilities by conditioning on rows or columns. The method does not calculate PPV using the formulas; instead the table can be used for an empirical estimate of PPV.  If the hypothetical population is large enough, this empirical estimate will be close to the exact value.
+
+ Table~\ref{tableMammogramExample} corresponds to the mammogram example and is constructed, then used, with the following steps, which can be applied to any similar problem.
+
+\begin{enumerate}
+    
+    \item Label the two columns of the table \textsl{Breast Cancer Present, Breast Cancer Absent} and the two rows \textsl{Mammogram Positive, Mammogram Negative}. 
+    
+    \item Choose a large number, $N$, for a hypothetical population size.  Typically, 100,000 is sufficient for an accurate estimate of PPV.  Enter $N$ in the lower right hand corner of the table.  
+    
+    \item Calculate the two column totals, the number of women with and without breast cancer.  The number with breast cancer is $N$ multiplied by the prevalence of the disease, or $(100,000)(.0035) = 350$.  The number without disease is the difference between $N$ and the number with disease, or $100,000 - 350 = 99,650$.  It can also be calculated by multiplying the population by 1 - prevalence.
+    
+    \item Calculate the number in each of the two table cells in the first column. The number testing positive among women with breast cancer is the column total multiplied by the sensitivity of the test, $(350)(0.89)= 311.5$. The number testing negative is the number with the disease multiplied by the false negative probability, $(350)(0.11) = 38.5$, but can also be calculated by subtracting the number testing positive from the number with the disease. These two values are the number of true positive and false negative mammograms among the 350 with the disease.
+    
+    \item Calculate the number in each of the cells in the second column, using the same method as in step 4. The values in the first and second rows of this column will be $(99,650)(0.07) = 6,975.5$ and $(99,650)(0.93) = 92,674.5$.  These are the numbers of false negative and true negative mammograms, respectively, among the 99,650 women.
+    
+    \item Complete the table by calculating the two row totals, $311.5 + 6,975.5= 7287$, and $38.5 + 92,647.5 = 92,713.$  These row totals are, respectively, the numbers of positive and negative mammograms among the 100,000.
+ 
+    \item Calculate the PPV of the mammogram using the ratio of the true number positive divided by the total number of postive mammograms. In the language of probability, it is the chances of a woman having breast cancer, given that she has tested postive.  In this example, PPV= $311.5/7287 = 0.0427$.  Because this is an empirical estimate, it differs in the third decimal place from the exact calculation, but is more than accurate enough.
+    
+    
+\end{enumerate}
+
+The table shows why the positive predictive value of mammogram is low: almost 7300 women will have a positive mammogram in this hypothetical population, but only roughly 312 of those women have breast cancer.
+
+
+The negative predictive value of mammogram can be calculated with the ratio the women who had a true negative mammogram among all negative mammograms.  The labeling of the rows and columns is arbitrary, but once set, should be used with care.
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{rrrr}
+		\hline
+		& Breast Cancer Present & Breast Cancer Absent & Sum \\ 
+		\hline
+		Mammogram Positive & 311.5 & 6,975.5 & 7,287 \\ 
+		Mammogram Negative &  38.5 & 92,674.5 & 92,713 \\ 
+		Sum & 350 & 99,650 & 100,000 \\ 
+		\hline
+	\end{tabular}
+	\caption{Table used to calculate PPV of a mammogram}
+	\label{tableMammogramExample}
+\end{table}
 
 %%%%%
 %
-% revisions to here 14sep2015 11:36.  Not satisfied with the treatment of BR here, and we need more examples
-
+% 
 
 % index commands below should be inserted just before section on sampling from a small population
 
