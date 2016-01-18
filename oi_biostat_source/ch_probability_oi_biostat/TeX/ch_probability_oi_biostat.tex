@@ -14,9 +14,11 @@
 
 What are the chances that a woman with an abnormal mammogram has breast cancer?  What is the likelihood that an overweight male teenager with high blood pressure will develop cardiovascular disease by the age of 50?  What is the probability that two parents who are unaffected carriers of cystic fibrosis will have a child with the disease? 
 
-These questions use the language of probability. Like all mathematical tools, probability becomes easier to understand and work with once important concepts and terminology have been formalized. This chapter introduces that formalization, using two types of examples. One set of examples uses settings that most people have seen before -- rolling dice or picking cards from a deck. The second set of examples draws from medicine, biology, and public health, reflecting the contexts and language specific to those fields. The approaches to solving these two types of problems are surprisingly similar, and in both cases, seemingly difficult problems can be solved in a series of reliable steps.
+These questions use the language of probability. Like all mathematical tools, probability becomes easier to understand and work with once important concepts and terminology have been formalized. This chapter introduces that formalization, using two types of examples. One set of examples uses settings that most people have seen before -- rolling dice or picking cards from a deck. The other set of examples draws from medicine, biology, and public health, reflecting the contexts and language specific to those fields. The approaches to solving these two types of problems are surprisingly similar, and in both cases, seemingly difficult problems can be solved in a series of reliable steps.
 
-Probability also forms the foundation for data analysis and statistical inference, since nearly every conclusion to a study should be accompanied by a measure of uncertainty. For example, the publication reporting the results of the LEAP study discussed in Chapter 1 included the probability that the observed results could have simply been due to chance variation. This aspect of probability will be discussed in later chapters.
+Probability also forms the foundation for data analysis and statistical inference, since nearly every conclusion to a study should be accompanied by a measure of uncertainty. For example, the publication reporting the results of the LEAP study discussed in Chapter 1 included the probability that the observed results could have been due to chance variation. This aspect of probability will be discussed in later chapters.
+
+\newpage
 
 \section{Defining probability}
 \label{basicsOfProbability}
@@ -46,7 +48,7 @@ Not rolling a \resp{2} is the same as getting a \resp{1}, \resp{3}, \resp{4}, \r
 \end{example}
 
 \begin{example} {Consider rolling two dice. If $1/6^{th}$ of the time the first die is a \resp{1} and $1/6^{th}$ of those times the second die is a \resp{1}, what is the chance of getting two \resp{1}s?}\label{probOf2Ones}
-If $16.\bar{6}$\% of the time the first die is a \resp{1} and $1/6^{th}$ of \emph{those} times the second die is also a \resp{1}, then the chance that both dice are \resp{1} is $(1/6) (1/6)$ or $1/36$.
+If $1/6^{th}$ of the time the first die is a \resp{1} and $1/6^{th}$ of \emph{those} times the second die is also a \resp{1}, then the chance that both dice are \resp{1} is $(1/6) (1/6)$ or $1/36$.
 \end{example}
 
 Probability also appears in more realistic contexts, such as in predicting the inheritance of genetic disease. Cystic fibrosis (CF) is a life-threatening genetic disorder caused by mutations in the \textit{CFTR} gene located on chromosome 7. Defective copies of \textit{CFTR} can result in the reduced quantity and function of the CFTR protein, which leads to the buildup of thick mucus in the lungs and pancreas.\footnote{The CFTR protein is responsible for transporting sodium and chloride ions across cell membranes.} CF is an autosomal recessive disorder; an individual only develops CF if they have inherited two affected copies of \textit{CFTR}. Individuals with one normal (wild-type) copy and one defective (mutated) copy are known as carriers; they do not develop CF, but may pass the disease-causing mutation onto their offspring.
@@ -57,10 +59,10 @@ Although it seems more complicated to calculate probabilities for disease inheri
 
 \textit{Solution 1: Enumerate all of the possible outcomes and exploit the fact that the outcomes are equally likely, as in Example~\ref{probOf1}.}  Figure~\ref{fig:cfInheritance} shows the four possible genotypes for a child of these parents. The paternal chromosome is in blue and the maternal chromosome in green, while chromosomes with the wild-type and mutated versions of \textit{CFTR} are marked with $+$ and $-$, respectively. The child is only affected if they have genotype ($-$/$-$), with two mutated copies of \textit{CFTR}. Each of the four outcomes occurs with equal likelihood, so the child will be affected with probability 1-in-4, or $1/4$.  It is important to recognize that the child being an unaffected carrier ($+$/$-$) consists of two distinct outcomes, not one. 
 
-\textit{Solution 2:  Calculate the proportion of outcomes that produce an affected child, as in Example~\ref{probOf2Ones}.}  During reproduction, one parent will pass along an affected copy half of the time.  When the child receives an affected gene from one parent, half of the those times, they will also receive an affected gene from the other parent.	So the proportion of times the child will be have two affected copies is $(1/4) + (1/4) = 1/2$.
+\textit{Solution 2:  Calculate the proportion of outcomes that produce an affected child, as in Example~\ref{probOf2Ones}.}  During reproduction, one parent will pass along an affected copy half of the time.  When the child receives an affected gene from one parent, half of the those times, they will also receive an affected gene from the other parent.	So the proportion of times the child will be have two affected copies is $(1/2) \times (1/2) = 1/4$.
 \end{example}
 
-\begin{figure}
+\begin{figure}[h!]
 	\centering
 	\includegraphics[width= 0.75\textwidth]{ch_probability_oi_biostat/figures/cfInheritance/cfInheritance.png}
 	\caption{Pattern of CF inheritance for a child of two unaffected carriers}
@@ -70,9 +72,10 @@ Although it seems more complicated to calculate probabilities for disease inheri
 \begin{exercise}
 Suppose the father has CF and the mother is an unaffected carrier. What is the probability that their child will be affected by the disease?
 
-\textit{Solution:}  Since the father has CF, he must have two affected copies; he will always pass along a defective copy of the gene.  Since the mother will pass along a defective copy half of the time, the child will be affected half of the time, or with probability $1/2$.
-
+\textit{Solution:}  Since the father has CF, he must have two affected copies; he will always pass along a defective copy of the gene.  Since the mother will pass along a defective copy half of the time, the child will be affected half of the time, or with probability $(1) \times (1/2) = 1/2$.
 \end{exercise}
+
+\newpage
 
 \subsection{Probability}
 
@@ -248,17 +251,20 @@ P(A\text{ or }B) = P(A) + P(B) - P(A\text{ and }B)
 where $P(A$ and $B)$ is the probability that both events occur.}
 \end{termBox}
 
+Note that in the language of statistics, "or" is inclusive such that $A$ or $B$ occurs means $A$, $B$, or both $A$ and $B$ occur.
 
+\begin{comment}
 \begin{tipBox}{\tipBoxTitle{``or'' is inclusive}
 Note that in the language of statistics, "or" is inclusive such that $A$ or $B$ occurs means $A$, $B$, or both $A$ and $B$ occur.}
 \end{tipBox}
+\end{comment}
 
 \begin{exercise}
 (a) If $A$ and $B$ are disjoint, describe why this implies $P(A$ and $B) = 0$. (b) Using part (a), verify that the General Addition Rule simplifies to the simpler Addition Rule for disjoint events if $A$ and $B$ are disjoint.\footnote{(a) If $A$ and $B$ are disjoint, $A$ and $B$ can never occur simultaneously. (b) If $A$ and $B$ are disjoint, then the last term of Equation~(\ref{generalAdditionRule}) is 0 (see part (a)) and we are left with the Addition Rule for disjoint events.}
 \end{exercise}
 
 \begin{exercise}
-{Human immunodeficiency virus (HIV) and tuberculosis (TB) affect substantial proportions of the population in certain areas of the developing world. Individuals sometimes have both diseases (are co-infected); children of HIV-infected mothers may have HIV (be HIV$^+$) and TB can spread from one family member to another.  In a mother child pair, let $A = \{\text{ the mother has HIV } \}$,  $B = \{\textrm{ the mother has TB } \}$, $C = \{\text{ the child has HIV } \}$,  $D = \{\text{ the child has TB } \}$.  Write out the definitions of the events $A \text{ or } B$, $A \text{ and } B$, $A \text{ and } C$, $A \text{ or } D$.}\footnote{Events $A$ or $B$: the mother has HIV, the mother has TB, or the mother has both HIV and TB. Events $A$ and $B$: the mother has both HIV and TB. Events $A$ and $C$: The mother has HIV and the child has HIV. $A$ or $D$: The mother has HIV, the child has TB, or the mother has HIV and the child has TB.}
+{Human immunodeficiency virus (HIV) and tuberculosis (TB) affect substantial proportions of the population in certain areas of the developing world. Individuals sometimes have both diseases (are co-infected); children of HIV-infected mothers may have HIV (be HIV$^+$) and TB can spread from one family member to another.  In a mother child pair, let $A = \{\text{the mother has HIV} \}$,  $B = \{\textrm{the mother has TB} \}$, $C = \{\text{the child has HIV} \}$,  $D = \{\text{the child has TB} \}$.  Write out the definitions of the events $A \text{ or } B$, $A \text{ and } B$, $A \text{ and } C$, $A \text{ or } D$.}\footnote{Events $A$ or $B$: the mother has HIV, the mother has TB, or the mother has both HIV and TB. Events $A$ and $B$: the mother has both HIV and TB. Events $A$ and $C$: The mother has HIV and the child has HIV. $A$ or $D$: The mother has HIV, the child has TB, or the mother has HIV and the child has TB.}
 
 \end{exercise}
 
@@ -291,7 +297,7 @@ A probability distribution is a list of the possible outcomes with corresponding
 
 Chapter~\ref{introductionToData} emphasized the importance of plotting data to provide quick summaries. Probability distributions can also be summarized in a bar plot. The probability distribution for the sum of two dice is shown in Table~\ref{diceProb} and plotted in Figure~\ref{diceSumDist}.
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.73\textwidth]{ch_probability_oi_biostat/figures/diceSumDist/diceSumDist}
 \caption{The probability distribution of the sum of two dice.}
@@ -449,7 +455,6 @@ P(blue=\text{\small\resp{1} and } green=\text{\small\resp{1} and } red=\text{\sm
 }
 \end{exercise}
 
-Guided Practice~\ref{threeDice} illustrates the Multiplication Rule for independent processes. 
 
 \begin{termBox}{\tBoxTitle{\term{Multiplication Rule} for independent processes}
 If $A$ and $B$ represent events from two different and independent processes, then the probability that both $A$ and $B$ occur can be calculated as the product of their separate probabilities: \vspace{-1.5mm}
@@ -462,7 +467,7 @@ P(A_1) P(A_2) \cdots P(A_k)
 \end{eqnarray*}\vspace{-6mm}}
 \end{termBox}
 
-In applications to biology or medicine, complicated probability problems are often solved with the simple ideas used in the dice examples. 
+Complicated probability problems, such as those that arise in biology or medicine, are often solved with the simple ideas used in the dice examples. 
 
 %JV: \textit{JV: I think the handedness problems can be put in end-of-chapter exercises. Given this kind of lead-in, we should focus on demonstrating some realistic problems.}
 
@@ -518,7 +523,7 @@ Three people are selected at random.\footnote{Brief answers are provided. (a)~Th
 
 \end{comment}
 
-\begin{example}{\textbf{Mandatory drug testing.} Mandatory drug testing in the workplace is common practice for certain professions, such as air traffic controllers and transportation workers.  A false positive in a drug screening test occurs when the test incorrectly indicates that a screened person is an illegal drug user. Suppose a mandatory drug test has a false-positive rate of 1.2\% (i.e., has probability  0.012 of indicating that an employee is using illegal drugs when that is not the case).  Given 150 employees who are in reality drug free, what is the probability that at least one will (falsely) test positive? Assume that the outcome of one drug test has no affect on the others.}
+\begin{example}{\textbf{Mandatory drug testing.} Mandatory drug testing in the workplace is common practice for certain professions, such as air traffic controllers and transportation workers.  A false positive in a drug screening test occurs when the test incorrectly indicates that a screened person is an illegal drug user. Suppose a mandatory drug test has a false-positive rate of 1.2\% (i.e., has probability  0.012 of indicating that an employee is using illegal drugs when that is not the case).  Given 150 employees who are in reality drug free, what is the probability that at least one will (falsely) test positive? Assume that the outcome of one drug test has no effect on the others.}
 
 The solution first defines the event $P(\text{At least 1 "+"})$ in terms of its complement, then uses the multiplication rule to calculate the probability of the complement $P(\text{150 "-"})$.
 
@@ -538,7 +543,7 @@ Even when using a test with a small probability of a false positive, the company
 \end{example}
 
 \begin{exercise}
-Because of the high likelihood of at least one false positive in company wide drug screening programs, an individual with a positive test is almost always re-tested with a different screening test, one that is more expensive than the first but with a lower false positive probability.  Suppose the second test has a false positive rate of 0.8\%.  What is the probability that an employee who is not using illegal drugs will test positive on both tests?\footnote{The outcomes of the two tests are independent of one another; $P (A\text{ and } B) = P(A) \times P(B)$, where events $A$ and $B$ are the results of the two tests. The probability of a false positive with the first test is 0.012 and 0.008 with the second. Thus, the probability of an employee who is not using illegal drugs testing positive on both tests is $0.012 \times 0.008 = 9.6 \times 10^{-5}$}
+Because of the high likelihood of at least one false positive in company wide drug screening programs, an individual with a positive test is almost always re-tested with a different screening test: one that is more expensive than the first, but has a lower false positive probability. Suppose the second test has a false positive rate of 0.8\%.  What is the probability that an employee who is not using illegal drugs will test positive on both tests?\footnote{The outcomes of the two tests are independent of one another; $P (A\text{ and } B) = P(A) \times P(B)$, where events $A$ and $B$ are the results of the two tests. The probability of a false positive with the first test is 0.012 and 0.008 with the second. Thus, the probability of an employee who is not using illegal drugs testing positive on both tests is $0.012 \times 0.008 = 9.6 \times 10^{-5}$}
 
 \end{exercise}
 
@@ -551,7 +556,7 @@ Because of the high likelihood of at least one false positive in company wide dr
 
 \begin{example}{\textbf{ABO blood groups.} There are four different common blood types (A, B, AB, and O), which are determined by the presence of certain antigens located on cell surfaces. Antigens are substances used by the immune system to recognize self versus non-self; if the immune system encounters antigens not normally found on the body's own cells, it will attack the foreign cells. When patients receive blood transfusions, it is critical that the antigens of transfused cells match those of the patient's, or else an immune system response will be triggered.
 		
-The ABO blood group system consists of four different blood groups, which describe whether an individual's red blood cells carry the A antigen, B antigen, both, or neither. The ABO gene has three alleles: ${I}^{A}$, ${I}^{B}$, and \textit{i}. The \textit{i} allele is recessive to both ${I}^{A}$ and ${I}^{B}$, and does not produce antigens; thus, an individual with genotype ${I}^{A}i$ is blood group A and an individual with genotype ${I}^{B}i$ is blood group B. The ${I}^{A}$ and ${I}^{B}$ are codominant, such that individuals of ${I}^{A}$${I}^{B}$ genotype are AB. Individuals homozygous for the \textit{i} allele are known as blood group O, with neither A nor B antigens.
+The ABO blood group system consists of four different blood groups, which describe whether an individual's red blood cells carry the A antigen, B antigen, both, or neither. The ABO gene has three alleles: ${I}^{A}$, ${I}^{B}$, and \textit{i}. The \textit{i} allele is recessive to both ${I}^{A}$ and ${I}^{B}$, and does not produce antigens; thus, an individual with genotype ${I}^{A}i$ is blood group A and an individual with genotype ${I}^{B}i$ is blood group B. The ${I}^{A}$ and ${I}^{B}$ alleles are codominant, such that individuals of ${I}^{A}$${I}^{B}$ genotype are AB. Individuals homozygous for the \textit{i} allele are known as blood group O, with neither A nor B antigens.
 
 Suppose that both members of a couple have Group AB blood.	
 \begin{enumerate}[a)]
@@ -599,7 +604,7 @@ Equation~\ref{eqForIndependentEvents} is not satisfied, therefore hypertension i
 \section{Conditional probability}
 \label{conditionalProbabilitySection}
 
-While precise estimates are difficult to come by, the US CDC estimated that in 2012, approximately 29.1 million Americans had type 2 diabetes - about 9.3\% of the population.\footnote{21 million of these cases are diagnosed, while the CDC predicts that 8.1 million cases are undiagnosed; that is, approximately 8.1 million people are living with diabetes, but they (and their physicians) are unaware that they have the condition.} A health care practitioner seeing a new patient should expect a 9.3\% chance that the patient might have diabetes. 
+While precise estimates are difficult to come by, the US CDC estimated that in 2012, approximately 29.1 million Americans had type 2 diabetes -- about 9.3\% of the population.\footnote{21 million of these cases are diagnosed, while the CDC predicts that 8.1 million cases are undiagnosed; that is, approximately 8.1 million people are living with diabetes, but they (and their physicians) are unaware that they have the condition.} A health care practitioner seeing a new patient should expect a 9.3\% chance that the patient might have diabetes. 
 
 However, this is only the case if nothing is known about the patient. The prevalence of type 2 diabetes varies with age. Between the ages of 20 and 44, approximately 4\% of the population have diabetes, but almost 27\% of people age 65 and older have diabetes. Knowing the age of a patient provides information about the chance of diabetes; age and diabetes status are not independent. While the probability of diabetes in a randomly chosen member of the population is 0.093, the \textit{conditional} probability of diabetes in a person known to be 65 or older is 0.27.
 
@@ -615,10 +620,6 @@ Conditional probability is used to  characterize how the probability of an outco
 %  DH: OI has a nice venn diagram for joint distributions, but the diabetes/age example is probably too complicated for the diagram.
 
 Tables~\ref{DiabetesAgeContTable} and \ref{DiabetesAgeProbTable} provide additional information about the relationship between diabetes prevalence and age.\footnote{Because the CDC provides only approximate numbers for diabetes prevalence, the numbers in the table are approximations of actual population counts.} Table~\ref{DiabetesAgeContTable} is a contingency table for the entire US population in 2012; the values in the table are in thousands, to make the table more readable.  
-
-In the first row, for instance, the table shows that in the entire population of approximately 313,320,000 people, approximately 200,000 individuals were in the less than 20 years age group and suffered from type 2 diagnosis -- about 0.1\%. The table also indicates that among the approximately 86,864,000 individuals less than 20 years of age, only 200,000 suffered from type 2 diabetes, approximately 0.2\%. 
-
-The distinction between the two statements is small but important. The first provides information about the size of the type 2 diabetes population that is less than 20 years of age, relative to the entire population. In contrast, the second statement is about the size of the diabetes population in the less than 20 years of age group, relative to the size of that age group. 
 
 % latex table generated in R 3.0.1 by xtable 1.7-1 package
 % Thu Sep 10 11:36:48 2015
@@ -639,6 +640,10 @@ The distinction between the two statements is small but important. The first pro
 	\label{DiabetesAgeContTable}
 \end{table}
 % can xtable insert comma separators automatically?  If not, I will add them by hand. JV: apparently R can do this, but I didn't manage to get it working http://stackoverflow.com/questions/1581232/adding-commas-into-number-for-output
+
+In the first row, for instance, Table~\ref{DiabetesAgeContTable} shows that in the entire population of approximately 313,320,000 people, approximately 200,000 individuals were in the less than 20 years age group and suffered from type 2 diagnosis -- about 0.1\%. The table also indicates that among the approximately 86,864,000 individuals less than 20 years of age, only 200,000 suffered from type 2 diabetes, approximately 0.2\%. 
+
+The distinction between the two statements is small but important. The first provides information about the size of the type 2 diabetes population that is less than 20 years of age, relative to the entire population. In contrast, the second statement is about the size of the diabetes population in the less than 20 years of age group, relative to the size of that age group. 
 
 \begin{exercise} \label{DiabetesAge20to44}
 
@@ -671,9 +676,9 @@ The counts in Table~\ref{DiabetesAgeContTable} have been converted to proportion
 \end{table}
 %   xtable(diabetes.age.table.prop, digits = 3)
 
-If these proportions are interpreted as probabilities for randomly chosen individuals from the population, the value 0.014 in the first column of the second row implies that the probability of selecting someone at random who has diabetes and whose age is between 20 and 44 is 0.014, or 1.4\%. The entries in the eight main table cells (excluding the values in the margins) are called \term{joint probabilities} since they specify the probability of two events happening at the same time -- diabetes and a particular age group. In probability notation, $0.014 = P(\text{diabetes and age 20 to 44})$. It is common to also write this as $P(\text{diabetes, age 20 to 44})$, with a comma replacing ``and''.
+If these proportions are interpreted as probabilities for randomly chosen individuals from the population, the value 0.014 in the first column of the second row implies that the probability of selecting someone at random who has diabetes and whose age is between 20 and 44 is 0.014, or 1.4\%. The entries in the eight main table cells (i.e., excluding the values in the margins) are called \term{joint probabilities} since they specify the probability of two events happening at the same time -- diabetes and a particular age group. In probability notation, $0.014 = P(\text{diabetes and age 20 to 44})$. It is common to also write this as $P(\text{diabetes, age 20 to 44})$, with a comma replacing ``and''.
 
-The values in the last row and column of the table are the sums of the corresponding rows or columns. Since 0.329 is the sum of the of the probabilities of the disjoint events (diabetes and age 20 to 44) and (no diabetes and age 20 to 44), it is the probability of being in the age group 20 to 44. The row and column sums are called \term{marginal probabilities}; they are probabilities about only one type of event, such as age. The sum of the first column (0.093) is the marginal probability of a member of the population having diabetes.
+The values in the last row and column of the table are the sums of the corresponding rows or columns. Since 0.329 is the sum of the of the probabilities of the disjoint events (diabetes, age 20 to 44) and (no diabetes, age 20 to 44), it is the probability of being in the age group 20 to 44. The row and column sums are called \term{marginal probabilities}; they are probabilities about only one type of event, such as age. The sum of the first column (0.093) is the marginal probability of a member of the population having diabetes.
 
 \begin{termBox}{\tBoxTitle{Marginal and joint probabilities}
 If a probability is based on a single variable, it is a \emph{\hiddenterm{marginal probability}}. The probability of outcomes for two or more variables or processes is called a \emph{\hiddenterm{joint probability}}.}
@@ -699,7 +704,6 @@ The conditional probability of diabetes given age 65 or greater is simply the ra
  
 \begin{align*}
     \frac{\text{prop. of population with diabetes, age 65 or greater}}{\text{prop. of population greater than age 65}} &= \frac{11,200,000/313,320,000}{41,506,000/313,320,000}\\
-			&=\frac{11,200,000}{41,506,000} \\
 	                               &= \frac{0.036}{0.132} \\
 								   &= 0.270,
 \end{align*}
@@ -714,11 +718,12 @@ P(A | B) = \frac{P(A\text{ and }B)}{P(B)}
 \end{align}}
 \end{termBox}
 
-\begin{exercise}\label{familyCollegeProbOfParentsEqualNotGivenTeen}
-(a) Write out the following statement in conditional probability notation: "The probability a randomly selected person has diabetes, given that his or her age is between 45 and 64." \\[1mm]
-(b) Calculate the conditional probability in part (a). \\[1mm]
-(c) Write out the following statement in conditional probability notation: "The probability a randomly selected person is between 45 and 64 years old, given that the person has diabetes" Note that the condition is now based on diabetes, not age group. \\[1mm]
-(d) Calculate the probability in part (c).
+\begin{exercise}
+Write out the following statement in conditional probability notation: "The probability a randomly selected person has diabetes, given that their age is between 45 and 64." Calculate the conditional probability.\footnote{Let $A$ be the event a person has diabetes, and $B$ the event that their age is between 45 and 64. Use the information in Table~\ref{DiabetesAgeProbTable} to calculate $P(A|B)$. $P(A|B) = \frac{P(A\text{ and }B)}{P(B)} = \frac{0.043}{0.261} = 0.165.$}
+\end{exercise}
+
+\begin{exercise}
+Write out the following statement in conditional probability notation: "The probability a randomly selected person is between 45 and 64 years old, given that the person has diabetes." Note that the condition is now based on diabetes, not age group. Calculate the conditional probability.\footnote{Again, let $A$ be the event a person has diabetes, and $B$ the event that their age is between 45 and 64. Find $P(B|A)$. $P(B|A) = \frac{P(A\text{ and }B)}{P(A)} = \frac{0.043}{0.093} = 0.462.$}	
 \end{exercise}
 
 %\subsection{Smallpox in Boston, 1721}
@@ -793,6 +798,8 @@ It is useful to think of $A$ as the outcome of interest and $B$ as the condition
 \end{termBox}
 This General Multiplication Rule is simply a rearrangement of the definition for conditional probability in Equation~(\ref{condProbEq}) on page~\pageref{condProbEq}.
 
+\begin{comment}
+
 \begin{example}{Consider the \data{smallpox} dataset. Suppose we are given only two pieces of information: 96.08\% of residents were not inoculated, and 85.88\% of the residents who were not inoculated ended up surviving. How could we compute the probability that a resident was not inoculated and lived? \textit{JV: Placeholder example, needs to be replaced.}}
 We will compute our answer using the General Multiplication Rule and then verify it using Table~\ref{smallpoxProbabilityTable}. We want to determine
 \begin{eqnarray*}
@@ -818,23 +825,28 @@ Use $P($\var{inoculated} = \resp{yes}$) = 0.0392$ and $P($\var{result} = \resp{l
 If 97.45\% of the people who were inoculated lived, what proportion of inoculated people must have died?\footnote{There were only two possible outcomes: \resp{lived} or \resp{died}. This means that 100\% - 97.45\% = 2.55\% of the people who were inoculated died.}
 \end{exercise}
 
+\end{comment}
+
 %JV: \textit{JV: I am not clear on why this tipbox appears in this subsection. Would it be better at the end of the previous subsection?}
 
 \begin{termBox}{\tBoxTitle{Sum of conditional probabilities}
 Let $A_1$, ..., $A_k$ represent all the disjoint outcomes for a variable or process. Then if $B$ is an event, possibly for another variable or process, we have: \vspace{-1mm}
-\begin{eqnarray*}
+\begin{align*}
 P(A_1|B)+\cdots+P(A_k|B) = 1
-\end{eqnarray*}\vspace{-5.5mm} \par
+\end{align*}\vspace{-5.5mm} \par
 The rule for complements also holds when an event and its complement are conditioned on the same information: \vspace{-1.5mm}
-\begin{eqnarray*}
+\begin{align*}
 P(A | B) = 1 - P(A^c | B)
-\end{eqnarray*}}
+\end{align*}}
 \end{termBox}
+
+\begin{comment}
 
 \begin{exercise}
 Based on the probabilities computed above, does it appear that inoculation is effective at reducing the risk of death from smallpox?\footnote{The samples are large relative to the difference in death rates for the ``inoculated'' and ``not inoculated'' groups, so it seems there is an association between \var{inoculated} and \var{outcome}. However, as noted in the solution to Guided Practice~\ref{SmallpoxInoculationObsExpExercise}, this is an observational study and we cannot be sure if there is a causal connection. (Further research has shown that inoculation is effective at reducing death rates.)}
 \end{exercise}
 
+\end{comment}
 
 \subsection{Independence and conditional probability}
 
@@ -861,7 +873,7 @@ P(Y=\text{\resp{1}}\ |\ X=\text{\resp{1}})
 
 
 \begin{exercise}
-Casinos often rely on gamblers not understanding independence.  Suppose the last five outcomes on a roulette table were \resp{black}.  What is wrong with the reasoning that the next outcome is highly likely to be red?\footnote{Each outcome is independent of the other, with the likelihood of red or black being equal from spin to spin.}
+Casinos often rely on gamblers not understanding independence.  Suppose the last five outcomes on a roulette table were black.  What is wrong with the reasoning that the next outcome is highly likely to be red?\footnote{Each outcome is independent of the other, with the likelihood of red or black being equal from spin to spin.}
 \end{exercise}
 
 
@@ -947,7 +959,7 @@ This type of problem arises so often in medicine that is useful to have several 
 	\label{BreastCancerTreeDiagram}
 \end{figure}
 
-A \term{tree diagram} is a tool to organize outcomes and probabilities around the structure of data, and is especially useful when two or more processes occur in a sequence, with each process  conditioned on its predecessors. For this problem, the population can first be split by cancer status: \texttt{cancer} or \texttt{no cancer}. Following this split, mammogram results can be either \texttt{positive} or \texttt{negative}. As shown in Figure~\ref{BreastCancerTreeDiagram}, the primary branch shows the marginal probabilities 0.0035 and 0.9965. 
+A \term{tree diagram} is a tool to organize outcomes and probabilities around the structure of data, and is especially useful when two or more processes occur in a sequence, with each process  conditioned on its predecessors. For this problem, the population can first be split by cancer status: \texttt{cancer} or \texttt{no cancer}. Following this split, mammogram results can be either \texttt{positive} or \texttt{negative}. As shown in Figure~\ref{BreastCancerTreeDiagram}, the primary branches shows the marginal probabilities 0.0035 and 0.9965. 
 
 The secondary branches are conditioned on the primary branch and show conditional probabilities; for example, the top branch is the probability that a mammogram is positive given that an individual has cancer. The problem provides enough information to compute the probability of testing positive if breast cancer is present ($1.00 - 0.11=0.89$). 
 
@@ -1007,7 +1019,7 @@ Bayes' Theorem states that this conditional probability can be identified as the
 where $A_2$, $A_3$, ..., and $A_k$ represent all other possible outcomes of the first variable.}\index{Bayes' Theorem|textbf}
 \end{termBox}
 
-The numerator identifies the probability of getting both $A_1$ and $B$. The denominator is the marginal probability of getting $B$. This bottom component of the fraction appears describes the adding of probabilities from the different ways to get $B$. 
+The numerator identifies the probability of getting both $A_1$ and $B$. The denominator is the marginal probability of getting $B$. This bottom component of the fraction describes the adding of probabilities from the different ways to get $B$. 
 
 To apply Bayes' Theorem correctly, there are two preparatory steps:
 \begin{enumerate}
@@ -1015,37 +1027,57 @@ To apply Bayes' Theorem correctly, there are two preparatory steps:
 \item[(1)] First identify the marginal probabilities of each possible outcome of the first variable: $P(A_1)$, $P(A_2)$, ..., $P(A_k)$.
 \item[(2)] Then identify the probability of the outcome $B$, conditioned on each possible scenario for the first variable: $P(B | A_1)$, $P(B | A_2)$, ..., $P(B | A_k)$.
 \end{enumerate}
-Once each of these probabilities are identified, they can be applied directly within the formula.
+Once these probabilities are identified, they can be applied directly within the formula.
 
-\subsubsection{Solution 3. Using a Contingency Table.}
+\subsubsection{Solution 3. Contingency Table.}
 
-The positive predictive value (PPV) of a diagnostic test can also be calculated by constructing a $2 \times 2$ contingency table for a large, hypothetical population then calculating conditional probabilities by conditioning on rows or columns. The method does not calculate PPV using the formulas; instead the table can be used for an empirical estimate of PPV.  If the hypothetical population is large enough, this empirical estimate will be close to the exact value.
+The positive predictive value (PPV) of a diagnostic test can also be calculated by constructing a two-way contingency table for a large, hypothetical population and calculating conditional probabilities by conditioning on rows or columns. Using a large enough hypothetical population results in an empirical estimate of PPV that is very close to the exact value obtained via using the previously discussed formulas.
 
- Table~\ref{tableMammogramExample} corresponds to the mammogram example and is constructed, then used, with the following steps, which can be applied to any similar problem.
+Begin by constructing an empty $2 \times 2$ table, with the possible outcomes of the diagnostic test as the rows, and the possible disease statuses as the columns (Table~\ref{tableMammogramSetup}). Include cells for the row and column sums.
+
+Choose a large number $N$, for the hypothetical population size. Typically, $N$ of 100,000 is sufficient for an accurate estimate. 
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{rrrr}
+		\hline
+		& Breast Cancer Present & Breast Cancer Absent & Sum \\ 
+		\hline
+		Mammogram Positive & -- & -- & -- \\ 
+		Mammogram Negative & -- & -- & -- \\ 
+		Sum & -- & -- & 100,000 \\ 
+		\hline
+	\end{tabular}
+	\caption{A $2 \times 2$ table for the mammogram example, with hypothetical population size $N$ of 100,000.}
+	\label{tableMammogramSetup}
+\end{table}
+
+Continue populating the table, using the provided information about the prevalence of breast cancer in this population (0.35\%), the chance of a false negative mammogram (11\%), and the chance of a false positive (7\%):
 
 \begin{enumerate}
-    
-    \item Label the two columns of the table \textsl{Breast Cancer Present, Breast Cancer Absent} and the two rows \textsl{Mammogram Positive, Mammogram Negative}. 
-    
-    \item Choose a large number, $N$, for a hypothetical population size.  Typically, 100,000 is sufficient for an accurate estimate of PPV.  Enter $N$ in the lower right hand corner of the table.  
-    
-    \item Calculate the two column totals, the number of women with and without breast cancer.  The number with breast cancer is $N$ multiplied by the prevalence of the disease, or $(100,000)(.0035) = 350$.  The number without disease is the difference between $N$ and the number with disease, or $100,000 - 350 = 99,650$.  It can also be calculated by multiplying the population by 1 - prevalence.
-    
-    \item Calculate the number in each of the two table cells in the first column. The number testing positive among women with breast cancer is the column total multiplied by the sensitivity of the test, $(350)(0.89)= 311.5$. The number testing negative is the number with the disease multiplied by the false negative probability, $(350)(0.11) = 38.5$, but can also be calculated by subtracting the number testing positive from the number with the disease. These two values are the number of true positive and false negative mammograms among the 350 with the disease.
-    
-    \item Calculate the number in each of the cells in the second column, using the same method as in step 4. The values in the first and second rows of this column will be $(99,650)(0.07) = 6,975.5$ and $(99,650)(0.93) = 92,674.5$.  These are the numbers of false negative and true negative mammograms, respectively, among the 99,650 women.
-    
-    \item Complete the table by calculating the two row totals, $311.5 + 6,975.5= 7287$, and $38.5 + 92,647.5 = 92,713.$  These row totals are, respectively, the numbers of positive and negative mammograms among the 100,000.
- 
-    \item Calculate the PPV of the mammogram using the ratio of the true number positive divided by the total number of postive mammograms. In the language of probability, it is the chances of a woman having breast cancer, given that she has tested postive.  In this example, PPV= $311.5/7287 = 0.0427$.  Because this is an empirical estimate, it differs in the third decimal place from the exact calculation, but is more than accurate enough.
-    
-    
+	\item Calculate the two column totals (the number of women with and without breast cancer) from $P(\text{BC})$, the disease prevalence:
+	\[N \times P(\text{BC}) = 100,000 \times .0035 = 350 \text{ women with BC}\]
+	\[N \times [1 - P(\text{BC})] = 100,000 \times [1 - .0035] = 99,650 \text{ women without BC}\]
+	
+	Alternatively, the number of women without breast cancer can be calculated by subtracting the number of women with breast cancer from $N$.
+	
+	\item Calculate the two numbers in the first column: the number of women who have breast cancer and tested either negative (false negative) or positive (true positive).
+	\[\text{ women with BC} \times P(\text{false "-"}) = 350 \times .11 = 38.5 \text{ false "-" results}\]
+	\[\text{ women with BC} \times [1 - P(\text{true "+"})] = 350 \times [1 - .11] = 311.5 \text{ true "+" results}\]
+	
+	\item Calculate the two numbers in the second column: the number of women who do not have breast cancer and tested either positive (false positive) or negative (true negative). 
+	\[\text{ women without BC} \times P(\text{false "+"}) = 99,650 \times .07 = 6,975.5 \text{ false "+" results}\]
+	\[\text{ women without BC} \times [1 - P(\text{true "-"})] = 99,650 \times [1 - .07] = 92,674.5 \text{ true "-" results}\]
+	
+	\item Complete the table by calculating the two row totals: the number of positive and negative mammograms out of 100,000.
+	\[(\text{true "+" results}) + (\text{false "+" results}) = 311.5 + 6,975.5 = 7,287 \text{ "+" mammograms}\]
+	\[(\text{true "-" results}) + (\text{false "-" results}) = 38.5 + 92,674.5 = 92,713 \text{ "-" mammograms}\]
+	
+	\item Finally, calculate the PPV of the mammogram by using the ratio of the number of true positives to the total number of positive mammograms. This estimate is more than accurate enough, with the calculated value differing only in the third decimal place from the exact calculation, 
+	
+	\[\dfrac{\text{ true "+" results}}{\text{ "+" mammograms}} = \dfrac{311.5}{7,287} = 0.0427 \]
+	
 \end{enumerate}
-
-The table shows why the positive predictive value of mammogram is low: almost 7300 women will have a positive mammogram in this hypothetical population, but only roughly 312 of those women have breast cancer.
-
-
-The negative predictive value of mammogram can be calculated with the ratio the women who had a true negative mammogram among all negative mammograms.  The labeling of the rows and columns is arbitrary, but once set, should be used with care.
 
 \begin{table}[ht]
 	\centering
@@ -1058,9 +1090,13 @@ The negative predictive value of mammogram can be calculated with the ratio the 
 		Sum & 350 & 99,650 & 100,000 \\ 
 		\hline
 	\end{tabular}
-	\caption{Table used to calculate PPV of a mammogram}
+	\caption{Completed table for the mammogram example. The table shows why the PPV of the mammogram is low: almost 7,300 women will have a positive mammogram result in this hypothetical population, but only \textasciitilde312 of those women actually have breast cancer.}
 	\label{tableMammogramExample}
 \end{table}
+
+
+%JV: In my edit of Solution 3, I removed the references to specificity and sensitivity, since the problem is only introduced in the context of false positives and false negatives. For a later revision, we could introduce language/notation specific to diagnostic tests at the end of this section.
+
 
 %%%%%
 %
@@ -1091,7 +1127,7 @@ The anticipated outcome in this hypothetical study is an example of a \term{rand
 This section outlines some general concepts used with random variables, while Chapter 3 explores specific types of random variables.
 
 
-\subsection{Distributions of Random Variables}
+\subsection{Distributions of random variables}
 
 Formally, a random variable assigns numerical values to the outcome of a random phenomenon, and is usually written with a capital letter such as $X$, $Y$, or $Z$. 
 
@@ -1105,9 +1141,9 @@ If a coin is tossed three times, the outcome is the sequence of observed heads a
 	\label{coinToss}
 \end{figure}
 
-If probabilities can be assigned to the outcomes in a random phenomenon or study, then those can be used to assign probabilities to values of a random variable.  Using independence, $P(\text{HHH}) = (1/2)^3 = 1/8$.  Since $X$ in the above example can only be three if the three tosses are all heads, $P(X=3) = 1/8$.  The distribution of a random variable is the collection of probabilities for all of the variable's unique values. Figure~\ref{coinToss} shows the eight possible outcomes when a coin is cossed three times: TTT, HTT, THT, TTH, HHT, HTH, THH, HHH. The variable $X = 0$ for the first set of tosses, $X = 1$ for the next three, $X = 2$ for the following three, and $X = 3$ for the last set (HHH).  
+If probabilities can be assigned to the outcomes in a random phenomenon or study, then those can be used to assign probabilities to values of a random variable.  Using independence, $P(\text{HHH}) = (1/2)^3 = 1/8$.  Since $X$ in the above example can only be three if the three tosses are all heads, $P(X=3) = 1/8$.  The distribution of a random variable is the collection of probabilities for all of the variable's unique values. Figure~\ref{coinToss} shows the eight possible outcomes when a coin is cossed three times: TTT, HTT, THT, TTH, HHT, HTH, THH, HHH. For the first set of tosses, $X = 0$; for the next three, $X=1$, then $X=2$ for the following three tosses and $X=3$ for the last set (HHH).  
 
-Using independence again, each of the 8 outcomes have probability 1/8, so $P(X = 0) = P(X = 3) = 1/8$ and $P(X = 1) = P(X = 2) = 3/8$. For random variables with a small number of outcomes, it is often easier and more instructive to display its distribution in a table. Table~\ref{distCoinTossing} shows the probability distribution for $X$.  Probability distributions for random variables follow the rules for probability; for instance, the sum of the probabilities must be 1.00.  The possible outcomes of $X$ are labeled with a corresponding lower case letter $x$ and subscripts.  The values of X are $x_1=0$, $x_2=1$,  $x_3 = 2$, and $x_4 = 3$; these occur with probabilities $1/8$, $3/8$, $3/8$ and $1/8$.
+Using independence again, each of the 8 outcomes have probability 1/8, so $P(X = 0) = P(X = 3) = 1/8$ and $P(X = 1) = P(X = 2) = 3/8$. For random variables with a small number of outcomes, it is often easier and more instructive to display the distribution of outcomes in a table. Table~\ref{distCoinTossing} shows the probability distribution for $X$.  Probability distributions for random variables follow the rules for probability; for instance, the sum of the probabilities must be 1.00.  The possible outcomes of $X$ are labeled with a corresponding lower case letter $x$ and subscripts.  The values of X are $x_1=0$, $x_2=1$,  $x_3 = 2$, and $x_4 = 3$; these occur with probabilities $1/8$, $3/8$, $3/8$ and $1/8$.
 
 \begin{table}[h]
 	\centering 
@@ -1118,23 +1154,23 @@ Using independence again, each of the 8 outcomes have probability 1/8, so $P(X =
 		$x_i$ & 0 & 1 & 2 & 3 & --\\
 		$P(X = x_i)$ & 1/8 & 3/8 & 3/8 & 1/8 & 8/8 = 1.00\\
 	\end{tabular}
-	\caption{Tabular form for the distribution of the number of heads in three coin tosses}
+	\caption{Tabular form for the distribution of the number of heads in three coin tosses.}
 	\label{distCoinTossing}
 \end{table}
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.7\textwidth]
+\includegraphics[width=0.5\textwidth]
 {ch_probability_oi_biostat/figures/barPlotCoinTossing/barPlotCoinTossing.pdf}
-\caption{Bar plot of the distribution of the number of heads in three coin tosses }
+\caption{Bar plot of the distribution of the number of heads in three coin tosses.}
 \label{barPlotCoinTossing}
 \end{figure}
 
-Bar graphs can be used to show the distribution of a random variable.  Figure~\ref{barPlotCoinTossing} is a bar graph of the distribution of $X$ in the coin tossing example. When bar graphs are used to show the distribution of a dataset, the heights of the bars show the frequency of observations; bar heights showing a probability distribution show the probabilities of possible values of a random variable.
+Bar graphs can be used to show the distribution of a random variable.  Figure~\ref{barPlotCoinTossing} is a bar graph of the distribution of $X$ in the coin tossing example. When bar graphs are used to show the distribution of a dataset, the heights of the bars show the frequency of observations; in contrast, bar heights for a probability distribution show the probabilities of possible values of a random variable.
 
-$X$ is an example of a \term{discrete random variable} since it takes on a finite number of values.\footnote{Some discrete random variables have an infinite number of possible values, such as all the non-negative integers.}  Because $X$ arises in a simple experiment (3 tosses of a coin) in which probabilities are easy to calculate, calculating the probability distribution of $X$ is straightforward and the bar plot is not particularly informative.  
+$X$ is an example of a \term{discrete random variable} since it takes on a finite number of values.\footnote{Some discrete random variables have an infinite number of possible values, such as all the non-negative integers.} Because $X$ arises in a simple experiment (3 tosses of a coin) in which event probabilities are easy to calculate, calculating the probability distribution of $X$ is straightforward and the bar plot is not particularly informative.  
 
-The hypothetical clinical study at the beginning of this section raised the question of how surprising it would be to observe 12 or more responses out of 20 in a setting where only 20\% of patients are expected to respond to treatment.  Suppose $X$ is a random variable that will denote the possible number of responding participants in a clinical study. $X$ will have the same probability distribution as the number of heads in 20 tosses of a weighted coin, where the probability of landing heads is 0.2 instead of $1/2 = 0.5$.  The graph of the probability distribution for $X$ in Figure~\ref{distRespClinStudy} can be used to approximate this probability.\footnote{This and other useful distributions will be examined in detail in Chapter 3} The nine values (12, 13,\ldots, 20) make up the event 12 or more, and the graph shows that each of these probabilities is smaller than 0.005, so the chance of 12 or more responses is less than 0.01, or clearly less than 1\%.  Formulas in Chapter 3 can be used to show that the exact probability is slightly larger than 0.0001.
+In the hypothetical clinical study described at the beginning of this section, how unlikely would it be for 12 or more patients to respond to the treatment, given that only 20\% of patients are expected to respond? Suppose $X$ is a random variable that will denote the possible number of responding patients, out of a total of 20. $X$ will have the same probability distribution as the number of heads in a 20 tosses of a weighted coin, where the probability of landing heads is 0.20. The graph of the probability distribution for $X$ in Figure~\ref{distRespClinStudy} can be used to approximate this probability. The event of 12 or more consists of nine values (12, 13, \dots, 20); the graph shows that the probabilities for each value is smaller than 0.005, so the chance of 12 or more responses is clearly less than 0.01.\footnote{Formulas in Chapter 3 can be used to show that the exact probability is slightly larger than 0.0001.}
 
 \begin{figure}[h]
 \centering
@@ -1146,13 +1182,12 @@ The hypothetical clinical study at the beginning of this section raised the ques
 
 %DH:  \textit{DH: this example can be improved, and the graph could be improved as well.}
 
-
 \subsection{Expectation}
 
 \index{expectation|(}
 
-Just like distributions of data, distributions of random variables also have means, variances, standard deviations, medians, etc.; these characteristics are computed a bit differently for random variables. To calculate the mean of a random variable, multiply each possible value by its corresponding probability and add these products. The mean of a random variable is called its \term{expected value} and written $E(X)$ -- it is the value one would expect to see if the variable were to be observed. For the variable $X$ in the last section:
-
+Just like distributions of data, distributions of random variables also have means, variances, standard deviations, medians, etc.; these characteristics are computed a bit differently for random variables. To calculate the mean of a random variable, multiply each possible value by its corresponding probability and add these products. The mean of a random variable is called its \term{expected value} and written $E(X)$. For the variable $X$ in the last section:
+\vspace{0mm}
 \begin{align*}
 E(X) &= (0)(P(X=0)) + (1)(P(X=1)) + (2)(P(X=2)) + (3)(P(X = 3)) \\
 	&= (0)(1/8) + (1)(3/8) + (2)(3/8) + (3)(1/8) = 12/8 = 1.5
@@ -1180,14 +1215,12 @@ The expected value of a random variable has the same interpretation as a mean in
 
 \subsection{Variability in random variables}
 
-How variable will the outcomes be when tossing a coin three times?  The \indexthis{variance}{variance} and \indexthis{standard deviation}{standard deviation} can be used to describe the variability of a random variable. Section~\ref{variability}
-introduced a method for finding the variance and standard deviation for a dataset.  Deviations from the mean ($x_i - \mu$) were squared, then averaged to compute the variance. In the case of a random variable, squared deviations are again used, this time deviations from the mean of the random variable, and their sum is weighted by the corresponding probabilities. This weighted sum of squared deviations equals the variance, and the standard deviation is again the square root of the variance, just as in Section~\ref{variability}.
+How variable will the outcomes be when tossing a coin three times?  The \indexthis{variance}{variance} and \indexthis{standard deviation}{standard deviation} can be used to describe the variability of a random variable. Section~\ref{measuresOfSpread} introduced a method for finding the variance and standard deviation for a dataset.  Deviations from the mean ($x_i - \mu$) were squared, then averaged to compute the variance. In the case of a random variable, squared deviations from the mean of the random variable are used instead, and their sum is weighted by the corresponding probabilities. This weighted sum of squared deviations equals the variance, and the standard deviation is again the square root of the variance, just as for a dataset.
 
 \begin{termBox}{\tBoxTitle{General variance formula}
-If $X$ takes on outcomes $x_1$, ..., $x_k$ with probabilities $P(X=x_1)$, ..., $P(X=x_k)$ and expected value $\mu=E(X)$, then the variance of $X$, denoted by $\text{Var}(X)$ or the symbol $\sigma^2$, is
+If $X$ takes on outcomes $x_1$, ..., $x_k$ with probabilities $P(X=x_1)$, \dots, $P(X=x_k)$ and expected value $\mu=E(X)$, then the variance of $X$, denoted by $\text{Var}(X)$ or the symbol $\sigma^2$, is
 \begin{align}
-\sigma^2 &= (x_1-\mu)^2 P(X=x_1) + \cdots \notag \\
-	& \qquad\quad\cdots+ (x_k-\mu)^2 P(X=x_k) \notag \\
+\sigma^2 &= (x_1-\mu)^2 P(X=x_1) + \cdots \notag + (x_k-\mu)^2 P(X=x_k) \notag \\
 	&= \sum_{j=1}^{k} (x_j - \mu)^2 P(X=x_j)
 \end{align}
 The standard deviation of $X$, labeled $\sigma$\index{Greek!sigma ($\sigma$)}, is the square root of the variance.}
@@ -1198,38 +1231,36 @@ $\text{Var}(X)$\vspace{1mm}\\\footnotesize Variance\\of $X$]{\raggedright\vspace
 
 $\text{Var}(X)$\vspace{1mm}\\\footnotesize Variance\\of $X$}
 
-The weighted sum in variance of a random variable can be interpreted as the expectation of the terms $(x_i - \mu)^2$ (instead of just $x_i$), so a compact form for the formula is 
-\begin{align*}
-	 \sigma_X^2 = E(X - \mu)^2.
-\end{align*}
+The weighted sum in the variance of a random variable can be interpreted as the expectation of the terms $(x_i - \mu)^2$ (instead of just $x_i$), so a compact form for the formula is $\sigma_X^2 = E(X - \mu)^2$. While, this compact form is not useful for direct computation, it can be helpful for understanding the general concept. 
 
-This compact form is not useful for direct computation, but it is useful for understanding the general concept. 
+\newpage
 
 \begin{example}{Compute the variance and standard deviation of $X$, the number of heads in three tosses of a coin.}
     
-    In the formula for the variance, $k = 4$ and $\mu_X = E(X) = 1.5$, the variance will be 
-    \begin{align}
-    \sigma_X^2 &= (x_i-\mu_X)^2P(X=x_1) + \cdots \notag \\
-    	& \qquad\quad\cdots+ (x_4-\mu)^2 P(X=x_4) \notag \\
+    In the formula for the variance, $k = 4$ and $\mu_X = E(X) = 1.5$. 
+    \begin{align*}
+    \sigma_X^2 &= (x_1-\mu_X)^2P(X=x_1) + \cdots \notag + (x_4-\mu)^2 P(X=x_4) \notag \\
     	&= (0- 1.5)^2(1/8) + (1 - 1.5)^2 (3/8) + 
         (2 -1.5)^2 (3/8) + (3-1.5)^2 (1/8) \notag \\
         &= 3/4 = 0.75.
-    \end{align}
+    \end{align*}
     
 The standard deviation is $\sqrt{3/4} = \sqrt{3}/2 = 0.866$.  
 
 \end{example}
 
-The coin tossing scenario provides a simple illustration of the mean and variance of a random variable.  Calculating expected health care costs is a more realistic example. 
+The coin tossing scenario provides a simple illustration of the mean and variance of a random variable. For the rest of this section, a more realistic example will be discussed -- calculating expected health care costs.
 
- \label{healthCareCostsEmployee}
-In most typical health insurance plans in the United States, members of the plan pay annually in three categories: a monthly premium, ``out-of-pocket'' costs which include co-payments for each physician visit or prescription, and a deductible amount that members pay each year before the insurance covers service.\footnote{The deductible also includes care and supplies that are not covered by insurance.} Picking a new health plan involves estimating costs for the next year based on a person's best guess at the type and number of services that will be needed.
+\label{healthCareCostsEmployee}
+In most typical health insurance plans in the United States, members of the plan pay annually in three categories: a monthly premium, a deductible amount that members pay each year before the insurance covers service, and ``out-of-pocket'' costs which include co-payments for each physician visit or prescription.\footnote{The deductible also includes care and supplies that are not covered by insurance.} Picking a new health plan involves estimating costs for the next year based on a person's best guess at the type and number of services that will be needed.
 	
-In 2015, Harvard University offered several alternative plans to its employees.   In the Health Maintenance Organization (HMO) plan for employees earning less than \$70,000 per year, the monthly premium was \$79, and the co-payment for each office visit or physical therapy session was \$20. A new employee examined her health records for the last 10 years, and noticed that in three of the 10 years her only office visit was one annual physical.  In four of the 10 years she visited her physician three times, once for a physical, and twice for a cases of the flu. In two years, she had four visits.  In one of the 10 years, she experienced a knee injury that required 3 office visits and 5 physical therapy sessions.
+In 2015, Harvard University offered several alternative plans to its employees. In the Health Maintenance Organization (HMO) plan for employees earning less than \$70,000 per year, the monthly premium was \$79, and the co-payment for each office visit or physical therapy session was \$20. After a new employee examined her health records for the last 10 years, she noticed that in three of the 10 years, she only visited the office visit for one annual physical. In four of the 10 years, she visited her physician three times: once for a physical, and twice for cases of the flu. In two years, she had four visits. In one of the 10 years, she experienced a knee injury that required 3 office visits and 5 physical therapy sessions.
 
-\begin{example} {Ignoring the cost of prescription drugs, over-the-counter medications and the annual deductible amount, what is the expected annual healthcare cost for this employee under the Harvard plan?}  
+\begin{example} {Ignoring the cost of prescription drugs, over-the-counter medications, and the annual deductible amount, what is the expected annual health care cost for this employee under the Harvard HMO plan?}  
 
-Let the random variable $X$ denote annual healthcare costs.  It is best to summarize the information in the problem in a table that can also be used for computing the mean and variance of $X$.  If the  last ten years are an accurate picture of annual costs for this employee, $X$ will have four possible values that correspond to the annual cost of the monthly premium plus the visit costs for the four patterns of visits.  The cost of the premium is (12)(\$79) = \$948. The cost of the visits is \$20 times the number of visits.  The values of $X$ are ordered according to increasing numbers of visits. 
+Let the random variable $X$ denote annual health care costs.  It is best to summarize the information in the problem in a table that can also be used for computing the mean and variance of $X$.  If the  last ten years are an accurate picture of annual costs for this employee, $X$ will have four possible values that correspond to the annual cost of the monthly premium plus the visit costs for the four patterns of visits. 
+
+The total cost of the monthly premiums in a single year is $12 \times \$79 = \$948$. The cost of each visit is \$20, so the total visit cost for a year is \$20 times the number of visits. The values of $X$ are ordered according to increasing numbers of visits. 
 
 For example, the first column in the table contains information about the years in which the employee had one office visit. Adding the \$948 for the annual premium and \$20 for one visit results in $x_{1}=\$968$; $P(X=x_{i}) = 3/10 = 0.30$.
 
@@ -1269,9 +1300,9 @@ The variance of $X$ is $\sigma^2 = \$1556.00$, and the standard deviation is $\s
 
 \subsection{Linear combinations of random variables}
 
-Sums of random variables arise naturally in many problems. In the health insurance example, the amount spent by the employee during her next five years of employment can be represented as $X_1 + X_2 + X_3 + X_4 + X_5$, where $X_1$ is the cost of the first year, $X_2$ the second year, etc. If the employee's domestic partner also has health insurance with another employer, the total annual cost to the couple would be the sum of the costs for the employee ($X$) and her partner ($Y$), or $X + Y$. In each of these examples, it is intuitively clear that the average cost would be the sum of the average of each term.
+Sums of random variables arise naturally in many problems. In the health insurance example, the amount spent by the employee during her next five years of employment can be represented as $X_1 + X_2 + X_3 + X_4 + X_5$, where $X_1$ is the cost of the first year, $X_2$ the second year, etc. If the employee's domestic partner has health insurance with another employer, the total annual cost to the couple would be the sum of the costs for the employee ($X$) and her partner ($Y$), or $X + Y$. In each of these examples, it is intuitively clear that the average cost would be the sum of the average of each term.
 
-Sums of random variables are special cases of linear combinations of variables.  
+Sums of random variables represent a special case of linear combinations of variables.  
 
 \begin{termBox}{\tBoxTitle{Linear combinations of random variables and their expected values}
 If $X$ and $Y$ are random variables, then a linear combination of the random variables is given by
@@ -1284,7 +1315,7 @@ where $a$ and $b$ are constants.  The mean of a linear combination of random var
 \end{align*}}
 \end{termBox}
 
-There are a few special cases of this formula which are especially useful. The formula implies that $E(a + Y) = a + E(Y)$.  This could have been used when calculating the average health costs for the employee by defining $a$ as the fixed cost of the premium ($a=\$948$), and taking $Y$ to be just the cost of the physician visits. Thus, the total annual cost for a year could be calculated as: $E(a + Y) = a + E(Y) = \$948 + E(Y) = \$948 + .30(1 \times \$20) + .40(3 \times \$20) + .20(4 \times \$20) + .10(8 \times \$20)= \$1,010.00$. 
+There are a few special cases of this formula which are especially useful. The formula implies that $E(a + Y) = a + E(Y)$.  This could have been used when calculating the average health costs for the employee by defining $a$ as the fixed cost of the premium ($a=\$948$) and $Y$ as the cost of the physician visits. Thus, the total annual cost for a year could be calculated as: $E(a + Y) = a + E(Y) = \$948 + E(Y) = \$948 + .30(1 \times \$20) + .40(3 \times \$20) + .20(4 \times \$20) + .10(8 \times \$20)= \$1,010.00$. 
 
 The formula easily generalizes to a sum of any number of random variables. For example, the average health care cost for 5 years (given that the cost for services remains the same) would be: 
 
@@ -1295,7 +1326,7 @@ The formula easily generalizes to a sum of any number of random variables. For e
 \end{align*}
 
 \begin{exercise} \label{healthCareCostsPartner}
-	Suppose the employee will begin a domestic partnership in the next year, and while she and her companion will begin living together and sharing expenses, she and her partner will keep their existing health insurance plans; both, in fact have the same plan from the same employer.  In the last five years, her new partner visited a physician only once in four of the ten years, and twice in the other six years.   Calculate the expected total cost of health insurance to the couple in the next year.\footnote{Let $X$ represent the costs for the employee and $Y$ represent the costs for her partner. $E(X) = \$1,010.00$, as previously calculated. $E(Y) = 948 + .4(1 \times \$20) + .6(2 \times \$20) = \$980.00$. Thus, $E(X + Y) = E(X) + E(Y) = \$1,010.00 + \$980.00 = \$1,990.00$.}
+	Suppose the employee will begin a domestic partnership in the next year. Although she and her companion will begin living together and sharing expenses, they will each keep their existing health insurance plans; both, in fact, have the same plan from the same employer. In the last five years, her partner visited a physician only once in four of the ten years, and twice in the other six years. Calculate the expected total cost of health insurance to the couple in the next year.\footnote{Let $X$ represent the costs for the employee and $Y$ represent the costs for her partner. $E(X) = \$1,010.00$, as previously calculated. $E(Y) = 948 + .4(1 \times \$20) + .6(2 \times \$20) = \$980.00$. Thus, $E(X + Y) = E(X) + E(Y) = \$1,010.00 + \$980.00 = \$1,990.00$.}
 \end{exercise}
 
 The employee and her partner would also like to know how variable their health care costs would be for the next year.  Calculating the variance and standard deviation of a linear combination of random variables requires more care.  The formula given here requires that the random variables in the linear combination be independent, so that an observation on one of the variables provides no information about the value of the other variable.  With that assumption, the following formula can be used:
@@ -1310,9 +1341,11 @@ This equation is valid as long as the random variables are independent of each o
 
 To calculate the variance and standard deviation for the next year health care costs for the two partners:
 
-\textit{Solution to be added. Start with X = costs for employee and Y the costs for partner, use formula for Var(X + Y). Add the question about whether independence assumption is reasonable.}
+\textit{Formal solution to be added. Start with X as the costs for employee and Y as the costs for the partner, use formula for Var(X + Y). Var(X) is \$1,556.00 from previous example; E(Y) is \$980, and Var(Y) is \$268.80. Thus, Var(X + Y) = \$1,824.80. However, is the independence assumption reasonable here?}
 
-The example of health insurance costs has been simplified to make the calculations clearer.  It ignores the fact that many plans have a deductible amount, and that plan members pay for services at different rates before and after the deductible has been reached. Often, insured individuals do not pay for services at all once a maximum amount has been reached in a year. The example also assumes that the proportions of number of physician visits per year, estimated from the last 10 years, can be treated as probabilities measured without error.  Had a different time-span been chosen, the proportions might well have been different.  
+%JV: Needs explanation for independence assumption.
+
+The example of health insurance costs has been simplified to make the calculations clearer.  It ignores the fact that many plans have a deductible amount, and that plan members pay for services at different rates before and after the deductible has been reached. Often, insured individuals no longer need to pay for services at all once a maximum amount has been reached in a year. The example also assumes that the proportions of number of physician visits per year, estimated from the last 10 years, can be treated as probabilities measured without error. Had a different timespan been chosen, the proportions might well have been different.  
 
 \begin{exercise}  The Association of American Medical Colleges (AAMC) introduced a new version of the Medical College Admission Test (MCAT) in the spring of 2015. Data from the scores were recently released by AAMC.\footnote{https://www.aamc.org/students/download/434504/data/percentilenewmcat.pdf}  The test consists of 4 components: chemical and physical foundations of biological systems; critical analysis and reasoning skills; biological and biochemical foundations of living systems; psychological, social and biological foundations of behavior. The overall score is the sum of the individual component scores. The grading for each of the four components is scaled so that the mean score is 125.  The means and standard deviations for the four components and the total scores for the population taking the exam in May 2015 exam are shown in table~\ref{table:mcatScoreDistribution}.
 	
@@ -1336,7 +1369,9 @@ Show that the standard deviation in the table for the total score does not agree
 	\end{table}	
 \end{exercise}
 
-\textit{Solution to be added, but only as far as noting that independence is not likely to be true. Begin by applying the formula that assumes independence.}
+\textit{Solution to be added in later draft \dots}
+
+%DH: Solution to be added, but only as far as noting that independence is not likely to be true. Begin by applying the formula that assumes independence.
 
 
 \section{Distributions for pairs of random variables (special topic)}
@@ -1344,21 +1379,23 @@ Show that the standard deviation in the table for the total score does not agree
 \index{joint distribution for random variables|(}
 \index{marginal distribution for random variables|(}
 
-The summary MCAT score is more variable than implied by the formula for computing the standard deviation for sums of random variables because the component scores are not independent, but correlated. Individuals scoring well on one component of the exam are likely to score well on other parts.  When two random variables tend to vary together, they are called \term{correlated random variables}.  There are many examples of correlated random variables, including height and weight in a population of individuals, the scores of verbal and quantitative SAT exams, and gestational age and birth weight of newborns.  When two random variables $X$ and $Y$ are correlated,
+The summary MCAT score is more variable than implied by the formula for computing the standard deviation for sums of random variables because the component scores are not independent. Instead, the component scores are correlated -- individuals scoring well on one component of the exam are likely to score well on other parts.  When two random variables tend to vary together, they are called \term{correlated random variables}.  There are many examples of correlated random variables, such as height and weight in a population of individuals, or the gestational age and birth weight of newborns.  
+
+When two random variables $X$ and $Y$ are correlated:
 \begin{equation*} 
 	\text{Variance}(X + Y) = \text{Variance}(X) + \text{Variance}(Y) + 
 	2 \sigma_X \sigma_Y\text{Correlation}(X,Y) 
 	\label{eq:generalVarianceSumRVs}
 \end{equation*}
-and
 \begin{equation*}
 	\text{Variance}(X - Y) = \text{Variance}(X) + \text{Variance}(Y) - 
 	2 \sigma_X \sigma_Y\text{Correlation}(X,Y) 
 	\label{eq:generalVarianceDiffRVs}
 \end{equation*}
+
 The standard deviation for the sum or difference will be the square root of the variance.
 
-Correlation between random variables is similar to correlation between pairs of observations in a dataset, with some important differences.  Calculating a correlation $r$ in a dataset was introduced in Section~\ref{scatterPlots} and uses the formula 
+Correlation between random variables is similar to correlation between pairs of observations in a dataset, with some important differences.  Calculating a correlation $r$ in a dataset was introduced in Section~\ref{scatterPlots} and uses the formula:
 \begin{align*}
       r &=  \frac{1}{n-1}\sum^{n}_{i=1}
       \left(\frac{x_{i}-\overline{x}}
@@ -1367,15 +1404,14 @@ Correlation between random variables is similar to correlation between pairs of 
 The correlation coefficient $r$ is an average of products, with each term in the product measuring the distance between $x$ and its mean $\overline{x}$ or $y$ and its mean $\overline{y}$, after the distances have been scaled by respective standard deviations.
 
 The compact formula for the correlation between two random variables $X$ and $Y$  uses the same idea; it is given by
-\begin{equation}
+\begin{align}
 	\rho_{X,Y} = E\left(\frac{X - \mu_x}{\sigma_X}\right)\left(\frac{Y - \mu_Y}{\sigma_Y} \right),
 	\label{eq:generalFormulaCorrelation}
-\end{equation}
-where $\rho_{X,Y}$ is the correlation between the two variables, and $\mu_X, \mu_Y$, $\sigma_X, \sigma_Y$ are the respective means and standard deviations for $X$ and $Y$. Just as with the mean of a random variable, the expectation in the formula for correlation is a weighted sum of products, with with each term weighted by the probability of values for the pair $(X,Y)$.  Equation~\ref{eq:generalFormulaCorrelation} is useful for understanding analogy between correlation of random variables and observations in a dataset, but it cannot be used to calculate $\rho_{X,Y}$ without the probability weights.  The weights come from the \term{joint distribution} of the pair of variables $(X,Y)$.  Joint probabilities were discussed in section~\ref{marginalAndJointProbabilities}.
+\end{align}
+where $\rho_{X,Y}$ is the correlation between the two variables, and $\mu_X, \mu_Y$, $\sigma_X, \sigma_Y$ are the respective means and standard deviations for $X$ and $Y$. Just as with the mean of a random variable, the expectation in the formula for correlation is a weighted sum of products, with each term weighted by the probability of values for the pair $(X,Y)$.  Equation~\ref{eq:generalFormulaCorrelation} is useful for understanding the analogy between correlation of random variables and correlation of observations in a dataset, but it cannot be used to calculate $\rho_{X,Y}$ without the probability weights.  The weights come from the \term{joint distribution} of the pair of variables $(X,Y)$.  Joint probabilities were discussed in section~\ref{marginalAndJointProbabilities}.
 
 \begin{termBox}{\tBoxTitle{Joint distribution}
 The \term{joint distribution} for a pair of random variables is the collection of probabilities
-
 \begin{align*}
 	  p(x_i,y_j) = P(X=x_i \text{ and } Y = y_j) = P(X=x_i, Y=y_j)
 \end{align*}
@@ -1426,7 +1462,7 @@ Might the health care costs for the employee and her domestic partner be correla
 
 When two variables $X$ and $Y$ have a joint distribution, the marginal distribution of $X$ is the collection of probabilities for $X$ when $Y$ is ignored.  If $X$ represents employee costs and $Y$ represents partner costs, the event $(X = \$968)$ consists of the two  disjoint events $(X = \$968, Y = \$968)$ and $(X = \$968, Y = \$988)$, so $P(X = \$968) = 0.18 + 0.12 = 0.30$, the sum of the first row of the table. 
 
-The row sums in Table~\ref{healthExpensesJointDistribution} are the values of the \term{marginal distribution} of $X$. Similarly, the column sums will be the values of the marginal distribution of $Y$.  The marginal distributions of $X$ and $Y$ are shown in Table ~\ref{healthExpensesJointMarginalDistribution}, along with the joint distribution of $X$ and $Y$.
+The row sums in Table~\ref{healthExpensesJointDistribution} are the values of the \term{marginal distribution} of $X$. Similarly, the column sums will be the values of the marginal distribution of $Y$.  The marginal distributions of $X$ and $Y$ are shown in Table~\ref{healthExpensesJointMarginalDistribution}, along with the joint distribution of $X$ and $Y$.
 \newpage
 
 \begin{table}[h]
@@ -1449,13 +1485,19 @@ The row sums in Table~\ref{healthExpensesJointDistribution} are the values of th
 \label{healthExpensesJointMarginalDistribution}
 \end{table}
 
-\textit{DH: Formatting of table has to be improved}
+%DH: Formatting of table has to be improved
 
 
 \begin{example}{Calculate the correlation between employee costs and the standard deviation of the sum of the costs for the couple.}
 	
+	\begin{comment}
 	\textit{Not filling in the details now. Proceeds by showing that the marginal distributions are the same as those used earlier, then calculating $\sigma_X, \sigma_Y$ etc.  Variance using equation~\ref{eq:generalVarianceSumRVs}}
+	\end{comment}
 	\end{example}
+
+\textit{Section to be finished in subsequent draft \dots}
+
+\begin{comment}
 
 \textit{Outline for the remainder of this section
 	\begin{itemize}[--]
@@ -1463,6 +1505,8 @@ The row sums in Table~\ref{healthExpensesJointDistribution} are the values of th
 		\item conditional distributions
 		\item example
 	\end{itemize}}
+	
+\end{comment}
 
 \index{joint distribution for random variables|)}
 \index{marginal distribution for random variables|)}
@@ -1493,6 +1537,8 @@ This smooth curve represents a \term{probability density function} (also called 
 
 \index{hollow histogram|)}
 
+\newpage
+
 \subsection{Probabilities from continuous distributions}
 
 \begin{figure}[h!]
@@ -1505,9 +1551,9 @@ This smooth curve represents a \term{probability density function} (also called 
 \begin{example}{What proportion of the sample is between \resp{180} cm and \resp{185} cm tall (about 5'11" to 6'1"), if the two bins in this region have counts of 195,307 and 156,239 people?}\label{contDistProb}
 	
 Add the heights of the bins in the range \resp{180} cm and \resp{185} and divide by the sample size:
-	\begin{eqnarray*}
+	\begin{align*}
 		\frac{195,307+156,239}{\text{3,000,000}} = 0.1172
-	\end{eqnarray*}
+	\end{align*}
 	This fraction is the same as the proportion of the histogram's area that falls in the range \resp{180} to \resp{185} cm.
 \end{example}
 
@@ -1519,12 +1565,11 @@ Add the heights of the bins in the range \resp{180} cm and \resp{185} and divide
 \end{figure}
 
 For a continuous distribution, the probability can be calculated by finding the area of the shaded region under the curve between \resp{180} and \resp{185} (with the help of a computer):
-
-\begin{eqnarray*}
+\begin{align*}
 P(\text{\var{height} between \resp{180} and \resp{185}})
 	= \text{area between \resp{180} and \resp{185}}
 	= 0.1157
-\end{eqnarray*}
+\end{align*}
 
 The probability that a randomly selected person is between \resp{180} and \resp{185} cm is 0.1157. This is very close to the estimate from Example~\ref{contDistProb}: 0.1172. 
 

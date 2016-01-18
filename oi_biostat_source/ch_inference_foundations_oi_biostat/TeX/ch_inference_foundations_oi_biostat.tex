@@ -6,13 +6,13 @@
 \chapter{Foundations for inference}
 \label{foundationsForInference}
 
-On average, how many days a week are high school students physically active? How many hours of sleep per night do they get? These questions about the youth population in the United States could be answered either by collecting information from all 21.2 million high school aged youth (ages 15-19) or by formulating an estimate based on a well-chosen sample of students. The first strategy is simply impossible, while the second represents a primary goal of statistics -- drawing inferences about the characteristics of a population from a sample. In statistical terms, a characteristic of a population, such as the average amount of sleep per night for high school aged students, is called a \term{population parameter}. When carried out correctly, sampling from a population is an efficient way to estimate a population parameter. This chapter introduces the important ideas in drawing from samples by discussing methods of inference for a population mean, $\mu$. 
+On average, how many days a week are high school students physically active? How many hours of sleep per night do they get? These questions about the youth population in the United States could be answered either by collecting information from all 21.2 million high school aged youth (ages 15-19) or by formulating an estimate based on a well-chosen sample of students. The first strategy is simply impossible, while the second represents a primary goal of statistics -- drawing inferences about the characteristics of a population from a sample. In statistical terms, a characteristic of a population, such as the average amount of sleep per night for high school aged students, is called a \term{population parameter}. When carried out correctly, sampling from a population is an efficient way to estimate a population parameter. This chapter introduces the important ideas in drawing estimates from samples by discussing methods of inference for a population mean, $\mu$. 
 
-This chapter also discusses three widely used tools in statistics: point estimates (single number estimates) for a population mean, interval estimates that include a margin of error for point estimates, and a method for testing scientific hypotheses about $\mu$. The concepts used in this chapter will appear throughout later in the book. While particular equations or formulas may change to reflect the details of a problem at hand, the fundamental ideas will not. 
+This chapter also discusses three widely used tools in statistics: point estimates (single number estimates) for a population mean, interval estimates that include a margin of error for point estimates, and a method for testing scientific hypotheses about $\mu$. The concepts used in this chapter will appear throughout the rest of the book. While particular equations or formulas may change to reflect the details of a problem at hand, the fundamental ideas will not. 
 
 \index{data!yrbss|(}
 
-One of the roles of the United States Centers for Disease Control and Prevention (CDC), as listed on their website, is "promoting healthy and safe behaviors, communities, and environment."\footnote{\url{http://www.cdc.gov/about/organization/mission.htm}} The first step in health promotion is to understand health behaviors; the CDC periodically conducts several surveys, including the Youth Risk Behavior Surveillance System (YRBSS).\footnote{\url{http://www.cdc.gov/healthyyouth/data/yrbs/index.htm}} Between 1991 and 2013, 2.6 million high school students have participated in more than 1,100 separate surveys. The next few sections discuss the \data{yrbss} dataset, which contains the responses of the 13,583 high school students who participated in the 2013 YRBSS.\footnote{\oiRedirect{textbook-yrbss}{www.cdc.gov/healthyyouth/data/yrbs/data.htm}} Part of this dataset is shown in Table~\ref{yrbssDF}, and the variables are described in Table~\ref{yrbssVariables}.
+The United States Centers for Disease Control and Prevention (CDC) lists one of their roles as "promoting healthy and safe behaviors, communities, and environment."\footnote{\url{http://www.cdc.gov/about/organization/mission.htm}} The first step in health promotion is to understand health behaviors; the CDC periodically conducts several surveys, including the Youth Risk Behavior Surveillance System (YRBSS).\footnote{\url{http://www.cdc.gov/healthyyouth/data/yrbs/index.htm}} Between 1991 and 2013, 2.6 million high school students have participated in more than 1,100 separate surveys. The next few sections discuss the \data{yrbss} dataset, which contains the responses of the 13,583 high school students who participated in the 2013 YRBSS.\footnote{\oiRedirect{textbook-yrbss}{www.cdc.gov/healthyyouth/data/yrbs/data.htm}} Part of this dataset is shown in Table~\ref{yrbssDF}, and the variables are described in Table~\ref{yrbssVariables}.
 
 \begin{table}[h]
 \centering
@@ -60,7 +60,7 @@ This chapter illustrates inference for a population mean by treating the CDC sam
 
 While the individuals in \data{yrbss} are not truly a target population, treating them as such allows for the estimates obtained by inference (using \data{yrbss.samp}) to be checked against the "population parameters" of \data{yrbss} -- not possible in a realistic setting, since population parameters (such as the average hours of sleep per night across 21.2 million students) are typically unknown.\footnote{Hence, the need for inference!}
 
-The dataset \data{yrbss.samp} contains the data for 100 student responses randomly sampled from the larger \data{yrbss} dataset, and is described in Table~\ref{yrbssSampDF}.\footnote{About 10\% of high schoolers for each variable chose not to answer the question. Multiple regression (see Chapter~\ref{multipleAndLogisticRegression}) was used to predict what those responses would have been. For simplicity, we will assume that these predicted values are the unknown responses.} Histograms summarizing the \var{height}, \var{weight}, \var{active}, and \var{lifting} variables from \data{yrbss.samp} are shown in Figure~\ref{yrbssSampHistograms}.
+The dataset \data{yrbss.samp} contains the data for 100 student responses randomly sampled from the larger \data{yrbss} dataset (Table~\ref{yrbssSampDF}).\footnote{About 10\% of high schoolers for each variable chose not to answer the question. Multiple regression (see Chapter~\ref{multipleAndLogisticRegression}) was used to predict what those responses would have been. For simplicity, we will assume that these predicted values are the unknown responses.} Histograms summarizing the \var{height}, \var{weight}, \var{active}, and \var{lifting} variables from \data{yrbss.samp} are shown in Figure~\ref{yrbssSampHistograms}.
 
 \begin{table}
 \centering
@@ -120,11 +120,11 @@ BMI is used by health professionals to gauge whether an individual's weight is c
 
 \[bmi = \frac{weight}{height{^2}}\]
 
-For example, the respondent with ID 5553 has BMI of 23.39 ($52.62/1.5^{2}$). Larger values of BMI indicate higher levels of body fat. Average BMI in \data{yrbss.samp} is found by calculating BMI values for each respondent, then computing the average of the BMI values. Average BMI in \data{yrbss.samp} is 23.92. Since adolescent size and body type can change with age, there are no population norms for BMI in the age range of YRBSS respondents as there are for adultss.
+For example, the respondent with ID 5553 has BMI of 23.39 ($52.62/1.5^{2}$). Larger values of BMI indicate higher levels of body fat. Average BMI in \data{yrbss.samp} is found by calculating BMI values for each respondent, then computing the average of the BMI values. Average BMI in \data{yrbss.samp} is 23.92. Since adolescent size and body type can change with age, there are no population norms for BMI in the age range of YRBSS respondents as there are for adults.
 
 %%%  note that bmi cutpoints for children and teens are not the same as for adults. The CDC does not seem to recommend levels for health bmi for teens
 
-Other population parameters, such as population median or population standard deviation, are also generally estimated using sample version. Table~\ref{ptEstimatesYrbssActive} shows estimates of the population mean, median, and standard deviation for respondents in \data{yrbss}, using \data{yrbss.samp}, as well as the "population parameters" calculated by using the full \data{yrbss} dataset. The estimates differ slightly from the population parameters, but not by much -- in fact, the estimate for median is equal to the population median. Note that the estimates will vary based on the sample taken; these estimates are specific to the data in \data{yrbss.samp}.
+Other population parameters, such as population median or population standard deviation, are also generally estimated using sample versions. Table~\ref{ptEstimatesYrbssActive} shows estimates of the population mean, median, and standard deviation for respondents in \data{yrbss}, using \data{yrbss.samp}, as well as the "population parameters" calculated by using the full \data{yrbss} dataset. The estimates differ slightly from the population parameters, but not by much -- in fact, the estimate for median is equal to the population median. Note that the estimates will vary based on the sample taken; these estimates are specific to the data in \data{yrbss.samp}.
 
 \begin{table}[h]
 \centering
@@ -155,9 +155,15 @@ While point estimates rarely equal population parameters (the median in Table~\r
    \label{yrbssActiveRunningMean}
 \end{figure}
 
+%JV: Comments about running mean below
+
+\begin{comment}
+
 \textit{DH: We should add the idea that AZ used in her draft: showing a different sequence of running means would show the same behavior.  Since we have only one sample here, not clear whether it is worth the added complexity.}
 
 \textit{JV: I added that to the caption of the running mean figure. It may or may not be worth it to have a different random sample of 100 to prove the point -- both earlier, when pointing out that estimates are sample-specific, and then now, to illustrate how a different set of running means behaves the same way. If we did add it, it would be easy enough to partition Fig. 4.6 to show two graphs.}
+
+\end{comment}
 
 As the sample size increases, the running mean approaches the true population mean of 3.90 days. Thus, the CDC officials can be reasonably confident that means calculated using data from 13,582 students can provide a good estimate of the true population mean across 21.2 million students. By using the formulas in the following section, Section~\ref{seOfTheMean}, it is possible to calculate how accurate sample estimates are likely to be.
 
@@ -209,13 +215,13 @@ SE = \frac{\sigma}{\sqrt{n}}
 
 However, the population standard deviation $\sigma$ is typically unknown. Instead, the sample standard deviation $s$ can be used as a reasonably good estimate of $\sigma$, and $s / \sqrt{n}$ as an estimate for the standard error of the sample mean. For example, the estimate of SE using \data{yrbss.samp} is 0.2556 ($2.556 / \sqrt{100}$), which is very close to 0.26.
 
-This estimate tends to be sufficiently good when the sample size is at least 30 and the population distribution is not strongly skewed. In the case of skewed distributions, a larger sample size is necessary. These topics are further discussed in Section~\ref{cltSection}.
+This estimate tends to be sufficiently good when the sample size is at least 30 and the population distribution is not strongly skewed. In the case of skewed distributions, a larger sample size is necessary.
 
 %\begin{comment}
 The terminology for point estimates can be confusing, and is worth restating:  
 
 \begin{itemize}
-	
+\setlength{\itemsep}{0mm}	
 	\item The population parameters $\mu$ and $\sigma$ are characteristics of the target population from which a sample is drawn. 
 	
 	\item In a single sample, the arithmetic average of the values in the sample (the sample mean) is denoted by $\overline{x}$. The sample standard deviation is denoted by $s$. 
@@ -245,7 +251,7 @@ where $m$ is the margin of error. The standard error, a measure of the uncertain
 
 %\subsection{An approximate 95\% confidence interval}
 
-The standard error of the sample mean is its standard deviation; thus, by the empirical rule discussed in Section~(\ref{}) of Chapter 3, the sample mean will be within 2 standard errors of the population mean $\mu$ approximately 95\% of the time. If an interval is constructed that spans 2 standard errors from the point estimate in either direction, a data analyst can be 95\% \term{confident} that the population mean is somewhere within the interval:
+The standard error of the sample mean is its standard deviation; thus, by the empirical rule discussed in Section~\ref{} of Chapter 3, the sample mean will be within 2 standard errors of the population mean $\mu$ approximately 95\% of the time. If an interval is constructed that spans 2 standard errors from the point estimate in either direction, a data analyst can be 95\% \term{confident} that the population mean is somewhere within the interval:
 
 \begin{align}
 \text{point estimate}\ \pm\ 2\times SE
@@ -296,7 +302,11 @@ Section~\ref{seOfTheMean} introduced the notion of the sampling distribution for
 
 The distribution of sample means closely resembles the normal distribution (see Section~\ref{normalDist}). A normal probability plot of these sample means is shown in the right panel of Figure~\ref{yrbssActiveBigSampDist}. All of the points closely fall around a straight line, implying that the distribution of sample means is nearly normal. This result can be explained by the Central Limit Theorem.
 
+%JV: Comments below...
+
+\begin{comment}
 \textit{JV: I think it would be worth expanding the discussion of the CLT here, otherwise it seems like an unimportant footnote. Especially useful for students to know that distribution of $\overline{X}$ is normally distributed, even if the population not normally distributed. Not necessary to take the expanded CLT material from OI, but use explanation from lecture.}
+\end{comment}
 
 \begin{termBox}{\tBoxTitle{Central Limit Theorem, informal description}
 If a sample consists of at least 30 independent observations and the data are not strongly skewed, then the distribution of the sample mean is well approximated by a~normal model.\index{Central Limit Theorem}}
@@ -304,7 +314,11 @@ If a sample consists of at least 30 independent observations and the data are no
 
 % We will apply this informal version of the Central Limit Theorem for now, and discuss its details further in Section~\ref{cltSection}.
 
+%JV: Comments below...
+
+\begin{comment}
 \textit{JV: Conceptually, it may be smoother to just start out specifying $1.96 \times SE$ captures 95\%. Since the probability tables are already covered in Unit 3, students would have been exposed to the idea that 2 is an estimate for 1.96. Right now, the transition to 1.96 here reads somewhat awkwardly.}
+\end{comment}
 
 The choice of 2 standard errors in Equation~\ref{95PercentConfidenceIntervalFormula} was based on the general guideline that roughly 95\% of the time, observations are within two standard deviations of the mean. Under the normal model, this can be made more accurate by using 1.96 in place~of~2.
 \begin{align}
@@ -353,7 +367,9 @@ Thus, use 2.58 for $z^{\star}$ to construct a 99\% confidence interval. A data a
 	\index{confidence interval!confidence level|)}
 \end{figure}
  
-The normal approximation is crucial to the precision of these confidence intervals. When the data are reasonably symmetric, the sample size is large ($n \geq 30$), and the observations are independent, it is reasonable to use the normal approximation. Observations are considered independent if they are from a simple random sample and consists of fewer than 10\% of the population. Section~\ref{cltSection} provides a more detailed discussion about when the normal model can safely be applied. 
+The normal approximation is crucial to the precision of these confidence intervals. When the data are reasonably symmetric, the sample size is large ($n \geq 30$), and the observations are independent, it is reasonable to use the normal approximation. Observations are considered independent if they are from a simple random sample and consists of fewer than 10\% of the population. 
+
+%Section~\ref{cltSection} provides a more detailed discussion about when the normal model can safely be applied. 
 
 % WARNING !!!!
 % EOCE 4.9 (as of 2nd Edition) references the results of this exercise
@@ -465,7 +481,7 @@ By adulthood, an individual's height and weight generally stabilize. For people 
 	\label{nhanesAdultBmiHist}
 \end{figure}
 
-\textit{DH: should we list sample variables as in ch 1, or just plunge in?  I think we should just plunge in.  We should make the data available, though. JV: Agreed.}
+%DH: should we list sample variables as in ch 1, or just plunge in?  I think we should just plunge in.  We should make the data available, though. JV: Agreed.
 
 \begin{example}{Use \data{nhanes.samp} to calculate a 95\% confidence interval for adult BMI in the US population. \label{exNhanesBmi}}
 	In the random sample of 200 participants, BMI is available for 151 of the 152 participants that are 21 years of age or older. As shown in the histogram (Figure~\ref{nhanesAdultBmiHist}), the data are right-skewed, with one larger outlier. The outlier has value 81.3 and corresponds to an individual with height 168.5 cm (66.3 in) and 230.7 kg (508.6 lbs). In the initial analysis of a dataset like this one, such an extreme value of BMI would be checked for accuracy; while it might correspond to an unexpectedly obese individual, it could also represent an error when the data was recorded. Since the accuracy cannot be verified with the data available on CRAN, the following analysis excludes the data point, using a sample size of 150.
@@ -483,7 +499,7 @@ The correct interpretation of a confidence interval is, "We are XX\% confident t
 
 The conditions about the validity of the normal approximation can be checked using the numerical and graphical summaries discussed in Chapter 1. However, the condition that data should be from a random sample is sometimes overlooked. If the data are not from a random sample, then the confidence interval no longer has interpretive value, since there is no population mean to which the confidence interval applies. For example, while only simple arithmetic is needed to calculate a confidence interval for BMI from the \data{famuss} dataset in Chapter 1, the participants in the study are almost certainly not a random sample from some population. 
 
-\textit{JV: Should we also discuss other common interpretive errors here, perhaps via a guided practice? e.g. $\mu$ equally likely to be anywhere in a given CI}
+%JV: Should we also discuss other common interpretive errors here, perhaps via a guided practice? e.g. $\mu$ equally likely to be anywhere in a given CI
 
 \begin{comment}
 
@@ -531,7 +547,7 @@ Obese & $\geq30$\tabularnewline
 \end{center}
 \end{table}
 
-The question can be more precisely formulated as, "Is the average BMI of US adults larger than 21.7 (the middle of the range for normal BMI's)?" The average BMI from the 150 adults in \data{nhanes.samp} was 29.7 $\text{kg}/\text{meter}{^2}$, with a 95\% confidence interval of (28.5, 30.9). This interval certainly suggests that the average BMI in the US population is higher than 21.7, and even higher than 24.99, the upper limit of the normal weight category. 
+The question can be more precisely formulated as, "Is the average BMI of US adults larger than 21.7 (the middle of the range for normal BMI's)?" The average BMI from the 150 adults in \data{nhanes.samp} was 29.7, with a 95\% confidence interval of (28.5, 30.9). This interval certainly suggests that the average BMI in the US population is higher than 21.7, and even higher than 24.99, the upper limit of the normal weight category. 
 
 However, it is important to remember that it is not impossible for the population average to be outside the interval estimate, even if that would be inconsistent with the data in the sample. Perhaps by random chance, a sample was selected in which individuals of high BMI are overrepresented, causing the sample mean to be higher than the population mean. One measure of the strength of evidence against a working hypothesis is be the likelihood of observing a sample mean as extreme as the one observed if the working hypothesis is true; what is the likelihood of observing a sample mean as large as 29.7 if the population average BMI in the US is actually 21.7?
 
@@ -566,7 +582,7 @@ The null and alternative hypotheses are labeled $H_0$ and $H_A$, respectively.  
 	
 The alternative hypothesis $H_A: \mu_{\text{bmi}} > 21.7$ is called a \term{one-sided alternative}. Since substantial literature exists about the rising prevalence of obesity in America, it is reasonable to assume that if $H_0$ is not true, the population average BMI would be larger than 21.7, rather than smaller. An investigator studying BMI change in an area experiencing food shortages would likely formulate the alternative hypothesis as $H_A: \mu_{\text{bmi}} < 21.7$. 
 
- Because of the substantial literature about obesity in the United States, it is reasonable to assume that if $H_0$ is not true, the population average BMI would be larger than 21.7.  An investigator studying a similar problem in another setting, perhaps in the developing world where diets are changing but drought has led to food shortages, would likely use formulate the alternative as $ H_A:\mu_{\text{bmi}} \ne 21.7$. In other settings, it might be more appropriate to use a \term{two-sided alternative}, $\mu_{\text{bmi}} \neq 21.7$; \textit{JV: clear example in line with others needed here}.
+ Because of the substantial literature about obesity in the United States, it is reasonable to assume that if $H_0$ is not true, the population average BMI would be larger than 21.7.  An investigator studying a similar problem in another setting, perhaps in the developing world where diets are changing but drought has led to food shortages, would likely use formulate the alternative as $ H_A:\mu_{\text{bmi}} \ne 21.7$. In other settings, it might be more appropriate to use a \term{two-sided alternative}, $\mu_{\text{bmi}} \neq 21.7$. %JV: clear example in line with others needed here}.
 
 More generally, when testing a hypothesis about a population mean $\mu$, the null and alternative hypotheses are written as:
 
@@ -576,9 +592,9 @@ More generally, when testing a hypothesis about a population mean $\mu$, the nul
 	\item Two-sided alternative: \[H_0: \mu = \mu_0, \ H_A: \mu \neq \mu_0\]
 \end{itemize}
 
-\textit{JV: Use this notation for $H_0$ with one-sided alternatives, or stick to $H_0: \mu = \mu_{0}$?}
+%JV: Use this notation for $H_0$ with one-sided alternatives, or stick to $H_0: \mu = \mu_{0}$?
 
-In this general form, $\mu$ denotes a population mean and $\mu_0$ is the numeric value specified by the investigator for the null hypothesis. In the BMI example, $\mu_0 = 21.7$.  As in other settings, it is important to be mindful of the distinction between a population mean $\mu$, its specific numerical value $\mu_0$ under $H_0$,  and the observed sample mean $\overline{x}$.  Null and alternative hypotheses are statements about the underlying population, never about observed values from a sample.
+In this general form, $\mu$ denotes a population mean and $\mu_0$ is the numeric value specified by the investigator for the null hypothesis. In the BMI example, $\mu_0 = 21.7$.  As in other settings, it is important to be mindful of the distinction between a population mean $\mu$, its specific numerical value $\mu_0$ under $H_0$,  and the observed sample mean $\overline{x}$.  Null and alternative hypotheses are statements about the underlying population, not the observed values from a sample.
 
 \subsubsection{Step 2: Specifying a significance level, $\alpha$}
 
@@ -630,7 +646,7 @@ The \term{$p$-value} is the probability of observing a sample mean as or more ex
 
 Once the $p$-value is calculated, $p$ and $\alpha$ can be directly compared. If $p > \alpha$, the observed sample mean is not extreme enough to warrant rejecting $H_0$; more formally stated, there is insufficient evidence to reject $H_0$. If $p < \alpha$, there is sufficient evidence to reject $H_0$ and accept $H_A$. 
 
-For a conclusion to be informative, however, it must be stated in the context of the problem; it is not useful to simply state whether $H_0$ is rejected or not. In the \data{nhanes.samp} BMI data, the $p$-value is extremely small, with the $t$-statistic lying far to the right of the population mean. Thus, the data support the conclusion that the average BMI in the United States is larger than 21.7. 
+For a conclusion to be informative, however, it must be presented in the context of the problem; it is not useful to simply state whether $H_0$ is rejected or not. In the \data{nhanes.samp} BMI data, the $p$-value is extremely small, with the $t$-statistic lying far to the right of the population mean. Thus, the data support the conclusion that the average BMI in the United States is larger than 21.7. 
 
 %JV: Suggested revision -- directly follow w/ Examples of Hypothesis Testing, then Decisions Errors. Expand Decision Errors to have the example that was originally in the Examples section. Main focus of next section should be to clearly illustrate the steps of formal hypothesis. Examples should also include how to choose between one-sided and two-sided tests... After Decision Errors, Choosing Significance Levels, and CI for the last section. 
 
@@ -692,7 +708,6 @@ For this scenario, while the null hypothesis ($H_0: \mu = 7 \text{ hours}$) rema
 	\[t=\frac{\overline{x}-\mu_0}{s/\sqrt{n}} = \frac{6.83 - 7}{1.8 / \sqrt{122}} = -1.04\]
 	
 	When calculating the $p$-value, note that the area from both the right and left tails must be accounted for, since this is a two-sided hypothesis test. Since the normal model is symmetric, one tail has the same area as the other, and the $p$-value is the sum of the two (Figure~\ref{2ndSchSleepHTExample}). Thus, the $p$-value is given by:
-	
 	\begin{align*}
 	p = P(Z \leq -t) + P(Z \geq t) &= P(Z \geq |t|) \\
 		&= 2 \times P(Z \leq -t) \\
@@ -715,7 +730,9 @@ For this scenario, while the null hypothesis ($H_0: \mu = 7 \text{ hours}$) rema
 
 \subsubsection{Choosing between one-sided and two-sided tests}
 
-\textit{JV: Provide more examples of contexts where a one-sided test is more appropriate and contexts when a two-sided test is recommended. Not sure that the OI example of one-sided vs. two-sided explained in relation to error is very effective. Show an example of why two-sided tests are more conservative, e.g. when a two-sided test rejects and a one-sided accepts (probably need a figure to illustrate)}
+\textit{To be added: more examples of contexts where a one-sided test is more appropriate and contexts when a two-sided test is recommended, detailed explanation of why two-sided tests are more "conservative", e.g. when a two-sided test rejects and a one-sided test accepts.} 
+
+%JV: Not sure that the OI example of one-sided vs. two-sided explained in relation to error is very effective. Show an example of why two-sided tests are more conservative, e.g. when a two-sided test rejects and a one-sided accepts
 
 \begin{figure}[h]
 	\centering
@@ -753,7 +770,7 @@ The probability of making a Type 1 error is equivalent to the significance level
 Section~\ref{hypothesisTesting} introduced the logic of formal hypothesis testing by comparing it to the principle of presumption of innocence; a defendant is assumed innocent until proven guilty beyond a reasonable doubt. The following exercises extend the analogy to illustrate the relationship between Type 1 and Type 2 errors.
 
 \begin{exercise} \label{whatAreTheErrorTypesInUSCourts}
-	In a trial, the defendant is either innocent ($H_0$) or guilty ($H_A$). After hearing evidence from both the prosecution and the defense, the court must reach a verdict. What does a Type~1 Error represent in this context? What does a Type~2 Error represent? \footnote{If the court makes a Type~1 error, this means the defendant is innocent, but wrongly convicted (rejecting $H_0$ when $H_0$ is true). A Type~2 error means the court failed to convict a defendant that was guilty (failing to reject $H_0$ when $H_0$ is false).}
+	In a trial, the defendant is either innocent ($H_0$) or guilty ($H_A$). After hearing evidence from both the prosecution and the defense, the court must reach a verdict. What does a Type~1 Error represent in this context? What does a Type~2 Error represent?\footnote{If the court makes a Type~1 error, this means the defendant is innocent, but wrongly convicted (rejecting $H_0$ when $H_0$ is true). A Type~2 error means the court failed to convict a defendant that was guilty (failing to reject $H_0$ when $H_0$ is false).}
 \end{exercise}
 
 \begin{example}{How might the rate of Type 1 errors be reduced? What effect would this have on the rate of Type 2 errors?}
@@ -787,11 +804,15 @@ A government agency responsible for approving drugs to be marketed to the genera
 \index{hypothesis testing!significance level|)}
 \index{hypothesis testing|)}
 
+\begin{comment}
+
 \subsection{Hypothesis testing and confidence intervals}
 
 \textit{JV: The OI section "Hypothesis testing using confidence intervals" doesn't seem very useful. Recommend putting in this section what we generally cover in 102 -- comparison of the information a CI gives vs. a hypothesis test at same $\alpha$.}
 
 \vspace{3cm}
+
+\begin{comment}
 
 \begin{comment}
 
