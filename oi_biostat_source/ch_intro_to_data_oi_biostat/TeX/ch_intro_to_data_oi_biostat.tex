@@ -22,7 +22,7 @@ Advances in science are almost always the result of a dynamic balance between th
  That~is, statistics has three primary components: How can data best be collected? How should it be analyzed? What can be inferred from the analysis?  
 \end{comment}
 
-This chapter provides a brief introduction to the principles of data collection and introduces some simple numerical and graphical summaries of data that will be used in the rest of the text. The examples, drawn from recent studies in medicine and biology, illustrate the important role that statistics plays in these fields. The chapter also serves as a brief review for readers already familiar with introductory concepts in statistics.
+This chapter provides a brief introduction to the principles of data collection and introduces some simple numerical and graphical summaries of data used in the rest of the text. The examples, drawn from recent studies in medicine and biology, illustrate the important role that statistics plays in these fields. The chapter also serves as a brief review for readers already familiar with introductory concepts in statistics.
 
 
 \section[Case study]{Case study: preventing peanut allergies}
@@ -34,9 +34,9 @@ Section~\ref{leapCaseStudy} introduces an important problem in medicine: evaluat
 
 The proportion of young children in Western countries with peanut allergies has doubled in the last 10 years. Previous research suggests that exposing infants to peanut-based foods, rather than excluding such foods from their diets, may be an effective strategy for preventing the development of peanut allergies. This section describes an experiment (a clinical trial, in the terminology of medical research) designed to address the following research question: Does early exposure to peanut products reduce the probability that a child will develop peanut allergies? 
 
-The "Learning Early about Peanut Allergy" (LEAP) study was reported in the \textit{New England Journal of Medicine} in 2015.\footnote{Du Toit, George, et al. Randomized trial of peanut consumption in infants at risk for peanut allergy. New England Journal of Medicine 372.9 (2015): 803-813.} The study team enrolled children in the United Kingdom between 2006 and 2009, selecting 640 infants with eczema, egg allergy, or both. Each child was randomly assigned to the treatment group (peanut consumption) or the control group (peanut avoidance); children in the treatment group were fed at least 6 grams of peanut protein daily until 5 years of age, while children in the control group were to avoid consuming peanut protein until 5 years of age. 
+The ``Learning Early about Peanut Allergy'' (LEAP) study was reported in the \textit{New England Journal of Medicine} in 2015.\footnote{Du Toit, George, et al. Randomized trial of peanut consumption in infants at risk for peanut allergy. New England Journal of Medicine 372.9 (2015): 803-813.} The study team enrolled children in the United Kingdom between 2006 and 2009, selecting 640 infants with eczema, egg allergy, or both. Each child was randomly assigned to the treatment group (peanut consumption) or the control group (peanut avoidance); children in the treatment group were fed at least 6 grams of peanut protein daily until 5 years of age, while children in the control group were to avoid consuming peanut protein until 5 years of age. 
 
-At 5 years of age, each child was tested for peanut allergy using an oral food challenge (OFC): 5 grams of peanut protein in a single dose. Children had previously been tested for peanut allergy through a skin test, conducted at the time of study entry; the main analysis presented in the paper was based on the 530 children with a negative skin test result. Of these children, 263 were assigned to "Peanut Avoidance" and 267 to "Peanut Consumption." The outcome at 5 years was reported as either "Fail OFC" (allergic reaction) or "Pass OFC" (no allergic reaction). 
+At 5 years of age, each child was tested for peanut allergy using an oral food challenge (OFC): 5 grams of peanut protein in a single dose. Children had previously been tested for peanut allergy through a skin test, conducted at the time of study entry; the main analysis presented in the paper was based on the 530 children with an earlier negative skin test. Of these children, 263 were assigned to "Peanut Avoidance" and 267 to "Peanut Consumption." The outcome at 5 years was reported as either "Fail OFC" (allergic reaction) or "Pass OFC" (no allergic reaction). 
 
 Table \ref{leapStudyResultsDF} shows the participant study ID number, treatment assignment, and OFC outcome for 5 children. All five of these children passed the food challenge. 
  
@@ -62,7 +62,7 @@ LEAP\_100522 & Peanut Consumption & PASS OFC \\
 
 %print(xtable(LEAP[c(1,2,3,529, 530),c("participant.ID", "treatment.group", "overall.V60.outcome")]),include.rownames=FALSE)
 
-When looking for patterns in data, summary tables are generally more helpful than individual participant listings. Table~\ref{leapStudyResults} shows outcomes grouped by treatment group and the result of the OFC test. From this table, it is possible to compute some simple summary statistics. 
+When looking for patterns in data, summary tables are generally more helpful than individual participant listings. Table~\ref{leapStudyResults} shows the result of the OFC test by treatment group. From this table, it is possible to compute some simple summary statistics. 
 
 % latex table generated in R 3.1.1 by xtable 1.7-4 package
 % Thu Jul 16 07:12:04 2015
@@ -89,7 +89,7 @@ A \term{summary statistic} is a single number summarizing a large amount of data
 	
 The summary statistics for the LEAP study highlight an important point -- the results of a study can sometimes be surprising.  A parent of a child already known to be allergic to eggs might be justifiably skeptical about feeding peanut butter to their child. However, the LEAP study suggests that, at least for children similar to those enrolled in the study, the benefits of early exposure might be substantial. 
 
-There are important aspects of the study to be cautious about.  This study was conducted in the United Kingdom at a single site of pediatric care; it is not clear that results in children from that site can be generalized to other countries or cultures. The results also raise an important statistical issue: does the study provide definitive evidence that peanut consumption is beneficial? In other words, is the 11.8\% difference between the two groups larger than one would expect by chance variation alone? 
+There are important aspects of the study to be cautious about.  This study was conducted in the United Kingdom at a single site of pediatric care; it is not clear that results can be generalized to other countries or cultures. The results also raise an important statistical issue: does the study provide definitive evidence that peanut consumption is beneficial? In other words, is the 11.8\% difference between the two groups larger than one would expect by chance variation alone? 
 
 Suppose a coin is flipped 100 times. While the chance a coin lands heads in any given coin flip is 50\%, observing exactly 50 heads is unlikely; instead, the coin may land heads 43 times, 51 times, 59 times, etc. This type of fluctuation is part of almost any experiment or study. It may well be possible that the 11.8\% difference in the peanut allergy study is only due to this natural variation, and that the two interventions are actually equally effective. However, the larger the difference observed (for a particular study size), the less credible it is that the difference is due to chance alone. If out of 100 flips, a coin landed heads only 5 times, it would be reasonable to doubt that the outcome was due to chance; perhaps the coin is weighted so that tails are more likely to occur.
 
@@ -108,6 +108,9 @@ Effective presentation and description of data is a first step in most analyses.
 \label{frogDataExample}
 
 \index{data!frog|(}
+
+\textit{Paragraph below needs a def of maternal investment at the first mention}.
+
 This section describes data used in a study published in the \textit{Journal of Evolutionary Biology} about maternal investment at differing altitudes, conducted in a frog species endemic to the Tibetan Plateau (\textit{Rana kukunoris}).\footnote{Chen, W., et al. Maternal investment increases with altitude in a frog on the Tibetan Plateau. Journal of evolutionary biology 26.12 (2013): 2710-2715.} Reproduction is a costly process for females, necessitating a trade-off between individual egg size and total number of eggs produced. Researchers collected measurements on egg clutches found at breeding ponds across 11 study sites; for 5 sites, they also collected data on individual female frogs.
 
 % latex table generated in R 3.1.1 by xtable 1.7-4 package
@@ -131,7 +134,7 @@ This section describes data used in a study published in the \textit{Journal of 
 
 Table~\ref{frogDF} displays rows 1, 2, 3, and 150 of the data from the 431 clutches. The complete set of observations will be referred to as the \data{frog} dataset. Each row in the table corresponds to a single clutch, indicating where the clutch was collected (\var{altitude} and \var{latitude}), \var{egg.size}, \var{clutch.size}, \var{clutch.volume}, and \var{body.size} of the mother when available. "NA" corresponds to a missing value; information on individual females was not collected for that particular site. The columns represent characteristics, called \term{variables}, for each clutch.
 
-For example, the first row represents a clutch collected at altitude 3,462 meters above sea level, latitude 34.82 degrees; the clutch contained an estimated 182 eggs, with individual eggs averaging 1.95 mm in diameter, for a total volume of 177.8 mm$^{3}$. The eggs were laid by a female measuring 3.63 cm long. It is important to understand the definitions of variables, as they are not always obvious. For example, why has \var{clutch.size} not been recorded as whole numbers? For a given clutch, researchers counted approximately 5 grams' worth of eggs and then estimated the total number of eggs based on the mass of the entire clutch. Definitions of the variables are given in Table~\ref{frogVariables}.\footnote{The data discussed here are in the original scale; in the published paper, some values have been log-transformed.}
+For example, the first row represents a clutch collected at altitude 3,462 meters above sea level, latitude 34.82 degrees; the clutch contained an estimated 182 eggs, with individual eggs averaging 1.95 mm in diameter, for a total volume of 177.8 mm$^{3}$. The eggs were laid by a female measuring 3.63 cm long. It is important to understand the definitions of variables, as they are not always obvious. For example, why has \var{clutch.size} not been recorded as whole numbers? For a given clutch, researchers counted approximately 5 grams' worth of eggs and then estimated the total number of eggs based on the mass of the entire clutch. Definitions of the variables are given in Table~\ref{frogVariables}.\footnote{The data discussed here are in the original scale; in the published paper, some values have been replaced by the logarithm of the value.}
 
 \begin{table}[t]
 	\centering\small
@@ -155,6 +158,8 @@ The data in Table~\ref{frogDF} are organized as a \term{data matrix}. Each row o
 
 \index{data!frog|)}
 
+
+%% editing to here; 19 May 2015
 
 \subsection{Types of variables}
 \label{variableTypes}
