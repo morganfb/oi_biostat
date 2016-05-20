@@ -109,7 +109,6 @@ Effective presentation and description of data is a first step in most analyses.
 
 \index{data!frog|(}
 
-\textit{Paragraph below needs a def of maternal investment at the first mention}.
 
 In evolutionary biology, paternal investment denotes parents' expenditure of time, energy or other resources that may benefit an offspring while reducing the ability of the parent to invest in other aspects of species fitness. This section describes data used in a study published in the \textit{Journal of Evolutionary Biology} about maternal investment at differing altitudes, conducted in a frog species endemic to the Tibetan Plateau (\textit{Rana kukunoris}).\footnote{Chen, W., et al. Maternal investment increases with altitude in a frog on the Tibetan Plateau. Journal of evolutionary biology 26.12 (2013): 2710-2715.} Reproduction is a costly process for females, necessitating a trade-off between individual egg size and total number of eggs produced. Researchers collected measurements on egg clutches found at breeding ponds across 11 study sites; for 5 sites, they also collected data on individual female frogs.
 
@@ -134,7 +133,7 @@ In evolutionary biology, paternal investment denotes parents' expenditure of tim
 
 Table~\ref{frogDF} displays rows 1, 2, 3, and 150 of the data from the 431 clutches. The complete set of observations will be referred to as the \data{frog} dataset. Each row in the table corresponds to a single clutch, indicating where the clutch was collected (\var{altitude} and \var{latitude}), \var{egg.size}, \var{clutch.size}, \var{clutch.volume}, and \var{body.size} of the mother when available. "NA" corresponds to a missing value; information on individual females was not collected for that particular site. The columns represent characteristics, called \term{variables}, for each clutch.
 
-For example, the first row represents a clutch collected at altitude 3,462 meters above sea level, latitude 34.82 degrees; the clutch contained an estimated 182 eggs, with individual eggs averaging 1.95 mm in diameter, for a total volume of 177.8 mm$^{3}$. The eggs were laid by a female measuring 3.63 cm long. It is important to understand the definitions of variables, as they are not always obvious. For example, why has \var{clutch.size} not been recorded as whole numbers? For a given clutch, researchers counted approximately 5 grams' worth of eggs and then estimated the total number of eggs based on the mass of the entire clutch. Definitions of the variables are given in Table~\ref{frogVariables}.\footnote{The data discussed here are in the original scale; in the published paper, some values have been replaced by the logarithm of the value.}
+For example, the first row represents a clutch collected at altitude 3,462 meters above sea level, latitude 34.82 degrees; the clutch contained an estimated 182 eggs, with individual eggs averaging 1.95 mm in diameter, for a total volume of 177.8 mm$^{3}$. The eggs were laid by a female measuring 3.63 cm long. It is important to check the definitions of variables, as they are not always obvious. For example, why has \var{clutch.size} not been recorded as whole numbers? For a given clutch, researchers counted approximately 5 grams' worth of eggs and then estimated the total number of eggs based on the mass of the entire clutch. Definitions of the variables are given in Table~\ref{frogVariables}.\footnote{The data discussed here are in the original scale; in the published paper, some values have been replaced by the logarithm of the value.}
 
 \begin{table}[t]
 	\centering\small
@@ -154,12 +153,10 @@ For example, the first row represents a clutch collected at altitude 3,462 meter
 	\label{frogVariables}
 \end{table}
 
-The data in Table~\ref{frogDF} are organized as a \term{data matrix}. Each row of a data matrix corresponds to a unique observational unit, and each column corresponds to a variable. A data matrix for the LEAP study introduced in Section~\ref{leapCaseStudy} is shown in Table~\ref{leapStudyResultsDF} on page~\pageref{leapStudyResultsDF};  the cases are study participants and three variables are shown for each participant. Data matrices are a convenient way to record and store data. If the data are collected for another individual, another row can easily be added; similarly, another column can be added for a new variable.
+The data in Table~\ref{frogDF} are organized as a \term{data matrix}. Each row of a data matrix corresponds to an observational unit, and each column corresponds to a variable. A piece of the data matrix for the LEAP study introduced in Section~\ref{leapCaseStudy} is shown in Table~\ref{leapStudyResultsDF} on page~\pageref{leapStudyResultsDF};  the cases are study participants and three variables are shown for each participant. Data matrices are a convenient way to record and store data. If the data are collected for another individual, another row can easily be added; similarly, another column can be added for a new variable.
 
 \index{data!frog|)}
 
-
-%% editing to here; 19 May 2015
 
 \subsection{Types of variables}
 \label{variableTypes}
@@ -217,6 +214,8 @@ The variables \var{age}, \var{height}, \var{weight}, and \var{ndrm.ch} are \term
 
 The variables \var{sex}, \var{race}, and \var{actn3.r577x} are \term{categorical} variables, and the possible values are called the variable's \term{levels}.  For example, the levels of \var{actn3.r577x} are the three possible genotypes at this particular locus: CC, CT, or TT.  Categorical variables without a natural ordering, such as \var{sex}, are called \term{nominal categorical} variables. Categorical variables with levels that have a natural ordering are referred to as \term{ordered categorical} variables.  There are no ordered categorical variables in the \data{famuss} data, but it would be easy to create one; age of the participants grouped into 5-year intervals (15-20, 21-25, 26-30, etc.) would be an ordered categorical variable.  Statistical software such as \textsf{R} labels categorical variables \term{factors}, and the possible values of factors are called \term{levels}.
 
+\textit{Is this always true of R?  Perhaps the last statement above should be in Morgan's companion, and not here.}
+
 In the \data{frog} data, the variables \var{egg.size}, \var{clutch.size}, \var{clutch.volume}, and \var{body.size} are all continuous variables. 
 
 \begin{figure}
@@ -240,15 +239,19 @@ Characterize the variables \var{participant.ID}, \var{treatment.group}, and \var
 
 Many studies are motivated by a researcher examining a possible relationship between two or more variables. Statistical relationships between two variables occur when they tend to vary in a related way. A \term{response variable} measures an outcome of interest, while an \term{explanatory variable} may be useful in predicting or understanding the response variable. There may be several possible explanatory variables for a single response variable in a given study.  Response variables are sometimes called dependent variables and explanatory variables are often called independent variables or predictors.  
 
+\textit{we should have a definition of residue in the paragraph below}
+
 Researchers were interested in using the \data{famuss} data to answer several questions, including: is ACTN3 genotype associated with variation in muscle function? The ACTN3 gene codes for a protein involved in muscle function. A common mutation (polymorphism) at residue 577 in the ACTN3 gene changes C to T; TT individuals are unable to produce any ACTN3 protein in their muscle. Thus, researchers hypothesized that ACTN3 genotype might influence muscle function in humans. The response variable in this study is \var{ndrm.ch}, the percent change in non-dominant arm strength, with strength gain being used as a way to measure muscle function. The explanatory variable of interest is \var{actn3.r557x}, ACTN3 genotype at residue 577.  
 
-Both numerical and graphical ways to examine possible relationships between two variables will be covered later in the text.
+Both numerical and graphical ways to explore possible relationships between two variables will be covered later in the text.
 
 \begin{example}{In the study conducted on Tibetan frogs, researchers collected measurements on egg clutches and female frogs at 11 study sites, located at differing altitudes. Identify the explanatory and response variables in the study.}
 The explanatory variable examined in the study is \var{altitude}. The variables \var{egg.size}, \var{clutch.size}, \var{clutch.volume}, and \var{body.size} are response variables measuring the level of maternal investment. 
 \end{example}	
 
 %JV: Frog example may need to be more specific, perhaps by explicitly mentioning that latitude is not a variable of interest. It is also a simplification to say that female body size is a response variable measuring maternal investment.
+
+%DH: Agree with your comment above. Also, having several response variables and one explanatory variable is the reverse of what usually happens.
 
 \begin{exercise}
 Refer to the variables from the \data{famuss} data set described in Table~\ref{famussVariables} to formulate two questions about the relationships between these variables that differ from the one addressed by the research team.\footnote{Two sample questions: (1)  Do participants appear respond differently to training according to race?  (2)  Do male participants appear to respond differently to training than females?}
