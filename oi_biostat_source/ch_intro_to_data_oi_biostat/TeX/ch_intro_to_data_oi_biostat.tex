@@ -933,26 +933,6 @@ Row and column totals, known collectively as \term{marginal totals}, are also in
 
 %JV: \textit{JV: Not sure how they added the variable labels to their table. I have left the OI tables and code in the source.  DH: look at their source.  The created a table first (called tab) that added the var names, then applied xtable to that.  I can do it later if you like. JV: I must not be doing something right, I get a "subscript out of bounds" error.}
 
-\begin{comment}
-\begin{table}[ht]
-\centering
-\begin{tabular}{ll  ccc  rr}
-& & \multicolumn{3}{c}{\bf \var{number}} & \\
-  \cline{3-5}
-& & none & small & big & Total & \hspace{2mm}\  \\ 
-  \cline{2-6}
-	 & spam &  149 & 168 &  50 & 367 \\ 
-\raisebox{1.5ex}[0pt]{\var{spam}} 
-	& not spam &  400 & 2659 & 495 & 3554 \\ 
-  \cline{2-6}
-& Total & 549 & 2827 & 545 & 3921 \\
-  \cline{2-6}
-\end{tabular}
-\caption{A contingency table for \var{spam} and \var{number}.}
-\label{emailSpamNumberTableTotals}
-%library(openintro); library(xtable); data(email); tab <- table(email[,c("spam", "number")])[2:1,]; xtable(tab); rowSums(tab); colSums(tab); sum(tab)
-\end{table}
-\end{comment}
 
 \newpage
 
@@ -1034,67 +1014,6 @@ A contingency table of the column proportions is computed in a similar way, in w
 As computed in Table~\ref{famussColPropTable}, 77.6\% of CC individuals in the study are Caucasian. Does this data suggest that in the general population, people of CC genotype are highly likely to be Caucasian?\footnote{No, this is not a reasonable conclusion to draw from the data. The high proportion of Caucasians among CC individuals primarily reflects the large number of Caucasians sampled in the study -- 78.5\% of the people sampled are Caucasian. The uneven representation of different races is one limitation of the \data{famuss} data.}
 \end{exercise}
 
-\begin{comment}
-\begin{table}[h]
-\centering\small
-\begin{tabular}{l rrr r}
-  \hline
- & none & small & big & Total \\ 
-  \hline
-spam &  $149/549 = 0.271$ & $168/2827 = 0.059$ &
-				$50/545 = 0.092$ & $367/3921 = 0.094$ \\ 
-not spam &  $400/549 = 0.729$ & $2659/2827 = 0.941$ &
-				$495/545 = 0.908$ & $3684/3921 = 0.906$ \\ 
-   \hline
-Total & 1.000 & 1.000 & 1.000 & 1.000 \\
-   \hline
-\end{tabular}
-\caption{A contingency table with column proportions for the \var{spam} and \var{number} variables.}
-\label{colPropSpamNumber}
-% library(openintro); data(email); g <- table(email$spam, email$number)[2:1,]; g / rep(colSums(g), rep(2, 3)); g; colSums(g)
-\end{table}
-\end{comment}
-
-\begin{comment}
-We could also have checked for an association between \var{spam} and \var{number} in Table~\ref{rowPropSpamNumber} using row proportions. When comparing these row proportions, we would look down columns to see if the fraction of emails with no numbers, small numbers, and big numbers varied from \resp{spam} to \resp{not~spam}.
-
-\begin{exercise}
-What does 0.458 represent in Table~\ref{rowPropSpamNumber}? What does 0.059 represent in Table~\ref{colPropSpamNumber}?\footnote{0.458 represents the proportion of spam emails that had a small number. 0.059 represents the fraction of emails with small numbers that are spam.}
-\end{exercise}
-
-\begin{exercise}
-What does 0.139 at the intersection of \resp{not~spam} and \resp{big} represent in Table~\ref{rowPropSpamNumber}? What does 0.908 represent in the Table~\ref{colPropSpamNumber}?\footnote{0.139 represents the fraction of non-spam email that had a big number. 0.908 represents the fraction of emails with big numbers that are non-spam emails.}
-\end{exercise}
-
-\begin{example}{Data scientists use statistics to filter spam from incoming email messages. By noting specific characteristics of an email, a data scientist may be able to classify some emails as spam or not spam with high accuracy. One of those characteristics is whether the email contains no numbers, small numbers, or big numbers. Another characteristic is whether or not an email has any HTML content. A contingency table for the \var{spam} and \var{format} variables from the \data{email} data set are shown in Table~\ref{emailSpamHTMLTableTotals}. Recall that an HTML email is an email with the capacity for special formatting, e.g. bold text. In Table~\ref{emailSpamHTMLTableTotals}, which would be more helpful to someone hoping to classify email as spam or regular email: row or column proportions?} \label{weighingRowColumnProportions}
-Such a person would be interested in how the proportion of spam changes within each email format. This corresponds to column proportions: the proportion of spam in plain text emails and the proportion of spam in HTML emails.
-
-If we generate the column proportions, we can see that a higher fraction of plain text emails are spam ($209/1195 = 17.5\%$) than compared to HTML emails ($158/2726 = 5.8\%$). This information on its own is insufficient to classify an email as spam or not spam, as over 80\% of plain text emails are not spam. Yet, when we carefully combine this information with many other characteristics, such as \var{number} and other variables, we stand a reasonable chance of being able to classify some email as spam or not spam. \GLMSection{This is a topic we will return to in Chapter~\ref{multipleRegressionAndANOVA}.}{}
-\end{example}
-
-\begin{table}[ht]
-\centering
-\begin{tabular}{l cc r}
-  \hline
- & text & HTML & Total \\ 
-  \hline
-spam & 209 & 158 & 367 \\ 
-not spam & 986 & 2568 & 3554 \\ 
-   \hline
-Total & 1195 & 2726 & 3921 \\
-   \hline
-\end{tabular}
-\caption{A contingency table for \var{spam} and \var{format}.}
-\label{emailSpamHTMLTableTotals}
-%library(openintro); library(xtable); data(email); tab <- table(email[,c("spam", "format")])[2:1,]; tab; colSums(tab); rowSums(tab)
-\end{table}
-
-Example~\ref{weighingRowColumnProportions} points out that row and column proportions are not equivalent. Before settling on one form for a table, it is important to consider each to ensure that the most useful table is constructed.
-
-\begin{exercise}
-Look back to Tables~\ref{rowPropSpamNumber} and~\ref{colPropSpamNumber}. Which would be more useful to someone hoping to identify spam emails using the \var{number} variable?\footnote{The column proportions in Table~\ref{colPropSpamNumber} will probably be most useful, which makes it easier to see that emails with small numbers are spam about 5.9\% of the time (relatively rare). We would also see that about 27.1\% of emails with no numbers are spam, and 9.2\% of emails with big numbers are spam.}
-\end{exercise}
-\end{comment}
 
 \subsection{Bar plots}
 \begin{figure}[h!]
