@@ -7,7 +7,7 @@
 \label{introductionToData}
 
 
-Advances in science are almost always the result of a dynamic balance between theory and observation. Observations -- collected from the likes of field notes, surveys, and experiments -- form the backbone of empirical research and are called \term{data}. Statistics has three primary components: How can data best be collected? How should data be analyzed? What can be inferred from the analysis? As a discipline, statistics focuses on addressing these questions in an objective, rigorous, and efficient way.
+Advances in science are almost always the result of a dynamic balance between theory and observation. Observations -- collected from field notes, surveys, and experiments -- form the backbone of empirical research and are called \term{data}. Statistics has three primary components: How can data best be collected? How should data be analyzed? What can be inferred from the analysis? As a discipline, statistics focuses on addressing these questions in an objective, rigorous, and efficient way.
 
 \begin{comment}
 	Statistics is an integral part of the components of the scientific method:  
@@ -83,15 +83,15 @@ Peanut Avoidance & 36 & 227 & 263 \\
 %library(xtable); outcome.table = addmargins(table(LEAP$treatment.group, LEAP$overall.V60.outcome)); xtable(outcome.table, digits = 0, caption = "LEAP Study Results", caption  = "leapStudyResults")
 
 
-A \term{summary statistic} is a single number summarizing a large amount of data.\footnote{Formally, a summary statistic is a value computed from the data.} In the Peanut Avoidance group, the proportion of participants failing the food challenge at 5 years of age is 36/263 = 0.137 (13.7\%); in the Peanut Consumption intervention, the proportion failing is 5/267 = 0.019 (1.9\%). The difference between these two proportions, 11.8\%, is a summary statistic describing the extent to which these two proportions differ. A second summary statistic, the ratio of the two proportions, 0.137/0.019 = 7.31, indicates that the proportion failing in the Avoidance group is more than 7 times that of the Consumption group.   
+A \term{summary statistic} is a single number summarizing a large amount of data.\footnote{Formally, a summary statistic is a value computed from the data.} In the Peanut Avoidance group, the proportion of participants failing the food challenge at 5 years of age is 36/263 = 0.137 (13.7\%); in the Peanut Consumption group, the proportion failing is 5/267 = 0.019 (1.9\%). The difference between these two proportions, 11.8\%, is a summary statistic describing the extent to which these two proportions differ. A second summary statistic, the ratio of the two proportions (0.137/0.019 = 7.31), indicates that the proportion failing in the Avoidance group is more than 7 times that of the Consumption group. In other words, the risk of failing the food challenge was more than 7 times greater for participants in the Avoidance group than for those in the Consumption group; this statistic is referred to as the \term{relative risk}.  
 
-%JV: Not sure the RR should be mentioned in this intro unless it is explicitly named and discussed later in the chapter.
+\textit{JV: added a sentence here explicitly introducing relative risk. Should probably also find a spot for it later in the main text.}
 	
-The summary statistics for the LEAP study highlight an important point -- the results of a study can sometimes be surprising.  A parent of a child already known to be allergic to eggs might be justifiably skeptical about feeding peanut butter to their child. However, the LEAP study suggests that, at least for children similar to those enrolled in the study, the benefits of early exposure might be substantial. 
+The summary statistics for the LEAP study highlight an important point -- the results of a study can sometimes be surprising. A parent with a child already known to have existing food allergies might be justifiably skeptical about feeding peanut butter to their child. However, the LEAP study suggests that, at least for children similar to those enrolled in the study, the benefits of early exposure might be substantial. 
 
 There are important aspects of the study to be cautious about.  This study was conducted in the United Kingdom at a single site of pediatric care; it is not clear that results can be generalized to other countries or cultures. The results also raise an important statistical issue: does the study provide definitive evidence that peanut consumption is beneficial? In other words, is the 11.8\% difference between the two groups larger than one would expect by chance variation alone? 
 
-Suppose a coin is flipped 100 times. While the chance a coin lands heads in any given coin flip is 50\%, observing exactly 50 heads is unlikely; instead, the coin may land heads 43 times, 51 times, 59 times, etc. This type of fluctuation is part of almost any experiment or study. It may well be possible that the 11.8\% difference in the peanut allergy study is only due to this natural variation, and that the two interventions are actually equally effective. However, the larger the difference observed (for a particular study size), the less credible it is that the difference is due to chance alone. If out of 100 flips, a coin landed heads only 5 times, it would be reasonable to doubt that the outcome was due to chance; perhaps the coin is weighted so that tails are more likely to occur.
+Suppose a coin is flipped 100 times. While the chance a coin lands heads in any given coin flip is 50\%, observing exactly 50 heads is unlikely; instead, the coin may land heads 43 times, 51 times, 59 times, etc. This type of fluctuation is part of almost any experiment or study. It may well be possible that the 11.8\% difference in the peanut allergy study is only due to this natural variation, and that the two interventions are actually equally effective. However, the larger the difference observed (for a particular study size), the less credible it is that the difference is due to chance alone. If out of 100 flips, a coin landed heads only 5 times, it would be reasonable to doubt that the outcome was purely due to chance; perhaps the coin is weighted so that tails are more likely to occur.
 
 For the LEAP study, the 11.8\% difference is indeed larger than that expected by chance alone, suggesting that peanut consumption is the more effective intervention for preventing subsequent allergies. The material on hypothesis testing in later chapters will provide the statistical tools to confirm that the observed results were unlikely if the two interventions had been equally effective.
 
@@ -110,7 +110,7 @@ Effective presentation and description of data is a first step in most analyses.
 \index{data!frog|(}
 
 
-In evolutionary biology, paternal investment denotes parents' expenditure of time, energy or other resources that may benefit an offspring while reducing the ability of the parent to invest in other aspects of species fitness. This section describes data used in a study published in the \textit{Journal of Evolutionary Biology} about maternal investment at differing altitudes, conducted in a frog species endemic to the Tibetan Plateau (\textit{Rana kukunoris}).\footnote{Chen, W., et al. Maternal investment increases with altitude in a frog on the Tibetan Plateau. Journal of evolutionary biology 26.12 (2013): 2710-2715.} Reproduction is a costly process for females, necessitating a trade-off between individual egg size and total number of eggs produced. Researchers collected measurements on egg clutches found at breeding ponds across 11 study sites; for 5 sites, they also collected data on individual female frogs.
+This section describes data used in a study published in the \textit{Journal of Evolutionary Biology} about maternal investment at differing altitudes, conducted in a frog species endemic to the Tibetan Plateau (\textit{Rana kukunoris}).\footnote{Chen, W., et al. Maternal investment increases with altitude in a frog on the Tibetan Plateau. Journal of evolutionary biology 26.12 (2013): 2710-2715.} In evolutionary biology, parental investment refers to the amount of time, energy, or other resources invested towards raising offspring; while offspring typically benefit from increased parental care, the parents may suffer reduced survival ability. Reproduction is a costly process for females, necessitating a trade-off between individual egg size and total number of eggs produced. Researchers collected measurements on egg clutches found at breeding ponds across 11 study sites; for 5 sites, they also collected data on individual female frogs.
 
 % latex table generated in R 3.1.1 by xtable 1.7-4 package
 % Fri Jul 17 09:47:19 2015
@@ -131,7 +131,7 @@ In evolutionary biology, paternal investment denotes parents' expenditure of tim
 \end{table}
 %library(xtable); xtable(frog.altitude[c(1,2,3,529, 530),c( "altitude", "latitude", "egg.size", "clutch.size", "clutch.volume", "body.size")], digits = 2, caption = "Frog Study Data Matrix", label = "frogDF" )
 
-Table~\ref{frogDF} displays rows 1, 2, 3, and 150 of the data from the 431 clutches. The complete set of observations will be referred to as the \data{frog} dataset. Each row in the table corresponds to a single clutch, indicating where the clutch was collected (\var{altitude} and \var{latitude}), \var{egg.size}, \var{clutch.size}, \var{clutch.volume}, and \var{body.size} of the mother when available. "NA" corresponds to a missing value; information on individual females was not collected for that particular site. The columns represent characteristics, called \term{variables}, for each clutch.
+Table~\ref{frogDF} displays rows 1, 2, 3, and 150 of the data from the 431 clutches. The complete set of observations will be referred to as the \data{frog} dataset. Each row in the table corresponds to a single clutch, indicating where the clutch was collected (\var{altitude} and \var{latitude}), \var{egg.size}, \var{clutch.size}, \var{clutch.volume}, and \var{body.size} of the mother when available. "NA" corresponds to a missing value, indicating that information on individual females was not collected for that particular site. The columns represent characteristics, called \term{variables}, for each clutch.
 
 For example, the first row represents a clutch collected at altitude 3,462 meters above sea level, latitude 34.82 degrees; the clutch contained an estimated 182 eggs, with individual eggs averaging 1.95 mm in diameter, for a total volume of 177.8 mm$^{3}$. The eggs were laid by a female measuring 3.63 cm long. It is important to check the definitions of variables, as they are not always obvious. For example, why has \var{clutch.size} not been recorded as whole numbers? For a given clutch, researchers counted approximately 5 grams' worth of eggs and then estimated the total number of eggs based on the mass of the entire clutch. Definitions of the variables are given in Table~\ref{frogVariables}.\footnote{The data discussed here are in the original scale; in the published paper, some values have been replaced by the logarithm of the value.}
 
@@ -199,7 +199,7 @@ The Functional polymorphisms Associated with Human Muscle Size and Strength stud
 		\var{age} & Age in years   \\
 		\var{race} & Recorded as African Am (African American), Caucasian, Asian, Hispanic and Other \\
 		\var{height} & Height in inches    \\
-		\var{weight} & Weight in lbs  \\
+		\var{weight} & Weight in pounds \\
 		\var{actn3.r577x} & Genotype at the location r577x in the ACTN3 gene. \\
 		\var{ndrm.ch} & Percent change in strength in the non-dominant arm, comparing strength after to before training \\
 		\hline
@@ -210,11 +210,9 @@ The Functional polymorphisms Associated with Human Muscle Size and Strength stud
 
 \index{data!famuss|)}
 
-The variables \var{age}, \var{height}, \var{weight}, and \var{ndrm.ch} are \term{numerical} variables. They can take on a wide range of numerical values, and it is possible to add, subtract, or take averages with these values. On the other hand, a variable reporting telephone numbers would not be classified as numerical, since  averages, sums, and differences in this context would have no meaning. Age measured in years is said to be \term{discrete}, since it can only take numerical values with jumps. Percent change in strength in the non-dominant arm (\var{ndrm.ch}) is said to be \term{continuous}.
+The variables \var{age}, \var{height}, \var{weight}, and \var{ndrm.ch} are \term{numerical} variables. They can take on a wide range of numerical values, and it is possible to add, subtract, or take averages with these values. On the other hand, a variable reporting telephone numbers would not be classified as numerical, since sums, differences, and averages in this context would have no meaning. Age measured in years is said to be \term{discrete}, since it can only take numerical values with jumps. Percent change in strength in the non-dominant arm (\var{ndrm.ch}) is said to be \term{continuous}.
 
-The variables \var{sex}, \var{race}, and \var{actn3.r577x} are \term{categorical} variables, and the possible values are called the variable's \term{levels}.  For example, the levels of \var{actn3.r577x} are the three possible genotypes at this particular locus: CC, CT, or TT.  Categorical variables without a natural ordering, such as \var{sex}, are called \term{nominal categorical} variables. Categorical variables with levels that have a natural ordering are referred to as \term{ordered categorical} variables.  There are no ordered categorical variables in the \data{famuss} data, but it would be easy to create one; age of the participants grouped into 5-year intervals (15-20, 21-25, 26-30, etc.) would be an ordered categorical variable.  Statistical software such as \textsf{R} labels categorical variables \term{factors}, and the possible values of factors are called \term{levels}.
-
-\textit{Is this always true of R?  Perhaps the last statement above should be in Morgan's companion, and not here.}
+The variables \var{sex}, \var{race}, and \var{actn3.r577x} are \term{categorical} variables, and the possible values are called the variable's \term{levels}.  For example, the levels of \var{actn3.r577x} are the three possible genotypes at this particular locus: CC, CT, or TT.  Categorical variables without a natural ordering, such as \var{sex}, are called \term{nominal categorical} variables. Categorical variables with levels that have a natural ordering are referred to as \term{ordered categorical} variables.  There are no ordered categorical variables in the \data{famuss} data, but it would be easy to create one; age of the participants grouped into 5-year intervals (15-20, 21-25, 26-30, etc.) would be an ordered categorical variable.  
 
 In the \data{frog} data, the variables \var{egg.size}, \var{clutch.size}, \var{clutch.volume}, and \var{body.size} are all continuous variables. 
 
@@ -225,7 +223,7 @@ In the \data{frog} data, the variables \var{egg.size}, \var{clutch.size}, \var{c
 \label{variableTypes}
 \end{figure}
 
-\begin{example}{Suppose at the beginning of a week a research assistant collected data on the first 20 individuals visiting one of the new walk-in clinics being offered by major commercial pharmacies.  In addition to other variables, the research assistant collected age (measured as less than 21, 21 - 65, and older than 65 years of age), sex, height, weight, and reason for the visit.  Classify each of the variables as continuous numerical, discrete numerical, or categorical.}
+\begin{example}{Suppose that on a given day, a research assistant collected data on the first 20 individuals visiting one of the new walk-in clinics being offered by major commercial pharmacies.  In addition to other variables, the research assistant collected age (measured as less than 21, 21 - 65, and older than 65 years of age), sex, height, weight, and reason for the visit.  Classify each of the variables as continuous numerical, discrete numerical, or categorical.}
 Height and weight are continuous numerical variables. Age as measured by the research assistant is ordered categorical. Sex and the reason for the visit are nominal categorical variables; sex has two categories, while reason for the visit will have many possible values. 
 \end{example}
 
@@ -239,19 +237,20 @@ Characterize the variables \var{participant.ID}, \var{treatment.group}, and \var
 
 Many studies are motivated by a researcher examining a possible relationship between two or more variables. Statistical relationships between two variables occur when they tend to vary in a related way. A \term{response variable} measures an outcome of interest, while an \term{explanatory variable} may be useful in predicting or understanding the response variable. There may be several possible explanatory variables for a single response variable in a given study.  Response variables are sometimes called dependent variables and explanatory variables are often called independent variables or predictors.  
 
-\textit{we should have a definition of residue in the paragraph below}
-
-Researchers were interested in using the \data{famuss} data to answer several questions, including: is ACTN3 genotype associated with variation in muscle function? The ACTN3 gene codes for a protein involved in muscle function. A common mutation (polymorphism) at residue 577 in the ACTN3 gene changes C to T; TT individuals are unable to produce any ACTN3 protein in their muscle. Thus, researchers hypothesized that ACTN3 genotype might influence muscle function in humans. The response variable in this study is \var{ndrm.ch}, the percent change in non-dominant arm strength, with strength gain being used as a way to measure muscle function. The explanatory variable of interest is \var{actn3.r557x}, ACTN3 genotype at residue 577.  
+Researchers were interested in using the \data{famuss} data to answer several questions, including: is ACTN3 genotype associated with variation in muscle function? The ACTN3 gene codes for a protein involved in muscle function. A common mutation (polymorphism) at location 577 in the ACTN3 gene changes C to T; TT individuals are unable to produce any ACTN3 protein in their muscle. Thus, researchers hypothesized that ACTN3 genotype might influence muscle function in humans. The response variable in this study is \var{ndrm.ch}, the percent change in non-dominant arm strength, with strength gain being used as a way to measure muscle function. The explanatory variable of interest is \var{actn3.r557x}, ACTN3 genotype at location 577.  
 
 Both numerical and graphical ways to explore possible relationships between two variables will be covered later in the text.
 
 \begin{example}{In the study conducted on Tibetan frogs, researchers collected measurements on egg clutches and female frogs at 11 study sites, located at differing altitudes. Identify the explanatory and response variables in the study.}
-The explanatory variable examined in the study is \var{altitude}. The variables \var{egg.size}, \var{clutch.size}, \var{clutch.volume}, and \var{body.size} are response variables measuring the level of maternal investment. 
+The explanatory variable examined in the study is \var{altitude}. While \var{latitude} is an environmental factor that might potentially influence features of the egg clutches, it is not a variable of interest in this particular study.
+
+The variables \var{egg.size}, \var{clutch.size}, and \var{clutch.volume} are response variables measuring the level of maternal investment.
+
+Female body size (\var{body.size}) is neither an explanatory or response variable. 
+
 \end{example}	
 
-%JV: Frog example may need to be more specific, perhaps by explicitly mentioning that latitude is not a variable of interest. It is also a simplification to say that female body size is a response variable measuring maternal investment.
-
-%DH: Agree with your comment above. Also, having several response variables and one explanatory variable is the reverse of what usually happens.
+%JV: Should come back to this to point out that body.size is a potential confounder.
 
 \begin{exercise}
 Refer to the variables from the \data{famuss} data set described in Table~\ref{famussVariables} to formulate two questions about the relationships between these variables that differ from the one addressed by the research team.\footnote{Two sample questions: (1)  Do participants appear respond differently to training according to race?  (2)  Do male participants appear to respond differently to training than females?}
@@ -283,7 +282,7 @@ For example, consider the following research questions:
 
 \end{enumerate}
 
-Each of these questions refers to a target \term{population}. In the first question, the target population is all swordfish in the Atlantic ocean, and each fish represents a case. It is almost always either too expensive or logistically impossible to collect data for every case in a population; as a result, nearly all research is based on samples from populations. A \term{sample} represents a subset of the cases and is often a small fraction of the population. For instance, 60 swordfish (or some other number) in the population might be selected, and this sample data may be used (with some assumptions) to provide an estimate of the population average and answer the research question.
+Each of these questions refers to a target \term{population}. In the first question, the target population is all swordfish in the Atlantic Ocean, and each fish represents a case. It is almost always either too expensive or logistically impossible to collect data for every case in a population; as a result, nearly all research is based on samples from populations. A \term{sample} represents a subset of the cases and is often a small fraction of the population. For instance, 60 swordfish (or some other number) in the population might be selected, and this sample data may be used (with some assumptions) to provide an estimate of the population average and answer the research question.
 
 
 \subsection{Anecdotal evidence}
@@ -300,8 +299,7 @@ An anecdotal observation can never be the basis for a conclusion, but it may wel
 
 Sampling from a population is a useful tool in population-based research in the health sciences.  When done correctly, it provides reliable information about the  characteristics of a large population without having to directly measure those characteristics for each member.  The US Centers for Disease Control (US CDC) conducts many such surveys, including including the Youth Risk Behavior Surveillance System (YRBSS).\footnote{http://www.cdc.gov/healthyyouth/data/yrbs/index.htm} Between 1991 and 2013, 2.6 million high school students have participated in more than 1,100 separate surveys. Data from a recent YRBSS survey are used in Chapter 4. The CDC conducts similar surveys for diabetes, health care access, and immunization. Likewise, the World Health Organization (WHO) conducts the World Health Survey in partnership  with approximately 70 countries to learn about the health of adult populations and the health systems in those countries.\footnote{\url{http://www.who.int/healthinfo/survey/en/}}  
 
-Sampling from a population is easier when the population is relatively small and members of the population are easy to identify and contact.  For instance, the quality improvement team at an integrated health care system, such as Kaiser Permanente or Harvard Pilgrim Health Care, might want to learn about the perception of care among members of the health plan.  Since health plans have contact information for each member, a selected subset can be contacted (with their consent) for participation in an interview or mailed survey.  More complex methods are required for other surveys.
-
+Sampling from a population is easier when the population is relatively small and members of the population are easy to identify and contact.  For instance, the quality improvement team at an integrated health care system, such as Kaiser Permanente or Harvard Pilgrim Health Care, might want to learn about how members of the health plan perceive the quality of services offered.  Since health plans have contact information for each member, a selected subset can be contacted (with their consent) for participation in an interview or mailed survey.  More complex methods are required for other surveys.
 
 One common pitfall in conducting a survey is to use a \term{convenience sample}\index{sample!convenience sample}, in which individuals who are easily accessible are more likely to be included in the sample. For instance, the quality improvement team in the healthcare plan might ask interviewers to approach plan members visiting an outpatient clinic during a particular week.  The sample would fail to enroll generally healthy members who typically do not use outpatient services or schedule routine physical examinations. 
   
@@ -317,7 +315,7 @@ One common pitfall in conducting a survey is to use a \term{convenience sample}\
 
 The general principle of sampling is straightforward: a sample from a population is useful for learning about a population only when the sample matches, on average, the characteristics of the population. Random sampling is the best way to ensure that a sample reflects a population, because random samples are not subject to the conscious or unconscious bias of the team gathering the sample.  However, even a well-defined sampling strategy can lead to an unrepresentative sample if there are substantial barriers to subject participation, such as questions that assume participants are fluent in English or calls to potential participants that do not account for working hours or time-zone differences. 
 
-The easiest random samples to analyze are those in which each member of a population has the same chance of being sampled. In a \term{simple random sample}, each member of the population is directly chosen at random for the sample, with probability the size of the sample divided by the size of the population. Simple random samples are essentially equivalent to how raffles are conducted. For example, if there are 5 prizes available and 100 people each have a single ticket, each person has a 5\% chance (5/100) of being called. In the health plan example, a subset of members might be chosen randomly from the plan membership roster for an interview. \textsl{OpenIntro}, third edition, Section 1.4.2 describes the four most commonly used sampling strategies. 
+The easiest random samples to analyze are those in which each member of a population has the same chance of being sampled. In a \term{simple random sample}, each member of the population is directly chosen at random for the sample, with probability the size of the sample divided by the size of the population. Simple random samples are essentially equivalent to how raffles are conducted. For example, if there are 5 prizes available and 100 people each have a single ticket, each person has a 5\% chance (5/100) of being called. In the health plan example, a subset of members might be chosen randomly from the plan membership roster for an interview.
 
 
 \begin{figure}[ht]
@@ -357,7 +355,7 @@ Scientists conduct an \term{observational study} when they collect data in a way
 \subsection[Experiments]{Experiments}
 \label{experiments}
 
-Studies in which researchers assign treatments to cases are called \termsub{experiments}{experiment}. Randomized experiments are an essential tool in research and public policy.\footnote{In medicine, randomized experiments are known as randomized clinical trials.}  For all but a few exceptional settings,  the US Food and Drug Administration requires that two independently conducted randomized trials confirm that a new drug is safe and effective before it can be marketed, and the European Medicines Agency has a similar policy. Large randomized experiments in medicine have provided the basis for major public health initiatives.  In 1954, approximately 750,000 children participated in a randomized study comparing polio vaccine with a placebo.\footnote{Meier, Paul. "The biggest public health experiment ever: the 1954 field trial of the Salk poliomyelitis vaccine." \textit{Statistics: a guide to the unknown}. San Francisco: Holden-Day (1972): 2-13.}  In the United States, the results of the study led almost immediately to the widespread and successful use of the vaccine to prevent polio.
+Studies in which researchers assign treatments to cases are called \termsub{experiments}{experiment}. Randomized experiments are an essential tool in research and public policy.\footnote{In medicine, randomized experiments are known as randomized clinical trials.}  For all but a few exceptional settings,  the US Food and Drug Administration requires that two independently conducted randomized trials confirm that a new drug is safe and effective before it can be marketed; the European Medicines Agency has a similar policy. Large randomized experiments in medicine have provided the basis for major public health initiatives.  In 1954, approximately 750,000 children participated in a randomized study comparing polio vaccine with a placebo.\footnote{Meier, Paul. "The biggest public health experiment ever: the 1954 field trial of the Salk poliomyelitis vaccine." \textit{Statistics: a guide to the unknown}. San Francisco: Holden-Day (1972): 2-13.}  In the United States, the results of the study led almost immediately to the widespread and successful use of the vaccine for polio prevention.
 
 Randomized experiments are generally built on three principles.
 
@@ -367,7 +365,7 @@ Randomized experiments are generally built on three principles.
 
 	\item[Control.] Researchers select participants for the study in a way that reduces unnecessary variability, doing their best to \term{control} for variables in the selection process that might make the results difficult to interpret. For instance, participants are selected from individuals who have aspects of a disease or condition that suggests they may benefit from the intervention being studied. All infants enrolled in the LEAP study were required to be between 4 and 11 months of age, with severe eczema and/or allergies to eggs.
 
-	\item[Randomization.] Researchers randomize patients into treatment groups to account for variables that cannot be controlled. For example, some infants may have been more susceptible to peanut allergies because of an undetected genetic condition. Randomly assigning patients to the treatment or control group helps even out such differences between the two groups. In situations where researchers suspect that a few variables other than the treatment may influence the response, they may first group individuals into \term{blocks} according to a certain attribute, and then, within each block, randomize cases to treatment groups; this technique is referred to as \term{blocking} or \term{stratification}.  In the LEAP study, infants were stratified into two cohorts based on whether or not the child developed a red, swollen mark (a wheal) after a skin test at the time of enrollment; afterwards, infants were randomized between treatment and control groups. The main analysis of the study analyzed data collected for infants without a wheal after the skin test. Figure~\ref{leapBlocking} illustrates the blocking scheme used in the study. 
+	\item[Randomization.] Researchers randomize patients into treatment groups to account for variables that cannot be controlled. For example, some infants may have been more susceptible to peanut allergies because of an undetected genetic condition. Randomly assigning patients to the treatment or control group helps even out such differences between the two groups. In situations where researchers suspect that a few variables other than the treatment may influence the response, they may first group individuals into \term{blocks} according to a certain attribute, and then, within each block, randomize cases to treatment groups; this technique is referred to as \term{blocking} or \term{stratification}.  In the LEAP study, infants were stratified into two cohorts based on whether or not the child developed a red, swollen mark (a wheal) after a skin test at the time of enrollment; afterwards, infants were randomized between treatment and control groups. The main analysis of the study examine data collected for infants without a wheal after the skin test. Figure~\ref{leapBlocking} illustrates the blocking scheme used in the study. 
 
 	\item[Replication.] The more cases researchers observe, the more accurately they can estimate the effect of the explanatory variable on the response. In a single study, \term{replication} is accomplished by collecting a sufficiently large sample. The LEAP study randomized a total of 640 infants; 542 infants were in the block without the wheal response. 
 
@@ -403,7 +401,7 @@ The patients are not the only ones who should be blinded: doctors and researcher
 
 \subsection{Observational studies}
 
-In experiments researchers to assign the primary explanatory variable (i.e., the intervention) to each subject. For observational studies, researchers simply observe selected potential explanatory and response variables. Making causal conclusions based on experiments is often reasonable; however, making the same causal conclusions solely based on observational data should be avoided. Participants who differ in important explanatory variables may also differ in other ways that influence response.  For example, while observational studies of obesity have shown that obese individuals tend to die sooner than individuals with normal weight, obese individuals usually exhibit other health behaviors that influence life expectancy, such as reduced exercise.  
+In experiments, researchers assign the primary explanatory variable (i.e., the intervention) to each subject. For observational studies, researchers simply observe selected potential explanatory and response variables. Making causal conclusions based on experiments is often reasonable; however, making the same causal conclusions solely based on observational data should be avoided. Participants who differ in important explanatory variables may also differ in other ways that influence response.  For example, while observational studies of obesity have shown that obese individuals tend to die sooner than individuals with normal weight, obese individuals usually exhibit other health behaviors that influence life expectancy, such as reduced exercise.  
 
 Suppose an observational study tracked sunscreen use and skin cancer, finding that the more sunscreen a person uses, the more likely they are to have skin cancer. However, this does not mean that sunscreen \emph{causes} skin cancer. One important piece of missing information is sun exposure -- if someone is out in the sun all day, they are both more likely to use sunscreen and to get skin cancer. Sun exposure is a \term{confounding variable}: a variable correlated with both the explanatory and response variables.\footnote{Also called a \term{lurking variable}, \term{confounding factor}, or a \term{confounder}.} There is no guarantee that all confounding variables can be examined or measured; as a result, it is difficult to justify making causal conclusions from observational studies. 
 % Some studies:
@@ -412,58 +410,57 @@ Suppose an observational study tracked sunscreen use and skin cancer, finding th
 % Study with a similar scenario to that described here:
 % http://onlinelibrary.wiley.com/doi/10.1002/ijc.22745/full
 
+\textit{JV: Perhaps this would be a good spot to point out that confounding variables should also be accounted for in randomized studies, and maybe introduce an example that illustrates the concept. Alternatively, confounding variables could be introduced in the previous section and explained again here (use example of body.size with frog data). Important to not imply that confounding variables are only an issue with observational studies.}
+
 \begin{center}
 	\includegraphics[height=1.25in]{ch_intro_to_data_oi_biostat/figures/variables/confoundingVariable.png}
 \end{center}
 
 Observational studies can reveal interesting patterns or important associations useful for designing follow-up experiments. Several observational studies based on dietary data from different countries showed a strong association between dietary fat and breast cancer in women.  These observations led to the launch of the Women's Health Initiative (WHI), a large randomized trial sponsored by the US NIH.  In the WHI, women were randomized to standard versus low fat diets, and the previously observed association was not confirmed.  
 
-%DH: \textit{DH: If we keep this example, we need references. JV: And perhaps a bit more detail.}
-
 Observational studies can be either prospective or retrospective. A \term{prospective study} identifies participants and collects information at scheduled times or as events unfold. For instance, medical researchers may identify and follow a group of similar individuals over many years to assess the possible influences of behavior on cancer risk. One example of such a study is The Nurses' Health Study, started in 1976 and expanded in 1989.\footnote{\texttt{\oiRedirect{textbook-channing_nurse_study}{www.channing.harvard.edu/nhs}}} This prospective study recruits registered nurses and then collects data using questionnaires. \termsub{Retrospective studies}{retrospective studies} collect data after events have taken place, e.g. researchers may review past events in medical records. Some datasets may contain both prospectively- and retrospectively-collected variables. The Cancer Care Outcomes Research and Surveillance Consortium (CanCORS) enrolled participants with lung or colorectal cancer, collected information about diagnosis, treatment, and previous health behavior, but also maintained contact with participants to gather data about long term outcomes.\footnote{Ayanian, John Z., et al. "Understanding cancer treatment and outcomes: the cancer care outcomes research and surveillance consortium." Journal of Clinical Oncology 22.15 (2004): 2992-2996}  
 
 \subsection{Sampling methods}
 
-%\textit{Inserted on 20 May 2016. Check figures for relevance.  Think about adding the Belgium dental study here.}
-
+%\textit{DH: Inserted on 20 May 2016. Check figures for relevance.  Think about adding the Belgium dental study here.}
 
 \label{fourSamplingMethods}
 \label{threeSamplingMethods}
 
-Almost all statistical methods are based on the notion of implied randomness. If observational data are not collected in a random framework from a population, these statistical methods -- the estimates and errors associated with the estimates -- are not reliable. Here we consider four random sampling techniques: simple, stratified, cluster, and multistage sampling. Figures~\ref{simple_stratified} and~\ref{cluster_multistage} provide graphical representations of these techniques.
+Almost all statistical methods are based on the notion of implied randomness. If observational data are not collected from a population via a random framework, these statistical methods -- calculating estimates and errors associated with estimates -- are not reliable. Four random sampling techniques are discussed in the following section: simple, stratified, cluster, and multistage sampling. Figures~\ref{simple_stratified} and~\ref{cluster_multistage} provide graphical representations of these techniques.
 
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{ch_intro_to_data_oi_biostat/figures/samplingMethodsFigure/simple_stratified}
-\caption{Examples of simple random\index{sample!simple random sampling} and stratified sampling\index{sample!stratified sampling}. In the top panel, simple random sampling was used to randomly select the 18 cases. In the bottom panel, stratified sampling was used: cases were grouped into strata, then simple random sampling was employed within \mbox{each stratum}.}
+\caption{Examples of simple random\index{sample!simple random sampling} and stratified sampling\index{sample!stratified sampling}. In the top panel, simple random sampling was used to randomly select 18 cases (identified by the circled orange dots) out of the total population (blue dots). The bottom panel illustrates stratified sampling: cases were grouped into six strata, then simple random sampling was employed within \mbox{each stratum}.}
 \label{simple_stratified}
 \end{figure}
 
-\termsub{Simple random sampling}{sample!simple random sampling} is probably the most intuitive form of random sampling. An integrated care provider might randomly sample names using its membership roster and contact those sampled with a telephone or mailed survey.  In general, a sample is referred to as a ``simple random sample'' if each case in the population has an equal chance of being included in the sample \emph{and} knowing that a case is included in a sample does not provide useful information about which other cases are included.
+\termsub{Simple random sampling}{sample!simple random sampling} is the most intuitive form of random sampling. A sample is generally referred to as a "simple random sample" if each case in the population has an equal chance of being included in the sample \emph{and} if knowing that a certain case is included in a sample does not provide useful information about which other cases are included. For example, an integrated care provider might randomly sample names using its membership roster and contact those sampled with a telephone or mailed survey. 
 
-\termsub{Stratified sampling}{sample!stratified sampling} is a divide-and-conquer sampling strategy. The population is divided into groups called \term{strata}\index{sample!strata|textbf}. The strata are chosen so that similar cases are grouped together, then a second sampling method, usually simple random sampling, is employed within each stratum.  If the health care provider has facilities in different cities, each city might represent a stratum, and plan members could be randomly sampled from each city.
+\termsub{Stratified sampling}{sample!stratified sampling} is a divide-and-conquer sampling strategy. The population is divided into groups called \term{strata}\index{sample!strata|textbf}. The strata are chosen so that similar cases are grouped together; afterwards, a second sampling method, usually simple random sampling, is used to select cases within each stratum. Stratified sampling is especially useful when the cases in each stratum are very similar with respect to the outcome of interest, but cases between strata might be quite different. 
 
- 
-Stratified sampling is especially useful when the cases in each stratum are very similar with respect to the outcome of interest. The downside is that analyzing data from a stratified sample is a more complex task than analyzing data from a simple random sample. The analysis methods introduced in this book would need to be extended to analyze data collected using stratified sampling.
+Recall that the health care provider is interested in learning how members perceive the quality of services offered. Suppose the health care provider has facilities in different cities. If the same services are not necessarily offered in all cities, but all locations in a given city will offer similar services, stratified sampling would be a reasonable choice of sampling method. Each city could represent a stratum, and plan members could be randomly sampled from each city.
 
-\begin{example}{Why would it be good for cases within each stratum to be very similar?}
-We might get a more stable estimate for the subpopulation in a stratum if the cases are very similar. These improved estimates for each subpopulation will help us build a reliable estimate for the full population.
+\begin{example}{Why might it be helpful for cases within each stratum to be very similar?}
+If cases within each stratum are very similar, it is possible to get a more precise estimate for the subpopulation in each stratum. These improved estimates for each subpopulation will increase the reliability of an estimate for the full population.
 \end{example}
 
-In a \termsub{cluster sample}{sample!cluster sample}, we break up the population into many groups, called \termsub{clusters}{sample!cluster}. Then we sample a fixed number of clusters and include all observations from each of those clusters in the sample. A \termsub{multistage sample}{sample!multistage sample} is like a cluster sample, but rather than keeping all observations in each cluster, we collect a random sample within each selected cluster. %Multistage sampling is similar to stratified sampling in its process, except that stratified sampling requires observations be sampled from \emph{every} stratum.
+In a \termsub{cluster sample}{sample!cluster sample}, the population is first divided into many groups, called \termsub{clusters}{sample!cluster}. Then, a fixed number of clusters is sampled; all observations from each of those clusters are included in the sample. A \termsub{multistage sample}{sample!multistage sample} is similar to a cluster sample, but rather than keeping all observations in each cluster, a random sample is collected within each selected cluster.
 
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{ch_intro_to_data_oi_biostat/figures/samplingMethodsFigure/cluster_multistage}
-\caption{Examples of cluster\index{sample!cluster sampling} and multistage sampling\index{sample!multistage sampling}. In the top panel, cluster sampling was used. Here, data were binned into nine clusters, three of these clusters were sampled, and all observations within these three cluster were included in the sample. In the bottom panel, multistage sampling was used.
-It differs from cluster sampling in that of the clusters selected, we randomly select a subset of each cluster to be included in the sample.}
+\caption{Examples of cluster\index{sample!cluster sampling} and multistage sampling\index{sample!multistage sampling}. The top panel illustrates cluster sampling: data were binned into nine clusters, three of which were sampled, and all observations within these clusters were used as a sample. The bottom panel illustrates multistage sampling, which differs from cluster sampling in that only a subset from each of the three selected clusters are drawn to be included in the sample.}
 \label{cluster_multistage}
 \end{figure}
 
-Sometimes cluster or multistage sampling can be more economical than the alternative sampling techniques. Also, unlike stratified sampling, these approaches are most helpful when there is a lot of case-to-case variability within a cluster but the clusters themselves don't look very different from one another. For example, if neighborhoods represented clusters, then cluster or multistage sampling work best when the neighborhoods are very diverse. A downside of these methods is that more advanced analysis techniques are typically required, though the methods in this book can be extended to handle such data.
+Unlike with stratified sampling, cluster and multistage sampling are most helpful when there is high case-to-case variability within a cluster, but the clusters themselves are similar to one another. For example, if neighborhoods in a city represent clusters, cluster and multistage sampling work best when the population within each neighborhood is very diverse.
 
-\begin{example}{Suppose researchers are interested in estimating the malaria rate in a densely tropical portion of rural Indonesia. We learn that there are 30 villages in that part of the Indonesian jungle, each more or less similar to the next. Our goal is to test 150 individuals for malaria. What sampling method should be employed?}
-A simple random sample would likely draw individuals from all 30 villages, which could make data collection extremely expensive. Stratified sampling would be a challenge since it is unclear how we would build strata of similar individuals. However, cluster sampling or multistage sampling seem like very good ideas. If we decided to use multistage sampling, we might randomly select half of the villages, then randomly select 10 people from each. This would probably reduce our data collection costs substantially in comparison to a simple random sample, and this approach would still give us reliable information.
+Analysis of data collected using stratified, cluster, or multistage sampling is more complicated than for data from a simple random sample; the analysis methods discussed in this text would need to be extended to handle such data. Applying these sampling techniques can often be more economical than only drawing random samples.
+
+\begin{example}{Suppose researchers are interested in estimating the malaria rate in a densely tropical portion of rural Indonesia. There are 30 villages in the area, each more or less similar to the next. The goal is to test 150 individuals for malaria. What sampling method should be employed?}
+A simple random sample would likely draw individuals from all 30 villages, which could make data collection extremely expensive. Stratified sampling is not advisable, since there is not enough information to determine how strata of similar individuals could be built. However, cluster sampling or multistage sampling are both reasonable options. For example, with multistage sampling, half of the villages could be randomly selected, and then 10 people selected from each village. This strategy is more efficient than a simple random sample, and can still provide reliable data.
 \end{example}
 
 \section[Numerical data]{Numerical data}
@@ -476,16 +473,12 @@ This section introduces techniques for exploring and summarizing numerical varia
 \subsection{Measures of center: mean and median}
 \label{measuresOfCenter}
 
-The \term{mean}, sometimes called the \indexthis{average}{mean!average}, is a common way to measure the center of a \term{distribution} of data. To find the average clutch volume for the observed egg clutches, we add all the clutch volumes and divide by the total number of clutches. For computational convenience, the volumes are rounded to the first~decimal.
+The \term{mean}, sometimes called the \indexthis{average}{mean!average}, is a common way to measure the center of a \term{distribution} of data. To find the average clutch volume for the observed egg clutches, add all the clutch volumes and divide by the total number of clutches. For computational convenience, the volumes are rounded to the first~decimal.
 \begin{eqnarray}
 \overline{x} = \frac{177.8 + 257.0 + \cdots + 933.3}{431} = 882.5\ \textrm{mm}^{3}
 \label{sampleMeanEquation}
 \end{eqnarray}
 The sample mean is often labeled $\overline{x}$\marginpar[\raggedright$\overline{x}$\\\footnotesize sample\\ mean]{\raggedright$\overline{x}$\\\footnotesize sample\\ mean}. The letter $x$ is being used as a generic placeholder for the variable of interest, \var{clutch.volume}, and the bar over the $x$ communicates that the average volume of the 431 clutches is $882.5 \ \textrm{mm}^{3}$. The symbol $\mu$ is used for the mean of the entire population from which the sample is drawn.
-
-%JV: Should we specify the "entire population" as the population of frogs (of this species) in the Tibetan Plateau?
-
-% Yes to the above, but it will only be defensible if the sample of frogs in the dataset was random
 
 
 \begin{termBox}{\tBoxTitle{Mean}%
@@ -519,7 +512,7 @@ x_{431}-\overline{x} &= 933.2 - 882.5 = 50.7
 \end{align*}
 % library(openintro); d <- frog.altitude$clutch.volume; round(mean(d),1); d[c(1,2,3,431)]; d[c(1,2,3,431)] - round(mean(d),1); (d[c(1,2,3,431)] - round(mean(d)))^2; sum((d - round(mean(d)))^2)/49; sqrt(sum((d - round(mean(d)))^2)/49); var(d); sd(d)
 
-The sample \term{variance}\label{varianceFirstDiscussed}, is the average of the squares of these deviations, and is  denoted by $s^2$\marginpar[\raggedright$s^2$\\\footnotesize sample variance]{\raggedright$s^2$\\\footnotesize sample variance}:
+The sample \term{variance}\label{varianceFirstDiscussed}, the average of the squares of these deviations, is denoted by $s^2$\marginpar[\raggedright$s^2$\\\footnotesize sample variance]{\raggedright$s^2$\\\footnotesize sample variance}:
 \begin{align*}
 s^2 &= \frac{(-704.7)^2 + (-625.5)^2 + (-731.1)^2 + \cdots + (50.7)^2}{431-1} \\
 &= \frac{496,602.09 + 391,250.25 + 534,507.21 + \cdots + 2570.49}{430} \\
@@ -536,21 +529,17 @@ $s$\\\footnotesize sample standard deviation
 }\index{s@$s$} The standard deviation of clutch volume for the egg clutches observed is about $380\ \textrm{mm}^{3}$. 
 
 
-\begin{comment}
-\begin{figure}
-\centering
-\includegraphics[width=\mycaptionwidth]{ch_intro_to_data_oi_biostat/figures/sdAsRuleForEmailNumChar/sdAsRuleForEmailNumChar}
-\caption{In the \var{num\_\hspace{0.3mm}char} data, 41 of the 50 emails (82\%) are within 1~standard deviation of the mean, and 47 of the 50 emails (94\%) are within 2 standard deviations. Usually about 70\% of the data are within 1 standard deviation of the mean and 95\% are within 2 standard deviations, though this rule of thumb is less accurate for skewed data, as shown in this example.}
-\label{sdAsRuleForEmailNumChar}
-\end{figure}
-\end{comment}
-
 Formulas and methods used to compute the variance and standard deviation for a population are similar to those used for a sample.\footnote{The only difference is that the population variance has a division by $n$ instead of $n-1$.}  Like the mean, the population values have special symbols: $\sigma_{}^2$\marginpar[\raggedright$\sigma_{}^2$\\\footnotesize population variance\\ \hspace{2mm}]{\raggedright$\sigma_{}^2$\\\footnotesize population variance\\ \hspace{2mm}} for the variance and $\sigma$\marginpar[\raggedright$\sigma$\\\footnotesize population standard deviation\\ \hspace{2mm}]{\raggedright$\sigma$\\\footnotesize population standard deviation\\ \hspace{2mm}} for the standard deviation. The symbol $\sigma$ \index{Greek!sigma@sigma ($\sigma$)} is the Greek letter \emph{sigma}.
 
+%JV: I think it makes more sense for the following information to be introduced with histograms and the concept of a symmetric distribution.
+
+\begin{comment}
 
 \begin{tipBox}{\tipBoxTitle{standard deviation describes variability}
 	The use of the standard deviation as a descriptor of variability is at least as important as the formulas. Usually 70\% of the data will be within one standard deviation of the mean and about 95\% will be within two standard deviations. This rule of thumb is not always accurate when there are a few observations with extremely large (or extremely small) values. }
 \end{tipBox}
+
+\end{comment}
 
 \begin{termBox}{\tBoxTitle{Standard Deviation}
 		The sample standard deviation of a numerical variable is computed as the square root of the variance, which is the sum of squared deviations divided by the number of observations minus 1.
@@ -563,7 +552,7 @@ Formulas and methods used to compute the variance and standard deviation for a p
 
 Variability can also be measured using the \term{interquartile range} (IQR).  To calculate the IQR, find the \term{first quartile} \index{quartile!first quartile ($Q_1$)} (the $25^{th}$ \hiddenterm{percentile}, i.e. 25\% of the data fall below this value) and the \term{third quartile} \index{quartile!third quartile ($Q_3$)} (the $75^{th}$ percentile). These are often labeled $Q_1$ and $Q_3$, respectively. The IQR is the difference: $Q_3 - Q_1$.
 
-\textit{Something for Morgan: the subtleties of computing $Q_1$ and $Q_3$.}
+%DH: \textit{Something for Morgan: the subtleties of computing $Q_1$ and $Q_3$.}
 
 The IQR for \var{clutch.volume} is $1096.0 - 609.6 = 486.4\ \textrm{mm}^{3}$.  The middle $50\%$ of the values for \var{clutch.volume} lies between $609.6\ \textrm{mm}^{3}$ and $1096.0\ \textrm{mm}^{3}$.
 
@@ -587,9 +576,9 @@ The sample statistics are computed under each of two scenarios in Table~\ref{fro
 		& \hspace{0mm} & \multicolumn{2}{c}{\bf robust} & \hspace{2mm} & \multicolumn{2}{c}{\bf not robust} \\
 		scenario && median & IQR && $\overline{x}$ & $s$ \\ 
 		\hline
-		original \var{frog} data 	&& 831.8 & 486.9 && 882.5 & 379.1 \\
+		original data (with extreme observations) 	&& 831.8 & 486.9 && 882.5 & 379.1 \\
 		% library(openintro); data(frog.altitude); d <- frog.altitude$clutch.volume; median(d); IQR(d); mean(d); sd(d)
-		drop four largest observations && 831.8 & 493.92 && 867.9 & 349.2 \\
+		data without four largest observations && 831.8 & 493.92 && 867.9 & 349.2 \\
 		% library(openintro); data(frog.altitude); d <- frog.altitude$clutch.volume; a <- d<= 2000; median(d[a]); IQR(d[a]); mean(d[a]); sd(d[a])
 		\hline
 	\end{tabular}
@@ -635,7 +624,7 @@ Histograms are especially convenient for describing the shape of the data distri
 
 The mean and standard deviation have a convenient interpretation in symmetric distributions.  Usually about 70\% of the data are within 1 standard deviation of the mean and 95\% are within 2 standard deviations, so simple numerical summaries provide approximate information on where the majority of the data are located.  This approximation, also known as the \term{empirical rule}, is not accurate for skewed distributions.  The empirical rule is discussed in more detail in Chapter 3, where it arises naturally for bell-shaped distributions.
 
-A \term{mode} is represented by a prominent peak in the distribution.\footnote{Another definition of mode, which is not typically used in statistics, is the value with the most occurrences. It is common to have \emph{no} observations with the same value in a data set, which makes this other definition impractical for many datasets.} Figure~\ref{singleBiMultiModalPlots} shows histograms that have one, two, or three major peaks. Such distributions are called \termsub{unimodal}{modality!unimodal}, \termsub{bimodal}{modality!bimodal}, and \termsub{multimodal}{modality!multimodal}, respectively. Any distribution with more than two prominent peaks is called multimodal. Note that the less prominent peak in the unimodal distribution was not counted since it only differs from its neighboring bins by a few observations. Prominent is a subjective term, of course, but it is usually clear in a histogram where the major peaks are.  
+A \term{mode} is represented by a prominent peak in the distribution.\footnote{Another definition of mode, which is not typically used in statistics, is the value with the most occurrences. It is common that a dataset contains \emph{no} observations with the same value, which makes this other definition impractical for many datasets.} Figure~\ref{singleBiMultiModalPlots} shows histograms that have one, two, or three major peaks. Such distributions are called \termsub{unimodal}{modality!unimodal}, \termsub{bimodal}{modality!bimodal}, and \termsub{multimodal}{modality!multimodal}, respectively. Any distribution with more than two prominent peaks is called multimodal. Note that the less prominent peak in the unimodal distribution was not counted since it only differs from its neighboring bins by a few observations. Prominent is a subjective term, but it is usually clear in a histogram where the major peaks are.  
 
 
 \begin{figure}[h]
@@ -660,7 +649,7 @@ A \term{boxplot} summarizes a dataset using five statistics while also plotting 
 	\label{frogBoxPlot}
 \end{figure}
 
-In a boxplot, a rectangle extending from the first quartile to the third quartile represents the middle 50\% of the data (the IQR). The rectangle is split by the \term{median}. Note that the median is not necessarily halfway between the first and third quartiles; this is especially evident in heavily skewed distributions. Extending outwards from the box, the \term{whiskers} capture the data that fall between $Q_1 - 1.5\times IQR$ and $Q_3 + 1.5\times IQR$.\footnote{While the choice of 1.5 is arbitrary, it is a commonly used value for drawing boxplots.} The whiskers must end at data points; the values given by adding or subtracting $1.5\times IQR$ define the maximum reach of the whiskers. For example, for the \var{clutch.volume} variable: $Q_3 + 1.5\times IQR = 1,096.5$ and $1.5\times 486.4 = 1,826.1\ \textrm {mm}^{3}$. However, there was no clutch with volume 1,826.1\ $\textrm {mm}^{3}$; thus, the upper whisker extends to 1,819.7 $\textrm {mm}^{3}$, the largest observation that is smaller than $Q_3 + 1.5\times IQR$.
+In a boxplot, a rectangle extending from the first quartile to the third quartile represents the middle 50\% of the data (the IQR). The rectangle is split by the \term{median}. Note that the median is not necessarily halfway between the first and third quartiles; this is especially evident in heavily skewed distributions. Extending outwards from the box, the \term{whiskers} capture the data that fall between $Q_1 - 1.5\times IQR$ and $Q_3 + 1.5\times IQR$.\footnote{While the choice of 1.5 is arbitrary, it is a commonly used value for drawing boxplots.} The whiskers must end at data points; the values given by adding or subtracting $1.5\times IQR$ define the maximum reach of the whiskers. For example, for the \var{clutch.volume} variable: $Q_3 + 1.5 \times IQR = 1,096.5 + 1.5\times 486.4 = 1,826.1\ \textrm {mm}^{3}$. However, there was no clutch with volume 1,826.1\ $\textrm {mm}^{3}$; thus, the upper whisker extends to 1,819.7 $\textrm {mm}^{3}$, the largest observation that is smaller than $Q_3 + 1.5\times IQR$.
 
 Any observation that lies beyond the whiskers is shown with a dot; these observations are called outliers. An \term{outlier} is a value that appears extreme relative to the rest of the data. For the \var{clutch.volume} variable, there are several large outliers and no small outliers, indicating the presence of some unusually large egg clutches. Outliers can provide insight into interesting features of the data. 
 
@@ -725,11 +714,11 @@ Not all associations are linear. In fact, some can be highly nonlinear, in which
 %DH: \textit{DH: If we keep this example, the plot will have to be formatted and I should add the country to the data set.  I have more information in older stat 100 files. JV: We should also remember to index the data.}
 
 Scatterplots provide a visual display of the relationship between two variables.  \term{Correlation} is a numerical measure of the strength of a linear relationship.  It is usually denoted by $r$ and takes on values between -1 and 1. \marginpar[\raggedright$r$\\\footnotesize correlation coefficient]{\raggedright$r$\\\footnotesize correlation coefficient} The term \term{correlation coefficient} is also often used for $r$. If the paired values of two variables tend to lie on a line, then $r > 0$, the slope of the line will be positive, and the variables positively associated.
-If $r < 0$, the line will have negative slope and the variables negatively associated.
+If $r < 0$, the line will have negative slope and the variables will be negatively associated.
 If $r = 0$, or approximately 0, the line will be horizontal, indicating that there is no apparent trend or association between the variables.
 If $r \pm 1$, the points will lie exactly on a line, with positive slope if $r = 1$ and negative slope if $r = -1$.
 
-The points will lie on a line only in the last case, which almost never occurs.  The formula for adding a best fitting line to a scatterplot is given in Chapter 7, but it is important to note that $r$ will not be the slope of that line.
+The points will lie on a line only in the last case, which almost never occurs. The formula for adding a best fitting line to a scatterplot is given in Chapter 7, but it is important to note that $r$ will not be the slope of that line.
 
 The formula for correlation uses the pairing of the two variables, just as the scatterplot does in a graph, so the data used in calculating correlation is a set of $n$ ordered pairs $(x_1,y_1), (x_2,y_2), \ldots, (x_n, y_n) $.
 
@@ -808,7 +797,7 @@ A \term{transformation} is a rescaling of data using a function. Transforming da
 
 For example, income data are often skewed right, when measured either at the individual level or by country. Typically, there are large clusters of low to moderate income, with a few large incomes that are outliers. The histogram of per capita incomes used for the horizontal axis in figure~\ref{incomeLifeExpectancy} is shown in Figure~\ref{incomeHistReg}. On the original scale, mean \var{income} is 14,428 (\$14,428 in US dollars), with standard deviation \$16,391.  The empirical rule could not be used with the data on this scale, because even one standard deviation below the mean drops below 0. Figure~\ref{incomeHistLog} shows a plot of the $\log$ of per capita income. The $\log$ transformed data is more nearly symmetric. Once a transformation has induced approximate symmetry, the empirical rule can be used to make approximate statements about the location of the transformed data, which can then be transformed back to the original scale. On the $\log$ transformed scale, the mean $\log$(income) is 8.86, with standard deviation 1.33.
 
-Transformations can also be used on both variables when exploring a relationship. Figure~\ref{incomeLifeExpectancyLog} shows that after a log transformation for both \var{income} and \var{life.expectancy}, the relationship is more nearly linear. Some statistical models are based on the assumption of an approximate linear relationship.
+Transformations can also be used on both variables when exploring a relationship. Figure~\ref{incomeLifeExpectancyLog} shows that after a log transformation for both \var{income} and \var{life.expectancy}, the relationship is more nearly linear. Using transformations can allow for the application of statistical models are based on the assumption of an approximate linear relationship.
 
 \begin{figure}[h]
 \centering
@@ -818,35 +807,7 @@ Transformations can also be used on both variables when exploring a relationship
 \label{incomeLifeExpectancyLog}
 \end{figure}
 
-
-\begin{comment}
-
-from the JV discussion of the frog data
-
-Any reason to leave this in as a comment?
-
-
- A \term{transformation} is a rescaling of the data using a function. The histogram of egg clutch volumes from the \data{frog} data, shown in Figure~\ref{frogHistReg}. In the published paper, the authors used a $\textrm {log}_{10}$ transformation on the data before conducting analyses. Figure~\ref{frogHistLog} shows a plot of the $\textrm {log}_{10}$ of clutch volumes.
-
-\begin{figure}[ht]
-\centering
-\subfigure[]{
-\includegraphics[width=0.46\textwidth]{ch_intro_to_data_oi_biostat/figures/frogHistTransformed/frogHistReg}
-\label{frogHistReg}
-}
-\subfigure[]{
-\includegraphics[width=0.46\textwidth]{ch_intro_to_data_oi_biostat/figures/frogHistTransformed/frogHistLog}
-\label{frogHistLog}
-}
-\caption{\subref{frogHistReg} Histogram of egg clutch volumes. \subref{frogHistLog} Histogram of the log-transformed egg clutch volumes.}
-\label{frogHistTransform}
-\end{figure}
-
-\end{comment}
-
-Transformations other than the logarithm can be useful as well. For instance, the square root ($\sqrt{\text{original observation}}$) and inverse ($\frac{1}{\text{original observation}}$) are sometimes used. Common goals in transforming data are to see the data structure differently, reduce skew, assist in modeling, or straighten a nonlinear relationship in a scatterplot.
-
-%\index{data!frog|)}
+Transformations other than the logarithm can be useful as well. For instance, the square root ($\sqrt{\text{original observation}}$) and inverse ($\frac{1}{\text{original observation}}$) are sometimes used.
 
 \textC{\newpage}
 
@@ -1057,23 +1018,13 @@ Not all data will show such apparent trends. For example, consider the question 
 
 \section[Genomic data]{Genomic data}
 
-In 1990, an international team of scientists led by the National Institutes of Health founded the Human Genome Project (HGP), with the goal of determining the complete nucleotide sequence of the human genome -- an estimated three billion base pairs of DNA.\footnote{Venter, et al. The sequence of the human genome. \textit{Science} 2001; \textbf{291}: 1304-1351 DOI: 10.1126/science.1058040} The project was declared complete in April 2003, with the first working draft made available to the public in 2001: "The scientific work will have profound long-term consequences for medicine, leading to the elucidation of the underlying molecular mechanisms of disease and thereby facilitating the design in many cases of rational diagnostics and therapeutics targeted at those mechanisms."\footnote{International Human Genome Sequencing Consortium. Initial sequencing and analysis of the human genome. \textit{Nature} 2001; \textbf{409}: 880-921.} The tools and techniques developed through the HGP have since been used to characterize the entire genomes of other organisms used extensively in biological research, such as mice and fruit flies. The free availability of genomic sequence data revolutionized biology as a discipline, creating new fields of study centered on taking a genome-wide approach to understanding fundamental biological questions. With the advent of high-throughput sequencing technologies, datasets in biology began to become larger and more complex, necessitating the development of advanced computational methods to analyze and interpret biological data. 
+In 1990, an international team of scientists led by the National Institutes of Health founded the Human Genome Project (HGP) with the goal of determining the complete nucleotide sequence of the human genome -- an estimated three billion base pairs of DNA.\footnote{Venter, et al. The sequence of the human genome. \textit{Science} 2001; \textbf{291}: 1304-1351 DOI: 10.1126/science.1058040} The project was declared complete in April 2003, with the first working draft made available to the public in 2001: "The scientific work will have profound long-term consequences for medicine, leading to the elucidation of the underlying molecular mechanisms of disease and thereby facilitating the design in many cases of rational diagnostics and therapeutics targeted at those mechanisms."\footnote{International Human Genome Sequencing Consortium. Initial sequencing and analysis of the human genome. \textit{Nature} 2001; \textbf{409}: 880-921.} The tools and techniques developed through the HGP have since been used to characterize the entire genomes of other organisms used extensively in biological research, such as mice and fruit flies. The free availability of genomic sequence data revolutionized biology as a discipline, creating new fields of study centered on taking a genome-wide approach to understanding fundamental biological questions. With the advent of high-throughput sequencing technologies, datasets in biology began to become larger and more complex, necessitating the development of advanced computational methods to analyze and interpret biological data. 
 
-While a comprehensive discussion of how statistical methods can be applied to biological data requires computational methods beyond the level of an introductory text, neglecting the topic altogether would be a serious oversight. This section introduces some of the statistical methods used to understand the association between genes and phenotypes, in the context of two important gene expression profiling technologies: DNA microarrays and RNA sequencing (RNA-Seq). Microarray technology, developed in the 1990's for the study of HIV, has been an important tool for discovery in clinical medicine; micro-array based diagnostic tests remain clinically relevant today. RNA-Seq is a much newer technology that has recently begun to replace microarrays for many applications. While microarrays provide expression data for thousands of genes at a time, RNA-Seq allows researchers to sequence the entire set of gene transcripts in a cell. Examples of data from both technologies appear later in this text. 
-
-%% should we define `transcript'
+While a comprehensive discussion of how statistical methods can be applied to biological data requires computational methods beyond the level of an introductory text, neglecting the topic altogether would be a serious oversight. This section introduces some of the statistical methods used to understand the association between genes and phenotypes, in the context of two important gene expression profiling technologies: DNA microarrays and RNA sequencing (RNA-Seq). Microarray technology, developed in the 1990's for the study of HIV, has been an important tool for discovery in clinical medicine; micro-array based diagnostic tests remain clinically relevant today. RNA-Seq is a much newer technology that has recently begun to replace microarrays for many applications. While microarrays provide expression data for thousands of genes at a time, RNA-Seq allows researchers to sequence the entire set of gene sequences in a cell. Examples of data from both technologies appear later in this text. 
 
 The genetic code stored in DNA contains the necessary information for producing the proteins that ultimately determine an organism's observable traits (phenotype). Nearly every cell in a given organism contains the same genes; however, different cells show different patterns of gene expression. Genes that are transcriptionally active (i.e. turned "on") are transcribed into messenger RNA (mRNA) that is then translated into the amino acid chains that become proteins. Not only can genes be switched on or off in certain tissues, but they can also be expressed at varying levels (i.e. high or low). These variations in gene expression underlie the wide range of physical, biochemical, and developmental differences that characterize different cells and tissues. Quantifying the amount of RNA produced in a cell allows for a measure of gene expression. 
 
 The transcriptome, also known as the expression profile, is the complete set of RNA transcripts produced by the genome in a specific cell or set of cells. Studying transcriptomes allows researchers to determine when and where genes are turned on or off in various types of cells and tissues. For example, comparing the transcriptomes of cancer cells versus normal cells may help reveal which particular genes or gene expression changes are associated with cancer.
-
-\begin{comment}
-
-DNA (Deoxyribonucleic Acid) is a molecule that contains the instructions used to produce the features of an organism.  The molecule consists of nucleotides, or chemical building blocks,  made up of three parts: a phosphate group, a sugar group and one of four types of nitrogen bases.  Nucleotides are linked into chains that form a strand of DNA, with the phosphate and sugar groups alternating. The four types of nitrogen bases found in nucleotides are: adenine (\textit{A}), thymine (\textit{T}), guanine (\textit{G}) and cytosine (\textit{C}), and the sequence of these bases determines the biological instructions contained in a strand of DNA.  Structurally, DNA is a \term{double helix}, with the the two single strands in the helix joined together through complementary nitrogen bases;  \textit{A} always pairs with \textit{T}, and \textit{C} with \textit{G} to form base-pairs. 
-
-DNA is found in the nucleus of each cell of a living organism, and is packaged in the units called chromosomes. \textit{should we insert a picture of a DNA double helix here?}  In this view of biology, genes are special sequences of DNA that contain the information needed to produce proteins; genes are said to `code for' particular proteins. A specific sequence of nitrogen base-pairs in a gene is the \term{genotype} of that gene. The sequence \textit{ATCGTT} in a gene might code for blond hair, while \textit{ATCGCT} might code for brown.  The \term{central dogma of biology} posits that enzymes read the information in a DNA molecule and transcribe it into messenger ribonucleic acid, or \term{mRNA}.  The information in the mRNA molecule is then translated into instructions for the building blocks of proteins, amino acids. The instructions provide the precise order in which to link the amino acids to produce specific proteins. The sequences of genes that dictate the features of a cell or organism are studied by measuring the type and quantity of \textit{mRNA} present in a cell.
- 
-\end{comment} 
  
 \subsection{DNA Microarrays}
 
@@ -1123,7 +1074,7 @@ Table~\ref{golubVariables} gives the definitions and coding for the patient desc
 
 The expression data for the genes examined in the study is shown in the last 7,129 columns of the dataset. Each of these columns is a variable with a name corresponding to the name of the probe on the microarray used to measure the expression of a particular gene. 
 
-%The text will later include information about how to translate the probe names into gene names and functions.
+%DH: The text will later include information about how to translate the probe names into gene names and functions.
 
 Table~\ref{sampleGolubData} shows five rows and six columns from the experimental dataset. Each row corresponds to a patient, with the first column specifying sample ID (given by the \texttt{Samples} variable). The second and third columns specify the sex of the patient (\texttt{Gender}, coded M for male or F for female) and cancer type (\texttt{cancer}, B-cell ALL for these five patients). The last three columns show normalized gene expression levels for the three genes corresponding to these probes. The second row of the data shows that in the patient with sample ID 40, the expression level detected at probe \var{AFFX-BioB-3\_at} was higher than at \var{AFFX-BioB-5\_at}. The values are useful in the context of a comparison between two or more genes; individual values do not have biological significance. 
  
@@ -1154,17 +1105,17 @@ Figure~\ref{golubSampleGenesBoxplot} shows side-by-side boxplots of the normaliz
 	\centering
 	\includegraphics[width=0.82\textwidth]
 	{ch_intro_to_data_oi_biostat/figures/golubSampleGenesBoxplot/golubSampleGenesBoxplot.pdf}
-	\caption{Expression levels for three genes from Table~\ref{sampleGolubData}, corresponding to probes \texttt{AFFX-BioB-5\_at}, \texttt{AFFX-BioB-M\_at}, and \texttt{AFFX-BioB-3\_at}.}
+	\caption{Expression levels for three genes from Table~\ref{sampleGolubData}, corresponding to probes \texttt{AFFX-BioB-5\_at} (A), \texttt{AFFX-BioB-M\_at} (B), and \texttt{AFFX-BioB-3\_at} (C).}
 	\label{golubSampleGenesBoxplot}
 \end{figure}
-
-%\textit{JV: Not sure how to get OI's custom boxplot function to add the labels for probes since, unlike for the previous side-by-side boxplots (FAMuSS data), the data isn't stored under a single variable that is sorted by a separate factor variable...}
 
 \index{data!Golub|)}
 
 \newpage
 
-%  Not sure if we should explain some of the scientific terms that are in this explanation...`reads', `transcriptome', `non-model organisms', `cDNA', `short-sequence reads'
+%DH: Not sure if we should explain some of the scientific terms that are in this explanation...`reads', `transcriptome', `non-model organisms', `cDNA', `short-sequence reads'
+
+%JV: cDNA and transcriptome are defined earlier in this section. I don't think reads and non-model organisms need to be explicitly defined.
 
 \subsection{RNA Sequencing}
 
@@ -1178,7 +1129,97 @@ A transcriptome can be assembled from the short sequence reads by either \textit
 
 Quantifying gene expression levels from RNA-seq data is based on counting the number of sequence reads per gene. If a particular gene is highly expressed, there will be a relatively high number of RNA transcripts originating from that gene; thus, the probability that transcripts from this gene are sequenced multiple times is also relatively high, and the gene will have a high number of sequencing reads associated with it. The number of read counts for a given gene provides a measure of gene expression level, when normalized for transcript length. If a short transcript and long transcript are present in equal amounts, the long transcript will have more sequencing reads associated with it due to the fragmentation step in library construction. Additional normalization steps are necessary when comparing data between samples to account for factors such as differences in the starting amount of RNA or the total number of sequencing reads generated (sequencing depth, in the language of genomics). A variety of strategies have been developed to carry out such normalization procedures.
 
-\textit{RNA-seq dataset to be discussed in a subsequent draft.}
+A recent study conducted on the plant species \textit{Arabidopsis arenosa} used RNA sequencing to investigate how a particular \textit{A. arenosa} population successfully colonized railways throughout central and northern Europe, despite originating from populations that exclusively inhabit sheltered forest regions.\footnote{Baduel P, et al. Habitat-Associated Life History and Stress-Tolerance Variation in \textit{Arabidopsis arenosa}. \textit{Plant Physiology} 2016; \textbf{171}: 437-451.} \textit{A. arenosa} populations exist in different habitats and exhibit a range of differences in flowering time, cold sensitivity, and perenniality. Sensitivity to cold is an important trait for perennials, plants that live longer than one year. It is common for perennials to require a period of prolonged cold temperatures in order to flower. This mechanism, known as vernalization, allows plants to synchronize their life cycle with the seasons such that they flower only once winter is over. 
+
+The populations compared in this study are TBG and KA.\footnote{TBG refers to Triberg, Germany; KA refers to Kasparstein, Austria} TBG grows in and around railway tracks, while KA is founded on shaded limestone outcrops in wooded forests. As an annual, TBG has lost the vernalization response and does not require extended cold in order to flower; in the wild, TBG plants usually die before the onset of winter. In contrast, KA is a perennial plant, in which vernalization is known to greatly accelerate flowering.
+
+It is then reasonable to expect that the expression of cold-responsive genes will differ between KA and TBG. Cold treatment can be simulated by incubating plants at 4 $\degree$C for several weeks; a plant that has undergone cold treatment is considered vernalized, while plants that have not been exposed to cold treatment are non-vernalized. Researchers collected expression data for 1,088 genes known to be cold-responsive in TBG and KA plants that were either vernalized or non-vernalized. 
+
+Table~\ref{sampleArenosaKA} shows the data collected for the KA plants analyzed in the study, while Table~\ref{sampleArenosaTBG} shows the TBG expression data. Each row corresponds to a gene; the first column indicates gene name, while the rest correspond to a plant sample. In the lab, three individuals of each population were exposed to cold (vernalized, denoted by V), and three were not (non-vernalized, denoted by NV). Expression was measured in gene counts (i.e. the number of RNA transcripts present in a sample); the data were then normalized between samples to allow for comparisons between gene counts. For example, a value of 288.20 for the \textit{PUX4} gene in KA NV 1 indicates that in one of the non-vernalized KA plants, there were about 288 copies of \textit{PUX4} detected.
+
+A high number of transcripts indicates a high level of gene expression. As seen by comparing the expression levels across the first rows of Tables~\ref{sampleArenosaKA} and \ref{sampleArenosaTBG}, the expression levels of \textit{PUX4} are higher in vernalized plants than non-vernalized plants.
+
+% latex table generated in R 3.2.4 by xtable 1.8-2 package
+% Fri May 27 17:26:09 2016
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{rlrrrrrr}
+		\hline
+		& Gene Name & KA NV 1 & KA NV 2 & KA NV 3 & KA V 1 & KA V 2 & KA V 3 \\ 
+		\hline
+		1 & PUX4 & 288.20 & 322.55 & 305.35 & 1429.29 & 1408.25 & 1487.08 \\ 
+		2 & TZP & 79.36 & 93.34 & 73.44 & 1203.40 & 1230.49 & 1214.03 \\ 
+		3 & GAD2 & 590.59 & 492.69 & 458.02 & 2639.42 & 2645.05 & 2705.32 \\ 
+		4 & GAUT6 & 86.88 & 99.25 & 57.98 & 586.24 & 590.03 & 579.71 \\ 
+		5 & FB & 791.08 & 912.12 & 746.94 & 3430.03 & 3680.12 & 3467.06 \\ 
+		\hline
+	\end{tabular}
+	\caption{Five rows and seven columns from the \textit{A. arenosa} data, showing expression levels in KA plants} 
+	\label{sampleArenosaKA}
+\end{table}
+
+% latex table generated in R 3.2.4 by xtable 1.8-2 package
+% Fri May 27 17:26:31 2016
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{rlrrrrrr}
+		\hline
+		& Gene Name & TBG NV 1 & TBG NV 2 & TBG NV 3 & TBG V 1 & TBG V 2 & TBG V 3 \\ 
+		\hline
+		1 & PUX4 & 365.23 & 288.13 & 365.01 & 601.39 & 800.64 & 698.73 \\ 
+		2 & TZP & 493.23 & 210.27 & 335.33 & 939.72 & 974.36 & 993.14 \\ 
+		3 & GAD2 & 1429.14 & 1339.50 & 2215.27 & 1630.77 & 1500.36 & 1621.28 \\ 
+		4 & GAUT6 & 129.63 & 76.40 & 135.02 & 320.57 & 298.91 & 399.27 \\ 
+		5 & FB & 1472.35 & 1120.49 & 1313.14 & 3092.37 & 3230.72 & 3173.00 \\ 
+		\hline
+	\end{tabular}
+	\caption{Five rows and seven columns from the \textit{A. arenosa} data, showing expression levels in TBG plants} 
+	\label{sampleArenosaTBG}
+\end{table}
+
+The mean expression level across the three individual plants in each group can be calculated as a useful numerical summary of expression in a group. Table~\ref{sampleArenosaMeans} shows mean expression levels for five genes. Mean expression for all 1,088 genes in the dataset are plotted in Figure~\ref{arenosaBoxplot}.
+
+\newpage
+
+% latex table generated in R 3.2.4 by xtable 1.8-2 package
+% Fri May 27 18:23:24 2016
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{rlrrrr}
+		\hline
+		& Gene Name & KA NV & KA V & TBG NV & TBG V \\ 
+		\hline
+		1 & PUX4 & 305.36 & 1441.54 & 339.46 & 700.25 \\ 
+		2 & TZP & 82.05 & 1215.97 & 346.28 & 969.07 \\ 
+		3 & GAD2 & 513.77 & 2663.26 & 1661.30 & 1584.14 \\ 
+		4 & GAUT6 & 81.37 & 585.33 & 113.68 & 339.58 \\ 
+		5 & FB & 816.71 & 3525.74 & 1301.99 & 3165.36 \\ 
+		\hline
+	\end{tabular}
+	\caption{Mean gene expression levels of five cold-responsive genes, for non-vernalized and vernalized KA and TBG} 
+	\label{sampleArenosaMeans}
+\end{table}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.82\textwidth]
+	{ch_intro_to_data_oi_biostat/figures/arenosaBoxplot/arenosaBoxplot.pdf}
+	\caption{Mean gene expression levels for non-vernalized KA, vernalized KA, non-vernalized TBG, and vernalized TBG plants.}
+	\label{arenosaBoxplot}
+\end{figure} 
+
+\newpage
+
+The expression levels are heavily right skewed, with many genes present at unusually high levels relative to other genes. This is an example of a situation in which transforming the data can allow for a clearer look at how the data are distributed for each group, particularly for comparing the centers of the distributions.
+
+Figure~\ref{arenosaBoxplotLog} shows the data after a log transformation. It is now easier to see that expression levels are higher in vernalized plants. Additionally, a difference can be observed between KA and TBG plants -- while median expression level in non-vernalized KA is comparable to that of non-vernalized TBG, median expression in vernalized KA is slightly higher than in vernalized TBG, suggesting that vernalization appears to trigger a stronger change in gene expression in KA plants. This represents only one possible way to use graphical summaries to explore the data, and the published paper includes more sophisticated approaches to visualizing differences between the experimental groups.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.82\textwidth]
+	{ch_intro_to_data_oi_biostat/figures/arenosaBoxplot/arenosaBoxplotLog.pdf}
+	\caption{The log of mean gene expression levels for non-vernalized KA, vernalized KA, non-vernalized TBG, and vernalized TBG plants.}
+	\label{arenosaBoxplotLog}
+\end{figure} 
 
 %\end{doublespace}
-
