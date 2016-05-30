@@ -447,7 +447,7 @@ P(blue=\text{\small\resp{1} and } green=\text{\small\resp{1} and } red=\text{\sm
 
 
 \begin{termBox}{\tBoxTitle{\term{Multiplication Rule} for independent processes}
-If $A$ and $B$ represent events from two different and independent processes, then the probability that both $A$ and $B$ occur can be calculated as the product of their separate probabilities: \vspace{-1.5mm}
+If $A$ and $B$ represent events from two different and independent processes, then the probability that both $A$ and $B$ occur is given by: \vspace{-1.5mm}
 \begin{eqnarray}\label{eqForIndependentEvents}
 P(A \text{ and }B) = P(A)  P(B)
 \end{eqnarray}
@@ -460,6 +460,8 @@ P(A_1) P(A_2) \cdots P(A_k)
 Complicated probability problems, such as those that arise in biology or medicine, are often solved with the simple ideas used in the dice examples. 
 
 %JV: \textit{JV: I think the handedness problems can be put in end-of-chapter exercises. Given this kind of lead-in, we should focus on demonstrating some realistic problems.}
+
+%\textit{Agree, but we don't have good examples yet.}
 
 \begin{comment}
 \begin{exercise} \label{ex2Handedness}
@@ -585,7 +587,6 @@ Assume that the population is 50\% male, 50\% female; it is given in the problem
 
 Equation~\ref{eqForIndependentEvents} is not satisfied, therefore hypertension is not independent of sex.
 
- %DH: \textit Emphasize in the solution how the wording here is more realistic than the playing card/dice examples.}
 \end{example}
 
 %_________________
@@ -596,10 +597,9 @@ Equation~\ref{eqForIndependentEvents} is not satisfied, therefore hypertension i
 
 While precise estimates are difficult to come by, the US CDC estimated that in 2012, approximately 29.1 million Americans had type 2 diabetes -- about 9.3\% of the population.\footnote{21 million of these cases are diagnosed, while the CDC predicts that 8.1 million cases are undiagnosed; that is, approximately 8.1 million people are living with diabetes, but they (and their physicians) are unaware that they have the condition.} A health care practitioner seeing a new patient should expect a 9.3\% chance that the patient might have diabetes. 
 
-However, this is only the case if nothing is known about the patient. The prevalence of type 2 diabetes varies with age. Between the ages of 20 and 44, approximately 4\% of the population have diabetes, but almost 27\% of people age 65 and older have diabetes. Knowing the age of a patient provides information about the chance of diabetes; age and diabetes status are not independent. While the probability of diabetes in a randomly chosen member of the population is 0.093, the \textit{conditional} probability of diabetes in a person known to be 65 or older is 0.27.
+However, this is only the case if nothing is known about the patient. The prevalence of type 2 diabetes varies with age. Between the ages of 20 and 44, approximately 4\% of the population have diabetes, but almost 27\% of people age 65 and older have the disease. Knowing the age of a patient provides information about the chance of diabetes; age and diabetes status are not independent. While the probability of diabetes in a randomly chosen member of the population is 0.093, the \textit{conditional} probability of diabetes in a person known to be 65 or older is 0.27.
 
 Conditional probability is used to  characterize how the probability of an outcome varies with the knowledge of another factor or condition, and is closely related to the concepts of marginal and joint probabilities.
-
 
 \subsection{Marginal and joint probabilities}
 \label{marginalAndJointProbabilities}
@@ -631,9 +631,7 @@ Tables~\ref{DiabetesAgeContTable} and \ref{DiabetesAgeProbTable} provide additio
 \end{table}
 % can xtable insert comma separators automatically?  If not, I will add them by hand. JV: apparently R can do this, but I didn't manage to get it working http://stackoverflow.com/questions/1581232/adding-commas-into-number-for-output
 
-In the first row, for instance, Table~\ref{DiabetesAgeContTable} shows that in the entire population of approximately 313,320,000 people, approximately 200,000 individuals were in the less than 20 years age group and suffered from type 2 diagnosis -- about 0.1\%. The table also indicates that among the approximately 86,864,000 individuals less than 20 years of age, only 200,000 suffered from type 2 diabetes, approximately 0.2\%. 
-
-The distinction between the two statements is small but important. The first provides information about the size of the type 2 diabetes population that is less than 20 years of age, relative to the entire population. In contrast, the second statement is about the size of the diabetes population in the less than 20 years of age group, relative to the size of that age group. 
+In the first row, for instance, Table~\ref{DiabetesAgeContTable} shows that in the entire population of approximately 313,320,000 people, approximately 200,000 individuals were in the less than 20 years age group and suffered from type 2 diagnosis -- about 0.1\%. The table also indicates that among the approximately 86,864,000 individuals less than 20 years of age, only 200,000 suffered from type 2 diabetes, approximately 0.2\%.  The distinction between these two statements is small but important. The first provides information about the size of the group with type 2 diabetes population and is less than 20 years of age, relative to the entire population. In contrast, the second statement is about the size of the diabetes population within the less than 20 years of age group, relative to the size of that age group. 
 
 \begin{exercise} \label{DiabetesAge20to44}
 
@@ -688,9 +686,9 @@ The probability that a randomly selected individual from the US has diabetes is 
 \[  
      \frac{11,200,000}{41,506,000} = 0.27,
 \]
-or 27\%.  The additional information allows for a better estimate of the probability of diabetes.
+or 27\%.  The additional information allows for a better estimate of the probability of diabetes if the age of a patient is known.
 
-The conditional probability of diabetes given age 65 or greater is simply the ratio of the proportion of the population with diabetes and age 65 or greater divided by the proportion greater than age 65:
+The conditional probability of diabetes given age 65 or older is simply the ratio of the proportion of the population with diabetes and age 65 or greater divided by the proportion age 65 or older:
  
 \begin{align*}
     \frac{\text{prop. of population with diabetes, age 65 or greater}}{\text{prop. of population greater than age 65}} &= \frac{11,200,000/313,320,000}{41,506,000/313,320,000}\\
@@ -701,7 +699,7 @@ The conditional probability of diabetes given age 65 or greater is simply the ra
 This leads to the mathematical definition of conditional probability.
 
 \begin{termBox}{\tBoxTitle{Conditional probability}
-The conditional probability of the outcome of interest $A$ given condition $B$ is computed as the following:
+The conditional probability of an event of interest $A$ given an event or condition $B$ is:
 \begin{align}
 P(A | B) = \frac{P(A\text{ and }B)}{P(B)}
 \label{condProbEq}
@@ -716,63 +714,21 @@ Write out the following statement in conditional probability notation: "The prob
 Write out the following statement in conditional probability notation: "The probability a randomly selected person is between 45 and 64 years old, given that the person has diabetes." Note that the condition is now based on diabetes, not age group. Calculate the conditional probability.\footnote{Again, let $A$ be the event a person has diabetes, and $B$ the event that their age is between 45 and 64. Find $P(B|A)$. $P(B|A) = \frac{P(A\text{ and }B)}{P(A)} = \frac{0.043}{0.093} = 0.462.$}	
 \end{exercise}
 
-%\subsection{Smallpox in Boston, 1721}
+% DH: smallpox example removed from here.  Not sure we need anything else.
 
-\index{data!smallpox|(}
+Conditional probabilities have similar properties to regular (unconditional) probabilities.
 
-%DH: \textit{DH: I am not fond of small pox example, since it is a biased sample, but leaving it for now. JV: If another example is added, it should become part of 2.2.2 instead of having its own subsection. Flow may actually be improved by sticking to the diabetes example and leaving smallpox out.}
+\begin{termBox}{\tBoxTitle{Sum of conditional probabilities}
+Let $A_1$, ..., $A_k$ represent all the disjoint outcomes for a variable or process. Then if $B$ is an event, possibly for another variable or process, we have: \vspace{-1mm}
+\begin{align*}
+P(A_1|B)+\cdots+P(A_k|B) = 1
+\end{align*}\vspace{-5.5mm} \par
+The rule for complements also holds when an event and its complement are conditioned on the same information: \vspace{-1.5mm}
+\begin{align*}
+P(A | B) = 1 - P(A^c | B)
+\end{align*}}
+\end{termBox}
 
-\begin{comment}
-The \data{smallpox} data set provides a sample of 6,224 individuals from the year 1721 who were exposed to smallpox in Boston.\footnote{Fenner F. 1988. \emph{Smallpox and Its Eradication (History of International Public Health, No. 6)}. Geneva: World Health Organization. ISBN 92-4-156110-6.} Doctors at the time believed that inoculation, which involves exposing a person to the disease in a controlled form, could reduce the likelihood of death.
-
-Each case represents one person with two variables: \var{inoculated} and \var{result}. The variable \var{inoculated} takes two levels: \resp{yes} or \resp{no}, indicating whether the person was inoculated or not. The variable \var{result} has outcomes \resp{lived} or \resp{died}. These data are summarized in Tables~\ref{smallpoxContingencyTable} and~\ref{smallpoxProbabilityTable}.
-
-\begin{table}[h]
-\centering
-\begin{tabular}{ll rr r}
-& & \multicolumn{2}{c}{inoculated} & \\
-\cline{3-4}
-& & \resp{yes} & \resp{no} & Total  \\
-\cline{2-5}
-		& \resp{lived}     & 238 & 5136 & 5374 \\
-\raisebox{1.5ex}[0pt]{\var{result}} &  \resp{died} \hspace{0.5cm} & 6 & 844 & 850  \\
-\cline{2-5}
-	& Total & 244 & 5980 & 6224 \\
-\end{tabular}
-\caption{Contingency table for the \data{smallpox} data set.}
-\label{smallpoxContingencyTable}
-\end{table}
-
-\begin{table}[h]
-\centering
-\begin{tabular}{ll rr r}
-& & \multicolumn{2}{c}{inoculated} & \\
-\cline{3-4}
-& & \resp{yes} & \resp{no} & Total  \\
-   \cline{2-5}
- & \resp{lived}     & 0.0382 & 0.8252 & 0.8634 \\
-\raisebox{1.5ex}[0pt]{\var{result}} & \resp{died} \hspace{0.5cm} & 0.0010 & 0.1356  & 0.1366  \\
-   \cline{2-5}
-& Total & 0.0392 & 0.9608 & 1.0000 \\
-\end{tabular}
-\caption{Table proportions for the \data{smallpox} data, computed by dividing each count by the table total, 6224.\textC{\vspace{-2mm}}}
-\label{smallpoxProbabilityTable}
-\end{table}
-
-%\textC{\newpage}
-
-\begin{exercise} \label{probDiedIfNotInoculated}
-Write out, in formal notation, the probability a randomly selected person who was not inoculated died from smallpox, and find this \mbox{probability.}\footnote{$P($\var{result} = \resp{died} $|$ \var{inoculated} = \resp{no}$) = \frac{P(\text{\var{result} = \resp{died} and \var{inoculated} = \resp{no}})}{P(\text{\var{inoculated} = \resp{no}})} = \frac{0.1356}{0.9608} = 0.1411$.}
-\end{exercise}
-
-\begin{exercise}
-Determine the probability that an inoculated person died from smallpox. How does this result compare with the result of Guided Practice~\ref{probDiedIfNotInoculated}?\footnote{$P($\var{result} = \resp{died} $|$ \var{inoculated} = \resp{yes}$) = \frac{P(\text{\var{result} = \resp{died} and \var{inoculated} = \resp{yes}})}{P(\text{\var{inoculated} = \resp{yes}})} = \frac{0.0010}{0.0392} = 0.0255$. The death rate for individuals who were inoculated is only about 1~in~40 while the death rate is about 1~in~7 for those who were not inoculated.}
-\end{exercise}
-
-\begin{exercise}\label{SmallpoxInoculationObsExpExercise}
-The people of Boston self-selected whether or not to be inoculated. (a) Is this study observational or was this an experiment? (b) Can we infer any causal connection using these data? (c) What are some potential confounding variables that might influence whether someone \resp{lived} or \resp{died} and also affect whether that person was inoculated?\footnote{Brief answers: (a)~Observational. (b)~No, we cannot infer causation from this observational study. (c)~Accessibility to the latest and best medical care. There are other valid answers for part~(c).}
-\end{exercise}
-\end{comment}
 
 \newpage
 \subsection{General multiplication rule}
@@ -788,60 +744,14 @@ It is useful to think of $A$ as the outcome of interest and $B$ as the condition
 \end{termBox}
 This General Multiplication Rule is simply a rearrangement of the definition for conditional probability in Equation~(\ref{condProbEq}) on page~\pageref{condProbEq}.
 
-\begin{comment}
+%  This needs an example.  Using the diabetes example would seem circular, since it was used to define/illustrate cond prob.
 
-\begin{example}{Consider the \data{smallpox} dataset. Suppose we are given only two pieces of information: 96.08\% of residents were not inoculated, and 85.88\% of the residents who were not inoculated ended up surviving. How could we compute the probability that a resident was not inoculated and lived? \textit{JV: Placeholder example, needs to be replaced.}}
-We will compute our answer using the General Multiplication Rule and then verify it using Table~\ref{smallpoxProbabilityTable}. We want to determine
-\begin{eqnarray*}
-P(\text{\var{result} = \resp{lived} and \var{inoculated} = \resp{no}})
-\end{eqnarray*}
-and we are given that
-\begin{eqnarray*}
-P(\text{\var{result} = \resp{lived} }|\text{ \var{inoculated} = \resp{no}})=0.8588 \\
-P(\text{\var{inoculated} = \resp{no}})=0.9608
-\end{eqnarray*}
-Among the 96.08\% of people who were not inoculated, 85.88\% survived:
-\begin{eqnarray*}
-P(\text{\var{result} = \resp{lived} and \var{inoculated} = \resp{no}}) = (0.8588) (0.9608) = 0.8251
-\end{eqnarray*}
-This is equivalent to the General Multiplication Rule. We can confirm this probability in Table~\ref{smallpoxProbabilityTable} at the intersection of \resp{no} and \resp{lived} (with a small rounding error).
-\end{example}
+\textit{insert example}
 
-\begin{exercise}
-Use $P($\var{inoculated} = \resp{yes}$) = 0.0392$ and $P($\var{result} = \resp{lived} $|$ \var{inoculated} = \resp{yes}$) = 0.9754$ to determine the probability that a person was both inoculated and lived.\footnote{The answer is 0.0382, which can be verified using Table~\ref{smallpoxProbabilityTable}.}
-\end{exercise}
-
-\begin{exercise}
-If 97.45\% of the people who were inoculated lived, what proportion of inoculated people must have died?\footnote{There were only two possible outcomes: \resp{lived} or \resp{died}. This means that 100\% - 97.45\% = 2.55\% of the people who were inoculated died.}
-\end{exercise}
-
-\end{comment}
-
-%JV: \textit{JV: I am not clear on why this tipbox appears in this subsection. Would it be better at the end of the previous subsection?}
-
-\begin{termBox}{\tBoxTitle{Sum of conditional probabilities}
-Let $A_1$, ..., $A_k$ represent all the disjoint outcomes for a variable or process. Then if $B$ is an event, possibly for another variable or process, we have: \vspace{-1mm}
-\begin{align*}
-P(A_1|B)+\cdots+P(A_k|B) = 1
-\end{align*}\vspace{-5.5mm} \par
-The rule for complements also holds when an event and its complement are conditioned on the same information: \vspace{-1.5mm}
-\begin{align*}
-P(A | B) = 1 - P(A^c | B)
-\end{align*}}
-\end{termBox}
-
-\begin{comment}
-
-\begin{exercise}
-Based on the probabilities computed above, does it appear that inoculation is effective at reducing the risk of death from smallpox?\footnote{The samples are large relative to the difference in death rates for the ``inoculated'' and ``not inoculated'' groups, so it seems there is an association between \var{inoculated} and \var{outcome}. However, as noted in the solution to Guided Practice~\ref{SmallpoxInoculationObsExpExercise}, this is an observational study and we cannot be sure if there is a causal connection. (Further research has shown that inoculation is effective at reducing death rates.)}
-\end{exercise}
-
-\end{comment}
 
 \subsection{Independence and conditional probability}
 
-If two events are independent, knowing the outcome of one should provide no information about the other.  That intuitively clear statement can be shown mathematically. 
-
+If two events are independent, knowing the outcome of one should provide no information about the other.  
 \begin{exercise} \label{condProbOfRollingA1AfterOne1}
 Let $X$ and $Y$ represent the outcomes of rolling two dice.\footnote{Brief solutions: (a) $1/6$. (b) $1/36$. (c)~$\frac{P(Y = \text{ \resp{1} and }X=\text{ \resp{1}})}{P(X=\text{ \resp{1}})} = \frac{1/36}{1/6} = 1/6$. (d)~The probability is the same as in part~(c): $P(Y=1)=1/6$. The probability that $Y=1$ was unchanged by knowledge about $X$, which makes sense as $X$ and $Y$ are independent.}
 \begin{enumerate}[(a)]
@@ -860,7 +770,12 @@ P(Y=\text{\resp{1}}\ |\ X=\text{\resp{1}})
 	&=& P(Y=\text{\resp{1}}) \\
 \end{eqnarray*}
 
-
+This is a specific instance of the more general result that if two events $A$ and $B$ are independent, $P(A |B) = P(A)$ as long as $P(B) > 0$:
+\begin{eqnarray*}
+	P(A | B) &= \dfrac{P(A \text{ and } B)}{P(B)} \\
+	     &= \dfrac{P(A) P(B)}{P(B)} \\
+		 &= P(A).
+\end{eqnarray*} 
 
 \begin{exercise}
 Casinos often rely on gamblers not understanding independence.  Suppose the last five outcomes on a roulette table were black.  What is wrong with the reasoning that the next outcome is highly likely to be red?\footnote{Each outcome is independent of the other, with the likelihood of red or black being equal from spin to spin.}
