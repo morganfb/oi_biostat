@@ -1,27 +1,24 @@
-
+%!TEX root=../../main.tex
 
 
 %_______________
 \section{Exercises}
 
 \noindent
-\textit{JV: Edited on 03Sept2015. Deleted exercises that seemed too easy or covered eliminated topics (ex. mapping data). Notes about replacing exercises visible in pdf, original exercises to be modified in comments. Figure/graphic pathways edited to oi\_biostat. Section names updated.}
 
 %_______________
 \subsection{Case study: preventing peanut allergies}
 
 % 1
 
-\eoce{\qt{Migraine and acupuncture\label{migraine_and_acupuncture_intro}} A migraine 
-is a particularly painful type of headache, which patients sometimes wish to 
-treat with acupuncture. To determine whether acupuncture relieves migraine 
-pain, researchers conducted a randomized controlled study where 89 females 
-diagnosed with migraine headaches were randomly assigned to one of two groups: 
-treatment or control. 43 patients in the treatment group received acupuncture 
-that is specifically designed to treat migraines. 46 patients in the control 
-group received placebo acupuncture (needle insertion at non-acupoint 
-locations). 24 hours after patients received acupuncture, they were asked 
-if they were pain free. Results are summarized in the contingency table below. 
+\eoce{\qt{Migraine and acupuncture\label{migraine_and_acupuncture_intro}} Acupuncture is sometimes recommended as a treatment option for migraines; a migraine is a particularly painful type of headache. To determine whether acupuncture relieves migraine 
+pain, researchers conducted a randomized controlled study in which 89 females 
+diagnosed with migraines were randomly assigned to one of two groups: 
+treatment or control. The 43 patients in the treatment group received acupuncture 
+that is specifically designed to treat migraines, while 46 patients in the control 
+group received placebo acupuncture (needle insertion at a non-acupoint 
+locations). 24 hours after receiving acupuncture, patients were asked 
+if they were pain free; the results are summarized in the contingency table below. 
 \footfullcite{Allais:2011}
 
 \noindent\begin{minipage}[l]{0.4\textwidth}
@@ -47,28 +44,19 @@ if they were pain free. Results are summarized in the contingency table below.
 {\footnotesize Figure from the original paper displaying the appropriate area 
 (M) versus the inappropriate area (S) used in the treatment of migraine attacks.}
 \end{minipage}
+
 \begin{parts}
 \item What percent of patients in the treatment group were pain free 24 hours 
 after receiving acupuncture? What percent in the control group?
 \item At first glance, does acupuncture appear to be an effective treatment for 
 migraines? Explain your reasoning.
-\item Do the data provide convincing evidence that there is a real pain reduction 
-for those patients in the treatment group? Or do you think that the observed 
-difference might just be due to chance?
 \end{parts}
 }{}
 
 % 2
 
 \eoce{\qt{Sinusitis and antibiotics\label{sinusitis_and_antibiotics_intro}} 
-Researchers studying the effect of antibiotic treatment for acute sinusitis 
-compared to symptomatic treatments randomly assigned 166 adults diagnosed 
-with acute sinusitis to one of two groups: treatment or control. Study 
-participants received either a 10-day course of amoxicillin (an antibiotic) 
-or a placebo similar in appearance and taste. The placebo consisted of 
-symptomatic treatments such as acetaminophen, nasal decongestants, etc. At the 
-end of the 10-day period patients were asked if they experienced significant 
-improvement in symptoms. The distribution of responses are summarized below. 
+Researchers studying the effect of antibiotic treatment for acute sinusitis randomly assigned 166 adults diagnosed with acute sinusitis to either the treatment or control groups. Patients in the treatment group received a 10-day course of amoxicillin, while patients in the control group received a placebo consisting of symptomatic treatments, such as nasal decongestants. At the end of the 10-day period, patients were asked if they experienced significant improvement in their symptoms. The distribution of responses are summarized below. 
 \footfullcite{Garbutt:2012}
 \begin{center}
 \begin{tabular}{ll  cc c} 
@@ -88,13 +76,34 @@ improvement in symptoms. The distribution of responses are summarized below.
 improvement in symptoms? What percent in the control group?
 \item Based on your findings in part (a), which treatment appears to be more 
 effective for sinusitis?
-\item Do the data provide convincing evidence that there is a difference in the 
-improvement rates of sinusitis symptoms? Or do you think that the observed 
-difference might just be due to chance?
+\item Does it seem like the observed difference could just be due to chance?
 \end{parts}
 }{}
 
+%oi_biostat
 
+\eoce{\qt{Smoking and stenosis\label{smoking_and_stenosis_intro}}
+Researchers collected data from an observational study to investigate the association between smoking status and the presence of aortic stenosis, a narrowing of the aorta that impedes blood flow to the body.
+\begin{center}
+	\begin{tabular}{ll  cc c} 
+		&			& \multicolumn{2}{c}{\textit{Smoking Status}} \\
+		\cline{3-4}
+		&			& Non-smoker 	& Smoker	& Total	\\
+		\cline{2-5}
+		& Absent & 67	& 54	& 121 \\
+		\raisebox{1.5ex}[0pt]{\emph{Disease Status}}	& Present	& 43	& 51 	& 94 \\
+		\cline{2-5}
+		& Total		& 110	& 105	& 215
+	\end{tabular}
+\end{center}
+\begin{parts}
+\item What percentage of the 215 participants were both smokers and had aortic stenosis? This percentage is one component of the \textit{joint distribution} of smoking and stenosis; what are the other three numbers of the joint distribution?
+\item Among the smokers, what proportion have aortic stenosis? This number is a component of the conditional distribution fo stenosis for the two categories of smokers. What proportion of non-smokers have aortic stenosis?
+\item In this context, relative risk is the ratio of the proportion of smokers with stenosis to the proportion of non-smokers with stenosis. Relative risks greater than 1 indicate that smokers are at a higher risk for aortic stenosis than non-smokers; relative risks of 1.2 or higher are generally considered cause for alarm. Calculate the relative risk for the 215 participants, comparing smokers to non-smokers. Does there seem to be evidence that smoking is associated with an increased probability of stenosis?
+\end{parts}
+}{}
+
+% citation: stenosis data
 
 %_______________
 \subsection{Data basics}
@@ -103,11 +112,11 @@ difference might just be due to chance?
 
 \eoce{\qt{Air pollution and birth outcomes, study components\label{study_components_airpoll}} 
 Researchers collected data to examine the relationship between air pollutants 
-and preterm births in Southern California. During the study air pollution levels 
+and preterm births in Southern California. During the study, air pollution levels 
 were measured by air quality monitoring stations. Specifically, levels of carbon 
 monoxide were recorded in parts per million, nitrogen dioxide and ozone in parts 
 per hundred million, and coarse particulate matter (PM$_{10}$) in $\mu g/m^3$. 
-Length of gestation data were collected on 143,196 births between the years 1989 
+Length of gestation data were collected for 143,196 births between the years 1989 
 and 1993, and air pollution exposure during gestation was calculated for each 
 birth. The analysis suggested that increased ambient PM$_{10}$ and, to a lesser 
 degree, CO concentrations may be associated with the occurrence of preterm births. 
@@ -128,7 +137,7 @@ method can reduce asthma symptoms and improve quality of life. In a scientific
 study to determine the effectiveness of this method, researchers recruited 600 
 asthma patients aged 18-69 who relied on medication for asthma treatment. These 
 patients were split into two research groups: one practiced the Buteyko method 
-and the other did not. Patients were scored on quality of life, activity, 
+and the other did not. Afterwards, patients were scored on quality of life, activity, 
 asthma symptoms, and medication reduction on a scale from 0 to 10. On average, 
 the participants in the Buteyko group experienced a significant reduction in 
 asthma symptoms and an improvement in quality of life. \footfullcite{McDowan:2003} 
@@ -140,8 +149,33 @@ Identify \begin{inparaenum}[(a)]
 in this study.
 }{}
 
-\noindent
-\textit{JV: Placeholder for two biology-related questions asking for cases, variables, and research question.}
+%oi_biostat
+
+\eoce{\qt{Hummingbird taste behavior, study components\label{study_components_hummingbirds}}
+Researchers hypothesized that a particular taste receptor in hummingbirds, T1R1-T1R3, played a primary role in dictating taste behavior; specifically, in determining which compounds hummingbirds detect as sweet. In a series of field tests, hummingbirds were presented simultaneously with two filled containers, one containing test stimuli and a second containing sucrose. The test stimuli included aspartame, erythritol, water, and sucrose. Aspartame is an artificial sweetener that tastes sweet to humans, but is not detected by hummingbird T1R1-T1R3 , while erythritol is an artificial sweetener known to activate T1R1-T1R3.
+
+Data were collected on how long a hummingbird drank from a particular container for a given trial, measured in seconds. For example, in one field test comparing aspartame and sucrose, a hummingbird drank from the aspartame container for 0.54 seconds and from the sucrose container for 3.21 seconds. 
+\begin{parts}
+\item What are the placebo and treatment groups?
+\item Identify the response variable(s) in the study. Are they numerical or categorical?
+\item Describe the main research question.
+\end{parts}	
+}{}
+
+%citation: hummingbirds, pset 5
+
+%oi_biostat
+
+\eoce{\qt{Egg coloration\label{egg_coloration}}
+The evolutionary significance of variation in egg coloration among birds is not fully understood. One hypothesis suggests that egg coloration may be an indication of female quality, with healthier females being capable of depositing blue-green pigment into eggshells instead of using it for themselves as an antioxidant. In a study conducted on 32 collared flycatchers, half of the females were given supplementary diets before and during egg laying. Eggs were measured for darkness of blue color using spectrophotometry; for example, the mean amount of blue-green chroma was 0.594 absorbance units. Egg mass was also recorded.
+\begin{parts}
+\item Identify the control and treatment groups.
+\item Describe the main research question.
+\item Identify the primary response variable of interest, and whether it is numerical or categorical.
+\end{parts}
+}{}
+
+%citation: blue_eggs_food
 
 \begin{comment}
 % 5
@@ -189,43 +223,6 @@ in this study.
 
 \end{comment}
 
-% 7
-
-\eoce{\qt{Fisher's irises\label{fisher_irises}} Sir Ronald Aylmer Fisher was an 
-English statistician, evolutionary biologist, and geneticist who worked on a 
-dataset that contained sepal length and width, and petal length and width from 
-three species of iris flowers (\textit{setosa}, \textit{versicolor} and 
-\textit{virginica}). There were 50 flowers from each species in the data set. 
-\footfullcite{Fisher:1936} \\
-\noindent\begin{minipage}[c]{0.48\textwidth}
-\begin{parts}
-\item How many cases were included in the data?
-\item How many numerical variables are included in the data? Indicate what 
-they are, and if they are continuous or discrete.
-\item How many categorical variables are included in the data, and what are 
-they? List the corresponding levels (categories).
-\end{parts}
-\vfill \ 
-\end{minipage}
-\begin{minipage}[c]{0.01\textwidth}
-\ 
-\end{minipage}
-\begin{minipage}[c]{0.2\textwidth}
-\begin{center}
-\includegraphics[width = \textwidth]{ch_intro_to_data_oi_biostat/figures/eoce/fisher_irises/irisversicolor.jpg}
-\end{center}
-\end{minipage}
-\begin{minipage}[c]{0.01\textwidth}
-\ 
-\end{minipage}
-\begin{minipage}[c]{0.23\textwidth}
-{\raggedright\footnotesize Photo by Ryan Claussen 
-(\oiRedirect{textbook-flickr_ryan_claussen_iris_picture}{http://flic.kr/p/6QTcuX}) 
-\oiRedirect{textbook-CC_BY_SA_2}{CC~BY-SA~2.0~license}}
-\vfill \ 
-\end{minipage}
-}{}
-
 % 8
 
 \eoce{\qt{Smoking habits of UK residents\label{smoking_habits_UK_datamatrix}} A survey 
@@ -251,26 +248,65 @@ and ``N/A'' refers to a missing component of the data. \footfullcite{data:smokin
 \begin{parts}
 \item What does each row of the data matrix represent?
 \item How many participants were included in the survey?
-\item Indicate whether each variable in the study is numerical or categorical. If numerical, identify as 
-continuous or discrete. If categorical, indicate if the variable is ordinal.
+\item For each variable, indicate whether it is numerical or categorical. If numerical, identify as continuous or discrete. If categorical, indicate if the variable is ordinal.
 \end{parts}
 }{}
 
-\noindent
-\textit{JV: Insert exercise showing a data matrix from a bio/genetics study.}
+% oi_biostat
 
-\noindent
-\textit{JV: Add questions involving identification of explanatory and response variables.}
+\eoce{\qt{The microbiome and colon cancer\label{microbiome_colon}}
+A study was conducted to assess whether the abundance of particular bacterial species in the gastrointestinal system is associated with the development of colon cancer. The following data matrix shows a subset of the data collected in the study. Cancer stage is coded 1-4, with larger values indicating cancer that is more difficult to treat. The abundance levels are given for five bacterial species; abundance is calculated as the frequency of that species divided by the total number of bacteria from all species.
+	
+\begin{center}	
+% latex table generated in R 3.2.4 by xtable 1.8-2 package
+% Mon May 30 17:00:41 2016
+\begin{table}[ht]
+	\centering
+\scriptsize{
+	\begin{tabular}{rcccccccc}
+		\hline
+		& age & gender & stage & bug 1 & bug 2 & bug 3 & bug 4 & bug 5 \\ 
+		\hline
+		1 &  71 & Female &   2 & 0.03 & 0.09 & 0.52 & 0.00 & 0.00 \\ 
+		2 &  53 & Female &   4 & 0.16 & 0.08 & 0.08 & 0.00 & 0.00 \\ 
+		3 &  55 & Female &   2 & 0.00 & 0.01 & 0.31 & 0.00 & 0.00 \\ 
+		4 &  44 & Male &   2 & 0.11 & 0.14 & 0.00 & 0.07 & 0.05 \\ 
+		\vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
+		73 &  48 & Female &   3 & 0.21 & 0.05 & 0.00 & 0.00 & 0.04 \\ 
+		\hline
+	\end{tabular}
+}
+\end{table}
+\end{center}
+
+\begin{parts}
+\item What does each row of the data matrix represent?
+\item Identify explanatory and response variables.
+\item For each variable, indicate whether it is numerical or categorical. 	
+\end{parts}
+}{}
+
 
 %_______________
 \subsection{Overview of data collection principles}
+
+% oi_biostat
+
+\eoce{\qt{Smoking and stenosis, scope of inference\label{scope_stenosis}}
+	Exercise~\ref{smoking_and_stenosis_intro} introduces a study in which researchers collected data on smoking status and disease status for aortic stenosis. Data were collected on 215 participants. 
+	\begin{parts}
+		\item Identify the population of interest and the sample in this study.
+		\item How generalizable are the results of the study? 
+		\item Can the findings of the study be used to establish causal relationships? Justify your answer.
+	\end{parts}	
+}{}
 
 % 9
 
 \eoce{\qt{Air pollution and birth outcomes, scope of inference\label{scope_airpoll}} 
 Exercise~\ref{study_components_airpoll} introduces a study where researchers 
 collected data to examine the relationship between air pollutants and preterm 
-births in Southern California. During the study air pollution levels were 
+births in Southern California. During the study, air pollution levels were 
 measured by air quality monitoring stations. Length of gestation data were 
 collected on 143,196 births between the years 1989 and 1993, and air pollution 
 exposure during gestation was calculated for each birth.
@@ -280,32 +316,6 @@ exposure during gestation was calculated for each birth.
 population, and if the findings of the study can be used to establish causal relationships.
 \end{parts}
 }{}
-
-\noindent
-\textit{JV: Placeholder for exercise referring back to previous section, replacement for cheaters exercise.}
-
-\begin{comment}
-% 10
-
-\eoce{\qt{Cheaters, scope of inference\label{scope_cheaters}} 
-Exercise~\ref{study_components_cheaters} introduces a study where researchers 
-studying the relationship between honesty, age, and self-control conducted an 
-experiment on 160 children between the ages of 5 and 15. The researchers asked 
-each child to toss a fair coin in private and to record the outcome (white or black) 
-on a paper sheet, and said they would only reward children who report white. 
-Half the students were explicitly told not to cheat and the others were not given 
-any explicit instructions. Differences were observed in the cheating rates in the
-instruction and no instruction groups, as well as some differences across 
-children's characteristics within each group.
-\begin{parts}
-\item Identify the population of interest and the sample in this study.
-\item Comment on whether or not the results of the study can be generalized to the 
-population, and if the findings of the study can be used to establish causal 
-relationships.
-\end{parts}
-}{}
-
-\end{comment}
 
 % 11
 
@@ -325,64 +335,97 @@ relationships.
 \end{parts}
 }{}
 
-\noindent
-\textit{JV: Replacement for socioeconomic class + unethical behavior exercise.}
+% oi_biostat
 
-\begin{comment}
-% 12
-
-\eoce{\qt{Stealers, scope of inference\label{scope_stealers}} 
-Exercise~\ref{study_components_stealers} introduces a study on the relationship 
-between socio-economic class and unethical behavior. As part of this study 129 
-University of California Berkeley undergraduates were asked to identify themselves 
-as having low or high social-class by comparing themselves to others with the most 
-(least) money, most (least) education, and most (least) respected jobs. They were 
-also presented  with a jar of individually wrapped candies and informed that the
-candies were for children in a nearby laboratory, but that they could take some if 
-they wanted. After completing some unrelated tasks, participants reported the 
-number of candies they had taken. It was found that those who were identified as 
-upper-class took more candy than others.
+\eoce{\qt{Herbal remedies\label{herbal_remedies}}
+Echinacea has been widely used as an herbal remedy for the common cold, but previous studies evaluating its efficacy as a remedy have produced conflicting results. In a new study, researchers randomly assigned 437 volunteers to receive either a placebo or echinacea treatment before being infected with rhinovirus. Healthy young adult volunteers were recruited for the study from the University of Virginia community. 
 \begin{parts}
 \item Identify the population of interest and the sample in this study.
-\item Comment on whether or not the results of the study can be generalized to the 
-population, and if the findings of the study can be used to establish causal 
-relationships.
+\item Comment on whether or not the results of the study can be generalized to a larger population. 
+\item Can the findings of the study be used to establish causal relationships? Justify your answer.
+\end{parts} 
+}{}
+
+
+%_______________
+%\subsection{Experiments}
+
+% 32
+
+\eoce{\qt{Vitamin supplements\label{vitamin_supplement}} In order to assess the effectiveness 
+	of taking large doses of vitamin C in reducing the duration of the common cold, 
+	researchers recruited 400 healthy volunteers from staff and students at a university. A 
+	quarter of the patients were assigned a placebo, and the rest were evenly divided 
+	between 1g Vitamin C, 3g Vitamin C, or 3g Vitamin C plus additives to be taken at onset 
+	of a cold for the following two days. All tablets had identical appearance and packaging.
+	The nurses who handed the prescribed pills to the patients knew which patient received 
+	which treatment, but the researchers assessing the patients when they were sick did not. 
+	No significant differences were observed in any measure of cold duration or severity 
+	between the four medication groups, and the placebo group had the shortest duration of 
+	symptoms.\footfullcite{Audera:2001}
+	\begin{parts}
+		\item Was this an experiment or an observational study? Why?
+		\item What are the explanatory and response variables in this study?
+		\item Were the patients blinded to their treatment?
+		\item Was this study double-blind?
+		\item Participants are ultimately able to choose whether or not to use the pills 
+		prescribed to them. We might expect that not all of them will adhere and take their 
+		pills. Does this introduce a confounding variable to the study? Explain your reasoning.
+	\end{parts}
+}{}
+
+% 36
+
+\eoce{\qt{Exercise and mental health\label{exercise_mental_health}} A researcher is interested 
+	in the effects of exercise on mental health and he proposes the following study: Use 
+	stratified random sampling to ensure representative proportions of 18-30, 31-40 and 41-
+	55 year olds from the population. Next, randomly assign half the subjects from each age 
+	group to exercise twice a week, and instruct the rest not to exercise. Conduct a mental 
+	health exam at the beginning and at the end of the study, and compare the results.
+	\begin{parts}
+		\item What type of study is this? 
+		\item What are the treatment and control groups in this study?
+		\item Does this study make use of blocking? If so, what is the blocking variable?
+		\item Does this study make use of blinding?
+		\item Comment on whether or not the results of the study can be used to establish a 
+		causal relationship between exercise and mental health, and indicate whether or not the 
+		conclusions can be generalized to the population at large.
+		\item Suppose you are given the task of determining if this proposed study should get 
+		funding. Would you have any reservations about the study proposal?
+	\end{parts}
+}{}
+
+% oi_biostat
+
+\eoce{\qt{Chicks and antioxidants\label{chicks_antioxidants}}
+Environmental factors early in life can have long-lasting effects on an organism. In one study, researchers examined whether dietary supplementation with vitamins C and E influences body mass and corticosterone level in yellow-legged gull chicks. Chicks were randomly assigned to either the nonsupplemented group or the vitamin supplement experimental group. The initial study group consisted of 108 nests, with 3 eggs per nest. Chicks were assessed at age 7 days, 
+\begin{parts}
+\item What type of study is this?
+\item What are the experimental and control treatments in this study?
+\item Describe a potential confounding variable that might influence the results.
 \end{parts}
 }{}
 
-\end{comment}
+% adapted from chicks_antioxidants
 
 %_______________
 %\subsection{Observational studies and sampling strategies}
 
-\noindent
-\textit{JV: Can be used if reworded so that scatterplot graphic is not needed, mostly for the confounding variable question.}
-
 % 19
 
-\eoce{\qt{Internet use and life expectancy\label{internet_life_expactancy}} The 
-following scatterplot was created as part of a study evaluating the 
-relationship between estimated life expectancy at birth (as of 2014) and 
+\eoce{\qt{Internet use and life expectancy\label{internet_life_expectancy}} Data were collected to evaluate the relationship between estimated life expectancy at birth (as of 2014) and 
 percentage of internet users (as of 2009) in 208 countries for which such 
 data were available.\footfullcite{data:ciaFactbook}
-
-\noindent\begin{minipage}[c]{0.44\textwidth}
 \begin{parts}
-\item Describe the relationship between life expectancy and percentage of 
-internet users.
 \item What type of study is this?
 \item State a possible confounding variable that might explain this relationship 
 and describe its potential effect.
-\end{parts} \vspace{15mm}
-\end{minipage}
-\begin{minipage}[r]{0.55\textwidth}
-\hfill\includegraphics[width = 0.87\textwidth]{ch_intro_to_data_oi_biostat/figures/eoce/internet_life_expactancy/internet_life_expactancy.pdf}
-\end{minipage}
+\end{parts}
 }{}
 
 % 20
 
-\eoce{\qt{Stressed out, Part I\label{stressed_out_observational}} A study that 
+\eoce{\qt{Stressed out\label{stressed_out_observational}} A study that 
 surveyed a random sample of otherwise healthy high school students found that 
 they are more likely to get muscle cramps when they are stressed. The study 
 also noted that students drink more coffee and sleep less when they are 
@@ -396,69 +439,15 @@ relationship between increased stress and muscle cramps.
 \end{parts}
 }{}
 
-\noindent
-\textit{JV: Modify to have a different context?}
-
-% 21
+% 21, context edited
 
 \eoce{\qt{Evaluate sampling methods\label{evaluate_sampling_methods}}
-A university wants to determine what fraction of its undergraduate 
-student body support a new \$25 annual fee to improve the student 
-union. For each proposed method below, indicate whether the method 
-is reasonable or not.
+A university wants to assess how many hours of sleep students are getting per night. For each proposed method below, indicate whether the method is reasonable or not.
 \begin{parts}
 \item Survey a simple random sample of 500 students.
-\item Stratify students by their field of study, then sample 10\% of 
-students from each stratum.
-\item Cluster students by their ages (e.g. 18 years old in one 
-cluster, 19 years old in one cluster, etc.), then randomly sample 
-three clusters and survey all students in those clusters.
+\item Stratify students by their field of study, then sample 10\% of students from each stratum.
+\item Cluster students by their class year (e.g. freshmen in one cluster, sophomores in one cluster, etc.), then randomly sample three clusters and survey all students in those clusters.
 \end{parts}}{}
-
-\noindent
-\textit{JV: Replace with a not-psychology study?}
-
-% 23
-
-\eoce{\qt{Haters gonna hate, study confirms\label{scope_haters}} A study 
-published in the \textit{Journal of Personality and Social Psychology} asked a 
-group of 200 randomly sampled men and women to evaluate how they felt about 
-various subjects, such as camping, health care, architecture, taxidermy, 
-crossword puzzles, and Japan in order to measure their dispositional attitude 
-towards mostly independent stimuli. Then, they presented the participants with 
-information about a new product: a microwave oven. This microwave oven does 
-not exist, but the participants didn't know this, and were given three 
-positive and three negative fake reviews. People who reacted positively to the 
-subjects on the dispositional attitude measurement also tended to react 
-positively to the microwave oven, and those who reacted negatively also tended 
-to react negatively to it. Researcher concluded that ``some people tend to 
-like things, whereas others tend to dislike things, and a more thorough 
-understanding of this tendency will lead to a more thorough understanding of 
-the psychology of attitudes." \footfullcite{Hepler:2013}
-\begin{parts}
-\item What are the cases?
-\item What is (are) the response variable(s) in this study?
-\item What is (are) the explanatory variable(s) in this study?
-\item Does the study employ random sampling?
-\item Is this an observational study or an experiment? Explain your reasoning.
-\item Can we establish a causal link between the explanatory and response 
-variables?
-\item Can the results of the study be generalized to the population at large?
-\end{parts}
-}{}
-
-% 24
-
-\eoce{\qt{Family size\label{family_size}} Suppose we want to estimate household 
-size, where a ``household" is defined as people living together in the 
-same dwelling, and sharing living accommodations. If we select students 
-at random at an elementary school and ask them what their family size is, 
-will this be a good measure of household size? Or will our average be 
-biased? If so, will it overestimate or underestimate the true value?
-}{}
-
-\noindent
-\textit{JV: I like these.}
 
 % 25
 
@@ -505,24 +494,6 @@ and then randomly sample 20 households from those neighborhoods.
 \end{parts}
 }{}
 
-\noindent
-\textit{JV: Replace w/bio one.}
-
-\begin{comment}
-
-% 27
-
-\eoce{\qt{Sampling strategies\label{sampling_strategies}} A statistics student who is curious about the relationship between the amount of time students spend on social networking sites and their performance at school decides to conduct a survey. Various research strategies for collecting data are described below. In each, name the sampling method proposed and any bias you might expect.
-\begin{parts}
-\item He randomly samples 40 students from the study's population, gives them the survey, asks them to fill it out and bring it back the next day.
-\item He gives out the survey only to his friends, making sure each one of them fills out the survey.
-\item He posts a link to an online survey on Facebook and asks his friends to fill out the survey.
-\item He randomly samples 5 classes and asks a random sample of students from those classes to fill out the survey.
-\end{parts}
-}{}
-
-\end{comment}
-
 % 28
 
 \eoce{\qt{Reading the paper\label{reading_paper}} Below are excerpts from two 
@@ -560,119 +531,13 @@ study?
 \end{parts}
 }{}
 
-%_______________
-%\subsection{Experiments}
+% oi_biostat
 
-\noindent
-\textit{JV: Merge this one with Part I.}
-
-% 30
-
-\eoce{\qt{Stressed out, Part II\label{stressed_out_experiment}} In a study evaluating the 
-relationship between stress and muscle cramps half the subjects are randomly assigned to 
-be exposed to increased stressed by being placed into an elevator that falls rapidly and 
-stops abruptly and the other half are left at no or baseline stress.
-\begin{parts}
-\item What type of study is this?
-\item Can this study be used to conclude a causal relationship between increased stress 
-and muscle cramps?
-\end{parts}
+\eoce{\qt{Alcohol consumption and STIs\label{alcohol_STIs}}
+An observational study published last year in \textit{The American Journal of Preventive Medicine} investigated the effects of an increased alcohol sales tax in Maryland on the rates of gonorrhea and chlamydia.\footnote{S. Staras, et al., 2015. Maryland Alcohol Sales Tax and Sexually Transmitted Infections. The American Journal of Preventive Medicine 50: e73-e80.} After a tax increase from 6\% to 9\% in 2011, the statewide gonorrhea rate declined by 24\%, the equivalent of 1,600 cases per year. In a statement to the \textit{New York Times}, the lead author of the paper was quoted saying, "Policy makers should consider raising liquor taxes if they're looking for ways to prevent sexually transmitted infections. In the year and a half following the alcohol tax rise in Maryland, this prevented 2,400 cases of gonorrhea and saved half a million dollars in health care costs." In no more than three sentences, explain whether you think the lead author's statement is accurate.
 }{}
 
-
-% 32
-
-\eoce{\qt{Vitamin supplements\label{vitamin_supplement}} In order to assess the effectiveness 
-of taking large doses of vitamin C in reducing the duration of the common cold, 
-researchers recruited 400 healthy volunteers from staff and students at a university. A 
-quarter of the patients were assigned a placebo, and the rest were evenly divided 
-between 1g Vitamin C,  3g Vitamin C, or 3g Vitamin C plus additives to be taken at onset 
-of a cold for the following two days. All tablets had identical appearance and packaging.
-The nurses who handed the prescribed pills to the patients knew which patient received 
-which treatment, but the researchers assessing the patients when they were sick did not. 
-No significant differences were observed in any measure of cold duration or severity 
-between the four medication groups, and the placebo group had the shortest duration of 
-symptoms.\footfullcite{Audera:2001}
-\begin{parts}
-\item Was this an experiment or an observational study? Why?
-\item What are the explanatory and response variables in this study?
-\item Were the patients blinded to their treatment?
-\item Was this study double-blind?
-\item Participants are ultimately able to choose whether or not to use the pills 
-prescribed to them. We might expect that not all of them will adhere and take their 
-pills. Does this introduce a confounding variable to the study? Explain your reasoning.
-\end{parts}
-}{}
-
-\noindent
-\textit{JV: Include more realistic open-ended study design questions? Or eliminate entirely?}
-
-\begin{comment}
-% 34
-
-\eoce{\qt{Music and learning\label{music_learning}} You would like to conduct an experiment in 
-class to see if students learn better if they study without any music, with music that 
-has no lyrics (instrumental), or with music that has lyrics. Briefly outline a design for 
-this study.
-}{}
-
-% 35
-
-\eoce{\qt{Soda preference\label{soda_preference}} You would like to conduct an experiment in 
-class to see if your classmates prefer the taste of regular Coke or Diet Coke. Briefly 
-outline a design for this study.
-}{}
-
-\end{comment}
-
-% 36
-
-\eoce{\qt{Exercise and mental health\label{exercise_mental_health}} A researcher is interested 
-in the effects of exercise on mental health and he proposes the following study: Use 
-stratified random sampling to ensure representative proportions of 18-30, 31-40 and 41-
-55 year olds from the population. Next, randomly assign half the subjects from each age 
-group to exercise twice a week, and instruct the rest not to exercise. Conduct a mental 
-health exam at the beginning and at the end of the study, and compare the results.
-\begin{parts}
-\item What type of study is this? 
-\item What are the treatment and control groups in this study?
-\item Does this study make use of blocking? If so, what is the blocking variable?
-\item Does this study make use of blinding?
-\item Comment on whether or not the results of the study can be used to establish a 
-causal relationship between exercise and mental health, and indicate whether or not the 
-conclusions can be generalized to the population at large.
-\item Suppose you are given the task of determining if this proposed study should get 
-funding. Would you have any reservations about the study proposal?
-\end{parts}
-}{}
-
-\noindent
-\textit{JV: Replace with biology question in similar style.}
-
-\begin{comment}
-% 37
-
-\eoce{\qt{Chia seeds and weight loss\label{chia_weight_lostt}} Chia Pets -- those terra-cotta 
-figurines that sprout fuzzy green hair -- made the chia plant a household name. But chia 
-has gained an entirely new reputation as a diet supplement.  In one 2009 study, a team 
-of researchers recruited 38 men and divided them randomly into two groups: treatment or 
-control. They also recruited 38 women, and they randomly placed half of these 
-participants into the treatment group and the other half into the control group. One 
-group was given 25 grams of chia seeds twice a day, and the other was given a placebo. 
-The subjects volunteered to be a part of the study. After 12 weeks, the scientists found 
-no significant difference between the groups in appetite or weight loss. 
-\footfullcite{Nieman:2009}
-\begin{parts}
-\item What type of study is this? 
-\item What are the experimental and control treatments in this study?
-\item Has blocking been used in this study? If so, what is the blocking variable?
-\item Has blinding been used in this study?
-\item Comment on whether or not we can make a causal statement, and indicate whether or 
-not we can generalize the conclusion to the population at large.
-\end{parts}
-}{}
-
-\end{comment}
+% add ref to bib
 
 %_______________
 \subsection{Examining numerical data}
@@ -686,7 +551,7 @@ length of gestation is shown below. \footfullcite{Allison+Cicchetti:1975}
 \noindent\begin{minipage}[c]{0.44\textwidth}
 \begin{parts}
 \item What type of an association is apparent between life span and length of gestation?
-\item What type of an association would you expect to see if the axes of the plot were reversed, i.e. if we plotted length of gestation versus life span?
+\item What type of an association would you expect to see if the axes of the plot were reversed, i.e. if the plot displayed length of gestation versus life span?
 \item Are life span and length of gestation independent? Explain your reasoning.
 \end{parts}\vspace{6mm}
 \end{minipage}
@@ -712,43 +577,6 @@ part may refer to more than one plot. \vspace{30mm}
 \begin{minipage}[b]{0.62\textwidth}
 \hfill\includegraphics[width = 0.95\textwidth]{ch_intro_to_data_oi_biostat/figures/eoce/association_plots/association_plots.pdf}
 \end{minipage}
-}{}
-
-% 41
-
-\eoce{\qt{Reproducing bacteria\label{reproducing_bacteria}} Suppose that there is only 
-sufficient space and nutrients to support one million bacterial cells in a petri dish. 
-You place a few bacterial cells in this petri dish, allow them to reproduce freely, and 
-record the number of bacterial cells in the dish over time. Sketch a plot representing 
-the relationship between number of bacterial cells and time.
-}{}
-
-\noindent
-\textit{JV: Re-write for different contexts -- identifying sample vs. population means}
-
-% 42
-
-\eoce{\qt{Sleeping in college\label{college_sleeping}} A recent article in a college newspaper 
-stated that college students get an average of 5.5 hrs of sleep each night. A student who 
-was skeptical about this value decided to conduct a survey by randomly sampling 25 
-students. On average, the sampled students slept 6.25 hours per night. Identify which 
-value represents the sample mean and which value represents the claimed population mean.
-}{}
-
-% 43
-
-\eoce{\qt{Parameters and statistics\label{parameters_stats}} Identify which value represents 
-the sample mean and which value represents the claimed population mean.
-\begin{parts}
-\item American households spent an average of about \$52 in 2007 on Halloween 
-merchandise such as costumes, decorations and candy. To see if this number had changed, 
-researchers conducted a new survey in 2008 before industry numbers were reported. The 
-survey included 1,500 households and found that average Halloween spending was \$58 per 
-household.
-\item The average GPA of students in 2001 at a private university was 3.37. A survey 
-on a sample of 203 students from this university yielded an average GPA of 3.59 in 
-Spring semester of 2012.
-\end{parts}
 }{}
 
 % 46
@@ -802,14 +630,12 @@ calculated for five major air pollutants regulated by the Clean Air Act and take
 from 0 to 300, where a higher value indicates lower air quality. AQI was reported for a 
 sample of 91 days in 2011 in Durham, NC. The relative frequency histogram below shows 
 the distribution of the AQI values on these days. \footfullcite{data:durhamAQI:2011}
+
 \begin{minipage}[c]{0.55\textwidth}
 \begin{parts}
 \item Estimate the median AQI value of this sample.
 \item Would you expect the mean AQI value of this sample to be higher or lower than the 
 median? Explain your reasoning.
-\item Estimate Q1, Q3, and IQR for the distribution.
-\item Would any of the days in this sample be considered to have an unusually low or 
-high AQI? Explain your reasoning.
 \end{parts}
 \end{minipage}
 \begin{minipage}[c]{0.45\textwidth}
@@ -819,50 +645,38 @@ high AQI? Explain your reasoning.
 \end{minipage}
 }{}
 
-\noindent
-\textit{JV: Do histogram vs. boxplot exercises for real data, incl. biological example.}
+% oi_biostat
 
-\begin{comment}
+\eoce{\qt{Nursing home residents\label{nursing_homes}}
+Since states with larger numbers of elderly residents would naturally have more nursing home residents, the number of nursing home residents in a state is often adjusted for the number of people 65 years of age or order (65+). That adjustment is usually given as the number of nursing home residents age 65+ per 1,000 members of the population age 65+. For example, a hypothetical state with 200 nursing home residents age 65+ and 50,000 people age 65+ would have the same adjusted number of residents as a state with 400 residents and a total age 65+ population of 100,000 residents: 4 residents per 1,000. 
 
-% 53
+Compare the two plots below, which both show the distribution of the number of nursing home residents per 1,000 members of the population 65+ (in each state). 
 
-\eoce{\qt{Histograms vs. box plots\label{hist_vs_box}} Compare the two plots below. What 
-characteristics of the distribution are apparent in the histogram and not in the box 
-plot? What characteristics are apparent in the box plot but not in the histogram?
+\begin{minipage}[c]{0.55\textwidth}
 \begin{center}
-\includegraphics[width = 0.6\textwidth]{ch_intro_to_data/figures/eoce/hist_vs_box/hist_vs_box.pdf}
-\end{center}
-}{}
-
-% 54
-
-\eoce{\qt{Marathon winners\label{marathon_winners}} The histogram and box plots below show the distribution of finishing times for male and female winners of the New York Marathon between 1970 and 1999.
+	\includegraphics[width = \textwidth]{ch_intro_to_data_oi_biostat/figures/eoce/nursing_home/nursing_home_hist.pdf} 
+\end{center}	
+\end{minipage}
+\begin{minipage}[c]{0.45\textwidth}
 \begin{center}
-\includegraphics[width=0.6\textwidth]{ch_intro_to_data/figures/eoce/marathon_winners/marathon_winners_hist_box.pdf}
-\end{center}
+	\includegraphics[width = \textwidth]{ch_intro_to_data_oi_biostat/figures/eoce/nursing_home/nursing_home_boxplot.pdf} 
+\end{center}	
+\end{minipage}
 \begin{parts}
-\item What features of the distribution are apparent in the histogram and not the box plot? What features are apparent in the box plot but not in the histogram?
-\item What may be the reason for the bimodal distribution? Explain.
-\item Compare the distribution of marathon times for men and women based on the box plot shown below.
-\begin{center}
-\includegraphics[width=0.6\textwidth]{ch_intro_to_data/figures/eoce/marathon_winners/marathon_winners_gender_box.pdf}
-\end{center}
-\item The time series plot shown below is another way to look at these data. Describe what is visible in this plot but not in the others.
+\item Is the distribution of adjusted number of nursing home residents symmetric or skewed? Are there any states that could be considered outliers?
+
+\item Which plot is more informative: the histogram or the boxplot? Explain your answer.
+
+\item What factors might influence the substantial amount of variability among different states? This question cannot be answered from the data; speculate using what you know about the demographics of the United States.
 \end{parts}
-\begin{center}
-\includegraphics[width=0.75\textwidth]{ch_intro_to_data/figures/eoce/marathon_winners/marathon_winners_time_series.pdf} \\
-\end{center}
 }{}
 
-\end{comment}
+% cite nursing home data, Pset 1, Q1
 
-\noindent
-\textit{JV: Adapt for more realistic examples of skew.}
 
-\begin{comment}
 % 56
 
-\eoce{\qt{Distributions and appropriate statistics, Part II
+\eoce{\qt{Distributions and appropriate statistics
 \label{dist_shape_housing_alcohol_salary}} For each of the following, state 
 whether you expect the distribution to be symmetric, right skewed, or left skewed. 
 Also specify whether the mean or median would best represent a typical observation 
@@ -882,11 +696,6 @@ and only a few drink excessively.
 high level executives earn much higher salaries than the all other employees.
 \end{parts}
 }{}
-
-\end{comment}
-
-\noindent
-\textit{JV: Nice setup for robustness exercise. Adapt context?}
 
 % 61
 
@@ -926,21 +735,34 @@ this say about the robustness of the two measures?
 \end{parts}
 }{}
 
+% oi_biostat
+
+\eoce{\qt{Eating disorders\label{korean_survey}}
+In a 2003 survey examining weights and body image concerns among young Korean women, researchers administered a questionnaire to 264 female college students in Seoul, South Korea. The survey was designed to assess excessive concern with weight and dieting, consisting of questions such as "If I gain a pound, I worry that I will keep gaining." Questionnaires were given numerical scores on the Drive for Thinness Scale. Roughly speaking, a score of 15 is typical of Western women with eating disorders, but unusually high (90$^{th}$) percentile for other Western women. 
+
+\begin{minipage}[c]{0.45\textwidth}
+\includegraphics[width=\textwidth]{ch_intro_to_data_oi_biostat/figures/eoce/korean_survey/korean_survey_hist.pdf}
+\end{minipage}
+\begin{minipage}[c]{0.55\textwidth}
+\begin{parts}
+\item Describe the shape and spread of the scores for these Korean students.
+\item Which measures of center and spread will provide a better summary of the data? 	
+\end{parts}
+\end{minipage}
+}{}
+
+% from problem 1.37, 7th ed Moore McCabe Craig, p. 25
+
 % 62
 
 \eoce{\qt{Midrange\label{midrange}} The \textit{midrange} of a distribution is defined as 
 the average of the maximum and the minimum of that distribution. Is this statistic 
-robust to outliers and extreme skew? Explain your reasoning
+robust to outliers and extreme skew? Explain your reasoning.
 }{}
 
-\noindent
-\textit{JV: Need a data transformation exercise or two.}
 
 %_______________
 \subsection{Considering categorical data}
-
-\noindent
-\textit{JV: Use different data.}
 
 % 66
 
@@ -973,10 +795,53 @@ and are in favor of the citizenship option?
 \item What percent of these Tampa, FL voters who identify themselves as 
 conservatives are also in favor of the citizenship option? What percent of 
 moderates share this view? What percent of liberals share this view?
-\item Do political ideology and views on immigration appear to be independent? 
-Explain your reasoning.
 \end{parts}
 }{}
 
-\noindent
-\textit{JV: Another contingency table exercise, as well as something with numerical data across groups.}
+% oi_biostat
+
+\eoce{\qt{Anger and cardiovascular health\label{anger_chd}}
+Trait anger is defined as a relatively stable personality trait that is manifested in the frequency, intensity, and duration of feelings associated with anger. People with high trait anger have rage and fury more often, more intensely, and with long-laster episodes than people with low trait anger. It is thought that people with high trait anger might be particularly susceptible to coronary heart disease; 12,986 participants were recruited for a study examining this hypothesis. Participants were followed for five years. The following table shows data for the participants identified as having normal blood pressure (normotensives).
+
+\begin{center}
+	\begin{tabular}{l l c c c c}
+		&                           & \multicolumn{3}{c}{\textit{Trait Anger Score}} \\
+		\cline{3-5}
+		&                           & Low  & Moderate  & High   & Total \\
+		\cline{2-6}
+		& Yes & 53            & 110     & 27       & 190 \\
+		\raisebox{1.5ex}[0pt]{\emph{CHD Event}} & No    & 3057       & 4704      & 606       & 8284 \\ 
+		& Total                     & 3110           & 4731     & 633      & 8474
+	\end{tabular}
+\end{center}
+
+\begin{parts}
+\item What percentage of participants have moderate anger scores?
+\item What percentage of individuals who experienced a CHD event have moderate anger scores?
+\item What percentage of participants with high trait anger scores experienced a CHD event (i.e., heart attack)?
+\item What percentage of participants with low trait anger scores experienced a CHD event?
+\item Are individuals with high trait anger more likely to experience a CHD event than individuals with low trait anger? Calculate the relative risk of a CHD event for individuals with high trait anger compared to low trait anger.
+\item Researchers also collected data on various participant traits, such as level of blood cholesterol (measured in mg/dL). What graphical summary might be useful for examining how blood cholesterol level differs between anger groups?
+\end{parts}
+}{}
+
+% cite anger_chd paper
+
+\eoce{\qt{Adolescent fertility\label{adol_fertility}}
+Data are available on the number of children born to women aged 15-19 from 189 countries in the world for the years 1997, 2000, 2002, 2005, and 2006. The data are defined using a scaling similar that used for the nursing home data in Exercise~\ref{nursing_homes}. The values for the annual adolescent fertility rates represent the number of live births among women aged 15-19 per 1,000 female members of the population of that age.
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{ch_intro_to_data_oi_biostat/figures/eoce/adolescent_fertility/adol_fertility_boxplot.pdf}
+\end{center}
+
+\begin{parts}
+\item In 2006, the standard deviation of the distribution of adolescent fertility is 75.73. Write a sentence explaining the 75$^{th}$ percentile in the context of this data.
+\item For the years 2000-2006, data is not available for Iraq. Why might those observations be missing? Would the five-number summary have been affected very much if the values had been available?
+\item From the side-by-side boxplots shown above, describe how the distribution of fertility rates changes over time. Is there a trend?
+\end{parts}	
+}{}
+
+%_______________
+\subsection{Genomic data}
+
+\textit{JV: Not sure what kind of problems could go here.}
