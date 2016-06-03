@@ -8,6 +8,7 @@ normTail(70, 3.3,
          M = c(69, 74),
          col = COL[1],
          axes = FALSE)
-labels <- round(70 + 3.3 * c(-2, 0, 2), 2)
+labels <- round(c(69, 74), 2)
 axis(1, labels, cex.axis = 0.8)
 dev.off()
+

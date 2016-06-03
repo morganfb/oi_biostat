@@ -26,9 +26,9 @@ lines(c(m, m),
 lines(c(m, m) + s,
       dnorm(m + s, m, s) * c(0.01, 1.25),
       lty = 2, col = COL[1])
-text(m + s,
+text(m + s + 60,
      dnorm(m + s, m, s) * 1.25,
-     'Ann',
+     'Student A',
      pos = 3,
      col = COL[1])
 
@@ -55,8 +55,9 @@ lines(c(m, m) + 3,
       col = COL[1])
 text(m + 3,
      dnorm(m + 3, m, s) * 1.05,
-     'Tom',
+     'Student B',
      pos = 4,
      col = COL[1])
 
 dev.off()
+

@@ -8,6 +8,6 @@ normTail(1500, 300,
          U = 1630,
          axes = FALSE,
          col = COL[1])
-axis(1, at = c(900, 1500, 2100),
+axis(1, at = c(1630),
      cex.axis = 0.8)
 dev.off()

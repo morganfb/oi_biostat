@@ -11,8 +11,8 @@ plot(X, Y,
      axes = FALSE,
      xlim = c(-3.1, 3.1))
 axis(1,
-     at = c(-2, 0, 2),
-     labels = round(70 + 3.3 * c(-2, 0, 2), 2),
+     at = c(0),
+     labels = round(70 + 3.3 * c(0), 2),
      cex.axis = 0.8)
 these <- which(X <= -0.25)
 polygon(c(X[these[1]], X[these], X[rev(these)[1]]),
