@@ -762,7 +762,7 @@ Let $X$ and $Y$ represent the outcomes of rolling two dice.\footnote{Brief solut
 \end{enumerate}
 \end{exercise}
 
-It is not difficult to show in Guided Practice~\ref{condProbOfRollingA1AfterOne1}(c) that the conditioning information has no influence by using the Multiplication Rule for independence events:
+It is not difficult to show in Guided Practice~\ref{condProbOfRollingA1AfterOne1}(c) that the conditioning information has no influence by using the Multiplication Rule for independent events:
 \begin{eqnarray*}
 P(Y=\text{\resp{1}}\ |\ X=\text{\resp{1}})
 	&=& \frac{P(Y=\text{\resp{1} and }X=\text{\resp{1}})}{P(X=\text{\resp{1}})} \\
@@ -784,13 +784,15 @@ Casinos often rely on gamblers not understanding independence.  Suppose the last
 
 %JV: \textit{JV: This section comes across as rather lifeless right now. Could add an example in which independence is illustrated using the conditional probability formula.}
 
-\begin{comment}
+
 \subsection{Tree diagrams}
 
-\index{data!smallpox|)}
+%\index{data!smallpox|)}
 \index{tree diagram|(}
 
 \termsub{Tree diagrams}{tree diagram} are a tool to organize outcomes and probabilities around the structure of the data. They are most useful when two or more processes occur in a sequence and each process is conditioned on its predecessors.
+
+\begin{comment}
 
 The \data{smallpox} data fit this description. The population is split by \var{inoculation}: \resp{yes} and \resp{no}. Following this split, survival rates were observed for each group. This structure is reflected in the \term{tree diagram} shown in Figure~\ref{smallpoxTreeDiagram}. The first branch for \var{inoculation} is said to be the \term{primary} branch while the other branches are \term{secondary}.
 
@@ -809,19 +811,26 @@ Tree diagrams are annotated with marginal and conditional probabilities, as show
 \end{eqnarray*}
 
 
-In addition to being a graphical representation of how to compute a probability, tree diagrams are a useful way to organize the information in a probability problem and can often reduce a seemingly difficult problem to a series of simple steps
+
 
 \begin{example}  
 
-In the general population, about 1 in 28 individuals (approximately 3.6\%) is an unaffected carrier of a mutation in the cystic fibrosis gene, \textit{CFTR}, discussed in example~\ref{CFInheritanceExample}.  Most unaffected carriers are unaware that they harbor the mutation.  Suppose that people with cystic fibrosis do not live long enough to reproduce with a partner.  In the absence of any testing information, what is the probability that a child of two parent will have CF?
+In the general population, about 1 in 28 individuals (approximately 3.6\%) is an unaffected carrier of a mutation in the cystic fibrosis gene, \textit{CFTR}, discussed in example~\ref{CFInheritanceExample}.  Most unaffected carriers are unaware that they harbor the mutation.  Suppose that people with cystic fibrosis do not live long enough to reproduce with a partner.  In the absence of any genetic testing information, what is the probability that a child of two parents will be a carrier of CF?
 	
 	\textit{DH: solution not given for now, since I did not want to take the time to draw the tree.  This will be a good example to also solve algebraically, to show that the tree diagram is a representation of the theorem of total prob. Useful, since it will come up with Bayes Thm. Borrow some of the wording from the solution to the grade problem in OI that I removed here.  Below has a start of the solution}
 	
 	
 \textit{solution}
-The probabilities calculated in example~\ref{CFInheritanceExample} were conditional probabilities given the carrier status of the parents, though that term was not used in the example.  This exercise asks for an unconditional probability about the disease status of the child, with no additional information about the parents.  The solution uses methods already discussed, but combined is a series of steps.  
+The probabilities calculated in example~\ref{CFInheritanceExample} were conditional probabilities given the carrier status of the parents, though that term was not used in the example.  This exercise asks for an unconditional probability of the disease status of the child, with no additional information about the parents.  The solution uses methods already discussed, but combined is a series of steps.  
 
-The main steps are to first enumerate all the possibilities for carrier status of the parents, calculate the probabilities of each of those probabilities, then calculate the conditional probability of an affected child, given each of the possible outcomes of the parents, and finally use a tree to calculate the probability of a child being affected. Since the problem assumes that affected parents do not reproduce, the pair of parents must satisfy one of the events $A$ = (neither parent is a carrier), $B$ (the mother is a carrier, the father is not), $C$ = (the father is a carrier, the mother is not), $D$ = (both parents are carriers). Since the carrier status of the mother is independent of that of the father, the probabilities of these events are:
+The main steps are to first enumerate all the possibilities for carrier status of the parents, calculate the probabilities for each status, then calculate the conditional probability of an affected child, given each of the possible outcomes of the parents, and finally use a tree to calculate the probability of a child being affected. A tree diagram helps in keeping track of the steps.
+
+\textit{small pox tree left as a placeholder. Replace with relevant (and more complicated) tree.}
+
+Tree diagrams are annotated with marginal and conditional probabilities, as shown in Figure~\ref{smallpoxTreeDiagram}. The tree diagram begins with branches corresponding to genotype status of the parents-- each branch is labeled with the marginal probability of each genotype (computed below). Each of those branches then splits into branches corresponding possible genotypes for the offspring, and the branches are labeled with the conditional probability of the offspring genotype, given the genotypes of the parents.   Joint probabilities can be constructed at the end of each branch in the tree by multiplying the numbers from left to right. These joint probabilities are computed using the General Multiplication Rule.
+
+Since the problem assumes that affected parents do not reproduce, the pair of parents must satisfy one of the events $A$ = (neither parent is a carrier), $B$ (the mother is a carrier, the father is not), $C$ = (the father is a carrier, the mother is not), $D$ = (both parents are carriers). 
+Since the carrier status of the mother is independent of that of the father, the probabilities of these events are:
 
 \begin{itemize}
 	\item $P(A) = (1 - 0.036)(1 - 0.036) = 0.929$
@@ -831,15 +840,16 @@ The main steps are to first enumerate all the possibilities for carrier status o
 	\item $P(D) = (0.036)(0.036) = 0.001$
 \end{itemize}
 	
-These probabilities do not sum to one because the events where one or both parents are homozygous for the mutation, that is, are affected.
+These probabilities do not sum to one because the events do not the event in which one or both parents are have CF, that is, are homozygous for the mutation.
 
-\textit{DH: solution continues now with the conditional probabilities and the tree.  We should think about whether this example is too big of a step from the others, and perhaps add an intermediate example}
-
-\textit{JV: I agree that this might be too much at once... }
+The conditional probabilities for the second set of branches are calculated using the method illustrated in example~\ref{CFInheritanceExample}.  Given that neither parent is a carrier, the conditional probability that an offspring is affected is 0.  Given each of the two events that only one of the parents is a carrier, the probability that a 
 
 \end{example}
 
+In addition to being a graphical representation of how to compute a probability, tree diagrams are a useful way to organize the information in a probability problem and can often reduce a seemingly difficult problem to a series of simple steps
+
 \end{comment}
+
 
 \subsection{Bayes' Theorem}
 \label{bayesTheoremSubsection}
@@ -876,7 +886,7 @@ P(\text{BC and mammogram$^+$}) &= P(\text{mammogram$^+$ } |\ \text{BC})  P(\text
 	&= (0.89) (0.0035) = 0.00312
 \end{align*}
 
-Using the tree diagram allows for the information in the problem to be mapped out in a way that makes it easier to see how the desired conditional probability can be calculated. In this case, the diagram makes it clear that there are two scenarios in which someone can test positive: either testing positive when having breast cancer or by testing positive in the absence of breast cancer. To find the probability that someone has breast cancer given that they test positive, apply the conditional probability formula: divide the probability of testing positive when having breast cancer by the probability of testing positive.
+Using the tree diagram allows for the information in the problem to be mapped out in a way that makes it easier to calculate the desired conditional probability. In this case, the diagram makes it clear that there are two scenarios in which someone can test positive: either testing positive when having breast cancer or by testing positive in the absence of breast cancer. To find the probability that someone has breast cancer given that they test positive, apply the conditional probability formula: divide the probability of testing positive when having breast cancer by the probability of testing positive.
 
 The probability of a positive test result is the sum of the two corresponding scenarios:
 \begin{align*}
@@ -892,9 +902,12 @@ P(\text{has BC } | \text{ mammogram$^+$})
 	&= \frac{0.00312}{0.07288} \approx 0.0428
 \end{align*}
 
-Even with a positive mammogram, there is still only a~4\%~chance of breast cancer!   
+Even with a positive mammogram, there is still only a~4\%~chance of breast cancer!  Many students find it surprising that even when the false negative and false positive probabilities for a diagnostic test are small (0.11 and 0.07, respectively),  the conditional probability of breast cancer given a positive mammogram is small (0.0428).  In this population, the probability that a woman does not have breast cancer is high (1-0.0035 = 0.9965), so the likelihood of a positive mammogram includes the rela
 
-%DH: \textit{DH: return to this to finish why low prevalence leads to low ppv. that is the important concept for pre-meds and others}
+Because the probability of breast cancer is itself low (0.0035), the probability of a positive mammogram is inflated by the false postive outcome, making the probability of the joint event (breast cancer and positive mammogram) small compared the probability of a positive mammogram.
+
+Calculating probabilities for diagnostic tests is done so often in medicine, that topic has some specialized terminology.  The probability of a postive mammogram when breast cancer is present is called the \term{sensitivity} of mammogram.  The probability of a negative mammogram when breast cancer is not present is called the \term{specificity} of mammogram.  The probability that breast cancer is present when a mammogram is positive is called the \term{positive predictive value}, or PPV, of mammogram. \term{Negative predictive value} is the probability that breast cancer is not present when a mammogram is negative.  The probability of a woman having breast cancer is called the prevalence of breast cancer.  These terms are used for nearly all diagnostic tests used to screen for diseases.
+
 
 \subsubsection{Solution 2. Bayes' Rule.}
 
@@ -996,13 +1009,14 @@ Continue populating the table, using the provided information about the prevalen
 		Sum & 350 & 99,650 & 100,000 \\ 
 		\hline
 	\end{tabular}
-	\caption{Completed table for the mammogram example. The table shows why the PPV of the mammogram is low: almost 7,300 women will have a positive mammogram result in this hypothetical population, but only \textasciitilde312 of those women actually have breast cancer.}
+	\caption{Completed table for the mammogram example. The table shows again why the PPV of the mammogram is low: almost 7,300 women will have a positive mammogram result in this hypothetical population, but only \textasciitilde312 of those women actually have breast cancer.}
 	\label{tableMammogramExample}
 \end{table}
 
 
 %JV: In my edit of Solution 3, I removed the references to specificity and sensitivity, since the problem is only introduced in the context of false positives and false negatives. For a later revision, we could introduce language/notation specific to diagnostic tests at the end of this section.
 
+%  These refs to spec and sensitivity can be re-inserted
 
 %%%%%
 %
@@ -1160,7 +1174,7 @@ The coin tossing scenario provides a simple illustration of the mean and varianc
 \label{healthCareCostsEmployee}
 In most typical health insurance plans in the United States, members of the plan pay annually in three categories: a monthly premium, a deductible amount that members pay each year before the insurance covers service, and ``out-of-pocket'' costs which include co-payments for each physician visit or prescription.\footnote{The deductible also includes care and supplies that are not covered by insurance.} Picking a new health plan involves estimating costs for the next year based on a person's best guess at the type and number of services that will be needed.
 	
-In 2015, Harvard University offered several alternative plans to its employees. In the Health Maintenance Organization (HMO) plan for employees earning less than \$70,000 per year, the monthly premium was \$79, and the co-payment for each office visit or physical therapy session was \$20. After a new employee examined her health records for the last 10 years, she noticed that in three of the 10 years, she only visited the office visit for one annual physical. In four of the 10 years, she visited her physician three times: once for a physical, and twice for cases of the flu. In two years, she had four visits. In one of the 10 years, she experienced a knee injury that required 3 office visits and 5 physical therapy sessions.
+In 2015, Harvard University offered several alternative plans to its employees. In the Health Maintenance Organization (HMO) plan for employees earning less than \$70,000 per year, the monthly premium was \$79, and the co-payment for each office visit or physical therapy session was \$20. After a new employee examined her health records for the last 10 years, she noticed that in three of the 10 years, she only visited the office of her primary care physician  for one annual physical. In four of the 10 years, she visited her physician three times: once for a physical, and twice for cases of the flu. In two years, she had four visits. In one of the 10 years, she experienced a knee injury that required 3 office visits and 5 physical therapy sessions.
 
 \begin{example} {Ignoring the cost of prescription drugs, over-the-counter medications, and the annual deductible amount, what is the expected annual health care cost for this employee under the Harvard HMO plan?}  
 
@@ -1198,7 +1212,7 @@ $(x_i - \mu)^2 P(X=x_i)$ & 529.20  & 1.60  & 64.80  & 960.40 & 1556.00\\
 \hline
 \end{tabular}
 \end{center}
-The variance of $X$ is $\sigma^2 = \$1556.00$, and the standard deviation is $\sigma = \$39.45$.  The standard deviation always has the same units as the original measurements. 
+The variance of $X$ is $\sigma^2 = 1556.00$, and the standard deviation is $\sigma = \$39.45$.  The standard deviation always has the same units as the original measurements. 
 
 \end{example}
 
@@ -1221,7 +1235,7 @@ where $a$ and $b$ are constants.  The mean of a linear combination of random var
 \end{align*}}
 \end{termBox}
 
-There are a few special cases of this formula which are especially useful. The formula implies that $E(a + Y) = a + E(Y)$.  This could have been used when calculating the average health costs for the employee by defining $a$ as the fixed cost of the premium ($a=\$948$) and $Y$ as the cost of the physician visits. Thus, the total annual cost for a year could be calculated as: $E(a + Y) = a + E(Y) = \$948 + E(Y) = \$948 + .30(1 \times \$20) + .40(3 \times \$20) + .20(4 \times \$20) + .10(8 \times \$20)= \$1,010.00$. 
+There are a few special cases of this formula which are especially useful. The formula implies that foer a random variable $Z$m $E(a + Z) = a + E(Z)$.  This could have been used when calculating the average health costs for the employee by defining $a$ as the fixed cost of the premium ($a=\$948$) and $Z$ as the cost of the physician visits. Thus, the total annual cost for a year could be calculated as: $E(a + Z) = a + E(Z) = \$948 + E(Z) = \$948 + .30(1 \times \$20) + .40(3 \times \$20) + .20(4 \times \$20) + 0.10(8 \times \$20)= \$1,010.00$. 
 
 The formula easily generalizes to a sum of any number of random variables. For example, the average health care cost for 5 years (given that the cost for services remains the same) would be: 
 
@@ -1232,7 +1246,7 @@ The formula easily generalizes to a sum of any number of random variables. For e
 \end{align*}
 
 \begin{exercise} \label{healthCareCostsPartner}
-	Suppose the employee will begin a domestic partnership in the next year. Although she and her companion will begin living together and sharing expenses, they will each keep their existing health insurance plans; both, in fact, have the same plan from the same employer. In the last five years, her partner visited a physician only once in four of the ten years, and twice in the other six years. Calculate the expected total cost of health insurance to the couple in the next year.\footnote{Let $X$ represent the costs for the employee and $Y$ represent the costs for her partner. $E(X) = \$1,010.00$, as previously calculated. $E(Y) = 948 + .4(1 \times \$20) + .6(2 \times \$20) = \$980.00$. Thus, $E(X + Y) = E(X) + E(Y) = \$1,010.00 + \$980.00 = \$1,990.00$.}
+	Suppose the employee will begin a domestic partnership in the next year. Although she and her companion will begin living together and sharing expenses, they will each keep their existing health insurance plans; both, in fact, have the same plan from the same employer. In the last five years, her partner visited a physician only once in four of the ten years, and twice in the other six years. Calculate the expected total cost of health insurance to the couple in the next year.\footnote{Let $X$ represent the costs for the employee and $Y$ represent the costs for her partner. $E(X) = \$1,010.00$, as previously calculated. $E(Y) = 948 + 0.4(1 \times \$20) + 0.6(2 \times \$20) = \$980.00$. Thus, $E(X + Y) = E(X) + E(Y) = \$1,010.00 + \$980.00 = \$1,990.00$.}
 \end{exercise}
 
 The employee and her partner would also like to know how variable their health care costs would be for the next year.  Calculating the variance and standard deviation of a linear combination of random variables requires more care.  The formula given here requires that the random variables in the linear combination be independent, so that an observation on one of the variables provides no information about the value of the other variable.  With that assumption, the following formula can be used:
@@ -1245,13 +1259,21 @@ The variance of a linear combination of random variables may be computed by squa
 This equation is valid as long as the random variables are independent of each other. The standard deviation of the linear combination can be found by taking the square root of the variance.}
 \end{termBox}
 
-To calculate the variance and standard deviation for the next year health care costs for the two partners:
+For the simple transformation $a + bZ$, the variance is $b^Z$, since a constant $a$ has variance 0.  When $b = 1$, variance of $a + Z$ is $\text{Var}(Z)$ -- adding a constant to a random variable has no effect on its variability.
 
-\textit{Formal solution to be added. Start with X as the costs for employee and Y as the costs for the partner, use formula for Var(X + Y). Var(X) is \$1,556.00 from previous example; E(Y) is \$980, and Var(Y) is \$268.80. Thus, Var(X + Y) = \$1,824.80. However, is the independence assumption reasonable here?}
+To calculate the variance and standard deviation for the combined cost of next year's health care for the two partners under the assumption of independence, first calculate the variance of the health care costs for the partner. The partner's costs are the sum of the annual fixed cost, $948$ and the variable annual costs, so the variance will be just the variance of the variable costs. If $Z$ represents the component of the variable costs, $E(Z) = 0.4(1 \times \$20) + 0.6(2 \times \$20) = \$8 + \$24 = \$32$.  The variance of $Z$ is
+\begin{align*}
+	\textrm{Var}(Z) &= 0.4(20 - 32)^2 + 0.6(40 - 32)^2 \\
+	   &= 96,
+\end{align*}
+so $\text{Var}{Y} = 96$. The variance in health care costs is smaller for the parter -- her costs take on one of only two values each year.
 
-%JV: Needs explanation for independence assumption.
+Under the assumption of independence, variance of the total cost for the two individuals will be $\text{Var}(X) + \text{Var}(Y) = 1556 + 96 = 1652$, and the standard deviation is $\sqrt(1652) = \$40.64$.
+
 
 The example of health insurance costs has been simplified to make the calculations clearer.  It ignores the fact that many plans have a deductible amount, and that plan members pay for services at different rates before and after the deductible has been reached. Often, insured individuals no longer need to pay for services at all once a maximum amount has been reached in a year. The example also assumes that the proportions of number of physician visits per year, estimated from the last 10 years, can be treated as probabilities measured without error. Had a different timespan been chosen, the proportions might well have been different.  
+
+It also relies on the assumption that health care costs for the two partners are independent.  Two individuals living together may pass on infectious diseases such as flu to each other, and may participate together in activities that lead to similar injuries, such as skiing or long distance running.  The independence assumption can more more difficult to check that assumptions about costs left out of the calculation, which are easily found in a medical record or a personal record of expenses.  The next example shows the effect on a standard deviation when items in a sum are not independent, and the next section shows how to adjust a variance calculation when independence is unrealistic.
 
 \begin{exercise}  The Association of American Medical Colleges (AAMC) introduced a new version of the Medical College Admission Test (MCAT) in the spring of 2015. Data from the scores were recently released by AAMC.\footnote{https://www.aamc.org/students/download/434504/data/percentilenewmcat.pdf}  The test consists of 4 components: chemical and physical foundations of biological systems; critical analysis and reasoning skills; biological and biochemical foundations of living systems; psychological, social and biological foundations of behavior. The overall score is the sum of the individual component scores. The grading for each of the four components is scaled so that the mean score is 125.  The means and standard deviations for the four components and the total scores for the population taking the exam in May 2015 exam are shown in table~\ref{table:mcatScoreDistribution}.
 	
@@ -1267,17 +1289,20 @@ Show that the standard deviation in the table for the total score does not agree
 			             Crit. Analysis &   125 &    3.0 \\
 			             Living  Systems &  125 &     3.0\\
 			             Found. Behavior&   125 &     3.1\\
-			             \textbf{Total} &    500 &     10.6\\
+			             \textbf{Total Score} &    500 &     10.6\\
 			\hline
 		\end{tabular}
 		\caption{Means and Standard Deviations for MCAT Scores}
 		\label{table:mcatScoreDistribution}
 	\end{table}	
+
+The variance of each component of he score is the square of each standard deviation.  Under the assumption of independence, the variance of the total score would be 
+\begin{align*}
+	\textrm{Var(Total Score)} &= 3.0^2 + 3.0^2 + 3.0^2 + 3.1^2 \\
+	    &= 36.61,
+\end{align*}
+so the standard deviation is 6.05, which is less than 10.6.  
 \end{exercise}
-
-\textit{Solution to be added in later draft \dots}
-
-%DH: Solution to be added, but only as far as noting that independence is not likely to be true. Begin by applying the formula that assumes independence.
 
 
 \section{Distributions for pairs of random variables (special topic)}
@@ -1301,6 +1326,7 @@ When two random variables $X$ and $Y$ are correlated:
 
 The standard deviation for the sum or difference will be the square root of the variance.
 
+
 Correlation between random variables is similar to correlation between pairs of observations in a dataset, with some important differences.  Calculating a correlation $r$ in a dataset was introduced in Section~\ref{scatterPlots} and uses the formula:
 \begin{align*}
       r &=  \frac{1}{n-1}\sum^{n}_{i=1}
@@ -1309,11 +1335,13 @@ Correlation between random variables is similar to correlation between pairs of 
 \end{align*} 
 The correlation coefficient $r$ is an average of products, with each term in the product measuring the distance between $x$ and its mean $\overline{x}$ or $y$ and its mean $\overline{y}$, after the distances have been scaled by respective standard deviations.
 
+When two random variables tend to increase or decrease together, they are positively correlated, just as two measurements in a dataset that tend to increase or decrease together. Individuals who take the MCAT exam tend to do well (or poorly) on each of the components, so the component scores are positively correlated.  That is why total scores have more variability than the calculation assuming independence implies.
+
 The compact formula for the correlation between two random variables $X$ and $Y$  uses the same idea; it is given by
-\begin{align}
+\begin{equation*}
 	\rho_{X,Y} = E\left(\frac{X - \mu_x}{\sigma_X}\right)\left(\frac{Y - \mu_Y}{\sigma_Y} \right),
 	\label{eq:generalFormulaCorrelation}
-\end{align}
+\end{equation*}
 where $\rho_{X,Y}$ is the correlation between the two variables, and $\mu_X, \mu_Y$, $\sigma_X, \sigma_Y$ are the respective means and standard deviations for $X$ and $Y$. Just as with the mean of a random variable, the expectation in the formula for correlation is a weighted sum of products, with each term weighted by the probability of values for the pair $(X,Y)$.  Equation~\ref{eq:generalFormulaCorrelation} is useful for understanding the analogy between correlation of random variables and correlation of observations in a dataset, but it cannot be used to calculate $\rho_{X,Y}$ without the probability weights.  The weights come from the \term{joint distribution} of the pair of variables $(X,Y)$.  Joint probabilities were discussed in section~\ref{marginalAndJointProbabilities}.
 
 \begin{termBox}{\tBoxTitle{Joint distribution}
@@ -1324,7 +1352,7 @@ The \term{joint distribution} for a pair of random variables is the collection o
 for all pairs of values $(x_i,y_j)$ for the pair of random variables $(X,Y)$.}
 \end{termBox}
 
-Joint distributions quickly become complicated.  If $X$ and $Y$ have $k_1$ and $k_2$ possible values respectively, there will be $(k_1)(k_2)$ possible $(x,y)$ pairs. This is unlike pairs of values $(x,y)$ observed in a dataset, where each observed value of $x$ is usually paired with only one value of $y$. A joint distribution is often best displayed as a table of probabilities, with $(k_1)(k_2)$ entries.  Table~\ref{table:generalJointDistribution} shows the general form of the table. 
+Joint distributions quickly become complicated.  If $X$ and $Y$ have $k_1$ and $k_2$ possible values respectively, there will be $(k_1)(k_2)$ possible $(x,y)$ pairs. This is unlike pairs of values $(x,y)$ observed in a dataset, where each observed value of $x$ is usually paired with only one value of $y$. A joint distribution is often best displayed as a table of probabilities, with $(k_1)(k_2)$ entries.  Table~\ref{table:generalJointDistribution} shows the general form of the table for the joint distribution of two discrete distributions.
 
 \begin{table}[h]
 	\caption{Table for a joint distribution. Entries are probabilities for pairs ($x_i, y_j$)}
@@ -1343,7 +1371,15 @@ Joint distributions quickly become complicated.  If $X$ and $Y$ have $k_1$ and $
 	\end{tabular}
 \end{table}
 
-\newpage
+In this case, $\rho_{X,Y}$ will be given by
+
+\begin{equation*}
+	\rho_{X,Y} = \sum_{i,j} p(i,j)\frac{(x_i - \mu_X)}{\textrm{sd}(X)}\frac{(y_j - \mu_Y)}{\textrm{sd}(Y)}.
+	\label{eq:specificFormulaCorrelation}
+\end{equation*}
+
+The summation in Equation~\ref{eq:specificFormulaCorrelation} is a double sum, adding up terms over all combinations of the indices $i$ and $j$.
+
 Previously, the calculation of variability in health care costs for an employee and her partner relied on the assumption that the number of health episodes between the two are independent random variables. It might be reasonable to assume that the health status of one person gives no information about the other's health, given that the two are not related and were not previously living together. However, correlation between random variables can be subtle. For example, couples are often attracted to each other because of common interests or lifestyles, which suggests that health status may not actually be independent.
 
 Might the health care costs for the employee and her domestic partner be correlated? To start, examine the joint distribution of costs by making a table of all possible combinations of costs for the last 10 years (these costs were previously calculated in Example~\ref{healthCareCostsEmployee} and Guided Practice~\ref{healthCareCostsPartner}). Entries in the table are probabilities of pairs of annual costs. For example, the entry 0.25 in the second row and second column of Table~\ref{healthExpensesJointDistribution} indicates that in approximately 25\% of the last 10 years, the employee paid \$1,008 in costs and her partner paid \$988.
@@ -1352,8 +1388,8 @@ Might the health care costs for the employee and her domestic partner be correla
 \centering
 \begin{tabular}{crr}
   \hline \\
-  &   \multicolumn{2}{c}{\textbf{Partner costs}} \\
-\textbf{Employee costs} & \textbf{\$968} & \textbf{\$988} \\ 
+  &   \multicolumn{2}{c}{\textbf{Partner costs, $Y$}} \\
+\textbf{Employee costs, $X$} & \textbf{\$968} & \textbf{\$988} \\ 
   \hline
 \textbf{\$968} & 0.18 & 0.12 \\ 
  \textbf{\$1,008} & 0.15 & 0.25 \\ 
@@ -1375,8 +1411,8 @@ The row sums in Table~\ref{healthExpensesJointDistribution} are the values of th
 \centering
 \begin{tabular}{crrr}
   \hline \\
-  &   \multicolumn{2}{c}{\textbf{Partner Costs}} & \textbf{Marg. Dist.}\\
-\textbf{Employee costs} & \textbf{\$968} & \textbf{\$988} & \textbf{Employee Costs} \\ 
+  &   \multicolumn{2}{c}{\textbf{Partner Costs, $Y$}} & \textbf{Marg. Dist.}\\
+\textbf{Employee costs, $X$} & \textbf{\$968} & \textbf{\$988} & \textbf{Employee Costs, $X$} \\ 
   \hline
 \textbf{\$968} & 0.18 & 0.12 & 0.30\\ 
  \textbf{\$1,008} & 0.15 & 0.25 & 0.40 \\ 
@@ -1384,7 +1420,7 @@ The row sums in Table~\ref{healthExpensesJointDistribution} are the values of th
  \textbf{\$1,108}  & 0.03 & 0.07  & 0.10\\ 
    \hline
  \textbf{Marg. Dist.} & 0.40 & 0.60 & 1.00 \\
- \textbf{Partner Costs} &  &  & \\
+ \textbf{Partner Costs, $Y$} &  &  & \\
  \hline \\
 \end{tabular}
 \caption{Joint and Marginal Distributions of Health Care Costs.} 
@@ -1394,25 +1430,48 @@ The row sums in Table~\ref{healthExpensesJointDistribution} are the values of th
 %DH: Formatting of table has to be improved
 
 
-\begin{example}{Calculate the correlation between employee costs and the standard deviation of the sum of the costs for the couple.}
+\begin{example}{Calculate the correlation between employee costs} 
+Since the marginal distributions of $X$ and $Y$ are the same as in example \ref{}, the mean, variance and standard deviations of $X$ and $Y$ are also the same:
+
+\begin{itemize}
+	\item $E(X) = 1010\$$, $\textrm{Var}(X) = 1556$, $\textrm{sd}(X) = 39.45\$$;
 	
-	\begin{comment}
-	\textit{Not filling in the details now. Proceeds by showing that the marginal distributions are the same as those used earlier, then calculating $\sigma_X, \sigma_Y$ etc.  Variance using equation~\ref{eq:generalVarianceSumRVs}}
-	\end{comment}
-	\end{example}
-
-\textit{Section to be finished in subsequent draft \dots}
-
-\begin{comment}
-
-\textit{Outline for the remainder of this section
-	\begin{itemize}[--]
-		\item general form of table for joint, marginal distributions
-		\item conditional distributions
-		\item example
-	\end{itemize}}
+	\item $E(Y) = 980\$$, $\textrm{Var}(Y)= 96$, $\textrm{sd}(Y) = 9.80\$$;
 	
-\end{comment}
+\end{itemize}
+	
+The calculation of the correlation between the employee and partner costs uses a specific form of Equation~\ref{eq:generalFormulaCorrelation} -- the expectation of the cross product terms is calculated using the probabilities for the joint distribution of $X$ and $Y$:
+
+\begin{align*}
+	\rho_{X,Y} &= p(x_1,y_1) \frac{(x_1 - \mu_X)}{\textrm{sd}(X)}\frac{(y_1 - \mu_Y)}{\textrm{sd}(Y)} 
+           + p(x_1,y_2)\frac{(x_1 - \mu_X)}{\textrm{sd}(X)}\frac{(y_2 - \mu_Y)}{\textrm{sd}(Y)}  \\
+		    &\phantom{{}=1} + \cdots + p(x_4,y_1)\frac{(x_4 - \mu_X)}{\textrm{sd}(X)}\frac{(y_1 - \mu_Y)}{\textrm{sd}(Y)} + p(x_4,y_2)\frac{(x_4 - \mu_X)}{\textrm{sd}(X)}\frac{(y_2 - \mu_Y)}{\textrm{sd}(Y)} \\
+	&= (0.18) \frac{(968 - 1010)}{39.45}\frac{(968 - 980)}{9.8} 
+           + (0.12)\frac{(968 - 1010)}{39.45}\frac{(988 - 980)}{9.8}  \\
+		    &\phantom{{}=1} + \cdots + (0.03)\frac{(1108 - 1010)}{39.45}\frac{(9.68 - 980)}{9.8} + (0.07)\frac{(1108 - 1010)}{39.45}\frac{(988 - 980)}{9.8} \\
+	&= -.80
+\end{align*} 
+
+Somewhat surprisingly, the correlation between annual health care costs for these two individuals is negative, emphasizing the importance of checking a seemingly reasonable assumption (positive correlation between two individuals planning to live together) with a calculation.
+\end{example}
+
+
+\begin{example}{Calculate the standard deviation of the sum of the costs for the couple.}
+This calculation uses Equation~\ref{eq:generalVarianceSumRVs} to calculate the variance of the sum.  The standard deviation will be the square root of the variance.
+
+\begin{align*} 
+	\text{Var}(X + Y) &= \text{Var}(X) + \text{Variance}(Y) + 
+	2 \sigma_X \sigma_Y \rho_{X,Y} \\
+	&= (1556 + 96) + (2)(39.45)(9.80)(-0.90) \\
+	& = 956.10.
+\end{align*}
+
+The standard deviation is $\sqrt{956.10} = 30.92\$$
+
+\textit{This somewhat tedious calculation begs the question of why it is useful to know the sd.}
+
+\end{example}
+
 
 \index{joint distribution for random variables|)}
 \index{marginal distribution for random variables|)}
@@ -1478,6 +1537,8 @@ P(\text{\var{height} between \resp{180} and \resp{185}})
 \end{align*}
 
 The probability that a randomly selected person is between \resp{180} and \resp{185} cm is 0.1157. This is very close to the estimate from Example~\ref{contDistProb}: 0.1172. 
+
+For some specific continous distributions, an area corresponding to a probability can be calculated using calculus, but that is rarely necessary, since the area can also be calculated using software or tables.  The most common continuous distribution is the normal distribution, also known as the bell shaped curve.  The normal distribution and its applications will be introduced in Chapter 3, along with some other useful distributions.
 
 \begin{exercise}
 Three US adults are randomly selected. The probability a single adult is between \resp{180} and \resp{185} cm is 0.1157.\footnote{(a) Assume independence. $(0.1157)  (0.1157) (0.1157) = 0.0015$. (b) $(1-0.1157)^3 = 0.692$} \vspace{-1.5mm}
