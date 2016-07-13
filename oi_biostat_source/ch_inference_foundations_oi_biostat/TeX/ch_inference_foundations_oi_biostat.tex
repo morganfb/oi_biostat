@@ -603,10 +603,15 @@ It is important to specify in the design of a study how rare an event must be in
 
 Probabilities for sample means are easily calculated using the normal approximation and a transformation to an approximate standard normal variable, so the test statistic most often chosen is 
 
-\begin{align}
+\begin{align*}
 t=\frac{\overline{x}-\mu_0}{s/\sqrt{n}},
-\end{align}
-where $\overline{x}$ is the sample mean, $s$ is the sample standard deviation and $n$ is the number of observations in the sample. The test statistic quantifies the number of standard deviations between the sample mean $\overline{x}$ and the population mean $\mu$.
+\end{align*}
+where $\overline{x}$ is the sample mean, $s$ is the sample standard deviation and $n$ is the number of observations in the sample. The test statistic quantifies the number of standard deviations between the sample mean $\overline{x}$ and the population mean $\mu$.  For the 150 responses in the sample of adult BMI data, $\overline{x} = 29.7$, $s = 7.7$, so the test statistic has value
+
+\begin{align*}
+t &= \frac{29.7 - 21.7}{7.7/\sqrt{150}} \\
+  &= 12.7.
+\end{align*}
 
 \subsubsection{Step 4: Calculating the $p$-value}
 
@@ -621,6 +626,8 @@ The \term{$p$-value} is the probability of observing a sample mean as or more ex
 \end{itemize}
 In these probabilities, $Z$ denotes a normally distributed variable with mean 0 and standard deviation 1.
 
+For this one-sided test $ p = P(Z \geq 12.7) < 0.001$.
+
 \subsubsection{Step 5: Drawing a conclusion}
 
 Once the $p$-value is calculated, $p$ and $\alpha$ can be directly compared. If $p > \alpha$, the observed sample mean is not extreme enough to warrant rejecting $H_0$; more formally stated, there is insufficient evidence to reject $H_0$. If $p \leq \alpha$, there is sufficient evidence to reject $H_0$ and accept $H_A$. 
@@ -630,6 +637,47 @@ For a conclusion to be informative, however, it must be presented in the context
 %JV: Suggested revision -- directly follow w/ Examples of Hypothesis Testing, then Decisions Errors. Expand Decision Errors to have the example that was originally in the Examples section. Main focus of next section should be to clearly illustrate the steps of formal hypothesis. Examples should also include how to choose between one-sided and two-sided tests... After Decision Errors, Choosing Significance Levels, and CI for the last section. 
 
 %DH: have not followed JV recommendation, but I may yet.  Argument for putting decision errors here is to get the background stuff over and done with.  Go back to this after initial revision finished.
+
+\subsection{Two examples}
+
+
+\textit{One-sided test; still looking for a two-sided example}
+
+In 2015, the National Sleep Foundation published new guidelines for the amount of sleep Americans should be getting \footnote{Sleep Health: Journal of the National Sleep Foundation, Vol. 1, Issue 1, p40 - 43}. The report recommends 7-9 hours a sleep per night for adults.  Is there evidence that Americans sleep time is less than 7 hours per night?
+
+The NHANES survey asked respondents how many hours per night they slept, and responses are available in the NHANES dataset used to examine BMI and we use the sample of 151 adults used to study BMI/
+
+\textit{Step 1: The null and alternative hypotheses}.  Let $\mu$ be the population average of sleep per night of US adults.  The null hypothesis corresponds to sleeping an average of 7 hours per night, or $H_0: \mu = 7$ hours. Since the question asks for evidence that average sleep might be less than 7, $H_A: \mu < 7$.
+
+\textit{Specify the significance level, $\alpha$}.  A significance level of $\alpha = 0.05$ seems reasonable. 
+
+
+\textit{Calculate the test statistic}.  The test statistic will be the usual $t$-statistic. For this sample of 151 adults, the average reported hours of sleep was $\overline{x}_{\text{sleep}} =7.18$, with standard deviation $\text{sd}_{\text{sleep}}= 1.33$.  The $t$-statistic has value
+
+
+\begin{align*}
+t &= \frac{\overline{x}_{\text{sleep}}-\mu_0}{s/\sqrt{n}} \\
+  &= \frac{7.18 - 7.00} {1.33/\sqrt{151}} \\
+  &= 1.65.
+\end{align*}
+
+\textit{Calculate the $p$-value}.
+
+For this one-sided alternative $H_A: \mu < 7.0$, the $p$-value will be 
+
+\begin{align*}
+	P(Z \leq t) &= P(Z < 1.65) \\
+	&= 0.95.
+\end{align*}
+
+Note that this $p-value$ is much greater than 0.05, because instead of observing a value of $\overline{x}$ that was smaller than $\mu_0 = 7$, the value is larger than  7.  The difference in the $t-statistic$ is in the opposite direction of the specified alternative.
+
+One common error in one-sided tests is to assume that the $p$-value will always be the area in the smaller of the two tails to the right or left of the observed value, instead of the area that corresponds to the alternative hypothesis.  Comparing $\overline{x}$ with $\mu_0$ in this case shows that in fact average sleep is larger, not smaller, than 7 hours per night.
+
+\textit{picture here will be useful}
+
+\textit{Draw a conclusion}.  The $p$-value is larger than the specified significance level $\alpha$.  The null hypothesis is not rejected since the data do not contain evidence to support the claim that adults sleep less than 7 hours per night.
+
 
 \subsection{Decision errors}
 
@@ -688,9 +736,6 @@ For example, in the early testing of a drug with little in the way of side effec
 
 A government agency responsible for approving drugs to be marketed to the general population, however, would likely be biased towards minimizing the chances of making a Type 1 error -- approving a drug that turns out to be unsafe or ineffective. As a result, they might conduct tests at significance level 0.01 in order to reduce the chances of concluding that a drug works when it is in fact ineffective. The US FDA and the European Medical Agency (EMA), customarily require that two independent studies show the efficacy of a new drug or regimen using $\alpha = 0.05$, though other values are sometimes used.
 
-\subsection{Another example}
-
-\textit{Example not chosen yet.  Should be a two sided test with the above principles illustrated.}
 
 \index{significance level|)}
 \index{hypothesis testing!significance level|)}
@@ -811,7 +856,7 @@ The same relationship holds for one-sided tests and confidence intervals, althou
 
 \begin{comment}
 
-Outine  Main points
+Outline  Main points
 
 Choice of one vs two sided should be driven by context.  Give some examples. Begin with some clear examples.
 
