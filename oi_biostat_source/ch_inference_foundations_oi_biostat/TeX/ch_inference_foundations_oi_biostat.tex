@@ -253,7 +253,7 @@ The terminology for point estimates can be confusing, and is worth restating:
 A \term{confidence interval} provides an estimate for a population parameter along with a margin of error, giving a plausible range of values for the parameter instead of a single value. When estimating a population mean $\mu$, a confidence interval for $\mu$ has the general form
 
 \[(\overline{x} -m, \ \overline{x} + m) = \overline{x} \pm m, \]
-where $m$ is the margin of error. The standard error, a measure of the uncertainty associated with the point estimate, is used in the calculation of the margin of error.
+where $m$ is the margin of error. The standard error, a measure of the uncertainty associated with the point estimate, is used in the calculation of the margin of error. Intervals that have this form are called \term{two-sided confidence intervals} because they provide both lower and upper bounds, $\overline{x} - m$ and $\overline{x} + m$, respectively. One-sided sided intervals are discussed in Section~\ref{onesidedCIs}.
 
 %\subsection{An approximate 95\% confidence interval}
 
@@ -456,7 +456,7 @@ If the point estimate follows the normal model with standard error $SE$, then a 
 where $z^{\star}$ corresponds to the confidence level selected.}
 \end{termBox}
 
-Figure~\ref{choosingZForCI} provides a picture of how to identify $z^{\star}$ based on a confidence level. We~select $z^{\star}$ so that the area between -$z^{\star}$ and $z^{\star}$ in the normal model corresponds to the confidence level. 
+Figure~\ref{choosingZForCI} provides a picture of how to identify $z^{\star}$ based on a confidence level. The point $z^{\star}$ is selected  so that the area between -$z^{\star}$ and $z^{\star}$ in the normal model corresponds to the confidence level. 
 
 \begin{termBox}{\tBoxTitle{Margin of error}
 \label{marginOfErrorTermBox}In a confidence interval, $z^{\star}\times SE$ is called the \term{margin of error}.}
@@ -471,6 +471,7 @@ We are 90\% confident the average days active per week is between 3.32 and 4.18~
 \end{exercise}
 
 \end{comment}
+
 
 \subsection{Interpreting confidence intervals}
 \label{interpretingCIs}
@@ -510,6 +511,36 @@ The conditions about the validity of the normal approximation can be checked usi
 %JV: Should we also discuss other common interpretive errors here, perhaps via a guided practice? e.g. $\mu$ equally likely to be anywhere in a given CI
 
 %DH:  strictly speaking, no probability statements can or should be made about $\mu$, not even about where it is `likely' to be in a confidence interval.
+
+\subsection{One-sided confidence intervals}
+\label{onesidedCIs}
+
+One-sided confidence intervals for a population mean provide just a lower bound or an upper bound, but not both.  One-sided lower confidence intervals have the form
+\[
+    \overline{x} - m;
+\]
+one-sided upper confidence intervals are of the form 
+\[
+    \overline{x} + m.
+\]
+One-sided intervals less often used that two-sided intervals by they can be useful in some settings.
+
+The margin of error $m$ for a one-sided interval is calculated slightly differently than a two-sided interval.  The intent of a 95\% one-sided upper confidence interval, for instance, is to provide an upper bound $m$ so that a data analyst can be 95\% confident that a population mean $\mu$ is less than $\overline{x} + m$.  Since all of the possible 5\% error lies to the right of $\overline{x} + m$, the calculation of $m$ uses the point on the normal distribution that has 0.05 area in the right tail, $z^{*} = 1.645$ instead of 1.96 in the two-sided interval.  A one-sided upper 95\%  confidence interval will have the form
+\begin{align*}
+	\overline{x} + z^{*} \frac{s}{\sqrt{n}} = \overline{x} + 1.645 \frac{s}{\sqrt{n}}.
+\end{align*}
+The upper bound in a one-sided interval will be closer to $\overline{x}$ than the upper bound in a two-sided interval with the same confidence coefficient, but there  will be no lower bound.  
+
+A lower one-sided interval for a mean $\mu$ will be of the form
+\begin{align*}
+  \overline{x} - z^{*} \frac{s}{\sqrt{n}}.
+\end{align*}
+
+\begin{example}
+
+Using the NHANES BMI data, calculate a lower 95\% confidence bound for average BMI.  A one-sided lower bound is found by calculating the lower confidence interval. For the 150 observations in the BMI data, the mean and standard deviation are $\overline{x} = 29.7$  $s = 7.7$ kg/meter$^2$.  The lower 95\% bound is $29.9 - 7.7/\sqrt{150} = 29.27$. Based on these data, we can be 95\% confident that the population mean BMI among US adults is at least 29.27 kg/meter$^{2}$.\end{example}
+
+\textit{a bit more here about when to use what, or perhaps defer that to later}
 
 
 \index{confidence interval!interpretation|)}
@@ -640,14 +671,48 @@ For a conclusion to be informative, however, it must be presented in the context
 
 \subsection{Two examples}
 
+\begin{example}
+	
+Too much mercury in the diet of a human being can have serious health consequences, especially for pregnant women.  There is no international standard for levels of mercury in saltwater fish that would indicate that a particular species of fish should not be consumed, but the general consensus seems to be that levels above 0.5 micrograms per gram (also labeled 0.5 parts per million net weight, or ppm net weight) is a useful standard. Berger and Gochfeld \footnote{J. Burger, M. Gochfeld, Science of the Total Environment 409 (2011) 1418–1429} studied mercury levels in saltwater fish off the coast of New Jersey, and provide estimates of mercury content for 19 species.  Based on their work, are bluefin tuna potentially dangerous or, perhaps, particularly safe to eat?
 
-\textit{One-sided test; still looking for a two-sided example}
+Let $\mu$ be the population average content of mercury for bluefin caught tuna off the coast of New Jersey. A two-sided test of the hypothesis $\mu = 0.50$ ppm (net weight) can be used to assess the evidence for either safety or potential danger in the mercury content of these fish.  Here are the steps:
 
+\textit{Specifying the  null and alternative hypotheses}.   $H_0: \mu = 0.50$ ppm (net weight) vs $H_A: \mu \neq 0.50$ ppm (net weight).
+
+\textit{Specify the significance level, $\alpha$}.  A significance level of $\alpha = 0.05$ seems reasonable. 
+
+
+\textit{Calculate the test statistic}.  The test statistic will be the usual $t$-statistic. The paper by Berger and Gochfeld contains the summary statistics for a sample of 23 bluefin tuna.  The sample mean mercury level was $\overline{x}_{\text{mercury}} = 0.52$ ppm, with standard deviation $s_{\text{mercury}}= 0.16$ ppm.  The  $t$-statistic has value
+\begin{align*}
+t &= \frac{\overline{x}_{\text{mercury}}-\mu_0}{s/\sqrt{n}} \\
+  &= \frac{0.53 - 0.50} {0.16/\sqrt{23}} \\
+  &= 0.859.
+\end{align*}
+
+\textit{Calculate the $p$-value}.
+
+For this two-sided alternative $H_A: \neq < 0.60$, the $p$-value will be 
+
+\begin{align*}
+	P(Z \leq -t) + P(Z \geq t)&= 2P(Z \leq - 0.859) \\
+	&= 0.390
+\end{align*}
+
+
+
+\textit{picture here will be useful}
+
+\textit{Draw a conclusion}.  The $p$-value is larger than the specified significance level $\alpha$.  The null hypothesis is not rejected since the data do not contain evidence to support the claim that the mercury content of bluefin tuna from the coast of New Jersey differs significantly from  potentially dangerous levels.  There is not statistically significant evidence in these data either that there should be a moratorium on catching this species or to recommend them as clearly safe.  Unfortunately, the results of studies are often ambiguous.  Based on these data a regulatory such as the US Environmental Protection Agency might decide to monitor this species more closely.
+
+\end{example}
+
+\begin{example}
+	
 In 2015, the National Sleep Foundation published new guidelines for the amount of sleep Americans should be getting \footnote{Sleep Health: Journal of the National Sleep Foundation, Vol. 1, Issue 1, p40 - 43}. The report recommends 7-9 hours a sleep per night for adults.  Is there evidence that Americans sleep time is less than 7 hours per night?
 
-The NHANES survey asked respondents how many hours per night they slept, and responses are available in the NHANES dataset used to examine BMI and we use the sample of 151 adults used to study BMI/
+The NHANES survey asked respondents how many hours per night they slept, and responses are available in the NHANES dataset used to examine BMI and we use the sample of 151 adults used to study BMI.
 
-\textit{Step 1: The null and alternative hypotheses}.  Let $\mu$ be the population average of sleep per night of US adults.  The null hypothesis corresponds to sleeping an average of 7 hours per night, or $H_0: \mu = 7$ hours. Since the question asks for evidence that average sleep might be less than 7, $H_A: \mu < 7$.
+\textit{Specifying the  null and alternative hypotheses}.  Let $\mu$ be the population average of sleep per night of US adults.  The null hypothesis corresponds to sleeping an average of 7 hours per night, or $H_0: \mu = 7$ hours. Since the question asks for evidence that average sleep might be less than 7, $H_A: \mu < 7$.
 
 \textit{Specify the significance level, $\alpha$}.  A significance level of $\alpha = 0.05$ seems reasonable. 
 
@@ -672,12 +737,13 @@ For this one-sided alternative $H_A: \mu < 7.0$, the $p$-value will be
 
 Note that this $p-value$ is much greater than 0.05, because instead of observing a value of $\overline{x}$ that was smaller than $\mu_0 = 7$, the value is larger than  7.  The difference in the $t-statistic$ is in the opposite direction of the specified alternative.
 
-One common error in one-sided tests is to assume that the $p$-value will always be the area in the smaller of the two tails to the right or left of the observed value, instead of the area that corresponds to the alternative hypothesis.  Comparing $\overline{x}$ with $\mu_0$ in this case shows that in fact average sleep is larger, not smaller, than 7 hours per night.
-
 \textit{picture here will be useful}
 
 \textit{Draw a conclusion}.  The $p$-value is larger than the specified significance level $\alpha$.  The null hypothesis is not rejected since the data do not contain evidence to support the claim that adults sleep less than 7 hours per night.
 
+\end{example}
+
+One common error in one-sided tests is to assume that the $p$-value will always be the area in the smaller of the two tails to the right or left of the observed value, instead of the area that corresponds to the alternative hypothesis.  Comparing $\overline{x}$ with $\mu_0$ in this case shows that in fact average sleep is larger, not smaller, than 7 hours per night.
 
 \subsection{Decision errors}
 
@@ -743,6 +809,7 @@ A government agency responsible for approving drugs to be marketed to the genera
 
 
 
+\begin{comment}
 
 \subsection{Two more examples}
 \label{hypothesisTestingExamples}
@@ -822,6 +889,8 @@ Since the $p$-value is larger than $\alpha$, there is insufficient evidence to r
 	
 \index{data!school sleep|)}
 
+\end{comment}
+
 \subsection{Hypothesis testing and confidence intervals}
 
 \textit{JV: The OI section "Hypothesis testing using confidence intervals" doesn't seem very useful. Recommend putting in this section what we generally cover in 102 -- comparison of the information a CI gives vs. a hypothesis test at same $\alpha$.}
@@ -832,10 +901,17 @@ In a confidence interval for a mean, a potential population mean that falls outs
 {When testing the null hypothesis $H_0:\mu = \mu_0$ against the two-sided alternative $H_A: \mu \neq \mu_0$, with significance level $\alpha$, $H_0$ will be rejected whenever the $100(1-\alpha/2)\%$ confidence interval for $\mu$ does not contain $\mu_0$. 
 }}
 \end{termBox}
-
 For the confidence level 95\%, a hypothesis test for a mean will be rejected at $\alpha = 0.05$ when the 95\% confidence interval does not contain the null hypothesis value of the population mean.
 
-\textit{put an example here}
+\begin{example}
+	
+In the published data on mercury in bluefin tuna off the coast of New Jersey, $\overline{x}_{\text{mercury}} = 0.53$ and $s_{\text{mercury}} = 0.16$ ppm.  The 95\% confidence interval for the population mean mercury content is 
+\[
+0.53 \pm 1.96 \frac{0.16}{\sqrt{21}} = (0.462, 0.598).
+\]
+
+The confidence interval in this case is helpful in understanding the somewhat ambiguous conclusion drawn from the data. It is a relatively wide interval containing values that might be regarded as safe (0.47 ppm) and others that would be regarded as potential dangerous (0.58 ppm).
+\end{example}
 
 
 The same relationship holds for one-sided tests and confidence intervals, although it is used less often.
@@ -850,7 +926,13 @@ The same relationship holds for one-sided tests and confidence intervals, althou
 }}
 \end{termBox}
 
-\textit{desperately need a some good examples here, probably referring back to the examples of tests that we will use to replace the sleep examples.  This section also assumes we add one-sided intervals to the section on confidence intervals. }
+\begin{example}
+
+In the analysis of the BMI data, the one-sided test $H_0: \mu{\text{BMI}} = 21.7$ vs $H_A:\mu{\text{BMI}} > 21.7$ was rejected with a highly significant $p$-value, and the lower 95\% confidence bound for $\mu_{\text{BMI}}$ was 29.3.  Since 21.7 is outside the one-sided interval, the null hypothesis could also be rejected after inspecting the one-sided confidence interval.
+
+Confidence intervals and tests do provide slightly different information. The interval provides a range of plausible values for a parameter, a test does not.  The $p$-value in a test provides a measure of the strength of the evidence against the null hypothesis, something that is not available in a confidence interval.  In practice, both a test and a confidence interval are computed.
+
+\end{example}
 
 \subsection{Choosing between one-sided and two-sided tests}
 
