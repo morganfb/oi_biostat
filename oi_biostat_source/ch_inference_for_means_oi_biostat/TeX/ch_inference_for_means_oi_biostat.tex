@@ -19,6 +19,7 @@ Chapter~\ref{foundationsForInference} introduced some of the primary tools of st
 \section{Inference for one-sample means with the $t$-distribution}
 \label{oneSampleMeansWithTDistribution}
 
+
 The tools studied in Chapter~\ref{foundationsForInference} all made use of the $t$-statistic from a sample mean:
 \[
    t = \frac{\overline{x} - \mu}{s}.
@@ -108,8 +109,9 @@ We identify the row in the $t$-table using the degrees of freedom: $df=20$. Then
 
 \subsection{Using the $t$-distribution for tests and confidence intervals for a population mean}
 \label{oneSampleTConfidenceIntervalsTests}
+\index{data!dolphins and mercury|(}
 
-Chapter~\ref{foundationsForInference} provided formulas for tests and confidence intervals in random samples large enough for the $t$-statistic to have a nearly normal distribution.  In samples smaller than 30 from approximately symmetric distributions without large outliers, the $t$-statistic has a $t$-distribution with degrees of freedom equal to the sample size - 1. Just like inference in larger samples, inference using the $t$-distribution also require that the observations in the sample be independent.  Random samples from very large populations always produce independent observations;  in smaller populations, observations will be approximately independent as long as the size of the sample is no larger than 10\% of the population.
+Chapter~\ref{foundationsForInference} provided formulas for tests and confidence intervals for population means in random samples large enough for the $t$-statistic to have a nearly normal distribution.  In samples smaller than 30 from approximately symmetric distributions without large outliers, the $t$-statistic has a $t$-distribution with degrees of freedom equal to the sample size - 1. Just like inference in larger samples, inference using the $t$-distribution also require that the observations in the sample be independent.  Random samples from very large populations always produce independent observations;  in smaller populations, observations will be approximately independent as long as the size of the sample is no larger than 10\% of the population.
 
 Formulas for tests and intervals using the $t-$distribution are very similar to those using the normal distribution.  For a sample of size $n$ with sample mean $\overline{x}$ and standard deviation $s$, two-sided confidence intervals with confidence coefficient $100(1 - \alpha)$\% have the form
 \[
@@ -154,7 +156,7 @@ This example uses data from a sample of 19 Risso's dolphins from the Taiji area 
 \centering
 \begin{tabular}{ccc cc}
 \hline
-$n$ & $\bar{x}$ & $s$ & minimum & maximum \\
+$n$ & $\overline{x}$ & $s$ & minimum & maximum \\
 19   & 4.4	  & 2.3  & 1.7	       & 9.2 \\
 \hline
 \end{tabular}
@@ -162,38 +164,123 @@ $n$ & $\bar{x}$ & $s$ & minimum & maximum \\
 \label{summaryStatsOfHgInMuscleOfRissosDolphins}
 \end{table}
 
-The observations are a simple random sample and consist of less than 10\% of the population, so independence of the observations is reasonable. The summary statistics in Table~\ref{summaryStatsOfHgInMuscleOfRissosDolphins} do not suggest any skew or outliers; all observations are within 2.5 standard deviations of the mean. Based on this evidence, the approximate normality assumption seems reasonable.
+The observations are a simple random sample consisting of less than 10\% of the population, so independence of the observations is reasonable. The summary statistics in Table~\ref{summaryStatsOfHgInMuscleOfRissosDolphins} do not suggest any skew or outliers; all observations are within 2.5 standard deviations of the mean. Based on this evidence, the approximate normality assumption seems reasonable.
 
+With large samples, $z^{\star}$ and the standard error to determine the width of a confidence interval. With a sample size of 19, it will be more accurate to use the $t$-distribution:
+\begin{align*}
+\overline{x} \pm  t^{\star}_{\text{df}}\text{SE} &= \overline{x}  \pm  t^{\star}_{18} \sqrt{s}/n \\
+&= 4.4 \pm  2.10 2.3/\sqrt{19} \\
+&= (3.29, 5.51)\,\, \mu\text{g/wet g}.
+\end{align*}
 
-In the normal model, we used $z^{\star}$ and the standard error to determine the width of a confidence interval. We revise the confidence interval formula slightly when using the $t$-distribution:
-\begin{eqnarray*}
-\bar{x} \ \pm\  t^{\star}_{df}SE
-\end{eqnarray*}
-\marginpar[\raggedright\vspace{-9mm}
-
-$t^{\star}_{df}$\vspace{1mm}\\\footnotesize Multiplication\\factor for\\$t$ conf. interval]{\raggedright\vspace{-9mm}
-
-$t^{\star}_{df}$\vspace{1mm}\\\footnotesize Multiplication\\factor for\\$t$ conf. interval}The sample mean and estimated standard error are computed just as before ($\bar{x} = 4.4$ and $SE = s/\sqrt{n} = 0.528$). The value $t^{\star}_{df}$ is a cutoff we obtain based on the confidence level and the $t$-distribution with $df$ degrees of freedom. Before determining this cutoff, we will first need the degrees of freedom.
-
-\begin{termBox}{\tBoxTitle{Degrees of freedom for a single sample}
-If the sample has $n$ observations and we are examining a single mean, then we use the $t$-distribution with $df=n-1$ degrees of freedom.}
-\end{termBox}
-
-In our current example, we should use the $t$-distribution with $df=19-1=18$ degrees of freedom. Then identifying $t_{18}^{\star}$ is similar to how we found $z^{\star}$. 
-\begin{itemize}
-\setlength{\itemsep}{0mm}
-\item For a 95\% confidence interval, we want to find the cutoff $t^{\star}_{18}$ such that 95\% of the $t$-distribution is between -$t^{\star}_{18}$ and $t^{\star}_{18}$.
-\item We look in the $t$-table on page~\pageref{tTableSample}, find the column with area totaling 0.05 in the two tails (third column), and then the row with 18 degrees of freedom: $t^{\star}_{18} = 2.10$.
-\end{itemize}
-Generally the value of $t^{\star}_{df}$ is slightly larger than what we would get under the normal model with~$z^{\star}$.
-
-Finally, we can substitute all our values into the confidence interval equation to create the 95\% confidence interval for the average mercury content in muscles from Risso's dolphins that pass through the Taiji area:
-\begin{eqnarray*}
-\bar{x} \ \pm\  t^{\star}_{18}SE
-	\quad \to \quad
-4.4 \ \pm\  2.10 \times 0.528
-	\quad \to \quad
-(3.29, 5.51)
-\end{eqnarray*}
-We are 95\% confident the average mercury content of muscles in Risso's dolphins is between 3.29 and 5.51 $\mu$g/wet gram, which is considered extremely high.
+The point $z^{\star}$ from a normal distribution is replaced by a point from a $t$-distribution, but sample mean and estimated standard error are unchanged.  In this example the $t^{\star}$ point can be read from the in the $t$-table on page~\pageref{tTableSample}, in the column with area totaling 0.05 in the two tails (third column), the row with 18 degrees of freedom.  Based on these data, one can be 95\% confident the average mercury content of muscles in Risso's dolphins is between 3.29 and 5.51 $\mu$g/wet gram, which is considered high.
 \end{example}
+
+The blue fin tuna example in Chapter~\ref{foundationsForInference} cited 0.50 $\mu$g/wet g as the cutoff for safe limits of mercury content.  The two-sided confidence interval for population mean mercury content $
+mu$ in the shark muscle example shows that the two-sided hypothesis $H_0: \mu = 0.5$ vs $H_A: \mu > 0.5$ would be rejected at the 0.05 level of significance.  The data provide statistically significant evidence that mercury content in this population is different from 0.1 $\mu$g/wet gram and is, in fact, higher than 0.50.  A formal significance test uses the $t$-statistic
+\begin{align*}
+	t &= \frac{\overline{x} - \mu_0}{\text{SE}} \\
+	  &= \frac{4.4 - 0.50}{2.3/\sqrt{19}} \\
+	  &= 7.39.
+\end{align*}
+Line 18 of the $t$-table on page~\pageref{tTableSample} shows that the probability that the absolute value of a $t$-random variable with 18 df is greater than 7.39 is smaller than 0.01. So for this test, $p < 0.01$, where $p$ is the p-value for the test. Using software, one can show that in fact the $p < 0.001$.
+
+\begin{exercise} \label{croakerWhiteFishPacificExerConditions}
+\index{data!white fish and mercury|(}
+The FDA's webpage provides some data on mercury content of fish.\footnote{\oiRedirect{textbook-fda_mercury_in_fish_2010}{www.fda.gov/food/foodborneillnesscontaminants/metals/ucm115644.htm}} Based on a sample of 15 croaker white fish (Pacific), a sample mean and standard deviation were computed as 0.287 and 0.069 ppm (parts per million), respectively. The 15 observations ranged from 0.18 to 0.41 ppm. It is reasonable to assume these observations are independent. Based on summary statistics, does the normality assumption seem reasonable? \footnote{There are no obvious outliers; all observations are within 2 standard deviations of the mean. If there is skew, it is not evident. There are no red flags for the normal model based on this (limited) information.}
+\end{exercise}
+
+\begin{example}{Estimate the standard error of $\bar{x}=0.287$ ppm using the data summaries in Guided Practice~\ref{croakerWhiteFishPacificExerConditions}. If the $t$-distribution is used to calculte a 90\% confidence interval for the population mean of the mercury content, identify the degrees of freedom and find $t^{\star}_{\text{df}}$.}
+\label{croakerWhiteFishPacificExerSEDFTStar}
+The standard error: $\text{SE} = \frac{0.069}{\sqrt{15}} = 0.0178$. Degrees of freedom: $\text{df} = n - 1 = 14$.
+
+Using the column where two tails is 0.100 (for a 90\% confidence interval) and row $\text{df}=14$,  $t^{\star}_{14} = 1.76$.
+\end{example}
+
+\begin{exercise}
+Using the results of Guided Practice~\ref{croakerWhiteFishPacificExerConditions} and Example~\ref{croakerWhiteFishPacificExerSEDFTStar}, compute a 90\% confidence interval for the average mercury content of croaker white fish (Pacific).\footnote{$\bar{x} \ \pm\ t^{\star}_{14} SE \ \to\  0.287 \ \pm\  1.76\times 0.0178\ \to\ (0.256, 0.318)$. We are 90\% confident that the average mercury content of croaker white fish (Pacific) is between 0.256 and 0.318 ppm.}
+
+\index{data!white fish and mercury|)}
+
+\end{exercise}
+
+\section{Paired Data}
+\label{pairedData}
+
+\index{paired data|(}
+
+
+Did a new design for wet suits bring about increased swimming times in the 2000 Olympics? Many people thought so.  de Lucas and co-authors (2000)\footnote{De Lucas et. al, The effects of wetsuits on physiological and biomechanical indices during swimming. \textit{Journal of Science and Medicine in Sport,} 2000; 3(1): 1-8} designed and conducted a study to test the hypothesis that suits had no effect on swimming speed. 
+
+Twelve competitive swimmers swam 1500m at maximum speed, once wearing a wetsuit and once wearing a regular swimsuit, with the order of wetsuit vs swimsuit randomized for each of  the 12 swimmers.  The Investigators recorded maximum velocity for each swimmer, measured in meters per second (m/sec). The data in Table~\ref{swimSuitTimes} can be found in Table 3 the de Lucas paper and in the Lock, et. al. text\footnote{Lock et. al \textit{Statistics, Unlocking the Power of Data}, Wiley, 2013.}
+
+% Tue Jul 26 15:15:14 2016
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrr}
+  \hline
+ & swimmer.number & wet.suit.velocity & swim.suit.velocity \\ 
+  \hline
+1 & 1.00 & 1.57 & 1.49 \\ 
+  2 & 2.00 & 1.47 & 1.37 \\ 
+  3 & 3.00 & 1.24 & 1.35 \\ 
+  4 & 4.00 & 1.35 & 1.27 \\ 
+  5 & 5.00 & 1.22 & 1.12 \\ 
+  6 & 6.00 & 1.75 & 1.64 \\ 
+  7 & 7.00 & 1.64 & 1.59 \\ 
+  8 & 8.00 & 1.57 & 1.52 \\ 
+  9 & 9.00 & 1.56 & 1.50 \\ 
+  10 & 10.00 & 1.53 & 1.45 \\ 
+  11 & 11.00 & 1.49 & 1.44 \\ 
+  12 & 12.00 & 1.51 & 1.41 \\ 
+   \hline
+\end{tabular}
+\caption{Paired Swim Suit Data} 
+\label{swimSuitTimes}
+\end{table}
+
+\begin{comment}
+wet.suit.velocity = c(1.57, 1.47, 1.24, 1.35, 1.22, 
+                      1.75, 1.64, 1.57, 1.56, 1.53, 
+                      1.49, 1.51 )
+swim.suit.velocity = c(1.49, 1.37, 1.35, 1.27, 1.12, 
+                       1.64, 1.59, 1.52, 1.50, 1.45, 
+                       1.44, 1.41)
+swimmer.number = c(1:12)
+swim.suit.study = as.data.frame(cbind(swimmer.number,
+                   wet.suit.velocity, 
+                   swim.suit.velocity))
+
+swim.suit.study
+
+xtable(swim.suit.study, caption="Paired Swim Suit Data", 
+       label="swimSuitTimes")
+	
+\end{comment}
+The swimsuit velocity dataset is an example of \term{paired data} -- each swimmer has two measured velocities, one with a wet suit and one with a regular swimsuit.  A natural measure of the effect of the wet suit is the difference between the measured maximum velocities (\texttt{wet.suit.veocity - swim.suit.velocity}), and the average difference may shed some light on wet suit effect.  The analysis of the differences from these paired measurements uses the $t$-statistic for a confidence interval and test.  Even though there are two measurements per swimmer, the difference in velocities reduces the problem to a one-sample problem, essentially identical in structure to the problems discussed in Section~\ref{oneSampleMeansWithTDistribution}.
+
+Suppose the parameter $\delta$ is the population average of the difference in maximum velocities during a 1500m swim if all competitive swimmers swam with each swim suit type.  This is, of course, a hypothetical population of values, but is useful conceptually in this setting.  When a new intervention is tried for the first time, it is standard practice not to assume that the effect of the intervention will be positive  -- medicine has many examples where new drugs thought to be useful turned out to be harmful.  So in this setting, a natural test to start with is the two-sided $t$-test for the hypothesis
+\[
+    H_0: \delta = 0 \text{  vs.  } H_A: \delta \neq 0.
+\]
+
+The important assumptions behind the test which should not be ignored:
+\begin{itemize}
+	
+	\item  The data are a random sample from the population.  The observations are very likely independent, but it is more difficult to justify the assumption that the sample of swimmers is drawn randomly from the population of competitive swimmers.  The swimmers are a collection of volunteers for this study.  Nevertheless, it is often assumed in problems such as this that the swimmers participating in the study are reasonably representative of competitive swimmers.
+	
+	\item The population of differences is approximately normally distributed.  This is a small sample, one in which normality would be difficult to confirm.  The dot plot for the difference in velocities is shown in Figure~\ref{swimmerDotPlot} and shows approximate symmetry with no large outliers, so the assumption is probably reasonable.
+	
+\end{itemize}	
+
+\textit{dotplot goes here}
+
+\begin{comment}
+	-- have to give the t-stat
+	
+	-- conclusions
+	
+	-- two-sided  confidence interval
+	
+	-- algebraic formulatio
+\end{comment}
