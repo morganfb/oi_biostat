@@ -239,27 +239,25 @@ Twelve competitive swimmers swam 1500m at maximum speed, once wearing a wetsuit 
 \label{swimSuitTimes}
 \end{table}
 
-\begin{comment}
-wet.suit.velocity = c(1.57, 1.47, 1.24, 1.35, 1.22, 
-                      1.75, 1.64, 1.57, 1.56, 1.53, 
-                      1.49, 1.51 )
-swim.suit.velocity = c(1.49, 1.37, 1.35, 1.27, 1.12, 
-                       1.64, 1.59, 1.52, 1.50, 1.45, 
-                       1.44, 1.41)
-swimmer.number = c(1:12)
-swim.suit.study = as.data.frame(cbind(swimmer.number,
-                   wet.suit.velocity, 
-                   swim.suit.velocity))
+%wet.suit.velocity = c(1.57, 1.47, 1.24, 1.35, 1.22, 
+%                      1.75, 1.64, 1.57, 1.56, 1.53, 
+%                      1.49, 1.51 )
+%swim.suit.velocity = c(1.49, 1.37, 1.35, 1.27, 1.12, 
+%                       1.64, 1.59, 1.52, 1.50, 1.45, 
+%                       1.44, 1.41)
+%swimmer.number = c(1:12)
+%swim.suit.study = as.data.frame(cbind(swimmer.number,
+%                   wet.suit.velocity, 
+%                   swim.suit.velocity))
 
-swim.suit.study
+%swim.suit.study
 
-xtable(swim.suit.study, caption="Paired Swim Suit Data", 
-       label="swimSuitTimes")
+%xtable(swim.suit.study, caption="Paired Swim Suit Data", 
+%       label="swimSuitTimes")
 	
-\end{comment}
-The swimsuit velocity dataset is an example of \term{paired data} -- each swimmer has two measured velocities, one with a wet suit and one with a regular swimsuit.  A natural measure of the effect of the wet suit is the difference between the measured maximum velocities (\texttt{wet.suit.veocity - swim.suit.velocity}), and the average difference may shed some light on wet suit effect.  The analysis of the differences from these paired measurements uses the $t$-statistic for a confidence interval and test.  Even though there are two measurements per swimmer, the difference in velocities reduces the problem to a one-sample problem, essentially identical in structure to the problems discussed in Section~\ref{oneSampleMeansWithTDistribution}.
+The swimsuit velocity dataset is an example of \term{paired data} -- each swimmer has two measured velocities, one with a wet suit and one with a regular swimsuit.  A natural measure of the effect of the wet suit is the difference between the measured maximum velocities (\texttt{diff = wet.suit.veocity - swim.suit.velocity}), and the average difference may shed some light on wet suit effect.  The analysis of the differences from these paired measurements uses the $t$-statistic for a confidence interval and test.  Even though there are two measurements per swimmer, the difference in velocities reduces the problem to a one-sample problem, essentially identical in structure to the problems discussed in Section~\ref{oneSampleMeansWithTDistribution}.
 
-Suppose the parameter $\delta$ is the population average of the difference in maximum velocities during a 1500m swim if all competitive swimmers swam with each swim suit type.  This is, of course, a hypothetical population of values, but is useful conceptually in this setting.  When a new intervention is tried for the first time, it is standard practice not to assume that the effect of the intervention will be positive  -- medicine has many examples where new drugs thought to be useful turned out to be harmful.  So in this setting, a natural test to start with is the two-sided $t$-test for the hypothesis
+Suppose the parameter $\delta$ is the population average of the difference in maximum velocities during a 1500m swim if all competitive swimmers swam with each swim suit type. This is, of course, a hypothetical population of values, but is useful conceptually in this setting.  When a new intervention is tried for the first time, it is standard practice not to assume that the effect of the intervention will necessarily be positive  -- medicine, for example, has many examples where new drugs thought to be useful turned out to be harmful.  So in this setting, a natural test to start with is the two-sided $t$-test for the hypothesis
 \[
     H_0: \delta = 0 \text{  vs.  } H_A: \delta \neq 0.
 \]
@@ -273,14 +271,50 @@ The important assumptions behind the test which should not be ignored:
 	
 \end{itemize}	
 
+
+
 \textit{dotplot goes here}
 
-\begin{comment}
-	-- have to give the t-stat
-	
-	-- conclusions
-	
-	-- two-sided  confidence interval
-	
-	-- algebraic formulatio
-\end{comment}
+Let $\overline{x}_{\text{diff}}$ denote the sample average of the differences in maximum velocity, $s$ be the standard deviation of the differences, and $n$ the number of pairs in the dataset (12 in this case). The $t$-statistic used to test $H_0$ vs. $H_A$ is 
+\[
+        \frac{\overline{x}_{\text{diff}} - 0} {s_{\text{diff}}/\sqrt{n}}.
+\]
+For a general null hypothesis $H_0 = \delta_0$ the $t$ statistic is
+\[
+        \frac{\overline{x}_{\text{diff}} - \delta_0} {s_{\text{diff}}/\sqrt{n}}.
+\]
+
+Here are the steps in testing the hypothesis.
+
+\begin{enumerate}
+
+ \item The null and alternative hypotheses have already been specified.
+
+  \item The choice $\alpha = 0.05$ seems reasonable in this setting.
+
+  \item The $t$-statistic uses the summary mean of the observed differences, $\overline{x}_{\text{diff}} = 0.0625$m/sec, and the standard deviation $s_{\text{diff}} = 0.058$.  The $t$-statistic has value  
+\[
+	  t = \frac{0.0625 - 0}{0.058/\sqrt{12}} = 3.70. 
+\]
+
+\item The two-sided $p$-value is
+$$ p = P(T < -\text{3.70}) + P(T > \text{3.70}), $$
+where $T$ is a $t$-distributed random variable with $n-1 = 11$  degrees of freedom.
+The $t$-table shows that $p < 0.01$. A more accurate value of $p$ (0.004) can be obtained from software. 
+
+\item  The data support the claim that the wet suits changed swim velocity in a 1500 swim. The average increase of 0.0625m/sec is significantly different than  the null hypothesis of no change.
+
+\end{enumerate}
+
+A two-sided 95\% confidence interval for the average velocity difference has the form 
+\[ \left(
+  \overline{x}_{\text{diff}} - \frac{s_{\text{diff}}}{\sqrt{n}} t^*,
+  \:\: \overline{x}_{\text{diff}} + \frac{s_{\text{diff}}}{\sqrt{n}} t^* \right), 
+\] 
+where $t^*$ is the point on a *t* distribution with $df = n-1$ that has area 0.025 to its right.  
+
+\textit{insert confidence interval here}
+
+\textit{close with summary of approach, perhaps}
+
+
