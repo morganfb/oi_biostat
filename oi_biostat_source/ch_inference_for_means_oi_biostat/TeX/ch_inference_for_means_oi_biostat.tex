@@ -311,10 +311,212 @@ A two-sided 95\% confidence interval for the average velocity difference has the
   \overline{x}_{\text{diff}} - \frac{s_{\text{diff}}}{\sqrt{n}} t^*,
   \:\: \overline{x}_{\text{diff}} + \frac{s_{\text{diff}}}{\sqrt{n}} t^* \right), 
 \] 
-where $t^*$ is the point on a *t* distribution with $df = n-1$ that has area 0.025 to its right.  
+where $t^*$ is the point on a *t* distribution with $df = n-1 = 11$ that has area 0.025 to its right, 2.20.
 
-\textit{insert confidence interval here}
+The confidence interval has value (0.03, 0.10) m/sec.  Consistent with the results of the hypothesis test, the interval does not include 0 (no change).
 
-\textit{close with summary of approach, perhaps}
+The general approach when analyzing paired data is exactly as shown here: calculate the differences between the values in each pair, then use those differences in methods for confidence intervals and tests for a single sample.   Any conclusion from the analysis should be stated in terms of the original paired measurements.
+
+
+%__________________
+\section{Difference of two means}
+\label{differenceOfTwoMeans}
+
+
+Does treatment using embryonic stem cells (ESCs) help improve heart function following a heart attack?  This question, and many like it, are the motivation for studying the effect of interventions in clinical studies. Interventional studies often lead to the comparisons of average outcome in the group with the intervention with the average outcome in the group without the intervention.  Statistically, this is the problem of drawing inference about the difference in two population means, $\mu_1 - \mu_2$, when the data are not paired. The natural statistic is a point estimate of the difference, $\bar{x}_1 - \bar{x}_2$.  This estimate is used to calculate a $t$-statistic that is the basis of confidence intervals and tests.
+
+\subsection{Confidence interval for a difference of means}
+
+\index{data!stem cells, heart function|(}
+\index{point estimate!difference of means|(}
+
+Table~\ref{summaryStatsForSheepHeartDataWhoReceivedMiceESCs} contains summary statistics for an experiment to test ESCs in sheep that had a heart attack. Each of these sheep was randomly assigned to the ESC or\text{esc} control group, and the change in their hearts' pumping capacity was measured in the study. A~positive value corresponds to increased pumping capacity, which generally suggests a stronger recovery. This section exhibits a 95\% confidence interval for the effect of ESCs on the change in heart pumping capacity relative to the control group.
+
+The difference in sample means is a point estimate of the difference in outcomes between the two groups:
+\begin{eqnarray*}
+\bar{x}_{\text{esc}} - \bar{x}_{\text{control}}\ =\ 3.50 - (-4.33)\ =\ 7.83
+\end{eqnarray*}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{l rrrrr}
+\hline
+\hspace{10mm}	& $n$	& $\bar{x}$	& $s$  	 \\
+\hline
+ESCs		& 9		& 3.50		& 5.17  	\\
+control		& 9		& -4.33		& 2.76  	 \\
+\hline
+\end{tabular}
+\caption{Summary statistics of the embryonic stem cell study.}
+\label{summaryStatsForSheepHeartDataWhoReceivedMiceESCs}
+\end{table}
+
+%\begin{example}{Set up hypotheses that will be used to test whether there is convincing evidence that ESCs actually increase the amount of blood the heart pumps. Also, check conditions for using the $t$-distribution for inference with the point estimate $\bar{x}_1 - \bar{x}_2$. To assist in this assessment, the data are presented in Figure~\ref{stemCellTherapyForHearts}.}\label{exampleToEvaluteWhetherESCsAreHelpfulInImprovingHeartFunctionInSheep}
+%We first setup the hypotheses:
+%\begin{itemize}
+%\setlength{\itemsep}{0mm}
+%\item[$H_0$:] The stem cells do not improve heart pumping function. $\mu_{\text{esc}} - \mu_{\text{control}} = 0$.
+%\item[$H_A$:] The stem cells do improve heart pumping function. $\mu_{\text{esc}} - \mu_{\text{control}} > 0$.
+%\end{itemize}
+%\end{example}
+
+\begin{termBox}{\tBoxTitle{Using the $t$-distribution for a difference in means}
+\label{ConditionsForTwoSampleTDist}The $t$-distribution can be used for inference when working with the standardized difference of two means if (1) each sample meets the conditions for using the $t$-distribution and (2) the samples are independent.}
+\end{termBox}
+
+\begin{example}{Can the $t$-distribution be used to make inference using the point estimate, $\bar{x}_{\text{esc}} - \bar{x}_{\text{control}} = 7.83$?}
+Begin with the two required conditions:
+\begin{enumerate}
+\item In this study, the sheep were independent of each other. Additionally, the distributions in Figure~\ref{stemCellTherapyForHearts} don't show any prominent outliers, usually an indication in small samples of deviation from normality. This suggests that each sample mean could be modeled using a $t$-distribution.
+\item The sheep in each group were also independent of each other.
+\end{enumerate}
+Because both conditions are met, the $t$-distribution can be used to model the difference of the two sample means.
+\end{example}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.58\textwidth]{ch_inference_for_means_oi_biostat/figures/stemCellTherapyForHearts/stemCellTherapyForHearts}
+\caption{Histograms for both the embryonic stem cell group and the control group. Higher values are associated with greater improvement. There is no evidence of skew in these data; however, it is worth noting that skew would be difficult to detect with such a small sample.}
+\label{stemCellTherapyForHearts}
+\end{figure}
+
+%\begin{termBox}{\tBoxTitle{Conditions for applying the $t$-distribution to $\bar{x}_1 - \bar{x}_2$}
+%If the sample means, $\bar{x}_1$ and $\bar{x}_2$, each meet the criteria for using the $t$-distribution and the observations in the two samples are independent, then we can analyze the difference in sample means using the $t$-distribution.}
+%\end{termBox}
+
+\index{point estimate!difference of means|)}
+\index{standard error (SE)!difference in means}
+
+The following formula is used to calculate the standard error of $\bar{x}_{\text{esc}} - \bar{x}_{\text{control}}$:
+\index{standard error (SE)!difference in means}
+\begin{eqnarray*}
+SE_{\bar{x}_{\text{esc}} - \bar{x}_{\text{control}}} = \sqrt{\frac{\sigma_{\text{esc}}^2}{n_{\text{esc}}} + \frac{\sigma_{\text{control}}^2}{n_{\text{control}}}}
+\end{eqnarray*}
+This standard error is usually estimated using standard deviation estimates from on the samples:
+\begin{align*}
+SE_{\bar{x}_{\text{esc}} - \bar{x}_{\text{control}}}
+	&= \sqrt{\frac{\sigma_{\text{esc}}^2}{n_{\text{esc}}} + \frac{\sigma_{\text{control}}^2}{n_{\text{control}}}} \\
+	&\approx \sqrt{\frac{s_{\text{esc}}^2}{n_{\text{esc}}} + \frac{s_{\text{control}}^2}{n_{\text{control}}}}
+	= \sqrt{\frac{5.17^2}{9} + \frac{2.76^2}{9}} = 1.95
+\end{align*}
+The $t$-distribution used in this setting has a somewhat complicated degrees of freedom, usually calculated with software.  An alternative approach uses the smaller of $n_1 - 1$ and $n_2 - 1$, used here in  examples and guided practice.\footnote{This technique for degrees of freedom is conservative with respect to a Type~1 Error; it is more difficult to reject the null hypothesis using this formula for $df$. In this example, computer software would have provided us a more precise degrees of freedom of $\text{df} = 12.225$.}
+
+\begin{termBox}{\tBoxTitle{Distribution of a difference of sample means}
+The sample difference of two means, $\bar{x}_1 - \bar{x}_2$, can be modeled using the $t$-distribution and the standard error
+\begin{eqnarray}
+\textstyle
+SE_{\bar{x}_{1} - \bar{x}_{2}} = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}
+\label{seOfDifferenceInMeans}
+\end{eqnarray}
+when each sample mean can itself be modeled using a $t$-distribution and the samples are independent. To calculate the degrees of freedom, use statistical software or the smaller of $n_1 - 1$ and $n_2 - 1$.}
+\end{termBox}\textC{\vspace{-10mm}}
+
+\begin{example}{Calculate a 95\% confidence interval for the effect of ESCs on the change in heart pumping capacity of sheep after they've suffered a heart attack.}
+The solution uses the sample difference and the its standard error:\textC{\vspace{-3mm}}
+\begin{align*}
+& \bar{x}_{\text{esc}} - \bar{x}_{\text{control}} = 7.83 \\
+& SE = \sqrt{\frac{5.17^2}{9} + \frac{2.76^2}{9}} = 1.95
+\end{align*}
+With $\text{df} = 8$,  $t^{\star}_{\text{df}} = t^{\star}_{8} = 2.31$ for a 95\% confidence interval:\textC{\vspace{-1mm}}
+\begin{align*}
+\text{point estimate} \ \pm\ t^{\star}SE \quad\rightarrow\quad
+7.83 \ \pm\ 2.31\times 1.95 \quad\rightarrow\quad (3.38, 12.38)
+\end{align*}
+The data suggest that (with 95\% confidence) embryonic stem cells improve the heart's pumping function in sheep that have suffered a heart attack by 3.38\% to 12.38\%.
+\end{example}
+
+\index{data!stem cells, heart function|)}
+
+
+\subsection{Hypothesis tests based on a difference in means}
+
+\index{data!baby\_smoke|(}
+
+The data set \data{baby\_\hspace{0.3mm}smoke} contains a random sample of 150 cases of mothers and their newborns in North Carolina over a year. Four cases from this data set are represented in Table~\ref{babySmokeDF}. This example examines the association between weight if a newborn, \var{weight}, and smoking status of the mother, \var{smoke}.  Does the data contain  evidence that newborns from mothers who smoke have a different average birth weight than newborns from mothers who don't?  The smoking group includes 50 cases and the nonsmoking group contains 100 cases, shown in Figure~\ref{babySmokePlotOfTwoGroupsToExamineSkew}.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{rrrrrll}
+  \hline
+ & fAge & mAge & weeks & weight & sexBaby & smoke \\ 
+  \hline
+1 & NA & 13 &  37 & 5.00 & female & nonsmoker \\ 
+  2 & NA & 14 &  36 & 5.88 & female & nonsmoker \\ 
+  3 & 19 & 15 &  41 & 8.13 & male & smoker \\ 
+  $\vdots$ &   $\vdots$ &   $\vdots$ &   $\vdots$ &   $\vdots$ &   $\vdots$ \\
+  150 & 45 & 50 &  36 & 9.25 & female & nonsmoker \\ 
+   \hline
+\end{tabular}
+\caption{Four cases from the \data{baby\_\hspace{0.3mm}smoke} data set. The value ``NA'', shown for the first two entries of the first variable, indicates that piece of data is missing.\textC{-2mm}}
+\label{babySmokeDF}
+\end{table}
+
+\begin{figure}[hhh]
+\centering
+\includegraphics[width=0.63\textwidth]{ch_inference_for_means_oi_biostat/figures/babySmokePlotOfTwoGroupsToExamineSkew/babySmokePlotOfTwoGroupsToExamineSkew}
+\caption{The top panel represents birth weights for infants whose mothers smoked. The bottom panel represents the birth weights for infants whose mothers who did not smoke. The distributions exhibit moderate-to-strong and strong~skew, respectively.\index{skew!example: strong}}
+\label{babySmokePlotOfTwoGroupsToExamineSkew}
+\end{figure}
+
+\begin{example}{Set up appropriate hypotheses to evaluate whether there is a relationship between a mother smoking and average birth weight.}\label{babySmokeHTForWeight}
+The null hypothesis represents the case of no difference between the groups.
+\begin{itemize}
+\setlength{\itemsep}{0mm}
+\item[$H_0$:] There is no difference in average birth weight for newborns from mothers who did and did not smoke. In statistical notation: $\mu_{\text{n}} - \mu_{\text{s}} = 0$, where $\mu_{\text{n}}$ represents non-smoking mothers and $\mu_\text{s}$ represents mothers who smoked.
+\item[$H_A$:] There is some difference in average newborn weights from mothers who did and did not smoke ($\mu_{\text{n}} - \mu_{\text{s}} \neq 0$).
+\end{itemize}
+\end{example}
+
+As before, it is important to check the two conditions necessary to apply the $t$-distribution to the difference in sample means. (1) Because the data come from a simple random sample and consist of less than 10\% of all such cases, the observations are independent. Additionally, while each distribution is strongly skewed, the sample sizes of 50 and 100 would make it reasonable to model each mean separately using a $t$-distribution. The skew is reasonable for these sample sizes of 50 and 100. (2) The independence reasoning applied in (1) also ensures the observations in each sample are independent. Since both conditions are satisfied, the difference in sample means may be modeled using a $t$-distribution.
+
+%Summary statistics are shown for each sample in Table~\ref{summaryStatsOfBirthWeightForNewbornsFromSmokingAndNonsmokingMothers}.
+
+\begin{table}[hhh]
+\centering
+\begin{tabular}{lrr}
+	& \resp{smoker} & \resp{nonsmoker} \\
+\hline
+mean & 6.78 & 7.18 \\
+st. dev. & 1.43 & 1.60 \\
+samp. size & 50 & 100 \\
+\hline
+\end{tabular}
+\caption{Summary statistics for the \data{baby\_\hspace{0.3mm}smoke} data set.}
+\label{summaryStatsOfBirthWeightForNewbornsFromSmokingAndNonsmokingMothers}
+\end{table}
+
+\begin{exercise}
+The summary statistics in Table~\ref{summaryStatsOfBirthWeightForNewbornsFromSmokingAndNonsmokingMothers} may be useful for this exercise. (a)~What is the point estimate of the population difference, $\mu_{\text{n}} - \mu_{\text{s}}$? (b)~Compute the standard error of the point estimate from part (a).\footnote{(a)~The difference in sample means is an appropriate point estimate: $\bar{x}_{\text{n}} - \bar{x}_{\text{s}} = 0.40$. (b)~The standard error of the estimate can be estimated using Equation~(\ref{seOfDifferenceInMeans}):
+\begin{eqnarray*}
+SE = \sqrt{\frac{\sigma_n^2}{n_\text{n}} + \frac{\sigma_s^2}{n_\text{s}}}
+	\approx \sqrt{\frac{s_n^2}{n_\text{n}} + \frac{s_s^2}{n_\text{s}}}
+	= \sqrt{\frac{1.60^2}{100} + \frac{1.43^2}{50}}
+	= 0.26
+\end{eqnarray*}}
+\end{exercise}
+
+\textC{\newpage}
+
+\begin{example}{Draw a picture to represent the $p$-value for the hypothesis test from Example~\ref{babySmokeHTForWeight}.} \label{pictureOfPValueForEstimateOfDiffOfMeansOfBirthWeights}
+To depict the $p$-value,  draw the distribution of the point estimate as though $H_0$ were true and shade areas representing at least as much evidence against $H_0$ as what was observed. Both tails are shaded because it is a two-sided test.
+\begin{center}
+\includegraphics[width=0.6\textwidth]{ch_inference_for_means_oi_biostat/figures/distOfDiffOfSampleMeansForBWOfBabySmokeData/distOfDiffOfSampleMeansForBWOfBabySmokeData}
+\end{center}
+\end{example}
+
+\begin{example}{Compute the $p$-value of the hypothesis test using the figure in Example~\ref{pictureOfPValueForEstimateOfDiffOfMeansOfBirthWeights}, and evaluate the hypotheses using a significance level of $\alpha=0.05$.} \label{babySmokeHTForWeightComputePValueAndEvalHT}
+First compute the T-score:
+\begin{eqnarray*}
+T = \frac{\ 0.40 - 0\ }{0.26} = 1.54
+\end{eqnarray*}
+Next, compare this value to values in the $t$-table in Appendix~\vref{tDistributionTable}, using the smaller of $n_{\text{n}} - 1 = 99$ and $n_{\text{s}} - 1 = 49$ as the degrees of freedom: $df = 49$. The T-score falls between the first and second columns in the $df = 49$ row of the $t$-table, so the two-sided $p$-value isbetween 0.10 and 0.20. This p-value is larger than the significance value, 0.05, so the null hypothesis no rejected. There is insufficient evidence to say there is a difference in average birth weight of newborns from North Carolina mothers who did smoke during pregnancy and newborns from North Carolina mothers who did not smoke during pregnancy.
+\end{example}
+
+\begin{exercise}
+Does the conclusion to Example~\ref{babySmokeHTForWeightComputePValueAndEvalHT} mean that smoking and average birth weight are unrelated?\footnote{No. It is possible that there is some difference but we did not detect it. If there is a difference, we made a Type~2 Error.}
+\end{exercise}
+
+% insert OI summary here? or rewrite?
+
 
 
