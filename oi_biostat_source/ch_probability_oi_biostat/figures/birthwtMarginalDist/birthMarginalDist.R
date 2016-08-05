@@ -33,7 +33,7 @@ myPDF("birthwtMarginalDist.pdf",
 
 barplot(brthwt.marginal.dist.table,
         axes = TRUE,
-        xlab = 'Births',
+        xlab = 'Birth Weight (Grams)',
         ylab = 'Probability',
         main = '',
         ylim = c(0,0.4),
