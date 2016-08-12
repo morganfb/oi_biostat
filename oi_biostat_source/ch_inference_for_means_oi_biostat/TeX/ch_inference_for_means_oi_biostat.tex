@@ -8,6 +8,8 @@
 	-- Go back to chapter 4 to emphasize the possible use of software to compute normal probabilities.
 	
 	-- Do the same thing here when discussing computing t probabilities
+    
+    -- Add two independent group analysis of swim suit data and compare with the correct paired data version
 	
 \end{comment}
 
@@ -326,6 +328,7 @@ The general approach when analyzing paired data is exactly as shown here: calcul
 Does treatment using embryonic stem cells (ESCs) help improve heart function following a heart attack?  This question, and many like it, are the motivation for studying the effect of interventions in clinical studies. Interventional studies often lead to the comparisons of average outcome in the group with the intervention with the average outcome in the group without the intervention.  Statistically, this is the problem of drawing inference about the difference in two population means, $\mu_1 - \mu_2$, when the data are not paired. The natural statistic is a point estimate of the difference, $\bar{x}_1 - \bar{x}_2$.  This estimate is used to calculate a $t$-statistic that is the basis of confidence intervals and tests.
 
 \subsection{Confidence interval for a difference of means}
+\label{confidenceIntervalDifferenceMeans}
 
 \index{data!stem cells, heart function|(}
 \index{point estimate!difference of means|(}
@@ -428,7 +431,8 @@ The data suggest that (with 95\% confidence) embryonic stem cells improve the he
 \index{data!stem cells, heart function|)}
 
 
-\subsection{Hypothesis tests based on a difference in means}
+\subsection{Hypothesis tests for a difference in means}
+\label{testingDifferenceMeans}
 
 \index{data!baby\_smoke|(}
 
@@ -515,6 +519,80 @@ Next, compare this value to values in the $t$-table in Appendix~\vref{tDistribut
 \begin{exercise}
 Does the conclusion to Example~\ref{babySmokeHTForWeightComputePValueAndEvalHT} mean that smoking and average birth weight are unrelated?\footnote{No. It is possible that there is some difference but we did not detect it. If there is a difference, we made a Type~2 Error.}
 \end{exercise}
+
+\subsection{Pooled standard deviation estimate (special topic)}
+\label{pooledStandardDeviations}
+
+Occasionally, two populations will have standard deviations that are so similar that they can be treated as identical. For example, historical data or a well-understood biological mechanism may justify this strong assumption. In such cases, the $t$-distribution approach can be made slightly more precise by using a pooled standard deviation.
+
+The \term{pooled standard deviation} of two groups uses data from both samples to better estimate the common standard deviation and the standard error. If $s_1^{}$ and $s_2^{}$ are the standard deviations of groups 1 and 2 and there are good reasons to believe that the population standard deviations are equal, an improved estimate of the group variances can be obtained by pooling the data from the two groups:
+\begin{align*}
+s_{\text{pooled}}^2 = \frac{s_1^2 (n_1-1) + s_2^2 (n_2-1)}{n_1 + n_2 - 2}
+\end{align*}
+where $n_1$ and $n_2$ are the sample sizes, as before. In this setting, the $t$-statistic substitutes $s_{\text{pooled}}^2$ in place of $s_1^2$ and $s_2^2$ in the standard error formula. The degrees of freedom for the $t-$statistic is much simpler in this setting; it is the sum of the degrees of freedom for the two sample variances:
+\[
+\text{df} = n_1 + n_2 - 2.
+\]
+The $t$-statistic for testing the hypothesis of no difference between population means becomes 
+\[
+ t = \frac{\overline{x}_1 - \overline{x}_2}{s_{\text{pooled}}\sqrt{\frac{1}{n_2} + \frac{1}{n_2}}}. 
+\]
+Significance levels for the statistic are computed using a $t$-distribution with $n_1 + n_2 - 2$ degrees of freedom. The formula for the two-sided confidence interval for the difference in population means is
+\[
+(\overline{x}_1 - \overline{x}_2) \pm t^{\star} s_p \sqrt{\frac{1}{n_2} + \frac{1}{n_2}},
+\]
+where $t^{\star}$ is the point on a $t$-distribution with $n_1 + n_2 -2$ degrees of freedom chosen to according the confidence coefficient.
+
+The benefits of pooling the standard deviation are realized through obtaining a better estimate of the standard deviation for each group and using a larger degrees of freedom parameter for the $t$-distribution. Both of these changes may permit a more accurate model of the sampling distribution of $\bar{x}_1 - \bar{x}_2$, if the standard deviations of the two groups are~equal.  In most applications, however, it is difficult to verity th assumption of equal population standard deviations, and it is safer to use the methods discussed in Sections~\ref{confidenceIntervalDifferenceMeans} and \ref{testingDifferenceMeans}.
+
+\begin{caution}
+{Pool standard deviations only after careful consideration}
+{A pooled standard deviation is only appropriate when background research indicates the population standard deviations are nearly equal. When the sample size is large and the condition may be adequately checked with data, the benefits of pooling the standard deviations greatly diminishes.}
+\end{caution}
+
+
+%__________________
+\section[Sample size and power calculations for a difference of means (special topic)]{Power calculations for a difference of means\\ (special topic)}
+\label{PowerForDifferenceOfTwoMeans}
+
+The design of a study often involves many complex issues, most of which cannot be covered here.  Perhaps the most important statistical issue in the design stage is choosing an appropriate sample size, and the main aspects of setting a sample size for the comparison of two groups is discussed in this section.  The power of a statistical test is the probability that the test will reject the null hypothesis when the alternative hypothesis is true, so sample sizes are chosen to make that probability sufficiently large, typically between 80 and 90\%.  Power, of course, must be calculated before any data are gathered, since once data and the value of a test statistic are available, it will be clear whether or not the null hypothesis is rejected.
+
+Two competing considerations arise in choosing a sample size:
+\begin{itemize}
+\setlength{\itemsep}{0mm}
+\item The study should be sufficiently large to allow important group differences to be detected in a hypothesis test. 
+\item Collecting data is usually expensive and time consuming, and may pose either inconvenience or risk for study subjects.
+\end{itemize}
+Both issues are particularly important is studies with human subjects.  If an experiment is so small that it is unlikely to find a statistically significant difference even when there are potentially important differences, asking people to participate may waste their time or, even more seriously, expose them to an experimental treatment that might be dangerous.  If a study is larger than needed, more people than necessary will be exposed to an intervention with uncertain value.  It is not an exaggeration to say that studies with human subjects that are either too large or too small are unethical.
+
+This section begins with several subsections that illustrate the concepts in the context of a hypothetical clinical trial, where the goal is to have a sufficient sample size to be 80\% likely to detect practically important effects.\footnote{Similar sample size planning is also important for observational studies, but that is not covered here.}  The last subsection provides formulas that can be used to calculate sample size directly, and mentions software available for doing the calculations.
+
+\subsection{Reviewing the concepts of a test}
+
+\begin{example}{Suppose a pharmaceutical company has developed a new drug for lowering blood pressure, and it is planning a clinical trial to test the drug's effectiveness. The company recruits people who are taking a particular standard blood pressure medication and randomizes the participants either to take a currently accepted medication or to take the new drug.  Participants are usually randomized to one of the two treatments with probability 0.50, and to avoid the bias that might arise if patients or their physician knew the treatment being administered, the pills for both medications are made with identical look and taste. A study is called double-blind when neither physicians nor patients know the treatment received. Write down the hypotheses for a two-sided hypothesis test in this context.}
+Generally, clinical trials use a two-sided alternative hypothesis, so below are suitable hypotheses for this context:
+\begin{description}
+\setlength{\itemsep}{0mm}
+\item[$H_0$:] The new drug performs exactly as well as the standard medication. \\
+  $\mu_{\text{ \text{trmt}}} - \mu_{\text{ctrl}} = 0$.
+\item[$H_A$:] The new drug's performance differs from the standard medication. \\
+  $\mu_{\text{ \text{trmt}}} - \mu_{\text{ctrl}} \neq 0$.
+\end{description}
+Some researchers might argue for a one-sided test here, where the alternative would consider only whether the new drug performs better than the standard medication. However, there are surprisingly many examples where a drug thought to be helpful turns out to produce worse outcomes in a randomized trial. Since it is informative to know whether the new drug performs worse or better than the standard medication, a two-sided test is almost always used in this setting. 
+\end{example}
+
+\begin{example}{The company would like to run the clinical trial with participants whose systolic blood pressures are between 140 and 180~mmHg. Suppose previously published studies suggest that the standard deviation of the patients' blood pressures will be about 12~mmHg and the distribution of patient blood pressures will be approximately symmetric.\footnote{In this particular study, measure each participants blood pressure measured at the beginning and end of the study, and the outcome measurement for the study would be the average change in blood pressure in each of the treatment groups. That is, both $\mu_{ \text{trmt}}$ and $\mu_{ \text{ctrl}}$ would represent average differences. Even though the measurement for each participant is a paired difference, the two sets of paired differences (one for each group) are independent measurements from two groups and should be analyzed with a $t$-test for independent groups. The calculations below assume that 12~mmHg is the (unobserved) population standard deviation of a patient's blood pressure difference over the course of the study.} What would be the approximate standard error for $\bar{x}_{ \text{trmt}} - \bar{x}_{ \text{ctrl}}$ if had 100 participants were enrolled in each group?}
+The standard error is calculated as follows:
+\begin{align*}
+SE_{\bar{x}_{ \text{trmt}} - \bar{x}_{ \text{ctrl}}}
+  = \sqrt{\frac{s_{ \text{trmt}}^2}{n_{ \text{trmt}}} + \frac{s_{ \text{ctrl}}^2}{n_{ \text{ctrl}}}}
+  = \sqrt{\frac{12^2}{100} + \frac{12^2}{100}}
+  = 1.70
+\end{align*}
+This may be an imperfect estimate of $SE_{\bar{x}_{ \text{trmt}} - \bar{x}_{ \text{ctrl}}}$, since the standard deviation estimate we used may not be correct for this group of patients. However, it is sufficient for getting started, and an assumption like this is often all that is available.
+\end{example}
+
+
 
 % insert OI summary here? or rewrite?
 
