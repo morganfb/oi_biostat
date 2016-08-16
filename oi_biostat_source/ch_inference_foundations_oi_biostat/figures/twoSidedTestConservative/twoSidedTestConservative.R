@@ -8,9 +8,9 @@ normTail(L = -1.96,
          U = 1.96,
          col = COL[1],
          axes = FALSE)
-labels <- expression(t*' = -1.96')
+##labels <- expression(t*' = -1.96')
 #labels2 <- expression('1.96')
-axis(1, at = -1.96, labels = labels, cex.axis = 0.87)
+##axis(1, at = -1.96, labels = labels, cex.axis = 0.87)
 #axis(1, at = 1.96, labels = labels2, cex.axis = 0.87)
 
 ##shading 1.65 >>
@@ -25,8 +25,8 @@ x <- c(1.65, X[these], 1.65)
 y <- c(0, dt(X[these], 1000), 0)
 polygon(x, y, col=COL[1,3], border='#00000000')
 
-labels <- expression(t*' = 1.65')
-axis(1, at = 1.65, labels = labels, cex.axis = 0.87)
+#labels <- expression(t*' = 1.65')
+#axis(1, at = 1.65, labels = labels, cex.axis = 0.87)
 
 
 #adding bottom axis, labeling mu

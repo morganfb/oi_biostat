@@ -24,7 +24,7 @@ text(-1.5, yMax * 0.8,
      cex=1,
      pos=2)
 text(-1.5, yMax * 0.7,
-     expression('if '*H[0]*' was true'),
+     expression('if '*H[0]*' were true'),
      cex=1,
      pos=2)
 

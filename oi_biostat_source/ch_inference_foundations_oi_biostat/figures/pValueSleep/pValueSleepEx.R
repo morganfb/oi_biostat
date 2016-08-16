@@ -1,0 +1,25 @@
+library(openintro)
+data(COL)
+
+myPDF('pValueSleepEx.pdf', 6, 2.4,
+      mar = c(2, 0, 0.5, 0),
+      mgp = c(3, 0.65, 0))
+
+normTail(U = 1.28,
+         curveColor = fadeColor(3, fade = "00"),
+         border = fadeColor(2, fade = "44"),
+         col = fadeColor(2, fade = "44"),
+         axes = FALSE)
+
+par(new=TRUE)
+normTail(U = 1.65,
+         col = COL[1],
+         axes  =  FALSE,
+         lwd  =  2)
+at <- c(-5, 0, 1.65, 5)
+labels <- expression(0, ''*mu*' = 0  ',
+                     't = 1.65', 0)
+axis(1, at, labels, cex.axis = 1.5)
+yMax <- 0.4
+
+dev.off()
